@@ -1,0 +1,85 @@
+# BotAppStore.com
+
+> BotAppStore.com distributes deterministic AI agent templates, primary-source OSINT trackers, and physical robotics & manufacturing shop workflows for Grok Bot. Every template runs inside the user's isolated Grok Bot Linux sandbox (`/workspace`) with inspectable `SKILL.md` rules, one-time USD licensing (or free utility access), zero monthly subscriptions, and strict refusal boundaries.
+
+- Canonical URL: https://botappstore.com/
+- Machine-Readable Catalog: https://botappstore.com/llms.txt
+- Sitemap: https://botappstore.com/sitemap.xml
+- Execution Environment: Grok Bot Linux Sandbox (`/workspace`, `bash`, `python3`, `curl`)
+
+## Live Agent Template (Available Now)
+
+### 1. Web & API Text Extractor (`web-text-extractor`)
+- **Status:** LIVE (`available`)
+- **Category:** OSINT & Research (`osint`)
+- **Price:** $0 (Free Forever · 10 Cloud Extractions / UTC Day + Local `/workspace` Fallback)
+- **One-Click Install URL:** https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol
+- **What It Does:**
+  1. **Turn-1 Automatic API Key Provisioning:** Checks for a local `0600`-permissioned environment file in `/workspace`; if absent, registers an agent identity (`wck_...` key) on Turn 1, stores credentials with `chmod 600` (`-rw-------`) permissions inside `/workspace`, completes initial readiness verification tasks, and runs a live test extraction against `https://example.com`.
+  2. **10 Free Server-Side Text Extractions / UTC Day:** Calls the cloud `/api/v1/scrape` endpoint (`format: "text"`) using static HTTP fetch (`requests.get`) + BeautifulSoup (`bs4`) readable plain-text extraction, returning `X-Quota-Limit: 10`, `X-Quota-Remaining`, and `X-Quota-Reset` telemetry headers.
+  3. **Deterministic Error Branching & Local Fallback:** Branches on structured JSON error `reason` codes (`quota_exhausted`, `tasks_incomplete`, `format_requires_payment`) and automatically falls back to local `curl -sL` + Python HTML-to-text extraction (`bs4` or Python stdlib `html.parser`) inside `/workspace` when the 10/day cloud quota resets at UTC midnight.
+  4. **SSRF & Network Target Guardrails:** Rejects loopback (`127.0.0.0/8`, `::1`), RFC1918 private networks (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), link-local, and cloud metadata endpoints (`169.254.169.254`) with HTTP 400 without consuming daily quota.
+- **Requires:** Grok Bot environment with `/workspace` Linux shell access. No credit card or subscription required.
+- **Refusal Boundaries:**
+  - Does not claim headless-browser or client-side JavaScript rendering on the static HTTP cloud endpoint.
+  - Never prints secret `wck_...` API keys in chat output.
+  - Never accesses private RFC1918, loopback, or cloud metadata IP ranges.
+  - Never triggers paid extraction modes without explicit per-call user confirmation.
+
+---
+
+## Planned Agent Templates (In Development — Specifications Only, Not Yet Available for Purchase)
+
+### 2. Company Deep-Dive & Physical Buildout Tracker (`company-buildout-tracker`)
+- **Status:** IN DEVELOPMENT (`planned` — Phase 2 Spec, Not Yet Available)
+- **Category:** OSINT & Research (`osint`)
+- **Planned Price:** $39 USD (One-time USD license · Spec preview)
+- **What It Does:**
+  - Tracks SEC EDGAR filings (`10-K`, `10-Q`, `8-K`, `Form D`), USPTO patent and trademark applications, municipal building permits, job-requisition velocity, and executive changes for public and private physical-infrastructure companies (robotics, AI data centers, aerospace, advanced manufacturing).
+  - Cross-references facility expansions by entity name, CIK, and parcel/municipality identifiers.
+  - Outputs a structured Markdown and JSON dossier (`/workspace/dossier_<entity>.md`) with primary-source URLs, filing accession numbers, and UTC timestamps.
+- **Requires:** Target company name, ticker, or CIK, plus Grok Bot `/workspace` shell access and a compliant `User-Agent` header (`AppName/Version (contact@domain.com)`) for SEC EDGAR queries.
+- **Refusal Boundaries:**
+  - Never fabricates unfiled permits, unpublished financial figures, or speculative M&A rumors.
+  - Never presents secondary news commentary or social media posts as primary regulatory filings.
+  - Never makes stock buy, sell, or hold recommendations or price targets.
+
+### 3. SEC & Patent Watchdog Digest (`sec-patent-watchdog`)
+- **Status:** IN DEVELOPMENT (`planned` — Phase 2 Spec, Not Yet Available)
+- **Category:** OSINT & Research (`osint`)
+- **Planned Price:** $29 USD (One-time USD license · Spec preview)
+- **What It Does:**
+  - Scheduled daily or weekly monitoring agent that polls SEC EDGAR RSS/JSON submission feeds (`data.sec.gov/submissions/CIK{10-digit}.json`) and USPTO patent assignment/publication endpoints for a user-defined watchlist of CIKs, tickers, or assignee entities.
+  - Diffs newly published accession numbers and patent docket entries against local state in `/workspace/watchlist_state.json`.
+  - Emits a concise delta digest with direct filing links when new primary documents appear, and stays completely silent when nothing has changed.
+- **Requires:** User-defined watchlist in `/workspace/watchlist.json` and a compliant SEC EDGAR `User-Agent` contact string.
+- **Refusal Boundaries:**
+  - Never sends noisy "no change" filler messages on scheduled runs when zero new filings exist.
+  - Never bypasses rate limits (strictly enforces `<= 10 requests/second` and SEC EDGAR `User-Agent` identification requirements).
+  - Never executes trades, brokerage orders, or financial transactions.
+
+### 4. 3D Print Farm & Slicer Queue Ops (`print-farm-ops`)
+- **Status:** IN DEVELOPMENT (`planned` — Phase 2 Spec, Not Yet Available)
+- **Category:** Robotics & Shop Ops (`robotics`)
+- **Planned Price:** $29 USD (One-time USD license · Spec preview)
+- **What It Does:**
+  - Organizes multi-printer production queues, filament BOM tracking (PLA-CF, TPU, PETG, PA-CF/Nylon), and desiccant/spool weight ledgers in `/workspace`.
+  - Inspects OrcaSlicer `.3mf` project archives (ZIP/XML plate metadata, nozzle diameter, layer height, wall loops, infill density, and support settings) to flag profile mismatches across production plates.
+  - Computes per-part material gram cost, machine time, kWh electricity cost, and eBay/storefront SKU inventory run-rate tables (`/workspace/farm_queue_report.csv`).
+- **Requires:** `.3mf` project files or SKU CSV exports in `/workspace`.
+- **Refusal Boundaries:**
+  - Never sends raw G-code or triggers unconfirmed print starts over LAN/MQTT/cloud printer APIs without explicit per-job user confirmation.
+  - Never overwrites master `.3mf` project files in place (always writes audited outputs to new files in `/workspace`).
+
+### 5. Humanoid & Fleet Telemetry Inspector (`robotics-telemetry-inspector`)
+- **Status:** IN DEVELOPMENT (`planned` — Phase 3 Spec, Not Yet Available)
+- **Category:** Robotics & Shop Ops (`robotics`)
+- **Planned Price:** $49 USD (One-time USD license · Spec preview)
+- **What It Does:**
+  - Parses actuator thermal logs, joint torque duty-cycle CSV/JSON telemetry, and battery management system (BMS) cell-delta exports (including 16S LiFePO4 stationary/shop packs and mobile robot battery packs).
+  - Detects cell voltage imbalance (`mV` delta under load vs. rest), MOSFET temperature spikes, charge/discharge cycle anomalies, and harmonic drive / actuator wear thresholds.
+  - Generates self-contained diagnostic reports and preventive maintenance replacement schedules in `/workspace/telemetry_diagnostics.md`.
+- **Requires:** CSV, JSON, or CAN/RS485 log exports placed in `/workspace`.
+- **Refusal Boundaries:**
+  - Strictly read-only diagnostic analysis.
+  - Never issues motor or actuator motion commands, BMS register/parameter writes, or hardware safety-interlock overrides.
