@@ -14,17 +14,18 @@
 - **Category:** OSINT & Research (`osint`)
 - **Price:** $0 (Free Forever · 10 Cloud Extractions / UTC Day + Local `/workspace` Fallback)
 - **One-Click Install URL:** https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol
+- **Included Skills:** `getting-started`, `web-extractor`
 - **What It Does:**
-  1. **Turn-1 Automatic API Key Provisioning:** Checks for a local `0600`-permissioned environment file in `/workspace`; if absent, registers an agent identity (`wck_...` key) on Turn 1, stores credentials with `chmod 600` (`-rw-------`) permissions inside `/workspace`, completes initial readiness verification tasks, and runs a live test extraction against `https://example.com`.
-  2. **10 Free Server-Side Text Extractions / UTC Day:** Calls the cloud `/api/v1/scrape` endpoint (`format: "text"`) using static HTTP fetch (`requests.get`) + BeautifulSoup (`bs4`) readable plain-text extraction, returning `X-Quota-Limit: 10`, `X-Quota-Remaining`, and `X-Quota-Reset` telemetry headers.
+  1. **Turn-1 Automatic API Key Provisioning (`getting-started`):** Checks for a local `0600`-permissioned environment file (`/workspace/.wattcoin_env`); if absent, registers a `wck_...` agent key on Turn 1 against the shared agent registry (`https://www.wattcoin.org/api/v1/agents/register`), stores credentials with `chmod 600` (`-rw-------`) permissions inside `/workspace`, completes initial readiness verification tasks, and runs a live test extraction against `https://example.com`.
+  2. **10 Free Server-Side Text Extractions / UTC Day (`web-extractor`):** Calls `https://www.wattcoin.org/api/v1/scrape` (`format: "text"`) using static HTTP fetch (`requests.get`) + BeautifulSoup (`bs4`) readable plain-text extraction, returning `X-Quota-Limit: 10`, `X-Quota-Remaining`, and `X-Quota-Reset` telemetry headers.
   3. **Deterministic Error Branching & Local Fallback:** Branches on structured JSON error `reason` codes (`quota_exhausted`, `tasks_incomplete`, `format_requires_payment`) and automatically falls back to local `curl -sL` + Python HTML-to-text extraction (`bs4` or Python stdlib `html.parser`) inside `/workspace` when the 10/day cloud quota resets at UTC midnight.
   4. **SSRF & Network Target Guardrails:** Rejects loopback (`127.0.0.0/8`, `::1`), RFC1918 private networks (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), link-local, and cloud metadata endpoints (`169.254.169.254`) with HTTP 400 without consuming daily quota.
-- **Requires:** Grok Bot environment with `/workspace` Linux shell access. No credit card or subscription required.
+- **Requires:** Grok Bot environment with `/workspace` Linux shell access. No credit card or subscription required for the free `"text"` extraction tier (`10/day` + local `curl` fallback).
 - **Refusal Boundaries:**
-  - Does not claim headless-browser or client-side JavaScript rendering on the static HTTP cloud endpoint.
+  - Does not claim headless-browser or client-side JavaScript rendering on the static HTTP cloud endpoint (`https://www.wattcoin.org/api/v1/scrape`).
   - Never prints secret `wck_...` API keys in chat output.
   - Never accesses private RFC1918, loopback, or cloud metadata IP ranges.
-  - Never triggers paid extraction modes without explicit per-call user confirmation.
+  - `format: "html"` and `format: "json"` are paid per-call modes on the registry (see https://www.wattcoin.org/llms.txt for paid-tier specs); this free utility uses `format: "text"` (10/day free) and never invokes paid modes without explicit user confirmation.
 
 ---
 
@@ -49,7 +50,7 @@
 - **Category:** OSINT & Research (`osint`)
 - **Planned Price:** $29 USD (One-time USD license · Spec preview)
 - **What It Does:**
-  - Scheduled daily or weekly monitoring agent that polls SEC EDGAR RSS/JSON submission feeds (`data.sec.gov/submissions/CIK{10-digit}.json`) and USPTO patent assignment/publication endpoints for a user-defined watchlist of CIKs, tickers, or assignee entities.
+  - Scheduled daily or weekly monitoring agent that polls SEC EDGAR RSS/JSON submission feeds (`https://data.sec.gov/submissions/CIK{10-digit}.json`) and USPTO patent assignment/publication endpoints for a user-defined watchlist of CIKs, tickers, or assignee entities.
   - Diffs newly published accession numbers and patent docket entries against local state in `/workspace/watchlist_state.json`.
   - Emits a concise delta digest with direct filing links when new primary documents appear, and stays completely silent when nothing has changed.
 - **Requires:** User-defined watchlist in `/workspace/watchlist.json` and a compliant SEC EDGAR `User-Agent` contact string.

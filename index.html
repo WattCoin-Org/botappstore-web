@@ -52,7 +52,7 @@
               "applicationCategory": "DeveloperApplication",
               "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
               "url": "https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol",
-              "description": "Turn-1 automatic API key provisioning saved to a 0600 env file in /workspace, 10 free server-side static HTTP + BeautifulSoup readable text extractions per UTC day, automatic local curl + Python HTML-to-text fallback in /workspace, and strict SSRF target rejection.",
+              "description": "Turn-1 automatic API key provisioning saved to a 0600 env file in /workspace, 10 free server-side static HTTP + BeautifulSoup readable text extractions per UTC day via https://www.wattcoin.org/api/v1/scrape, automatic local curl + Python HTML-to-text fallback in /workspace, and strict SSRF target rejection.",
               "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -69,13 +69,7 @@
               "name": "Company Deep-Dive & Physical Buildout Tracker",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
-              "description": "In Development (Phase 2 Spec): Tracks SEC EDGAR filings (10-K, 10-Q, 8-K, Form D), USPTO patent & trademark applications, municipal building permits, job-req velocity, and executive changes for physical-infrastructure companies.",
-              "offers": {
-                "@type": "Offer",
-                "price": "39",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/PreOrder"
-              }
+              "description": "In Development (Phase 2 Spec — Not Yet Available): Tracks SEC EDGAR filings (10-K, 10-Q, 8-K, Form D), USPTO patent & trademark applications, municipal building permits, job-req velocity, and executive changes for physical-infrastructure companies."
             }
           },
           {
@@ -86,13 +80,7 @@
               "name": "SEC & Patent Watchdog Digest",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
-              "description": "In Development (Phase 2 Spec): Scheduled daily/weekly monitoring agent that polls SEC EDGAR RSS/JSON feeds and USPTO assignment/publication endpoints, diffing against /workspace/watchlist_state.json.",
-              "offers": {
-                "@type": "Offer",
-                "price": "29",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/PreOrder"
-              }
+              "description": "In Development (Phase 2 Spec — Not Yet Available): Scheduled daily/weekly monitoring agent that polls SEC EDGAR RSS/JSON feeds and USPTO assignment/publication endpoints, diffing against /workspace/watchlist_state.json."
             }
           },
           {
@@ -103,13 +91,7 @@
               "name": "3D Print Farm & Slicer Queue Ops",
               "applicationCategory": "IndustrialApplication",
               "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
-              "description": "In Development (Phase 2 Spec): Multi-printer production queues, filament BOM tracking (PLA-CF, TPU, PETG, Nylon), OrcaSlicer .3mf profile auditing, and per-part material/kWh cost calculations.",
-              "offers": {
-                "@type": "Offer",
-                "price": "29",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/PreOrder"
-              }
+              "description": "In Development (Phase 2 Spec — Not Yet Available): Multi-printer production queues, filament BOM tracking (PLA-CF, TPU, PETG, Nylon), OrcaSlicer .3mf profile auditing, and per-part material/kWh cost calculations."
             }
           },
           {
@@ -120,13 +102,7 @@
               "name": "Humanoid & Fleet Telemetry Inspector",
               "applicationCategory": "IndustrialApplication",
               "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
-              "description": "In Development (Phase 3 Spec): Parses actuator thermal logs, battery pack BMS cell-delta CSV/JSON exports (including 16S LiFePO4 and mobile robot packs), joint torque duty cycles, and maintenance schedules.",
-              "offers": {
-                "@type": "Offer",
-                "price": "49",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/PreOrder"
-              }
+              "description": "In Development (Phase 3 Spec — Not Yet Available): Parses actuator thermal logs, battery pack BMS cell-delta CSV/JSON exports (including 16S LiFePO4 and mobile robot packs), joint torque duty cycles, and maintenance schedules."
             }
           }
         ]
@@ -310,22 +286,23 @@
                 <div class="terminal-body">
                   <!-- Pane 1: Sample Dossier Output -->
                   <div class="term-pane active" id="pane-dossier" role="tabpanel" aria-labelledby="tab-dossier">
-                    <pre class="code-block"><span class="c-comment"># Output: /workspace/dossier_apex_robotics.md (Phase 2 Spec Preview)</span>
-<span class="c-key">ENTITY:</span> Apex Industrial Robotics, Inc. (CIK: <span class="c-num">0001948201</span>)
+                    <pre class="code-block"><span class="c-comment"># ILLUSTRATIVE EXAMPLE — NOT REAL FILINGS (Phase 2 Spec Preview)</span>
+<span class="c-comment"># Output: /workspace/dossier_example_robotics.md</span>
+<span class="c-key">ENTITY:</span> Apex Industrial Robotics, Inc. [EXAMPLE ENTITY] (CIK: <span class="c-num">0000000000</span>)
 <span class="c-key">GENERATED_AT:</span> <span class="c-str">"2026-10-25T19:30:00Z"</span>
 <span class="c-key">PRIMARY_SOURCES_VERIFIED:</span> <span class="c-num">4</span>
 
 <span class="c-comment">## 1. SEC EDGAR Regulatory Filings (data.sec.gov)</span>
-- [<span class="c-num">2026-10-14</span>] <span class="c-key">Form 8-K (Item 1.01)</span> · Acc# <span class="c-str">0001193125-26-241092</span>
+- [<span class="c-num">2026-10-14</span>] <span class="c-key">Form 8-K (Item 1.01)</span> · Acc# <span class="c-str">0000000000-00-000000</span>
   15-year industrial lease for 185,000 sq ft assembly facility (Austin, TX).
 - [<span class="c-num">2026-08-09</span>] <span class="c-key">Form 10-Q</span> · CapEx property &amp; equipment up +42% QoQ ($18.4M).
 
 <span class="c-comment">## 2. USPTO Patent Applications (Linear Actuator &amp; BMS)</span>
-- [<span class="c-num">2026-09-28</span>] <span class="c-key">Pub# US-2026-0291844-A1</span> · High-Torque Planetary Roller Screw
-- [<span class="c-num">2026-09-03</span>] <span class="c-key">Pub# US-2026-0268110-A1</span> · 16S LiFePO4 Pack Active Cell Balancer
+- [<span class="c-num">2026-09-28</span>] <span class="c-key">Pub# US-0000-0000000-A1</span> · High-Torque Planetary Roller Screw
+- [<span class="c-num">2026-09-03</span>] <span class="c-key">Pub# US-0000-0000001-A1</span> · 16S LiFePO4 Pack Active Cell Balancer
 
 <span class="c-comment">## 3. Municipal Building Permits &amp; Hiring Velocity</span>
-- <span class="c-key">Permit #2026-098412-EL:</span> 480V 3-Phase 2,500A switchgear upgrade (Verified)
+- <span class="c-key">Permit #0000-000000-EX:</span> 480V 3-Phase 2,500A switchgear upgrade (Illustrative)
 - <span class="c-key">Manufacturing &amp; Controls Reqs:</span> <span class="c-num">14 open roles</span> (+6 in last 14 days)
 
 <span class="c-comment">## 4. Refusal Check</span>
@@ -341,7 +318,7 @@
                           <span>LIVE NOW · $0</span>
                         </div>
                         <div class="step-box-body">
-                          Open <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol</a> to import the live <strong>Web &amp; API Text Extractor</strong> into your Grok Bot workspace.
+                          Open <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol</a> to import the live <strong>Web &amp; API Text Extractor</strong> (skills: <code>getting-started</code> + <code>web-extractor</code>) into your Grok Bot workspace.
                         </div>
                       </div>
 
@@ -351,7 +328,7 @@
                           <span>AUTOMATIC</span>
                         </div>
                         <div class="step-box-body">
-                          On Turn 1, the agent provisions its <code>wck_...</code> API key into a <code>0600</code>-permissioned env file in <code>/workspace</code> (never printed in chat) and unlocks 10 free static-HTTP + BeautifulSoup plain-text extractions per UTC day.
+                          On Turn 1, the agent registers its <code>wck_...</code> key via <code>https://www.wattcoin.org/api/v1/agents/register</code>, stores it in a <code>0600</code>-permissioned env file in <code>/workspace</code> (never printed in chat), and unlocks 10 free static-HTTP + BeautifulSoup <code>"text"</code> extractions per UTC day on <code>https://www.wattcoin.org/api/v1/scrape</code>.
                           <div class="prompt-copy-row">
                             <code>"Initialize my extractor key and extract text from https://example.com"</code>
                             <button type="button" class="mini-copy-btn" data-copy="Initialize my extractor key and extract text from https://example.com" data-copy-label="✓ Copied">Copy</button>
@@ -365,7 +342,7 @@
                           <span>FAIL-SAFE</span>
                         </div>
                         <div class="step-box-body">
-                          Reads <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers on every call, rejects loopback/RFC1918/metadata SSRF targets with <code>HTTP 400</code>, and automatically falls back to local <code>curl -sL</code> + Python HTML-to-text in <code>/workspace</code> when daily cloud quota resets at UTC midnight.
+                          Reads <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers on every call, rejects loopback/RFC1918/metadata SSRF targets with <code>HTTP 400</code>, and automatically falls back to local <code>curl -sL</code> + Python HTML-to-text in <code>/workspace</code>. Note: <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry (see <code>https://www.wattcoin.org/llms.txt</code> for paid-tier specs); this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.
                         </div>
                       </div>
                     </div>
@@ -437,7 +414,7 @@
               <div>
                 <div class="card-top-meta">
                   <span class="phase-badge live">● LIVE · FREE UTILITY</span>
-                  <span class="skill-slug">web-text-extractor</span>
+                  <span class="skill-slug">getting-started + web-extractor</span>
                 </div>
                 <div class="card-title-row">
                   <h3 class="card-title">Web &amp; API Text Extractor</h3>
@@ -447,15 +424,15 @@
                   </div>
                 </div>
                 <p class="card-summary">
-                  Self-onboarding web and documentation text extractor for Grok Bot. Provisions its own API key on Turn 1 into a <code>0600</code> env file in <code>/workspace</code> and provides 10 free cloud text extractions per UTC day plus automatic local fallback.
+                  Self-onboarding web and documentation text extractor for Grok Bot (included skills: <code>getting-started</code> + <code>web-extractor</code>). Provisions its own API key on Turn 1 into a <code>0600</code> env file in <code>/workspace</code> and provides 10 free cloud text extractions per UTC day plus automatic local fallback.
                 </p>
                 <ul class="spec-highlights">
-                  <li><strong>Turn-1 Auto-Provisioning:</strong> Registers an agent key (<code>wck_...</code>), stores it locally with <code>chmod 600</code> permissions, and runs a live <code>example.com</code> verification check.</li>
-                  <li><strong>10 Cloud Extractions / UTC Day:</strong> Server-side static HTTP + BeautifulSoup readable text extraction with <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers.</li>
+                  <li><strong>Turn-1 Auto-Provisioning (<code>getting-started</code>):</strong> Registers an agent key (<code>wck_...</code>) via <code>https://www.wattcoin.org/api/v1/agents/register</code>, stores it locally with <code>chmod 600</code> permissions, and runs a live <code>example.com</code> verification check.</li>
+                  <li><strong>10 Cloud Extractions / UTC Day (<code>web-extractor</code>):</strong> Server-side static HTTP + BeautifulSoup readable text extraction on <code>https://www.wattcoin.org/api/v1/scrape</code> with <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers.</li>
                   <li><strong>Local Fallback &amp; SSRF Guardrails:</strong> Automatically falls back to local <code>curl -sL</code> + Python HTML-to-text in <code>/workspace</code> and rejects loopback, RFC1918, and cloud metadata IPs.</li>
                 </ul>
                 <div class="guardrail-strip">
-                  <strong>Refusal Boundary:</strong> No false headless-JS rendering claims; never prints secret API keys in chat; rejects private/loopback/metadata SSRF targets with <code>HTTP 400</code>.
+                  <strong>Refusal Boundary:</strong> No false headless-JS rendering claims; never prints secret API keys in chat; rejects private/loopback/metadata SSRF targets with <code>HTTP 400</code>; <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry (see <code>https://www.wattcoin.org/llms.txt</code> for paid-tier specs); this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.
                 </div>
               </div>
               <div class="card-actions">
@@ -787,7 +764,7 @@
                   Phishing-resistant FIDO2/WebAuthn and OpenPGP hardware authentication keys (YubiKey 5 Series) for securing developer workstations, GitHub organizations, and cloud infrastructure logins.
                 </p>
                 <ul class="hw-perks" style="margin-top: 14px;">
-                  <li>✓ Hardware-backed FIDO2 passkeys and SSH key attestation (`ed25519-sk`)</li>
+                  <li>✓ Hardware-backed FIDO2 passkeys and SSH key attestation (<code>ed25519-sk</code>)</li>
                   <li>✓ Physical touch requirement prevents unattended remote session hijacking</li>
                   <li>✓ No battery or network connectivity required</li>
                 </ul>
