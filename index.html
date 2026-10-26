@@ -41,7 +41,7 @@
         "@type": "ItemList",
         "@id": "https://botappstore.com/#catalog",
         "name": "BotAppStore.com Grok Bot Agent Catalog",
-        "numberOfItems": 5,
+        "numberOfItems": 6,
         "itemListElement": [
           {
             "@type": "ListItem",
@@ -66,15 +66,40 @@
             "position": 2,
             "item": {
               "@type": "SoftwareApplication",
-              "name": "Company Deep-Dive & Physical Buildout Tracker",
-              "applicationCategory": "BusinessApplication",
+              "name": "Bot & Skill Security Auditor",
+              "applicationCategory": "SecurityApplication",
               "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
-              "description": "In Development (Phase 2 Spec — Not Yet Available): Tracks SEC EDGAR filings (10-K, 10-Q, 8-K, Form D), USPTO patent & trademark applications, municipal building permits, job-req velocity, and executive changes for physical-infrastructure companies."
+              "url": "https://botappstore.com/#card-bot-skill-auditor",
+              "description": "See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it. Static, read-only security inspector for Grok Bot templates, SKILL.md files, and GitHub repositories across 5 capability buckets.",
+              "offers": {
+                "@type": "Offer",
+                "price": "29.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              }
             }
           },
           {
             "@type": "ListItem",
             "position": 3,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": "Company & Competitor Deep-Dive Analyst",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
+              "url": "https://botappstore.com/#card-company-deep-dive",
+              "description": "Pull a 7-section primary-source corporate and competitor dossier (SEC EDGAR 10-K, 10-Q, 8-K, Form D submissions, SEC EFTS IP disclosures, USPTO PatentsView dockets, RDAP domain records, and a side-by-side competitor comparison matrix) with exact accession numbers and UTC retrieval timestamps in /workspace.",
+              "offers": {
+                "@type": "Offer",
+                "price": "19.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
             "item": {
               "@type": "SoftwareApplication",
               "name": "SEC & Patent Watchdog Digest",
@@ -85,7 +110,7 @@
           },
           {
             "@type": "ListItem",
-            "position": 4,
+            "position": 5,
             "item": {
               "@type": "SoftwareApplication",
               "name": "3D Print Farm & Slicer Queue Ops",
@@ -96,7 +121,7 @@
           },
           {
             "@type": "ListItem",
-            "position": 5,
+            "position": 6,
             "item": {
               "@type": "SoftwareApplication",
               "name": "Humanoid & Fleet Telemetry Inspector",
@@ -122,7 +147,7 @@
             <span class="status-dot" aria-hidden="true"></span>
             <span>EXECUTION RUNTIME: <strong>GROK BOT LINUX SANDBOX (<code>/workspace</code>)</strong></span>
           </span>
-          <span>LICENSE MODEL: <strong>ONE-TIME USD · ZERO SUBSCRIPTIONS</strong></span>
+          <span>LIVE TEMPLATES: <strong>3 AVAILABLE (FREE + $19 &amp; $29 SOL) · ZERO SUBSCRIPTIONS</strong></span>
           <span>PRIVACY: <strong>LOCAL CREDENTIAL VAULT · ZERO DATA EXFILTRATION</strong></span>
         </div>
         <div class="ticker-links">
@@ -149,14 +174,17 @@
           <span class="brand-tag">OSINT &amp; ROBOTICS</span>
         </a>
         <nav class="nav-links" aria-label="Primary Navigation">
-          <a href="#featured-agent">Flagship Dossier Spec</a>
-          <a href="#catalog">Agent Catalog (5)</a>
+          <a href="#featured-agent">Deep-Dive Analyst ($19 SOL)</a>
+          <a href="#catalog">Agent Catalog (3 Live)</a>
           <a href="#architecture">How It Works</a>
           <a href="#hardware-stack">Shop &amp; Security Stack</a>
         </nav>
         <div class="nav-cta-group">
-          <button type="button" class="btn btn-secondary btn-sm" data-open-spec="company-buildout-tracker">
-            Sample Dossier Spec
+          <button type="button" class="btn btn-secondary btn-sm" data-open-checkout="company-deep-dive">
+            Buy Deep-Dive ($19 SOL)
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm" data-open-checkout="bot-skill-auditor">
+            Buy Security Auditor ($29 SOL)
           </button>
           <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
             Install Free Utility →
@@ -187,83 +215,86 @@
             </div>
           </div>
 
-          <!-- Featured Flagship Card: Company Deep-Dive & Physical Buildout Tracker -->
+          <!-- Featured Flagship Card: Company & Competitor Deep-Dive Analyst (LIVE · $19 IN SOL) -->
           <div class="featured-launch-card">
             <div class="featured-top-bar">
               <div class="featured-status-left">
-                <span class="badge-phase2">◐ IN DEVELOPMENT · PHASE 2 SPEC</span>
-                <span class="template-id-tag">Slug: <code>company-buildout-tracker</code> · Primary-Source OSINT &amp; Infrastructure Dossier</span>
+                <span class="phase-badge live">● LIVE NOW · $19 IN SOL</span>
+                <span class="template-id-tag">Skills: <code>company-deep-dive-setup + company-deep-dive</code> · Primary-Source Corporate &amp; Competitor Dossier</span>
               </div>
               <div class="template-id-tag">
-                Output: <code>/workspace/dossier_&lt;entity&gt;.md</code> + <code>.json</code>
+                Output: <code>/workspace/dossiers/&lt;slug&gt;-&lt;timestamp&gt;/REPORT.md</code> + <code>RAW_SOURCES.json</code>
               </div>
             </div>
 
             <div class="featured-grid">
-              <!-- Left Column: Flagship Spec + Secondary Live Free Utility Callout -->
+              <!-- Left Column: Live Deep-Dive Analyst + Secondary Callout for All 3 Live Templates -->
               <div class="featured-info">
                 <div>
                   <div class="featured-header-row">
                     <div>
-                      <h2 class="featured-bot-name">Company Deep-Dive &amp; Physical Buildout Tracker</h2>
-                      <div class="featured-author">Flagship Enterprise OSINT Spec · SEC EDGAR + USPTO + Municipal Permits</div>
+                      <h2 class="featured-bot-name">Company &amp; Competitor Deep-Dive Analyst</h2>
+                      <div class="featured-author">Live Primary-Source OSINT Analyst · SEC EDGAR + USPTO PatentsView + RDAP + Competitor Matrix</div>
                     </div>
                     <div class="price-badge-usd">
-                      Planned: $39
-                      <span>ONE-TIME USD · SPEC PREVIEW</span>
+                      $19 in SOL
+                      <span>ONE-TIME LICENSE · 3 REBINDS</span>
                     </div>
                   </div>
 
                   <p class="featured-desc">
-                    Maps the real-world physical and regulatory footprint of public and private infrastructure companies—robotics labs, AI data centers, aerospace plants, and advanced manufacturing sites—inside <code>/workspace</code>.
+                    Generates a 7-section primary-source corporate and competitor dossier from official SEC EDGAR submissions (<code>data.sec.gov</code>) and full-text filings (<code>efts.sec.gov</code>), USPTO PatentsView dockets, and RDAP domain registries inside <code>/workspace</code>—with exact accession numbers and UTC retrieval timestamps.
                   </p>
 
                   <ul class="capability-list">
                     <li>
                       <span class="cap-bullet">01</span>
-                      <span><strong>SEC EDGAR &amp; Capital Filings:</strong> Pulls <code>10-K</code>, <code>10-Q</code>, <code>8-K</code> (Item 1.01 / 2.01 material facility leases &amp; capex), and private-company <code>Form D</code> raises via official SEC JSON endpoints with mandatory <code>User-Agent</code> compliance.</span>
+                      <span><strong>SEC EDGAR Submissions &amp; Material Filings:</strong> Pulls <code>10-K</code>, <code>10-Q</code>, <code>8-K</code> (Items 1.01, 2.01, 5.02), <code>DEF 14A</code>, <code>Form 4</code>, and private-company <code>Form D</code> notices with exact accession numbers, direct archive links, and 180-day <code>8-K</code> velocity.</span>
                     </li>
                     <li>
                       <span class="cap-bullet">02</span>
-                      <span><strong>USPTO Patent &amp; Trademark Velocity:</strong> Tracks newly published patent applications, CPC classifications, and hardware/actuator assignee filings by parent entity and subsidiary LLCs.</span>
+                      <span><strong>Patent &amp; IP Disclosures + RDAP Infrastructure:</strong> Queries SEC EDGAR full-text IP/patent disclosures (<code>efts.sec.gov</code>), USPTO PatentsView assignee records (<code>search.patentsview.org</code>), and authoritative RDAP domain registration &amp; nameserver records (<code>rdap.org</code>).</span>
                     </li>
                     <li>
                       <span class="cap-bullet">03</span>
-                      <span><strong>Municipal Permits &amp; Engineering Hiring:</strong> Cross-references local building/electrical permits, sub-station utility upgrades, and site-specific hardware/manufacturing job-requisition velocity with exact source timestamps.</span>
+                      <span><strong>5-Entity Competitor Matrix &amp; Hardened Fetch Helper:</strong> Compares 1 primary company + up to 4 competitors via <code>.wattcoin_dd_fetch.py</code> (<code>0500</code>, DNS-pinned SSRF guardrails, <code>&lt;= 5 req/s</code>, 40-doc / 200 KB caps, and random 128-bit <code>&lt;untrusted_data_&lt;32-hex&gt;&gt;</code> tags).</span>
                     </li>
                   </ul>
                 </div>
 
                 <div>
                   <div class="featured-cta-row">
-                    <button type="button" class="btn btn-primary" data-open-spec="company-buildout-tracker">
-                      Live Sample Dossier / SKILL.md Preview
+                    <button type="button" class="btn btn-primary" data-open-checkout="company-deep-dive">
+                      Buy License ($19 SOL) →
                     </button>
-                    <span class="btn-disabled" aria-disabled="true">
-                      Not Yet Available (Phase 2 Spec)
-                    </span>
-                    <button type="button" class="btn btn-secondary" data-copy="https://botappstore.com/#catalog" data-copy-label="✓ Catalog Link Copied">
-                      Copy Catalog Link
+                    <button type="button" class="btn btn-secondary" data-open-spec="company-deep-dive">
+                      Sample Dossier &amp; SKILL.md Spec
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-copy="https://botappstore.com/#card-company-deep-dive" data-copy-label="✓ Deep-Dive Link Copied">
+                      Copy Direct Link
                     </button>
                   </div>
 
-                  <!-- Secondary Callout for the Live Free Utility -->
+                  <!-- Secondary Callout for All 3 Live Templates -->
                   <div class="live-utility-callout">
                     <div class="live-utility-info">
                       <div class="live-utility-title">
-                        <span class="badge-live">● LIVE · FREE UTILITY</span>
-                        <span>Web &amp; API Text Extractor (<code>$0 Free Forever</code>)</span>
+                        <span class="badge-live">● 3 LIVE NOW</span>
+                        <span>Free Web Extractor (<code>$0</code>) · Company Deep-Dive (<code>$19 SOL</code>) · Security Auditor (<code>$29 SOL</code>)</span>
                       </div>
                       <div class="live-utility-sub">
-                        Available right now: 10 free cloud static-HTTP + BeautifulSoup text extractions/UTC day + local <code>curl -sL</code> fallback in <code>/workspace</code>.
+                        Available right now with instant non-custodial SOL checkout (or 1-click free install) and up to 3 workspace-reset rebinds per paid license.
                       </div>
                     </div>
                     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                      <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                        Install Free in Grok Bot →
+                      <button type="button" class="btn btn-primary btn-sm" data-open-checkout="bot-skill-auditor">
+                        Buy Security Auditor ($29 SOL) →
+                      </button>
+                      <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+                        Install Free Extractor →
                       </a>
-                      <button type="button" class="btn btn-secondary btn-sm" data-open-spec="web-text-extractor">
-                        Inspect Spec
+                      <button type="button" class="btn btn-secondary btn-sm" data-open-spec="bot-skill-auditor">
+                        Sample Security Audit
                       </button>
                     </div>
                   </div>
@@ -274,7 +305,7 @@
               <div class="featured-terminal">
                 <div class="terminal-tabs">
                   <div class="terminal-tab-group" role="tablist" aria-label="Flagship OSINT and Live Utility Technical Preview">
-                    <button type="button" class="term-tab active" id="tab-dossier" role="tab" aria-selected="true" aria-controls="pane-dossier" tabindex="0" data-tab="pane-dossier">1. Sample Dossier Output</button>
+                    <button type="button" class="term-tab active" id="tab-dossier" role="tab" aria-selected="true" aria-controls="pane-dossier" tabindex="0" data-tab="pane-dossier">1. Sample Dossier (Live $19)</button>
                     <button type="button" class="term-tab" id="tab-extractor" role="tab" aria-selected="false" aria-controls="pane-extractor" tabindex="-1" data-tab="pane-extractor">2. Free Web Extractor (Live)</button>
                     <button type="button" class="term-tab" id="tab-guardrails" role="tab" aria-selected="false" aria-controls="pane-guardrails" tabindex="-1" data-tab="pane-guardrails">3. Refusal Boundaries</button>
                   </div>
@@ -286,27 +317,20 @@
                 <div class="terminal-body">
                   <!-- Pane 1: Sample Dossier Output -->
                   <div class="term-pane active" id="pane-dossier" role="tabpanel" aria-labelledby="tab-dossier">
-                    <pre class="code-block"><span class="c-comment"># ILLUSTRATIVE EXAMPLE — NOT REAL FILINGS (Phase 2 Spec Preview)</span>
-<span class="c-comment"># Output: /workspace/dossier_example_robotics.md</span>
-<span class="c-key">ENTITY:</span> Apex Industrial Robotics, Inc. [EXAMPLE ENTITY] (CIK: <span class="c-num">0000000000</span>)
-<span class="c-key">GENERATED_AT:</span> <span class="c-str">"2026-10-25T19:30:00Z"</span>
-<span class="c-key">PRIMARY_SOURCES_VERIFIED:</span> <span class="c-num">4</span>
+                    <pre class="code-block"><span class="c-comment"># Output: /workspace/dossiers/aapl-20261025T183000Z-7f700f/REPORT.md</span>
+<span class="c-comment">&gt; Scope Note (SCOPE_NOTE.txt): Automated compilation of public SEC EDGAR,</span>
+<span class="c-comment">&gt; USPTO PatentsView &amp; RDAP records. Not investment or legal advice.</span>
+<span class="c-key">ENTITY:</span> Apple Inc. (CIK: <span class="c-num">0000320193</span> · Ticker: <span class="c-str">AAPL</span> · SIC: <span class="c-num">3571</span>)
+<span class="c-key">GENERATED_AT:</span> <span class="c-str">"2026-10-25T18:30:00Z"</span> · <span class="c-key">DOCS_FETCHED:</span> <span class="c-num">7/40</span>
 
-<span class="c-comment">## 1. SEC EDGAR Regulatory Filings (data.sec.gov)</span>
-- [<span class="c-num">2026-10-14</span>] <span class="c-key">Form 8-K (Item 1.01)</span> · Acc# <span class="c-str">0000000000-00-000000</span>
-  15-year industrial lease for 185,000 sq ft assembly facility (Austin, TX).
-- [<span class="c-num">2026-08-09</span>] <span class="c-key">Form 10-Q</span> · CapEx property &amp; equipment up +42% QoQ ($18.4M).
+<span class="c-comment">## Section 2 — SEC EDGAR Filings (data.sec.gov/submissions/CIK0000320193.json)</span>
+- [<span class="c-num">2026-10-16</span>] <span class="c-key">Form 8-K (Item 5.02)</span> · Acc# <span class="c-str">0001140361-26-041145</span>
+- [<span class="c-num">2026-07-31</span>] <span class="c-key">Form 10-Q</span> · Acc# <span class="c-str">0000320193-26-000075</span> (Period: 2026-06-27)
+- [<span class="c-num">2025-10-31</span>] <span class="c-key">Form 10-K</span> · Acc# <span class="c-str">0000320193-25-000079</span> (FYE: 0926)
 
-<span class="c-comment">## 2. USPTO Patent Applications (Linear Actuator &amp; BMS)</span>
-- [<span class="c-num">2026-09-28</span>] <span class="c-key">Pub# US-0000-0000000-A1</span> · High-Torque Planetary Roller Screw
-- [<span class="c-num">2026-09-03</span>] <span class="c-key">Pub# US-0000-0000001-A1</span> · 16S LiFePO4 Pack Active Cell Balancer
-
-<span class="c-comment">## 3. Municipal Building Permits &amp; Hiring Velocity</span>
-- <span class="c-key">Permit #0000-000000-EX:</span> 480V 3-Phase 2,500A switchgear upgrade (Illustrative)
-- <span class="c-key">Manufacturing &amp; Controls Reqs:</span> <span class="c-num">14 open roles</span> (+6 in last 14 days)
-
-<span class="c-comment">## 4. Refusal Check</span>
-- <span class="c-str">PASS:</span> Zero unverified rumors · Zero equity buy/sell recommendations.</pre>
+<span class="c-comment">## Section 4 &amp; 5 — RDAP Domain &amp; Competitor Comparison Matrix</span>
+- <span class="c-key">RDAP (apple.com):</span> Registrar CSC Corporate Domains · NS: <span class="c-str">a.ns.apple.com</span>
+- <span class="c-key">Matrix:</span> AAPL (CIK <span class="c-num">0000320193</span>, 4 8-Ks/180d) vs MSFT (CIK <span class="c-num">0000789019</span>, 3 8-Ks/180d)</pre>
                   </div>
 
                   <!-- Pane 2: Live Free Web & API Text Extractor -->
@@ -350,7 +374,7 @@
 
                   <!-- Pane 3: Deterministic Refusal Boundaries -->
                   <div class="term-pane" id="pane-guardrails" role="tabpanel" aria-labelledby="tab-guardrails" hidden>
-                    <pre class="code-block"><span class="c-comment"># Mandatory SKILL.md Refusal Boundaries Across All 5 Templates</span>
+                    <pre class="code-block"><span class="c-comment"># Mandatory SKILL.md Refusal Boundaries Across All 6 Templates</span>
 <span class="c-key">[OSINT_AND_FILINGS_GUARDRAILS]</span>
 1. <span class="c-str">Primary Sources Only:</span> Every SEC filing, patent docket, or municipal
    permit claim must cite an accession number, publication ID, or URL.
@@ -387,17 +411,20 @@
               <div class="section-kicker">DETERMINISTIC GROK BOT SKILL CATALOG</div>
               <h2 class="section-title">OSINT, Industrial Research &amp; Physical Robotics Agents</h2>
               <p class="section-subtitle">
-                1 live free utility available for immediate one-click import and 4 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
+                3 live templates available now (1 free web extractor, 1 $19 SOL corporate &amp; competitor deep-dive analyst, and 1 $29 SOL security auditor) and 3 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
               </p>
             </div>
 
             <!-- Interactive Category Filter Pills (aria-pressed, NOT role="tab") -->
             <div class="filter-bar" role="group" aria-label="Filter agent templates by category">
               <button type="button" class="filter-pill active" aria-pressed="true" data-filter="all">
-                All Agents <span class="filter-count">(5)</span>
+                All Agents <span class="filter-count">(6)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="available">
-                Available Now <span class="filter-count">(1)</span>
+                Available Now <span class="filter-count">(3)</span>
+              </button>
+              <button type="button" class="filter-pill" aria-pressed="false" data-filter="security">
+                Security &amp; Audits <span class="filter-count">(1)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="osint">
                 OSINT &amp; Research <span class="filter-count">(3)</span>
@@ -445,43 +472,77 @@
               </div>
             </article>
 
-            <!-- Card 2: Company Deep-Dive & Physical Buildout Tracker (Phase 2 Spec, $39) -->
-            <article class="bot-card" data-categories="osint">
+            <!-- Card 2: Bot & Skill Security Auditor (LIVE · $29 IN SOL) -->
+            <article class="bot-card live-card" data-categories="available security" id="card-bot-skill-auditor">
               <div>
                 <div class="card-top-meta">
-                  <span class="phase-badge phase2">IN DEVELOPMENT · PHASE 2 SPEC</span>
-                  <span class="skill-slug">company-buildout-tracker</span>
+                  <span class="phase-badge live">● LIVE · $29 IN SOL</span>
+                  <span class="skill-slug">auditor-setup + bot-skill-auditor</span>
                 </div>
                 <div class="card-title-row">
-                  <h3 class="card-title">Company Deep-Dive &amp; Physical Buildout Tracker</h3>
-                  <div class="card-price">
-                    Planned: $39
-                    <small>One-time USD license · Spec preview</small>
+                  <h3 class="card-title">Bot &amp; Skill Security Auditor</h3>
+                  <div class="card-price free">
+                    $29
+                    <small>in SOL · One-Time License</small>
                   </div>
                 </div>
                 <p class="card-summary">
-                  Tracks SEC EDGAR filings (<code>10-K</code>, <code>10-Q</code>, <code>8-K</code>, <code>Form D</code>), USPTO patent &amp; trademark applications, municipal building permits, job-req velocity, and executive changes for public and private physical-infrastructure companies.
+                  <strong>See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.</strong> Static, read-only inspector for Grok Bot templates, <code>SKILL.md</code> files &amp; GitHub repos via <code>.wattcoin_audit_prep.py</code>.
                 </p>
                 <ul class="spec-highlights">
-                  <li><strong>Physical Footprint Correlation:</strong> Designed for robotics, AI data centers, aerospace, and advanced manufacturing facilities.</li>
-                  <li><strong>Primary-Source Dossier:</strong> Outputs structured Markdown and JSON dossiers in <code>/workspace</code> with filing accession numbers and UTC timestamps.</li>
-                  <li><strong>Compliant Queries:</strong> Enforces SEC EDGAR <code>User-Agent</code> identification and rate-limit discipline on all queries.</li>
+                  <li><strong>Line-Cited 5-Bucket Audit:</strong> Quotes verbatim prompt-bypass strings (<code>L14</code>), SSH/<code>.env</code> secret reads &amp; cron persistence (<code>L29</code>), outbound webhooks/MCPs (<code>L31</code>), obfuscation, and local machine escalation.</li>
+                  <li><strong>Deterministic Prep Helper:</strong> Wraps untrusted files in random <code>&lt;untrusted_artifact_&lt;16-hex&gt;&gt;</code> tags, enforces 50-file / 100 KB / 250 KB caps, pins GitHub refs to 40-char SHAs, and logs <code>Files Audited</code> &amp; <code>Files Skipped</code>.</li>
+                  <li><strong>Transparent Scope Limits:</strong> Flags only what exists in the files at audit time—never claims a skill is "safe" and explicitly states what static analysis cannot catch (runtime-fetched payloads, delayed API responses, time-bombs).</li>
                 </ul>
                 <div class="guardrail-strip">
-                  <strong>Refusal Boundary:</strong> Never fabricates unfiled permits, unpublished financial figures, or speculative M&amp;A rumors; never presents secondary news commentary as primary filings; never makes stock buy/sell/hold recommendations.
+                  <strong>Refusal Boundary:</strong> Never executes audited code, never curls embedded URLs, never reads <code>/workspace/.wattcoin_env</code> into context, and never issues a "safe/pass" badge or numeric grade.
                 </div>
               </div>
               <div class="card-actions">
-                <span class="btn-disabled btn-sm" aria-disabled="true">
-                  Not Yet Available
-                </span>
-                <button type="button" class="btn btn-secondary btn-sm" data-open-spec="company-buildout-tracker">
-                  Inspect SKILL.md Spec
+                <button type="button" class="btn btn-primary btn-sm" data-open-checkout="bot-skill-auditor">
+                  Buy License ($29 SOL) →
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" data-open-spec="bot-skill-auditor">
+                  Sample Audit &amp; SKILL.md Spec
                 </button>
               </div>
             </article>
 
-            <!-- Card 3: SEC & Patent Watchdog Digest (Phase 2 Spec, $29) -->
+            <!-- Card 3: Company & Competitor Deep-Dive Analyst (LIVE · $19 IN SOL) -->
+            <article class="bot-card live-card" data-categories="available osint" id="card-company-deep-dive">
+              <div>
+                <div class="card-top-meta">
+                  <span class="phase-badge live">● LIVE · $19 IN SOL</span>
+                  <span class="skill-slug">company-deep-dive-setup + company-deep-dive</span>
+                </div>
+                <div class="card-title-row">
+                  <h3 class="card-title">Company &amp; Competitor Deep-Dive Analyst</h3>
+                  <div class="card-price free">
+                    $19
+                    <small>in SOL · One-Time License</small>
+                  </div>
+                </div>
+                <p class="card-summary">
+                  <strong>Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor matrix—with exact accession numbers and UTC timestamps.</strong> Deterministic read-only OSINT analyst via <code>.wattcoin_dd_fetch.py</code>.
+                </p>
+                <ul class="spec-highlights">
+                  <li><strong>7-Section Cited Dossier (<code>REPORT.md</code>):</strong> Compiles Entity Snapshot (CIK, SIC, state, FYE), SEC EDGAR <code>10-K</code>/<code>10-Q</code>/<code>8-K</code>/<code>Form D</code> table, SEC EFTS + USPTO PatentsView IP footprint, RDAP domain records, and an up-to-5-entity Competitor Matrix.</li>
+                  <li><strong>Hardened Stdlib Fetch Helper (<code>.wattcoin_dd_fetch.py</code>):</strong> Enforces HTTPS-only DNS-pinned SSRF protection, SEC-compliant <code>User-Agent</code> (<code>&lt;= 5 req/s</code>), 40-request / 200 KB doc caps, and wraps all external data in random 128-bit <code>&lt;untrusted_data_&lt;32-hex&gt;&gt;</code> tags.</li>
+                  <li><strong>Transparent Public-Filing Scope:</strong> Prepends verbatim <code>SCOPE_NOTE.txt</code> and explicitly discloses what public registries do not cover (private subsidiaries, unfiled contracts, trade secrets, or real-time financials).</li>
+                </ul>
+                <div class="guardrail-strip">
+                  <strong>Refusal Boundary:</strong> Never outputs stock buy/sell/hold ratings, valuation multiples, price targets, or legal infringement conclusions; pauses on ambiguous company names (<code>AMBIGUOUS_ENTITY</code>); excludes individual non-corporate filers.
+                </div>
+              </div>
+              <div class="card-actions">
+                <button type="button" class="btn btn-primary btn-sm" data-open-checkout="company-deep-dive">Buy License ($19 SOL) →</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-open-spec="company-deep-dive">
+                  Sample Dossier &amp; SKILL.md Spec
+                </button>
+              </div>
+            </article>
+
+            <!-- Card 4: SEC & Patent Watchdog Digest (Phase 2 Spec, $29) -->
             <article class="bot-card" data-categories="osint">
               <div>
                 <div class="card-top-meta">
@@ -517,7 +578,7 @@
               </div>
             </article>
 
-            <!-- Card 4: 3D Print Farm & Slicer Queue Ops (Phase 2 Spec, $29) -->
+            <!-- Card 5: 3D Print Farm & Slicer Queue Ops (Phase 2 Spec, $29) -->
             <article class="bot-card" data-categories="robotics">
               <div>
                 <div class="card-top-meta">
@@ -553,7 +614,7 @@
               </div>
             </article>
 
-            <!-- Card 5: Humanoid & Fleet Telemetry Inspector (Phase 3 Spec, $49) -->
+            <!-- Card 6: Humanoid & Fleet Telemetry Inspector (Phase 3 Spec, $49) -->
             <article class="bot-card" data-categories="robotics">
               <div>
                 <div class="card-top-meta">
@@ -816,6 +877,8 @@
 
           <div class="footer-links-list">
             <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer">Web &amp; API Text Extractor (Free Utility) ↗</a>
+            <a href="#card-company-deep-dive" data-open-checkout="company-deep-dive">Company &amp; Competitor Deep-Dive ($19 SOL) →</a>
+            <a href="#card-bot-skill-auditor" data-open-checkout="bot-skill-auditor">Bot &amp; Skill Security Auditor ($29 SOL) →</a>
             <a href="/llms.txt">llms.txt ↗</a>
             <a href="/sitemap.xml">sitemap.xml ↗</a>
             <a href="#catalog">Agent Catalog</a>
@@ -889,6 +952,247 @@
       </div>
 
       <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- On-Chain SOL Checkout Modal (#checkout-modal) -->
+  <div class="modal-backdrop" id="checkout-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <div class="modal-panel checkout-modal-panel">
+      <div class="modal-header">
+        <div>
+          <span class="phase-badge live" id="checkout-modal-badge">● ON-CHAIN SOL CHECKOUT · NON-CUSTODIAL</span>
+          <h3 id="checkout-modal-title" style="margin-top: 6px; font-size: 19px;">Bot &amp; Skill Security Auditor — $29 in SOL</h3>
+          <div class="skill-slug" id="checkout-modal-slug" style="margin-top: 2px;">sku: bot-skill-auditor · One-Time License · 3 Workspace-Reset Rebinds</div>
+        </div>
+        <button type="button" class="modal-close-btn" id="checkout-modal-close">ESC / Close ✕</button>
+      </div>
+
+      <div class="modal-body checkout-modal-body">
+        <!-- Saved License Banner (shown if localStorage has a purchased license for this SKU) -->
+        <div class="saved-license-banner" id="checkout-saved-banner" hidden>
+          <div class="saved-license-info">
+            <strong>✓ Saved License Found in This Browser</strong>
+            <span id="checkout-saved-summary">Order ord_...</span>
+          </div>
+          <div class="saved-license-actions">
+            <button type="button" class="btn btn-primary btn-sm" id="checkout-view-saved-btn">View Saved License →</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="checkout-back-to-quote-btn" hidden>New Purchase Quote</button>
+            <button type="button" class="mini-copy-btn danger-btn" id="checkout-clear-saved-btn" title="Remove saved license from this browser">Clear Saved</button>
+          </div>
+        </div>
+
+        <!-- VIEW 1: LIVE SOL QUOTE & PAYMENT VERIFICATION -->
+        <div id="checkout-step-pay">
+          <!-- Quote Status / Loading / Error Bar -->
+          <div class="checkout-status-bar" id="checkout-quote-status" role="status" aria-live="polite">
+            <span id="checkout-quote-status-text">Fetching live SOL/USD quote from WattCoin Registry…</span>
+            <button type="button" class="mini-copy-btn" id="checkout-refresh-btn">Refresh Quote ↻</button>
+          </div>
+
+          <!-- Step 1 Box: Send SOL -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP 1 · SEND EXACT SOL AMOUNT TO TREASURY</span>
+              <span id="checkout-timer-pill" class="timer-pill">TTL: <strong id="checkout-timer-display">--:--</strong></span>
+            </div>
+
+            <div class="checkout-quote-grid">
+              <div class="quote-metric">
+                <span class="quote-label">License Price (One-Time)</span>
+                <div class="quote-val-primary" id="checkout-price-usd">$29.00 <small>USD</small></div>
+                <div class="quote-sub" id="checkout-rate-display">SOL/USD rate loading…</div>
+              </div>
+              <div class="quote-metric">
+                <span class="quote-label">Order ID &amp; Slippage Tolerance</span>
+                <div class="quote-val-mono" id="checkout-order-id-display">—</div>
+                <div class="quote-sub">3% slippage with memo · Exact match without memo</div>
+              </div>
+            </div>
+
+            <!-- Exact SOL Amount Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Exact Amount to Send (SOL)</span>
+                <span class="lamport-tag-hint">Unique 4-digit order tag: <code id="checkout-lamport-tag">----</code> lamports</span>
+              </div>
+              <div class="checkout-copy-box highlight">
+                <div>
+                  <code class="sol-amount-code" id="checkout-amount-sol">—</code>
+                  <span class="sol-unit">SOL</span>
+                  <span class="lamports-sub" id="checkout-amount-lamports"></span>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" id="checkout-copy-amount-btn" disabled>
+                  Copy Exact SOL Amount
+                </button>
+              </div>
+              <p class="checkout-field-help">
+                <strong>Why the exact 9 decimals matter:</strong> The last 4 digits (<code id="checkout-lamport-tag-inline">----</code> lamports, &lt;$0.001) uniquely identify your order on-chain so payment verification succeeds even if your wallet does not attach an SPL Memo.
+              </p>
+            </div>
+
+            <!-- Recipient Treasury Wallet Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Recipient Treasury Wallet (Solana Mainnet)</span>
+                <span>Official WattCoin Treasury</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-recipient-wallet">Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-wallet-btn">Copy Wallet</button>
+              </div>
+            </div>
+
+            <!-- Optional SPL Memo Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>SPL Memo (Optional if sending exact SOL amount above)</span>
+                <span>Enables 3% slippage tolerance</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-memo">—</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-memo-btn" disabled>Copy Memo</button>
+              </div>
+            </div>
+
+            <!-- Solana Pay URI + Optional Sender Wallet Binding -->
+            <div class="checkout-wallet-actions">
+              <a id="checkout-solana-pay-btn" class="btn btn-secondary btn-sm" hidden>
+                Open in Solana Wallet (solana: URI) ↗
+              </a>
+              <details class="checkout-optional-details">
+                <summary>Optional: Bind quote to your sender wallet address</summary>
+                <div class="optional-wallet-row">
+                  <input
+                    type="text"
+                    id="checkout-buyer-wallet-input"
+                    class="checkout-input"
+                    placeholder="Your sender Solana address (Base58, optional)"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <button type="button" class="btn btn-secondary btn-sm" id="checkout-bind-wallet-btn">
+                    Bind &amp; Refresh Quote
+                  </button>
+                </div>
+              </details>
+            </div>
+          </div>
+
+          <!-- Step 2 Box: Verify Transaction Signature -->
+          <div class="checkout-card-box" style="margin-top: 16px;">
+            <div class="checkout-step-header">
+              <span>STEP 2 · VERIFY ON-CHAIN TRANSACTION &amp; ISSUE LICENSE</span>
+              <span>CONFIRMED COMMITMENT</span>
+            </div>
+
+            <p class="checkout-field-help" style="margin-bottom: 10px;">
+              After sending SOL from Phantom, Solflare, Backpack, Ledger, or CLI, paste your Solana <strong>Transaction Signature</strong> (or full Solscan / Explorer TX link) below:
+            </p>
+
+            <div class="tx-verify-row">
+              <input
+                type="text"
+                id="checkout-tx-input"
+                class="checkout-input mono"
+                placeholder="Paste 88-char Solana TX signature or https://solscan.io/tx/..."
+                aria-label="Solana Transaction Signature or Solscan URL"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="button" class="btn btn-primary" id="checkout-verify-btn" disabled>
+                Verify Payment &amp; Issue License →
+              </button>
+            </div>
+
+            <div class="checkout-feedback" id="checkout-verify-feedback" role="alert" aria-live="polite" hidden></div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: FULFILLED LICENSE & TURN-1 ACTIVATION -->
+        <div id="checkout-step-fulfilled" hidden>
+          <div class="fulfilled-banner">
+            <div class="fulfilled-banner-title">✓ On-Chain SOL Payment Verified — License Issued</div>
+            <p>
+              <strong>Save your <code>wcl_...</code> license code now.</strong> It is a private bearer credential returned once at purchase and supports up to <strong>3 workspace-reset rebinds</strong>. We also saved a copy in this browser's local storage so you don't lose it if you close this tab.
+            </p>
+          </div>
+
+          <!-- Step A: Open Unlisted Grok Bot Template -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP A · IMPORT UNLISTED GROK BOT TEMPLATE</span>
+              <span>ONE CLICK</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-a-desc" style="margin-bottom: 10px;">
+              Click below to open the private <strong>Bot &amp; Skill Security Auditor</strong> template in Grok Bot and add it to your sidebar:
+            </p>
+            <div class="fulfilled-cta-row">
+              <a target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="fulfilled-open-template-btn">
+                Open Security Auditor in Grok Bot ↗
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-copy-template-btn">
+                Copy Unlisted Template URL
+              </button>
+            </div>
+            <div class="checkout-copy-box" style="margin-top: 10px;">
+              <code id="fulfilled-template-url">—</code>
+            </div>
+          </div>
+
+          <!-- Step B: Copy Private wcl_ License Code -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP B · YOUR PRIVATE LICENSE CODE (wcl_64-hex)</span>
+              <span>UP TO 3 REBINDS</span>
+            </div>
+            <div class="checkout-copy-box highlight" style="margin-top: 6px;">
+              <code id="fulfilled-license-code" class="license-code-text">—</code>
+              <button type="button" class="btn btn-primary btn-sm" id="fulfilled-copy-code-btn">
+                Copy License Code
+              </button>
+            </div>
+          </div>
+
+          <!-- Step C: Paste Turn-1 Activation Prompt -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP C · SEND THIS FIRST PROMPT IN GROK BOT</span>
+              <span>TURN-1 AUTO-SETUP</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-hint" style="margin-bottom: 8px;">
+              Paste this prompt on Turn 1 (or together with any <code>SKILL.md</code> or GitHub repo URL you want inspected):
+            </p>
+            <div class="checkout-copy-box">
+              <code id="fulfilled-activation-prompt">—</code>
+              <button type="button" class="mini-copy-btn" id="fulfilled-copy-prompt-btn">
+                Copy Prompt
+              </button>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+            </p>
+          </div>
+
+          <!-- Receipt Summary & Storage Controls -->
+          <div class="fulfilled-receipt-footer">
+            <div class="receipt-meta">
+              <span>Order: <code id="fulfilled-order-id">—</code></span>
+              <span>TX: <a target="_blank" rel="noopener noreferrer" id="fulfilled-solscan-link" style="color: var(--accent-cyan); text-decoration: underline;"><code id="fulfilled-tx-sig">—</code> ↗</a></span>
+            </div>
+            <div class="receipt-actions">
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-download-btn">
+                Download Receipt (.txt)
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-new-order-btn">
+                Buy Another License
+              </button>
+              <button type="button" class="mini-copy-btn danger-btn" id="fulfilled-clear-storage-btn">
+                Clear from Browser Storage
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
