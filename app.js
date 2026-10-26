@@ -1005,7 +1005,7 @@
     refreshQuoteBtn.disabled = true;
 
     try {
-      const payload = { sku: targetSku };
+      const payload = { sku: targetSku, source: 'botappstore' };
       if (trimmedWallet) payload.buyer_wallet = trimmedWallet;
 
       let { resp, data } = await requestQuoteOnce(payload);
@@ -1208,7 +1208,7 @@
           'error',
           `Order binding mismatch: transaction must either include memo "${activeQuote.memo}" or send the exact quoted amount (${activeQuote.amount_sol} SOL) created for this order.`
         );
-      } else if (reason === 'tx_already_used' || reason === 'order_already_fulfilled') {
+      } else if (reason === 'tx_already_used' || reason === 'order_already_fulfilled' || reason === 'order_already_claimed') {
         showVerifyFeedback(
           'error',
           'This transaction signature or order has already been redeemed. If you redeemed it in this browser, click "View Saved License →" at the top of this window.'
