@@ -1,0 +1,478 @@
+# BotAppStore.com — Specialized Agent Templates & Verified SKILL.md Packs for Grok Bot
+
+> BotAppStore.com is the storefront and technical specification index for task-specialized Grok Bot agent templates and portable `SKILL.md` packs that execute inside your isolated `/workspace` Linux sandbox.
+
+- **Canonical Storefront:** https://botappstore.com/
+- **Machine-Readable Catalog:** https://botappstore.com/llms.txt
+- **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt
+- **Sister Solana & Crypto Storefront:** https://coinloader.com/
+- **Free Flagship Utility (1-Click Install):** https://botappstore.com/bots/web-text-extractor.html (Direct Grok Bot import: https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol)
+- **Paid Bot & Skill Security Auditor ($29 in SOL, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
+- **Paid Company & Competitor Deep-Dive Analyst ($19 in SOL, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
+- **Paid SEC & Patent Watchdog Digest ($29 in SOL, `sku: sec-patent-watchdog`, Registry Name: *SEC EDGAR & Patent Filing Watchdog*):** https://botappstore.com/bots/sec-patent-watchdog.html (Checkout: https://botappstore.com/#card-sec-patent-watchdog)
+- **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
+- **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
+
+---
+
+## Live Agent Templates (Available Now — 4 Live Automations)
+
+### 1. Web & API Text Extractor (Free Forever Utility)
+- **Status:** LIVE NOW
+- **Price:** $0 (Free Forever — 10 Cloud Extractions / UTC Day + Automatic Local Fallback)
+- **One-Click Grok Bot Import URL:** https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol
+- **Included Skills:** `getting-started` + `web-extractor`
+- **What It Does:**
+  1. **Turn-1 Onboarding (`getting-started`):** Checks for `/workspace/.wattcoin_env` (`0600` permissions). If missing, registers an agent key (`wck_...`) via `POST https://www.wattcoin.org/api/v1/agents/register`, completes `onboarding_v1` (+25 WATT) and `starter_v1` (+75 WATT) for **100 WATT** total, verifies `"initial_tasks_completed": true` via `GET /api/v1/agents/me`, and runs a test extraction against `https://example.com`.
+  2. **10/Day Free Cloud Text Extraction (`web-extractor`):** Calls `POST https://www.wattcoin.org/api/v1/scrape` with `{"url": "<target>", "format": "text"}` and reports `X-Quota-Limit: 10`, `X-Quota-Remaining`, and `X-Quota-Reset` headers.
+  3. **Paid Modes Disclosure:** `format: "html"` and `format: "json"` are paid per-call modes on the registry (see `https://www.wattcoin.org/llms.txt` for paid-tier specs); this free utility uses `format: "text"` (10/day free) and never invokes paid modes without explicit user confirmation.
+  4. **Automatic Local Sandbox Fallback:** When `X-Quota-Remaining: 0` or `HTTP 429` (`reason: "quota_exhausted"`), automatically falls back to local `curl -sL` + Python HTML-to-text parsing (`bs4` or stdlib `html.parser`) inside `/workspace`.
+- **Refusal Boundaries:**
+  - Never claims headless-browser or client-side JavaScript SPA rendering on the static HTTP cloud endpoint (`requests.get` + BeautifulSoup, 15s timeout, 2 MB response cap).
+  - Never prints or echoes `wck_...` API keys in chat output.
+  - Rejects loopback (`127.0.0.0/8`, `::1`), RFC1918 private IPs (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), link-local, and cloud metadata (`169.254.169.254`) with `HTTP 400`.
+
+### 2. Bot & Skill Security Auditor ($29 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `bot-skill-auditor`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Product Page URL:** https://botappstore.com/bots/bot-skill-auditor.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-bot-skill-auditor
+- **Included Skills:** `auditor-setup` + `bot-skill-auditor`
+- **Deliverable:** *See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.*
+- **On-Chain SOL Checkout & License Architecture:**
+  1. **15-Minute Locked SOL Quote:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "bot-skill-auditor"}`) locks the live SOL/USD rate for 15 minutes and generates a unique order memo (`wcl:ord_<24-hex>`), exact lamport tag, and `checkout_token` (`ct_<48-hex>`).
+  2. **Non-Custodial On-Chain Verification:** Buyer sends SOL directly to the WattCoin Treasury Wallet (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`) and submits the Solana transaction signature to `POST https://www.wattcoin.org/api/v1/agents/license/purchase`. Server-side Solana RPC verification (`getTransaction` with `confirmed` commitment) validates the exact recipient balance delta and issues a private `wcl_<64-hex>` bearer license code and unlocks the unlisted Grok Bot template URL.
+  3. **Turn-1 Onboarding & License Binding (`auditor-setup`):** Installs two read-only Python helpers at `chmod 500` (`-r-x------`) in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_audit_prep.py`), registers/activates `/workspace/.wattcoin_env` (`chmod 600`), and binds the `wcl_<64-hex>` code via `POST https://www.wattcoin.org/api/v1/agents/license/claim`.
+  4. **Mandatory Pre-Flight License Gate (`bot-skill-auditor`):** Every audit run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=bot-skill-auditor`) and requires `"sku_licensed": true`.
+- **5-Bucket Line-Cited Static Inspection:**
+  - **Bucket 1:** Prompt, Confirmation & Auditor Bypass
+  - **Bucket 2:** Secret, Filesystem, Self-Modification & Persistence Access
+  - **Bucket 3:** Outbound Network, Exfiltration & MCP Connectors (including Combined Data-Path Analysis when secret reads and outbound network calls co-occur)
+  - **Bucket 4:** Unverifiable Runtime Execution & Obfuscation (`curl | sh`, unpinned `npx`/`pip`, `eval`/`exec`, base64/hex/unicode escapes)
+  - **Bucket 5:** Local Machine Escalation (`machineId`, `CopyToBox`, `CopyFromBox`, `request_smart_mode_approval`)
+- **What This Static Audit Does Not Catch:**
+  - Dynamically fetched remote payloads whose server-side contents change after the audit
+  - Multi-stage or delayed prompt-injection payloads returned at runtime by external APIs or MCP servers
+  - Time-bombed or state-gated logic hidden inside undecodable runtime blobs (flagged as uninspected under Bucket 4)
+  - Author identity, hosting-account compromise, or files beyond the 50-file / 100 KB per-file / 250 KB aggregate read caps
+- **Refusal & Non-Certification Boundaries:**
+  - Never executes audited code, scripts, or embedded URLs
+  - Never reads `/workspace/.wattcoin_env` into model context or echoes `wck_...` / `wcl_...` in chat
+  - Never outputs a "Safe", "Pass", checkmark badge, or numeric security score — always prepends `SCOPE_NOTE.txt` verbatim
+
+### 3. Company & Competitor Deep-Dive Analyst ($19 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `company-deep-dive`
+- **Price:** $19.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Alternate / Registry Name:** Corporate & Competitor OSINT Deep-Dive
+- **Product Page URL:** https://botappstore.com/bots/company-deep-dive.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-company-deep-dive
+- **Included Skills:** `company-deep-dive-setup` + `company-deep-dive`
+- **Deliverable:** *Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor comparison matrix—with exact accession numbers and UTC retrieval timestamps.*
+- **On-Chain SOL Checkout & License Architecture:**
+  1. **15-Minute Locked SOL Quote:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "company-deep-dive"}`) locks the live SOL/USD rate for `$19.00 USD` and generates a unique order memo (`wcl:ord_<24-hex>`), exact lamport tag, and `checkout_token` (`ct_<48-hex>`).
+  2. **Non-Custodial On-Chain Verification:** Buyer sends SOL directly to the WattCoin Treasury Wallet (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`) and submits the Solana transaction signature to `POST https://www.wattcoin.org/api/v1/agents/license/purchase` (`{"sku": "company-deep-dive", ...}`). Issues a private `wcl_<64-hex>` bearer license code and unlocks the unlisted Grok Bot template URL.
+  3. **Turn-1 Onboarding & License Binding (`company-deep-dive-setup`):** Installs two read-only Python stdlib helpers at `chmod 500` (`-r-x------`) in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_dd_fetch.py`), registers/activates `/workspace/.wattcoin_env` (`chmod 600`), and binds the `wcl_<64-hex>` code via stdin (`POST https://www.wattcoin.org/api/v1/agents/license/claim` with `sku: "company-deep-dive"`).
+  4. **Mandatory Pre-Flight License Gate (`company-deep-dive`):** Every dossier run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=company-deep-dive`) and requires `"sku_licensed": true`.
+- **7-Section Cited Primary-Source Dossier (`/workspace/dossiers/<slug>-<timestamp>/REPORT.md`):**
+  - Verbatim `SCOPE_NOTE.txt` prepended at the top of every dossier
+  - **Section 1:** Entity Snapshot & Verified Identifiers (Legal Name, 10-digit CIK, Tickers, SIC Code, State of Incorporation, Fiscal Year End, Principal Address)
+  - **Section 2:** SEC EDGAR Filing & Capital Breakdown (`10-K`, `10-Q`, `8-K` Items 1.01/2.01/5.02, `DEF 14A`, `Form 4`, `S-1`, and `Form D` with exact accession numbers and direct archive URLs)
+  - **Section 3:** Patent & IP Footprint (`efts.sec.gov` full-text patent/IP disclosures across SEC filings + `search.patentsview.org` USPTO PatentsView dockets)
+  - **Section 4:** Domain & Technical Infrastructure Footprint (`rdap.org` domain status, registrar, registration/expiration dates, and nameservers)
+  - **Section 5:** Competitor Comparison Matrix (side-by-side table comparing 1 primary entity + up to 4 competitors across CIK, SIC, state, FYE, latest `10-K`/`10-Q`, and 180-day `8-K` velocity)
+  - **Section 6:** Skipped, Unverified, or Unavailable Sources Log
+  - **Section 7:** Primary Source Index (every fetched URL, HTTP status, byte count, and UTC retrieval timestamp from `RAW_SOURCES.json`)
+- **Hardened Fetch Helper (`.wattcoin_dd_fetch.py`):**
+  - Runs with `/usr/bin/python3 -I` using Python stdlib only (`0500` permissions)
+  - Enforces HTTPS-only DNS-pinned SSRF protection (`_PinnedHTTPSConnection`), rejects IP literals and private/loopback/link-local ranges, sends SEC-compliant `User-Agent: WattCoinDeepDive/1.0 (https://botappstore.com; contact@wattcoin.org)` at `<= 5 req/s`, enforces caps of 5 entities / 40 HTTP requests / 200 KB per doc / 15s per-request deadline, and wraps all external strings in random 128-bit `<untrusted_data_<32-hex>>` tags
+- **What This Public-Filing Dossier Does Not Cover:**
+  - Non-reporting private companies with zero SEC Form D/S-1 filings and zero indexed USPTO patents
+  - Unfiled commercial contracts, trade secrets, internal financial projections, or local municipal building permits
+  - Patents or domains registered under unnamed subsidiary or shell LLCs unless queried directly
+  - Point-in-time filing lag or subsequent registrant amendments (`10-K/A`, `10-Q/A`, `8-K/A`)
+- **Mandatory Refusal Boundaries:**
+  - Never outputs stock buy, sell, or hold ratings, valuation multiples, or price targets
+  - Never outputs legal conclusions on patent validity, freedom-to-operate, or infringement liability
+  - Pauses for confirmation on ambiguous company names (`AMBIGUOUS_ENTITY`) and automatically excludes individual non-corporate SEC filers (`INDIVIDUAL_EXCLUDED`)
+
+### 4. SEC & Patent Watchdog Digest ($29 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `sec-patent-watchdog`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Alternate / Registry Name:** SEC EDGAR & Patent Filing Watchdog
+- **Product Page URL:** https://botappstore.com/bots/sec-patent-watchdog.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-sec-patent-watchdog
+- **Included Skills:** `sec-patent-watchdog-setup` + `sec-patent-watchdog`
+- **Deliverable:** *A zero-noise delta digest of new SEC EDGAR filings and USPTO patent/IP publications for up to 10 tickers/CIKs — written only when something actually changed.*
+- **On-Chain SOL Checkout & License Architecture:**
+  1. **15-Minute Locked SOL Quote:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "sec-patent-watchdog"}`) locks the live SOL/USD rate for `$29.00 USD` and generates a unique order memo (`wcl:ord_<24-hex>`), exact lamport tag, and `checkout_token` (`ct_<48-hex>`).
+  2. **Non-Custodial On-Chain Verification:** Buyer sends SOL directly to the WattCoin Treasury Wallet (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`) and submits the Solana transaction signature to `POST https://www.wattcoin.org/api/v1/agents/license/purchase` (`{"sku": "sec-patent-watchdog", ...}`). Issues a private `wcl_<64-hex>` bearer license code.
+  3. **Turn-1 Onboarding & License Binding (`sec-patent-watchdog-setup`):** Registers/activates `/workspace/.wattcoin_env` (`chmod 600`) and binds the `wcl_<64-hex>` code via `POST https://www.wattcoin.org/api/v1/agents/license/claim` with `sku: "sec-patent-watchdog"`.
+  4. **Mandatory Pre-Flight License Gate (`sec-patent-watchdog`):** Every run first checks `GET https://www.wattcoin.org/api/v1/agents/license?sku=sec-patent-watchdog` and requires `"sku_licensed": true`.
+- **What It Does:**
+  - Tracks SEC EDGAR `10-K`, `10-Q`, `8-K`, `Form 4`, `13F-HR`, and `S-1` filings plus USPTO patent/IP publications for up to 10 tickers/CIKs
+  - Stateful `state.json` baseline & diff engine; writes `DELTA_SUMMARY.json` + `DIGEST_<timestamp>.md`
+  - Native Grok Bot `UpdateRoutine` scheduling; stays quiet when zero new filings land
+- **Sample Prompt:** `Check my SEC & patent watchlist for NVDA, AMD, and AAPL...`
+- **Mandatory Refusal Boundaries:**
+  - Never sends empty filler alerts when the delta is zero
+  - Never bypasses SEC EDGAR rate limits (`<= 10 req/sec`) or `User-Agent` identification
+  - Never connects to brokerage APIs, executes trades, or issues buy/sell/hold advice; never opines on patent validity or infringement
+
+---
+
+## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
+
+> The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
+
+### 5. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
+- **Slug:** `print-farm-ops`
+- **Scope:** Read-only OrcaSlicer / Bambu Studio `.3mf` container inspector, filament spool & desiccant ledger, and unit-economics calculator (`/workspace/farm_queue_report.csv`).
+- **Refusal Boundaries:** Never transmits G-code or triggers remote printer actuation without explicit per-job confirmation; never mutates master `.3mf` files in place.
+
+### 6. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
+- **Slug:** `robotics-telemetry-inspector`
+- **Scope:** Offline diagnostic analyzer for robotic joint actuator thermal/torque CSV/JSON logs and 16S LiFePO4 battery management system (BMS) cell-voltage delta time series (`/workspace/telemetry_diagnostics.md`).
+- **Refusal Boundaries:** Strictly read-only log analysis; never sends motor/actuator commands, CAN frames, or BMS protection register writes.
+
+---
+
+## On-Chain SOL Licensing & Verification API (`https://www.wattcoin.org`)
+
+All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same non-custodial Solana checkout and license-binding contract:
+
+1. **`POST https://www.wattcoin.org/api/v1/agents/license/quote`**
+   - Request body: `{"sku": "<sku>", "source": "botappstore" | "coinloader", "buyer_wallet": "<optional_base58>"}`
+   - Supported SKUs:
+     - `bot-skill-auditor` ($29.00 USD in SOL — Bot & Skill Security Auditor)
+     - `company-deep-dive` ($19.00 USD in SOL — Company & Competitor Deep-Dive Analyst)
+     - `sec-patent-watchdog` ($29.00 USD in SOL — SEC & Patent Watchdog Digest)
+     - `solana-wallet-hygiene` ($19.00 USD in SOL — Solana Wallet Hygiene Bot)
+     - `solana-token-scanner` ($29.00 USD in SOL — Retail Token Due-Diligence Bot)
+   - Response: 15-minute locked SOL quote with `order_id` (`ord_<24-hex>`), `checkout_token` (`ct_<48-hex>`), `amount_sol`, `amount_lamports` (including a unique 4-digit lamport tag `0001`–`9999`), `memo` (`wcl:<order_id>`), `recipient_wallet` (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`), and `solana_pay_url`.
+
+2. **`POST https://www.wattcoin.org/api/v1/agents/license/purchase`**
+   - Request body: `{"order_id": "ord_...", "checkout_token": "ct_...", "tx_signature": "<base58_solana_tx_sig>", "sku": "<sku>"}`
+   - Verifies the Solana mainnet transaction on-chain (`getTransaction` with `confirmed` commitment, checking recipient treasury lamport delta, blockTime window, and replay uniqueness) and returns the one-time bearer `license_code` (`wcl_<64-hex>`), the unlisted Grok Bot template import URL, and the Turn-1 activation prompt.
+
+3. **`POST https://www.wattcoin.org/api/v1/agents/license/claim`**
+   - Request headers: `X-Agent-Key: wck_<64-hex>`
+   - Request body: `{"license_code": "wcl_<64-hex>", "sku": "<sku>"}`
+   - Binds the license to the workspace's `agent_id`. Supports up to **3 workspace-reset rebinds** (`max_rebinds: 3`) if the user's `/workspace` container is recreated.
+
+4. **`GET https://www.wattcoin.org/api/v1/agents/license?sku=<sku>`**
+   - Request headers: `X-Agent-Key: wck_<64-hex>`
+   - Pre-flight entitlement check executed by `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py` before every paid skill run. Returns `"sku_licensed": true` when active.
+
+5. **`POST https://www.wattcoin.org/api/v1/agents/license/recover`**
+   - Request body: `{"order_id": "ord_...", "tx_signature": "<base58_solana_tx_sig>", "sku": "<sku>"}`
+   - Recovers license metadata using the original on-chain transaction signature and order ID.
+
+
+---
+
+## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 4 Live Templates)
+
+### Sample 1 — Web & API Text Extractor (`getting-started` + `web-extractor`, $0 Free Forever)
+
+```http
+POST https://www.wattcoin.org/api/v1/scrape HTTP/2
+Content-Type: application/json
+X-Agent-Key: wck_<REDACTED_64_HEX>
+
+{"url": "https://www.wattcoin.org/llms.txt", "format": "text"}
+```
+
+```json
+HTTP/2 200
+x-quota-limit: 10
+x-quota-remaining: 8
+x-quota-reset: 2026-10-27T00:00:00Z
+
+{
+  "success": true,
+  "url": "https://www.wattcoin.org/llms.txt",
+  "format": "text",
+  "free_tier": true,
+  "content": "# WattCoin (WATT) — Agent Reference\n> Utility token on Solana for AI/automation ecosystems..."
+}
+```
+
+
+### Sample 2 — Bot & Skill Security Auditor (`sku: bot-skill-auditor`, $29 in SOL)
+
+```markdown
+> This is a static inspection of the files as they exist right now. It cannot see what any fetched script, installed package, or remote endpoint will actually do — those can change after this audit. It cannot evaluate the author, the hosting account, or anything outside the files inspected. Nothing here is an assurance that this template is safe to run.
+
+# Static Capability Inspection Report: `wattcoin-skills-audit` (`company-deep-dive` & `web-extractor`)
+
+- **Files & Refs Inspected:**
+  - `company-deep-dive-SKILL.md` (`12,283` of `12,283` bytes read; `hidden_unicode_lines: []`; `long_lines: []`)
+  - `web-extractor-SKILL.md` (`3,026` of `3,026` bytes read; `hidden_unicode_lines: []`; `long_lines: []`)
+  - **Total Bytes Inspected:** `15,309` bytes (`2` files of `50` max; aggregate budget `256,000` bytes)
+- **Unread / Unparsed Portions:** `None` (`100%` of both artifacts was plain text within per-file and aggregate byte limits; `unread: []`)
+- **Wrapper Delimiter Tag:** `83abeacb9f26f535`
+
+---
+
+## Bucket 1 — Prompt, Confirmation & Auditor Bypass
+
+No matching patterns (`hidden_unicode_lines`, HTML comments, instructions to skip confirmation cards, or instructions addressed to an auditor/scanner) were found in the inspected lines of `company-deep-dive-SKILL.md` or `web-extractor-SKILL.md`. This is a statement about what is present in those lines, not an assurance.
+
+---
+
+## Bucket 2 — Secret, Filesystem, Self-Modification & Persistence Access
+
+### `web-extractor-SKILL.md`
+1. **Combination — Local Credential Read (`WATTCOIN_AGENT_KEY` from `/workspace/.wattcoin_env`) Paired with Outbound Network Header (`X-Agent-Key` to `https://www.wattcoin.org/api/v1/scrape`):**
+   - `web-extractor-SKILL.md:L11`:
+     > `**Auth.** Read `WATTCOIN_AGENT_KEY` from `/workspace/.wattcoin_env` every run; send as `X-Agent-Key`. Missing file -> run `getting-started` instead of failing.`
+   - **Mechanical Consequence:** Reads the workspace agent API key stored in `/workspace/.wattcoin_env` and transmits it as the `X-Agent-Key` HTTP header to `https://www.wattcoin.org/api/v1/scrape` (see Bucket 3). Together with `web-extractor-SKILL.md:L13`, this forms a direct data path from `/workspace/.wattcoin_env` (`WATTCOIN_AGENT_KEY`) to `https://www.wattcoin.org/api/v1/scrape`.
+2. **Workspace File Writes for Extracted Output:**
+   - `web-extractor-SKILL.md:L20`:
+     > `**Results.** Write anything substantial to a file in `/workspace`; summarize and name the file rather than dumping into chat. Multi-page jobs: scrape sequentially, save each, report once at the end.`
+   - **Mechanical Consequence:** Writes scraped response content to files inside `/workspace`.
+
+### `company-deep-dive-SKILL.md`
+1. **Helper Execution Touching Workspace License & Dossier Files (`/workspace/.wattcoin_license_check.py`, `/workspace/.wattcoin_dd_fetch.py`, `/workspace/dossiers/...`):**
+   - `company-deep-dive-SKILL.md:L11-L14`:
+     > `Never read `/workspace/.wattcoin_env`, `/workspace/.wattcoin_env.bak*`, or `/workspace/.wattcoin_patentsview_key` into chat or model context, never print `WATTCOIN_AGENT_KEY` or `wcl_...` in chat, never modify `/workspace/.wattcoin_license_check.py` or `/workspace/.wattcoin_dd_fetch.py`, and never send any local credential or file content to any external host.`
+     > `1. Before each dossier run, execute `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py`.`
+   - `company-deep-dive-SKILL.md:L19`:
+     > `/usr/bin/python3 -I /workspace/.wattcoin_dd_fetch.py --stdin-json << 'WATTCOIN_DD_REQ_EOF'`
+   - `company-deep-dive-SKILL.md:L27`:
+     > `3. Read the fetched data **only** from `wrapped_sources_path` (`/workspace/dossiers/<slug>-<timestamp>-<6hex>/WRAPPED_SOURCES.txt`), where the entire payload is framed inside a random 128-bit `<untrusted_data_<32-hex>> ... </untrusted_data_<32-hex>>` tag generated with `secrets.token_hex(16)`. Do **not** read `raw_sources_path` (`RAW_SOURCES.json` is saved on disk at `0600` for user export only).`
+   - `company-deep-dive-SKILL.md:L32`:
+     > `- **SEC EDGAR Compliance:** Sends `User-Agent: WattCoinDeepDive/1.0 (https://botappstore.com; contact@wattcoin.org)` (or a user-specific contact string if placed in `/workspace/.wattcoin_sec_ua` at `0600`) and enforces `<= 5 requests/second` (`>= 0.22s` interval across all requests and redirect hops).`
+   - **Mechanical Consequence:** Invokes two local Python helper scripts in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_dd_fetch.py`) and reads/writes dossier artifacts under `/workspace/dossiers/<slug>-<timestamp>-<6hex>/` (`SCOPE_NOTE.txt`, `RAW_SOURCES.json`, `WRAPPED_SOURCES.txt`, `REPORT.md`), while referencing optional workspace configuration files `/workspace/.wattcoin_patentsview_key` and `/workspace/.wattcoin_sec_ua`.
+
+---
+
+## Bucket 3 — Outbound Network, Exfiltration & MCP Connectors
+
+### `web-extractor-SKILL.md`
+1. **Combination — Outbound POST to `https://www.wattcoin.org/api/v1/scrape` Carrying `X-Agent-Key` from `/workspace/.wattcoin_env` and Target URL:**
+   - `web-extractor-SKILL.md:L9`:
+     > `You fetch and extract web page content and JSON endpoints through the `https://www.wattcoin.org/api/v1/scrape` API.`
+   - `web-extractor-SKILL.md:L11`:
+     > `**Auth.** Read `WATTCOIN_AGENT_KEY` from `/workspace/.wattcoin_env` every run; send as `X-Agent-Key`. Missing file -> run `getting-started` instead of failing.`
+   - `web-extractor-SKILL.md:L13`:
+     > `**Calling.** POST `https://www.wattcoin.org/api/v1/scrape` with the URL and `"format"`:`
+   - **Mechanical Consequence:** Sends an outbound HTTPS `POST` request to `https://www.wattcoin.org/api/v1/scrape` containing the user-requested target URL and the `X-Agent-Key` header read from `/workspace/.wattcoin_env` (Bucket 2).
+2. **Direct Outbound `curl` Fallback to User-Specified `<url>`:**
+   - `web-extractor-SKILL.md:L30`:
+     > `**Fallback when out of quota:** run `curl -sL <url>` piped to `python3 -c 'import sys, bs4; print(bs4.BeautifulSoup(sys.stdin.read(), "html.parser").get_text(" ", strip=True))'` in `/workspace` (`bs4` is preinstalled in the container; if `ImportError` ever occurs, run `pip install --quiet beautifulsoup4 2>/dev/null` first).`
+   - **Mechanical Consequence:** Fetches `<url>` directly from the sandbox container using `curl -sL` when the cloud API returns HTTP `429` (`quota_exhausted`).
+
+### `company-deep-dive-SKILL.md`
+1. **Outbound Regulatory & Registry Queries via `/workspace/.wattcoin_dd_fetch.py` (`www.sec.gov`, `data.sec.gov`, `efts.sec.gov`, `search.patentsview.org`, `rdap.org`, `image-ppubs.uspto.gov`):**
+   - `company-deep-dive-SKILL.md:L31`:
+     > `- **HTTPS-Only, DNS-Pinned IP Validation & SSRF Protection (`validate_and_resolve_host`):** Only queries `www.sec.gov`, `data.sec.gov`, `efts.sec.gov`, `search.patentsview.org`, and `rdap.org` (plus verified public RDAP registry redirects matching `ALLOWED_RDAP_DOMAINS` on exact domain or dot-boundary subdomains).`
+   - `company-deep-dive-SKILL.md:L32`:
+     > `- **SEC EDGAR Compliance:** Sends `User-Agent: WattCoinDeepDive/1.0 (https://botappstore.com; contact@wattcoin.org)` (or a user-specific contact string if placed in `/workspace/.wattcoin_sec_ua` at `0600`) and enforces `<= 5 requests/second` (`>= 0.22s` interval across all requests and redirect hops).`
+   - `company-deep-dive-SKILL.md:L61`:
+     > `- Deduplicated list of every primary URL (`data.sec.gov`, `www.sec.gov/Archives/...`, `efts.sec.gov`, `search.patentsview.org`, `image-ppubs.uspto.gov`, `rdap.org`) and its exact UTC `retrieved_at` timestamp used in the dossier.`
+   - **Mechanical Consequence:** Sends company, ticker, CIK, and domain query strings to SEC EDGAR (`www.sec.gov`, `data.sec.gov`, `efts.sec.gov`), USPTO PatentsView (`search.patentsview.org`), and RDAP (`rdap.org`), and sends the contents of `/workspace/.wattcoin_sec_ua` (if present) as the HTTP `User-Agent` header and `/workspace/.wattcoin_patentsview_key` (if present) to `search.patentsview.org`.
+
+---
+
+## Bucket 4 — Unverifiable Runtime Execution & Obfuscation
+
+### `web-extractor-SKILL.md`
+1. **Unpinned `pip install` Fallback (`beautifulsoup4`):**
+   - `web-extractor-SKILL.md:L30`:
+     > `**Fallback when out of quota:** run `curl -sL <url>` piped to `python3 -c 'import sys, bs4; print(bs4.BeautifulSoup(sys.stdin.read(), "html.parser").get_text(" ", strip=True))'` in `/workspace` (`bs4` is preinstalled in the container; if `ImportError` ever occurs, run `pip install --quiet beautifulsoup4 2>/dev/null` first).`
+   - **Mechanical Consequence:** Contains an unpinned `pip install --quiet beautifulsoup4` fallback command if `bs4` raises `ImportError`. What an unpinned package install fetches from PyPI today may differ from what it fetches tomorrow.
+
+### `company-deep-dive-SKILL.md`
+1. **Delegated Execution of Workspace Helper Scripts (`/workspace/.wattcoin_license_check.py` and `/workspace/.wattcoin_dd_fetch.py`):**
+   - `company-deep-dive-SKILL.md:L12`:
+     > `1. Before each dossier run, execute `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py`.`
+   - `company-deep-dive-SKILL.md:L19`:
+     > `/usr/bin/python3 -I /workspace/.wattcoin_dd_fetch.py --stdin-json << 'WATTCOIN_DD_REQ_EOF'`
+   - **Mechanical Consequence:** Executes two Python scripts located in `/workspace` (installed by `company-deep-dive-setup`), whose contents reside outside `company-deep-dive-SKILL.md` itself and must be inspected separately if modified.
+
+---
+
+## Bucket 5 — Local Machine Escalation
+
+No matching patterns (`ListMachines`, `machineId`, `CopyToBox`, `CopyFromBox`, or host PC execution instructions) were found in the inspected lines of `company-deep-dive-SKILL.md` or `web-extractor-SKILL.md`. This is a statement about what is present in those lines, not an assurance.
+```
+
+### Sample 3 — Company & Competitor Deep-Dive Analyst (`sku: company-deep-dive`, $19 in SOL)
+
+```markdown
+> This dossier is an automated compilation of public regulatory filings (SEC EDGAR), patent records (USPTO PatentsView), and domain registration records (RDAP) as retrieved at the UTC timestamps cited below. Public filings reflect registrant assertions and may be amended, delayed, or incomplete. Private subsidiaries, unfiled municipal permits, trade secrets, and commercial contracts below materiality thresholds are not visible in public registries. Nothing in this dossier is investment advice, a price target, a credit rating, or a legal conclusion.
+
+# Company & Competitor Primary-Source Dossier: NVIDIA CORP (`NVDA`) vs. `AMD` & `INTC`
+
+- **Dossier ID:** `nvda-20261026T014632Z-00c5cb`
+- **Generated At (UTC):** `2026-10-26T01:46:35Z` (`2026-10-25 21:46:35 EDT`)
+- **Primary Entity:** `NVIDIA CORP` (`CIK 0001045810`, Ticker: `NVDA`)
+- **Primary Domain:** `nvidia.com`
+- **Competitor Cohort:** `ADVANCED MICRO DEVICES INC` (`CIK 0000002488`, Ticker: `AMD`), `INTEL CORP` (`CIK 0000050863`, Ticker: `INTC`)
+- **Documents Retrieved:** `9 / 40` (Cap: `5` entities, `40` HTTP requests, `204,800` bytes/doc, `15s` timeout)
+- **Skipped / Failed Sources:** `0`
+
+---
+
+## Section 1 — Entity Snapshot & Verified Identifiers
+
+| Field | Primary-Source Value | Source / Retrieval Timestamp (UTC) |
+|---|---|---|
+| **Legal Entity Name** | `NVIDIA CORP` | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **SEC CIK (10-digit)** | `0001045810` | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **Entity Type** | `operating` | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **Tickers & Exchanges** | `NVDA` (`Nasdaq`) | `https://www.sec.gov/files/company_tickers.json` (`2026-10-26T01:46:32Z`) |
+| **SIC Code & Description** | `3674` — *Semiconductors & Related Devices* | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **State of Incorporation** | `DE` (Delaware) | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **EIN** | `94-3177549` (`943177549`) | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **Fiscal Year End (MMDD)** | `0131` (January 31) | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **Latest Annual Report (`10-K`)** | `2026-02-25` | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **Latest Quarterly Report (`10-Q`)** | `2026-08-26` (Period Ended `2026-07-26`, Accession `0001045810-26-000075`) | `https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm` (`2026-10-26T01:46:32Z`) |
+| **180-Day `8-K` Event Velocity** | `8` filings | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+| **Recent `Form D` Private Offerings** | `0` in recent submissions window | `https://data.sec.gov/submissions/CIK0001045810.json` (`2026-10-26T01:46:32Z`) |
+
+---
+
+## Section 2 — SEC EDGAR Filing & Capital Breakdown
+
+### 2.1 Primary Periodic & Current Reports (`10-K`, `10-Q`, `8-K`) — `NVIDIA CORP` (`CIK 0001045810`)
+
+| Form | Filing Date | Report Date | Items | Accession Number | Direct SEC Archive URL |
+|---|---|---|---|---|---|
+| `8-K` | `2026-09-03` | `2026-09-02` | `8.01` (Other Events) | `0001045810-26-000078` | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000078/nvda-20260902.htm |
+| `10-Q` | `2026-08-26` | `2026-07-26` | Quarterly Report | `0001045810-26-000075` | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm |
+| `8-K` | `2026-08-26` | `2026-08-26` | `2.02, 9.01` (Results of Operations & Financial Condition; Exhibits) | `0001045810-26-000073` | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm |
+| `8-K` | `2026-08-17` | `2026-08-17` | `1.01, 2.03, 7.01` (Entry into a Material Definitive Agreement; Creation of a Direct Financial Obligation; Reg FD) | `0001045810-26-000069` | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm |
+| `8-K` | `2026-07-02` | `2026-06-28` | `5.02` (Departure/Election of Directors or Principal Officers; Compensatory Arrangements) | `0001045810-26-000060` | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm |
+| `8-K` | `2026-06-30` | `2026-06-24` | `5.07` (Submission of Matters to a Vote of Security Holders) | `0001045810-26-000056` | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm |
+
+### 2.2 Recent Insider Ownership Filings (`Form 4` Sample from Latest 25 Filings) — `NVIDIA CORP` (`CIK 0001045810`)
+
+| Form | Filing Date | Report Date | Accession Number | Direct SEC Archive URL |
+|---|---|---|---|---|
+| `4` | `2026-10-09` | `2026-10-07` | `0001197647-26-000011` | https://www.sec.gov/Archives/edgar/data/1045810/000119764726000011/0001197647-26-000011-index.htm |
+| `4` | `2026-09-23` | `2026-09-21` | `0001696841-26-000014` | https://www.sec.gov/Archives/edgar/data/1045810/000169684126000014/0001696841-26-000014-index.htm |
+| `4` | `2026-09-22` | `2026-09-18` | `0001199039-26-000016` | https://www.sec.gov/Archives/edgar/data/1045810/000119903926000016/0001199039-26-000016-index.htm |
+| `4` | `2026-09-18` | `2026-09-16` | `0001243821-26-000007` | https://www.sec.gov/Archives/edgar/data/1045810/000124382126000007/0001243821-26-000007-index.htm |
+| `4` | `2026-09-18` | `2026-09-16` | `0001283854-26-000010` | https://www.sec.gov/Archives/edgar/data/1045810/000128385426000010/0001283854-26-000010-index.htm |
+| `4` | `2026-09-18` | `2026-09-16` | `0001696841-26-000012` | https://www.sec.gov/Archives/edgar/data/1045810/000169684126000012/0001696841-26-000012-index.htm |
+| `4` | `2026-09-18` | `2026-09-16` | `0001588670-26-000014` | https://www.sec.gov/Archives/edgar/data/1045810/000158867026000014/0001588670-26-000014-index.htm |
+| `4` | `2026-09-18` | `2026-09-16` | `0001197649-26-000012` | https://www.sec.gov/Archives/edgar/data/1045810/000119764926000012/0001197649-26-000012-index.htm |
+| `4` | `2026-09-11` | `2026-09-09` | `0002152188-26-000005` | https://www.sec.gov/Archives/edgar/data/1045810/000215218826000005/0002152188-26-000005-index.htm |
+| `4` | `2026-09-08` | `2026-09-03` | `0001199039-26-000014` | https://www.sec.gov/Archives/edgar/data/1045810/000119903926000014/0001199039-26-000014-index.htm |
+
+---
+
+## Section 3 — Patent & IP Footprint
+
+### 3.1 SEC EDGAR Full-Text Patent & IP Disclosures (`efts.sec.gov`)
+
+| Entity | Query Organization | Total Indexed SEC IP Filing Hits (`10-K`, `10-Q`, `8-K`, `S-1`, `20-F`) | Retrieval Timestamp (UTC) | Source Query URL |
+|---|---|---:|---|---|
+| **NVIDIA CORP (`NVDA`)** | `NVIDIA CORP` | **148** | `2026-10-26T01:46:32Z` | `https://efts.sec.gov/LATEST/search-index?q=%22NVIDIA%20CORP%22%20AND%20%28patent%20OR%20%22intellectual%20property%22%20OR%20USPTO%29&forms=10-K,10-Q,8-K,S-1,20-F` |
+| **ADVANCED MICRO DEVICES INC (`AMD`)** | `ADVANCED MICRO DEVICES INC` | **1,980** | `2026-10-26T01:46:33Z` | `https://efts.sec.gov/LATEST/search-index?q=%22ADVANCED%20MICRO%20DEVICES%20INC%22%20AND%20%28patent%20OR%20%22intellectual%20property%22%20OR%20USPTO%29&forms=10-K,10-Q,8-K,S-1,20-F` |
+| **INTEL CORP (`INTC`)** | `INTEL CORP` | **570** | `2026-10-26T01:46:34Z` | `https://efts.sec.gov/LATEST/search-index?q=%22INTEL%20CORP%22%20AND%20%28patent%20OR%20%22intellectual%20property%22%20OR%20USPTO%29&forms=10-K,10-Q,8-K,S-1,20-F` |
+
+#### Representative Indexed SEC IP Disclosure Filings (`NVIDIA CORP`)
+- `10-K` filed `2012-03-13` (Period Ending `2012-01-29`, Accession `0001045810-12-000013`): https://www.sec.gov/Archives/edgar/data/1045810/000104581012000013/nvda-2012x10k.htm
+- `10-Q` filed `2011-11-22` (Period Ending `2011-10-30`, Accession `0001045810-11-000056`): https://www.sec.gov/Archives/edgar/data/1045810/000104581011000056/nvda2011q310q.htm
+- `10-Q` filed `2011-08-25` (Period Ending `2011-07-31`, Accession `0001045810-11-000046`): https://www.sec.gov/Archives/edgar/data/1045810/000104581011000046/q212form10q.htm
+- `10-Q` filed `2011-05-27` (Period Ending `2011-05-01`, Accession `0001045810-11-000031`): https://www.sec.gov/Archives/edgar/data/1045810/000104581011000031/q112form10q.htm
+- `10-K` filed `2011-03-16` (Period Ending `2011-01-30`, Accession `0001045810-11-000015`): https://www.sec.gov/Archives/edgar/data/1045810/000104581011000015/fy2011form10k.htm
+
+### 3.2 USPTO PatentsView Docket Status (`search.patentsview.org`)
+- **Status:** `api_key_optional_not_configured` (checked at `2026-10-26T01:46:33Z`–`2026-10-26T01:46:35Z`). No optional `/workspace/.wattcoin_patentsview_key` was present; SEC EDGAR EFTS full-text IP disclosures were retrieved directly as the primary regulatory IP source.
+
+---
+
+## Section 4 — Domain & Technical Infrastructure Footprint (`RDAP`)
+
+| Field | Primary-Source Value | Source / Retrieval Timestamp (UTC) |
+|---|---|---|
+| **Queried Domain** | `nvidia.com` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **Registry Handle** | `4076489_DOMAIN_COM-VRSN` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **Sponsoring Registrar** | `SafeNames Ltd.` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **Domain Status Flags** | `client delete prohibited`, `client transfer prohibited`, `server delete prohibited`, `server transfer prohibited`, `server update prohibited` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **Initial Registration Date** | `1993-04-20T04:00:00Z` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **Registry Expiration Date** | `2034-04-21T04:00:00Z` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **Last Changed Timestamp** | `2025-04-01T01:32:38Z` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **RDAP Database Update** | `2026-10-26T01:46:15Z` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+| **Authoritative Nameservers** | `dns1.p09.nsone.net`, `dns2.p09.nsone.net`, `ns5.dnsmadeeasy.com`, `ns6.dnsmadeeasy.com`, `ns7.dnsmadeeasy.com` | `https://rdap.org/domain/nvidia.com` (`2026-10-26T01:46:33Z`) |
+
+---
+
+## Section 5 — Competitor Comparison Matrix (`NVDA` vs. `AMD` vs. `INTC`)
+
+| Metric | `NVIDIA CORP` (`NVDA`) | `ADVANCED MICRO DEVICES INC` (`AMD`) | `INTEL CORP` (`INTC`) |
+|---|---|---|---|
+| **SEC CIK** | `0001045810` | `0000002488` | `0000050863` |
+| **Exchange / Ticker** | `Nasdaq: NVDA` | `Nasdaq: AMD` | `Nasdaq: INTC` |
+| **SIC Code** | `3674` (*Semiconductors & Related Devices*) | `3674` (*Semiconductors & Related Devices*) | `3674` (*Semiconductors & Related Devices*) |
+| **State of Incorporation** | `DE` | `DE` | `DE` |
+| **EIN** | `943177549` | `941692300` | `941672743` |
+| **Fiscal Year End (MMDD)** | `0131` | `1226` | `1227` |
+| **Latest `10-K` Filing Date** | `2026-02-25` | `2026-02-04` | `2026-01-23` |
+| **Latest `10-Q` Filing Date** | `2026-08-26` (`0001045810-26-000075`) | `2026-08-05` | `2026-07-24` (`0000050863-26-000157`) |
+| **180-Day `8-K` Count** | `8` | `7` | `4` |
+| **Recent `Form D` Count** | `0` | `0` | `2` |
+| **Latest Material `8-K` Items** | `8.01` (`2026-09-03`), `2.02, 9.01` (`2026-08-26`), `1.01, 2.03, 7.01` (`2026-08-17`) | `3.02` (`2026-09-28`, `0000002488-26-000182`), `5.02, 9.01` (`2026-08-19`, `0000002488-26-000163`), `1.01, 2.03, 9.01` (`2026-08-17`, `0001193125-26-354029`) | `7.01, 8.01, 9.01` (`2026-08-12`, `0001193125-26-346806`), `2.02, 9.01` (`2026-07-23`, `0000050863-26-000155`), `5.07` (`2026-05-15`, `0000050863-26-000118`) |
+| **SEC EFTS Patent/IP Hits** | `148` | `1,980` | `570` |
+
+---
+
+## Section 6 — Skipped, Unverified, or Unavailable Sources Log
+
+- **HTTP / Network Skipped Sources (`skipped` array):** `0` (all `9` outbound HTTPS requests completed with HTTP `200 OK` within the `15s` deadline and byte caps).
+- **Optional USPTO PatentsView API Key:** `patentsview_status: "api_key_optional_not_configured"` for `NVDA`, `AMD`, and `INTC` (`/workspace/.wattcoin_patentsview_key` not configured; SEC EDGAR EFTS IP/patent search index queried instead).
+
+---
+
+## Section 7 — Primary Source Index
+
+| # | Target Entity / Scope | Source URL | Status | Retrieved At (UTC) |
+|---:|---|---|---|---|
+| 1 | SEC EDGAR Company Tickers Index | `https://www.sec.gov/files/company_tickers.json` | `200 OK` | `2026-10-26T01:46:32Z` |
+| 2 | `NVIDIA CORP` (`CIK 0001045810`) Submissions | `https://data.sec.gov/submissions/CIK0001045810.json` | `200 OK` | `2026-10-26T01:46:32Z` |
+| 3 | `NVIDIA CORP` SEC EFTS Patent/IP Index | `https://efts.sec.gov/LATEST/search-index?q=%22NVIDIA%20CORP%22%20AND%20%28patent%20OR%20%22intellectual%20property%22%20OR%20USPTO%29&forms=10-K,10-Q,8-K,S-1,20-F` | `200 OK` | `2026-10-26T01:46:32Z` |
+| 4 | `nvidia.com` RDAP Domain Lookup | `https://rdap.org/domain/nvidia.com` | `200 OK` | `2026-10-26T01:46:33Z` |
+| 5 | `nvidia.com` Registry RDAP Redirect (Verisign) | `https://rdap.verisign.com/com/v1/domain/nvidia.com` | `200 OK` | `2026-10-26T01:46:33Z` |
+| 6 | `ADVANCED MICRO DEVICES INC` (`CIK 0000002488`) Submissions | `https://data.sec.gov/submissions/CIK0000002488.json` | `200 OK` | `2026-10-26T01:46:33Z` |
+| 7 | `ADVANCED MICRO DEVICES INC` SEC EFTS Patent/IP Index | `https://efts.sec.gov/LATEST/search-index?q=%22ADVANCED%20MICRO%20DEVICES%20INC%22%20AND%20%28patent%20OR%20%22intellectual%20property%22%20OR%20USPTO%29&forms=10-K,10-Q,8-K,S-1,20-F` | `200 OK` | `2026-10-26T01:46:33Z` |
+| 8 | `INTEL CORP` (`CIK 0000050863`) Submissions | `https://data.sec.gov/submissions/CIK0000050863.json` | `200 OK` | `2026-10-26T01:46:34Z` |
+| 9 | `INTEL CORP` SEC EFTS Patent/IP Index | `https://efts.sec.gov/LATEST/search-index?q=%22INTEL%20CORP%22%20AND%20%28patent%20OR%20%22intellectual%20property%22%20OR%20USPTO%29&forms=10-K,10-Q,8-K,S-1,20-F` | `200 OK` | `2026-10-26T01:46:34Z` |
+```
+
+### Sample 4 — SEC & Patent Watchdog Digest (`sku: sec-patent-watchdog`, $29 in SOL)
+
+```markdown
+# SEC & Patent Watchdog Delta Digest
+> Scope Note (SCOPE_NOTE.txt): Automated delta compilation of public SEC EDGAR filings and USPTO patent publications. This report is not investment, financial, or legal advice, makes no stock buy/sell/hold recommendation, and makes no patent validity or infringement determination.
+
+- Generated At (UTC): 2026-10-25T13:00:00Z
+- Watchlist (2/10): NVDA (CIK 0001045810), AMD (CIK 0000002488)
+- Baseline: /workspace/watchlists/state.json (last checked 2026-10-24T13:00:00Z)
+- Delta: 3 new SEC filings, 1 new patent publication
+
+## 1. NVDA — NVIDIA CORP (CIK: 0001045810)
+| Form | Filed Date | Accession Number | Primary Document & Items | Archive URL |
+| :--- | :--- | :--- | :--- | :--- |
+| 8-K | 2026-10-24 | 0001045810-26-000212 | Item 5.02 · nvda-20261022.htm | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000212/nvda-20261022.htm |
+| Form 4 | 2026-10-23 | 0001045810-26-000209 | Insider transaction · xslF345X05/form4.xml | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000209/form4.xml |
+
+## 2. AMD — ADVANCED MICRO DEVICES INC (CIK: 0000002488)
+| Form | Filed Date | Accession Number | Primary Document & Items | Archive URL |
+| :--- | :--- | :--- | :--- | :--- |
+| 13F-HR | 2026-10-24 | 0000002488-26-000118 | Institutional holdings · primary_doc.xml | https://www.sec.gov/Archives/edgar/data/2488/000000248826000118/primary_doc.xml |
+
+## 3. Patent & IP Disclosure Delta (USPTO PatentsView / SEC EFTS)
+- AMD (ADVANCED MICRO DEVICES INC): 1 new patent publication since baseline (`2026-10-24T13:00:00Z`) — logged in `/workspace/watchlists/DELTA_SUMMARY.json` with publication ID and retrieval timestamp.
+
+## 4. Zero-Noise Routine Rule
+- Outputs written to `/workspace/watchlists/DELTA_SUMMARY.json` and `/workspace/watchlists/DIGEST_20261025T130000Z.md`.
+- When `delta == 0` across all watched CIKs and patent queries, no digest file is written and the scheduled Grok Bot routine sends zero alert messages.
+```
+

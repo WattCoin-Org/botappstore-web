@@ -4,10 +4,12 @@
 
 - **Canonical Storefront:** https://botappstore.com/
 - **Machine-Readable Catalog:** https://botappstore.com/llms.txt
-- **Free Flagship Utility (1-Click Install):** https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol
-- **Paid Security Auditor ($29 in SOL):** https://botappstore.com/#card-bot-skill-auditor
-- **Paid Company & Competitor Deep-Dive Analyst ($19 in SOL):** https://botappstore.com/#card-company-deep-dive
-- **Paid SEC & Patent Watchdog Digest ($29 in SOL):** https://botappstore.com/#card-sec-patent-watchdog
+- **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt
+- **Sister Solana & Crypto Storefront:** https://coinloader.com/
+- **Free Flagship Utility (1-Click Install):** https://botappstore.com/bots/web-text-extractor.html (Direct Grok Bot import: https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol)
+- **Paid Bot & Skill Security Auditor ($29 in SOL, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
+- **Paid Company & Competitor Deep-Dive Analyst ($19 in SOL, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
+- **Paid SEC & Patent Watchdog Digest ($29 in SOL, `sku: sec-patent-watchdog`, Registry Name: *SEC EDGAR & Patent Filing Watchdog*):** https://botappstore.com/bots/sec-patent-watchdog.html (Checkout: https://botappstore.com/#card-sec-patent-watchdog)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
@@ -21,7 +23,7 @@
 - **One-Click Grok Bot Import URL:** https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol
 - **Included Skills:** `getting-started` + `web-extractor`
 - **What It Does:**
-  1. **Turn-1 Onboarding (`getting-started`):** Checks for `/workspace/.wattcoin_env` (`0600` permissions). If missing, registers an agent key (`wck_...`) via `POST https://www.wattcoin.org/api/v1/agents/register`, completes `onboarding_v1` (+50 WATT) and `starter_v1` (+50 WATT), verifies `"initial_tasks_completed": true` via `GET /api/v1/agents/me`, and runs a test extraction against `https://example.com`.
+  1. **Turn-1 Onboarding (`getting-started`):** Checks for `/workspace/.wattcoin_env` (`0600` permissions). If missing, registers an agent key (`wck_...`) via `POST https://www.wattcoin.org/api/v1/agents/register`, completes `onboarding_v1` (+25 WATT) and `starter_v1` (+75 WATT) for **100 WATT** total, verifies `"initial_tasks_completed": true` via `GET /api/v1/agents/me`, and runs a test extraction against `https://example.com`.
   2. **10/Day Free Cloud Text Extraction (`web-extractor`):** Calls `POST https://www.wattcoin.org/api/v1/scrape` with `{"url": "<target>", "format": "text"}` and reports `X-Quota-Limit: 10`, `X-Quota-Remaining`, and `X-Quota-Reset` headers.
   3. **Paid Modes Disclosure:** `format: "html"` and `format: "json"` are paid per-call modes on the registry (see `https://www.wattcoin.org/llms.txt` for paid-tier specs); this free utility uses `format: "text"` (10/day free) and never invokes paid modes without explicit user confirmation.
   4. **Automatic Local Sandbox Fallback:** When `X-Quota-Remaining: 0` or `HTTP 429` (`reason: "quota_exhausted"`), automatically falls back to local `curl -sL` + Python HTML-to-text parsing (`bs4` or stdlib `html.parser`) inside `/workspace`.
@@ -34,6 +36,7 @@
 - **Status:** LIVE NOW
 - **SKU:** `bot-skill-auditor`
 - **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Product Page URL:** https://botappstore.com/bots/bot-skill-auditor.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-bot-skill-auditor
 - **Included Skills:** `auditor-setup` + `bot-skill-auditor`
 - **Deliverable:** *See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.*
@@ -62,6 +65,8 @@
 - **Status:** LIVE NOW
 - **SKU:** `company-deep-dive`
 - **Price:** $19.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Alternate / Registry Name:** Corporate & Competitor OSINT Deep-Dive
+- **Product Page URL:** https://botappstore.com/bots/company-deep-dive.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-company-deep-dive
 - **Included Skills:** `company-deep-dive-setup` + `company-deep-dive`
 - **Deliverable:** *Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor comparison matrix—with exact accession numbers and UTC retrieval timestamps.*
@@ -96,6 +101,8 @@
 - **Status:** LIVE NOW
 - **SKU:** `sec-patent-watchdog`
 - **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Alternate / Registry Name:** SEC EDGAR & Patent Filing Watchdog
+- **Product Page URL:** https://botappstore.com/bots/sec-patent-watchdog.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-sec-patent-watchdog
 - **Included Skills:** `sec-patent-watchdog-setup` + `sec-patent-watchdog`
 - **Deliverable:** *A zero-noise delta digest of new SEC EDGAR filings and USPTO patent/IP publications for up to 10 tickers/CIKs — written only when something actually changed.*
