@@ -105,7 +105,14 @@
               "name": "SEC & Patent Watchdog Digest",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
-              "description": "In Development (Phase 2 Spec — Not Yet Available): Scheduled daily/weekly monitoring agent that polls SEC EDGAR RSS/JSON feeds and USPTO assignment/publication endpoints, diffing against /workspace/watchlist_state.json."
+              "url": "https://botappstore.com/#card-sec-patent-watchdog",
+              "description": "Automated SEC EDGAR (10-K, 10-Q, 8-K, Form 4, 13F-HR, S-1) and USPTO patent/IP delta tracking for up to 10 tickers/CIKs with a stateful state.json baseline, DELTA_SUMMARY.json + DIGEST_<timestamp>.md outputs, and native Grok Bot UpdateRoutine scheduling that stays quiet when zero new filings land.",
+              "offers": {
+                "@type": "Offer",
+                "price": "29.00",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock"
+              }
             }
           },
           {
@@ -175,7 +182,7 @@
         </a>
         <nav class="nav-links" aria-label="Primary Navigation">
           <a href="#featured-agent">Deep-Dive Analyst ($19 SOL)</a>
-          <a href="#catalog">Agent Catalog (3 Live)</a>
+          <a href="#catalog">Agent Catalog (4 Live)</a>
           <a href="#architecture">How It Works</a>
           <a href="#hardware-stack">Shop &amp; Security Stack</a>
         </nav>
@@ -228,7 +235,7 @@
             </div>
 
             <div class="featured-grid">
-              <!-- Left Column: Live Deep-Dive Analyst + Secondary Callout for All 3 Live Templates -->
+              <!-- Left Column: Live Deep-Dive Analyst + Secondary Callout for All 4 Live Templates -->
               <div class="featured-info">
                 <div>
                   <div class="featured-header-row">
@@ -275,12 +282,12 @@
                     </button>
                   </div>
 
-                  <!-- Secondary Callout for All 3 Live Templates -->
+                  <!-- Secondary Callout for All 4 Live Templates -->
                   <div class="live-utility-callout">
                     <div class="live-utility-info">
                       <div class="live-utility-title">
-                        <span class="badge-live">● 3 LIVE NOW</span>
-                        <span>Free Web Extractor (<code>$0</code>) · Company Deep-Dive (<code>$19 SOL</code>) · Security Auditor (<code>$29 SOL</code>)</span>
+                        <span class="badge-live">● 4 LIVE AUTOMATIONS</span>
+                        <span>Free Web Extractor (<code>$0</code>) · Company Deep-Dive (<code>$19 SOL</code>) · Security Auditor (<code>$29 SOL</code>) · SEC &amp; Patent Watchdog (<code>$29 SOL</code>)</span>
                       </div>
                       <div class="live-utility-sub">
                         Available right now with instant non-custodial SOL checkout (or 1-click free install) and up to 3 workspace-reset rebinds per paid license.
@@ -411,7 +418,7 @@
               <div class="section-kicker">DETERMINISTIC GROK BOT SKILL CATALOG</div>
               <h2 class="section-title">OSINT, Industrial Research &amp; Physical Robotics Agents</h2>
               <p class="section-subtitle">
-                3 live templates available now (1 free web extractor, 1 $19 SOL corporate &amp; competitor deep-dive analyst, and 1 $29 SOL security auditor) and 3 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
+                4 live automations available now (1 free web extractor, 1 $19 SOL corporate &amp; competitor deep-dive analyst, 1 $29 SOL security auditor, and 1 $29 SOL SEC &amp; patent watchdog digest) and 2 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
               </p>
             </div>
 
@@ -421,7 +428,7 @@
                 All Agents <span class="filter-count">(6)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="available">
-                Available Now <span class="filter-count">(3)</span>
+                Available Now <span class="filter-count">(4)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="security">
                 Security &amp; Audits <span class="filter-count">(1)</span>
@@ -435,7 +442,8 @@
             </div>
           </div>
 
-          <div class="catalog-grid" id="catalog-grid">
+          <h3 class="catalog-group-title" id="available-now">Available Now <span class="filter-count">(4)</span></h3>
+          <div class="catalog-grid bot-grid--live" id="catalog-grid">
             <!-- Card 1: Web & API Text Extractor (LIVE · FREE UTILITY) -->
             <article class="bot-card live-card" data-categories="available osint">
               <div>
@@ -542,42 +550,67 @@
               </div>
             </article>
 
-            <!-- Card 4: SEC & Patent Watchdog Digest (Phase 2 Spec, $29) -->
-            <article class="bot-card" data-categories="osint">
+            <!-- Card 4: SEC & Patent Watchdog Digest (LIVE · $29 IN SOL) -->
+            <article class="bot-card bot-card--featured live-card" data-categories="available osint" id="card-sec-patent-watchdog">
               <div>
                 <div class="card-top-meta">
-                  <span class="phase-badge phase2">IN DEVELOPMENT · PHASE 2 SPEC</span>
-                  <span class="skill-slug">sec-patent-watchdog</span>
+                  <span class="phase-badge live">● LIVE · $29 IN SOL</span>
+                  <span class="skill-slug">sec-patent-watchdog-setup + sec-patent-watchdog</span>
                 </div>
                 <div class="card-title-row">
                   <h3 class="card-title">SEC &amp; Patent Watchdog Digest</h3>
-                  <div class="card-price">
-                    Planned: $29
-                    <small>One-time USD license · Spec preview</small>
+                  <div class="card-price free">
+                    $29
+                    <small>in SOL · One-Time License</small>
                   </div>
                 </div>
                 <p class="card-summary">
-                  Scheduled daily/weekly monitoring agent that polls SEC EDGAR RSS/JSON feeds and USPTO assignment/publication endpoints for a user-defined watchlist of CIKs, tickers, or assignee entities.
+                  <strong>Know about new SEC filings and patent publications for your watchlist the day they land—and hear nothing when they don't.</strong> Scheduled delta monitor for up to 10 tickers/CIKs with a stateful baseline and diff engine.
                 </p>
                 <ul class="spec-highlights">
-                  <li><strong>Stateful Delta Diffing:</strong> Compares newly published accession numbers and patent dockets against <code>/workspace/watchlist_state.json</code>.</li>
-                  <li><strong>Zero-Noise Execution:</strong> Emits structured alerts only when verified new filings land; stays completely silent when nothing changed.</li>
-                  <li><strong>Direct Primary Links:</strong> Cites exact EDGAR accession URLs, form types, item numbers, and USPTO publication identifiers.</li>
+                  <li><strong>SEC EDGAR + USPTO Delta Tracking:</strong> Watches <code>10-K</code>, <code>10-Q</code>, <code>8-K</code>, <code>Form 4</code>, <code>13F-HR</code>, and <code>S-1</code> filings plus USPTO patent/IP publications for up to 10 tickers/CIKs.</li>
+                  <li><strong>Stateful Baseline &amp; Diff Engine:</strong> Persists a <code>state.json</code> baseline of last-seen accession numbers and writes <code>DELTA_SUMMARY.json</code> + <code>DIGEST_&lt;timestamp&gt;.md</code> only for what changed.</li>
+                  <li><strong>Native Grok Bot Scheduling:</strong> Registers an <code>UpdateRoutine</code> that stays quiet when zero new filings land.</li>
                 </ul>
+                <details class="sample-audit-preview">
+                  <summary>Preview sample delta digest (NVDA &amp; AMD)</summary>
+                  <pre class="modal-sample-audit"># SEC &amp; Patent Watchdog Delta Digest
+- Generated At (UTC): 2026-10-25T13:00:00Z
+- Watchlist (2/10): NVDA (CIK 0001045810), AMD (CIK 0000002488)
+- Baseline: state.json (last checked 2026-10-24T13:00:00Z)
+- Delta: 3 new SEC filings, 1 new patent publication
+
+## NVDA — NVIDIA CORP
+| Form | Filed | Accession Number | Items / Document |
+| :--- | :--- | :--- | :--- |
+| 8-K | 2026-10-24 | 0001045810-26-000212 | Item 5.02 · nvda-20261022.htm |
+| Form 4 | 2026-10-23 | 0001045810-26-000209 | Insider transaction · xslF345X05/form4.xml |
+
+## AMD — ADVANCED MICRO DEVICES INC
+| Form | Filed | Accession Number | Items / Document |
+| :--- | :--- | :--- | :--- |
+| 13F-HR | 2026-10-24 | 0000002488-26-000118 | Institutional holdings · primary_doc.xml |
+
+## Patent / IP Delta (USPTO)
+- AMD: 1 new publication since baseline (see DELTA_SUMMARY.json for publication ID and URL)
+
+Outputs: DELTA_SUMMARY.json, DIGEST_20261025T130000Z.md
+If zero new filings land, no digest is written and no message is sent.</pre>
+                </details>
                 <div class="guardrail-strip">
-                  <strong>Refusal Boundary:</strong> Never sends noisy "no change" filler messages; never bypasses rate limits or SEC EDGAR <code>User-Agent</code> identification requirements; never executes trades or financial actions.
+                  <strong>Refusal Boundary:</strong> Never sends empty "no change" filler alerts; never bypasses SEC EDGAR rate limits or <code>User-Agent</code> identification; never connects to brokerage APIs or gives buy/sell/hold advice.
                 </div>
               </div>
               <div class="card-actions">
-                <span class="btn-disabled btn-sm" aria-disabled="true">
-                  Not Yet Available
-                </span>
-                <button type="button" class="btn btn-secondary btn-sm" data-open-spec="sec-patent-watchdog">
-                  Inspect SKILL.md Spec
-                </button>
+                <button type="button" class="btn btn--primary" data-open-checkout="sec-patent-watchdog">Buy License &mdash; $29 in SOL</button>
+                <button type="button" class="btn btn--ghost" data-open-spec="sec-patent-watchdog">View Full Spec</button>
               </div>
             </article>
 
+          </div>
+
+          <h3 class="catalog-group-title" id="coming-next">Coming Next <span class="filter-count">(2)</span></h3>
+          <div class="catalog-grid">
             <!-- Card 5: 3D Print Farm & Slicer Queue Ops (Phase 2 Spec, $29) -->
             <article class="bot-card" data-categories="robotics">
               <div>

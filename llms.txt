@@ -7,12 +7,13 @@
 - **Free Flagship Utility (1-Click Install):** https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol
 - **Paid Security Auditor ($29 in SOL):** https://botappstore.com/#card-bot-skill-auditor
 - **Paid Company & Competitor Deep-Dive Analyst ($19 in SOL):** https://botappstore.com/#card-company-deep-dive
+- **Paid SEC & Patent Watchdog Digest ($29 in SOL):** https://botappstore.com/#card-sec-patent-watchdog
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 3 Live)
+## Live Agent Templates (Available Now — 4 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -91,16 +92,33 @@
   - Never outputs legal conclusions on patent validity, freedom-to-operate, or infringement liability
   - Pauses for confirmation on ambiguous company names (`AMBIGUOUS_ENTITY`) and automatically excludes individual non-corporate SEC filers (`INDIVIDUAL_EXCLUDED`)
 
+### 4. SEC & Patent Watchdog Digest ($29 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `sec-patent-watchdog`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Storefront Checkout URL:** https://botappstore.com/#card-sec-patent-watchdog
+- **Included Skills:** `sec-patent-watchdog-setup` + `sec-patent-watchdog`
+- **Deliverable:** *A zero-noise delta digest of new SEC EDGAR filings and USPTO patent/IP publications for up to 10 tickers/CIKs — written only when something actually changed.*
+- **On-Chain SOL Checkout & License Architecture:**
+  1. **15-Minute Locked SOL Quote:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "sec-patent-watchdog"}`) locks the live SOL/USD rate for `$29.00 USD` and generates a unique order memo (`wcl:ord_<24-hex>`), exact lamport tag, and `checkout_token` (`ct_<48-hex>`).
+  2. **Non-Custodial On-Chain Verification:** Buyer sends SOL directly to the WattCoin Treasury Wallet (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`) and submits the Solana transaction signature to `POST https://www.wattcoin.org/api/v1/agents/license/purchase` (`{"sku": "sec-patent-watchdog", ...}`). Issues a private `wcl_<64-hex>` bearer license code.
+  3. **Turn-1 Onboarding & License Binding (`sec-patent-watchdog-setup`):** Registers/activates `/workspace/.wattcoin_env` (`chmod 600`) and binds the `wcl_<64-hex>` code via `POST https://www.wattcoin.org/api/v1/agents/license/claim` with `sku: "sec-patent-watchdog"`.
+  4. **Mandatory Pre-Flight License Gate (`sec-patent-watchdog`):** Every run first checks `GET https://www.wattcoin.org/api/v1/agents/license?sku=sec-patent-watchdog` and requires `"sku_licensed": true`.
+- **What It Does:**
+  - Tracks SEC EDGAR `10-K`, `10-Q`, `8-K`, `Form 4`, `13F-HR`, and `S-1` filings plus USPTO patent/IP publications for up to 10 tickers/CIKs
+  - Stateful `state.json` baseline & diff engine; writes `DELTA_SUMMARY.json` + `DIGEST_<timestamp>.md`
+  - Native Grok Bot `UpdateRoutine` scheduling; stays quiet when zero new filings land
+- **Sample Prompt:** `Check my SEC & patent watchlist for NVDA, AMD, and AAPL...`
+- **Mandatory Refusal Boundaries:**
+  - Never sends empty filler alerts when the delta is zero
+  - Never bypasses SEC EDGAR rate limits (`<= 10 req/sec`) or `User-Agent` identification
+  - Never connects to brokerage APIs, executes trades, or issues buy/sell/hold advice; never opines on patent validity or infringement
+
 ---
 
 ## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
 
-> The following 3 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
-
-### 4. SEC & Patent Watchdog Digest (Phase 2 Spec — Planned: $29 USD One-Time)
-- **Slug:** `sec-patent-watchdog`
-- **Scope:** Scheduled daily/weekly delta monitor polling `/workspace/watchlist.json` against `/workspace/watchlist_state.json` to emit zero-noise Markdown briefs only when new SEC accession numbers or USPTO patent publications appear.
-- **Refusal Boundaries:** Never sends empty filler alerts when delta is zero; never bypasses SEC rate limits; never executes brokerage trades.
+> The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
 
 ### 5. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
 - **Slug:** `print-farm-ops`

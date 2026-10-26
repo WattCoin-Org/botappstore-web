@@ -43,6 +43,30 @@
       defaultPrompt: function (code) {
         return 'Activate my Company & Competitor Deep-Dive Analyst with license code ' + code;
       }
+    },
+    'sec-patent-watchdog': {
+      sku: 'sec-patent-watchdog',
+      name: 'SEC & Patent Watchdog Digest',
+      title: 'SEC & Patent Watchdog Digest — $29 in SOL',
+      slugMeta: 'sku: sec-patent-watchdog · Skills: sec-patent-watchdog-setup + sec-patent-watchdog · 3 Rebinds',
+      priceUsd: 29,
+      priceLabel: '$29 USD in SOL (one-time)',
+      priceUsdHtml: '$29.00 <small>USD</small>',
+      promptHint: 'Check my SEC & patent watchlist for NVDA, AMD, and AAPL...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Install SEC & Patent Watchdog Included in License',
+      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($29 SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>SEC &amp; Patent Watchdog Digest</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Install SEC & Patent Watchdog Included in License ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or together with the tickers/CIKs you want on your watchlist, up to 10):',
+      stepCFootHtml:
+        'On Turn 1, <code>sec-patent-watchdog-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+      defaultPrompt: function (code) {
+        return 'Activate my SEC & Patent Watchdog Digest with license code ' + code;
+      }
     }
   };
 
@@ -241,26 +265,53 @@
     },
     'sec-patent-watchdog': {
       title: 'SEC & Patent Watchdog Digest',
-      slug: 'sec-patent-watchdog',
-      badge: 'IN DEVELOPMENT · PHASE 2 SPEC',
-      badgeClass: 'phase2',
-      price: 'Planned: $29 USD (One-Time License · Spec Preview)',
+      slug: 'sec-patent-watchdog-setup + sec-patent-watchdog',
+      badge: 'LIVE · $29 IN SOL',
+      badgeClass: 'live',
+      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'sec-patent-watchdog',
       specHtml: `
-        <p>Scheduled daily or weekly delta monitoring agent for SEC EDGAR filings and USPTO patent dockets across a user-defined watchlist of CIKs, tickers, and assignees.</p>
-        <h4>What It Does (Phase 2 Specification)</h4>
+        <p><strong>Deliverable:</strong> <em>A zero-noise delta digest of new SEC EDGAR filings and USPTO patent/IP publications for up to 10 tickers/CIKs—written only when something actually changed.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>sec-patent-watchdog-setup</code> + <code>sec-patent-watchdog</code>)</h4>
         <ul>
-          <li><strong>Watchlist Polling:</strong> Reads tracked CIKs, tickers, and patent assignees from <code>/workspace/watchlist.json</code>.</li>
-          <li><strong>Stateful Delta Diffing:</strong> Compares newly published SEC accession numbers and USPTO publication IDs against <code>/workspace/watchlist_state.json</code>.</li>
-          <li><strong>Zero-Noise Digest Generation:</strong> Emits a structured Markdown delta brief only when verified new primary filings appear, and remains completely silent when zero new filings exist.</li>
+          <li><strong>Watchlist Coverage:</strong> Up to 10 tickers/CIKs across <code>10-K</code>, <code>10-Q</code>, <code>8-K</code>, <code>Form 4</code>, <code>13F-HR</code>, and <code>S-1</code> filings plus USPTO patent/IP publications.</li>
+          <li><strong>Stateful Baseline &amp; Diff Engine:</strong> Stores the last-seen accession numbers and publication IDs in <code>state.json</code> and diffs each run against that baseline.</li>
+          <li><strong>Outputs:</strong> <code>DELTA_SUMMARY.json</code> (machine-readable) and <code>DIGEST_&lt;timestamp&gt;.md</code> (human-readable) with exact accession numbers and direct archive links.</li>
+          <li><strong>Native Scheduling:</strong> Registers a Grok Bot <code>UpdateRoutine</code> that stays quiet when zero new filings land.</li>
         </ul>
+        <h4>Sample Prompt</h4>
+        <pre class="modal-sample-audit">Check my SEC &amp; patent watchlist for NVDA, AMD, and AAPL...</pre>
+        <h4>Sample Delta Digest Preview (<code>NVDA</code> &amp; <code>AMD</code>)</h4>
+        <pre class="modal-sample-audit"># SEC &amp; Patent Watchdog Delta Digest
+- Generated At (UTC): 2026-10-25T13:00:00Z
+- Watchlist (2/10): NVDA (CIK 0001045810), AMD (CIK 0000002488)
+- Baseline: state.json (last checked 2026-10-24T13:00:00Z)
+- Delta: 3 new SEC filings, 1 new patent publication
+
+## NVDA — NVIDIA CORP
+| Form | Filed | Accession Number | Items / Document |
+| :--- | :--- | :--- | :--- |
+| 8-K | 2026-10-24 | 0001045810-26-000212 | Item 5.02 · nvda-20261022.htm |
+| Form 4 | 2026-10-23 | 0001045810-26-000209 | Insider transaction · xslF345X05/form4.xml |
+
+## AMD — ADVANCED MICRO DEVICES INC
+| Form | Filed | Accession Number | Items / Document |
+| :--- | :--- | :--- | :--- |
+| 13F-HR | 2026-10-24 | 0000002488-26-000118 | Institutional holdings · primary_doc.xml |
+
+## Patent / IP Delta (USPTO)
+- AMD: 1 new publication since baseline (see DELTA_SUMMARY.json)</pre>
       `,
       execHtml: `
-        <p>Designed for Grok Bot scheduled routines with persistent local state in <code>/workspace</code>.</p>
-        <h4>Execution &amp; State Files</h4>
+        <p>Executes inside your isolated Grok Bot Linux container with persistent local state in <code>/workspace</code>.</p>
+        <h4>Technical Requirements</h4>
         <ul>
-          <li><strong>Watchlist Config:</strong> <code>/workspace/watchlist.json</code> (array of CIKs, tickers, and USPTO assignee names).</li>
-          <li><strong>Checkpoint Ledger:</strong> <code>/workspace/watchlist_state.json</code> (stores last-seen accession numbers and UTC check timestamps).</li>
+          <li><strong>License Binding (<code>sec-patent-watchdog-setup</code>):</strong> Registers and activates <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>, +100 WATT via <code>onboarding_v1</code> + <code>starter_v1</code>) and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST https://www.wattcoin.org/api/v1/agents/license/claim</code> (up to <strong>3 workspace-reset rebinds</strong>); verifies <code>GET /api/v1/agents/license?sku=sec-patent-watchdog</code> returns <code>"sku_licensed": true</code>.</li>
+          <li><strong>State &amp; Output Files:</strong> <code>state.json</code> baseline, <code>DELTA_SUMMARY.json</code>, and <code>DIGEST_&lt;timestamp&gt;.md</code> in <code>/workspace</code>.</li>
+          <li><strong>Scheduling:</strong> Grok Bot <code>UpdateRoutine</code> for recurring runs; a run with zero new filings writes no digest and sends no message.</li>
           <li><strong>Rate-Limit Discipline:</strong> Enforces SEC EDGAR fair-access throttling (<code>&lt;= 10 req/sec</code>) and mandatory <code>User-Agent</code> identification.</li>
         </ul>
       `,
@@ -268,9 +319,10 @@
         <p>Strict anti-noise and compliance rules:</p>
         <h4>Mandatory Refusal Boundaries</h4>
         <ul>
-          <li><strong>No Empty Filler Alerts:</strong> Never sends noisy "no change today" notifications when the filing delta is zero.</li>
+          <li><strong>No Empty Filler Alerts:</strong> Never sends "no change today" notifications when the filing delta is zero.</li>
           <li><strong>No Rate-Limit Bypass:</strong> Never spoofs headers or bypasses SEC EDGAR rate limits.</li>
-          <li><strong>No Financial Execution:</strong> Never connects to brokerage APIs or executes trades.</li>
+          <li><strong>No Financial Execution or Advice:</strong> Never connects to brokerage APIs, executes trades, or issues buy/sell/hold recommendations.</li>
+          <li><strong>No Legal Conclusions:</strong> Reports patent publication IDs and dates as public facts; never opines on validity or infringement.</li>
         </ul>
       `
     },

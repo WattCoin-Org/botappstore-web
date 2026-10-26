@@ -219,13 +219,15 @@ code, pre, .mono {
   white-space: nowrap;
 }
 
-.btn-primary {
+.btn-primary,
+.btn--primary {
   background: linear-gradient(135deg, var(--accent-cyan) 0%, #0ea5e9 100%);
   color: #041019;
   box-shadow: 0 4px 18px rgba(56, 189, 248, 0.25);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn--primary:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 24px rgba(56, 189, 248, 0.38);
   filter: brightness(1.05);
@@ -1855,4 +1857,58 @@ code, pre, .mono {
   padding-left: 18px;
   display: grid;
   gap: 6px;
+}
+
+/* Catalog group headings (Available Now / Coming Next) */
+.catalog-group-title {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 28px 0 14px;
+}
+
+/* Featured live cards + collapsible sample preview */
+.bot-card--featured {
+  border-color: rgba(16, 185, 129, 0.32);
+}
+
+.sample-audit-preview {
+  margin-bottom: 18px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: rgba(5, 8, 14, 0.65);
+}
+
+.sample-audit-preview summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--accent-emerald);
+}
+
+.sample-audit-preview summary:hover {
+  text-decoration: underline;
+}
+
+.sample-audit-preview summary:focus-visible {
+  outline: 2px solid var(--accent-emerald);
+  outline-offset: 2px;
+}
+
+.sample-audit-preview .modal-sample-audit {
+  margin: 0 12px 12px;
+  max-height: 340px;
+  overflow: auto;
+}
+
+.btn--ghost {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.btn--ghost:hover {
+  border-color: var(--accent-emerald);
 }
