@@ -139,6 +139,30 @@
       defaultPrompt: function (code) {
         return 'Activate my Domain, TLS & Email Auth Infrastructure Hygiene Auditor with license code ' + code;
       }
+    },
+    'agent-council': {
+      sku: 'agent-council',
+      name: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator',
+      title: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator — $39 in SOL',
+      slugMeta: 'sku: agent-council · Skills: agent-council-setup + agent-council · One-Time License · 3 Rebinds',
+      priceUsd: 39,
+      priceLabel: '$39 USD in SOL (one-time)',
+      priceUsdHtml: '$39.00 <small>USD</small>',
+      promptHint: 'Convene a 3-seat council (architect, security, skeptic) on this design question and give me the consensus and minority report...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open Agent Council in Grok Bot',
+      statusFooterText: 'Status: LIVE · $39 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($39 in SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>Agent Council — Multi-Model Swarm Debate &amp; Pair-Architect Collaborator</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Agent Council in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or add the design question, file ranges or diff you want the council to work on):',
+      stepCFootHtml:
+        'On Turn 1, <code>agent-council-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>agent_council.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs <code>--discover</code> to list the council seats available on your computer.',
+      defaultPrompt: function (code) {
+        return 'Activate my Agent Council with license code ' + code;
+      }
     }
   };
 
@@ -519,6 +543,69 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
           <li><strong>Passive Only:</strong> No port scanning, brute-force or wordlist subdomain enumeration, fuzzing, zone transfers, SMTP or credential probing, or exploitation.</li>
           <li><strong>Never Claims or Changes Anything:</strong> Never registers a dangling CNAME target and never edits DNS, certificates or server config; remediation is printed for you to review and publish.</li>
           <li><strong>No "Secure" Guarantees:</strong> Results are point-in-time; DKIM is only confirmed for selectors tried, and <code>UNVERIFIED</code> / <code>INCONCLUSIVE</code> are never passes. Not a penetration test or compliance attestation.</li>
+        </ul>
+      `
+    },
+    'agent-council': {
+      title: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator',
+      slug: 'agent-council-setup + agent-council',
+      badge: 'LIVE · $39 IN SOL',
+      badgeClass: 'live',
+      price: '$39 One-Time in SOL (3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'agent-council',
+      specPageUrl: '/bots/agent-council.html',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>A council of 2–6 AI seats (local <code>claude</code> personas, <code>codex</code>, <code>gemini</code>, <code>aider</code>, or BYOK OpenAI / Anthropic / xAI / Gemini / OpenRouter / DeepSeek / Ollama models) that debates, pair-programs, competes on or reviews one problem, and a Chair synthesis with a consensus matrix, minority report, verdict and action plan.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$39 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>agent-council-setup</code> + <code>agent-council</code>)</h4>
+        <pre class="code-pre">---
+name: agent-council
+description: "Use this when the user wants several AI models or personas
+  to debate a design, architecture or security question, pair-program a
+  patch (Driver + Navigator), compete on solutions graded by rubric, or
+  jointly review code / a git diff, with timers, budget caps, mid-flight
+  steering and an HTML transcript."
+---
+Step 0  License gate: .wattcoin_license_check.py check --sku agent-council
+        must return "state": "OK" before every run.
+Step 1  Verify sha256 of agent_council.py (703d307e...0284d7)
+        and bot_common.py (d1941b61...50e526); refuse on mismatch.
+Step 2  /usr/bin/python3 -I /workspace/scripts/agent_council.py --discover
+Step 3  /usr/bin/python3 -I /workspace/scripts/agent_council.py
+        --mode deliberate|pair|compete|review
+        --seats claude:architect,claude:security,claude:skeptic
+        [--files path:1-120] [--git-diff REF] [--rounds N]
+        [--seat-timeout S] [--total-deadline S] [--max-cost-usd X]
+        [--session ID] [--html-out council.html] --prompt-file prompt.md
+Steer   --session ID --status | --inject "note" | --pause | --resume
+Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 usage/refusal · 11 degraded</pre>
+        <h4>Capabilities</h4>
+        <ul>
+          <li><strong>2–6 Seats:</strong> local CLI seats (<code>claude:architect</code>, <code>claude:security</code>, <code>claude:skeptic</code>, <code>codex</code>, <code>gemini</code>, <code>aider</code>) and BYOK HTTP seats (<code>openai:</code>, <code>anthropic:</code>, <code>xai:</code>, <code>gemini:</code>, <code>openrouter:</code>, <code>deepseek</code>, <code>ollama:</code>); <code>--discover</code> lists what your computer can field.</li>
+          <li><strong>4 Modes:</strong> <code>deliberate</code> (blind round 1, anonymized cross-examination), <code>pair</code> (Driver + Navigator, verdict <code>APPROVE</code> / <code>REQUEST_CHANGES</code> / <code>BLOCK</code>), <code>compete</code> (weighted rubric, deterministic winner), <code>review</code> (deduplicated <code>CRITICAL</code>..<code>INFO</code> findings with file:line).</li>
+          <li><strong>Token Efficiency:</strong> one pinned brief so prompt caches hit, line-range <code>--files</code> slices and <code>--git-diff</code> with secret redaction, delta-only forwarding in round 2+, and early stop on consensus. Output is not throttled: model ceilings and high reasoning effort by default.</li>
+          <li><strong>Control:</strong> <code>--seat-timeout</code>, <code>--total-deadline</code>, <code>--max-cost-usd</code>, <code>--quorum</code>; session steering with <code>--status</code>, <code>--inject</code>, <code>--pause</code>, <code>--resume</code>; self-contained HTML viewer via <code>--html-out</code>.</li>
+        </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Convene architect, security and skeptic seats on lib/bot_common.py lines 85-177: is http_json safe for metered, non-idempotent paid POSTs? Two rounds, $2 budget, and write the HTML transcript.</code></p>
+        <p><a href="/bots/agent-council.html">Full spec, pinned runtime hashes &amp; real council transcript →</a></p>
+      `,
+      execHtml: `
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>). CLI seats run from an empty temp directory: <code>claude</code> with tools disabled, <code>codex</code> in its read-only sandbox, <code>aider</code> in dry-run mode. HTTP seats call only the provider you configured, with your own key read by variable name from the environment or an env file.</p>
+        <ul>
+          <li><strong>License Binding (<code>agent-council-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, verifies the SHA-256-pinned <code>agent_council.py</code> and <code>bot_common.py</code>, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code> (up to 3 rebinds).</li>
+          <li><strong>Fail-Closed Exit Codes:</strong> <code>0</code> clean, <code>1</code>/<code>2</code>/<code>3</code> MEDIUM/HIGH/CRITICAL unresolved at <code>--fail-on</code>, <code>10</code> usage error or budget refusal, <code>11</code> degraded (seat timeout or error, lost quorum, deadline).</li>
+          <li><strong>Output:</strong> <code>--format text|markdown|json</code>, <code>--out PATH</code>, <code>--html-out PATH</code>, and <code>--state --delta</code> for recurring reviews; sessions live in <code>/workspace/agent-council/sessions/</code> (<code>0700</code>).</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>Advisory and Read-Only:</strong> Never edits, commits, runs or deploys anything; patches and findings are returned for you to review.</li>
+          <li><strong>No Secrets to Seats:</strong> Refuses <code>.env*</code>, <code>.wattcoin_env*</code>, lockfiles, key files, <code>.git/</code> and <code>node_modules/</code>, and redacts API keys, tokens and private keys from the prompt and context before any seat sees them.</li>
+          <li><strong>No Offensive Tasks:</strong> Declines exploit writing, credential harvesting, detection evasion or attacks on systems you do not own.</li>
+          <li><strong>Consensus Is Not Proof:</strong> Models can be confidently wrong together; cost figures for BYOK seats are estimates and your provider invoice is authoritative.</li>
         </ul>
       `
     },
@@ -1716,4 +1803,134 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       }
     }
   });
+})();
+
+// ---------------------------------------------------------------------------
+// Checkout card on-ramp helper + header Products dropdown (idempotent injectors)
+// ---------------------------------------------------------------------------
+(() => {
+  const NAV_MENU = {"trigger": "Products (8 Live) ▾", "label": "LIVE OSINT & DEVSECOPS AGENTS (8)", "footer": "View All 8 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"]]};
+
+  const ensureCardOnramp = () => {
+    document.querySelectorAll('#checkout-step-pay').forEach((pay) => {
+      if (pay.querySelector('.checkout-card-onramp-details')) return;
+      const actions = pay.querySelector('.checkout-wallet-actions');
+      if (!actions) return;
+      const details = document.createElement('details');
+      details.className = 'checkout-optional-details checkout-card-onramp-details';
+      details.innerHTML =
+        '<summary>\u{1F4B3} Need SOL? How to buy with a Credit Card or Apple Pay (~60 sec)</summary>' +
+        '<ol class="checkout-onramp-steps">' +
+        '<li><strong>Install or open Phantom or Solflare</strong> (browser extension or mobile app).</li>' +
+        '<li>Tap <strong>Buy \u2192 SOL</strong> inside your wallet and pay with <strong>Credit/Debit Card, Apple Pay, or Google Pay</strong> (via MoonPay, Stripe, Coinbase Pay, or Robinhood Connect).</li>' +
+        '<li><strong>Send the exact quoted SOL amount</strong> (including the 4-digit lamport tag) to the recipient treasury address above\u2014or click <strong>Open in Solana Wallet</strong>\u2014then click <strong>Verify Payment &amp; Issue License \u2192</strong>.</li>' +
+        '</ol>' +
+        '<p class="checkout-onramp-note">Non-custodial: the card purchase happens inside your own wallet. We never hold your funds or keys.</p>';
+      actions.insertAdjacentElement('afterend', details);
+    });
+  };
+
+  const buildNavDropdown = (navLinks) => {
+    const onIndex = !/^\/bots\//.test(window.location.pathname);
+    const wrap = document.createElement('div');
+    wrap.className = 'nav-dropdown';
+    const trigger = document.createElement('button');
+    trigger.type = 'button';
+    trigger.className = 'nav-dropdown-trigger';
+    trigger.setAttribute('aria-expanded', 'false');
+    trigger.setAttribute('aria-haspopup', 'true');
+    trigger.textContent = NAV_MENU.trigger;
+    const menu = document.createElement('div');
+    menu.className = 'nav-dropdown-menu';
+    menu.setAttribute('role', 'menu');
+    const label = document.createElement('div');
+    label.className = 'nav-dropdown-label';
+    label.textContent = NAV_MENU.label;
+    menu.appendChild(label);
+    NAV_MENU.items.forEach(([slug, title, tag, price]) => {
+      const a = document.createElement('a');
+      a.className = 'nav-dropdown-item';
+      a.setAttribute('role', 'menuitem');
+      a.href = '/bots/' + slug + '.html';
+      const name = document.createElement('span');
+      name.className = 'nav-dropdown-name';
+      name.textContent = title;
+      if (tag) {
+        const t = document.createElement('span');
+        t.className = 'nav-dropdown-tag';
+        t.textContent = tag;
+        name.appendChild(t);
+      }
+      const badge = document.createElement('span');
+      badge.className = 'nav-dropdown-badge' + (price === 'FREE' ? ' nav-dropdown-badge-free' : '');
+      badge.textContent = price;
+      a.append(name, badge);
+      menu.appendChild(a);
+    });
+    const foot = document.createElement('a');
+    foot.className = 'nav-dropdown-footer';
+    foot.setAttribute('role', 'menuitem');
+    foot.href = onIndex ? '#catalog' : '/#catalog';
+    foot.textContent = NAV_MENU.footer;
+    menu.appendChild(foot);
+    wrap.append(trigger, menu);
+    navLinks.insertBefore(wrap, navLinks.firstChild);
+  };
+
+  const wireNavDropdown = (wrap) => {
+    if (wrap.dataset.dropdownWired) return;
+    wrap.dataset.dropdownWired = '1';
+    const trigger = wrap.querySelector('.nav-dropdown-trigger');
+    let closeTimer = null;
+    const canHover = () => window.matchMedia('(hover: hover) and (min-width: 681px)').matches;
+    const setOpen = (open) => {
+      clearTimeout(closeTimer);
+      wrap.classList.toggle('open', open);
+      trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    };
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      setOpen(!wrap.classList.contains('open'));
+    });
+    wrap.addEventListener('mouseenter', () => { if (canHover()) setOpen(true); });
+    wrap.addEventListener('mouseleave', () => {
+      if (!canHover()) return;
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(() => setOpen(false), 150);
+    });
+    document.addEventListener('click', (e) => {
+      if (!wrap.contains(e.target)) setOpen(false);
+    });
+    wrap.addEventListener('click', (e) => {
+      if (e.target.closest('.nav-dropdown-item, .nav-dropdown-footer')) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && wrap.classList.contains('open')) {
+        setOpen(false);
+        trigger.focus();
+      }
+    });
+    wrap.addEventListener('focusout', (e) => {
+      if (e.relatedTarget && !wrap.contains(e.relatedTarget)) setOpen(false);
+    });
+    const here = window.location.pathname.replace(/\/+$/, '');
+    wrap.querySelectorAll('.nav-dropdown-item').forEach((item) => {
+      const href = item.getAttribute('href').replace(/\.html$/, '');
+      if (here === href || here === href + '.html') item.setAttribute('aria-current', 'page');
+    });
+  };
+
+  const init = () => {
+    ensureCardOnramp();
+    const navLinks = document.querySelector('.site-header .nav-links');
+    if (!navLinks) return;
+    if (!navLinks.querySelector('.nav-dropdown')) buildNavDropdown(navLinks);
+    wireNavDropdown(navLinks.querySelector('.nav-dropdown'));
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();

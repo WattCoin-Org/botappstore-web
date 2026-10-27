@@ -13,13 +13,14 @@
 - **Dependency Vulnerability Triage ($29 in SOL, `sku: dependency-vuln-triage`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/dependency-vuln-triage.html
 - **Social Hub Publisher ($29 in SOL, `sku: social-hub-publisher`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/social-hub-publisher.html
 - **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL, `sku: domain-infra-hygiene`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL, `sku: agent-council`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 7 Live Automations)
+## Live Agent Templates (Available Now — 8 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -186,18 +187,45 @@
   - Passive only: no port scanning, brute-force subdomain enumeration, fuzzing, zone transfers, SMTP/credential probing or exploitation
   - Never registers dangling CNAME targets or edits DNS/certificates/server config; never claims a domain is "secure"
 
+### 8. Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL — LIVE NOW, sku: agent-council)
+- **Status:** LIVE NOW
+- **SKU:** `agent-council`
+- **Price:** $39.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Categories:** Orchestration & DevOps / Coding & Security
+- **Product Page URL:** https://botappstore.com/bots/agent-council.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-agent-council
+- **Included Skills:** `agent-council-setup` + `agent-council`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/agent_council.py` — SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7` (2,801 lines, stdlib Python, 170 unit tests)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Deliverable:** *Put 2-6 AI seats on one design question, patch or diff and get the consensus, the minority report, a verdict and an action plan, within the time limit and budget you set, plus a self-contained HTML transcript.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`agent-council-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku agent-council`), runs `--discover`, and offers a budget-capped smoke council and an optional scheduled review routine.
+  2. **Mandatory Pre-Flight License Gate (`agent-council`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py check --sku agent-council` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=agent-council`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Does:**
+  - **Seats (`--seats`, `--discover`):** 2-6 seats. Local CLIs: `claude` personas (`claude:architect`, `claude:security`, `claude:skeptic`, `claude:pragmatist`, `claude:driver`, `claude:navigator`, plus `performance` and `reviewer`), `codex`, `gemini`, `aider`, `cmd:<exe>`. BYOK HTTP: `openai:`, `anthropic:`, `xai:`, `gemini:`, `openrouter:`, `deepseek:`, `ollama:`. Keys are read by variable name and never printed.
+  - **Modes:** `deliberate` (blind round 1, anonymized `Seat A`/`Seat B` delta cross-examination, Chair consensus matrix + minority report), `pair` (Driver + Navigator, `APPROVE` / `REQUEST_CHANGES` / `BLOCK`), `compete` (peer-graded rubric: correctness .40, security .30, simplicity .15, edge cases .15; deterministic winner), `review` (deduplicated `CRITICAL`..`INFO` findings with file:line).
+  - **Token efficiency without throttling:** model output ceilings (Anthropic default 16,384 tokens with extended thinking), `--effort high` by default; pinned cache-friendly brief, `--files path:start-end` and `--git-diff` slices with secret redaction, delta-only round forwarding, early stop on consensus.
+  - **Control:** `--seat-timeout`, `--total-deadline`, `--quorum`, `DEGRADED_TIMEOUT` fallback, `--max-cost-usd` (pre-flight refusal + 85% in-flight halt), `--session ID` with `--status` / `--pause` / `--inject "note"` / `--resume`, `--state --delta`, `--html-out` self-contained dark-slate viewer.
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (unresolved at/above `--fail-on`), `10` usage error/refusal/budget pre-flight, `11` degraded (seat timeout/error, lost quorum, deadline; never a clean consensus)
+- **Sample Prompt:** `Convene architect, security and skeptic seats on lib/bot_common.py lines 85-177: is http_json safe for metered, non-idempotent paid POSTs? Two rounds, $2 budget, and write the HTML transcript.`
+- **Mandatory Refusal Boundaries:**
+  - Advisory and read-only: never edits, commits, runs or deploys anything; CLI seats run tool-less / read-only / dry-run from an empty temp dir
+  - Refuses `.env*`, `.wattcoin_env*`, lockfiles, key files, `.git/`, `node_modules/`; redacts keys, tokens and private keys before any seat sees them
+  - Declines exploit, credential-harvesting and other offensive tasks; a consensus is evidence, not proof; BYOK costs are estimates
+
 ---
 
 ## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
 
 > The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
 
-### 8. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
+### 9. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
 - **Slug:** `print-farm-ops`
 - **Scope:** Read-only OrcaSlicer / Bambu Studio `.3mf` container inspector, filament spool & desiccant ledger, and unit-economics calculator (`/workspace/farm_queue_report.csv`).
 - **Refusal Boundaries:** Never transmits G-code or triggers remote printer actuation without explicit per-job confirmation; never mutates master `.3mf` files in place.
 
-### 9. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
+### 10. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
 - **Slug:** `robotics-telemetry-inspector`
 - **Scope:** Offline diagnostic analyzer for robotic joint actuator thermal/torque CSV/JSON logs and 16S LiFePO4 battery management system (BMS) cell-voltage delta time series (`/workspace/telemetry_diagnostics.md`).
 - **Refusal Boundaries:** Strictly read-only log analysis; never sends motor/actuator commands, CAN frames, or BMS protection register writes.

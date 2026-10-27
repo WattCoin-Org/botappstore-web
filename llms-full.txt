@@ -13,13 +13,14 @@
 - **Dependency Vulnerability Triage ($29 in SOL, `sku: dependency-vuln-triage`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/dependency-vuln-triage.html
 - **Social Hub Publisher ($29 in SOL, `sku: social-hub-publisher`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/social-hub-publisher.html
 - **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL, `sku: domain-infra-hygiene`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL, `sku: agent-council`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 7 Live Automations)
+## Live Agent Templates (Available Now — 8 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -186,18 +187,45 @@
   - Passive only: no port scanning, brute-force subdomain enumeration, fuzzing, zone transfers, SMTP/credential probing or exploitation
   - Never registers dangling CNAME targets or edits DNS/certificates/server config; never claims a domain is "secure"
 
+### 8. Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL — LIVE NOW, sku: agent-council)
+- **Status:** LIVE NOW
+- **SKU:** `agent-council`
+- **Price:** $39.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Categories:** Orchestration & DevOps / Coding & Security
+- **Product Page URL:** https://botappstore.com/bots/agent-council.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-agent-council
+- **Included Skills:** `agent-council-setup` + `agent-council`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/agent_council.py` — SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7` (2,801 lines, stdlib Python, 170 unit tests)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Deliverable:** *Put 2-6 AI seats on one design question, patch or diff and get the consensus, the minority report, a verdict and an action plan, within the time limit and budget you set, plus a self-contained HTML transcript.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`agent-council-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku agent-council`), runs `--discover`, and offers a budget-capped smoke council and an optional scheduled review routine.
+  2. **Mandatory Pre-Flight License Gate (`agent-council`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py check --sku agent-council` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=agent-council`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Does:**
+  - **Seats (`--seats`, `--discover`):** 2-6 seats. Local CLIs: `claude` personas (`claude:architect`, `claude:security`, `claude:skeptic`, `claude:pragmatist`, `claude:driver`, `claude:navigator`, plus `performance` and `reviewer`), `codex`, `gemini`, `aider`, `cmd:<exe>`. BYOK HTTP: `openai:`, `anthropic:`, `xai:`, `gemini:`, `openrouter:`, `deepseek:`, `ollama:`. Keys are read by variable name and never printed.
+  - **Modes:** `deliberate` (blind round 1, anonymized `Seat A`/`Seat B` delta cross-examination, Chair consensus matrix + minority report), `pair` (Driver + Navigator, `APPROVE` / `REQUEST_CHANGES` / `BLOCK`), `compete` (peer-graded rubric: correctness .40, security .30, simplicity .15, edge cases .15; deterministic winner), `review` (deduplicated `CRITICAL`..`INFO` findings with file:line).
+  - **Token efficiency without throttling:** model output ceilings (Anthropic default 16,384 tokens with extended thinking), `--effort high` by default; pinned cache-friendly brief, `--files path:start-end` and `--git-diff` slices with secret redaction, delta-only round forwarding, early stop on consensus.
+  - **Control:** `--seat-timeout`, `--total-deadline`, `--quorum`, `DEGRADED_TIMEOUT` fallback, `--max-cost-usd` (pre-flight refusal + 85% in-flight halt), `--session ID` with `--status` / `--pause` / `--inject "note"` / `--resume`, `--state --delta`, `--html-out` self-contained dark-slate viewer.
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (unresolved at/above `--fail-on`), `10` usage error/refusal/budget pre-flight, `11` degraded (seat timeout/error, lost quorum, deadline; never a clean consensus)
+- **Sample Prompt:** `Convene architect, security and skeptic seats on lib/bot_common.py lines 85-177: is http_json safe for metered, non-idempotent paid POSTs? Two rounds, $2 budget, and write the HTML transcript.`
+- **Mandatory Refusal Boundaries:**
+  - Advisory and read-only: never edits, commits, runs or deploys anything; CLI seats run tool-less / read-only / dry-run from an empty temp dir
+  - Refuses `.env*`, `.wattcoin_env*`, lockfiles, key files, `.git/`, `node_modules/`; redacts keys, tokens and private keys before any seat sees them
+  - Declines exploit, credential-harvesting and other offensive tasks; a consensus is evidence, not proof; BYOK costs are estimates
+
 ---
 
 ## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
 
 > The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
 
-### 8. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
+### 9. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
 - **Slug:** `print-farm-ops`
 - **Scope:** Read-only OrcaSlicer / Bambu Studio `.3mf` container inspector, filament spool & desiccant ledger, and unit-economics calculator (`/workspace/farm_queue_report.csv`).
 - **Refusal Boundaries:** Never transmits G-code or triggers remote printer actuation without explicit per-job confirmation; never mutates master `.3mf` files in place.
 
-### 9. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
+### 10. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
 - **Slug:** `robotics-telemetry-inspector`
 - **Scope:** Offline diagnostic analyzer for robotic joint actuator thermal/torque CSV/JSON logs and 16S LiFePO4 battery management system (BMS) cell-voltage delta time series (`/workspace/telemetry_diagnostics.md`).
 - **Refusal Boundaries:** Strictly read-only log analysis; never sends motor/actuator commands, CAN frames, or BMS protection register writes.
@@ -219,6 +247,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
      - `social-hub-publisher` ($29.00 USD in SOL — Social Hub Publisher)
      - `dependency-vuln-triage` ($29.00 USD in SOL — Dependency Vulnerability Triage)
      - `domain-infra-hygiene` ($19.00 USD in SOL — Domain, TLS & Email Auth Infrastructure Hygiene Auditor)
+     - `agent-council` ($39.00 USD in SOL — Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator)
    - Response: 15-minute locked SOL quote with `order_id` (`ord_<24-hex>`), `checkout_token` (`ct_<48-hex>`), `amount_sol`, `amount_lamports` (including a unique 4-digit lamport tag `0001`–`9999`), `memo` (`wcl:<order_id>`), `recipient_wallet` (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`), and `solana_pay_url`.
 
 2. **`POST https://www.wattcoin.org/api/v1/agents/license/purchase`**
@@ -241,7 +270,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
 
 ---
 
-## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 7 Live Templates; Wave 2 and Wave 3 samples follow at the end)
+## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 8 Live Templates; Wave 2 and Wave 3 samples follow at the end)
 
 ### Sample 1 — Web & API Text Extractor (`getting-started` + `web-extractor`, $0 Free Forever)
 
@@ -1090,4 +1119,227 @@ Netlify / Cloudflare Pages (`_headers`):
 ---
 
 SCOPE_NOTE: Passive, read-only public posture inspection for domains the user owns or is authorised to assess: DNS-over-HTTPS lookups (Cloudflare, Google fallback), one TLS handshake on :443, one HTTPS GET for response headers, one plain-HTTP GET on :80 for the redirect check, and public Certificate Transparency logs (Cert Spotter, crt.sh fallback). No port scanning, brute-forcing, fuzzing, subdomain enumeration beyond public CT logs, mail-server or credential probing, and no exploitation; the dangling-CNAME check only inspects the audited domain's own records against known provider fingerprints and never claims or registers anything. Results are point-in-time: DNS caches, CT log lag, CDN edge variation and resolver behaviour can differ by location and minute; DKIM presence is only confirmed for the selectors tried; an empty crt.sh answer is INCONCLUSIVE, not clean. The HTTP->HTTPS redirect is reported UNVERIFIED when outbound port 80 is blocked (common in sandboxes and corporate networks). Remediation records are templates to review before publishing. Not a penetration test, compliance attestation, or legal advice. Refuses: scanning domains the user does not control, subdomain-takeover hunting against third parties, and credential or mail-server probing.
+````
+
+## Wave 3 - agent-council ($39 in SOL, one-time; LIVE NOW, instant on-chain SOL checkout)
+- **SKU:** `agent-council`
+- **Name:** Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator
+- **Page:** https://botappstore.com/bots/agent-council.html
+- **Checkout:** https://botappstore.com/#card-agent-council
+- **Skills:** `agent-council-setup`, `agent-council`
+- **Price:** $39.00 USD one-time, settled on-chain in SOL (up to 3 workspace-reset rebinds)
+- **Runtime:** `/workspace/scripts/agent_council.py` v1.0.0 (2,801 lines, Python stdlib + `/workspace/lib/bot_common.py`, 170 unit tests), always run as `/usr/bin/python3 -I`
+- **Pinned SHA-256:**
+  - `https://botappstore.com/runtime/agent_council.py` — `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`
+  - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Summary:** 2-6 seat multi-model council (local `claude` personas, `codex`, `gemini`, `aider`, or BYOK OpenAI / Anthropic / xAI / Gemini / OpenRouter / DeepSeek / Ollama) in `deliberate`, `pair`, `compete` or `review` mode, with timers, a budget guard, session steering and a self-contained HTML viewer.
+
+Verbatim `--format markdown` output of a live 2-round, 3-seat `claude` deliberation (architect, security, skeptic) over `/workspace/lib/bot_common.py` lines 85-177, run 2026-10-27 (exit `2`: one HIGH item in the minority report at `--fail-on medium`):
+
+````markdown
+# Agent Council Report - deliberate
+
+```
+snapshot   2026-10-27 20:54:29 UTC | tool=agent-council
+endpoints  claude
+```
+
+| Field | Value |
+|---|---|
+| Mode | deliberate |
+| Session | sample-live-20261027-165133 |
+| Rounds | 2 of 2 |
+| Converged | True |
+| Early stop | False |
+| Quorum | 3/3 active (need 2) |
+| Elapsed | 176.2s |
+| Stop reason | - |
+| Exit code | 2 (fail-on medium) |
+
+## Problem statement
+
+> Architecture & security review: we plan to reuse bot_common.http_json (shown) as the transport for metered, BYOK LLM API calls (OpenAI/Anthropic/xAI) inside paid BotAppStore tools, and keep exit_code() as the CI contract. Is that safe and correct? Consider retry/backoff semantics for non-idempotent paid POSTs, timeout behaviour, error-body handling (could API keys or prompts leak into logs?), MAX_RAW truncation of large JSON responses, and whether exit_code() can ever report a clean pass for a degraded run. Recommend concrete, minimal changes.
+
+## Context bundle
+
+- `/workspace/lib/bot_common.py` lines 85-177 of 274, sha256 `d1941b61b95ca664`
+- redactions: none; skipped: none
+
+## Seats
+
+| Seat | Role | Backend | Model | Status |
+|---|---|---|---|---|
+| A | Architect | claude | (default) | OK |
+| B | Security | claude | (default) | OK |
+| C | Skeptic | claude | (default) | OK |
+| Chair | Judge | claude | (default) | OK |
+
+## Round 1 - proposal
+
+### Seat A - OK - 63840ms, 3218 in / 5938 out tokens, $0.1218
+
+**Position:** Do not reuse http_json unchanged for metered BYOK LLM POSTs. Keep it for idempotent GETs and add a thin llm_call() (or an explicit idempotent=False policy) that: (1) never retries transport exceptions or generic 5xx for POST and retries only 429/529, honoring Retry-After within a total deadline, with max attempts small and configurable; (2) uses a long per-call timeout (e.g. 120-600s) plus an overall wall-clock deadline instead of timeout=20 with 5 attempts; (3) treats oversized or unparseable 2xx bodies as errors (read(MAX_RAW+1), set error='response too large'/'invalid JSON', and a larger cap for LLM responses) rather than returning status 200 with {'_raw':...}; (4) caps error-body reads, stores only sanitized provider error type/code/message, scrubs key patterns (sk-, sk-ant-, xai-, Bearer), and never stores raw completions or request headers in HttpResult/evidence/logs; (5) disables redirects and enforces https with a provider-host allowlist so Authorization/x-api-key cannot be forwarded; (6) makes degradation automatic, so any llm_call error marks the run degraded. Keep exit_code() as the CI contract, but add a test that every SEV level reachable by fail_on maps in _SEV_EXIT (or fail loudly), and emit degraded=true in the JSON report even when a severity exit code wins.
+- *critique:* Blind round: no peer positions visible yet.
+- *changes:* Initial proposal.
+- *disagree* [HIGH] Retrying non-idempotent paid POSTs
+- *disagree* [HIGH] Silent success on truncated or non-JSON 2xx
+- *disagree* [MEDIUM] Credential and prompt leakage
+- *disagree* [MEDIUM] exit_code silent pass
+
+### Seat B - OK - 69346ms, 3217 in / 6897 out tokens, $0.1410
+
+**Position:** Do NOT reuse http_json as-is for paid BYOK LLM POSTs. (1) It retries POSTs on timeouts/resets/5xx (lines 113,126-130) up to 5 attempts, so already-billed generations can be re-billed on the user's key; the 20s per-op timeout (line 100/118) makes this likely for LLM latency. (2) MAX_RAW slicing after a full read (line 119) plus _parse fallback (89-90) turns truncated/invalid 2xx into status 200 with error=None (silent paid data loss), and _raw/raw/error bodies (90,120,125) can carry prompts/outputs/masked keys into logs or evidence. (3) If _urlopen uses default urllib redirect handling (not visible), 301/302/303 forwards Authorization/x-api-key cross-host; url has no https/host allowlist (key exfil/SSRF if base_url is configurable). (4) exit_code is only as good as the caller's degraded flag: since http_json never raises, an all-calls-failed run yields 0 findings -> EXIT_OK; line 173 also fails open to EXIT_OK when worst sev >= threshold but is absent from _SEV_EXIT. Fix with: idempotency-aware retry (POST retries only 429/503/529/connect-phase errors), total deadline + longer LLM timeout, bounded read with truncated/invalid-json errors, no-redirect opener + https host allowlist for keyed calls, redacted repr/logging, fail-closed exit_code with automatically derived degraded.
+- *changes:* Initial blind proposal (round 1).
+- *disagree* [HIGH] Non-idempotent POST retries
+- *disagree* [HIGH] Silent truncation / invalid JSON on 2xx
+- *disagree* [HIGH] Degraded runs reported as clean
+- *disagree* [MEDIUM] Credential leak via redirects / unconstrained URL
+- *disagree* [MEDIUM] Prompt/key leakage via error bodies and raw
+
+### Seat C - OK - 58575ms, 3220 in / 5374 out tokens, $0.1105
+
+**Position:** Do not reuse http_json unchanged for metered BYOK LLM POSTs. It is acceptable after a small 'non-idempotent' mode is added. (1) In that mode, retry only on 429, 503/529 and pre-send connection failures (DNS errors, connection refused). Do not retry on read timeouts, resets after send, or 500/502/504. Cap retries at 2. Raise the timeout to 120-300s or make it configurable per call. (2) Treat truncation (len(body) > MAX_RAW, detected by reading MAX_RAW+1 bytes) and non-JSON 2xx bodies as errors: set .error and .truncated. Never return status 200 with error=None and {'_raw': ...}. Cap e.read() the same way. (3) Do not store raw bodies for paid calls. Redact Authorization/x-api-key/sk-* patterns from any error text before it reaches HttpResult.error or Finding.evidence. (4) Make degraded automatic: a run-level tracker marks the run degraded whenever any HttpResult has .error or status<0. In exit_code, compute the worst severity only over findings whose severity is mapped, or assert at import that _SEV_EXIT covers every SEV level at or above the lowest valid fail_on. (5) Record attempts and possibly-billed attempts so metering reflects real spend.
+- *changes:* Initial blind proposal.
+- *disagree* [HIGH] Billing amplification
+- *disagree* [HIGH] Silent truncation success
+- *disagree* [MEDIUM] exit_code mapping hole
+- *disagree* [MEDIUM] Degraded not enforced
+- *disagree* [MEDIUM] Log leakage
+- *disagree* [LOW] Unbounded reads and no jitter
+
+## Round 2 - cross examination
+
+### Seat A - OK - 39462ms, 5697 in / 3905 out tokens, $0.1237
+
+**Position:** Do not reuse http_json unchanged for metered BYOK LLM POSTs. Keep it for idempotent GETs. Add a thin llm_call() wrapper (or a non-idempotent mode) with these rules. (1) Retry policy for POST: retry 503/529 and rate-limit 429s only, honoring Retry-After. Never retry 429 insufficient_quota/billing errors. Retry transport errors only when provably pre-send (e.reason is socket.gaierror, ConnectionRefusedError, or an SSL handshake error). Never retry timeouts, resets, 500, 502 or 504. Use at most 2 retries, add jitter, and enforce a total wall-clock deadline. (2) Use a configurable per-call timeout of 120-600s instead of 20s. (3) Read with read(MAX_RAW+1) using a larger LLM-specific cap. An oversized or non-JSON 2xx sets error ('response too large' / 'invalid JSON') and truncated=True; never return 200 with error=None. Also cap e.read(). (4) Store only the sanitized provider error type, code and message. Scrub sk-, sk-ant-, xai- and Bearer patterns plus masked-key echoes. Never put raw completions, prompts or request headers into HttpResult.raw, evidence, reprs or logs. (5) Use a no-redirect opener, require https, and allowlist provider hosts for any keyed request. (6) Use a run-level tracker so any llm_call error or status<0 marks the run degraded automatically. Record attempts and possibly-billed attempts for metering. (7) Keep exit_code as the CI contract, with these changes: compute worst over mapped severities only, or assert at import that _SEV_EXIT covers every SEV level at or above any valid fail_on; validate fail_on at argument-parse time; map uncaught exceptions to a dedicated non-1/2/3 exit code; and always emit degraded=true in the JSON report even when a severity exit code wins.
+- *critique:* Seat B and Seat C: 'retry pre-send connect errors' is unimplementable as stated, because L129 catches all URLError. They must specify classification by e.reason, and timeouts must be treated as possibly-sent because urllib's single timeout covers both connect and read.
+- *critique:* Seat B and Seat C: blanket 429 retry re-tries terminal OpenAI/xAI insufficient_quota and billing-limit 429s, wasting the deadline and obscuring the cause for BYOK users.
+- *critique:* Seat B and Seat C: both missed that SEV[fail_on.upper()] (L171) raises KeyError on bad input, and an uncaught Python exception exits 1, which likely collides with a severity exit code (unverified: _SEV_EXIT is not shown).
+- *critique:* Seat C: the 'cap retries at 2' should be paired with an overall deadline. Otherwise Retry-After (capped at 30s at L95) plus a long per-call timeout can still stall CI for many minutes.
+- *changes:* Adopted 503 (alongside 429/529) and provably pre-send connect failures as retryable for POST, from Seat B and Seat C, now with a concrete e.reason classifier.
+- *changes:* Adopted possibly-billed attempt accounting, from Seat C.
+- *changes:* Added: no retry on quota/billing 429s.
+- *changes:* Added: fail_on validation and exception-to-exit-code mapping, so a crash cannot masquerade as a severity code.
+- *changes:* Added: jitter on backoff.
+- *disagree* [MEDIUM] Ambiguous transport errors
+- *disagree* [MEDIUM] 429 semantics
+- *disagree* [LOW] Crash vs severity exit code collision
+
+### Seat B - OK - 41312ms, 5658 in / 4192 out tokens, $0.1291
+
+**Position:** Do not reuse http_json unchanged for metered BYOK LLM POSTs. Keep it for idempotent GETs; add a thin llm_call() (or idempotent=False policy) that: (1) retries a POST only on 429 (but not 429 insufficient_quota / billing errors), 529, 503-with-Retry-After, and provably pre-send URLError (gaierror, ConnectionRefusedError); never retries timeouts, resets, 500/502/504; max 2 retries; honors Retry-After inside a total wall-clock deadline; records attempts and possibly_billed_attempts. (2) Uses a configurable long per-op timeout (120-300s) plus an overall deadline checked between attempts. (3) Reads MAX_RAW+1 bytes (larger cap for LLM) and caps e.read() the same way; oversized or non-JSON 2xx responses get status preserved but error='response too large'/'invalid JSON' and truncated=True, never a 200 with error=None and _raw. (4) Does not retain raw completions in HttpResult.raw/evidence/logs for paid calls; error text is reduced to the provider's error type/code/message and scrubbed of sk-/sk-ant-/xai-/Bearer patterns; HttpResult repr must exclude headers and bodies. (5) Uses a no-redirect opener (any 3xx is an error) and requires https plus a provider host allowlist before attaching keys. (6) Degraded is derived automatically: any llm_call error or status<0 marks the run degraded. exit_code stays as the CI contract but fails closed: if any finding is at or above the threshold, return the mapped code for the highest mapped severity, else a generic failure code, never EXIT_OK. Add an import-time assert or test that _SEV_EXIT covers every severity reachable by fail_on, and always emit degraded=true in the JSON report even when a severity exit code wins.
+- *critique:* Seat C: 'pre-send connection failures' cannot be distinguished at L129 for timeouts (connect vs read both raise timeout); only URLError with gaierror/ConnectionRefusedError reason is provably pre-send. Including 503 without Retry-After is borderline.
+- *critique:* Seat A: retrying all 429s ignores non-transient quota/billing 429s (e.g. insufficient_quota), which should fail fast as config errors.
+- *critique:* Seat A: a 600s urllib timeout is per socket op, not total; the total deadline can only be enforced between attempts, so the size cap and an explicit deadline are both required.
+- *critique:* Seat A/C: neither notes that stock urllib turns a POST 301/302/303 into a GET to the new host carrying the same Authorization/x-api-key headers, and that the redirected 200 would be returned as the LLM result (wrong data plus key leak), unverified since _urlopen is unseen.
+- *critique:* Seat C: the exit_code hole only triggers when the single worst finding's sev is unmapped (L172-173); the fix should still be fail-closed rather than 'compute worst over mapped only', which could still pass if no mapped sev is at threshold.
+- *changes:* Adopted Seat C's possibly_billed_attempts metric and Seat A's always-emit-degraded-in-report.
+- *changes:* Narrowed retryable transport errors to provably pre-send URLError reasons; added the 429 insufficient_quota exclusion.
+- *changes:* Made exit_code fix explicitly fail-closed (generic failure code) instead of relying only on mapping completeness.
+- *changes:* Clarified urllib per-op timeout vs total deadline, and redirect POST->GET with header carryover.
+- *disagree* [MEDIUM] Retryable set for POST
+- *disagree* [LOW] exit_code fix shape
+- *disagree* [LOW] Timeout value
+
+### Seat C - OK - 48960ms, 5678 in / 4778 out tokens, $0.1410
+
+**Position:** Do not reuse http_json unchanged for metered BYOK LLM POSTs; keep it for idempotent GETs and route paid calls through a thin llm_call()/idempotent=False policy that: (1) retries only on proven-not-accepted outcomes (429, 503, 529, and pre-send connect failures such as DNS/ECONNREFUSED/TLS handshake), never on read timeouts, resets after send, or 500/502/504; max 2 retries, Retry-After honored (with a 1-2s floor plus jitter when absent) inside a total wall-clock deadline; (2) uses a configurable long per-call timeout (120-600s) instead of 20s; (3) does a bounded read(cap+1) for both success and error bodies, with an LLM-sized cap, and treats truncated or non-JSON 2xx as errors (.error set, .truncated=True), never status 200 with error=None and {'_raw':...}; (4) stores no raw completions or request headers in HttpResult, Finding.evidence or logs, keeps only the provider error type/code/message, and scrubs sk-/sk-ant-/xai-/Bearer patterns as a backstop; (5) disables redirects and enforces https, with an optional user-configured base_url allowlist rather than a hardcoded provider list; (6) derives degraded automatically from any errored or status<0 result and records attempts and possibly-billed attempts. Keep exit_code() as the CI contract, but fail closed: assert at import that every SEV level reachable by fail_on is in _SEV_EXIT, validate fail_on up front, emit degraded=true in the report even when a severity exit wins, and wrap main so unhandled exceptions exit with a dedicated non-severity code (not Python's default 1, which collides with severity exits).
+- *critique:* Seat A: retrying only 429/529 and never retrying any transport exception is over-strict; pre-send connect failures and edge 503s cannot have billed and are safe to retry.
+- *critique:* Seat A: rating caller-wired degraded as MEDIUM understates it; http_json never raises (L105), so an all-failed run gives 0 findings and EXIT_OK (L175), a false green in CI, which is HIGH.
+- *critique:* Seat A/B: a hardcoded provider host allowlist breaks legitimate BYOK endpoints (Azure OpenAI, proxies, gateways); use https plus no redirects plus a user-configured allowlist.
+- *critique:* Seat A/B: the redirect concern is valid but should be precise: with default urllib, POST 301/302/303 becomes a GET that forwards Authorization/x-api-key (the leak), while POST 307/308 raises HTTPError and is returned at L126, so there is no re-POST or double-bill via redirect.
+- *critique:* All seats (including mine): missed that exit 1/2 collide with Python's uncaught-exception exit (1) and argparse errors (2), and that an invalid fail_on raises KeyError at L171, so a crashed run can look like a findings result.
+- *changes:* Added the exit-code collision and crash-path issue (uncaught exception or invalid fail_on yields exit 1, indistinguishable from a severity exit) and the fix (dedicated crash code, upfront fail_on validation).
+- *changes:* Adopted Seat A/B's no-redirect plus https requirement, made the allowlist user-configurable, and stated the urllib 301/302/303 vs 307/308 behaviour precisely.
+- *changes:* Adopted a total wall-clock deadline and degraded=true in the report even when a severity exit wins (Seat A).
+- *changes:* Added a Retry-After floor plus jitter, noting that _retry_after (L93-97) ignores HTTP-date values and allows 0s retries.
+- *disagree* [LOW] Retry set for paid POSTs
+- *disagree* [LOW] Severity rating of caller-wired degraded
+- *disagree* [MEDIUM] Exit-code collision with crashes
+
+## Chair synthesis (chair)
+
+Unanimous: do NOT reuse bot_common.http_json unchanged as the transport for metered BYOK LLM POSTs. Keep it for idempotent GETs and add a thin llm_call() wrapper with a non-idempotent retry policy.
+
+Verified hazards in the code:
+(a) Up to 5 attempts (L113) that retry timeouts and resets (L129-132). Combined with the 20s default timeout (L100), long completions will time out and be re-billed.
+(b) Silent truncation. r.read()[:MAX_RAW] (L119) reads the full body and then slices it, so an oversized or non-JSON 2xx becomes status 200, error=None, {'_raw': first 300 chars} (L90). This can also persist completion or prompt text.
+(c) Unbounded e.read() (L123). Provider error bodies stored verbatim (L125) can echo masked keys. str(e) (L130) can carry URLs.
+(d) _retry_after (L93-97) ignores HTTP-date values and allows 0s sleeps.
+(e) Redirects. Assuming _urlopen uses stock urllib (unseen), a POST 301/302/303 is followed as a GET carrying the auth headers; 307/308 is returned at L126.
+
+exit_code() is correct only if callers wire degraded=True. Because http_json never raises, an all-failed run yields 0 findings and EXIT_OK: a false green. It also has a fail-open hole at L172-175: a worst finding whose sev is absent from _SEV_EXIT falls through to EXIT_OK/EXIT_DEGRADED. SEV[fail_on.upper()] (L171) raises KeyError on bad input. An uncaught exception exits 1, which may collide with a severity code (_SEV_EXIT values unseen).
+
+Outcome: keep exit_code as the CI contract, but make it fail closed and derive degraded automatically.
+
+### Consensus matrix
+
+| Point | Agree | Disagree |
+|---|---|---|
+| Do not reuse http_json unchanged for paid LLM POSTs; keep it for idempotent GETs and add an llm_call()/idempotent=False policy | Seat A, Seat B, Seat C |  |
+| Never retry POST on read timeouts, connection resets after send, or 500/502/504. Max 2 retries, jitter, honor Retry-After, and enforce a total wall-clock deadline | Seat A, Seat B, Seat C |  |
+| Retry 429 rate limits and 529. Never retry 429 insufficient_quota or billing errors (terminal BYOK config errors) | Seat A, Seat B, Seat C |  |
+| Transport errors are retryable only when provably pre-send, classified by URLError.reason (socket.gaierror, ConnectionRefusedError). Timeouts count as possibly billed | Seat A, Seat B, Seat C |  |
+| Configurable long per-op timeout (about 120-300s, up to 600s) instead of 20s, plus a separate total deadline (urllib timeout is per socket op) | Seat A, Seat B, Seat C |  |
+| Bounded read(cap+1) for both success and error bodies. An oversized or non-JSON 2xx sets error and truncated=True; never return 200 with error=None | Seat A, Seat B, Seat C |  |
+| Persist no raw completions, prompts or request headers. Keep only the provider error type/code/message, scrub sk-/sk-ant-/xai-/Bearer patterns, and make the repr body-free | Seat A, Seat B, Seat C |  |
+| No-redirect opener (any 3xx is an error) and https required before attaching keys | Seat A, Seat B, Seat C |  |
+| Derive degraded automatically from any errored or status<0 llm_call result; record attempts and possibly_billed_attempts | Seat A, Seat B, Seat C |  |
+| Keep exit_code as the CI contract but fail closed. Close the L172-175 unmapped-severity hole, validate fail_on up front, and always emit degraded=true in the report even when a severity exit wins | Seat A, Seat B, Seat C |  |
+| Map uncaught exceptions and argparse errors to a dedicated non-severity exit code (contingent on unseen _SEV_EXIT values) | Seat A, Seat C |  |
+| Host allowlist: hardcoded provider hosts (A/B) vs user-configured base_url allowlist (C). Chair merge: built-in default allowlist extended by an explicit user-configured base_url (Azure/proxies), https-only, no redirects | Seat A, Seat B, Seat C |  |
+
+### Dissent / minority report
+
+- **LOW** 503 retry condition - Seat B would retry 503 only when Retry-After is present; Seats A and C retry 503 generally. A 503 normally means the request was not processed. Chair adopts: retry 503 within the deadline and count it as possibly billed in metering. Projects that see billed 503s should switch to B's stricter rule. (Seat B)
+- **LOW** TLS handshake errors as pre-send - Seats A and C also treat SSL handshake failures as pre-send. Seat B limits pre-send to gaierror/ConnectionRefusedError. A handshake failure precedes any HTTP bytes, but ssl.SSLError can also surface mid-stream. Chair adopts: retry only when the error is raised before the connection is established; if this cannot be distinguished cleanly, use B's narrower set. (Seat B)
+- **HIGH** Rating of caller-wired degraded - Seat C rates it HIGH; Seat A originally rated it MEDIUM. Chair sides with HIGH. http_json never raises (L105), so a run where every paid call failed returns EXIT_OK (L175) unless every caller remembers degraded=True. This is a false green in paid CI. The remedy is agreed by all seats; only the label differed. (Seat C)
+- **LOW** exit_code fix shape - Seat B prefers a generic fail-closed code when any finding meets the threshold but is unmapped. Seats A and C prefer 'worst over mapped severities' plus an import-time coverage assert. Chair merges both: assert coverage AND fail closed, so mapped-only can never yield EXIT_OK when a finding meets the threshold. (Seat B)
+
+### Confidence shifts
+
+| Seat | First | Last | Shift |
+|---|---|---|---|
+| A | 80 | 82 | +2 |
+| B | 78 | 82 | +4 |
+| C | 72 | 82 | +10 |
+
+**Verdict:** `REQUEST_CHANGES`
+
+### Action plan
+
+1. Add an LLM transport policy in lib/bot_common.py: llm_call(url, body, headers, *, timeout=180, deadline=600, max_retries=2, cap=LLM_MAX_RAW, allowed_hosts=DEFAULT_LLM_HOSTS | user_base_url_hosts). Leave http_json's GET behaviour untouched, and add a guard so http_json refuses to send an Authorization or x-api-key header with a POST body unless idempotent=True is passed.
+2. Retry classifier for llm_call. Retryable: 429 unless error.code/type is insufficient_quota or billing; 503; 529; URLError whose .reason is socket.gaierror or ConnectionRefusedError. Everything else returns immediately, including socket.timeout/TimeoutError, ConnectionResetError, RemoteDisconnected, 500/502/504 and other 4xx. Sleep = min(remaining_deadline, max(1.0, Retry-After or backoff*2**n)) + random.uniform(0, 0.5), and stop if the deadline would be exceeded. Also parse HTTP-date Retry-After values via email.utils.parsedate_to_datetime.
+3. Metering: on every attempt that may have reached the provider (any HTTP status, or a timeout/reset), increment possibly_billed_attempts and attach it, along with attempts, to the result.
+4. Bounded reads: raw = r.read(cap + 1). If len(raw) > cap, return status preserved, error='response too large', truncated=True, body=None. Do the same with e.read(ERR_CAP + 1). If a 2xx body fails json.loads, set error='invalid JSON' and do not return {'_raw': ...}. Use non-streaming requests (SSE is out of scope for _parse).
+5. Redaction: build HttpResult for paid calls with raw=None, and keep only {'type','code','message'} from provider errors. Pass every string through scrub(), with regexes for sk-[A-Za-z0-9_-]{8,}, sk-ant-[A-Za-z0-9_-]+, xai-[A-Za-z0-9_-]+, (?i)bearer\s+\S+, and masked echoes such as sk-\.\.\.\w{4}. Ensure HttpResult.__repr__ excludes headers and body. Never put prompts or completions into Finding.evidence.
+6. Transport hardening: build an opener whose HTTPRedirectHandler returns None for all codes, so any 3xx becomes an error. Before attaching keys, require urlparse(url).scheme == 'https' and hostname in allowed_hosts.
+7. Automatic degraded: add a RunState (module-level or passed explicitly). llm_call sets state.degraded = True on any error or status < 0, and main passes exit_code(findings, degraded=state.degraded or caller_degraded).
+8. Fail-closed exit_code: at import, assert every SEV key with rank >= the minimum valid fail_on is in _SEV_EXIT. In exit_code, take at_or_above = [f for f in findings if SEV[f.sev] >= threshold]. If at_or_above is non-empty, return _SEV_EXIT of the highest mapped severity among them, else EXIT_FAIL_GENERIC; never fall through to EXIT_OK. Validate fail_on in argparse via choices=[s.lower() for s in SEV].
+9. Crash isolation: wrap main as `try: rc = run() except SystemExit: raise except BaseException: log scrubbed traceback; rc = EXIT_INTERNAL` and pick EXIT_INTERNAL (and argparse handling) so neither collides with _SEV_EXIT values or EXIT_DEGRADED=11. Verify against the actual _SEV_EXIT table, which is not in the bundle.
+10. Always write degraded, attempts and possibly_billed_attempts into the JSON report, even when a severity exit code wins.
+11. Tests (mock _urlopen): a timeout is not retried and possibly_billed=1; 429 insufficient_quota is not retried; 429 with Retry-After is retried within the deadline; a 302 is an error and the key is not sent; an oversized 200 sets error and truncated; an error body echoing sk-... is scrubbed; an all-failed run yields EXIT_DEGRADED not EXIT_OK; an unmapped above-threshold severity never yields EXIT_OK; an invalid fail_on is rejected at parse time.
+
+## Unresolved findings & dissent
+
+| Severity | Code | Item | Fix |
+|---|---|---|---|
+| HIGH | DISSENT | Rating of caller-wired degraded: Seat C rates it HIGH; Seat A originally rated it MEDIUM. Chair sides with HIGH. http_json never raises (L105), so a run where every paid call failed returns EXIT_OK (L175) unless every caller remembers degraded=True. This is a false green in paid CI. The remedy is agreed by all seats; only the label [...truncated 10 chars] |  |
+| LOW | DISSENT | 503 retry condition: Seat B would retry 503 only when Retry-After is present; Seats A and C retry 503 generally. A 503 normally means the request was not processed. Chair adopts: retry 503 within the deadline and count it as possibly billed in metering. Projects that see billed 503s should switch to B's stricter rule. |  |
+| LOW | DISSENT | exit_code fix shape: Seat B prefers a generic fail-closed code when any finding meets the threshold but is unmapped. Seats A and C prefer 'worst over mapped severities' plus an import-time coverage assert. Chair merges both: assert coverage AND fail closed, so mapped-only can never yield EXIT_OK when a finding meets the [...truncated 11 chars] |  |
+| LOW | DISSENT | TLS handshake errors as pre-send: Seats A and C also treat SSL handshake failures as pre-send. Seat B limits pre-send to gaierror/ConnectionRefusedError. A handshake failure precedes any HTTP bytes, but ssl.SSLError can also surface mid-stream. Chair adopts: retry only when the error is raised before the connection is established; i [...truncated 61 chars] |  |
+
+## Token & cost ledger
+
+| Seat | Backend | Calls | In | Out | Cached | USD | Basis |
+|---|---|---|---|---|---|---|---|
+| A | claude | 2 | 8915 | 9843 | 2912 | 0.2455 | cli-reported |
+| B | claude | 2 | 8875 | 11089 | 2911 | 0.2701 | cli-reported |
+| C | claude | 2 | 8898 | 10152 | 2914 | 0.2515 | cli-reported |
+| Chair | claude | 1 | 7749 | 6119 | 0 | 0.1844 | cli-reported |
+| **Total** | | 7 | 34437 | 37203 | 8737 | 0.9514 | |
+
+---
+
+SCOPE_NOTE: Agent Council is an advisory, read-only deliberation tool. It reads only the files/line ranges passed via --files and the output of `git diff` for --git-diff; it never edits, commits, executes or deploys anything, and local CLI seats run with tools disabled (claude) or in read-only / dry-run modes where the CLI supports it. node_modules, .git, lockfiles, .env* and .wattcoin_env* files are refused, and private keys, API keys/tokens (wck_, wcl_, sk-, ghp_, AKIA, xai-, AIza, Slack, Bearer), PEM blocks and other high-entropy secrets are redacted from the prompt, context bundle and moderator notes before any seat sees them; API keys are read from the environment or the env file by variable name and are never printed or stored. Model outputs are non-deterministic: the same council can reach a different verdict on a re-run, seats can be confidently wrong together, and a consensus is evidence, not proof - verify patches and findings before acting. Cost figures for HTTP seats are estimates from a static per-token price table (metered BYOK billing is authoritative); CLI seats report the CLI's own list-price figure (claude) or a chars/4 estimate, which is usually covered by a subscription rather than billed per token; the --max-cost-usd guard counts both. The council refuses to ingest disallowed paths and does not run exploit, credential-harvesting or other offensive tasks - seat role prompts instruct models to decline them.
 ````
