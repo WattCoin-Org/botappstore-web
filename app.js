@@ -163,6 +163,30 @@
       defaultPrompt: function (code) {
         return 'Activate my Agent Council with license code ' + code;
       }
+    },
+    'mcp-config-auditor': {
+      sku: 'mcp-config-auditor',
+      name: 'MCP Server & Tool-Permission Security Auditor',
+      title: 'MCP Server & Tool-Permission Security Auditor — $19 in SOL',
+      slugMeta: 'sku: mcp-config-auditor · Skills: mcp-config-auditor-setup + mcp-config-auditor · One-Time License · 3 Rebinds',
+      priceUsd: 19,
+      priceLabel: '$19 USD in SOL (one-time)',
+      priceUsdHtml: '$19.00 <small>USD</small>',
+      promptHint: 'Audit my Claude Desktop, Cursor and VS Code MCP configs for leaked secrets, unpinned packages and poisoned tools...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open MCP Server & Tool-Permission Security Auditor in Grok Bot',
+      statusFooterText: 'Status: LIVE · $19 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($19 in SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>MCP Server &amp; Tool-Permission Security Auditor</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open MCP Config Auditor in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or add the MCP config files and <code>tools/list</code> snapshots you want audited):',
+      stepCFootHtml:
+        'On Turn 1, <code>mcp-config-auditor-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>mcp_config_auditor.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs a read-only self-check audit.',
+      defaultPrompt: function (code) {
+        return 'Activate my MCP Server & Tool-Permission Security Auditor with license code ' + code;
+      }
     }
   };
 
@@ -606,6 +630,65 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 usage/refusal · 11 de
           <li><strong>No Secrets to Seats:</strong> Refuses <code>.env*</code>, <code>.wattcoin_env*</code>, lockfiles, key files, <code>.git/</code> and <code>node_modules/</code>, and redacts API keys, tokens and private keys from the prompt and context before any seat sees them.</li>
           <li><strong>No Offensive Tasks:</strong> Declines exploit writing, credential harvesting, detection evasion or attacks on systems you do not own.</li>
           <li><strong>Consensus Is Not Proof:</strong> Models can be confidently wrong together; cost figures for BYOK seats are estimates and your provider invoice is authoritative.</li>
+        </ul>
+      `
+    },
+    'mcp-config-auditor': {
+      title: 'MCP Server & Tool-Permission Security Auditor',
+      slug: 'mcp-config-auditor-setup + mcp-config-auditor',
+      badge: 'LIVE · $19 IN SOL',
+      badgeClass: 'live',
+      price: '$19 One-Time in SOL (3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'mcp-config-auditor',
+      specPageUrl: '/bots/mcp-config-auditor.html',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>Deterministic, read-only static audit of your MCP client configs (Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Cline, Zed, generic <code>mcp.json</code>) and <code>tools/list</code> snapshots across 5 buckets: secrets, execution &amp; host exposure, supply chain, network and tool poisoning. Every detected secret is redacted, and each file gets a copy-paste hardened config.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>mcp-config-auditor-setup</code> + <code>mcp-config-auditor</code>)</h4>
+        <pre class="code-pre">---
+name: mcp-config-auditor
+description: "Use this when the user asks to audit, harden or monitor MCP
+  server configs or tool permissions: hardcoded secrets, unpinned npx/uvx
+  packages, typosquats, dangerous flags or auto-approve, filesystem/Docker
+  exposure, cleartext remote endpoints, tool poisoning, or rug-pulls."
+---
+Step 0  License gate: .wattcoin_license_check.py check --sku mcp-config-auditor
+        must return "state": "OK" before every run.
+Step 1  Verify sha256 of mcp_config_auditor.py (42cb3f14...84c025)
+        and bot_common.py (d1941b61...50e526); refuse on mismatch.
+Step 2  /usr/bin/python3 -I /workspace/scripts/mcp_config_auditor.py
+        [--config PATH] [--dir DIR] [--tools-json PATH] [--remediate]
+        [--state /workspace/mcp-audit/state.json --delta]
+        [--format markdown] [--fail-on high]
+Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degraded</pre>
+        <h4>Capabilities</h4>
+        <ul>
+          <li><strong><code>SEC_*</code> Secrets:</strong> known token formats, secret-named keys and high-entropy literals in <code>env</code>, <code>args</code>, <code>headers</code>, URLs and VS Code <code>inputs</code>; <code>\${VAR}</code> / <code>\${env:VAR}</code> interpolation is recognised as safe, and every detected value prints as <code>[REDACTED:...]</code>.</li>
+          <li><strong><code>CMD_*</code> / <code>FS_*</code> / <code>DOCKER_*</code> / <code>DB_*</code>:</strong> <code>curl | sh</code> launches, shell wrappers, <code>--dangerously-skip-permissions</code> / <code>--allow-all</code>, <code>alwaysAllow</code> / <code>autoApprove</code>, <code>/</code>, home, <code>~/.ssh</code> and <code>~/.aws</code> exposure, <code>--privileged</code> and writable mounts, and writable database servers.</li>
+          <li><strong><code>SUP_*</code> Supply Chain:</strong> unpinned <code>npx -y</code> / <code>uvx</code> / <code>pipx run</code> / <code>bunx</code>, <code>@latest</code> floating tags, unpinned git refs and Docker images, and Levenshtein typosquat detection against 26 canonical MCP packages.</li>
+          <li><strong><code>NET_*</code> &amp; <code>TOOL_*</code>:</strong> cleartext <code>http://</code> remotes, <code>169.254.169.254</code> metadata SSRF, unauthenticated endpoints and insecure <code>mcp-remote</code> / <code>supergateway</code> bridges; <code>&lt;IMPORTANT&gt;</code> and "ignore previous instructions" poisoning, invisible Unicode, exfiltration parameters, cross-server name shadowing and <code>readOnlyHint</code> lies.</li>
+          <li><strong>Rug-Pull Delta:</strong> <code>--state --delta</code> reports <code>TOOL_DESC_CHANGED</code>, <code>TOOL_SCHEMA_CHANGED</code>, <code>SERVER_ADDED</code> and <code>SERVER_CONFIG_CHANGED</code> between runs.</li>
+        </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Audit the .mcp.json and .cursor/mcp.json in /workspace/project plus the tools/list snapshot I uploaded. Show me the hardened config and set up a daily rug-pull check.</code></p>
+        <p><a href="/bots/mcp-config-auditor.html">Full spec, pinned runtime hashes &amp; real sample audit →</a></p>
+      `,
+      execHtml: `
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>) and makes <strong>no network requests</strong>: it reads only the config files and snapshots you point it at. It never launches an MCP server, installs a package, or modifies a config file.</p>
+        <ul>
+          <li><strong>License Binding (<code>mcp-config-auditor-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, verifies the SHA-256-pinned <code>mcp_config_auditor.py</code> and <code>bot_common.py</code>, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code> (up to 3 rebinds).</li>
+          <li><strong>Fail-Closed Exit Codes:</strong> <code>0</code> clean, <code>1</code>/<code>2</code>/<code>3</code> MEDIUM/HIGH/CRITICAL at <code>--fail-on</code>, <code>10</code> bad input, <code>11</code> degraded (unreadable or malformed input, or no configs found), so a failed read never looks clean.</li>
+          <li><strong>Output:</strong> <code>--format text|markdown|json</code>, <code>--remediate</code>, <code>--out PATH</code>; the <code>--state</code> file is written <code>0600</code>, holds redacted data only, and is never overwritten by a degraded run.</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>Own or Authorised Configs Only:</strong> Refuses to harvest or validate secrets from other people's configs, public repos or leaked files, and never tests whether a found credential works.</li>
+          <li><strong>Static and Read-Only:</strong> Never launches, connects to or installs an MCP server or package, and never edits your config; hardened snippets are templates for you to review.</li>
+          <li><strong>No Offensive Tooling:</strong> Declines to write poisoned tools, prompt-injection payloads or typosquat packages.</li>
+          <li><strong>No "Safe" Guarantees:</strong> Secret, typosquat and injection detection is heuristic; "no findings" is not proof a config is safe. Not a penetration test, malware analysis or compliance attestation.</li>
         </ul>
       `
     },

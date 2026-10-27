@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BotAppStore — OSINT, SEC EDGAR &amp; Security Bots for Grok</title>
-  <meta name="description" content="8 live Grok Bot templates incl. Agent Council multi-model debate ($39 SOL), domain, TLS &amp; email-auth hygiene auditor ($19 SOL), corporate deep-dive OSINT ($19), SEC EDGAR &amp; patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
+  <meta name="description" content="9 live Grok Bot templates incl. Agent Council multi-model debate ($39 SOL), MCP server &amp; tool-permission security auditor ($19 SOL), domain, TLS &amp; email-auth hygiene auditor ($19 SOL), corporate deep-dive OSINT ($19), SEC EDGAR &amp; patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
   <link rel="canonical" href="https://botappstore.com/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#070a10" />
@@ -21,7 +21,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@WattCoin2026" />
   <meta name="twitter:title" content="BotAppStore — OSINT, SEC EDGAR &amp; Security Bots for Grok" />
-  <meta name="twitter:description" content="8 live Grok Bot templates incl. Agent Council multi-model debate ($39 SOL), domain, TLS &amp; email-auth hygiene auditor ($19 SOL), corporate deep-dive OSINT ($19), SEC EDGAR &amp; patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
+  <meta name="twitter:description" content="9 live Grok Bot templates incl. Agent Council multi-model debate ($39 SOL), MCP server &amp; tool-permission security auditor ($19 SOL), domain, TLS &amp; email-auth hygiene auditor ($19 SOL), corporate deep-dive OSINT ($19), SEC EDGAR &amp; patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
   <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
   <meta name="twitter:image:alt" content="BotAppStore.com — 4 Live Grok Bot Templates ($0 Free, $19 SOL, $29 SOL) executed locally in /workspace" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -63,7 +63,7 @@
       "@type": "ItemList",
       "@id": "https://botappstore.com/#catalog-list",
       "name": "BotAppStore Grok Bot Agent Catalog",
-      "numberOfItems": 10,
+      "numberOfItems": 11,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -252,12 +252,37 @@
         {
           "@type": "ListItem",
           "position": 9,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "MCP Server & Tool-Permission Security Auditor",
+            "alternateName": "MCP Config Auditor: Secrets, Supply Chain, Network & Tool-Poisoning Checks for MCP Clients",
+            "sku": "mcp-config-auditor",
+            "applicationCategory": [
+              "SecurityApplication",
+              "DeveloperApplication"
+            ],
+            "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
+            "url": "https://botappstore.com/bots/mcp-config-auditor.html",
+            "description": "Read-only MCP config security auditor for Grok Bot: hardcoded secrets (always redacted), remote pipe execution, dangerous flags and auto-approve, filesystem and Docker exposure, unpinned and typosquatted packages, cleartext remote endpoints and tool poisoning across Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Cline and Zed configs, with hardened copy-paste configs and rug-pull delta tracking.",
+            "offers": {
+              "@type": "Offer",
+              "sku": "mcp-config-auditor",
+              "price": "19.00",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://botappstore.com/bots/mcp-config-auditor.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
           "name": "3D Print Farm & Slicer Queue Ops (in development, Phase 2 spec preview)",
           "url": "https://botappstore.com/#coming-next"
         },
         {
           "@type": "ListItem",
-          "position": 10,
+          "position": 11,
           "name": "Humanoid & Fleet Telemetry Inspector (in development, Phase 3 spec preview)",
           "url": "https://botappstore.com/#coming-next"
         }
@@ -324,7 +349,7 @@
             <span class="status-dot" aria-hidden="true"></span>
             <span>EXECUTION RUNTIME: <strong>GROK BOT LINUX SANDBOX (<code>/workspace</code>)</strong></span>
           </span>
-          <span>LIVE TEMPLATES: <strong>8 AVAILABLE (FREE + $19, $29 &amp; $39 SOL) · ZERO SUBSCRIPTIONS</strong></span>
+          <span>LIVE TEMPLATES: <strong>9 AVAILABLE (FREE + $19, $29 &amp; $39 SOL) · ZERO SUBSCRIPTIONS</strong></span>
           <span>PRIVACY: <strong>LOCAL CREDENTIAL VAULT · ZERO DATA EXFILTRATION</strong></span>
         </div>
         <div class="ticker-links">
@@ -352,21 +377,22 @@
         </a>
         <nav class="nav-links" aria-label="Primary Navigation">
           <div class="nav-dropdown">
-            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Products (8 Live) ▾</button>
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Products (9 Live) ▾</button>
             <div class="nav-dropdown-menu" role="menu">
-              <div class="nav-dropdown-label">LIVE OSINT &amp; DEVSECOPS AGENTS (8)</div>
+              <div class="nav-dropdown-label">LIVE OSINT &amp; DEVSECOPS AGENTS (9)</div>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/web-text-extractor.html"><span class="nav-dropdown-name">Web &amp; API Text Extractor</span><span class="nav-dropdown-badge nav-dropdown-badge-free">FREE</span></a>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/company-deep-dive.html"><span class="nav-dropdown-name">Company &amp; Competitor Deep-Dive Analyst</span><span class="nav-dropdown-badge">$19 SOL</span></a>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/domain-infra-hygiene.html"><span class="nav-dropdown-name">Domain, TLS &amp; Email Auth Hygiene Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/mcp-config-auditor.html"><span class="nav-dropdown-name">MCP Server &amp; Tool-Permission Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/bot-skill-auditor.html"><span class="nav-dropdown-name">Bot &amp; Skill Security Auditor</span><span class="nav-dropdown-badge">$29 SOL</span></a>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/sec-patent-watchdog.html"><span class="nav-dropdown-name">SEC &amp; Patent Watchdog Digest</span><span class="nav-dropdown-badge">$29 SOL</span></a>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/social-hub-publisher.html"><span class="nav-dropdown-name">Social Hub Publisher</span><span class="nav-dropdown-badge">$29 SOL</span></a>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/dependency-vuln-triage.html"><span class="nav-dropdown-name">Dependency Vulnerability Triage Bot</span><span class="nav-dropdown-badge">$29 SOL</span></a>
               <a class="nav-dropdown-item" role="menuitem" href="/bots/agent-council.html"><span class="nav-dropdown-name">Agent Council</span><span class="nav-dropdown-badge">$39 SOL</span></a>
-              <a class="nav-dropdown-footer" role="menuitem" href="#catalog">View All 8 Agents in Grid Catalog ↓</a>
+              <a class="nav-dropdown-footer" role="menuitem" href="#catalog">View All 9 Agents in Grid Catalog ↓</a>
             </div>
           </div>
-          <a href="#catalog">Agent Catalog (8 Live)</a>
+          <a href="#catalog">Agent Catalog (9 Live)</a>
           <a href="#architecture">How It Works</a>
           <a href="#hardware-stack">Security &amp; Stack</a>
           <a href="#faq">FAQ</a>
@@ -395,7 +421,7 @@
               SEC EDGAR, Corporate OSINT &amp; AI Skill Security Agents. <span class="gradient-text">Executed in Your Linux Sandbox.</span>
             </h1>
             <p class="hero-subtitle">
-              Inspectable, plain-text <code>SKILL.md</code> agent templates engineered for Grok Bot. Run 8 live automations: track SEC EDGAR filings and USPTO patent dockets, audit domain DNS, TLS and email-auth hygiene, triage lockfile CVEs, convene multi-model agent councils, and plan municipal facility permits, 3D print farm queues, and actuator/BMS telemetry inside your isolated <code>/workspace</code> container—with one-time USD licensing and zero monthly subscriptions.
+              Inspectable, plain-text <code>SKILL.md</code> agent templates engineered for Grok Bot. Run 9 live automations: track SEC EDGAR filings and USPTO patent dockets, audit domain DNS, TLS and email-auth hygiene, audit MCP server configs and tool permissions, triage lockfile CVEs, convene multi-model agent councils, and plan municipal facility permits, 3D print farm queues, and actuator/BMS telemetry inside your isolated <code>/workspace</code> container—with one-time USD licensing and zero monthly subscriptions.
             </p>
             <div class="hero-pillars">
               <span class="pillar-chip"><span class="check">✓</span> One-Time USD Licenses ($0 – $49)</span>
@@ -465,11 +491,11 @@
                     </button>
                   </div>
 
-                  <!-- Secondary Callout for All 8 Live Templates -->
+                  <!-- Secondary Callout for All 9 Live Templates -->
                   <div class="live-utility-callout">
                     <div class="live-utility-info">
                       <div class="live-utility-title">
-                        <span class="badge-live">● 8 LIVE AUTOMATIONS</span>
+                        <span class="badge-live">● 9 LIVE AUTOMATIONS</span>
                         <span>Free Web Extractor (<code>$0</code>) · Company Deep-Dive (<code>$19 SOL</code>) · Domain, TLS &amp; Email Auth Hygiene (<code>$19 SOL</code>) · Security Auditor (<code>$29 SOL</code>) · SEC &amp; Patent Watchdog (<code>$29 SOL</code>) · Social Hub Publisher (<code>$29 SOL</code>) · Dependency Vuln Triage (<code>$29 SOL</code>) · Agent Council (<code>$39 SOL</code>)</span>
                       </div>
                       <div class="live-utility-sub">
@@ -601,20 +627,20 @@
               <div class="section-kicker">DETERMINISTIC GROK BOT SKILL CATALOG</div>
               <h2 class="section-title">OSINT, Industrial Research &amp; Physical Robotics Agents</h2>
               <p class="section-subtitle">
-                8 live automations available now (1 free web extractor, 2 $19 SOL templates: corporate &amp; competitor deep-dive analyst and domain, TLS &amp; email auth hygiene auditor, 4 $29 SOL templates: security auditor, SEC &amp; patent watchdog digest, social hub publisher, and dependency vulnerability triage, and 1 $39 SOL template: the Agent Council multi-model debate and pair-architect collaborator) and 2 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
+                9 live automations available now (1 free web extractor, 3 $19 SOL templates: corporate &amp; competitor deep-dive analyst, domain, TLS &amp; email auth hygiene auditor, and MCP server &amp; tool-permission security auditor, 4 $29 SOL templates: security auditor, SEC &amp; patent watchdog digest, social hub publisher, and dependency vulnerability triage, and 1 $39 SOL template: the Agent Council multi-model debate and pair-architect collaborator) and 2 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
               </p>
             </div>
 
             <!-- Interactive Category Filter Pills (aria-pressed, NOT role="tab") -->
             <div class="filter-bar" role="group" aria-label="Filter agent templates by category">
               <button type="button" class="filter-pill active" aria-pressed="true" data-filter="all">
-                All Agents <span class="filter-count">(10)</span>
+                All Agents <span class="filter-count">(11)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="available">
-                Available Now <span class="filter-count">(8)</span>
+                Available Now <span class="filter-count">(9)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="security">
-                Security &amp; Audits <span class="filter-count">(4)</span>
+                Security &amp; Audits <span class="filter-count">(5)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="osint">
                 OSINT &amp; Research <span class="filter-count">(3)</span>
@@ -625,7 +651,7 @@
             </div>
           </div>
 
-          <h3 class="catalog-group-title" id="available-now">Available Now <span class="filter-count">(8)</span></h3>
+          <h3 class="catalog-group-title" id="available-now">Available Now <span class="filter-count">(9)</span></h3>
           <div class="catalog-grid bot-grid--live" id="catalog-grid">
             <!-- Card 1: Web & API Text Extractor (LIVE · FREE UTILITY) -->
             <article class="bot-card live-card" data-categories="available osint">
@@ -891,6 +917,30 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('agent-council', this)">Buy License ($39 in SOL)</button>
               <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('agent-council', this)">SKILL.md Preview</button>
               <a href="/bots/agent-council.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Council →</a>
+            </div>
+          </article>
+
+          <article class="bot-card live-card" data-categories="available security" id="card-mcp-config-auditor">
+            <div>
+              <div class="card-top-meta">
+                <span class="phase-badge live">&#9679; LIVE NOW &middot; $19 in SOL</span>
+                <span class="skill-slug">mcp-config-auditor-setup + mcp-config-auditor</span>
+              </div>
+              <div class="card-title-row">
+                <h3 class="card-title"><a href="/bots/mcp-config-auditor.html" style="color:inherit;text-decoration:none;">MCP Server &amp; Tool-Permission Security Auditor</a></h3>
+                <div class="card-price free">$19 <small>in SOL &middot; One-Time License</small></div>
+              </div>
+              <p class="card-summary"><strong>Find the leaked key, the unpinned package and the poisoned tool before your agent runs them.</strong> Coding &amp; Security / MCP &amp; Agent Hygiene: one read-only pass over your Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Cline and Zed MCP configs plus <code>tools/list</code> snapshots, with no network requests.</p>
+              <ul class="spec-highlights">
+                <li>5 buckets: <code>SEC_*</code> secrets (always <code>[REDACTED:...]</code>), <code>CMD_*</code>/<code>FS_*</code>/<code>DOCKER_*</code>/<code>DB_*</code> exposure, <code>SUP_*</code> supply chain, <code>NET_*</code> transport and <code>TOOL_*</code> poisoning.</li>
+                <li>Flags <code>curl | sh</code>, <code>--dangerously-skip-permissions</code>, <code>autoApprove</code>, <code>~/.ssh</code> mounts, <code>npx -y</code> / <code>@latest</code>, typosquats, <code>http://</code> remotes and <code>&lt;IMPORTANT&gt;</code> injections.</li>
+                <li>Copy-paste hardened <code>mcpServers</code> configs and <code>--state --delta</code> rug-pull alerts (<code>TOOL_DESC_CHANGED</code>, <code>TOOL_SCHEMA_CHANGED</code>).</li>
+              </ul>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('mcp-config-auditor', this)">Buy License ($19 in SOL)</button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('mcp-config-auditor', this)">SKILL.md Preview</button>
+              <a href="/bots/mcp-config-auditor.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Audit →</a>
             </div>
           </article>
 
@@ -1240,6 +1290,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
             <a href="/bots/dependency-vuln-triage.html">Dependency Vulnerability Triage ($29 SOL) →</a>
             <a href="/bots/company-deep-dive.html">Company &amp; Competitor Deep-Dive ($19 SOL) →</a>
             <a href="/bots/domain-infra-hygiene.html">Domain, TLS &amp; Email Auth Hygiene Auditor ($19 SOL) →</a>
+            <a href="/bots/mcp-config-auditor.html">MCP Server &amp; Tool-Permission Auditor ($19 SOL) →</a>
             <a href="/bots/bot-skill-auditor.html">Bot &amp; Skill Security Auditor ($29 SOL) →</a>
             <a href="/bots/sec-patent-watchdog.html">SEC &amp; Patent Watchdog Digest ($29 SOL) →</a>
             <a href="#faq">FAQ</a>
