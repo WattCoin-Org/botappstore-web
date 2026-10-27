@@ -115,6 +115,30 @@
       defaultPrompt: function (code) {
         return 'Activate my Dependency Vulnerability Triage Bot with license code ' + code;
       }
+    },
+    'domain-infra-hygiene': {
+      sku: 'domain-infra-hygiene',
+      name: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor',
+      title: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor — $19 in SOL',
+      slugMeta: 'sku: domain-infra-hygiene · Skills: domain-infra-hygiene-setup + domain-infra-hygiene · 1-Year License · 3 Rebinds',
+      priceUsd: 19,
+      priceLabel: '$19 USD in SOL (one-time)',
+      priceUsdHtml: '$19.00 <small>USD</small>',
+      promptHint: 'Audit DNS, DNSSEC, TLS, SPF/DMARC/DKIM and security headers for my domain example.com...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open Domain, TLS & Email Auth Hygiene Auditor in Grok Bot',
+      statusFooterText: 'Status: LIVE · $19 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($19 in SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>Domain, TLS &amp; Email Auth Infrastructure Hygiene Auditor</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Domain Hygiene Auditor in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or add the domains you own that you want audited):',
+      stepCFootHtml:
+        'On Turn 1, <code>domain-infra-hygiene-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>domain_infra_hygiene.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+      defaultPrompt: function (code) {
+        return 'Activate my Domain, TLS & Email Auth Infrastructure Hygiene Auditor with license code ' + code;
+      }
     }
   };
 
@@ -437,6 +461,64 @@
         <ul>
           <li><strong>No Auto-Mutation:</strong> Never runs <code>npm install</code>, modifies lockfiles, or pushes commits automatically.</li>
           <li><strong>No False "100% Safe" Guarantees:</strong> Clearly states that lockfile triage does not inspect custom application source code or runtime reachability.</li>
+        </ul>
+      `
+    },
+    'domain-infra-hygiene': {
+      title: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor',
+      slug: 'domain-infra-hygiene-setup + domain-infra-hygiene',
+      badge: 'LIVE · $19 IN SOL',
+      badgeClass: 'live',
+      price: '$19 One-Time in SOL (1-Year License · 3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'domain-infra-hygiene',
+      specPageUrl: '/bots/domain-infra-hygiene.html',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>Deterministic, read-only posture report for domains you own: DNS and DNSSEC, TLS certificate chain and expiry, SPF (RFC 7208 10-lookup counting), DMARC, DKIM, MTA-STS, TLS-RPT, CAA, HTTPS security headers, dangling CNAMEs and Certificate Transparency, with copy-paste DNS / Nginx / Vercel / Netlify remediation.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>domain-infra-hygiene-setup</code> + <code>domain-infra-hygiene</code>)</h4>
+        <pre class="code-pre">---
+name: domain-infra-hygiene
+description: "Use this when the user asks to audit a domain's DNS, DNSSEC,
+  TLS certificate chain/expiry, SPF (including the RFC 7208 10-lookup limit),
+  DMARC, DKIM, MTA-STS, TLS-RPT, CAA, HTTPS security headers, dangling CNAME
+  takeover risks, or Certificate Transparency logs."
+---
+Step 0  License gate: .wattcoin_license_check.py check --sku domain-infra-hygiene
+        must return "state": "OK" before every run.
+Step 1  Verify sha256 of domain_infra_hygiene.py (73f7a04a...0d1c14)
+        and bot_common.py (d1941b61...50e526); refuse on mismatch.
+Step 2  /usr/bin/python3 -I /workspace/scripts/domain_infra_hygiene.py &lt;DOMAIN...&gt;
+        [--no-mail] [--dkim-selector SEL] [--expect-ns NS] [--format markdown]
+        [--state /workspace/domain-hygiene/state.json --delta] [--fail-on high]
+Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degraded</pre>
+        <h4>Capabilities</h4>
+        <ul>
+          <li><strong>DNS &amp; DNSSEC:</strong> A/AAAA/CNAME/NS/MX/CAA/TXT/DNSKEY over DNS-over-HTTPS (Cloudflare, Google fallback); DNSSEC is <code>VALIDATED</code> only with a DNSKEY <em>and</em> the resolver <code>AD</code> bit, and broken DS chains are flagged <code>HIGH</code>.</li>
+          <li><strong>Email Authentication:</strong> recursive SPF expansion against the RFC 7208 10-lookup limit (loops, <code>+all</code>, <code>?all</code>, missing includes), DMARC policy/<code>sp</code>/<code>pct</code>/<code>rua</code>, DKIM RSA key size per selector, MTA-STS and TLS-RPT, and <code>v=spf1 -all</code> + <code>p=reject</code> + null MX <code>0 .</code> for domains that never send mail.</li>
+          <li><strong>TLS &amp; CAA:</strong> one :443 handshake for chain verification, SAN match, protocol, cipher and 30/14/7-day expiry windows, cross-checked against the domain's <code>CAA</code> issuers.</li>
+          <li><strong>HTTPS, Takeover &amp; CT:</strong> HSTS/CSP/XCTO/Referrer/Frame/Permissions headers, HTTP→HTTPS redirect, dangling-CNAME provider fingerprints on your own records, and Certificate Transparency issuers vs CAA.</li>
+          <li><strong>Monitoring:</strong> <code>--state --delta</code> reports <code>CERT_ROTATED</code>, <code>NS_CHANGED</code>, <code>SPF_CHANGED</code>, <code>DMARC_CHANGED</code>, <code>DNSSEC_LOST</code>, <code>NEW_CT_NAMES</code>, <code>HEADER_REGRESSED</code> and expiry-window events for daily/weekly routines.</li>
+        </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Audit botappstore.com and coinloader.com for DNS, DNSSEC, TLS, email auth and security headers. Neither domain sends mail. Give me the copy-paste DNS records and the Vercel headers to fix what you find.</code></p>
+        <p><a href="/bots/domain-infra-hygiene.html">Full spec, pinned runtime hashes &amp; live sample audit →</a></p>
+      `,
+      execHtml: `
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>). Only public lookups leave the box: DNS-over-HTTPS to <code>cloudflare-dns.com</code> / <code>dns.google</code>, one TLS handshake on :443, one HTTPS GET, one plain-HTTP GET on :80, and Certificate Transparency queries to <code>api.certspotter.com</code> / <code>crt.sh</code>.</p>
+        <ul>
+          <li><strong>License Binding (<code>domain-infra-hygiene-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, verifies the SHA-256-pinned <code>domain_infra_hygiene.py</code> and <code>bot_common.py</code>, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code> (up to 3 rebinds).</li>
+          <li><strong>Fail-Closed Exit Codes:</strong> <code>0</code> clean, <code>1</code>/<code>2</code>/<code>3</code> MEDIUM/HIGH/CRITICAL at <code>--fail-on</code>, <code>10</code> bad input, <code>11</code> degraded data so a resolver or CT outage never looks clean.</li>
+          <li><strong>Output:</strong> <code>--format text|markdown|json</code>, <code>--out PATH</code>; degraded runs never overwrite the <code>--state</code> baseline.</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>Own or Authorised Domains Only:</strong> Refuses to scan third-party domains, build target lists, or hunt subdomain takeovers on infrastructure you do not control.</li>
+          <li><strong>Passive Only:</strong> No port scanning, brute-force or wordlist subdomain enumeration, fuzzing, zone transfers, SMTP or credential probing, or exploitation.</li>
+          <li><strong>Never Claims or Changes Anything:</strong> Never registers a dangling CNAME target and never edits DNS, certificates or server config; remediation is printed for you to review and publish.</li>
+          <li><strong>No "Secure" Guarantees:</strong> Results are point-in-time; DKIM is only confirmed for selectors tried, and <code>UNVERIFIED</code> / <code>INCONCLUSIVE</code> are never passes. Not a penetration test or compliance attestation.</li>
         </ul>
       `
     },
@@ -1611,6 +1693,10 @@
   }
 
   // Global Escape & Focus Trap Handler for whichever modal is open
+  // Exposed for inline onclick handlers (e.g. onclick="openCheckoutModal('domain-infra-hygiene', this)").
+  window.openCheckoutModal = openCheckoutModal;
+  window.openSpecModal = openSpecModal;
+
   document.addEventListener('keydown', (e) => {
     if (checkoutModal && checkoutModal.classList.contains('open')) {
       if (e.key === 'Escape') {

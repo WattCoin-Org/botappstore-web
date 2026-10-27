@@ -10,12 +10,16 @@
 - **Paid Bot & Skill Security Auditor ($29 in SOL, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
 - **Paid Company & Competitor Deep-Dive Analyst ($19 in SOL, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
 - **Paid SEC & Patent Watchdog Digest ($29 in SOL, `sku: sec-patent-watchdog`, Registry Name: *SEC EDGAR & Patent Filing Watchdog*):** https://botappstore.com/bots/sec-patent-watchdog.html (Checkout: https://botappstore.com/#card-sec-patent-watchdog)
+- **Dependency Vulnerability Triage ($29 in SOL, `sku: dependency-vuln-triage`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/dependency-vuln-triage.html
+- **Social Hub Publisher ($29 in SOL, `sku: social-hub-publisher`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/social-hub-publisher.html
+- **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL, `sku: domain-infra-hygiene`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 4 Live Automations)
+## Live Agent Templates (Available Now — 7 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -121,18 +125,79 @@
   - Never bypasses SEC EDGAR rate limits (`<= 10 req/sec`) or `User-Agent` identification
   - Never connects to brokerage APIs, executes trades, or issues buy/sell/hold advice; never opines on patent validity or infringement
 
+### 5. Social Hub Publisher ($29 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `social-hub-publisher`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Product Page URL:** https://botappstore.com/bots/social-hub-publisher.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-social-hub-publisher
+- **Included Skills:** `social-hub-publisher-setup` + `social-hub-publisher`
+- **Deliverable:** *Write once, approve once, publish everywhere: one announcement queue for X, Discord, Bluesky and Telegram driven by one `config.json`, with credentials kept in environment variables.*
+- **What It Does:**
+  - **Gate 1 linter:** per-channel length (X weights URLs as 23), link-domain allowlist, banned terms, hashtag/mention caps, duplicate detection
+  - **Gate 2 approval:** `approve` HMAC-SHA256 signs the exact text with an expiry; the dispatcher refuses edited, expired or unsigned items
+  - **Channels:** free 1-click X Web Intent links by default (optional X API mode with pay-per-use cost estimates), Discord webhooks (mentions suppressed), Bluesky AT Protocol (link facets), Telegram Bot API
+- **Refusal Boundaries:**
+  - Dry run unless `--live`; never sends an item without a valid Gate-2 approval
+  - Ambiguous sends are marked `unknown_outcome` and never auto-retried (no duplicate posts)
+
+### 6. Dependency Vulnerability Triage ($29 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `dependency-vuln-triage`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Product Page URL:** https://botappstore.com/bots/dependency-vuln-triage.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-dependency-vuln-triage
+- **Included Skills:** `dependency-vuln-triage-setup` + `dependency-vuln-triage`
+- **Deliverable:** *Fix what is being exploited first: lockfile advisories from OSV.dev enriched with FIRST EPSS and the CISA KEV catalog, sorted into four action buckets with the lowest fixing version.*
+- **What It Does:**
+  - Parses `package-lock.json` (v1-v3), `yarn.lock`, `Pipfile.lock`, `poetry.lock`, pinned `requirements.txt`, `Cargo.lock` and `go.sum`
+  - Buckets: `KEV_ACTIVE_EXPLOIT`, `HIGH_EPSS_URGENT` (default EPSS threshold 0.10), `PATCH_AVAILABLE`, `LOW_PRIORITY_MONITOR`, plus a per-package upgrade plan
+  - Exit codes: `0` nothing at `--fail-on`, `1` findings, `10` bad input, `11` a data source was unavailable (never a pass)
+- **Refusal Boundaries:**
+  - Only package names and versions leave the machine; never installs, upgrades or edits the project
+  - Never claims a project is secure; EPSS is a probability estimate, not a verdict
+
+### 7. Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL — LIVE NOW, sku: domain-infra-hygiene)
+- **Status:** LIVE NOW
+- **SKU:** `domain-infra-hygiene`
+- **Price:** $19.00 USD One-Time License settled on-chain in SOL (1-year license, includes up to **3 workspace-reset rebinds**)
+- **Product Page URL:** https://botappstore.com/bots/domain-infra-hygiene.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-domain-infra-hygiene
+- **Included Skills:** `domain-infra-hygiene-setup` + `domain-infra-hygiene`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/domain_infra_hygiene.py` — SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14` (1,877 lines, stdlib Python)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Deliverable:** *Find the expiring certificate, the spoofable domain and the dangling CNAME before someone else does: one read-only pass over DNS, DNSSEC, TLS, email authentication, HTTPS headers and Certificate Transparency for domains you own, with copy-paste fixes.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`domain-infra-hygiene-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku domain-infra-hygiene`), and offers a smoke test on `botappstore.com coinloader.com`.
+  2. **Mandatory Pre-Flight License Gate (`domain-infra-hygiene`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py check --sku domain-infra-hygiene` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=domain-infra-hygiene`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Checks:**
+  - **DNS & DNSSEC:** A/AAAA/CNAME/NS/MX/CAA/TXT/DNSKEY via DNS-over-HTTPS (Cloudflare, Google fallback); `VALIDATED` only with DNSKEY + resolver `AD` bit; broken DS chains and bogus (cd=1) answers flagged HIGH; `--expect-ns` NS drift
+  - **Email auth:** recursive SPF with RFC 7208 §4.6.4 10-lookup counting, loops, `+all`/`?all`; DMARC `p`/`sp`/`pct`/`rua`; DKIM RSA key size; MTA-STS; TLS-RPT; `--no-mail` expects `v=spf1 -all` + `p=reject` + null MX `0 .`
+  - **TLS:** one :443 handshake — chain, SAN, protocol, cipher, 30/14/7-day expiry, issuer vs CAA
+  - **HTTPS:** HSTS, CSP, `X-Content-Type-Options`, `Referrer-Policy`, frame protection, `Permissions-Policy`, HTTP→HTTPS redirect
+  - **Takeover & CT:** dangling-CNAME provider fingerprints on the audited domain's own apex/`www`; Cert Spotter (crt.sh fallback) issuers vs CAA
+  - **Remediation:** copy-paste BIND records, Nginx `add_header`, `vercel.json` headers, Netlify / Cloudflare Pages `_headers`
+  - **Monitoring:** `--state /workspace/domain-hygiene/state.json --delta` events (`CERT_ROTATED`, `CERT_EXPIRY_WINDOW`, `NS_CHANGED`, `SPF_CHANGED`, `DMARC_CHANGED`, `DNSSEC_LOST`, `NEW_CT_NAMES`, `NEW_CT_ISSUANCES`, `HEADER_REGRESSED`) for daily/weekly `UpdateRoutine` runs
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (at/above `--fail-on`), `10` bad input/refusal, `11` degraded data source (never a pass)
+- **Sample Prompt:** `Audit botappstore.com and coinloader.com for DNS, DNSSEC, TLS, email auth and security headers. Neither domain sends mail.`
+- **Mandatory Refusal Boundaries:**
+  - Own or authorised domains only; refuses third-party scanning, target lists and subdomain-takeover hunting
+  - Passive only: no port scanning, brute-force subdomain enumeration, fuzzing, zone transfers, SMTP/credential probing or exploitation
+  - Never registers dangling CNAME targets or edits DNS/certificates/server config; never claims a domain is "secure"
+
 ---
 
 ## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
 
 > The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
 
-### 5. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
+### 8. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
 - **Slug:** `print-farm-ops`
 - **Scope:** Read-only OrcaSlicer / Bambu Studio `.3mf` container inspector, filament spool & desiccant ledger, and unit-economics calculator (`/workspace/farm_queue_report.csv`).
 - **Refusal Boundaries:** Never transmits G-code or triggers remote printer actuation without explicit per-job confirmation; never mutates master `.3mf` files in place.
 
-### 6. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
+### 9. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
 - **Slug:** `robotics-telemetry-inspector`
 - **Scope:** Offline diagnostic analyzer for robotic joint actuator thermal/torque CSV/JSON logs and 16S LiFePO4 battery management system (BMS) cell-voltage delta time series (`/workspace/telemetry_diagnostics.md`).
 - **Refusal Boundaries:** Strictly read-only log analysis; never sends motor/actuator commands, CAN frames, or BMS protection register writes.
@@ -151,6 +216,9 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
      - `sec-patent-watchdog` ($29.00 USD in SOL — SEC & Patent Watchdog Digest)
      - `solana-wallet-hygiene` ($19.00 USD in SOL — Solana Wallet Hygiene Bot)
      - `solana-token-scanner` ($29.00 USD in SOL — Retail Token Due-Diligence Bot)
+     - `social-hub-publisher` ($29.00 USD in SOL — Social Hub Publisher)
+     - `dependency-vuln-triage` ($29.00 USD in SOL — Dependency Vulnerability Triage)
+     - `domain-infra-hygiene` ($19.00 USD in SOL — Domain, TLS & Email Auth Infrastructure Hygiene Auditor)
    - Response: 15-minute locked SOL quote with `order_id` (`ord_<24-hex>`), `checkout_token` (`ct_<48-hex>`), `amount_sol`, `amount_lamports` (including a unique 4-digit lamport tag `0001`–`9999`), `memo` (`wcl:<order_id>`), `recipient_wallet` (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`), and `solana_pay_url`.
 
 2. **`POST https://www.wattcoin.org/api/v1/agents/license/purchase`**
@@ -173,7 +241,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
 
 ---
 
-## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 4 Live Templates)
+## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 7 Live Templates; Wave 2 and Wave 3 samples follow at the end)
 
 ### Sample 1 — Web & API Text Extractor (`getting-started` + `web-extractor`, $0 Free Forever)
 
@@ -626,3 +694,400 @@ launch-dc        REFUSED  text changed after approval
 | `lodash` | 4.17.15 | CVE-2021-23337, GHSA-35jh-r3h4-6jhm | HIGH | 0.2133 (97.6%) @2026-10-26 | - | 4.17.21 |
 | `axios` | 0.21.0 | CVE-2026-44492, GHSA-pjwm-pj3p-43mv | HIGH | 0.1228 (96.2%) @2026-10-26 | - | 0.32.0 |
 ```
+
+---
+
+## Wave 3 - domain-infra-hygiene ($19 in SOL, one-time; LIVE NOW, instant on-chain SOL checkout)
+- **SKU:** `domain-infra-hygiene`
+- **Name:** Domain, TLS & Email Auth Infrastructure Hygiene Auditor
+- **Page:** https://botappstore.com/bots/domain-infra-hygiene.html
+- **Checkout:** https://botappstore.com/#card-domain-infra-hygiene
+- **Skills:** `domain-infra-hygiene-setup`, `domain-infra-hygiene`
+- **Price:** $19.00 USD one-time, settled on-chain in SOL (1-year license, up to 3 workspace-reset rebinds)
+- **Runtime:** `/workspace/scripts/domain_infra_hygiene.py` v1.0.0 (1,877 lines, Python stdlib + `/workspace/lib/bot_common.py`), always run as `/usr/bin/python3 -I`
+- **Pinned SHA-256:**
+  - `https://botappstore.com/runtime/domain_infra_hygiene.py` — `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`
+  - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Summary:** Strictly read-only posture audit of domains the user owns or is authorised to assess: DNS and DNSSEC (`AD`-bit validation), TLS chain/expiry/CAA, SPF with RFC 7208 10-lookup counting, DMARC, DKIM, MTA-STS, TLS-RPT, HTTPS security headers, dangling CNAMEs and Certificate Transparency, with copy-paste DNS / Nginx / Vercel / Netlify remediation.
+
+### Network footprint (passive only)
+- DNS-over-HTTPS: `cloudflare-dns.com` (primary), `dns.google` (fallback) for A, AAAA, CNAME, NS, MX, CAA, TXT, DNSKEY (+ `cd=1` re-query on SERVFAIL)
+- One TLS handshake on :443 (SNI, full verification), one HTTPS GET for response headers, one plain-HTTP GET on :80 for the redirect check
+- Certificate Transparency: `api.certspotter.com` (primary), `crt.sh` (fallback)
+- No port scanning, brute-force subdomain enumeration, fuzzing, zone transfers, SMTP or credential probing
+
+### Usage
+```bash
+/usr/bin/python3 -I /workspace/.wattcoin_license_check.py check --sku domain-infra-hygiene   # must print "state": "OK"
+/usr/bin/python3 -I /workspace/scripts/domain_infra_hygiene.py <DOMAIN...> [flags]
+/usr/bin/python3 -I /workspace/scripts/domain_infra_hygiene.py example.com --format markdown --out /workspace/domain-hygiene/example.com.md
+/usr/bin/python3 -I /workspace/scripts/domain_infra_hygiene.py parked.example --no-mail
+/usr/bin/python3 -I /workspace/scripts/domain_infra_hygiene.py --domains-file /workspace/domain-hygiene/domains.txt \
+  --state /workspace/domain-hygiene/state.json --delta --json --fail-on high
+```
+
+### CLI flags
+| Flag | Meaning |
+|---|---|
+| `DOMAIN ...` | Domains to audit (max 50; URLs reduced to host; IPs, single labels and special-use names rejected with exit 10) |
+| `--domains-file PATH` | Additional domains (whitespace separated, `#` comments) |
+| `--dkim-selector SEL[,SEL]` | DKIM selectors to probe (default `default, google, selector1, selector2, k1, s1, s2, mail, dkim`) |
+| `--no-mail` | Assert the domain never sends mail: expects `v=spf1 -all`, DMARC `p=reject`, null MX `0 .` |
+| `--no-http` | Skip the HTTPS header GET and the port-80 redirect check |
+| `--no-tls` | Skip the TLS handshake |
+| `--ct` / `--no-ct` | Query (default) / skip Certificate Transparency |
+| `--expect-ns NS[,NS]` | Expected nameservers; mismatch = `NS_DRIFT` (HIGH) |
+| `--state PATH` | Persist per-domain snapshots (degraded runs never overwrite) |
+| `--delta` | Requires `--state`; report events, new, changed, resolved (first run = baseline) |
+| `--format {text,markdown,json}` | Output format (default `text`; `md` alias); markdown includes remediation blocks |
+| `--json` | JSON output shortcut |
+| `--out PATH` | Write report to file |
+| `--fail-on {none,info,low,medium,high,critical}` | Exit threshold (default `medium`) |
+| `--timeout SECONDS` | Per-request timeout (default 15) |
+| `--offline PATH` | Replay a JSON fixture instead of the network |
+| `--no-color` | Disable ANSI colour |
+
+### Exit codes
+| Code | Meaning |
+|---|---|
+| `0` | Completed; nothing at or above `--fail-on` |
+| `1` | Worst finding at threshold is MEDIUM (or LOW/INFO with `--fail-on low`/`info`) |
+| `2` | Worst finding at threshold is HIGH |
+| `3` | Worst finding at threshold is CRITICAL |
+| `10` | Bad input or refusal |
+| `11` | Degraded data source with nothing at threshold, or every core check failed — never a pass |
+
+### Finding codes
+- **CRITICAL:** `SPF_PASS_ALL`, `TLS_EXPIRED`, `TLS_VERIFY_FAILED`, `TLS_HOSTNAME_MISMATCH`, `TLS_CERT_EXPIRED`, `TLS_EXPIRING_CRITICAL` (<7d)
+- **HIGH:** `DOMAIN_NXDOMAIN`, `NS_DRIFT`, `DNSSEC_BROKEN_CHAIN`, `DANGLING_CNAME_TAKEOVER_RISK`, `SPF_MISSING` (mail-enabled), `SPF_MULTIPLE_RECORDS`, `SPF_RECURSIVE_LOOP`, `SPF_LOOKUP_LIMIT_EXCEEDED`, `DMARC_MISSING` (mail-enabled), `DMARC_MULTIPLE_RECORDS`, `DKIM_WEAK_KEY`, `TLS_EXPIRING_HIGH` (<14d), `TLS_LEGACY_PROTOCOL`, `TLS_WEAK_CIPHER`, `TLS_ISSUER_CAA_MISMATCH`, `HSTS_MISSING`, `HTTP_NO_HTTPS_REDIRECT`
+- **MEDIUM:** `DNSSEC_NOT_ENABLED`, `NO_MAIL_MX_PRESENT`, `SPF_MISSING` / `DMARC_MISSING` (no-mail domains), `SPF_NEUTRAL_ALL`, `SPF_NO_TERMINAL_ALL`, `SPF_INCLUDE_NO_RECORD`, `SPF_NO_MAIL_NOT_STRICT`, `DMARC_POLICY_NONE`, `DMARC_SUBDOMAIN_POLICY_NONE`, `DMARC_INVALID_POLICY`, `DMARC_NO_MAIL_NOT_REJECT`, `TLS_EXPIRING_SOON` (<30d), `HSTS_SHORT_MAX_AGE`, `CSP_MISSING`, `CT_ISSUER_NOT_IN_CAA`
+- **LOW:** `CAA_MISSING`, `SPF_LOOKUP_NEAR_LIMIT`, `SPF_DEPRECATED_PTR`, `DMARC_PARTIAL_PCT`, `DMARC_NO_RUA`, `DKIM_1024_BIT_KEY`, `DKIM_NOT_FOUND`, `MTA_STS_MISSING`, `TLS_RPT_MISSING`, `HSTS_NO_INCLUDESUBDOMAINS`, `XCTO_MISSING`, `REFERRER_POLICY_MISSING`, `FRAME_PROTECTION_MISSING`, `PERMISSIONS_POLICY_MISSING`
+- **INFO:** `DNSSEC_VALIDATED`, `NO_ADDRESS_RECORDS`, `MX_MISSING`, `SPF_SOFTFAIL_ALL`, `SPF_HARDFAIL_ALL`, `DKIM_REVOKED_KEY`, `TLS_CERT_VALID`, `TLS_UNREACHABLE`, `HTTPS_UNREACHABLE`, `CT_UNAVAILABLE`, `CT_INCONCLUSIVE`
+- **Delta events:** `DNSSEC_LOST` (HIGH), `NS_CHANGED`, `NEW_CT_NAMES`, `HEADER_REGRESSED` (MEDIUM), `SPF_CHANGED` (MEDIUM if removed, else LOW), `DMARC_CHANGED` (MEDIUM if weakened, else LOW), `CERT_ROTATED` (LOW on issuer change, else INFO), `CERT_EXPIRY_WINDOW` (inherits expiry severity), `NEW_CT_ISSUANCES` (INFO)
+
+### Boundaries
+- Own or authorised domains only; refuses third-party scanning, target lists and subdomain-takeover hunting.
+- Never registers dangling CNAME targets, never edits DNS, certificates, server or CDN config; remediation is printed for the owner to review.
+- Point-in-time results; DKIM only confirmed for selectors tried; `UNVERIFIED` (port 80 blocked) and `INCONCLUSIVE` (empty crt.sh) are never passes. Not a penetration test, compliance attestation or legal advice.
+
+### Verbatim sample output
+Live run on 2026-10-27: `/usr/bin/python3 -I /workspace/scripts/domain_infra_hygiene.py botappstore.com coinloader.com --format markdown` (exit 1: MEDIUM findings at the default `--fail-on medium`).
+
+````markdown
+# Domain, TLS & Email Auth Hygiene Report
+
+```
+snapshot   2026-10-27 20:04:30 UTC | tool=domain-infra-hygiene
+endpoints  api.certspotter.com, cloudflare-dns.com, http:80, https:443, tls:443
+```
+
+**Domains:** 2 | **Worst:** MEDIUM | Critical 0 · High 0 · Medium 7 · Low 12 · Info 5 | **Exit code:** 1 (fail-on=medium)
+
+| Domain | Worst | Crit | High | Med | Low | Info | DNSSEC | Mail | TLS expires | HSTS |
+|---|---|---:|---:|---:|---:|---:|---|---|---|---|
+| `botappstore.com` | MEDIUM | 0 | 0 | 3 | 6 | 3 | VALIDATED | no mail | 2027-01-23 (87d) | max-age=63072000 |
+| `coinloader.com` | MEDIUM | 0 | 0 | 4 | 6 | 2 | UNSIGNED | no mail | 2027-01-23 (87d) | max-age=63072000 |
+
+## `botappstore.com`
+
+### DNS
+
+| Record | Value |
+|---|---|
+| A | 216.198.79.1 |
+| AAAA | - |
+| NS | ns-cloud-e1.googledomains.com, ns-cloud-e2.googledomains.com, ns-cloud-e3.googledomains.com, ns-cloud-e4.googledomains.com |
+| MX | - |
+| CAA | - |
+| DNSKEY / AD | 3 / True (VALIDATED) |
+| CNAME `www.botappstore.com` | d3b71d5b846c057b.vercel-dns-017.com (status 0, resolves yes) |
+
+### Email authentication
+
+| Check | Result |
+|---|---|
+| Sends mail | no |
+| SPF | none |
+| DMARC | none |
+| DKIM | - (tried: default,google,selector1,selector2,k1,s1,s2,mail,dkim) |
+| MTA-STS | - |
+| TLS-RPT | - |
+
+### TLS (:443)
+
+| Field | Value |
+|---|---|
+| Protocol / cipher | TLSv1.3 / TLS_AES_128_GCM_SHA256 (128-bit) |
+| Issuer | Let's Encrypt (YR1) |
+| Subject CN | botappstore.com |
+| Valid | 2026-10-25T18:49:02Z → 2027-01-23T18:49:01Z (87 days left) |
+| Verified | yes |
+| Serial | `052B27E3DE4DE0A54400DC114CE04F93737B` |
+| SHA-256 | `5f2c20a8d0679eb3929c16c9747e52b583728be9973510d5b50f167f28a1cbc7` |
+| SAN | botappstore.com, www.botappstore.com |
+
+### HTTPS headers & port 80
+
+| Header | Value |
+|---|---|
+| `strict-transport-security` | max-age=63072000 |
+| `content-security-policy` | **missing** |
+| `x-content-type-options` | **missing** |
+| `referrer-policy` | **missing** |
+| `x-frame-options` | **missing** |
+| `permissions-policy` | **missing** |
+| port 80 | UNVERIFIED (outbound port 80 unreachable/blocked) |
+
+### Certificate Transparency
+
+Source: certspotter · status **OK** · issuances 1 · issuers Let's Encrypt · names: `botappstore.com`, `www.botappstore.com`
+
+### Findings
+
+| Severity | Code | Finding |
+|---|---|---|
+| MEDIUM | `CSP_MISSING` | no Content-Security-Policy header (XSS / injection blast radius unbounded) |
+| MEDIUM | `DMARC_MISSING` | no _dmarc record; domain sends no mail: publish 'v=DMARC1; p=reject;' |
+| MEDIUM | `SPF_MISSING` | no SPF record; domain sends no mail: publish 'v=spf1 -all' to block spoofing |
+| LOW | `CAA_MISSING` | no CAA record: any public CA may issue certificates for this domain |
+| LOW | `FRAME_PROTECTION_MISSING` | no X-Frame-Options and no CSP frame-ancestors (clickjacking) |
+| LOW | `HSTS_NO_INCLUDESUBDOMAINS` | HSTS lacks includeSubDomains: subdomains can still be downgraded |
+| LOW | `PERMISSIONS_POLICY_MISSING` | no Permissions-Policy header |
+| LOW | `REFERRER_POLICY_MISSING` | no Referrer-Policy header |
+| LOW | `XCTO_MISSING` | X-Content-Type-Options is not 'nosniff' |
+| INFO | `DNSSEC_VALIDATED` | DNSSEC validated (DNSKEY present, AD=true) |
+| INFO | `MX_MISSING` | domain has no MX record; if it never receives mail publish RFC 7505 null MX '0 .' |
+| INFO | `TLS_CERT_VALID` | certificate valid for 87 more days (expires 2027-01-23) |
+
+### Copy-paste remediation
+
+DNS zone records (BIND syntax; in Cloudflare/Route 53 enter name, type and value):
+
+```dns
+botappstore.com. 3600 IN TXT "v=spf1 -all"
+_dmarc.botappstore.com. 3600 IN TXT "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s"
+botappstore.com. 3600 IN MX 0 .
+botappstore.com. 3600 IN CAA 0 issue "letsencrypt.org"
+botappstore.com. 3600 IN CAA 0 issuewild ";"
+botappstore.com. 3600 IN CAA 0 iodef "mailto:security@botappstore.com"
+```
+
+Nginx (`server {}` block):
+
+```nginx
+add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header X-Frame-Options "DENY" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;
+```
+
+Vercel (`vercel.json`):
+
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Netlify / Cloudflare Pages (`_headers`):
+
+```text
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+```
+
+- CAA: list every CA your CDN/host uses (check its docs) before publishing, or renewals will fail.
+- CSP: the starter policy blocks third-party scripts/styles; ship it first as Content-Security-Policy-Report-Only, add the origins you need, then enforce.
+- HSTS: includeSubDomains/preload commit EVERY subdomain to HTTPS for the max-age; confirm none serve plain HTTP before adding them (drop 'preload' unless you will submit to hstspreload.org).
+
+## `coinloader.com`
+
+### DNS
+
+| Record | Value |
+|---|---|
+| A | 216.198.79.1 |
+| AAAA | - |
+| NS | ns-cloud-d1.googledomains.com, ns-cloud-d2.googledomains.com, ns-cloud-d3.googledomains.com, ns-cloud-d4.googledomains.com |
+| MX | - |
+| CAA | - |
+| DNSKEY / AD | 0 / False (UNSIGNED) |
+| CNAME `www.coinloader.com` | 4fadf6ff311d808b.vercel-dns-017.com (status 0, resolves yes) |
+
+### Email authentication
+
+| Check | Result |
+|---|---|
+| Sends mail | no |
+| SPF | none |
+| DMARC | none |
+| DKIM | - (tried: default,google,selector1,selector2,k1,s1,s2,mail,dkim) |
+| MTA-STS | - |
+| TLS-RPT | - |
+
+### TLS (:443)
+
+| Field | Value |
+|---|---|
+| Protocol / cipher | TLSv1.3 / TLS_AES_128_GCM_SHA256 (128-bit) |
+| Issuer | Let's Encrypt (YR1) |
+| Subject CN | coinloader.com |
+| Valid | 2026-10-25T18:39:39Z → 2027-01-23T18:39:38Z (87 days left) |
+| Verified | yes |
+| Serial | `062EC72524AD6E41A2A97E1CC25618826213` |
+| SHA-256 | `d29f5f52f61f4f0e9f32617f3087885b81bbcdbd95a0b452a534c80dbc75ff4e` |
+| SAN | coinloader.com, www.coinloader.com |
+
+### HTTPS headers & port 80
+
+| Header | Value |
+|---|---|
+| `strict-transport-security` | max-age=63072000 |
+| `content-security-policy` | **missing** |
+| `x-content-type-options` | **missing** |
+| `referrer-policy` | **missing** |
+| `x-frame-options` | **missing** |
+| `permissions-policy` | **missing** |
+| port 80 | UNVERIFIED (outbound port 80 unreachable/blocked) |
+
+### Certificate Transparency
+
+Source: certspotter · status **OK** · issuances 5 · issuers Let's Encrypt · names: `coinloader.com`, `www.coinloader.com`
+
+### Findings
+
+| Severity | Code | Finding |
+|---|---|---|
+| MEDIUM | `CSP_MISSING` | no Content-Security-Policy header (XSS / injection blast radius unbounded) |
+| MEDIUM | `DMARC_MISSING` | no _dmarc record; domain sends no mail: publish 'v=DMARC1; p=reject;' |
+| MEDIUM | `DNSSEC_NOT_ENABLED` | DNSSEC not enabled (no DNSKEY at apex): DNS answers can be spoofed in transit |
+| MEDIUM | `SPF_MISSING` | no SPF record; domain sends no mail: publish 'v=spf1 -all' to block spoofing |
+| LOW | `CAA_MISSING` | no CAA record: any public CA may issue certificates for this domain |
+| LOW | `FRAME_PROTECTION_MISSING` | no X-Frame-Options and no CSP frame-ancestors (clickjacking) |
+| LOW | `HSTS_NO_INCLUDESUBDOMAINS` | HSTS lacks includeSubDomains: subdomains can still be downgraded |
+| LOW | `PERMISSIONS_POLICY_MISSING` | no Permissions-Policy header |
+| LOW | `REFERRER_POLICY_MISSING` | no Referrer-Policy header |
+| LOW | `XCTO_MISSING` | X-Content-Type-Options is not 'nosniff' |
+| INFO | `MX_MISSING` | domain has no MX record; if it never receives mail publish RFC 7505 null MX '0 .' |
+| INFO | `TLS_CERT_VALID` | certificate valid for 87 more days (expires 2027-01-23) |
+
+### Copy-paste remediation
+
+DNS zone records (BIND syntax; in Cloudflare/Route 53 enter name, type and value):
+
+```dns
+coinloader.com. 3600 IN TXT "v=spf1 -all"
+_dmarc.coinloader.com. 3600 IN TXT "v=DMARC1; p=reject; sp=reject; adkim=s; aspf=s"
+coinloader.com. 3600 IN MX 0 .
+coinloader.com. 3600 IN CAA 0 issue "letsencrypt.org"
+coinloader.com. 3600 IN CAA 0 issuewild ";"
+coinloader.com. 3600 IN CAA 0 iodef "mailto:security@coinloader.com"
+```
+
+Nginx (`server {}` block):
+
+```nginx
+add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+add_header Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+add_header X-Frame-Options "DENY" always;
+add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()" always;
+```
+
+Vercel (`vercel.json`):
+
+```json
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Netlify / Cloudflare Pages (`_headers`):
+
+```text
+/*
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+```
+
+- CAA: list every CA your CDN/host uses (check its docs) before publishing, or renewals will fail.
+- DNSSEC: enable signing at your DNS host, then publish the DS record it shows at your registrar (Cloudflare: DNS > Settings > DNSSEC; Route 53: Hosted zone > DNSSEC signing).
+- CSP: the starter policy blocks third-party scripts/styles; ship it first as Content-Security-Policy-Report-Only, add the origins you need, then enforce.
+- HSTS: includeSubDomains/preload commit EVERY subdomain to HTTPS for the max-age; confirm none serve plain HTTP before adding them (drop 'preload' unless you will submit to hstspreload.org).
+
+---
+
+SCOPE_NOTE: Passive, read-only public posture inspection for domains the user owns or is authorised to assess: DNS-over-HTTPS lookups (Cloudflare, Google fallback), one TLS handshake on :443, one HTTPS GET for response headers, one plain-HTTP GET on :80 for the redirect check, and public Certificate Transparency logs (Cert Spotter, crt.sh fallback). No port scanning, brute-forcing, fuzzing, subdomain enumeration beyond public CT logs, mail-server or credential probing, and no exploitation; the dangling-CNAME check only inspects the audited domain's own records against known provider fingerprints and never claims or registers anything. Results are point-in-time: DNS caches, CT log lag, CDN edge variation and resolver behaviour can differ by location and minute; DKIM presence is only confirmed for the selectors tried; an empty crt.sh answer is INCONCLUSIVE, not clean. The HTTP->HTTPS redirect is reported UNVERIFIED when outbound port 80 is blocked (common in sandboxes and corporate networks). Remediation records are templates to review before publishing. Not a penetration test, compliance attestation, or legal advice. Refuses: scanning domains the user does not control, subdomain-takeover hunting against third parties, and credential or mail-server probing.
+````

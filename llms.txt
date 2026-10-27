@@ -12,12 +12,14 @@
 - **Paid SEC & Patent Watchdog Digest ($29 in SOL, `sku: sec-patent-watchdog`, Registry Name: *SEC EDGAR & Patent Filing Watchdog*):** https://botappstore.com/bots/sec-patent-watchdog.html (Checkout: https://botappstore.com/#card-sec-patent-watchdog)
 - **Dependency Vulnerability Triage ($29 in SOL, `sku: dependency-vuln-triage`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/dependency-vuln-triage.html
 - **Social Hub Publisher ($29 in SOL, `sku: social-hub-publisher`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/social-hub-publisher.html
+- **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL, `sku: domain-infra-hygiene`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 6 Live Automations)
+## Live Agent Templates (Available Now — 7 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -123,18 +125,79 @@
   - Never bypasses SEC EDGAR rate limits (`<= 10 req/sec`) or `User-Agent` identification
   - Never connects to brokerage APIs, executes trades, or issues buy/sell/hold advice; never opines on patent validity or infringement
 
+### 5. Social Hub Publisher ($29 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `social-hub-publisher`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Product Page URL:** https://botappstore.com/bots/social-hub-publisher.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-social-hub-publisher
+- **Included Skills:** `social-hub-publisher-setup` + `social-hub-publisher`
+- **Deliverable:** *Write once, approve once, publish everywhere: one announcement queue for X, Discord, Bluesky and Telegram driven by one `config.json`, with credentials kept in environment variables.*
+- **What It Does:**
+  - **Gate 1 linter:** per-channel length (X weights URLs as 23), link-domain allowlist, banned terms, hashtag/mention caps, duplicate detection
+  - **Gate 2 approval:** `approve` HMAC-SHA256 signs the exact text with an expiry; the dispatcher refuses edited, expired or unsigned items
+  - **Channels:** free 1-click X Web Intent links by default (optional X API mode with pay-per-use cost estimates), Discord webhooks (mentions suppressed), Bluesky AT Protocol (link facets), Telegram Bot API
+- **Refusal Boundaries:**
+  - Dry run unless `--live`; never sends an item without a valid Gate-2 approval
+  - Ambiguous sends are marked `unknown_outcome` and never auto-retried (no duplicate posts)
+
+### 6. Dependency Vulnerability Triage ($29 in SOL — LIVE NOW)
+- **Status:** LIVE NOW
+- **SKU:** `dependency-vuln-triage`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Product Page URL:** https://botappstore.com/bots/dependency-vuln-triage.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-dependency-vuln-triage
+- **Included Skills:** `dependency-vuln-triage-setup` + `dependency-vuln-triage`
+- **Deliverable:** *Fix what is being exploited first: lockfile advisories from OSV.dev enriched with FIRST EPSS and the CISA KEV catalog, sorted into four action buckets with the lowest fixing version.*
+- **What It Does:**
+  - Parses `package-lock.json` (v1-v3), `yarn.lock`, `Pipfile.lock`, `poetry.lock`, pinned `requirements.txt`, `Cargo.lock` and `go.sum`
+  - Buckets: `KEV_ACTIVE_EXPLOIT`, `HIGH_EPSS_URGENT` (default EPSS threshold 0.10), `PATCH_AVAILABLE`, `LOW_PRIORITY_MONITOR`, plus a per-package upgrade plan
+  - Exit codes: `0` nothing at `--fail-on`, `1` findings, `10` bad input, `11` a data source was unavailable (never a pass)
+- **Refusal Boundaries:**
+  - Only package names and versions leave the machine; never installs, upgrades or edits the project
+  - Never claims a project is secure; EPSS is a probability estimate, not a verdict
+
+### 7. Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL — LIVE NOW, sku: domain-infra-hygiene)
+- **Status:** LIVE NOW
+- **SKU:** `domain-infra-hygiene`
+- **Price:** $19.00 USD One-Time License settled on-chain in SOL (1-year license, includes up to **3 workspace-reset rebinds**)
+- **Product Page URL:** https://botappstore.com/bots/domain-infra-hygiene.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-domain-infra-hygiene
+- **Included Skills:** `domain-infra-hygiene-setup` + `domain-infra-hygiene`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/domain_infra_hygiene.py` — SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14` (1,877 lines, stdlib Python)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Deliverable:** *Find the expiring certificate, the spoofable domain and the dangling CNAME before someone else does: one read-only pass over DNS, DNSSEC, TLS, email authentication, HTTPS headers and Certificate Transparency for domains you own, with copy-paste fixes.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`domain-infra-hygiene-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku domain-infra-hygiene`), and offers a smoke test on `botappstore.com coinloader.com`.
+  2. **Mandatory Pre-Flight License Gate (`domain-infra-hygiene`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py check --sku domain-infra-hygiene` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=domain-infra-hygiene`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Checks:**
+  - **DNS & DNSSEC:** A/AAAA/CNAME/NS/MX/CAA/TXT/DNSKEY via DNS-over-HTTPS (Cloudflare, Google fallback); `VALIDATED` only with DNSKEY + resolver `AD` bit; broken DS chains and bogus (cd=1) answers flagged HIGH; `--expect-ns` NS drift
+  - **Email auth:** recursive SPF with RFC 7208 §4.6.4 10-lookup counting, loops, `+all`/`?all`; DMARC `p`/`sp`/`pct`/`rua`; DKIM RSA key size; MTA-STS; TLS-RPT; `--no-mail` expects `v=spf1 -all` + `p=reject` + null MX `0 .`
+  - **TLS:** one :443 handshake — chain, SAN, protocol, cipher, 30/14/7-day expiry, issuer vs CAA
+  - **HTTPS:** HSTS, CSP, `X-Content-Type-Options`, `Referrer-Policy`, frame protection, `Permissions-Policy`, HTTP→HTTPS redirect
+  - **Takeover & CT:** dangling-CNAME provider fingerprints on the audited domain's own apex/`www`; Cert Spotter (crt.sh fallback) issuers vs CAA
+  - **Remediation:** copy-paste BIND records, Nginx `add_header`, `vercel.json` headers, Netlify / Cloudflare Pages `_headers`
+  - **Monitoring:** `--state /workspace/domain-hygiene/state.json --delta` events (`CERT_ROTATED`, `CERT_EXPIRY_WINDOW`, `NS_CHANGED`, `SPF_CHANGED`, `DMARC_CHANGED`, `DNSSEC_LOST`, `NEW_CT_NAMES`, `NEW_CT_ISSUANCES`, `HEADER_REGRESSED`) for daily/weekly `UpdateRoutine` runs
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (at/above `--fail-on`), `10` bad input/refusal, `11` degraded data source (never a pass)
+- **Sample Prompt:** `Audit botappstore.com and coinloader.com for DNS, DNSSEC, TLS, email auth and security headers. Neither domain sends mail.`
+- **Mandatory Refusal Boundaries:**
+  - Own or authorised domains only; refuses third-party scanning, target lists and subdomain-takeover hunting
+  - Passive only: no port scanning, brute-force subdomain enumeration, fuzzing, zone transfers, SMTP/credential probing or exploitation
+  - Never registers dangling CNAME targets or edits DNS/certificates/server config; never claims a domain is "secure"
+
 ---
 
 ## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
 
 > The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
 
-### 5. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
+### 8. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
 - **Slug:** `print-farm-ops`
 - **Scope:** Read-only OrcaSlicer / Bambu Studio `.3mf` container inspector, filament spool & desiccant ledger, and unit-economics calculator (`/workspace/farm_queue_report.csv`).
 - **Refusal Boundaries:** Never transmits G-code or triggers remote printer actuation without explicit per-job confirmation; never mutates master `.3mf` files in place.
 
-### 6. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
+### 9. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
 - **Slug:** `robotics-telemetry-inspector`
 - **Scope:** Offline diagnostic analyzer for robotic joint actuator thermal/torque CSV/JSON logs and 16S LiFePO4 battery management system (BMS) cell-voltage delta time series (`/workspace/telemetry_diagnostics.md`).
 - **Refusal Boundaries:** Strictly read-only log analysis; never sends motor/actuator commands, CAN frames, or BMS protection register writes.

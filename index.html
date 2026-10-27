@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BotAppStore — OSINT, SEC EDGAR &amp; Security Bots for Grok</title>
-  <meta name="description" content="4 live Grok Bot templates: corporate deep-dive OSINT analyst ($19 SOL), SEC EDGAR 8-K &amp; USPTO patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
+  <meta name="description" content="7 live Grok Bot templates incl. domain, TLS &amp; email-auth hygiene auditor ($19 SOL), corporate deep-dive OSINT ($19), SEC EDGAR &amp; patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
   <link rel="canonical" href="https://botappstore.com/" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#070a10" />
@@ -12,16 +12,16 @@
   <meta property="og:site_name" content="BotAppStore.com" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="BotAppStore — OSINT, SEC EDGAR &amp; Security Bots for Grok" />
-  <meta property="og:description" content="Run primary-source SEC EDGAR &amp; USPTO patent watchdogs ($29 SOL), corporate deep-dive OSINT dossiers ($19 SOL), AI skill security audits ($29 SOL), and free web extraction in /workspace." />
+  <meta property="og:description" content="Audit domain DNS, DNSSEC, TLS, SPF/DMARC/DKIM &amp; security headers ($19 SOL), run SEC EDGAR &amp; USPTO patent watchdogs ($29 SOL), corporate deep-dive OSINT dossiers ($19 SOL), AI skill security audits ($29 SOL), and free web extraction in /workspace." />
   <meta property="og:url" content="https://botappstore.com/" />
   <meta property="og:image" content="https://botappstore.com/og-card.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="BotAppStore.com — 6 Live Grok Bot Templates: Free Web &amp; API Text Extractor ($0), Company &amp; Competitor Deep-Dive ($19 SOL), Bot &amp; Skill Security Auditor ($29 SOL), and SEC &amp; Patent Watchdog Digest ($29 SOL)" />
+  <meta property="og:image:alt" content="BotAppStore.com — 7 Live Grok Bot Templates: Free Web &amp; API Text Extractor ($0), Company &amp; Competitor Deep-Dive ($19 SOL), Domain, TLS &amp; Email Auth Hygiene Auditor ($19 SOL), Bot &amp; Skill Security Auditor ($29 SOL), SEC &amp; Patent Watchdog Digest ($29 SOL), Social Hub Publisher ($29 SOL), and Dependency Vulnerability Triage ($29 SOL)" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@WattCoin2026" />
   <meta name="twitter:title" content="BotAppStore — OSINT, SEC EDGAR &amp; Security Bots for Grok" />
-  <meta name="twitter:description" content="4 live Grok Bot templates: corporate deep-dive OSINT analyst ($19 SOL), SEC EDGAR 8-K &amp; USPTO patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
+  <meta name="twitter:description" content="7 live Grok Bot templates incl. domain, TLS &amp; email-auth hygiene auditor ($19 SOL), corporate deep-dive OSINT ($19), SEC EDGAR &amp; patent watchdog ($29), AI skill security auditor ($29) &amp; free scraper." />
   <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
   <meta name="twitter:image:alt" content="BotAppStore.com — 4 Live Grok Bot Templates ($0 Free, $19 SOL, $29 SOL) executed locally in /workspace" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -57,13 +57,13 @@
       "publisher": {
         "@id": "https://botappstore.com/#organization"
       },
-      "description": "Primary-source SEC EDGAR, USPTO patent, corporate OSINT, and static skill security agent templates for Grok Bot executing in /workspace."
+      "description": "Primary-source SEC EDGAR, USPTO patent, corporate OSINT, domain/TLS/email-auth hygiene, and static skill security agent templates for Grok Bot executing in /workspace."
     },
     {
       "@type": "ItemList",
       "@id": "https://botappstore.com/#catalog-list",
       "name": "BotAppStore Grok Bot Agent Catalog",
-      "numberOfItems": 6,
+      "numberOfItems": 9,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -198,6 +198,43 @@
               "url": "https://botappstore.com/bots/dependency-vuln-triage.html"
             }
           }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "SoftwareApplication",
+            "name": "Domain, TLS & Email Auth Infrastructure Hygiene Auditor",
+            "alternateName": "DNS, DNSSEC, TLS, SPF/DMARC/DKIM & Security Header Hygiene Auditor",
+            "sku": "domain-infra-hygiene",
+            "applicationCategory": [
+              "SecurityApplication",
+              "DeveloperApplication"
+            ],
+            "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
+            "url": "https://botappstore.com/bots/domain-infra-hygiene.html",
+            "description": "Read-only domain posture auditor for Grok Bot: DNS and DNSSEC AD-bit validation, TLS chain/expiry/CAA cross-check, SPF with RFC 7208 10-lookup counting, DMARC, DKIM, MTA-STS, TLS-RPT, HTTPS security headers, dangling CNAMEs and Certificate Transparency, with copy-paste DNS/Nginx/Vercel/Netlify fixes.",
+            "offers": {
+              "@type": "Offer",
+              "sku": "domain-infra-hygiene",
+              "price": "19.00",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://botappstore.com/bots/domain-infra-hygiene.html"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "3D Print Farm & Slicer Queue Ops (in development, Phase 2 spec preview)",
+          "url": "https://botappstore.com/#coming-next"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Humanoid & Fleet Telemetry Inspector (in development, Phase 3 spec preview)",
+          "url": "https://botappstore.com/#coming-next"
         }
       ]
     },
@@ -262,7 +299,7 @@
             <span class="status-dot" aria-hidden="true"></span>
             <span>EXECUTION RUNTIME: <strong>GROK BOT LINUX SANDBOX (<code>/workspace</code>)</strong></span>
           </span>
-          <span>LIVE TEMPLATES: <strong>4 AVAILABLE (FREE + $19 &amp; $29 SOL) · ZERO SUBSCRIPTIONS</strong></span>
+          <span>LIVE TEMPLATES: <strong>7 AVAILABLE (FREE + $19 &amp; $29 SOL) · ZERO SUBSCRIPTIONS</strong></span>
           <span>PRIVACY: <strong>LOCAL CREDENTIAL VAULT · ZERO DATA EXFILTRATION</strong></span>
         </div>
         <div class="ticker-links">
@@ -289,7 +326,7 @@
           <span class="brand-tag">OSINT &amp; ROBOTICS</span>
         </a>
         <nav class="nav-links" aria-label="Primary Navigation">
-          <a href="#catalog">Agent Catalog (6 Live)</a>
+          <a href="#catalog">Agent Catalog (7 Live)</a>
           <a href="#architecture">How It Works</a>
           <a href="#hardware-stack">Security &amp; Stack</a>
           <a href="#faq">FAQ</a>
@@ -318,7 +355,7 @@
               SEC EDGAR, Corporate OSINT &amp; AI Skill Security Agents. <span class="gradient-text">Executed in Your Linux Sandbox.</span>
             </h1>
             <p class="hero-subtitle">
-              Inspectable, plain-text <code>SKILL.md</code> agent templates engineered for Grok Bot. Track SEC EDGAR filings, USPTO patent dockets, municipal facility permits, 3D print farm queues, and actuator/BMS telemetry inside your isolated <code>/workspace</code> container—with one-time USD licensing and zero monthly subscriptions.
+              Inspectable, plain-text <code>SKILL.md</code> agent templates engineered for Grok Bot. Run 7 live automations: track SEC EDGAR filings and USPTO patent dockets, audit domain DNS, TLS and email-auth hygiene, triage lockfile CVEs, and plan municipal facility permits, 3D print farm queues, and actuator/BMS telemetry inside your isolated <code>/workspace</code> container—with one-time USD licensing and zero monthly subscriptions.
             </p>
             <div class="hero-pillars">
               <span class="pillar-chip"><span class="check">✓</span> One-Time USD Licenses ($0 – $49)</span>
@@ -388,12 +425,12 @@
                     </button>
                   </div>
 
-                  <!-- Secondary Callout for All 4 Live Templates -->
+                  <!-- Secondary Callout for All 7 Live Templates -->
                   <div class="live-utility-callout">
                     <div class="live-utility-info">
                       <div class="live-utility-title">
-                        <span class="badge-live">● 4 LIVE AUTOMATIONS</span>
-                        <span>Free Web Extractor (<code>$0</code>) · Company Deep-Dive (<code>$19 SOL</code>) · Security Auditor (<code>$29 SOL</code>) · SEC &amp; Patent Watchdog (<code>$29 SOL</code>)</span>
+                        <span class="badge-live">● 7 LIVE AUTOMATIONS</span>
+                        <span>Free Web Extractor (<code>$0</code>) · Company Deep-Dive (<code>$19 SOL</code>) · Domain, TLS &amp; Email Auth Hygiene (<code>$19 SOL</code>) · Security Auditor (<code>$29 SOL</code>) · SEC &amp; Patent Watchdog (<code>$29 SOL</code>) · Social Hub Publisher (<code>$29 SOL</code>) · Dependency Vuln Triage (<code>$29 SOL</code>)</span>
                       </div>
                       <div class="live-utility-sub">
                         Available right now with instant non-custodial SOL checkout (or 1-click free install) and up to 3 workspace-reset rebinds per paid license.
@@ -524,20 +561,20 @@
               <div class="section-kicker">DETERMINISTIC GROK BOT SKILL CATALOG</div>
               <h2 class="section-title">OSINT, Industrial Research &amp; Physical Robotics Agents</h2>
               <p class="section-subtitle">
-                4 live automations available now (1 free web extractor, 1 $19 SOL corporate &amp; competitor deep-dive analyst, 1 $29 SOL security auditor, and 1 $29 SOL SEC &amp; patent watchdog digest) and 2 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
+                7 live automations available now (1 free web extractor, 2 $19 SOL templates: corporate &amp; competitor deep-dive analyst and domain, TLS &amp; email auth hygiene auditor, and 4 $29 SOL templates: security auditor, SEC &amp; patent watchdog digest, social hub publisher, and dependency vulnerability triage) and 2 planned Phase 2/3 engineering specifications. Every template enforces explicit refusal boundaries inside <code>/workspace</code>.
               </p>
             </div>
 
             <!-- Interactive Category Filter Pills (aria-pressed, NOT role="tab") -->
             <div class="filter-bar" role="group" aria-label="Filter agent templates by category">
               <button type="button" class="filter-pill active" aria-pressed="true" data-filter="all">
-                All Agents <span class="filter-count">(8)</span>
+                All Agents <span class="filter-count">(9)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="available">
-                Available Now <span class="filter-count">(6)</span>
+                Available Now <span class="filter-count">(7)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="security">
-                Security &amp; Audits <span class="filter-count">(2)</span>
+                Security &amp; Audits <span class="filter-count">(3)</span>
               </button>
               <button type="button" class="filter-pill" aria-pressed="false" data-filter="osint">
                 OSINT &amp; Research <span class="filter-count">(3)</span>
@@ -548,7 +585,7 @@
             </div>
           </div>
 
-          <h3 class="catalog-group-title" id="available-now">Available Now <span class="filter-count">(6)</span></h3>
+          <h3 class="catalog-group-title" id="available-now">Available Now <span class="filter-count">(7)</span></h3>
           <div class="catalog-grid bot-grid--live" id="catalog-grid">
             <!-- Card 1: Web & API Text Extractor (LIVE · FREE UTILITY) -->
             <article class="bot-card live-card" data-categories="available osint">
@@ -766,6 +803,30 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               <button type="button" class="btn btn-primary btn-sm" data-open-checkout="dependency-vuln-triage">Buy License ($29 SOL) →</button>
               <button type="button" class="btn btn-secondary btn-sm" data-open-spec="dependency-vuln-triage">Inspect SKILL.md Spec</button>
               <a href="/bots/dependency-vuln-triage.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Page →</a>
+            </div>
+          </article>
+
+          <article class="bot-card live-card" data-categories="available security" id="card-domain-infra-hygiene">
+            <div>
+              <div class="card-top-meta">
+                <span class="phase-badge live">&#9679; LIVE NOW &middot; $19 in SOL</span>
+                <span class="skill-slug">domain-infra-hygiene-setup + domain-infra-hygiene</span>
+              </div>
+              <div class="card-title-row">
+                <h3 class="card-title"><a href="/bots/domain-infra-hygiene.html" style="color:inherit;text-decoration:none;">Domain, TLS &amp; Email Auth Infrastructure Hygiene Auditor</a></h3>
+                <div class="card-price free">$19 <small>in SOL &middot; 3 Rebinds</small></div>
+              </div>
+              <p class="card-summary"><strong>Find the expiring cert, the spoofable domain and the dangling CNAME before someone else does.</strong> One read-only pass over DNS, DNSSEC, TLS, email auth, HTTPS headers and CT logs for domains you own.</p>
+              <ul class="spec-highlights">
+                <li>DNSSEC validated via the resolver <code>AD</code> bit; TLS chain, SAN, protocol, expiry windows and live issuer cross-checked against <code>CAA</code>.</li>
+                <li>SPF expanded recursively against the RFC 7208 10-lookup limit, plus DMARC, DKIM key size, MTA-STS, TLS-RPT and null-MX checks for no-mail domains.</li>
+                <li>HSTS/CSP/header audit, dangling-CNAME takeover fingerprints, Certificate Transparency, copy-paste DNS / Nginx / Vercel / Netlify fixes, and <code>--state --delta</code> monitoring.</li>
+              </ul>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('domain-infra-hygiene', this)">Buy License ($19 in SOL)</button>
+              <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('domain-infra-hygiene', this)">SKILL.md Preview</button>
+              <a href="/bots/domain-infra-hygiene.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Audit →</a>
             </div>
           </article>
 
@@ -1114,6 +1175,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
             <a href="/bots/social-hub-publisher.html">Social Hub Publisher ($29 SOL) →</a>
             <a href="/bots/dependency-vuln-triage.html">Dependency Vulnerability Triage ($29 SOL) →</a>
             <a href="/bots/company-deep-dive.html">Company &amp; Competitor Deep-Dive ($19 SOL) →</a>
+            <a href="/bots/domain-infra-hygiene.html">Domain, TLS &amp; Email Auth Hygiene Auditor ($19 SOL) →</a>
             <a href="/bots/bot-skill-auditor.html">Bot &amp; Skill Security Auditor ($29 SOL) →</a>
             <a href="/bots/sec-patent-watchdog.html">SEC &amp; Patent Watchdog Digest ($29 SOL) →</a>
             <a href="#faq">FAQ</a>
