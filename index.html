@@ -715,6 +715,54 @@ If zero new filings land, no digest is written and no message is sent.</pre>
                 <a href="/bots/sec-patent-watchdog.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Page →</a>
               </div>
             </article>
+          <article class="bot-card live-card" data-categories="available" id="card-social-hub-publisher">
+            <div>
+              <div class="card-top-meta">
+                <span class="phase-badge live">&#9679; AVAILABLE NOW &middot; $29 in SOL</span>
+                <span class="skill-slug">social-hub-publisher-setup + social-hub-publisher</span>
+              </div>
+              <div class="card-title-row">
+                <h3 class="card-title"><a href="/bots/social-hub-publisher.html" style="color:inherit;text-decoration:none;">Social Hub Publisher</a></h3>
+                <div class="card-price free">$29 <small>in SOL &middot; 3 Rebinds</small></div>
+              </div>
+              <p class="card-summary"><strong>Write once, approve once, publish everywhere.</strong> Queue one announcement and publish it to X, Discord, Bluesky and Telegram without pasting it four times or sending something you did not approve.</p>
+              <ul class="spec-highlights">
+                <li>Gate 1 linter: per-channel length (X weights URLs as 23), link-domain allowlist, banned terms, hashtag/mention caps, duplicate detection.</li>
+                <li><code>approve</code> HMAC-SHA256 signs the exact text with an expiry; Gate 2 in the dispatcher refuses edited, expired or unsigned items.</li>
+                <li>X: free 1-click Web Intent links by default. Optional API mode uses 2026 pay-per-use pricing: <strong>$0.015</strong> per plain post, <strong>$0.20</strong> per post that contains a link.</li>
+              </ul>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-primary btn--primary" data-open-checkout="social-hub-publisher">Buy License ($29 in SOL) &rarr;</button>
+              <button type="button" class="btn btn-secondary btn--ghost" data-open-spec="social-hub-publisher">Inspect SKILL.md</button>
+              <a href="/bots/social-hub-publisher.html" class="btn btn-secondary btn--ghost">Full Spec &amp; Sample &rarr;</a>
+            </div>
+          </article>
+          <article class="bot-card live-card" data-categories="available security" id="card-dependency-vuln-triage">
+            <div>
+              <div class="card-top-meta">
+                <span class="phase-badge live">&#9679; AVAILABLE NOW &middot; $29 in SOL</span>
+                <span class="skill-slug">dependency-vuln-triage-setup + dependency-vuln-triage</span>
+              </div>
+              <div class="card-title-row">
+                <h3 class="card-title"><a href="/bots/dependency-vuln-triage.html" style="color:inherit;text-decoration:none;">Dependency Vulnerability Triage</a></h3>
+                <div class="card-price free">$29 <small>in SOL &middot; 3 Rebinds</small></div>
+              </div>
+              <p class="card-summary"><strong>Fix what is being exploited first.</strong> Stop reading 59 advisories in severity order.</p>
+              <ul class="spec-highlights">
+                <li>Parses <code>package-lock.json</code> (v1-v3), <code>yarn.lock</code>, <code>Pipfile.lock</code>, <code>poetry.lock</code>, pinned <code>requirements.txt</code>, <code>Cargo.lock</code> and <code>go.sum</code>.</li>
+                <li>Batch queries OSV.dev, merges GHSA/PYSEC/CVE aliases into one advisory, then adds FIRST EPSS v1 scores and CISA KEV listings.</li>
+                <li>Buckets: <code>KEV_ACTIVE_EXPLOIT</code>, <code>HIGH_EPSS_URGENT</code> (default threshold 0.10), <code>PATCH_AVAILABLE</code>, <code>LOW_PRIORITY_MONITOR</code>, plus a per-package upgrade plan.</li>
+              </ul>
+            </div>
+            <div class="card-actions">
+              <button type="button" class="btn btn-primary btn--primary" data-open-checkout="dependency-vuln-triage">Buy License ($29 in SOL) &rarr;</button>
+              <button type="button" class="btn btn-secondary btn--ghost" data-open-spec="dependency-vuln-triage">Inspect SKILL.md</button>
+              <a href="/bots/dependency-vuln-triage.html" class="btn btn-secondary btn--ghost">Full Spec &amp; Sample &rarr;</a>
+            </div>
+          </article>
+
+
 
           </div>
 

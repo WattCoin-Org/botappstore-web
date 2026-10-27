@@ -476,3 +476,153 @@ No matching patterns (`ListMachines`, `machineId`, `CopyToBox`, `CopyFromBox`, o
 - When `delta == 0` across all watched CIKs and patent queries, no digest file is written and the scheduled Grok Bot routine sends zero alert messages.
 ```
 
+---
+
+## Wave 2 - social-hub-publisher ($29 in SOL, one-time; LIVE NOW, instant on-chain SOL checkout)
+- **SKU:** `social-hub-publisher`
+- **Page:** https://botappstore.com/bots/social-hub-publisher.html
+- **Skills:** `social-hub-publisher-setup`, `social-hub-publisher`
+- **Summary:** Config-driven publishing queue for X, Discord webhooks, Bluesky and Telegram for Grok Bot ($29). Gate 1 lint, HMAC approval, Gate 2 verification, free X Web Intents, dry-run by default.
+- **Capabilities:**
+  - Gate 1 linter: per-channel length (X weights URLs as 23), link-domain allowlist, banned terms, hashtag/mention caps, duplicate detection.
+  - `approve` HMAC-SHA256 signs the exact text with an expiry; Gate 2 in the dispatcher refuses edited, expired or unsigned items.
+  - X: free 1-click Web Intent links by default. Optional API mode uses 2026 pay-per-use pricing: `$0.015` per plain post, `$0.20` per post that contains a link.
+  - Discord webhooks (mentions suppressed), Bluesky AT Protocol (link facets with byte offsets), Telegram Bot API.
+  - Dry run unless `--live`; an ambiguous send is marked `unknown_outcome` and never auto-retried. Python standard library only.
+- **Boundaries:**
+  - Posts only to accounts you configure, only text you approved.
+  - No fake engagement, no duplicate-post spam, no bypassing the allowlist or banned terms.
+  - Never prints or stores your credentials in the queue.
+
+### Verbatim sample output
+```text
+# social-hub-publisher — sample session (fictional brand: Acme Cloud Tools)
+
+Real output from the shipped code; HMAC secret and queue were throw-away.
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json add --channel x --id launch-x --text Acme Cloud Tools 2.0 is live: faster deploys, simpler pricing. Notes: https://acme-cloud.example/2-0 #release
+added launch-x (x, 102/280)
+[exit 0]
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json add --channel discord --target announcements --id launch-dc --text Acme Cloud Tools 2.0 is out. Full notes: https://docs.acme-cloud.example/changelog
+added launch-dc (discord, 82/2000)
+[exit 0]
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json add --channel bluesky --id launch-bsky --text Acme Cloud Tools 2.0 shipped today. Guaranteed zero downtime upgrades!!!
+added launch-bsky (bluesky, 72/300)
+[exit 0]
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json add --channel telegram --id launch-tg --text Acme Cloud Tools 2.0 is out - changelog at https://evil.example/post
+added launch-tg (telegram, 68/4096)
+[exit 0]
+
+## Gate 1 — lint
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json lint
+launch-x [OK]
+    [INFO ] X_COST: API cost if posted via API: $0.200 (has link); Web Intent is free
+launch-dc [OK]
+
+launch-bsky [ERROR]
+    [ERROR] BANNED_TERM: banned term 'guaranteed'
+    [WARN ] PUNCTUATION: repeated exclamation marks
+launch-tg [ERROR]
+    [ERROR] DOMAIN_NOT_ALLOWED: link host 'evil.example' is not in lint.allowed_domains
+[exit 2]
+
+## Approve (signs the exact text) — two items pass, two are refused
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json approve --id launch-x
+launch-x APPROVED until 2026-11-03T04:46:09Z
+    [INFO ] X_COST: API cost if posted via API: $0.200 (has link); Web Intent is free
+[exit 0]
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json approve --id launch-dc
+launch-dc APPROVED until 2026-11-03T04:46:09Z
+
+[exit 0]
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json approve --id launch-bsky
+launch-bsky REFUSED (Gate 1 errors)
+    [ERROR] BANNED_TERM: banned term 'guaranteed'
+    [WARN ] PUNCTUATION: repeated exclamation marks
+[exit 2]
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json approve --id launch-tg
+launch-tg REFUSED (Gate 1 errors)
+    [ERROR] DOMAIN_NOT_ALLOWED: link host 'evil.example' is not in lint.allowed_domains
+[exit 2]
+
+## Free 1-click X Web Intent
+
+$ python3 packages/social-hub-publisher/social_hub.py --config /tmp/shp/config.json intent --id launch-x
+https://x.com/intent/post?text=Acme%20Cloud%20Tools%202.0%20is%20live%3A%20faster%20deploys%2C%20simpler%20pricing.%20Notes%3A%20https%3A%2F%2Facme-cloud.example%2F2-0%20%23release
+# free, 1-click: open the URL, review, press Post. 2026 X API pay-per-use: $0.015 per plain post, $0.20 per post containing a URL. Web Intents are free and 1-click: you press Post yourself.
+[exit 0]
+
+## Gate 2 — dispatcher dry run (nothing is sent without --live)
+
+$ python3 packages/social-hub-publisher/dispatcher.py --config /tmp/shp/config.json
+launch-x         DRY-RUN  would send to x
+launch-dc        DRY-RUN  would send to discord
+[exit 0]
+
+## Tamper test — edit approved text, Gate 2 refuses
+
+$ python3 packages/social-hub-publisher/dispatcher.py --config /tmp/shp/config.json
+launch-x         DRY-RUN  would send to x
+launch-dc        REFUSED  text changed after approval
+[exit 2]
+
+```
+
+---
+
+## Wave 2 - dependency-vuln-triage ($29 in SOL, one-time; LIVE NOW, instant on-chain SOL checkout)
+- **SKU:** `dependency-vuln-triage`
+- **Page:** https://botappstore.com/bots/dependency-vuln-triage.html
+- **Skills:** `dependency-vuln-triage-setup`, `dependency-vuln-triage`
+- **Summary:** Lockfile vulnerability triage for Grok Bot ($29): OSV.dev advisories enriched with FIRST EPSS and CISA KEV, sorted into four action buckets with fix versions.
+- **Capabilities:**
+  - Parses `package-lock.json` (v1-v3), `yarn.lock`, `Pipfile.lock`, `poetry.lock`, pinned `requirements.txt`, `Cargo.lock` and `go.sum`.
+  - Batch queries OSV.dev, merges GHSA/PYSEC/CVE aliases into one advisory, then adds FIRST EPSS v1 scores and CISA KEV listings.
+  - Buckets: `KEV_ACTIVE_EXPLOIT`, `HIGH_EPSS_URGENT` (default threshold 0.10), `PATCH_AVAILABLE`, `LOW_PRIORITY_MONITOR`, plus a per-package upgrade plan.
+  - Only package names and versions leave your machine. Exit code 1 on findings at `--fail-on`, 11 when a source is down so an outage never looks clean; Markdown or JSON output.
+- **Boundaries:**
+  - Does not scan source code or judge reachability; EPSS is a probability estimate, not a verdict.
+  - Never installs, upgrades or edits your project.
+  - Never claims a project is secure.
+
+### Verbatim sample output
+```text
+<!-- live run: python3 scripts/dependency_vuln_triage.py tests/fixtures/package-lock.json  (exit 1: findings at/above HIGH_EPSS_URGENT) -->
+# Dependency vulnerability triage
+
+- **File:** `package-lock.json`
+- **Retrieved:** 2026-10-27 04:50:13 UTC | tool=dependency_vuln_triage v1.0
+- **Packages checked:** 7 | **with advisories:** 6 | **advisories:** 59
+- **Sources:** cisa_kev=200, epss=200, osv_querybatch=200, osv_vulns=200 | KEV catalog released 2026-10-26T22:24:24.6101Z
+- **EPSS threshold:** 0.10
+
+| Bucket | Advisories |
+|---|---|
+| `KEV_ACTIVE_EXPLOIT` | 1 |
+| `HIGH_EPSS_URGENT` | 4 |
+| `PATCH_AVAILABLE` | 54 |
+| `LOW_PRIORITY_MONITOR` | 0 |
+
+## KEV_ACTIVE_EXPLOIT (1)
+
+| Package | Installed | Advisory | Severity | EPSS (pctl) | KEV | Fixed in |
+|---|---|---|---|---|---|---|
+| `vite` | 5.0.0 | CVE-2025-31125, GHSA-4r4m-qw57-chr8 | MODERATE | 0.6576 (99.3%) @2026-10-26 | added 2026-01-22 | 5.4.16 |
+
+## HIGH_EPSS_URGENT (4)
+
+| Package | Installed | Advisory | Severity | EPSS (pctl) | KEV | Fixed in |
+|---|---|---|---|---|---|---|
+| `vite` | 5.0.0 | CVE-2025-30208, GHSA-x574-m823-4x7w | MODERATE | 0.7477 (99.5%) @2026-10-26 | - | 5.4.15 |
+| `vite` | 5.0.0 | CVE-2025-31486, GHSA-xcj6-pq6g-qj4x | MODERATE | 0.4046 (98.6%) @2026-10-26 | - | 5.4.17 |
+| `lodash` | 4.17.15 | CVE-2021-23337, GHSA-35jh-r3h4-6jhm | HIGH | 0.2133 (97.6%) @2026-10-26 | - | 4.17.21 |
+| `axios` | 0.21.0 | CVE-2026-44492, GHSA-pjwm-pj3p-43mv | HIGH | 0.1228 (96.2%) @2026-10-26 | - | 0.32.0 |
+```

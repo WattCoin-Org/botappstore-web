@@ -67,6 +67,54 @@
       defaultPrompt: function (code) {
         return 'Activate my SEC & Patent Watchdog Digest with license code ' + code;
       }
+    },
+    'social-hub-publisher': {
+      sku: 'social-hub-publisher',
+      name: 'Social Hub Publisher',
+      title: 'Social Hub Publisher — $29 in SOL',
+      slugMeta: 'sku: social-hub-publisher · Skills: social-hub-publisher-setup + social-hub-publisher · 3 Rebinds',
+      priceUsd: 29,
+      priceLabel: '$29 USD in SOL (one-time)',
+      priceUsdHtml: '$29.00 <small>USD</small>',
+      promptHint: 'Initialize my Social Hub queue for X, Discord, Bluesky, and Telegram...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open Social Hub Publisher in Grok Bot',
+      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($29 SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>Social Hub Publisher</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Social Hub Publisher in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or together with the brand/channels you want to configure):',
+      stepCFootHtml:
+        'On Turn 1, <code>social-hub-publisher-setup</code> installs the self-extracting SQLite queue &amp; publisher runtime (<code>social_hub.py</code>, <code>dispatcher.py</code>, and <code>.wattcoin_license_check.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+      defaultPrompt: function (code) {
+        return 'Activate my Social Hub Publisher with license code ' + code;
+      }
+    },
+    'dependency-vuln-triage': {
+      sku: 'dependency-vuln-triage',
+      name: 'Dependency Vulnerability Triage Bot',
+      title: 'Dependency Vulnerability Triage Bot — $29 in SOL',
+      slugMeta: 'sku: dependency-vuln-triage · Skills: dependency-vuln-triage-setup + dependency-vuln-triage · 3 Rebinds',
+      priceUsd: 29,
+      priceLabel: '$29 USD in SOL (one-time)',
+      priceUsdHtml: '$29.00 <small>USD</small>',
+      promptHint: 'Scan my package-lock.json against OSV.dev, EPSS, and CISA KEV...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open Dependency Vulnerability Triage Bot in Grok Bot',
+      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($29 SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>Dependency Vulnerability Triage Bot</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Vulnerability Triage Bot in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or attach any lockfile you want triaged):',
+      stepCFootHtml:
+        'On Turn 1, <code>dependency-vuln-triage-setup</code> installs the self-extracting triage engine (<code>dependency_vuln_triage.py</code>, <code>bot_common.py</code>, and <code>.wattcoin_license_check.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+      defaultPrompt: function (code) {
+        return 'Activate my Dependency Vulnerability Triage Bot with license code ' + code;
+      }
     }
   };
 
@@ -323,6 +371,72 @@
           <li><strong>No Rate-Limit Bypass:</strong> Never spoofs headers or bypasses SEC EDGAR rate limits.</li>
           <li><strong>No Financial Execution or Advice:</strong> Never connects to brokerage APIs, executes trades, or issues buy/sell/hold recommendations.</li>
           <li><strong>No Legal Conclusions:</strong> Reports patent publication IDs and dates as public facts; never opines on validity or infringement.</li>
+        </ul>
+      `
+    },
+    'social-hub-publisher': {
+      title: 'Social Hub Publisher',
+      slug: 'social-hub-publisher-setup + social-hub-publisher',
+      badge: 'LIVE · $29 IN SOL',
+      badgeClass: 'live',
+      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'social-hub-publisher',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>Zero-SaaS-fee multi-channel announcement queue, Gate-1 policy linter, and Gate-2 HMAC-verified publisher across X, Discord webhooks, Bluesky AT Protocol, and Telegram Bot API.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>social-hub-publisher-setup</code> + <code>social-hub-publisher</code>)</h4>
+        <ul>
+          <li><strong>Gate-1 Policy Linter:</strong> Enforces per-channel length limits (weighting URLs as 23 chars on X), allowed link domains, banned terms, hashtag/mention caps, and duplicate post detection.</li>
+          <li><strong>Gate-2 HMAC Verification:</strong> <code>approve</code> computes an HMAC-SHA256 signature over the exact text and expiry; the dispatcher refuses any edited, expired, or unsigned post.</li>
+          <li><strong>4-Channel Dispatch + Free X Web Intents:</strong> Generates free 1-click X Web Intent URLs by default (or optional X API v2 with transparent pay-per-use cost estimates), plus Discord webhooks, Bluesky AT Protocol, and Telegram Bot API.</li>
+        </ul>
+      `,
+      execHtml: `
+        <p>Executes inside your isolated Grok Bot Linux container with SQLite WAL state in <code>/workspace/social-hub/state/social_hub.db</code>.</p>
+        <ul>
+          <li><strong>License Binding (<code>social-hub-publisher-setup</code>):</strong> Installs the self-extracting publisher engine at <code>0500</code> and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code> (up to 3 rebinds).</li>
+          <li><strong>Dry-Run Default:</strong> Never transmits a live request unless <code>--live</code> is explicitly passed.</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>No Unapproved Sends:</strong> Refuses any post lacking a valid Gate-2 HMAC approval token.</li>
+          <li><strong>No Blind Retries:</strong> Marks ambiguous network responses as <code>unknown_outcome</code> and halts to prevent duplicate posts.</li>
+        </ul>
+      `
+    },
+    'dependency-vuln-triage': {
+      title: 'Dependency Vulnerability Triage Bot',
+      slug: 'dependency-vuln-triage-setup + dependency-vuln-triage',
+      badge: 'LIVE · $29 IN SOL',
+      badgeClass: 'live',
+      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'dependency-vuln-triage',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>Deterministic lockfile vulnerability triage report enriching OSV.dev advisories with FIRST EPSS v1 exploit probability and the CISA KEV catalog, sorted into four action buckets with exact fix versions.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>dependency-vuln-triage-setup</code> + <code>dependency-vuln-triage</code>)</h4>
+        <ul>
+          <li><strong>7 Lockfile Formats:</strong> Parses <code>package-lock.json</code> (v1–v3), <code>yarn.lock</code>, <code>Pipfile.lock</code>, <code>poetry.lock</code>, pinned <code>requirements.txt</code>, <code>Cargo.lock</code>, and <code>go.sum</code>.</li>
+          <li><strong>OSV.dev + EPSS + CISA KEV Enrichment:</strong> Deduplicates GHSA/PYSEC/CVE aliases and prioritizes active exploitation (<code>KEV_ACTIVE_EXPLOIT</code>) and high 30-day exploit probability (<code>HIGH_EPSS_URGENT</code>) ahead of generic CVSS scores.</li>
+          <li><strong>Per-Package Upgrade Plan:</strong> Computes the minimal fixed version that clears all advisories on each affected dependency.</li>
+        </ul>
+      `,
+      execHtml: `
+        <p>Executes locally in <code>/workspace</code>; only public package names and version strings are queried against OSV.dev, FIRST EPSS, and CISA KEV.</p>
+        <ul>
+          <li><strong>License Binding (<code>dependency-vuln-triage-setup</code>):</strong> Installs the self-extracting triage engine at <code>0500</code> and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code> (up to 3 rebinds).</li>
+          <li><strong>Fail-Closed Exit Codes:</strong> Returns exit code <code>11</code> if upstream threat feeds are unreachable so an outage never masquerades as a clean scan.</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>No Auto-Mutation:</strong> Never runs <code>npm install</code>, modifies lockfiles, or pushes commits automatically.</li>
+          <li><strong>No False "100% Safe" Guarantees:</strong> Clearly states that lockfile triage does not inspect custom application source code or runtime reachability.</li>
         </ul>
       `
     },

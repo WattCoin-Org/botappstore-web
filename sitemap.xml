@@ -31,6 +31,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://botappstore.com/bots/social-hub-publisher.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://botappstore.com/bots/dependency-vuln-triage.html</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://botappstore.com/llms.txt</loc>
     <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>

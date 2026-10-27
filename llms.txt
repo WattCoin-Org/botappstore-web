@@ -28,6 +28,8 @@
   3. **Paid Modes Disclosure:** `format: "html"` and `format: "json"` are paid per-call modes on the registry (see `https://www.wattcoin.org/llms.txt` for paid-tier specs); this free utility uses `format: "text"` (10/day free) and never invokes paid modes without explicit user confirmation.
   4. **Automatic Local Sandbox Fallback:** When `X-Quota-Remaining: 0` or `HTTP 429` (`reason: "quota_exhausted"`), automatically falls back to local `curl -sL` + Python HTML-to-text parsing (`bs4` or stdlib `html.parser`) inside `/workspace`.
 - **Refusal Boundaries:**
+- **Dependency Vulnerability Triage ($29 in SOL, `sku: dependency-vuln-triage`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/dependency-vuln-triage.html
+- **Social Hub Publisher ($29 in SOL, `sku: social-hub-publisher`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/social-hub-publisher.html
   - Never claims headless-browser or client-side JavaScript SPA rendering on the static HTTP cloud endpoint (`requests.get` + BeautifulSoup, 15s timeout, 2 MB response cap).
   - Never prints or echoes `wck_...` API keys in chat output.
   - Rejects loopback (`127.0.0.0/8`, `::1`), RFC1918 private IPs (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), link-local, and cloud metadata (`169.254.169.254`) with `HTTP 400`.
