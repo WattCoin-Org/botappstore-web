@@ -2,6 +2,8 @@
 
 > BotAppStore.com is the storefront and technical specification index for task-specialized Grok Bot agent templates and portable `SKILL.md` packs that execute inside your isolated `/workspace` Linux sandbox.
 
+> **Dual Runtime in Every Product:** every license key unlocks both (1) a 1-Click Grok Bot skill bundle (`https://x.ai/bot/...`) and (2) a standalone, deterministic, zero-dependency Python 3.10+ single-file CLI (`/runtime/*.py`, standard library only, no `pip install`, `--json` / `--markdown` output) that runs locally in Cursor, Claude Code, Windsurf, CI/CD pipelines (e.g. GitHub Actions), and any macOS/Linux/Windows terminal.
+
 - **Canonical Storefront:** https://botappstore.com/
 - **Machine-Readable Catalog:** https://botappstore.com/llms.txt
 - **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt

@@ -2416,3 +2416,30 @@ code, pre, .mono {
   color: var(--text-muted);
   word-break: break-all;
 }
+
+/* Phase 2A: dual-runtime positioning */
+.dual-runtime-pill {
+  display: inline-block;
+  margin: 14px 0 10px;
+  padding: 8px 14px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid var(--border-strong);
+  border-radius: 999px;
+}
+.dual-runtime-callout {
+  margin: 14px 0;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--accent-emerald);
+  border-radius: 8px;
+}
+.dual-runtime-callout ol { margin: 6px 0 0 20px; padding: 0; }
+.dual-runtime-callout code { font-family: var(--font-mono); font-size: 12.5px; }
