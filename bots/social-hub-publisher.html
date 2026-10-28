@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Social Hub Publisher ($29) | BotAppStore</title>
-  <meta name="description" content="Config-driven publishing queue for X, Discord webhooks, Bluesky and Telegram for Grok Bot ($29). Gate 1 lint, HMAC approval, Gate 2 verification, free X Web Intents, dry-run by default." />
+  <title>Social Hub Publisher — X &amp; Discord Approval Queue ($29) | BotAppStore</title>
+  <meta name="description" content="Publishing queue for X, Discord, Bluesky and Telegram on Grok Bot ($29): Gate 1 lint, HMAC approval, Gate 2 check, free X Web Intents, dry-run by default." />
   <link rel="canonical" href="https://botappstore.com/bots/social-hub-publisher.html" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#070a10" />
   <meta property="og:type" content="product" />
   <meta property="og:site_name" content="BotAppStore.com" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Social Hub Publisher ($29) | BotAppStore" />
-  <meta property="og:description" content="Config-driven publishing queue for X, Discord webhooks, Bluesky and Telegram for Grok Bot ($29). Gate 1 lint, HMAC approval, Gate 2 verification, free X Web Intents, dry-run by default." />
+  <meta property="og:title" content="Social Hub Publisher — X &amp; Discord Approval Queue ($29) | BotAppStore" />
+  <meta property="og:description" content="Publishing queue for X, Discord, Bluesky and Telegram on Grok Bot ($29): Gate 1 lint, HMAC approval, Gate 2 check, free X Web Intents, dry-run by default." />
   <meta property="og:url" content="https://botappstore.com/bots/social-hub-publisher.html" />
   <meta property="og:image" content="https://botappstore.com/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -20,8 +20,8 @@
   <meta property="og:image:alt" content="Social Hub Publisher on BotAppStore.com" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@WattCoin2026" />
-  <meta name="twitter:title" content="Social Hub Publisher ($29) | BotAppStore" />
-  <meta name="twitter:description" content="Config-driven publishing queue for X, Discord webhooks, Bluesky and Telegram for Grok Bot ($29). Gate 1 lint, HMAC approval, Gate 2 verification, free X Web Intents, dry-run by default." />
+  <meta name="twitter:title" content="Social Hub Publisher — X &amp; Discord Approval Queue ($29) | BotAppStore" />
+  <meta name="twitter:description" content="Publishing queue for X, Discord, Bluesky and Telegram on Grok Bot ($29): Gate 1 lint, HMAC approval, Gate 2 check, free X Web Intents, dry-run by default." />
   <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
   <meta name="twitter:image:alt" content="Social Hub Publisher on BotAppStore.com" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -77,6 +77,44 @@
         "url": "https://botappstore.com/bots/social-hub-publisher.html",
         "sku": "social-hub-publisher"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://botappstore.com/bots/social-hub-publisher.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I automate multi-account X and Discord announcements without paying monthly SaaS fees like Buffer or Postiz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Social Hub Publisher is a one-time $29 license with no subscription. You queue one announcement and publish it to the X, Discord, Bluesky and Telegram targets defined in a single config.json, with credentials kept in environment variables. X defaults to free 1-click Web Intent links; optional X API mode uses 2026 pay-per-use pricing of $0.015 per plain post and $0.20 per post containing a link. Discord uses webhooks with mentions suppressed. It is Python standard library only and runs as a dry run unless you pass --live."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the 9-rule pre-flight policy linter prevent cross-brand leaks, banned terms, and duplicate posts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Gate 1 lints every queued item before it can be approved. It checks per-channel length (X counts URLs as 23 characters), a link-domain allowlist, banned terms, hashtag and mention caps, punctuation and duplicate detection. Because the allowlist and banned-terms list live in your config, you can block another brand's domains or names from a queue. Items with Gate 1 errors are refused at approval. The sample session shows a banned-term post and an off-allowlist link both refused."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do HMAC-SHA256 approval tokens and 1-click X web intents work together in the Social Hub?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The approve command signs the exact post text with HMAC-SHA256 and an expiry. Gate 2 in the dispatcher refuses any item that was edited after approval, has expired or is unsigned; in the sample, editing approved text produces REFUSED (text changed after approval). For X, the intent command prints an x.com/intent/post URL for an approved item. It is free and you review the text and press Post yourself, so nothing is sent without your click."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What safety and refusal boundaries does the Social Hub Publisher enforce (no fake engagement or unapproved auto-posting)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It posts only to accounts you configure and only text you approved. It does not do fake engagement, duplicate-post spam, or bypass the domain allowlist or banned terms. It never prints or stores your credentials in the queue. It sends nothing unless you pass --live, and an ambiguous send is marked unknown_outcome and never auto-retried."
+          }
+        }
+      ]
     }
   ]
 }
@@ -274,6 +312,16 @@ launch-dc        REFUSED  text changed after approval
           <li>Never prints or stores your credentials in the queue.</li>
         </ul>
       </section>
+      <section class="product-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>How can I automate multi-account X and Discord announcements without paying monthly SaaS fees like Buffer or Postiz?</summary><div class="faq-answer">Social Hub Publisher is a one-time $29 license with no subscription. You queue one announcement and publish it to the X, Discord, Bluesky and Telegram targets defined in a single config.json, with credentials kept in environment variables. X defaults to free 1-click Web Intent links; optional X API mode uses 2026 pay-per-use pricing of $0.015 per plain post and $0.20 per post containing a link. Discord uses webhooks with mentions suppressed. It is Python standard library only and runs as a dry run unless you pass --live.</div></details>
+          <details class="faq-item"><summary>How does the 9-rule pre-flight policy linter prevent cross-brand leaks, banned terms, and duplicate posts?</summary><div class="faq-answer">Gate 1 lints every queued item before it can be approved. It checks per-channel length (X counts URLs as 23 characters), a link-domain allowlist, banned terms, hashtag and mention caps, punctuation and duplicate detection. Because the allowlist and banned-terms list live in your config, you can block another brand's domains or names from a queue. Items with Gate 1 errors are refused at approval. The sample session shows a banned-term post and an off-allowlist link both refused.</div></details>
+          <details class="faq-item"><summary>How do HMAC-SHA256 approval tokens and 1-click X web intents work together in the Social Hub?</summary><div class="faq-answer">The approve command signs the exact post text with HMAC-SHA256 and an expiry. Gate 2 in the dispatcher refuses any item that was edited after approval, has expired or is unsigned; in the sample, editing approved text produces REFUSED (text changed after approval). For X, the intent command prints an x.com/intent/post URL for an approved item. It is free and you review the text and press Post yourself, so nothing is sent without your click.</div></details>
+          <details class="faq-item"><summary>What safety and refusal boundaries does the Social Hub Publisher enforce (no fake engagement or unapproved auto-posting)?</summary><div class="faq-answer">It posts only to accounts you configure and only text you approved. It does not do fake engagement, duplicate-post spam, or bypass the domain allowlist or banned terms. It never prints or stores your credentials in the queue. It sends nothing unless you pass --live, and an ambiguous send is marked unknown_outcome and never auto-retried.</div></details>
+        </div>
+      </section>
+
       <section class="product-section" id="licensing-flow">
         <h2>Licensing &amp; Setup</h2>
         <p>One-time license, up to 3 workspace-reset rebinds. On Turn 1 the <code>social-hub-publisher-setup</code> skill verifies your agent key, binds your <code>wcl_...</code> code through the read-only license helper, and confirms the bot files are installed. The license code is never printed in chat.</p>
@@ -309,6 +357,7 @@ launch-dc        REFUSED  text changed after approval
             <a href="/bots/company-deep-dive.html">Company &amp; Competitor Deep-Dive ($19 SOL) →</a>
             <a href="/bots/bot-skill-auditor.html">Bot &amp; Skill Security Auditor ($29 SOL) →</a>
             <a href="/bots/sec-patent-watchdog.html">SEC &amp; Patent Watchdog Digest ($29 SOL) →</a>
+            <a href="/#bundles">Save with Multi-Bot Value Bundles &rarr;</a>
             <a href="/#faq">FAQ</a>
             <a href="/llms.txt">llms.txt ↗</a>
             <a href="/llms-full.txt">llms-full.txt ↗</a>

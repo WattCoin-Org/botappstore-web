@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dependency Vulnerability Triage ($29) | BotAppStore</title>
+  <title>Dependency Vulnerability Triage: CISA KEV &amp; EPSS ($29) | BotAppStore</title>
   <meta name="description" content="Lockfile vulnerability triage for Grok Bot ($29): OSV.dev advisories enriched with FIRST EPSS and CISA KEV, sorted into four action buckets with fix versions." />
   <link rel="canonical" href="https://botappstore.com/bots/dependency-vuln-triage.html" />
   <meta name="robots" content="index, follow" />
@@ -11,7 +11,7 @@
   <meta property="og:type" content="product" />
   <meta property="og:site_name" content="BotAppStore.com" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="Dependency Vulnerability Triage ($29) | BotAppStore" />
+  <meta property="og:title" content="Dependency Vulnerability Triage: CISA KEV &amp; EPSS ($29) | BotAppStore" />
   <meta property="og:description" content="Lockfile vulnerability triage for Grok Bot ($29): OSV.dev advisories enriched with FIRST EPSS and CISA KEV, sorted into four action buckets with fix versions." />
   <meta property="og:url" content="https://botappstore.com/bots/dependency-vuln-triage.html" />
   <meta property="og:image" content="https://botappstore.com/og-card.png" />
@@ -20,7 +20,7 @@
   <meta property="og:image:alt" content="Dependency Vulnerability Triage on BotAppStore.com" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@WattCoin2026" />
-  <meta name="twitter:title" content="Dependency Vulnerability Triage ($29) | BotAppStore" />
+  <meta name="twitter:title" content="Dependency Vulnerability Triage: CISA KEV &amp; EPSS ($29) | BotAppStore" />
   <meta name="twitter:description" content="Lockfile vulnerability triage for Grok Bot ($29): OSV.dev advisories enriched with FIRST EPSS and CISA KEV, sorted into four action buckets with fix versions." />
   <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
   <meta name="twitter:image:alt" content="Dependency Vulnerability Triage on BotAppStore.com" />
@@ -77,6 +77,44 @@
         "url": "https://botappstore.com/bots/dependency-vuln-triage.html",
         "sku": "dependency-vuln-triage"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://botappstore.com/bots/dependency-vuln-triage.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I prioritize which CVEs to patch first using CISA KEV and FIRST EPSS exploit probability scores?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Triage by exploitation evidence instead of severity order. The bot batch-queries OSV.dev, merges GHSA, PYSEC and CVE aliases into one advisory, then enriches each with FIRST EPSS v1 scores and CISA KEV listings. Advisories land in four buckets: KEV_ACTIVE_EXPLOIT (listed in CISA KEV, patch first), HIGH_EPSS_URGENT (EPSS at or above the default 0.10 threshold), PATCH_AVAILABLE (a fixed version exists) and LOW_PRIORITY_MONITOR. Each package also gets the lowest upgrade version that clears its advisories. EPSS is a probability estimate, not a verdict."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which dependency lockfiles (package-lock.json, yarn.lock, Pipfile.lock, poetry.lock, requirements.txt, Cargo.lock, go.sum) are supported?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It natively parses 7 ecosystems out of the box: npm package-lock.json (v1-v3), yarn.lock, Python Pipfile.lock, poetry.lock, pinned requirements.txt, Rust Cargo.lock and Go go.sum. Output is Markdown or JSON, with exit code 1 on findings at --fail-on and 11 when a data source is down so an outage never looks clean."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the Dependency Vulnerability Triage bot upload proprietary source code or require paid scanner API keys?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No source code is uploaded. Only package names and versions leave your machine, sent to the public OSV.dev, FIRST EPSS and CISA KEV data sources, and the bot runs locally in your Grok Bot /workspace. It does not depend on a paid scanner subscription. The license is a one-time $29 purchase with up to 3 workspace-reset rebinds and no recurring fee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What safety and refusal boundaries does the Dependency Vulnerability Triage bot enforce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It does not scan your source code or judge whether a vulnerable function is reachable, and it treats EPSS as a probability rather than a verdict. It never installs, upgrades or edits your project, so every fix stays your decision. It never claims a project is secure, and when a data source is unreachable it exits with code 11 instead of reporting a clean result."
+          }
+        }
+      ]
     }
   ]
 }
@@ -225,6 +263,16 @@
           <li>Never claims a project is secure.</li>
         </ul>
       </section>
+      <section class="product-section" id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>How do I prioritize which CVEs to patch first using CISA KEV and FIRST EPSS exploit probability scores?</summary><div class="faq-answer">Triage by exploitation evidence instead of severity order. The bot batch-queries OSV.dev, merges GHSA, PYSEC and CVE aliases into one advisory, then enriches each with FIRST EPSS v1 scores and CISA KEV listings. Advisories land in four buckets: KEV_ACTIVE_EXPLOIT (listed in CISA KEV, patch first), HIGH_EPSS_URGENT (EPSS at or above the default 0.10 threshold), PATCH_AVAILABLE (a fixed version exists) and LOW_PRIORITY_MONITOR. Each package also gets the lowest upgrade version that clears its advisories. EPSS is a probability estimate, not a verdict.</div></details>
+          <details class="faq-item"><summary>Which dependency lockfiles (package-lock.json, yarn.lock, Pipfile.lock, poetry.lock, requirements.txt, Cargo.lock, go.sum) are supported?</summary><div class="faq-answer">It natively parses 7 ecosystems out of the box: npm package-lock.json (v1-v3), yarn.lock, Python Pipfile.lock, poetry.lock, pinned requirements.txt, Rust Cargo.lock and Go go.sum. Output is Markdown or JSON, with exit code 1 on findings at --fail-on and 11 when a data source is down so an outage never looks clean.</div></details>
+          <details class="faq-item"><summary>Does the Dependency Vulnerability Triage bot upload proprietary source code or require paid scanner API keys?</summary><div class="faq-answer">No source code is uploaded. Only package names and versions leave your machine, sent to the public OSV.dev, FIRST EPSS and CISA KEV data sources, and the bot runs locally in your Grok Bot /workspace. It does not depend on a paid scanner subscription. The license is a one-time $29 purchase with up to 3 workspace-reset rebinds and no recurring fee.</div></details>
+          <details class="faq-item"><summary>What safety and refusal boundaries does the Dependency Vulnerability Triage bot enforce?</summary><div class="faq-answer">It does not scan your source code or judge whether a vulnerable function is reachable, and it treats EPSS as a probability rather than a verdict. It never installs, upgrades or edits your project, so every fix stays your decision. It never claims a project is secure, and when a data source is unreachable it exits with code 11 instead of reporting a clean result.</div></details>
+        </div>
+      </section>
+
       <section class="product-section" id="licensing-flow">
         <h2>Licensing &amp; Setup</h2>
         <p>One-time license, up to 3 workspace-reset rebinds. On Turn 1 the <code>dependency-vuln-triage-setup</code> skill verifies your agent key, binds your <code>wcl_...</code> code through the read-only license helper, and confirms the bot files are installed. The license code is never printed in chat.</p>
@@ -260,6 +308,7 @@
             <a href="/bots/company-deep-dive.html">Company &amp; Competitor Deep-Dive ($19 SOL) →</a>
             <a href="/bots/bot-skill-auditor.html">Bot &amp; Skill Security Auditor ($29 SOL) →</a>
             <a href="/bots/sec-patent-watchdog.html">SEC &amp; Patent Watchdog Digest ($29 SOL) →</a>
+            <a href="/#bundles">Save with Multi-Bot Value Bundles &rarr;</a>
             <a href="/#faq">FAQ</a>
             <a href="/llms.txt">llms.txt ↗</a>
             <a href="/llms-full.txt">llms-full.txt ↗</a>
