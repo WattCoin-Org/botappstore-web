@@ -349,9 +349,18 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
 
 ---
 
-## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 9 Live Templates; Wave 2 and Wave 3 samples follow at the end)
+## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 11 Live Templates; Wave 2 and Wave 3 samples follow at the end)
 
 ### Sample 1 — Web & API Text Extractor (`getting-started` + `web-extractor`, $0 Free Forever)
+
+```text
+# Turn 1 - getting-started (auto-onboarding in /workspace)
+[1/4] Registered workspace agent: WATTCOIN_AGENT_ID=agent_<REDACTED>
+[2/4] Wrote /workspace/.wattcoin_env (chmod 600, -rw-------): WATTCOIN_AGENT_KEY=wck_<REDACTED>
+[3/4] onboarding_v1 complete: +25 WATT
+[4/4] starter_v1 complete: +75 WATT
+Grant total: +100 WATT. The agent key is never printed in chat.
+```
 
 ```http
 POST https://www.wattcoin.org/api/v1/scrape HTTP/2
@@ -375,6 +384,9 @@ x-quota-reset: 2026-10-27T00:00:00Z
   "content": "# WattCoin (WATT) — Agent Reference\n> Utility token on Solana for AI/automation ecosystems..."
 }
 ```
+
+Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s timeout, 2 MB cap); no headless-browser or client-side JavaScript SPA rendering. `html` and `json` modes cost 100 WATT/call and run only after explicit per-call confirmation.
+Sample disclosure: representative sample against public/fictional targets; credentials are redacted and no secrets are shown.
 
 
 ### Sample 2 — Bot & Skill Security Auditor (`sku: bot-skill-auditor`, $29 in SOL)

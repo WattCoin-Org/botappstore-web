@@ -71,11 +71,13 @@
       "description": "Free self-onboarding web & JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1, grants 100 WATT, and runs 10 free scrapes/UTC day.",
       "offers": {
         "@type": "Offer",
-        "price": "0",
+        "price": "0.00",
         "priceCurrency": "USD",
         "availability": "https://schema.org/InStock",
-        "url": "https://botappstore.com/bots/web-text-extractor.html"
+        "url": "https://botappstore.com/bots/web-text-extractor.html",
+        "sku": "web-extractor"
       },
+      "sku": "web-extractor",
       "installUrl": "https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol"
     },
     {
@@ -225,10 +227,18 @@
 
       <section class="product-section" id="sample-output">
         <h2>Verbatim Sample Output (<code>/workspace</code> Proof-of-Work Preview)</h2>
+        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; wallet, account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
         <p style="margin-bottom: 12px;">
           Below is a representative output artifact generated inside <code>/workspace</code> with mandatory scope notes and source citations:
         </p>
-        <pre class="code-pre"># Turn-1 Self-Onboarding &amp; Free Text Scrape (/workspace)
+        <pre class="code-pre"># Turn 1 - getting-started (auto-onboarding in /workspace)
+[1/4] Registered workspace agent: WATTCOIN_AGENT_ID=agent_&lt;REDACTED&gt;
+[2/4] Wrote /workspace/.wattcoin_env (chmod 600, -rw-------): WATTCOIN_AGENT_KEY=wck_&lt;REDACTED&gt;
+[3/4] onboarding_v1 complete: +25 WATT
+[4/4] starter_v1 complete: +75 WATT
+Grant total: +100 WATT. The agent key is never printed in chat.
+
+# Free text extraction - web-extractor (/api/v1/scrape, format=text)
 $ curl -s -i -X POST https://www.wattcoin.org/api/v1/scrape \
   -H &quot;Content-Type: application/json&quot; \
   -H &quot;X-Agent-Key: $WATTCOIN_AGENT_KEY&quot; \
@@ -245,7 +255,9 @@ x-quota-reset: 2026-10-27T00:00:00Z
   &quot;format&quot;: &quot;text&quot;,
   &quot;free_tier&quot;: true,
   &quot;content&quot;: &quot;# WattCoin (WATT) — Agent Reference\n&gt; Utility token on Solana for AI/automation ecosystems...&quot;
-}</pre>
+}
+
+Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s timeout, 2 MB cap). No headless-browser or client-side JavaScript SPA rendering. html and json modes cost 100 WATT/call and run only after explicit per-call confirmation.</pre>
       </section>
 
       <section class="product-section" id="refusal-boundaries">

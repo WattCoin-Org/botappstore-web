@@ -226,6 +226,7 @@
 
       <section class="product-section" id="sample-output">
         <h2>Verbatim Sample Output (<code>/workspace</code> Proof-of-Work Preview)</h2>
+        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; wallet, account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
         <p style="margin-bottom: 12px;">
           Below is a representative output artifact generated inside <code>/workspace</code> with mandatory scope notes and source citations:
         </p>
@@ -237,22 +238,23 @@
 - Baseline: /workspace/watchlists/state.json (last checked 2026-10-24T13:00:00Z)
 - Delta: 3 new SEC filings, 1 new patent publication
 
-## NVDA — NVIDIA CORP (CIK: 0001045810)
-| Form | Filed | Accession Number | Items / Document |
-| :--- | :--- | :--- | :--- |
-| 8-K | 2026-10-24 | 0001045810-26-000212 | Item 5.02 · nvda-20261022.htm |
-| Form 4 | 2026-10-23 | 0001045810-26-000209 | Insider transaction · xslF345X05/form4.xml |
+## 1. NVDA — NVIDIA CORP (CIK: 0001045810)
+| Form | Filed Date | Accession Number | Primary Document &amp; Items | Archive URL |
+| :--- | :--- | :--- | :--- | :--- |
+| 8-K | 2026-10-24 | 0001045810-26-000212 | Item 5.02 · nvda-20261022.htm | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000212/nvda-20261022.htm |
+| Form 4 | 2026-10-23 | 0001045810-26-000209 | Insider transaction · xslF345X05/form4.xml | https://www.sec.gov/Archives/edgar/data/1045810/000104581026000209/form4.xml |
 
-## AMD — ADVANCED MICRO DEVICES INC (CIK: 0000002488)
-| Form | Filed | Accession Number | Items / Document |
-| :--- | :--- | :--- | :--- |
-| 13F-HR | 2026-10-24 | 0000002488-26-000118 | Institutional holdings · primary_doc.xml |
+## 2. AMD — ADVANCED MICRO DEVICES INC (CIK: 0000002488)
+| Form | Filed Date | Accession Number | Primary Document &amp; Items | Archive URL |
+| :--- | :--- | :--- | :--- | :--- |
+| 13F-HR | 2026-10-24 | 0000002488-26-000118 | Institutional holdings · primary_doc.xml | https://www.sec.gov/Archives/edgar/data/2488/000000248826000118/primary_doc.xml |
 
-## Patent / IP Delta (USPTO PatentsView)
-- AMD: 1 new publication since baseline (logged in DELTA_SUMMARY.json with publication ID and URL)
+## 3. Patent &amp; IP Disclosure Delta (USPTO PatentsView / SEC EFTS)
+- AMD (ADVANCED MICRO DEVICES INC): 1 new patent publication since baseline (`2026-10-24T13:00:00Z`) — logged in `/workspace/watchlists/DELTA_SUMMARY.json` with publication ID and retrieval timestamp.
 
-Outputs: /workspace/watchlists/DELTA_SUMMARY.json, /workspace/watchlists/DIGEST_20261025T130000Z.md
-Zero-Noise Rule: If zero new filings land across the watchlist, no digest is written and no alert is sent.</pre>
+## 4. Zero-Noise Routine Rule
+- Outputs written to `/workspace/watchlists/DELTA_SUMMARY.json` and `/workspace/watchlists/DIGEST_20261025T130000Z.md`.
+- When `delta == 0` across all watched CIKs and patent queries, no digest file is written and the scheduled Grok Bot routine sends zero alert messages.</pre>
       </section>
 
       <section class="product-section" id="refusal-boundaries">
