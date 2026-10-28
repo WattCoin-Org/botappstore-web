@@ -321,6 +321,134 @@
       ]
     },
     {
+      "@type": "ItemList",
+      "@id": "https://botappstore.com/#bundles-list",
+      "name": "BotAppStore Multi-Bot Value Bundles",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Product",
+            "name": "DevSecOps & AI Agent Security Pack",
+            "sku": "devsecops-ai-security-pack",
+            "url": "https://botappstore.com/#bundle-devsecops-ai-security-pack",
+            "description": "Audit agent skills, MCP configs, dependencies and domain infrastructure with one license. One wcl_... license key unlocks every included bot.",
+            "brand": {
+              "@type": "Organization",
+              "name": "BotAppStore.com"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "69.00",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://botappstore.com/#bundle-devsecops-ai-security-pack",
+              "description": "Paid in SOL at the live USD/SOL rate; non-custodial."
+            },
+            "isRelatedTo": [
+              {
+                "@type": "SoftwareApplication",
+                "name": "Bot & Skill Security Auditor",
+                "url": "https://botappstore.com/bots/bot-skill-auditor.html"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "MCP Config & Tool-Permission Auditor",
+                "url": "https://botappstore.com/bots/mcp-config-auditor.html"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "Dependency Vulnerability Triage Bot",
+                "url": "https://botappstore.com/bots/dependency-vuln-triage.html"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "Domain, TLS & Email Auth Hygiene Auditor",
+                "url": "https://botappstore.com/bots/domain-infra-hygiene.html"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Product",
+            "name": "Physical AI & Manufacturing Ops Pack",
+            "sku": "physical-ai-manufacturing-pack",
+            "url": "https://botappstore.com/#bundle-physical-ai-manufacturing-pack",
+            "description": "3D print-farm queue ops plus humanoid and fleet telemetry inspection. One wcl_... license key unlocks every included bot.",
+            "brand": {
+              "@type": "Organization",
+              "name": "BotAppStore.com"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "59.00",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://botappstore.com/#bundle-physical-ai-manufacturing-pack",
+              "description": "Paid in SOL at the live USD/SOL rate; non-custodial."
+            },
+            "isRelatedTo": [
+              {
+                "@type": "SoftwareApplication",
+                "name": "3D Print Farm & Slicer Queue Ops",
+                "url": "https://botappstore.com/bots/print-farm-ops.html"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "Humanoid & Fleet Telemetry Inspector",
+                "url": "https://botappstore.com/bots/robotics-telemetry-inspector.html"
+              }
+            ]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Product",
+            "name": "Founder OSINT, SEC & GTM Pack",
+            "sku": "founder-research-gtm-pack",
+            "url": "https://botappstore.com/#bundle-founder-research-gtm-pack",
+            "description": "Company OSINT, SEC and patent monitoring, and social publishing for founders. One wcl_... license key unlocks every included bot.",
+            "brand": {
+              "@type": "Organization",
+              "name": "BotAppStore.com"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "59.00",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "url": "https://botappstore.com/#bundle-founder-research-gtm-pack",
+              "description": "Paid in SOL at the live USD/SOL rate; non-custodial."
+            },
+            "isRelatedTo": [
+              {
+                "@type": "SoftwareApplication",
+                "name": "Company & Competitor Deep-Dive Analyst",
+                "url": "https://botappstore.com/bots/company-deep-dive.html"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "SEC & Patent Watchdog Digest",
+                "url": "https://botappstore.com/bots/sec-patent-watchdog.html"
+              },
+              {
+                "@type": "SoftwareApplication",
+                "name": "Social Hub Publisher",
+                "url": "https://botappstore.com/bots/social-hub-publisher.html"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "@type": "FAQPage",
       "@id": "https://botappstore.com/#faq-schema",
       "mainEntity": [
@@ -427,6 +555,7 @@
             </div>
           </div>
           <a href="#catalog">Agent Catalog (11 Live)</a>
+          <a href="#bundles">Value Bundles</a>
           <a href="#architecture">How It Works</a>
           <a href="#hardware-stack">Security &amp; Stack</a>
           <a href="#faq">FAQ</a>
@@ -924,7 +1053,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               </ul>
             </div>
             <div class="card-actions">
-              <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('domain-infra-hygiene', this)">Buy License ($19 in SOL)</button>
+              <button type="button" class="btn btn-primary btn-sm">Buy License ($19 in SOL)</button>
               <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('domain-infra-hygiene', this)">SKILL.md Preview</button>
               <a href="/bots/domain-infra-hygiene.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Audit →</a>
             </div>
@@ -948,7 +1077,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               </ul>
             </div>
             <div class="card-actions">
-              <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('agent-council', this)">Buy License ($39 in SOL)</button>
+              <button type="button" class="btn btn-primary btn-sm">Buy License ($39 in SOL)</button>
               <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('agent-council', this)">SKILL.md Preview</button>
               <a href="/bots/agent-council.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Council →</a>
             </div>
@@ -972,7 +1101,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               </ul>
             </div>
             <div class="card-actions">
-              <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('mcp-config-auditor', this)">Buy License ($19 in SOL)</button>
+              <button type="button" class="btn btn-primary btn-sm">Buy License ($19 in SOL)</button>
               <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('mcp-config-auditor', this)">SKILL.md Preview</button>
               <a href="/bots/mcp-config-auditor.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Audit →</a>
             </div>
@@ -996,7 +1125,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               </ul>
             </div>
             <div class="card-actions">
-              <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('print-farm-ops', this)">Buy License ($29 in SOL)</button>
+              <button type="button" class="btn btn-primary btn-sm">Buy License ($29 in SOL)</button>
               <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('print-farm-ops', this)">SKILL.md Preview</button>
               <a href="/bots/print-farm-ops.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Audit →</a>
             </div>
@@ -1020,7 +1149,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               </ul>
             </div>
             <div class="card-actions">
-              <button type="button" class="btn btn-primary btn-sm" onclick="openCheckoutModal('robotics-telemetry-inspector', this)">Buy License ($49 in SOL)</button>
+              <button type="button" class="btn btn-primary btn-sm">Buy License ($49 in SOL)</button>
               <button type="button" class="btn btn-secondary btn-sm" onclick="openSpecModal('robotics-telemetry-inspector', this)">SKILL.md Preview</button>
               <a href="/bots/robotics-telemetry-inspector.html" class="btn btn-secondary btn-sm">Full Spec &amp; Sample Audit →</a>
             </div>
@@ -1033,6 +1162,82 @@ If zero new filings land, no digest is written and no message is sent.</pre>
       </section>
 
       <!-- How It Works (4-Step Architecture Section) -->
+      <!-- Value Bundles Section -->
+      <section class="section-block" id="bundles">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <div class="section-kicker">VALUE BUNDLES</div>
+              <h2 class="section-title">Value Bundles &mdash; Multi-Bot Packs (One License Key Unlocks All Included Bots)</h2>
+              <p class="section-subtitle">
+                Buy a pack once in SOL and receive a single <code>wcl_...</code> license code plus an unlisted Grok Bot template link for every bot in the bundle. The same code activates each included bot (up to 3 rebinds).
+              </p>
+            </div>
+          </div>
+          <div class="catalog-grid bundle-grid" id="bundle-grid">
+      <article class="bot-card live-card bundle-card" id="bundle-devsecops-ai-security-pack">
+        <div>
+          <div class="card-top-meta">
+            <span class="phase-badge live">&#9679; 4-BOT BUNDLE &middot; $69 IN SOL</span>
+            <span class="bundle-savings-badge">SAVE $27 vs $96 list</span>
+          </div>
+          <div class="card-title-row">
+            <h3 class="card-title">DevSecOps &amp; AI Agent Security Pack</h3>
+            <div class="card-price">$69 <small>/ one-time</small></div>
+          </div>
+          <p class="card-summary">Audit agent skills, MCP configs, dependencies and domain infrastructure with one license. <strong>One <code>wcl_...</code> license key unlocks every included bot.</strong></p>
+          <ul class="spec-highlights"><li><a href="/bots/bot-skill-auditor.html">Bot &amp; Skill Security Auditor</a> <span class="bundle-member-price">($29 list)</span></li><li><a href="/bots/mcp-config-auditor.html">MCP Config &amp; Tool-Permission Auditor</a> <span class="bundle-member-price">($19 list)</span></li><li><a href="/bots/dependency-vuln-triage.html">Dependency Vulnerability Triage Bot</a> <span class="bundle-member-price">($29 list)</span></li><li><a href="/bots/domain-infra-hygiene.html">Domain, TLS &amp; Email Auth Hygiene Auditor</a> <span class="bundle-member-price">($19 list)</span></li></ul>
+          <div class="guardrail-strip"><strong>SKU:</strong> <code>devsecops-ai-security-pack</code> &middot; non-custodial SOL checkout &middot; up to 3 rebinds</div>
+        </div>
+        <div class="card-actions">
+          <button type="button" class="btn btn-primary btn-sm" data-open-checkout="devsecops-ai-security-pack">Unlock Bundle ($69 in SOL) &rarr;</button>
+          <a href="/bots/bot-skill-auditor.html" class="btn btn-secondary btn-sm">First Bot Page &#8599;</a>
+        </div>
+      </article>
+
+      <article class="bot-card live-card bundle-card" id="bundle-physical-ai-manufacturing-pack">
+        <div>
+          <div class="card-top-meta">
+            <span class="phase-badge live">&#9679; 2-BOT BUNDLE &middot; $59 IN SOL</span>
+            <span class="bundle-savings-badge">SAVE $19 vs $78 list</span>
+          </div>
+          <div class="card-title-row">
+            <h3 class="card-title">Physical AI &amp; Manufacturing Ops Pack</h3>
+            <div class="card-price">$59 <small>/ one-time</small></div>
+          </div>
+          <p class="card-summary">3D print-farm queue ops plus humanoid and fleet telemetry inspection. <strong>One <code>wcl_...</code> license key unlocks every included bot.</strong></p>
+          <ul class="spec-highlights"><li><a href="/bots/print-farm-ops.html">3D Print Farm &amp; Slicer Queue Ops</a> <span class="bundle-member-price">($29 list)</span></li><li><a href="/bots/robotics-telemetry-inspector.html">Humanoid &amp; Fleet Telemetry Inspector</a> <span class="bundle-member-price">($49 list)</span></li></ul>
+          <div class="guardrail-strip"><strong>SKU:</strong> <code>physical-ai-manufacturing-pack</code> &middot; non-custodial SOL checkout &middot; up to 3 rebinds</div>
+        </div>
+        <div class="card-actions">
+          <button type="button" class="btn btn-primary btn-sm" data-open-checkout="physical-ai-manufacturing-pack">Unlock Bundle ($59 in SOL) &rarr;</button>
+          <a href="/bots/print-farm-ops.html" class="btn btn-secondary btn-sm">First Bot Page &#8599;</a>
+        </div>
+      </article>
+
+      <article class="bot-card live-card bundle-card" id="bundle-founder-research-gtm-pack">
+        <div>
+          <div class="card-top-meta">
+            <span class="phase-badge live">&#9679; 3-BOT BUNDLE &middot; $59 IN SOL</span>
+            <span class="bundle-savings-badge">SAVE $18 vs $77 list</span>
+          </div>
+          <div class="card-title-row">
+            <h3 class="card-title">Founder OSINT, SEC &amp; GTM Pack</h3>
+            <div class="card-price">$59 <small>/ one-time</small></div>
+          </div>
+          <p class="card-summary">Company OSINT, SEC and patent monitoring, and social publishing for founders. <strong>One <code>wcl_...</code> license key unlocks every included bot.</strong></p>
+          <ul class="spec-highlights"><li><a href="/bots/company-deep-dive.html">Company &amp; Competitor Deep-Dive Analyst</a> <span class="bundle-member-price">($19 list)</span></li><li><a href="/bots/sec-patent-watchdog.html">SEC &amp; Patent Watchdog Digest</a> <span class="bundle-member-price">($29 list)</span></li><li><a href="/bots/social-hub-publisher.html">Social Hub Publisher</a> <span class="bundle-member-price">($29 list)</span></li></ul>
+          <div class="guardrail-strip"><strong>SKU:</strong> <code>founder-research-gtm-pack</code> &middot; non-custodial SOL checkout &middot; up to 3 rebinds</div>
+        </div>
+        <div class="card-actions">
+          <button type="button" class="btn btn-primary btn-sm" data-open-checkout="founder-research-gtm-pack">Unlock Bundle ($59 in SOL) &rarr;</button>
+          <a href="/bots/company-deep-dive.html" class="btn btn-secondary btn-sm">First Bot Page &#8599;</a>
+        </div>
+      </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section-block" id="architecture">
         <div class="container">
           <div class="section-header">
@@ -1570,6 +1775,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
             <div class="checkout-copy-box" style="margin-top: 10px;">
               <code id="fulfilled-template-url">—</code>
             </div>
+            <div id="fulfilled-bundle-templates" class="fulfilled-bundle-templates" hidden></div>
           </div>
 
           <!-- Step B: Copy Private wcl_ License Code -->

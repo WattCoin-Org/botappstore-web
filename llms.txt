@@ -6,6 +6,7 @@
 - **Machine-Readable Catalog:** https://botappstore.com/llms.txt
 - **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt
 - **Sister Solana & Crypto Storefront:** https://coinloader.com/
+- **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 in SOL); `physical-ai-manufacturing-pack` ($59 in SOL); `founder-research-gtm-pack` ($59 in SOL)
 - **Free Flagship Utility (1-Click Install):** https://botappstore.com/bots/web-text-extractor.html (Direct Grok Bot import: https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol)
 - **Paid Bot & Skill Security Auditor ($29 in SOL, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
 - **Paid Company & Competitor Deep-Dive Analyst ($19 in SOL, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
@@ -306,3 +307,35 @@
   - Offline and strictly read-only: no network request; never issues motor/actuator commands, CAN frames, MAVLink parameter writes or BMS register writes, never overrides a safety interlock, never modifies an input file
   - Refuses credentials, tokens, seed phrases, MAVLink signing keys, DDS private keys, Wi-Fi passwords and SSH keys in arguments and tables (exit `10`, value never echoed); symlink inputs exit `10`
   - Heuristic diagnostics on exported logs, not airworthiness, FAA/EASA or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval
+
+## Value Bundles — Multi-Bot Packs (3 Live Bundle SKUs; One License Key Unlocks All Included Bots)
+
+Bundle SKUs are priced in USD and paid in SOL via the same non-custodial checkout (`POST https://www.wattcoin.org/api/v1/agents/license/quote` with `sku: <bundle-sku>`, `source: "botappstore"`). A single bundle purchase returns **one** `wcl_<64-hex>` bearer license code that unlocks **every** member bot in the pack (up to 3 workspace-reset rebinds). The `/api/v1/agents/license/purchase` response also includes `included_skus` (member SKU list) and `bundle_templates` (an array of `{sku, name, template_url}` with one unlisted `https://x.ai/bot/<id>` Grok Bot template per member) so you can import every bot in the pack. Activate each imported bot on its Turn 1 with the same `wcl_...` code. Storefront section: https://botappstore.com/#bundles
+
+### DevSecOps & AI Agent Security Pack ($69 in SOL, `sku: devsecops-ai-security-pack`, 4-Bot Bundle — Save $27 vs $96 list)
+- **Bundle Price:** $69.00 USD, paid in SOL at the live USD/SOL rate (individual list total: $96).
+- **Included member SKUs (`included_skus`):** `bot-skill-auditor`, `mcp-config-auditor`, `dependency-vuln-triage`, `domain-infra-hygiene`
+- **Members:**
+  - Bot & Skill Security Auditor (`bot-skill-auditor`, $29 list): https://botappstore.com/bots/bot-skill-auditor.html
+  - MCP Server & Tool-Permission Security Auditor (`mcp-config-auditor`, $19 list): https://botappstore.com/bots/mcp-config-auditor.html
+  - Dependency Vulnerability Triage Bot (`dependency-vuln-triage`, $29 list): https://botappstore.com/bots/dependency-vuln-triage.html
+  - Domain, TLS & Email Auth Infrastructure Hygiene Auditor (`domain-infra-hygiene`, $19 list): https://botappstore.com/bots/domain-infra-hygiene.html
+- **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
+
+### Physical AI & Manufacturing Ops Pack ($59 in SOL, `sku: physical-ai-manufacturing-pack`, 2-Bot Bundle — Save $19 vs $78 list)
+- **Bundle Price:** $59.00 USD, paid in SOL at the live USD/SOL rate (individual list total: $78).
+- **Included member SKUs (`included_skus`):** `print-farm-ops`, `robotics-telemetry-inspector`
+- **Members:**
+  - 3D Print Farm & Slicer Queue Ops (`print-farm-ops`, $29 list): https://botappstore.com/bots/print-farm-ops.html
+  - Humanoid & Fleet Telemetry Inspector (`robotics-telemetry-inspector`, $49 list): https://botappstore.com/bots/robotics-telemetry-inspector.html
+- **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
+
+### Founder OSINT, SEC & GTM Pack ($59 in SOL, `sku: founder-research-gtm-pack`, 3-Bot Bundle — Save $18 vs $77 list)
+- **Bundle Price:** $59.00 USD, paid in SOL at the live USD/SOL rate (individual list total: $77).
+- **Included member SKUs (`included_skus`):** `company-deep-dive`, `sec-patent-watchdog`, `social-hub-publisher`
+- **Members:**
+  - Company & Competitor Deep-Dive Analyst (`company-deep-dive`, $19 list): https://botappstore.com/bots/company-deep-dive.html
+  - SEC & Patent Watchdog Digest (`sec-patent-watchdog`, $29 list): https://botappstore.com/bots/sec-patent-watchdog.html
+  - Social Hub Publisher (`social-hub-publisher`, $29 list): https://botappstore.com/bots/social-hub-publisher.html
+- **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
+
