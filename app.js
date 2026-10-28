@@ -240,6 +240,31 @@
         return 'Activate my Humanoid & Fleet Telemetry Inspector with license code ' + code;
       }
     },
+    'sec-supply-chain-mapper': {
+      sku: 'sec-supply-chain-mapper',
+      name: 'SEC EDGAR Supply Chain & Counterparty Mapper',
+      title: 'SEC EDGAR Supply Chain & Counterparty Mapper — $29 in SOL',
+      slugMeta: 'sku: sec-supply-chain-mapper · Skills: sec-supply-chain-mapper-setup + sec-supply-chain-mapper · One-Time License · 3 Rebinds',
+      priceUsd: 29,
+      priceLabel: '$29 USD in SOL (one-time)',
+      priceUsdHtml: '$29.00 <small>USD</small>',
+      promptHint: 'Map the suppliers, major customers and equity stakes of NVDA from its latest 10-K...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open SEC EDGAR Supply Chain Mapper in Grok Bot',
+      detailUrl: '/bots/sec-supply-chain-mapper.html',
+      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($29 in SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>SEC EDGAR Supply Chain &amp; Counterparty Mapper</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Supply Chain Mapper in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or together with the tickers/CIKs or a preset such as <code>nvidia-physical-ai</code> you want mapped):',
+      stepCFootHtml:
+        'On Turn 1, <code>sec-supply-chain-mapper-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+      defaultPrompt: function (code) {
+        return 'Activate my SEC EDGAR Supply Chain & Counterparty Mapper with license code ' + code;
+      }
+    },
     'devsecops-ai-security-pack': {
       sku: 'devsecops-ai-security-pack',
       name: 'DevSecOps & AI Agent Security Pack (4-Bot Bundle)',
@@ -304,6 +329,28 @@
         'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
       defaultPrompt: function (code) {
         return 'Activate my Founder OSINT, SEC & GTM Pack (3-Bot Bundle) with license code ' + code;
+      }
+    },
+    'edgar-intelligence-pack': {
+      sku: 'edgar-intelligence-pack',
+      name: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle)',
+      title: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle) — $89 in SOL',
+      slugMeta: 'sku: edgar-intelligence-pack · 3 bots · one wcl_... license unlocks all · 3 Rebinds',
+      priceUsd: 89,
+      priceUsdHtml: '$89.00 <small>USD</small>',
+      statusFooterText: 'Status: LIVE · $89 One-Time 3-Bot Bundle in SOL (Non-Custodial)',
+      ctaButtonText: 'Unlock Bundle ($89 in SOL) →',
+      shortName: 'Institutional EDGAR Pack',
+      includedSkus: ['company-deep-dive', 'sec-patent-watchdog', 'sec-supply-chain-mapper'],
+      stepADescHtml:
+        'Click each button below to open the private Grok Bot template for <strong>every bot in the Institutional EDGAR Intelligence Pack</strong> and add them to your sidebar. <strong>One <code>wcl_...</code> license code unlocks all 3 included bots.</strong>',
+      stepABtnText: 'Open Bundle Primary Bot in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 in <strong>each</strong> included bot (same license code; add the tickers, CIKs or company names you want researched):',
+      stepCFootHtml:
+        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
+      defaultPrompt: function (code) {
+        return 'Activate my Institutional EDGAR Intelligence Pack (3-Bot Bundle) with license code ' + code;
       }
     }
   };
@@ -930,6 +977,47 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
           <li><strong>Non-Destructive Auditing:</strong> Never modifies an input file; <code>--state</code>, <code>--out</code> and <code>--maintenance-out</code> only write new files and refuse input paths.</li>
           <li><strong>No Credentials:</strong> Refuses fleet API tokens, passwords, seed phrases, MAVLink signing keys, DDS private keys, Wi-Fi passwords and SSH keys in arguments or tables (exit <code>10</code>, value never echoed); a credential inside a bag or metadata record is flagged as <code>EMBEDDED_TELEMETRY_CREDENTIAL</code> with the value redacted.</li>
           <li><strong>Heuristic, Not Certification:</strong> Findings are diagnostics on exported logs, not airworthiness, FAA / EASA or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval; a GO on the checklist is not an operation clearance.</li>
+        </ul>
+      `
+    },
+    'sec-supply-chain-mapper': {
+      title: 'SEC EDGAR Supply Chain & Counterparty Mapper',
+      slug: 'sec-supply-chain-mapper-setup + sec-supply-chain-mapper',
+      badge: 'LIVE · $29 IN SOL',
+      badgeClass: 'live',
+      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'sec-supply-chain-mapper',
+      specPageUrl: '/bots/sec-supply-chain-mapper.html',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>Cited supplier, customer, foundry, subsidiary and equity-stake map for one or more public companies, built only from primary SEC EDGAR filings, with a reproducible <code>audit_sha256</code>.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL (v1.1). Also included in the <strong>Institutional EDGAR Intelligence Pack</strong> ($89). Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
+        <h4>Included Skills (<code>sec-supply-chain-mapper-setup</code> + <code>sec-supply-chain-mapper</code>)</h4>
+        <ul>
+          <li><strong>Cited Relationship Edges:</strong> <code>supplier</code>, <code>customer</code>, <code>foundry_compute</code>, <code>strategic_partner</code>, <code>subsidiary</code> and <code>equity_stake</code>, each with a verbatim quote of <code>&lt;=300</code> characters, the accession number and a direct SEC Archive URL.</li>
+          <li><strong>Inline-XBRL Concentration Scorer:</strong> <code>CR-01</code> to <code>CR-04</code> (major customer, top customers, sole-source supplier, receivables); Exhibit 21 subsidiaries are separated from counterparties.</li>
+          <li><strong>YoY 10-K Counterparty Diff:</strong> <code>ADDED</code>, <code>REMOVED</code> and <code>PCT_CHANGED</code> between the two latest annual reports.</li>
+          <li><strong>Schedule 13D/13G Equity Stakes:</strong> <code>EQ-01</code> reports 5%+ positions with filer, percentage, date and accession number.</li>
+        </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Run sec_supply_chain_mapper.py --preset nvidia-physical-ai and show me every cited supplier, customer, foundry partner and equity stake.</code></p>
+        <p><a href="/bots/sec-supply-chain-mapper.html">Full spec &amp; sample output →</a></p>
+      `,
+      execHtml: `
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>). The only network access is HTTPS to allow-listed <code>sec.gov</code> hosts (<code>data.sec.gov</code>, <code>www.sec.gov</code>, <code>efts.sec.gov</code>) with DNS pinning, no redirects, a compliant SEC <code>User-Agent</code>, at most 5 requests per second and hard request and byte caps.</p>
+        <h4>Outputs</h4>
+        <ul>
+          <li>Relationship edges with quotes and accession numbers, concentration findings, the YoY diff, equity stakes and a closing <code>audit_sha256</code>.</li>
+          <li><code>--json</code> and <code>--markdown</code> output; exit codes by finding severity for CI/CD gating.</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>No Quote, No Edge:</strong> Never reports a relationship that a filing quote does not support; anonymous &lsquo;Customer A&rsquo; disclosures are never matched to a guessed company.</li>
+          <li><strong>No Investment Advice:</strong> Never outputs buy, sell or hold ratings, price targets or forecasts; concentration scores are not credit or valuation opinions.</li>
+          <li><strong>SEC-Only &amp; Rate-Limited:</strong> Refuses non-SEC hosts, redirects, private IPs and non-HTTPS targets; never exceeds SEC EDGAR rate limits.</li>
+          <li><strong>Scope Note:</strong> Always states that private contracts and undisclosed counterparties are outside primary filings.</li>
         </ul>
       `
     }
@@ -2166,7 +2254,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 // Checkout card on-ramp helper + header Products dropdown (idempotent injectors)
 // ---------------------------------------------------------------------------
 (() => {
-  const NAV_MENU = {"trigger": "Products (8 Live) ▾", "label": "LIVE OSINT & DEVSECOPS AGENTS (8)", "footer": "View All 8 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"]]};
+  const NAV_MENU = {"trigger": "Products (12 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (12)", "footer": "View All 12 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29 SOL"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49 SOL"]]};
 
   const ensureCardOnramp = () => {
     document.querySelectorAll('#checkout-step-pay').forEach((pay) => {

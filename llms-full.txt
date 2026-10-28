@@ -8,7 +8,7 @@
 - **Machine-Readable Catalog:** https://botappstore.com/llms.txt
 - **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt
 - **Sister Solana & Crypto Storefront:** https://coinloader.com/
-- **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 in SOL); `physical-ai-manufacturing-pack` ($59 in SOL); `founder-research-gtm-pack` ($59 in SOL)
+- **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 in SOL); `physical-ai-manufacturing-pack` ($59 in SOL); `founder-research-gtm-pack` ($59 in SOL); `edgar-intelligence-pack` ($89 in SOL)
 - **Free Flagship Utility (1-Click Install):** https://botappstore.com/bots/web-text-extractor.html (Direct Grok Bot import: https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol)
 - **Paid Bot & Skill Security Auditor ($29 in SOL, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
 - **Paid Company & Competitor Deep-Dive Analyst ($19 in SOL, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
@@ -20,13 +20,14 @@
 - **MCP Server & Tool-Permission Security Auditor ($19 in SOL, `sku: mcp-config-auditor`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/mcp-config-auditor.html (Checkout: https://botappstore.com/#card-mcp-config-auditor)
 - **3D Print Farm & Slicer Queue Ops ($29 in SOL, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE - instant on-chain SOL checkout):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
 - **Humanoid & Fleet Telemetry Inspector ($49 in SOL, `sku: robotics-telemetry-inspector`, AVAILABLE NOW · PHASE 1 RELEASE - instant on-chain SOL checkout):** https://botappstore.com/bots/robotics-telemetry-inspector.html (Checkout: https://botappstore.com/#card-robotics-telemetry-inspector)
+- **SEC EDGAR Supply Chain & Counterparty Mapper ($29 in SOL, `sku: sec-supply-chain-mapper`, v1.1, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/sec-supply-chain-mapper.html (Checkout: https://botappstore.com/#card-sec-supply-chain-mapper; runtime: https://botappstore.com/runtime/sec_supply_chain_mapper.py)
 - **Pinned Runtime Downloads:** https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 11 Live Automations)
+## Live Agent Templates (Available Now — 12 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -312,7 +313,26 @@
 
 ---
 
-## Value Bundles — Multi-Bot Packs (3 Live Bundle SKUs; One License Key Unlocks All Included Bots)
+### 12. SEC EDGAR Supply Chain & Counterparty Mapper ($29 in SOL — LIVE NOW, sku: sec-supply-chain-mapper, v1.1)
+- **Status:** LIVE NOW (v1.1)
+- **SKU:** `sec-supply-chain-mapper`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**); also included in the `edgar-intelligence-pack` bundle ($89)
+- **Categories:** OSINT & Research / SEC EDGAR Supply Chain
+- **Product Page URL:** https://botappstore.com/bots/sec-supply-chain-mapper.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-sec-supply-chain-mapper
+- **Included Skills:** `sec-supply-chain-mapper-setup` + `sec-supply-chain-mapper`
+- **Runtime:** https://botappstore.com/runtime/sec_supply_chain_mapper.py (standalone zero-dependency Python 3.10+ CLI, `--json` / `--markdown` output) + https://botappstore.com/runtime/bot_common.py
+- **Deliverable:** Cited supplier, customer, foundry, subsidiary and equity-stake map built only from primary SEC EDGAR filings (10-K, 10-Q, 8-K, Exhibit 21, Schedule 13D/13G), with a reproducible `audit_sha256`.
+- **Capabilities:**
+  - Relationship edges typed `supplier`, `customer`, `foundry_compute`, `strategic_partner`, `subsidiary`, `equity_stake`; each carries a verbatim quote of `<=300` characters, the accession number and a direct sec.gov Archive URL. No quote, no edge.
+  - Inline-XBRL Disclosed Concentration Scorer `CR-01..04` (major customer >=10%, top customers combined, sole-source supplier, receivables concentration) using `us-gaap:ConcentrationRiskPercentage`; Exhibit 21 subsidiaries are separated from counterparties.
+  - YoY 10-K Counterparty Diff: `ADDED`, `REMOVED`, `PCT_CHANGED`.
+  - Schedule 13D/13G Equity Stakes: `EQ-01`.
+  - Presets such as `--preset nvidia-physical-ai` for multi-company ecosystem maps.
+- **Guardrails:** HTTPS-only allow-listed sec.gov hosts, DNS pinning, no redirects (SSRF protection), compliant SEC User-Agent, <=5 requests per second with request and byte caps; never infers a relationship without a filing quote; never gives buy/sell/hold advice; always prepends a SCOPE_NOTE.
+- **Full Verbatim Sample:** https://botappstore.com/bots/sec-supply-chain-mapper.html#sample-output
+
+## Value Bundles — Multi-Bot Packs (4 Live Bundle SKUs; One License Key Unlocks All Included Bots)
 
 Bundle SKUs are priced in USD and paid in SOL via the same non-custodial checkout (`POST https://www.wattcoin.org/api/v1/agents/license/quote` with `sku: <bundle-sku>`, `source: "botappstore"`). A single bundle purchase returns **one** `wcl_<64-hex>` bearer license code that unlocks **every** member bot in the pack (up to 3 workspace-reset rebinds). The `/api/v1/agents/license/purchase` response also includes `included_skus` (member SKU list) and `bundle_templates` (an array of `{sku, name, template_url}` with one unlisted `https://x.ai/bot/<id>` Grok Bot template per member) so you can import every bot in the pack. Activate each imported bot on its Turn 1 with the same `wcl_...` code. Storefront section: https://botappstore.com/#bundles
 
@@ -343,6 +363,16 @@ Bundle SKUs are priced in USD and paid in SOL via the same non-custodial checkou
   - Social Hub Publisher (`social-hub-publisher`, $29 list): https://botappstore.com/bots/social-hub-publisher.html
 - **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
 
+### Institutional EDGAR Intelligence Pack ($89 in SOL, `sku: edgar-intelligence-pack`, 3-Bot Bundle)
+- **Bundle Price:** $89.00 USD, paid in SOL at the live USD/SOL rate.
+- **Included member SKUs (`included_skus`):** `company-deep-dive`, `sec-patent-watchdog`, `sec-supply-chain-mapper`
+- **Members:**
+  - Company & Competitor Deep-Dive Analyst (`company-deep-dive`, $19 list): https://botappstore.com/bots/company-deep-dive.html
+  - SEC & Patent Watchdog Digest (`sec-patent-watchdog`, $29 list): https://botappstore.com/bots/sec-patent-watchdog.html
+  - SEC EDGAR Supply Chain & Counterparty Mapper (`sec-supply-chain-mapper`, $29 list): https://botappstore.com/bots/sec-supply-chain-mapper.html
+- **Covers:** end-to-end SEC 10-K/10-Q/8-K/13D dossier generation, continuous filing and USPTO patent delta alerts, and cited multi-company supply-chain and concentration mapping.
+- **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
+
 
 ## On-Chain SOL Licensing & Verification API (`https://www.wattcoin.org`)
 
@@ -353,6 +383,8 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
    - Supported SKUs:
      - `devsecops-ai-security-pack` ($69.00 USD in SOL — DevSecOps & AI Agent Security Pack, 4-bot bundle; members: bot-skill-auditor, mcp-config-auditor, dependency-vuln-triage, domain-infra-hygiene; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `physical-ai-manufacturing-pack` ($59.00 USD in SOL — Physical AI & Manufacturing Ops Pack, 2-bot bundle; members: print-farm-ops, robotics-telemetry-inspector; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
+     - `edgar-intelligence-pack` ($89.00 USD in SOL — Institutional EDGAR Intelligence Pack, 3-bot bundle; members: company-deep-dive, sec-patent-watchdog, sec-supply-chain-mapper; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
+     - `sec-supply-chain-mapper` ($29.00 USD in SOL — SEC EDGAR Supply Chain & Counterparty Mapper, v1.1)
      - `founder-research-gtm-pack` ($59.00 USD in SOL — Founder OSINT, SEC & GTM Pack, 3-bot bundle; members: company-deep-dive, sec-patent-watchdog, social-hub-publisher; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `bot-skill-auditor` ($29.00 USD in SOL — Bot & Skill Security Auditor)
      - `company-deep-dive` ($19.00 USD in SOL — Company & Competitor Deep-Dive Analyst)
@@ -387,7 +419,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
 
 ---
 
-## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 11 Live Templates; Wave 2 and Wave 3 samples follow at the end)
+## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 12 Live Templates; Wave 2 and Wave 3 samples follow at the end)
 
 ### Sample 1 — Web & API Text Extractor (`getting-started` + `web-extractor`, $0 Free Forever)
 
@@ -2066,3 +2098,49 @@ exit_code 3 (fail-on=medium)
 
 SCOPE_NOTE: 100% offline, local, read-only inspection of the actuator, BMS, CAN / RS485, ROS 2 bag (.db3 / .mcap / metadata), PX4 ULog / ArduPilot and URDF / SDF files you supply. Findings are offline diagnostic heuristics on exported logs, not airworthiness, FAA / EASA flight certification, or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval. No network request is made, and the tool never issues motor or actuator commands, CAN frames, MAVLink parameter writes or BMS register writes; it never modifies an input file (--state, --out and --maintenance-out only write new files and refuse any input path). Credentials, tokens, MAVLink signing keys, ROS 2 DDS security private keys, Wi-Fi passwords and SSH keys are refused (exit 10) or redacted, and never read back or echoed.
 ````
+
+## Wave 3 - sec-supply-chain-mapper ($29 in SOL, one-time; v1.1; LIVE NOW, instant on-chain SOL checkout)
+- **SKU:** `sec-supply-chain-mapper`
+- **Page:** https://botappstore.com/bots/sec-supply-chain-mapper.html
+- **Runtime:** https://botappstore.com/runtime/sec_supply_chain_mapper.py
+- **Bundle:** also in `edgar-intelligence-pack` ($89)
+
+### Verbatim sample output
+Illustrative sample: percentages, quotes and accession numbers (`000###`) are placeholders, not retrieved from EDGAR; counterparties marked fictional do not exist.
+```
+snapshot   2026-10-28 09:41:07 UTC | tool=sec_supply_chain_mapper v1.1 | preset=nvidia-physical-ai | sample=illustrative
+target     NVIDIA CORP (CIK 0001045810)  10-K FY2026 (acc 0001045810-26-000###) vs FY2025 (acc 0001045810-25-000###)
+requests   14/40  bytes 1,204,331/4,194,304  rate<=5/s  sec.gov only
+
+## Cited relationship edges (type | counterparty | evidence)
+  [foundry_compute    ] Taiwan Semiconductor Manufacturing Co. (TSMC)
+      "We utilize foundries, such as TSMC, to produce our semiconductor wafers." (acc 0001045810-26-000###, 10-K Item 1)
+  [supplier           ] Hon Hai Precision Industry Co. (Foxconn)
+      "We purchase substrates, systems and components from contract manufacturers." (acc 0001045810-26-000###, 10-K Item 1A)
+  [customer           ] Direct Customer A (anonymous, 16% of revenue)
+      "Sales to one customer, Customer A, represented 16% of total revenue." (acc 0001045810-26-000###, 10-K Note 16)
+  [strategic_partner  ] ExampleRobotics Inc. (fictional)
+      "We entered into a strategic collaboration to accelerate humanoid robot development." (acc 0001045810-26-000###, 8-K Item 1.01)
+  [subsidiary         ] Mellanox Technologies, Ltd. (Israel)
+      Exhibit 21.1 "Subsidiaries of the Registrant" (acc 0001045810-26-000###)  [excluded from customer/supplier counts]
+  [equity_stake       ] ExampleRobotics Inc. (fictional)  see EQ-01
+
+## Inline-XBRL concentration (us-gaap:ConcentrationRiskPercentage)
+  [HIGH    ] CR-01  Customer A = 16.0% of revenue (>=10% threshold)
+  [MEDIUM  ] CR-02  Top 2 disclosed customers combined = 29.0% of revenue
+  [MEDIUM  ] CR-03  Sole-source/single-source supplier language present in Item 1A (1 quote)
+  [INFO    ] CR-04  Receivables concentration: 2 customers >=10% of accounts receivable
+  concentration_score 61/100
+
+## YoY 10-K counterparty diff (FY2026 vs FY2025)
+  ADDED        Direct Customer C (11.0% of revenue)           acc 0001045810-26-000###
+  REMOVED      Distributor D (was 10.0% of revenue)            acc 0001045810-25-000###
+  PCT_CHANGED  Customer A 12.0% -> 16.0% (+4.0 pts)            acc 0001045810-26-000### / 0001045810-25-000###
+
+## Schedule 13D/13G equity stakes
+  [INFO    ] EQ-01  NVIDIA CORP holds 6.2% of ExampleRobotics Inc. (fictional) per SC 13G filed 2026-08-14 (acc 0001045810-26-000###)
+
+audit_sha256 ff66fc2c430f6ab3f49ba3de44dc85c2f2fcbcb96300a3a524171fe32a8c18d9
+exit_code 1
+SCOPE_NOTE: Primary SEC EDGAR filings only. Relationships are reported only where a filing quote supports them; private contracts, undisclosed counterparties and non-filing sources are out of scope. Concentration scores summarise disclosed percentages and are not a credit, investment or valuation opinion. No buy, sell or hold ratings.
+```
