@@ -213,6 +213,32 @@
       defaultPrompt: function (code) {
         return 'Activate my 3D Print Farm & Slicer Queue Ops with license code ' + code;
       }
+    },
+    'robotics-telemetry-inspector': {
+      sku: 'robotics-telemetry-inspector',
+      name: 'Humanoid & Fleet Telemetry Inspector',
+      title: 'Humanoid & Fleet Telemetry Inspector',
+      badge: 'AVAILABLE NOW · $49 IN SOL',
+      detailUrl: '/bots/robotics-telemetry-inspector.html',
+      slugMeta: 'sku: robotics-telemetry-inspector · Skills: robotics-telemetry-inspector-setup + robotics-telemetry-inspector · One-Time License · 3 Rebinds',
+      priceUsd: 49,
+      priceLabel: '$49 USD in SOL',
+      priceUsdHtml: '$49.00 <small>USD</small>',
+      promptHint: 'Audit my actuator log, BMS export, ROS 2 bag and flight log, and write the maintenance checklist...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open Humanoid & Fleet Telemetry Inspector in Grok Bot',
+      statusFooterText: 'Status: AVAILABLE NOW · $49 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($49 in SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>Humanoid &amp; Fleet Telemetry Inspector</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Telemetry Inspector in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or add the actuator, BMS, ROS 2 bag, flight-log, URDF and CAN files you want audited):',
+      stepCFootHtml:
+        'On Turn 1, <code>robotics-telemetry-inspector-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>robotics_telemetry_inspector.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs an offline self-check audit.',
+      defaultPrompt: function (code) {
+        return 'Activate my Humanoid & Fleet Telemetry Inspector with license code ' + code;
+      }
     }
   };
 
@@ -782,34 +808,62 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     },
     'robotics-telemetry-inspector': {
       title: 'Humanoid & Fleet Telemetry Inspector',
-      slug: 'robotics-telemetry-inspector',
-      badge: 'IN DEVELOPMENT · PHASE 3 SPEC',
-      badgeClass: 'phase3',
-      price: 'Planned: $49 USD (One-Time License · Spec Preview)',
+      slug: 'robotics-telemetry-inspector-setup + robotics-telemetry-inspector',
+      badge: 'AVAILABLE NOW · PHASE 1 RELEASE',
+      badgeClass: 'live',
+      price: '$49 USD in SOL (One-Time License · 3 Rebinds)',
       shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'robotics-telemetry-inspector',
+      specPageUrl: '/bots/robotics-telemetry-inspector.html',
       specHtml: `
-        <p>Read-only diagnostic analyzer for robotic joint actuator logs, harmonic-drive duty cycles, and 16S LiFePO4 / mobile robot battery management system (BMS) telemetry.</p>
-        <h4>What It Does (Phase 3 Specification)</h4>
+        <p><strong>Deliverable:</strong> <em>Deterministic, offline, read-only audit of exported robot and fleet telemetry across 4 buckets: actuator, joint and harmonic-drive duty cycles (cross-checked against URDF / SDF limits and CAN logs), 16S LiFePO4 / LiPo battery management system packs, ROS 2 bag topic rate, QoS, clock and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC flight readiness, ending in a preventive-maintenance and flight-readiness checklist.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 1 RELEASE</span> — One-time <strong>$49 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>robotics-telemetry-inspector-setup</code> + <code>robotics-telemetry-inspector</code>)</h4>
+        <pre class="code-pre">---
+name: robotics-telemetry-inspector
+description: "Use this when the user asks to audit humanoid or fleet
+  actuator, joint and harmonic-drive telemetry, 16S LiFePO4 / LiPo BMS
+  packs, ROS 2 .db3 / .mcap bags (topic rates, QoS, clock drift, TF
+  tree), PX4 .ulg or ArduPilot flight logs, URDF / SDF joint limits,
+  CAN / RS485 logs, or a preventive maintenance checklist."
+---
+Step 0  License gate: .wattcoin_license_check.py --sku robotics-telemetry-inspector
+        must return "state": "OK" before every run.
+Step 1  Verify sha256 of robotics_telemetry_inspector.py (aa45c095...6b17)
+        and bot_common.py (d1941b61...50e526); refuse on mismatch.
+Step 2  /usr/bin/python3 -I /workspace/scripts/robotics_telemetry_inspector.py
+        [--actuators PATH] [--bms PATH] [--rosbag PATH] [--flight-log PATH]
+        [--urdf PATH] [--can-log PATH] [--maintenance-out PATH]
+        [--state PATH --delta] [--format markdown] [--fail-on high]
+Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degraded</pre>
+        <h4>Capabilities</h4>
         <ul>
-          <li><strong>Actuator Thermal &amp; Torque Analysis:</strong> Parses CSV/JSON joint logs to flag stator winding temperature spikes, RMS torque overload, and duty-cycle anomalies.</li>
-          <li><strong>16S LiFePO4 &amp; Fleet BMS Diagnostics:</strong> Computes per-cell voltage delta (<code>mV</code> spread under load vs. rest), MOSFET thermal rise, and cycle-life state-of-health trends.</li>
-          <li><strong>Preventive Maintenance Dossier:</strong> Generates timestamped anomaly reports and maintenance schedules in <code>/workspace/telemetry_diagnostics.md</code>.</li>
+          <li><strong>Actuator, Joint &amp; Harmonic-Drive Duty Cycles:</strong> stator temperature, duty cycle, peak and continuous torque, velocity and position against the model, backlash and service hours, plus CAN bus-off, error frames, EMCY and heartbeat loss (<code>ACTUATOR_THERMAL_OVERLOAD</code>, <code>ACTUATOR_HIGH_DUTY_CYCLE</code>, <code>JOINT_TORQUE_LIMIT_EXCEEDED</code>, <code>JOINT_VELOCITY_LIMIT_EXCEEDED</code>, <code>JOINT_POSITION_LIMIT_EXCEEDED</code>, <code>HARMONIC_DRIVE_WEAR_THRESHOLD</code>, <code>CAN_BUS_FAULT_OR_TIMEOUT</code>).</li>
+          <li><strong>16S LiFePO4 / LiPo BMS:</strong> cell spread under load versus rest, weakest-cell sag, MOSFET rise, C-rate and state of health (<code>BMS_CELL_IMBALANCE_DELTA</code>, <code>BMS_CRITICAL_CELL_SAG</code>, <code>BMS_MOSFET_THERMAL_RISE</code>, <code>BMS_DISCHARGE_CRATE_EXCEEDED</code>, <code>BMS_SOH_DEGRADATION</code>).</li>
+          <li><strong>ROS 2 Bag, TF Tree &amp; QoS:</strong> topic dropouts and rates, backward timestamp jumps and inter-sensor skew, QoS mismatch against an expectations file, and TF cycles or disconnected roots (<code>ROSBAG_TOPIC_DROPOUT</code>, <code>ROSBAG_CLOCK_DRIFT_OR_JUMP</code>, <code>QOS_INCOMPATIBLE_MISMATCH</code>, <code>TF_TREE_CYCLE_OR_DISCONNECT</code>).</li>
+          <li><strong>PX4 / ArduPilot Flight Readiness:</strong> EKF innovation, IMU vibration and clipping, GNSS fix, ESC desync and overheat, failsafe and pre-arm faults (<code>EKF_INNOVATION_DIVERGENCE</code>, <code>IMU_VIBRATION_CLIPPING</code>, <code>GNSS_DEGRADED_FIX</code>, <code>ESC_DESYNC_OR_OVERHEAT</code>, <code>FLIGHT_FAILSAFE_OR_PREARM_FAULT</code>), with the checklist written by <code>--maintenance-out</code>.</li>
+          <li><strong>Recurring Delta:</strong> <code>--state --delta</code> reports <code>BMS_CELL_DELTA_SPIKE</code>, <code>ACTUATOR_THERMAL_DRIFT</code>, <code>SOH_DEGRADATION_STEP</code> and <code>TOPIC_RATE_REGRESSION</code> between runs, suited to a scheduled <code>UpdateRoutine</code>.</li>
         </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Audit actuators.csv, bms.csv, nav.db3 and quad.ulg against humanoid.urdf and the CAN log, tell me what is NO-GO, and write the maintenance checklist to checklist.csv.</code></p>
+        <p><a href="/bots/robotics-telemetry-inspector.html">Full spec, pinned runtime hashes &amp; real sample audit →</a></p>
       `,
       execHtml: `
-        <p>Runs offline against exported telemetry logs in <code>/workspace</code> with zero hardware write access.</p>
-        <h4>Supported Telemetry Formats</h4>
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>) and makes <strong>no network requests</strong>: it reads only the log and model files you point it at. It never commands a robot, CAN bus, flight controller or BMS, and never modifies an input file.</p>
         <ul>
-          <li><strong>Inputs:</strong> Actuator CSV/JSON logs, decoded CAN/RS485 frame exports, and 16S BMS cell-voltage time series in <code>/workspace</code>.</li>
-          <li><strong>Outputs:</strong> <code>/workspace/telemetry_diagnostics.md</code> + structured anomaly summary JSON.</li>
+          <li><strong>Pinned Runtime (SHA-256):</strong> <code>robotics_telemetry_inspector.py</code> <code>aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17</code> (3,245 lines) and <code>bot_common.py</code> <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code> (274 lines), verified with <code>sha256sum -c</code> before every run and locked at <code>0500</code>.</li>
+          <li><strong>License Binding (<code>robotics-telemetry-inspector-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>.</li>
+          <li><strong>Fail-Closed Exit Codes:</strong> <code>0</code> clean, <code>1</code>/<code>2</code>/<code>3</code> MEDIUM/HIGH/CRITICAL at <code>--fail-on</code>, <code>10</code> bad input or refusal, <code>11</code> degraded (unreadable, malformed or unsafe input, a skipped symlink), so a failed read never looks clean.</li>
+          <li><strong>Inputs &amp; Outputs:</strong> <code>--actuators</code>, <code>--bms</code>, <code>--rosbag</code> (<code>.db3</code>, <code>.mcap</code>, metadata, expectations file), <code>--flight-log</code> (<code>.ulg</code>, ArduPilot), <code>--urdf</code>, <code>--can-log</code>, <code>--dir</code>; <code>--format text|markdown|json|html</code>, <code>--maintenance-out PATH</code>, <code>--out PATH</code>. The <code>--state</code> file is written <code>0600</code> and is never overwritten by a degraded run.</li>
         </ul>
       `,
       refusalHtml: `
-        <p>Strict hardware safety boundaries:</p>
-        <h4>Mandatory Refusal Boundaries</h4>
         <ul>
-          <li><strong>Strictly Read-Only Telemetry:</strong> Never issues motor or actuator motion commands, torque setpoints, or CAN bus frames.</li>
-          <li><strong>No BMS Register Writes:</strong> Never modifies BMS protection thresholds, balancing parameters, or hardware safety interlocks.</li>
+          <li><strong>Offline and Strictly Read-Only:</strong> Never issues motor or actuator commands, torque setpoints, CAN frames, MAVLink parameter writes or BMS register writes, and never overrides a safety interlock.</li>
+          <li><strong>Non-Destructive Auditing:</strong> Never modifies an input file; <code>--state</code>, <code>--out</code> and <code>--maintenance-out</code> only write new files and refuse input paths.</li>
+          <li><strong>No Credentials:</strong> Refuses fleet API tokens, passwords, seed phrases, MAVLink signing keys, DDS private keys, Wi-Fi passwords and SSH keys in arguments or tables (exit <code>10</code>, value never echoed); a credential inside a bag or metadata record is flagged as <code>EMBEDDED_TELEMETRY_CREDENTIAL</code> with the value redacted.</li>
+          <li><strong>Heuristic, Not Certification:</strong> Findings are diagnostics on exported logs, not airworthiness, FAA / EASA or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval; a GO on the checklist is not an operation clearance.</li>
         </ul>
       `
     }

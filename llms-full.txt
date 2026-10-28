@@ -16,13 +16,14 @@
 - **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL, `sku: agent-council`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
 - **MCP Server & Tool-Permission Security Auditor ($19 in SOL, `sku: mcp-config-auditor`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/mcp-config-auditor.html (Checkout: https://botappstore.com/#card-mcp-config-auditor)
 - **3D Print Farm & Slicer Queue Ops ($29 in SOL, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE - instant on-chain SOL checkout):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **Humanoid & Fleet Telemetry Inspector ($49 in SOL, `sku: robotics-telemetry-inspector`, AVAILABLE NOW · PHASE 1 RELEASE - instant on-chain SOL checkout):** https://botappstore.com/bots/robotics-telemetry-inspector.html (Checkout: https://botappstore.com/#card-robotics-telemetry-inspector)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 10 Live Automations)
+## Live Agent Templates (Available Now — 11 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -275,16 +276,36 @@
   - Refuses credentials, API keys, seed phrases and printer LAN access codes (exit `10`, value never echoed)
   - Heuristic checks of slicer metadata, not engineering certification or fire-safety protection; cost and margin figures are arithmetic on supplied inputs, not financial advice
 
----
-
-## Planned Phase 3 Specification (In Development — Not Yet Available for Purchase)
-
-> The following agent template is published as an engineering specification (`SKILL.md` previews). Its purchase button is disabled until its verification suite goes live.
-
-### 11. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
-- **Slug:** `robotics-telemetry-inspector`
-- **Scope:** Offline diagnostic analyzer for robotic joint actuator thermal/torque CSV/JSON logs and 16S LiFePO4 battery management system (BMS) cell-voltage delta time series (`/workspace/telemetry_diagnostics.md`).
-- **Refusal Boundaries:** Strictly read-only log analysis; never sends motor/actuator commands, CAN frames, or BMS protection register writes.
+### 11. Humanoid & Fleet Telemetry Inspector ($49 in SOL — AVAILABLE NOW · PHASE 1 RELEASE, sku: robotics-telemetry-inspector)
+- **Status:** AVAILABLE NOW · PHASE 1 RELEASE
+- **SKU:** `robotics-telemetry-inspector`
+- **Price:** $49.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Categories:** Robotics & Physical AI / Humanoid & Fleet Telemetry
+- **Product Page URL:** https://botappstore.com/bots/robotics-telemetry-inspector.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-robotics-telemetry-inspector
+- **Included Skills:** `robotics-telemetry-inspector-setup` + `robotics-telemetry-inspector`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/robotics_telemetry_inspector.py` — SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17` (3,245 lines, stdlib Python, 724 unit tests)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (274 lines)
+- **Deliverable:** *Find the overheating knee, the weak cell and the dropped topic before the robot runs again: an offline, read-only audit of actuator and joint logs, 16S LiFePO4 / LiPo BMS exports, ROS 2 bags, PX4 / ArduPilot flight logs, URDF / SDF models and CAN / RS485 captures, ending in a prioritised preventive-maintenance and flight-readiness checklist.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`robotics-telemetry-inspector-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku robotics-telemetry-inspector`, `POST /api/v1/agents/license/claim`), runs the deterministic `--self-check`, and offers a first audit plus an optional `UpdateRoutine` for recurring `--state --delta` runs.
+  2. **Mandatory Pre-Flight License Gate (`robotics-telemetry-inspector`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py --sku robotics-telemetry-inspector` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=robotics-telemetry-inspector`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Does:**
+  - **Inputs:** positional paths, `--dir` or `.zip` archives (roles auto-detected), `--actuators` and `--bms` CSV/JSON tables, `--rosbag` (`.db3`, `.mcap`, `metadata.yaml`/JSON summary, or an expectations file with `topics[].expected_hz/required/qos.subscriber`; repeatable), `--flight-log` (PX4 `.ulg`, ArduPilot `.bin`/CSV/JSON; repeatable), `--urdf` (URDF/SDF), `--can-log` (candump text or CSV/JSON).
+  - **Bucket 1 — Actuator, Joint & Harmonic-Drive Duty Cycles (with URDF/SDF and CAN cross-checks):** `ACTUATOR_THERMAL_OVERLOAD`, `ACTUATOR_HIGH_DUTY_CYCLE`, `JOINT_TORQUE_LIMIT_EXCEEDED`, `JOINT_VELOCITY_LIMIT_EXCEEDED`, `JOINT_POSITION_LIMIT_EXCEEDED`, `HARMONIC_DRIVE_WEAR_THRESHOLD`, `CAN_BUS_FAULT_OR_TIMEOUT`, `ACTUATOR_ERROR_FLAGS_SET`, `URDF_JOINT_LIMIT_INVALID`, `ACTUATOR_JOINT_NOT_IN_MODEL`.
+  - **Bucket 2 — 16S LiFePO4 / LiPo Battery Management System:** `BMS_CELL_IMBALANCE_DELTA`, `BMS_CRITICAL_CELL_SAG`, `BMS_MOSFET_THERMAL_RISE`, `BMS_DISCHARGE_CRATE_EXCEEDED`, `BMS_SOH_DEGRADATION`, `BMS_CELL_COUNT_MISMATCH`.
+  - **Bucket 3 — ROS 2 Bag, TF Tree & QoS Integrity:** `ROSBAG_TOPIC_DROPOUT`, `ROSBAG_CLOCK_DRIFT_OR_JUMP`, `QOS_INCOMPATIBLE_MISMATCH`, `TF_TREE_CYCLE_OR_DISCONNECT`.
+  - **Bucket 4 — PX4 / ArduPilot Flight Readiness & Preventive Maintenance:** `EKF_INNOVATION_DIVERGENCE`, `IMU_VIBRATION_CLIPPING`, `GNSS_DEGRADED_FIX`, `ESC_DESYNC_OR_OVERHEAT`, `FLIGHT_FAILSAFE_OR_PREARM_FAULT`; checklist CSV via `--maintenance-out`.
+  - **Cross-cutting:** `EMBEDDED_TELEMETRY_CREDENTIAL` (HIGH, value redacted), `ARCHIVE_SAFETY_VIOLATION`, `XML_ENTITY_SAFETY_VIOLATION`.
+  - **Delta:** `--state PATH --delta` events `BMS_CELL_DELTA_SPIKE`, `ACTUATOR_THERMAL_DRIFT`, `SOH_DEGRADATION_STEP`, `TOPIC_RATE_REGRESSION`.
+- **CLI Flags:** `PATH ...`, `--dir DIR`, `--actuators PATH`, `--bms PATH`, `--rosbag PATH`, `--flight-log PATH`, `--urdf PATH`, `--can-log PATH`, `--maintenance-out PATH`, `--self-check`, `--state PATH`, `--delta`, `--now ISO`, `--format {text,markdown,md,json,html}`, `--json`, `--out PATH`, `--fail-on {none,info,low,medium,high,critical}`.
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (at/above `--fail-on`), `10` bad input or refusal, `11` degraded (unreadable/malformed/unsafe input, a skipped symlink, or nothing to audit; never clean)
+- **Sample Prompt:** `Audit actuators.csv, bms.csv, nav.db3 and quad.ulg against humanoid.urdf and the CAN log, tell me what is NO-GO, and write the maintenance checklist to checklist.csv.`
+- **Mandatory Refusal Boundaries:**
+  - Offline and strictly read-only: no network request; never issues motor/actuator commands, CAN frames, MAVLink parameter writes or BMS register writes, never overrides a safety interlock, never modifies an input file
+  - Refuses credentials, tokens, seed phrases, MAVLink signing keys, DDS private keys, Wi-Fi passwords and SSH keys in arguments and tables (exit `10`, value never echoed); symlink inputs exit `10`
+  - Heuristic diagnostics on exported logs, not airworthiness, FAA/EASA or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval
 
 ---
 
@@ -305,6 +326,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
      - `domain-infra-hygiene` ($19.00 USD in SOL — Domain, TLS & Email Auth Infrastructure Hygiene Auditor)
      - `agent-council` ($39.00 USD in SOL — Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator)
      - `print-farm-ops` ($29.00 USD in SOL — 3D Print Farm & Slicer Queue Ops)
+     - `robotics-telemetry-inspector` ($49.00 USD in SOL — Humanoid & Fleet Telemetry Inspector)
    - Response: 15-minute locked SOL quote with `order_id` (`ord_<24-hex>`), `checkout_token` (`ct_<48-hex>`), `amount_sol`, `amount_lamports` (including a unique 4-digit lamport tag `0001`–`9999`), `memo` (`wcl:<order_id>`), `recipient_wallet` (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`), and `solana_pay_url`.
 
 2. **`POST https://www.wattcoin.org/api/v1/agents/license/purchase`**
@@ -1772,4 +1794,225 @@ exit_code 3 (fail-on=medium)
 SCOPE_NOTE: 100% offline, local, read-only inspection of the .3mf / .gcode.3mf / .gcode files and the spool, order and printer tables you supply. No network request is made (no Bambu Cloud, MQTT, Moonraker, Klipper, OctoPrint or PrusaLink call), no G-code is sent, no print is started, stopped or heated, and it never modifies or overwrites any .3mf or .gcode file in place; --queue-csv only writes a new CSV and refuses .3mf / .gcode targets and any input path. Thermal and structural findings are heuristic checks of slicer metadata, not mechanical-engineering certification and not a substitute for hardware fire-safety protection (thermal-runaway cut-offs, smoke / heat detection, an unattended-print policy). Cost, margin and reorder figures are arithmetic on the numbers you supply, not financial, tax or accounting advice. Credentials, API keys and printer LAN access codes are refused and never read or echoed.
 
 ---
+````
+
+---
+
+## Wave 3 - robotics-telemetry-inspector ($49 in SOL, one-time; AVAILABLE NOW · PHASE 1 RELEASE, instant on-chain SOL checkout)
+- **SKU:** `robotics-telemetry-inspector`
+- **Name:** Humanoid & Fleet Telemetry Inspector
+- **Page:** https://botappstore.com/bots/robotics-telemetry-inspector.html
+- **Checkout:** https://botappstore.com/#card-robotics-telemetry-inspector
+- **Skills:** `robotics-telemetry-inspector-setup`, `robotics-telemetry-inspector`
+- **Price:** $49.00 USD one-time, settled on-chain in SOL (up to 3 workspace-reset rebinds)
+- **Runtime:** `/workspace/scripts/robotics_telemetry_inspector.py` v1.0.0 (3,245 lines, Python stdlib + `/workspace/lib/bot_common.py`, 724 unit tests), always run as `/usr/bin/python3 -I`
+- **Pinned SHA-256:**
+  - `https://botappstore.com/runtime/robotics_telemetry_inspector.py` — `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`
+  - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Summary:** Offline, read-only audit of actuator/joint logs, BMS exports, ROS 2 bags, PX4/ArduPilot flight logs, URDF/SDF models and CAN captures across 4 buckets (actuator, joint & harmonic-drive duty cycles; 16S LiFePO4/LiPo BMS; ROS 2 bag, TF tree & QoS integrity; PX4/ArduPilot flight readiness), with a `--maintenance-out` checklist and `--state --delta` tracking of cell-spread spikes, actuator thermal drift, SOH steps and topic-rate regressions.
+
+Verbatim `--self-check --format markdown --now 2026-10-27T00:00:00Z` output on the built-in synthetic fleet (12-DOF humanoid on CAN, 16S LiFePO4 + 6S LiPo packs, a ROS 2 navigation bag with an expectations file, an MCAP fleet bag and a PX4 quadrotor log; all data fabricated, no robot contacted; exit `3`), including its reproduce command:
+
+````markdown
+<!-- Sample run of robotics_telemetry_inspector.py v1.0.0 against the built-in synthetic multi-robot fixtures (--self-check).
+     All joints, packs, bags, flight logs and CAN frames are fabricated for illustration; no robot, vehicle or network was contacted. -->
+
+# Sample: Humanoid & Fleet Telemetry Inspector
+
+**Fleet:** 12-DOF humanoid / mobile manipulator (6 joints per leg, harmonic-drive actuators on CAN) - 16S LiFePO4 main pack + 6S LiPo auxiliary pack -
+ROS 2 navigation bag (`nav.db3`, SQLite rosbag2, plus an expectations file) - fleet telemetry bag (`fleet.mcap`) - PX4 quadrotor companion flight log (`quad.ulg`)
+**Inputs:** `humanoid-actuators.csv`, `humanoid.urdf`, `bms.csv`, `humanoid-bus.log` (candump), `nav.db3`, `nav-expectations.json`, `fleet.mcap`, `quad.ulg`
+
+Reproduce (the fixtures are generated into a temporary directory and removed afterwards; output is deterministic):
+
+```
+python3 -I scripts/robotics_telemetry_inspector.py --self-check --format markdown --now 2026-10-27T00:00:00Z
+```
+
+The run exits `3` (CRITICAL). Bucket 1 shows the actuator, joint-limit (URDF cross-checked) and CAN bus audit, bucket 2 the 16S LiFePO4 pack, bucket 3 the
+ROS 2 bag topic rates, QoS, clock and TF-tree integrity, and bucket 4 the PX4 EKF / vibration / GNSS / ESC readiness checks and the preventive-maintenance
+checklist (the full list is written with `--maintenance-out checklist.csv`). The credential finding in `fleet.mcap` shows redaction: the Wi-Fi password in the
+MCAP metadata record is never printed.
+
+---
+
+# Humanoid & Fleet Telemetry Inspector Report
+
+```
+snapshot   2026-10-27 00:00:00 UTC | tool=robotics-telemetry-inspector
+endpoints  local-files
+```
+
+
+## Summary
+
+Inputs: 12 actuator row(s), 2 BMS pack(s), 2 bag(s) / 7 topic(s), 10 flight record(s), 121 CAN frame(s), 12 URDF/SDF joint(s)
+
+| critical | high | medium | low | info | worst |
+|---|---|---|---|---|---|
+| 12 | 21 | 4 | 1 | 0 | CRITICAL |
+
+
+## Bucket 1 - Actuator, joint & harmonic-drive duty cycles
+
+| joint | stator C | max C | peak Nm | rms Nm | vel rad/s | duty % | hours | backlash arcmin |
+|---|---|---|---|---|---|---|---|---|
+| l_hip_yaw | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| l_hip_roll | 55.0 | 90.0 | 60.0 | 20.0 | 7.20 | 40 | 1000 | 1.00 |
+| l_hip_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| l_knee_pitch | 104.0 | 90.0 | 135.0 | 20.0 | 3.00 | 88 | 1000 | 3.40 |
+| l_ankle_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| l_ankle_roll | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_hip_yaw | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 8100 | 1.00 |
+| r_hip_roll | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_hip_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_knee_pitch | 93.0 | 100.0 | 60.0 | 45.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_ankle_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 74 | 7300 | 1.00 |
+| r_ankle_roll | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+
+Model: humanoid.urdf (URDF, 12 joints)
+
+| bus | frames | errors | err % | CRC | stuff | form | peak load % | EMCY | HB timeouts |
+|---|---|---|---|---|---|---|---|---|---|
+| can0 | 121 | 7 | 5.8 | 6 | 6 | 0 | 0 (est.) | 1 | 1 |
+
+- **CRITICAL** `ACTUATOR_THERMAL_OVERLOAD` l_knee_pitch stator 104.0 C is at/over its limit (90.0 C max, 100 C absolute)
+- **CRITICAL** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0 entered bus-off (controller disconnected itself after repeated errors)
+- **CRITICAL** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0: 1 emergency / fault frame(s) (cob_id 0x082)
+- **CRITICAL** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0: 7 of 121 frames are error frames (5.8%; CRC 6, stuff 6, form 0)
+- **CRITICAL** `JOINT_TORQUE_LIMIT_EXCEEDED` l_knee_pitch peak torque 135.00 Nm exceeds the 120.00 Nm limit (URDF/SDF effort)
+- **HIGH** `ACTUATOR_HIGH_DUTY_CYCLE` l_knee_pitch duty cycle 88.0% (limits: >70% MEDIUM, >85% HIGH)
+- **HIGH** `ACTUATOR_THERMAL_OVERLOAD` r_knee_pitch stator 93.0 C is within 10 C of its limit (100.0 C max) or at/over 85 C
+- **HIGH** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0: heartbeat timeout on node 0x01 (4.00 s silent)
+- **HIGH** `HARMONIC_DRIVE_WEAR_THRESHOLD` l_knee_pitch harmonic drive: backlash 3.40 arcmin exceeds the 3.00 arcmin limit
+- **HIGH** `JOINT_POSITION_LIMIT_EXCEEDED` l_hip_roll observed position 0.900..0.900 is outside the model range [-0.600, 0.500]
+- **HIGH** `JOINT_TORQUE_LIMIT_EXCEEDED` r_knee_pitch RMS torque 45.00 Nm exceeds the 40.00 Nm rated torque (continuous overload)
+- **HIGH** `JOINT_VELOCITY_LIMIT_EXCEEDED` l_hip_roll velocity 7.20 rad/s exceeds the 6.00 rad/s limit
+- **MEDIUM** `ACTUATOR_HIGH_DUTY_CYCLE` r_ankle_pitch duty cycle 74.0% (limits: >70% MEDIUM, >85% HIGH)
+- **MEDIUM** `HARMONIC_DRIVE_WEAR_THRESHOLD` r_hip_yaw harmonic drive: 8100 operating hours reached the 8000 h service interval
+- **LOW** `HARMONIC_DRIVE_WEAR_THRESHOLD` r_ankle_pitch harmonic drive: 7300 operating hours is 91% of the 8000 h service interval
+
+
+## Bucket 2 - 16S LiFePO4 / LiPo battery management system
+
+| pack | chem | cells | V | A | min mV | max mV | delta mV | state | MOSFET C | pack C | SOH % | cycles |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| HUM-PACK-A | LiFePO4 | 16 | 51.2 | 160.0 | 2440 | 3248 | 808 | load | 78.0 | 41.0 | 78.0 | 3250 |
+| AUX-PACK-B | LiPo | 6 | 23.1 | 4.0 | 3830 | 3840 | 10 | rest | 31.0 | 28.0 | 97.0 | 40 |
+
+- **CRITICAL** `BMS_CELL_IMBALANCE_DELTA` HUM-PACK-A (LiFePO4) cell spread 808 mV (2440..3248 mV) under load; balancer active
+- **CRITICAL** `BMS_CRITICAL_CELL_SAG` HUM-PACK-A (LiFePO4) weakest cell 2440 mV is below the 2500 mV critical floor
+- **HIGH** `BMS_DISCHARGE_CRATE_EXCEEDED` HUM-PACK-A (LiFePO4) drawing 1.60 C (160.0 A / 100.0 Ah) over the 1.50 C limit
+- **HIGH** `BMS_MOSFET_THERMAL_RISE` HUM-PACK-A (LiFePO4) MOSFET 78.0 C / pack 41.0 C is above the warning limit (75 C / 50 C)
+- **MEDIUM** `BMS_SOH_DEGRADATION` HUM-PACK-A (LiFePO4) state of health 78.0%, 3250 cycles (rated 3000)
+
+
+## Bucket 3 - ROS 2 bag, TF tree & QoS integrity
+
+Bag nav.db3 (db3): 2341 message(s), 30.0 s, 6 topic(s), 7 tf edge(s)
+
+| topic | type | msgs | rate Hz | expected Hz | max gap s | offset ms |
+|---|---|---|---|---|---|---|
+| /cmd_vel |  | 0 | 0.00 | 10.0 | - | - |
+| /imu/data | Imu | 1500 | 50.03 | 50.0 | 0.52 | 3.0 |
+| /joint_states | JointState | 600 | 20.01 | 20.0 | 0.05 | 70.0 |
+| /scan | LaserScan | 90 | 3.00 | 10.0 | 4.25 | 5.0 |
+| /tf | TFMessage | 150 | 5.00 | - | 0.20 | - |
+| /tf_static | TFMessage | 1 | 0.03 | - | - | - |
+
+Bag fleet.mcap (mcap): 20 message(s), 19.0 s, 1 topic(s), 0 tf edge(s)
+
+| topic | type | msgs | rate Hz | expected Hz | max gap s | offset ms |
+|---|---|---|---|---|---|---|
+| /battery_state | BatteryState | 20 | 1.05 | - | 1.00 | 0.0 |
+
+- **CRITICAL** `ROSBAG_TOPIC_DROPOUT` nav.db3: required/safety topic /cmd_vel recorded 0 messages (expected 10.0 Hz)
+- **CRITICAL** `TF_TREE_CYCLE_OR_DISCONNECT` nav.db3: /tf + /tf_static frame graph contains a cycle (base_link -> lidar -> map -> odom -> base_link); transform lookups will loop or fail
+- **HIGH** `QOS_INCOMPATIBLE_MISMATCH` nav.db3: sensor topic /scan QoS mismatch: BEST_EFFORT publisher vs RELIABLE subscriber; endpoints will not connect or will silently drop data
+- **HIGH** `ROSBAG_CLOCK_DRIFT_OR_JUMP` nav.db3: topic /imu/data has 2 backward timestamp jump(s) (bag time 1, header stamp 1)
+- **HIGH** `ROSBAG_CLOCK_DRIFT_OR_JUMP` nav.db3: inter-sensor clock skew 67.0 ms (/imu/data vs /joint_states); sensor fusion will mis-associate samples
+- **HIGH** `ROSBAG_TOPIC_DROPOUT` nav.db3: topic /imu/data has a 0.52 s message gap, over 5x the 0.020 s period (50.0 Hz expected)
+- **HIGH** `ROSBAG_TOPIC_DROPOUT` nav.db3: topic /scan ran at 3.00 Hz, 30% of the expected 10.0 Hz
+- **HIGH** `ROSBAG_TOPIC_DROPOUT` nav.db3: topic /scan has a 4.25 s message gap, over 5x the 0.100 s period (10.0 Hz expected)
+- **HIGH** `TF_TREE_CYCLE_OR_DISCONNECT` nav.db3: /tf + /tf_static frame graph has 2 disconnected root frames (arm_base, world); expected a single tree
+- **MEDIUM** `QOS_INCOMPATIBLE_MISMATCH` nav.db3: topic /joint_states uses KEEP_ALL (depth 0): unbounded queue memory risk on a long run
+
+
+## Bucket 4 - PX4 / ArduPilot EKF, IMU, GNSS & ESC flight readiness
+
+| records | EKF v/p/h/m | vib x/y/z m/s2 | clip | GNSS fix/sats/hdop | failsafe | pre-arm |
+|---|---|---|---|---|---|---|
+| 10 | 1.12/0.40/0.30/0.20 | 35.0/28.0/17.5 | - | 3/5/2.70 | yes | Preflight Fail: Accel inconsistent |
+
+| ESC | mean RPM | max temp C | desync | max A |
+|---|---|---|---|---|
+| 0 | 5200 | 62.0 | 0 | 18.0 |
+| 1 | 5200 | 108.0 | 3 | 18.0 |
+| 2 | 5200 | 62.0 | 0 | 18.0 |
+| 3 | 6600 | 62.0 | 0 | 18.0 |
+
+- **CRITICAL** `EKF_INNOVATION_DIVERGENCE` EKF velocity innovation test ratio peaks at 1.12 (>=0.7 HIGH, >=1.0 rejects the measurement)
+- **CRITICAL** `ESC_DESYNC_OR_OVERHEAT` ESC 1: 3 desync event(s), peak temperature 108.0 C
+- **CRITICAL** `FLIGHT_FAILSAFE_OR_PREARM_FAULT` a failsafe was active during the log
+- **HIGH** `ESC_DESYNC_OR_OVERHEAT` ESC mean RPM spread 21.2% (5200..6600) exceeds 15%: a motor/prop/ESC is working harder or slipping
+- **HIGH** `FLIGHT_FAILSAFE_OR_PREARM_FAULT` pre-arm check failure logged: Preflight Fail: Accel inconsistent
+- **HIGH** `GNSS_DEGRADED_FIX` outdoor GNSS degraded: min fix type 3, min satellites 5, max HDOP 2.70 (fix<3, sats<6 or HDOP>2.5)
+- **HIGH** `IMU_VIBRATION_CLIPPING` IMU vibration RMS peaks at 35.0 m/s^2 (x 35.0, y 28.0, z 17.5; >30 HIGH, >60 CRITICAL)
+
+Preventive maintenance & flight-readiness checklist (53 row(s); full list with --maintenance-out)
+
+| prio | category | asset | check | status | due |
+|---|---|---|---|---|---|
+| 0 | Flight readiness | OVERALL | Heuristic readiness gate over the supplied logs (not an airworthine... | NO-GO | - |
+| 1 | Actuator / joint | l_knee_pitch | l_knee_pitch stator 104.0 C is at/over its limit (90.0 C max, 100 C... | NO-GO | before next operation |
+| 1 | Actuator / joint | l_knee_pitch | l_knee_pitch peak torque 135.00 Nm exceeds the 120.00 Nm limit (URD... | NO-GO | before next operation |
+| 1 | Battery / BMS | HUM-PACK-A | HUM-PACK-A (LiFePO4) cell spread 808 mV (2440..3248 mV) under load;... | NO-GO | before next operation |
+| 1 | Battery / BMS | HUM-PACK-A | HUM-PACK-A (LiFePO4) weakest cell 2440 mV is below the 2500 mV crit... | NO-GO | before next operation |
+| 1 | CAN / RS485 bus | can0 | bus can0 entered bus-off (controller disconnected itself after repe... | NO-GO | before next operation |
+| 1 | CAN / RS485 bus | can0 | bus can0: 1 emergency / fault frame(s) (cob_id 0x082) | NO-GO | before next operation |
+| 1 | CAN / RS485 bus | can0 | bus can0: 7 of 121 frames are error frames (5.8%; CRC 6, stuff 6, f... | NO-GO | before next operation |
+| 1 | Flight readiness | - | EKF velocity innovation test ratio peaks at 1.12 (>=0.7 HIGH, >=1.0... | NO-GO | before next operation |
+| 1 | Flight readiness | - | ESC 1: 3 desync event(s), peak temperature 108.0 C | NO-GO | before next operation |
+| 1 | Flight readiness | - | a failsafe was active during the log | NO-GO | before next operation |
+| 1 | ROS 2 bag | - | nav.db3: /tf + /tf_static frame graph contains a cycle (base_link -... | NO-GO | before next operation |
+| 1 | ROS 2 bag | /cmd_vel | nav.db3: required/safety topic /cmd_vel recorded 0 messages (expect... | NO-GO | before next operation |
+| 2 | Actuator / joint | l_hip_roll | l_hip_roll observed position 0.900..0.900 is outside the model rang... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Actuator / joint | l_hip_roll | l_hip_roll velocity 7.20 rad/s exceeds the 6.00 rad/s limit | ACTION_REQUIRED | before next flight / shift |
+| 2 | Actuator / joint | l_knee_pitch | l_knee_pitch duty cycle 88.0% (limits: >70% MEDIUM, >85% HIGH) | ACTION_REQUIRED | before next flight / shift |
+| 2 | Actuator / joint | l_knee_pitch | l_knee_pitch harmonic drive: backlash 3.40 arcmin exceeds the 3.00 ... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Actuator / joint | r_knee_pitch | r_knee_pitch stator 93.0 C is within 10 C of its limit (100.0 C max... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Actuator / joint | r_knee_pitch | r_knee_pitch RMS torque 45.00 Nm exceeds the 40.00 Nm rated torque ... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Battery / BMS | HUM-PACK-A | HUM-PACK-A (LiFePO4) drawing 1.60 C (160.0 A / 100.0 Ah) over the 1... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Battery / BMS | HUM-PACK-A | HUM-PACK-A (LiFePO4) MOSFET 78.0 C / pack 41.0 C is above the warni... | ACTION_REQUIRED | before next flight / shift |
+| 2 | CAN / RS485 bus | can0 | bus can0: heartbeat timeout on node 0x01 (4.00 s silent) | ACTION_REQUIRED | before next flight / shift |
+| 2 | Data safety | - | fleet.mcap: field metadata:network:wifi_password holds what looks l... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Flight readiness | - | ESC mean RPM spread 21.2% (5200..6600) exceeds 15%: a motor/prop/ES... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Flight readiness | - | pre-arm check failure logged: Preflight Fail: Accel inconsistent | ACTION_REQUIRED | before next flight / shift |
+| 2 | Flight readiness | - | outdoor GNSS degraded: min fix type 3, min satellites 5, max HDOP 2... | ACTION_REQUIRED | before next flight / shift |
+| 2 | Flight readiness | - | IMU vibration RMS peaks at 35.0 m/s^2 (x 35.0, y 28.0, z 17.5; >30 ... | ACTION_REQUIRED | before next flight / shift |
+| 2 | ROS 2 bag | - | nav.db3: inter-sensor clock skew 67.0 ms (/imu/data vs /joint_state... | ACTION_REQUIRED | before next flight / shift |
+| 2 | ROS 2 bag | - | nav.db3: /tf + /tf_static frame graph has 2 disconnected root frame... | ACTION_REQUIRED | before next flight / shift |
+| 2 | ROS 2 bag | /imu/data | nav.db3: topic /imu/data has 2 backward timestamp jump(s) (bag time... | ACTION_REQUIRED | before next flight / shift |
+| 2 | ROS 2 bag | /imu/data | nav.db3: topic /imu/data has a 0.52 s message gap, over 5x the 0.02... | ACTION_REQUIRED | before next flight / shift |
+| 2 | ROS 2 bag | /scan | nav.db3: sensor topic /scan QoS mismatch: BEST_EFFORT publisher vs ... | ACTION_REQUIRED | before next flight / shift |
+| 2 | ROS 2 bag | /scan | nav.db3: topic /scan ran at 3.00 Hz, 30% of the expected 10.0 Hz | ACTION_REQUIRED | before next flight / shift |
+| 2 | ROS 2 bag | /scan | nav.db3: topic /scan has a 4.25 s message gap, over 5x the 0.100 s ... | ACTION_REQUIRED | before next flight / shift |
+| 3 | Actuator / joint | r_ankle_pitch | r_ankle_pitch duty cycle 74.0% (limits: >70% MEDIUM, >85% HIGH) | SCHEDULE | next scheduled service (<= 30 days) |
+| 3 | Actuator / joint | r_hip_yaw | r_hip_yaw harmonic drive: 8100 operating hours reached the 8000 h s... | SCHEDULE | next scheduled service (<= 30 days) |
+| 3 | Battery / BMS | HUM-PACK-A | HUM-PACK-A (LiFePO4) state of health 78.0%, 3250 cycles (rated 3000) | SCHEDULE | next scheduled service (<= 30 days) |
+| 3 | Preventive maintenance | HUM-PACK-A | Battery cycle life (3250 of 3000 cycles, SOH 78.0%) | OVERDUE | now |
+| 3 | Preventive maintenance | r_ankle_pitch | Harmonic drive service interval (7300 of 8000 h) | DUE_SOON | in 700 operating hours |
+| 3 | Preventive maintenance | r_hip_yaw | Harmonic drive service interval (8100 of 8000 h) | OVERDUE | now |
+
+
+## Other
+
+- **HIGH** `EMBEDDED_TELEMETRY_CREDENTIAL` fleet.mcap: field metadata:network:wifi_password holds what looks like a credential field (value redacted); rotate it and re-export the log without it
+
+
+exit_code 3 (fail-on=medium)
+
+---
+
+SCOPE_NOTE: 100% offline, local, read-only inspection of the actuator, BMS, CAN / RS485, ROS 2 bag (.db3 / .mcap / metadata), PX4 ULog / ArduPilot and URDF / SDF files you supply. Findings are offline diagnostic heuristics on exported logs, not airworthiness, FAA / EASA flight certification, or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval. No network request is made, and the tool never issues motor or actuator commands, CAN frames, MAVLink parameter writes or BMS register writes; it never modifies an input file (--state, --out and --maintenance-out only write new files and refuse any input path). Credentials, tokens, MAVLink signing keys, ROS 2 DDS security private keys, Wi-Fi passwords and SSH keys are refused (exit 10) or redacted, and never read back or echoed.
 ````

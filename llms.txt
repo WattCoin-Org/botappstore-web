@@ -16,13 +16,14 @@
 - **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL, `sku: agent-council`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
 - **MCP Server & Tool-Permission Security Auditor ($19 in SOL, `sku: mcp-config-auditor`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/mcp-config-auditor.html (Checkout: https://botappstore.com/#card-mcp-config-auditor)
 - **3D Print Farm & Slicer Queue Ops ($29 in SOL, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE - instant on-chain SOL checkout):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **Humanoid & Fleet Telemetry Inspector ($49 in SOL, `sku: robotics-telemetry-inspector`, AVAILABLE NOW · PHASE 1 RELEASE - instant on-chain SOL checkout):** https://botappstore.com/bots/robotics-telemetry-inspector.html (Checkout: https://botappstore.com/#card-robotics-telemetry-inspector)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 10 Live Automations)
+## Live Agent Templates (Available Now — 11 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -275,13 +276,33 @@
   - Refuses credentials, API keys, seed phrases and printer LAN access codes (exit `10`, value never echoed)
   - Heuristic checks of slicer metadata, not engineering certification or fire-safety protection; cost and margin figures are arithmetic on supplied inputs, not financial advice
 
----
-
-## Planned Phase 3 Specification (In Development — Not Yet Available for Purchase)
-
-> The following agent template is published as an engineering specification (`SKILL.md` previews). Its purchase button is disabled until its verification suite goes live.
-
-### 11. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
-- **Slug:** `robotics-telemetry-inspector`
-- **Scope:** Offline diagnostic analyzer for robotic joint actuator thermal/torque CSV/JSON logs and 16S LiFePO4 battery management system (BMS) cell-voltage delta time series (`/workspace/telemetry_diagnostics.md`).
-- **Refusal Boundaries:** Strictly read-only log analysis; never sends motor/actuator commands, CAN frames, or BMS protection register writes.
+### 11. Humanoid & Fleet Telemetry Inspector ($49 in SOL — AVAILABLE NOW · PHASE 1 RELEASE, sku: robotics-telemetry-inspector)
+- **Status:** AVAILABLE NOW · PHASE 1 RELEASE
+- **SKU:** `robotics-telemetry-inspector`
+- **Price:** $49.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Categories:** Robotics & Physical AI / Humanoid & Fleet Telemetry
+- **Product Page URL:** https://botappstore.com/bots/robotics-telemetry-inspector.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-robotics-telemetry-inspector
+- **Included Skills:** `robotics-telemetry-inspector-setup` + `robotics-telemetry-inspector`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/robotics_telemetry_inspector.py` — SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17` (3,245 lines, stdlib Python, 724 unit tests)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (274 lines)
+- **Deliverable:** *Find the overheating knee, the weak cell and the dropped topic before the robot runs again: an offline, read-only audit of actuator and joint logs, 16S LiFePO4 / LiPo BMS exports, ROS 2 bags, PX4 / ArduPilot flight logs, URDF / SDF models and CAN / RS485 captures, ending in a prioritised preventive-maintenance and flight-readiness checklist.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`robotics-telemetry-inspector-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku robotics-telemetry-inspector`, `POST /api/v1/agents/license/claim`), runs the deterministic `--self-check`, and offers a first audit plus an optional `UpdateRoutine` for recurring `--state --delta` runs.
+  2. **Mandatory Pre-Flight License Gate (`robotics-telemetry-inspector`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py --sku robotics-telemetry-inspector` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=robotics-telemetry-inspector`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Does:**
+  - **Inputs:** positional paths, `--dir` or `.zip` archives (roles auto-detected), `--actuators` and `--bms` CSV/JSON tables, `--rosbag` (`.db3`, `.mcap`, `metadata.yaml`/JSON summary, or an expectations file with `topics[].expected_hz/required/qos.subscriber`; repeatable), `--flight-log` (PX4 `.ulg`, ArduPilot `.bin`/CSV/JSON; repeatable), `--urdf` (URDF/SDF), `--can-log` (candump text or CSV/JSON).
+  - **Bucket 1 — Actuator, Joint & Harmonic-Drive Duty Cycles (with URDF/SDF and CAN cross-checks):** `ACTUATOR_THERMAL_OVERLOAD`, `ACTUATOR_HIGH_DUTY_CYCLE`, `JOINT_TORQUE_LIMIT_EXCEEDED`, `JOINT_VELOCITY_LIMIT_EXCEEDED`, `JOINT_POSITION_LIMIT_EXCEEDED`, `HARMONIC_DRIVE_WEAR_THRESHOLD`, `CAN_BUS_FAULT_OR_TIMEOUT`, `ACTUATOR_ERROR_FLAGS_SET`, `URDF_JOINT_LIMIT_INVALID`, `ACTUATOR_JOINT_NOT_IN_MODEL`.
+  - **Bucket 2 — 16S LiFePO4 / LiPo Battery Management System:** `BMS_CELL_IMBALANCE_DELTA`, `BMS_CRITICAL_CELL_SAG`, `BMS_MOSFET_THERMAL_RISE`, `BMS_DISCHARGE_CRATE_EXCEEDED`, `BMS_SOH_DEGRADATION`, `BMS_CELL_COUNT_MISMATCH`.
+  - **Bucket 3 — ROS 2 Bag, TF Tree & QoS Integrity:** `ROSBAG_TOPIC_DROPOUT`, `ROSBAG_CLOCK_DRIFT_OR_JUMP`, `QOS_INCOMPATIBLE_MISMATCH`, `TF_TREE_CYCLE_OR_DISCONNECT`.
+  - **Bucket 4 — PX4 / ArduPilot Flight Readiness & Preventive Maintenance:** `EKF_INNOVATION_DIVERGENCE`, `IMU_VIBRATION_CLIPPING`, `GNSS_DEGRADED_FIX`, `ESC_DESYNC_OR_OVERHEAT`, `FLIGHT_FAILSAFE_OR_PREARM_FAULT`; checklist CSV via `--maintenance-out`.
+  - **Cross-cutting:** `EMBEDDED_TELEMETRY_CREDENTIAL` (HIGH, value redacted), `ARCHIVE_SAFETY_VIOLATION`, `XML_ENTITY_SAFETY_VIOLATION`.
+  - **Delta:** `--state PATH --delta` events `BMS_CELL_DELTA_SPIKE`, `ACTUATOR_THERMAL_DRIFT`, `SOH_DEGRADATION_STEP`, `TOPIC_RATE_REGRESSION`.
+- **CLI Flags:** `PATH ...`, `--dir DIR`, `--actuators PATH`, `--bms PATH`, `--rosbag PATH`, `--flight-log PATH`, `--urdf PATH`, `--can-log PATH`, `--maintenance-out PATH`, `--self-check`, `--state PATH`, `--delta`, `--now ISO`, `--format {text,markdown,md,json,html}`, `--json`, `--out PATH`, `--fail-on {none,info,low,medium,high,critical}`.
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (at/above `--fail-on`), `10` bad input or refusal, `11` degraded (unreadable/malformed/unsafe input, a skipped symlink, or nothing to audit; never clean)
+- **Sample Prompt:** `Audit actuators.csv, bms.csv, nav.db3 and quad.ulg against humanoid.urdf and the CAN log, tell me what is NO-GO, and write the maintenance checklist to checklist.csv.`
+- **Mandatory Refusal Boundaries:**
+  - Offline and strictly read-only: no network request; never issues motor/actuator commands, CAN frames, MAVLink parameter writes or BMS register writes, never overrides a safety interlock, never modifies an input file
+  - Refuses credentials, tokens, seed phrases, MAVLink signing keys, DDS private keys, Wi-Fi passwords and SSH keys in arguments and tables (exit `10`, value never echoed); symlink inputs exit `10`
+  - Heuristic diagnostics on exported logs, not airworthiness, FAA/EASA or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval

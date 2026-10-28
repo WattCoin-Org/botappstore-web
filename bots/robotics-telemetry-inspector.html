@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Humanoid &amp; Fleet Telemetry Inspector — Grok Bot Agent Template | BotAppStore.com</title>
+  <meta name="description" content="Read-only, offline robot and fleet telemetry auditor for Grok Bot ($49 in SOL): actuator, joint and harmonic-drive duty cycles cross-checked against URDF/SDF limits and CAN logs, 16S LiFePO4 / LiPo BMS cell-delta and sag analysis, ROS 2 bag topic-rate, QoS, clock and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC flight readiness, with a preventive-maintenance checklist." />
+  <link rel="canonical" href="https://botappstore.com/bots/robotics-telemetry-inspector.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#070a10" />
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="BotAppStore.com" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Humanoid &amp; Fleet Telemetry Inspector — Grok Bot Agent Template | BotAppStore.com" />
+  <meta property="og:description" content="Read-only, offline robot and fleet telemetry auditor for Grok Bot ($49 in SOL): actuator, joint and harmonic-drive duty cycles cross-checked against URDF/SDF limits and CAN logs, 16S LiFePO4 / LiPo BMS cell-delta and sag analysis, ROS 2 bag topic-rate, QoS, clock and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC flight readiness, with a preventive-maintenance checklist." />
+  <meta property="og:url" content="https://botappstore.com/bots/robotics-telemetry-inspector.html" />
+  <meta property="og:image" content="https://botappstore.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Humanoid &amp; Fleet Telemetry Inspector on BotAppStore.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@WattCoin2026" />
+  <meta name="twitter:title" content="Humanoid &amp; Fleet Telemetry Inspector — Grok Bot Agent Template | BotAppStore.com" />
+  <meta name="twitter:description" content="Read-only, offline robot and fleet telemetry auditor for Grok Bot ($49 in SOL): actuator, joint and harmonic-drive duty cycles cross-checked against URDF/SDF limits and CAN logs, 16S LiFePO4 / LiPo BMS cell-delta and sag analysis, ROS 2 bag topic-rate, QoS, clock and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC flight readiness, with a preventive-maintenance checklist." />
+  <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
+  <meta name="twitter:image:alt" content="Humanoid &amp; Fleet Telemetry Inspector on BotAppStore.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Catalog Specification" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Catalog &amp; Sample Reports" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .spec-table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .spec-table th, .spec-table td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
+    .spec-table th { color: var(--text-primary); background: var(--bg-surface); font-weight: 600; }
+    .spec-table td:first-child { white-space: nowrap; }
+    .spec-table tr:last-child td { border-bottom: 0; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "BotAppStore.com",
+          "item": "https://botappstore.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agent Catalog",
+          "item": "https://botappstore.com/#catalog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Humanoid & Fleet Telemetry Inspector",
+          "item": "https://botappstore.com/bots/robotics-telemetry-inspector.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://botappstore.com/bots/robotics-telemetry-inspector.html#software",
+      "name": "Humanoid & Fleet Telemetry Inspector",
+      "alternateName": "Robotics Telemetry Inspector: Actuator, BMS, ROS 2 Bag, CAN and Flight-Log Audit with Preventive-Maintenance Checklist",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Robotics & Physical AI",
+      "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
+      "url": "https://botappstore.com/bots/robotics-telemetry-inspector.html",
+      "description": "Read-only, offline robot and fleet telemetry auditor for Grok Bot ($49 in SOL): actuator, joint and harmonic-drive duty cycles cross-checked against URDF/SDF limits and CAN logs, 16S LiFePO4 / LiPo BMS cell-delta and sag analysis, ROS 2 bag topic-rate, QoS, clock and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC flight readiness, with a preventive-maintenance checklist.",
+      "sku": "robotics-telemetry-inspector",
+      "softwareVersion": "1.0.0",
+      "downloadUrl": "https://botappstore.com/runtime/robotics_telemetry_inspector.py",
+      "featureList": [
+        "Actuator, joint and harmonic-drive audit: stator temperature, duty cycle, torque, velocity and position limits, backlash and service hours, cross-checked against URDF / SDF limits",
+        "CAN / RS485 bus health: error frames, bus-off, EMCY frames and heartbeat timeouts from candump and CSV / JSON logs",
+        "16S LiFePO4 and LiPo BMS: cell spread under load, critical cell sag, MOSFET thermal rise, C-rate and state-of-health",
+        "ROS 2 bag integrity (.db3, .mcap, metadata): topic dropouts and rates, clock skew and jumps, QoS mismatch, TF-tree cycles",
+        "PX4 ULog / ArduPilot readiness: EKF innovation, IMU vibration and clipping, GNSS fix, ESC desync and overheat, failsafe and pre-arm faults",
+        "Preventive-maintenance and flight-readiness checklist written with --maintenance-out",
+        "--state --delta tracking of cell-spread spikes, actuator thermal drift, SOH steps and topic-rate regressions",
+        "No network requests; never commands hardware or modifies an input file",
+        "Text, Markdown, HTML and JSON output with exit codes 0, 1, 2, 3, 10 and 11"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "49.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://botappstore.com/bots/robotics-telemetry-inspector.html",
+        "sku": "robotics-telemetry-inspector",
+        "description": "One-time $49.00 USD license settled in SOL, with 3 workspace-reset rebinds."
+      },
+      "publisher": {
+        "@id": "https://botappstore.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://botappstore.com/bots/robotics-telemetry-inspector.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which robot and fleet files does it read?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Actuator and joint logs (CSV or JSON), 16S LiFePO4 / LiPo BMS exports (CSV or JSON), ROS 2 bags (rosbag2 SQLite .db3, .mcap, and metadata.yaml or JSON summaries), PX4 .ulg and ArduPilot .bin / CSV / JSON flight logs, URDF and SDF models, and candump-style CAN / RS485 text logs or CSV / JSON bus exports. Files can be passed as positional paths, with --dir, or as .zip archives; the role of each file is auto-detected or set with --actuators, --bms, --rosbag, --flight-log, --urdf and --can-log."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it connect to my robot, CAN bus or BMS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is 100% offline and read-only: it opens no CAN socket, serial port, ROS graph, MAVLink link or network connection, and it never issues motor or actuator commands, CAN frames, MAVLink parameter writes or BMS register writes. It never modifies an input file; --state, --out and --maintenance-out only write new files and refuse any input path."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What do I get besides findings?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A preventive-maintenance and flight-readiness checklist: priority-ordered NO-GO, ACTION_REQUIRED, SCHEDULE, OVERDUE and DUE_SOON rows with a due-by horizon. The report prints a summary and --maintenance-out PATH writes the full checklist as a new CSV. It is a heuristic gate over the logs you supplied, not an airworthiness or safety certification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the ROS 2 bag audit know about subscriber QoS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A bag records only publisher QoS, so QOS_INCOMPATIBLE_MISMATCH needs an expectations file: a second --rosbag JSON or YAML with topics[].expected_hz, required and qos.subscriber and no message counts. It is applied to bags that share a topic, or to the only bag supplied. A required topic that is absent from the bag counts as zero messages and is CRITICAL. Compressed MCAP chunks (zstd / lz4) are not decoded: you get summary statistics and a degraded-source note."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does delta mode watch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With --state PATH --delta the inspector stores a snapshot and reports four event types on later runs: BMS_CELL_DELTA_SPIKE (cell spread up 25 mV, HIGH at +50 mV or 80 mV total), ACTUATOR_THERMAL_DRIFT (stator up 10 C, HIGH at +20 C), SOH_DEGRADATION_STEP (state of health down 2 points, HIGH at 5) and TOPIC_RATE_REGRESSION (rate down 20%, HIGH at 50%), plus new, changed and resolved findings. Degraded runs never overwrite the snapshot, which is written 0600."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it refuse to do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It refuses credentials in arguments, CSV / JSON table cells and candump logs: fleet API tokens, passwords, seed phrases, MAVLink signing keys, ROS 2 DDS security private keys, Wi-Fi passwords and SSH keys exit 10 and are never echoed. A credential embedded in a bag, MCAP, ULog, URDF or YAML metadata record raises EMBEDDED_TELEMETRY_CREDENTIAL (HIGH) with the value redacted, so the leaking file can still be audited. Symlinks given as input exit 10; symlinks found by --dir are skipped and reported as degraded sources (exit 11). It will not command hardware, override an interlock, or certify airworthiness or functional safety."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <div id="appRoot">
+    <!-- Top Static Architectural Specification Bar -->
+    <div class="top-ticker">
+      <div class="container top-ticker-inner">
+        <div class="status-cluster">
+          <span class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>EXECUTION RUNTIME: <strong>GROK BOT LINUX SANDBOX (<code>/workspace</code>)</strong></span>
+          </span>
+          <span>LIVE TEMPLATES: <strong>11 AVAILABLE (FREE + $19, $29, $39 &amp; $49 SOL) · ZERO SUBSCRIPTIONS</strong></span>
+          <span>PRIVACY: <strong>LOCAL CREDENTIAL VAULT · ZERO DATA EXFILTRATION</strong></span>
+        </div>
+        <div class="ticker-links">
+          <a href="/llms.txt">llms.txt ↗</a>
+          <a href="/#catalog">Agent Catalog</a>
+          <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer">Install Free Utility ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a href="/" class="brand-logo">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="32,8 52,19 52,45 32,56 12,45 12,19" stroke="#38BDF8" stroke-width="3.5" stroke-linejoin="round" fill="#0C121E"/>
+              <path d="M20 24H44M20 40H44M32 16V48" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="24" y="24" width="16" height="16" rx="3" fill="#070A10" stroke="#F59E0B" stroke-width="3"/>
+              <circle cx="32" cy="32" r="3.5" fill="#38BDF8"/>
+            </svg>
+          </span>
+          <span>BotAppStore<span class="brand-domain">.com</span></span>
+          <span class="brand-tag">OSINT &amp; ROBOTICS</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Products (11 Live) ▾</button>
+            <div class="nav-dropdown-menu" role="menu">
+              <div class="nav-dropdown-label">LIVE OSINT, DEVSECOPS, SHOP OPS &amp; ROBOTICS AGENTS (11)</div>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/web-text-extractor.html"><span class="nav-dropdown-name">Web &amp; API Text Extractor</span><span class="nav-dropdown-badge nav-dropdown-badge-free">FREE</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/company-deep-dive.html"><span class="nav-dropdown-name">Company &amp; Competitor Deep-Dive Analyst</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/domain-infra-hygiene.html"><span class="nav-dropdown-name">Domain, TLS &amp; Email Auth Hygiene Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/mcp-config-auditor.html"><span class="nav-dropdown-name">MCP Server &amp; Tool-Permission Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/bot-skill-auditor.html"><span class="nav-dropdown-name">Bot &amp; Skill Security Auditor</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/sec-patent-watchdog.html"><span class="nav-dropdown-name">SEC &amp; Patent Watchdog Digest</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/social-hub-publisher.html"><span class="nav-dropdown-name">Social Hub Publisher</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/dependency-vuln-triage.html"><span class="nav-dropdown-name">Dependency Vulnerability Triage Bot</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/agent-council.html"><span class="nav-dropdown-name">Agent Council</span><span class="nav-dropdown-badge">$39 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/print-farm-ops.html"><span class="nav-dropdown-name">3D Print Farm &amp; Slicer Queue Ops</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/robotics-telemetry-inspector.html"><span class="nav-dropdown-name">Humanoid &amp; Fleet Telemetry Inspector</span><span class="nav-dropdown-badge">$49 SOL</span></a>
+              <a class="nav-dropdown-footer" role="menuitem" href="/#catalog">View All 11 Agents in Grid Catalog ↓</a>
+            </div>
+          </div>
+          <a href="/#catalog">Agent Catalog (11 Live)</a>
+          <a href="/#architecture">How It Works</a>
+          <a href="/#hardware-stack">Security &amp; Stack</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/llms.txt">llms.txt</a>
+        </nav>
+        <div class="nav-cta-group">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openCheckoutModal('robotics-telemetry-inspector', this)">
+            Buy Telemetry Inspector ($49 SOL)
+          </button>
+          <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            Install Free Utility →
+          </a>
+        </div>
+      </div>
+    </header>
+
+    
+
+
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="/">BotAppStore.com</a> &rarr; <a href="/#catalog">Agent Catalog</a> &rarr; <span>Humanoid &amp; Fleet Telemetry Inspector</span>
+      </nav>
+      <section class="product-hero">
+        <div class="price-badge">&#9679; AVAILABLE NOW &middot; PHASE 1 RELEASE &middot; $49 in SOL (ONE-TIME &middot; 3 REBINDS)</div>
+        <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">
+          <code>robotics-telemetry-inspector</code> &middot; Category: Robotics &amp; Physical AI / Humanoid &amp; Fleet Telemetry
+        </p>
+        <h1>Humanoid &amp; Fleet Telemetry Inspector &mdash; Find the overheating knee, the weak cell and the dropped topic before the robot runs again.</h1>
+        <p class="product-lede">Your actuator logs, BMS exports, ROS 2 bags, flight logs, URDF models and CAN captures already say what is about to fail. This inspector reads them offline, checks harmonic-drive duty cycles and joint limits, 16S LiFePO4 cell spread and sag, ROS 2 topic rates, QoS, clock skew and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC readiness, then writes a prioritised preventive-maintenance checklist. It never talks to the robot.</p>
+        <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
+          SKU: <code>robotics-telemetry-inspector</code> &middot; Skills: <code>robotics-telemetry-inspector-setup + robotics-telemetry-inspector</code> &middot; Runtime: 3,245 lines stdlib Python &middot; Price: $49.00 USD one-time, settled in SOL
+        </p>
+        <div class="product-cta-row">
+          <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('robotics-telemetry-inspector', this)">Buy License ($49 in SOL) &rarr;</button>
+          <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('robotics-telemetry-inspector', this)">SKILL.md Preview</button>
+          <a href="#licensing-flow" class="btn btn-secondary btn--ghost" data-bot-share-link="robotics-telemetry-inspector">Install in Grok Bot &rarr;</a>
+          <a href="#sample-output" class="btn btn-secondary btn--ghost">See Real Sample Audit</a>
+          <a href="/#card-robotics-telemetry-inspector" class="btn btn-secondary btn--ghost">View in Homepage Catalog</a>
+        </div>
+      </section>
+
+      <section class="product-section" id="capabilities">
+        <h2>What It Does: The 4-Bucket Technical Breakdown</h2>
+        <ul>
+          <li><strong>Local-only inputs:</strong> actuator and joint CSV / JSON, BMS CSV / JSON, ROS 2 bags (<code>.db3</code>, <code>.mcap</code>, metadata), PX4 <code>.ulg</code> and ArduPilot logs, URDF / SDF models, and candump / CSV / JSON CAN or RS485 captures. Archives and XML are parsed with hardened limits (<code>ARCHIVE_SAFETY_VIOLATION</code>, <code>XML_ENTITY_SAFETY_VIOLATION</code>).</li>
+          <li><strong>4 deterministic audit buckets:</strong>
+            <ol>
+              <li><strong>Actuator, Joint &amp; Harmonic-Drive Duty Cycles (with URDF / SDF and CAN bus cross-checks):</strong> stator temperature against each joint's limit, duty cycle, peak and continuous torque, velocity and position against the model, backlash and service hours, and CAN error frames, bus-off, EMCY and heartbeat loss. <code>ACTUATOR_THERMAL_OVERLOAD</code> <code>ACTUATOR_HIGH_DUTY_CYCLE</code> <code>JOINT_TORQUE_LIMIT_EXCEEDED</code> <code>JOINT_VELOCITY_LIMIT_EXCEEDED</code> <code>JOINT_POSITION_LIMIT_EXCEEDED</code> <code>HARMONIC_DRIVE_WEAR_THRESHOLD</code> <code>CAN_BUS_FAULT_OR_TIMEOUT</code> <code>ACTUATOR_ERROR_FLAGS_SET</code> <code>URDF_JOINT_LIMIT_INVALID</code> <code>ACTUATOR_JOINT_NOT_IN_MODEL</code>.</li>
+              <li><strong>16S LiFePO4 / LiPo Battery Management System:</strong> per-cell spread under load versus rest, weakest-cell sag, MOSFET and pack temperature, discharge C-rate and state of health against rated cycles. <code>BMS_CELL_IMBALANCE_DELTA</code> <code>BMS_CRITICAL_CELL_SAG</code> <code>BMS_MOSFET_THERMAL_RISE</code> <code>BMS_DISCHARGE_CRATE_EXCEEDED</code> <code>BMS_SOH_DEGRADATION</code> <code>BMS_CELL_COUNT_MISMATCH</code>.</li>
+              <li><strong>ROS 2 Bag, TF Tree &amp; QoS Integrity:</strong> per-topic message rate and gaps against expected Hz, backward timestamp jumps and inter-sensor clock skew, publisher-versus-subscriber QoS, and cycles or disconnected roots in the <code>/tf</code> + <code>/tf_static</code> graph. <code>ROSBAG_TOPIC_DROPOUT</code> <code>ROSBAG_CLOCK_DRIFT_OR_JUMP</code> <code>QOS_INCOMPATIBLE_MISMATCH</code> <code>TF_TREE_CYCLE_OR_DISCONNECT</code>.</li>
+              <li><strong>PX4 / ArduPilot Flight Readiness &amp; Preventive Maintenance:</strong> EKF innovation ratios, IMU vibration and clipping, GNSS fix quality, ESC desync, overheat and RPM spread, failsafe and pre-arm faults, plus the checklist CSV. <code>EKF_INNOVATION_DIVERGENCE</code> <code>IMU_VIBRATION_CLIPPING</code> <code>GNSS_DEGRADED_FIX</code> <code>ESC_DESYNC_OR_OVERHEAT</code> <code>FLIGHT_FAILSAFE_OR_PREARM_FAULT</code>.</li>
+            </ol>
+          </li>
+          <li><strong>Cross-cutting:</strong> <code>EMBEDDED_TELEMETRY_CREDENTIAL</code> (HIGH) flags a Wi-Fi password, key or token inside a bag, MCAP, ULog, URDF or YAML metadata record, with the value redacted.</li>
+          <li><strong>Recurring delta mode (<code>--state PATH --delta</code>):</strong> reports <code>BMS_CELL_DELTA_SPIKE</code> <code>ACTUATOR_THERMAL_DRIFT</code> <code>SOH_DEGRADATION_STEP</code> <code>TOPIC_RATE_REGRESSION</code> between runs, plus new, changed and resolved findings, suited to a scheduled <code>UpdateRoutine</code> after each shift or flight.</li>
+        </ul>
+      </section>
+
+      <section class="product-section" id="architecture">
+        <h2>How It Runs (5 Steps)</h2>
+        <div class="step-flow">
+          <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body"><code>.wattcoin_license_check.py --sku robotics-telemetry-inspector</code> must return <code>"state": "OK"</code> before every run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body"><code>sha256sum -c</code> on <code>robotics_telemetry_inspector.py</code> and <code>bot_common.py</code>; any mismatch stops the run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>3 · Parse logs &amp; models</span></div><div class="step-box-body"><code>--actuators</code>, <code>--bms</code>, <code>--rosbag</code>, <code>--flight-log</code>, <code>--urdf</code>, <code>--can-log</code>; credentials in tables or arguments are refused (exit <code>10</code>).</div></div>
+          <div class="step-box"><div class="step-box-header"><span>4 · 4-bucket audit</span></div><div class="step-box-body">Actuator and bus, BMS, ROS 2 bag and flight-readiness checks, with URDF and CAN cross-references.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>5 · Report, checklist, diff</span></div><div class="step-box-body">Text / Markdown / HTML / JSON report, <code>--maintenance-out</code> checklist, optional <code>--state --delta</code> events, and a fail-closed exit code.</div></div>
+        </div>
+      </section>
+
+      <section class="product-section" id="sample-output">
+        <h2>Real Sample Audit: 12-DOF humanoid, dual battery pack, ROS 2 and PX4 fleet</h2>
+        <p>Excerpt from <code>--self-check --format markdown --now 2026-10-27T00:00:00Z</code> on the built-in synthetic fleet (12-joint harmonic-drive humanoid on CAN, a 16S LiFePO4 main pack and 6S LiPo auxiliary pack, a ROS 2 navigation bag with an expectations file, an MCAP fleet bag and a PX4 quadrotor log). All joints, packs, bags and frames are fabricated for illustration and no robot, vehicle or network was contacted. Output is unedited; omitted parts are marked. Exit <code>3</code>: the worst finding is CRITICAL. The Wi-Fi password in the MCAP metadata is redacted in the report.</p>
+        <pre class="code-pre"># Humanoid &amp; Fleet Telemetry Inspector Report
+
+```
+snapshot   2026-10-27 00:00:00 UTC | tool=robotics-telemetry-inspector
+endpoints  local-files
+```
+
+
+## Summary
+
+Inputs: 12 actuator row(s), 2 BMS pack(s), 2 bag(s) / 7 topic(s), 10 flight record(s), 121 CAN frame(s), 12 URDF/SDF joint(s)
+
+| critical | high | medium | low | info | worst |
+|---|---|---|---|---|---|
+| 12 | 21 | 4 | 1 | 0 | CRITICAL |
+
+
+## Bucket 1 - Actuator, joint &amp; harmonic-drive duty cycles
+
+| joint | stator C | max C | peak Nm | rms Nm | vel rad/s | duty % | hours | backlash arcmin |
+|---|---|---|---|---|---|---|---|---|
+| l_hip_yaw | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| l_hip_roll | 55.0 | 90.0 | 60.0 | 20.0 | 7.20 | 40 | 1000 | 1.00 |
+| l_hip_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| l_knee_pitch | 104.0 | 90.0 | 135.0 | 20.0 | 3.00 | 88 | 1000 | 3.40 |
+| l_ankle_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| l_ankle_roll | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_hip_yaw | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 8100 | 1.00 |
+| r_hip_roll | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_hip_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_knee_pitch | 93.0 | 100.0 | 60.0 | 45.0 | 3.00 | 40 | 1000 | 1.00 |
+| r_ankle_pitch | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 74 | 7300 | 1.00 |
+| r_ankle_roll | 55.0 | 90.0 | 60.0 | 20.0 | 3.00 | 40 | 1000 | 1.00 |
+
+[... CAN bus summary table omitted ...]
+
+- **CRITICAL** `ACTUATOR_THERMAL_OVERLOAD` l_knee_pitch stator 104.0 C is at/over its limit (90.0 C max, 100 C absolute)
+- **CRITICAL** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0 entered bus-off (controller disconnected itself after repeated errors)
+- **CRITICAL** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0: 1 emergency / fault frame(s) (cob_id 0x082)
+- **CRITICAL** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0: 7 of 121 frames are error frames (5.8%; CRC 6, stuff 6, form 0)
+- **CRITICAL** `JOINT_TORQUE_LIMIT_EXCEEDED` l_knee_pitch peak torque 135.00 Nm exceeds the 120.00 Nm limit (URDF/SDF effort)
+- **HIGH** `ACTUATOR_HIGH_DUTY_CYCLE` l_knee_pitch duty cycle 88.0% (limits: &gt;70% MEDIUM, &gt;85% HIGH)
+- **HIGH** `ACTUATOR_THERMAL_OVERLOAD` r_knee_pitch stator 93.0 C is within 10 C of its limit (100.0 C max) or at/over 85 C
+- **HIGH** `CAN_BUS_FAULT_OR_TIMEOUT` bus can0: heartbeat timeout on node 0x01 (4.00 s silent)
+- **HIGH** `HARMONIC_DRIVE_WEAR_THRESHOLD` l_knee_pitch harmonic drive: backlash 3.40 arcmin exceeds the 3.00 arcmin limit
+- **HIGH** `JOINT_POSITION_LIMIT_EXCEEDED` l_hip_roll observed position 0.900..0.900 is outside the model range [-0.600, 0.500]
+- **HIGH** `JOINT_TORQUE_LIMIT_EXCEEDED` r_knee_pitch RMS torque 45.00 Nm exceeds the 40.00 Nm rated torque (continuous overload)
+- **HIGH** `JOINT_VELOCITY_LIMIT_EXCEEDED` l_hip_roll velocity 7.20 rad/s exceeds the 6.00 rad/s limit
+- **MEDIUM** `ACTUATOR_HIGH_DUTY_CYCLE` r_ankle_pitch duty cycle 74.0% (limits: &gt;70% MEDIUM, &gt;85% HIGH)
+- **MEDIUM** `HARMONIC_DRIVE_WEAR_THRESHOLD` r_hip_yaw harmonic drive: 8100 operating hours reached the 8000 h service interval
+- **LOW** `HARMONIC_DRIVE_WEAR_THRESHOLD` r_ankle_pitch harmonic drive: 7300 operating hours is 91% of the 8000 h service interval
+
+## Bucket 2 - 16S LiFePO4 / LiPo battery management system
+
+| pack | chem | cells | V | A | min mV | max mV | delta mV | state | MOSFET C | pack C | SOH % | cycles |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| HUM-PACK-A | LiFePO4 | 16 | 51.2 | 160.0 | 2440 | 3248 | 808 | load | 78.0 | 41.0 | 78.0 | 3250 |
+| AUX-PACK-B | LiPo | 6 | 23.1 | 4.0 | 3830 | 3840 | 10 | rest | 31.0 | 28.0 | 97.0 | 40 |
+
+- **CRITICAL** `BMS_CELL_IMBALANCE_DELTA` HUM-PACK-A (LiFePO4) cell spread 808 mV (2440..3248 mV) under load; balancer active
+- **CRITICAL** `BMS_CRITICAL_CELL_SAG` HUM-PACK-A (LiFePO4) weakest cell 2440 mV is below the 2500 mV critical floor
+- **HIGH** `BMS_DISCHARGE_CRATE_EXCEEDED` HUM-PACK-A (LiFePO4) drawing 1.60 C (160.0 A / 100.0 Ah) over the 1.50 C limit
+- **HIGH** `BMS_MOSFET_THERMAL_RISE` HUM-PACK-A (LiFePO4) MOSFET 78.0 C / pack 41.0 C is above the warning limit (75 C / 50 C)
+- **MEDIUM** `BMS_SOH_DEGRADATION` HUM-PACK-A (LiFePO4) state of health 78.0%, 3250 cycles (rated 3000)
+
+## Bucket 3 - ROS 2 bag, TF tree &amp; QoS integrity
+
+[... per-topic rate tables omitted ...]
+
+- **CRITICAL** `ROSBAG_TOPIC_DROPOUT` nav.db3: required/safety topic /cmd_vel recorded 0 messages (expected 10.0 Hz)
+- **CRITICAL** `TF_TREE_CYCLE_OR_DISCONNECT` nav.db3: /tf + /tf_static frame graph contains a cycle (base_link -&gt; lidar -&gt; map -&gt; odom -&gt; base_link); transform lookups will loop or fail
+- **HIGH** `QOS_INCOMPATIBLE_MISMATCH` nav.db3: sensor topic /scan QoS mismatch: BEST_EFFORT publisher vs RELIABLE subscriber; endpoints will not connect or will silently drop data
+- **HIGH** `ROSBAG_CLOCK_DRIFT_OR_JUMP` nav.db3: topic /imu/data has 2 backward timestamp jump(s) (bag time 1, header stamp 1)
+- **HIGH** `ROSBAG_CLOCK_DRIFT_OR_JUMP` nav.db3: inter-sensor clock skew 67.0 ms (/imu/data vs /joint_states); sensor fusion will mis-associate samples
+- **HIGH** `ROSBAG_TOPIC_DROPOUT` nav.db3: topic /imu/data has a 0.52 s message gap, over 5x the 0.020 s period (50.0 Hz expected)
+- **HIGH** `ROSBAG_TOPIC_DROPOUT` nav.db3: topic /scan ran at 3.00 Hz, 30% of the expected 10.0 Hz
+- **HIGH** `ROSBAG_TOPIC_DROPOUT` nav.db3: topic /scan has a 4.25 s message gap, over 5x the 0.100 s period (10.0 Hz expected)
+- **HIGH** `TF_TREE_CYCLE_OR_DISCONNECT` nav.db3: /tf + /tf_static frame graph has 2 disconnected root frames (arm_base, world); expected a single tree
+- **MEDIUM** `QOS_INCOMPATIBLE_MISMATCH` nav.db3: topic /joint_states uses KEEP_ALL (depth 0): unbounded queue memory risk on a long run
+
+## Bucket 4 - PX4 / ArduPilot EKF, IMU, GNSS &amp; ESC flight readiness
+
+[... EKF / vibration / GNSS and ESC tables omitted ...]
+
+- **CRITICAL** `EKF_INNOVATION_DIVERGENCE` EKF velocity innovation test ratio peaks at 1.12 (&gt;=0.7 HIGH, &gt;=1.0 rejects the measurement)
+- **CRITICAL** `ESC_DESYNC_OR_OVERHEAT` ESC 1: 3 desync event(s), peak temperature 108.0 C
+- **CRITICAL** `FLIGHT_FAILSAFE_OR_PREARM_FAULT` a failsafe was active during the log
+- **HIGH** `ESC_DESYNC_OR_OVERHEAT` ESC mean RPM spread 21.2% (5200..6600) exceeds 15%: a motor/prop/ESC is working harder or slipping
+- **HIGH** `FLIGHT_FAILSAFE_OR_PREARM_FAULT` pre-arm check failure logged: Preflight Fail: Accel inconsistent
+- **HIGH** `GNSS_DEGRADED_FIX` outdoor GNSS degraded: min fix type 3, min satellites 5, max HDOP 2.70 (fix&lt;3, sats&lt;6 or HDOP&gt;2.5)
+- **HIGH** `IMU_VIBRATION_CLIPPING` IMU vibration RMS peaks at 35.0 m/s^2 (x 35.0, y 28.0, z 17.5; &gt;30 HIGH, &gt;60 CRITICAL)
+
+Preventive maintenance &amp; flight-readiness checklist (53 row(s); full list with --maintenance-out)
+
+| prio | category | asset | check | status | due |
+|---|---|---|---|---|---|
+| 0 | Flight readiness | OVERALL | Heuristic readiness gate over the supplied logs (not an airworthine... | NO-GO | - |
+| 1 | Actuator / joint | l_knee_pitch | l_knee_pitch stator 104.0 C is at/over its limit (90.0 C max, 100 C... | NO-GO | before next operation |
+| 1 | Actuator / joint | l_knee_pitch | l_knee_pitch peak torque 135.00 Nm exceeds the 120.00 Nm limit (URD... | NO-GO | before next operation |
+| 1 | Battery / BMS | HUM-PACK-A | HUM-PACK-A (LiFePO4) cell spread 808 mV (2440..3248 mV) under load;... | NO-GO | before next operation |
+| 1 | Battery / BMS | HUM-PACK-A | HUM-PACK-A (LiFePO4) weakest cell 2440 mV is below the 2500 mV crit... | NO-GO | before next operation |
+| 1 | CAN / RS485 bus | can0 | bus can0 entered bus-off (controller disconnected itself after repe... | NO-GO | before next operation |
+
+[... 34 more checklist rows omitted ...]
+
+## Other
+
+- **HIGH** `EMBEDDED_TELEMETRY_CREDENTIAL` fleet.mcap: field metadata:network:wifi_password holds what looks like a credential field (value redacted); rotate it and re-export the log without it
+
+exit_code 3 (fail-on=medium)
+
+---
+
+[... SCOPE_NOTE omitted (printed in full with every report) ...]</pre>
+      </section>
+
+      <section class="product-section" id="cli-reference">
+        <h2>CLI Reference: Flags &amp; Exit Codes</h2>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>Flag</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>PATH ...</code> / <code>--dir DIR</code></td><td>Telemetry files, <code>.zip</code> archives or directories (roles auto-detected). <code>--dir</code> discovers files recursively; symlinks it finds are skipped and reported as degraded sources.</td></tr>
+              <tr><td><code>--actuators PATH</code></td><td>Actuator / joint log (CSV or JSON): stator and max temperature, RMS and peak torque, velocity, duty cycle, operating hours, backlash, error flags, optional position.</td></tr>
+              <tr><td><code>--bms PATH</code></td><td>BMS export (CSV or JSON): chemistry, series cells, pack voltage and current, per-cell mV, load state, MOSFET and pack temperature, SOH, cycles.</td></tr>
+              <tr><td><code>--rosbag PATH</code></td><td>ROS 2 bag (<code>.db3</code>, <code>.mcap</code>, <code>metadata.yaml</code> / JSON summary) or an expectations file (topics, expected Hz, required, subscriber QoS). Repeatable.</td></tr>
+              <tr><td><code>--flight-log PATH</code></td><td>PX4 <code>.ulg</code> or ArduPilot <code>.bin</code> / CSV / JSON: EKF innovations, vibration, GNSS, ESC, failsafe and pre-arm. Repeatable.</td></tr>
+              <tr><td><code>--urdf PATH</code></td><td>URDF or SDF model: joint position, velocity and effort limits cross-checked against the actuator log.</td></tr>
+              <tr><td><code>--can-log PATH</code></td><td>candump-style text, or CSV / JSON bus export: error frames, bus-off, EMCY frames, heartbeats.</td></tr>
+              <tr><td><code>--maintenance-out PATH</code></td><td>Write the full preventive-maintenance and flight-readiness checklist as a new CSV (refuses input paths).</td></tr>
+              <tr><td><code>--state PATH --delta</code></td><td>Store a snapshot (<code>0600</code>) and report events, new, changed and resolved findings against it. Degraded runs never overwrite it.</td></tr>
+              <tr><td><code>--self-check</code></td><td>Audit the built-in synthetic fixtures (written to a private temp dir) and verify every expected finding code fires. Exits with the audit code, or 11 with <code>SELF_CHECK_FAILED</code> if one is missing.</td></tr>
+              <tr><td><code>--now ISO</code></td><td>Override the report clock (<code>YYYY-MM-DD</code> or <code>YYYY-MM-DDTHH:MM:SSZ</code>) for reproducible runs and maintenance due dates.</td></tr>
+              <tr><td><code>--format {text,markdown,md,json,html}</code> / <code>--json</code> / <code>--out PATH</code></td><td>Report format and destination.</td></tr>
+              <tr><td><code>--fail-on {none,info,low,medium,high,critical}</code></td><td>Exit threshold (default <code>medium</code>).</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="spec-table-wrap" style="margin-top: 18px;">
+          <table class="spec-table">
+            <thead><tr><th>Exit code</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>0</code></td><td>Completed with nothing at or above <code>--fail-on</code>.</td></tr>
+              <tr><td><code>1</code></td><td>Worst finding is MEDIUM (or LOW/INFO with a lower threshold).</td></tr>
+              <tr><td><code>2</code></td><td>Worst finding is HIGH.</td></tr>
+              <tr><td><code>3</code></td><td>Worst finding is CRITICAL.</td></tr>
+              <tr><td><code>10</code></td><td>Bad input or refusal: missing file, bad flag, <code>--delta</code> without <code>--state</code>, a symlink input, or a credential / token / signing key in arguments or tables.</td></tr>
+              <tr><td><code>11</code></td><td>Degraded: unreadable, malformed or unsafe input, a skipped symlink, or nothing to audit. Never a clean result.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="product-section" id="refusal-boundaries">
+        <h2>Mandatory Refusal Boundaries</h2>
+        <ul>
+          <li><strong>Offline and strictly read-only.</strong> No network request. It never issues motor or actuator commands, torque setpoints, CAN frames, MAVLink parameter writes or BMS register writes, never overrides a safety interlock, and never modifies an input file. <code>--state</code>, <code>--out</code> and <code>--maintenance-out</code> only create new files and refuse any input path.</li>
+          <li><strong>No credentials.</strong> Fleet API tokens, passwords, seed phrases, MAVLink signing keys, ROS 2 DDS security private keys, Wi-Fi passwords and SSH keys in arguments, tables or candump logs are refused (exit <code>10</code>) and never echoed. A credential inside a bag, MCAP, ULog, URDF or YAML metadata record raises <code>EMBEDDED_TELEMETRY_CREDENTIAL</code> with the value redacted.</li>
+          <li><strong>Your logs only.</strong> It audits telemetry from robots and vehicles you own or are authorised to review. Symlinked inputs are refused and all reads are opened without following links.</li>
+          <li><strong>Heuristic, not certification.</strong> Findings are offline diagnostics on exported logs, not airworthiness, FAA / EASA flight certification, or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval. A GO on the readiness checklist is not a flight or operation clearance.</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--text-muted);"><strong>Scope note (printed with every report):</strong> 100% offline, local, read-only inspection of the actuator, BMS, CAN / RS485, ROS 2 bag (.db3 / .mcap / metadata), PX4 ULog / ArduPilot and URDF / SDF files you supply. Findings are offline diagnostic heuristics on exported logs, not airworthiness, FAA / EASA flight certification, or functional-safety approval. No network request is made and no hardware is commanded.</p>
+      </section>
+
+      <section class="product-section" id="runtime-integrity">
+        <h2>Pinned Runtime Hashes (SHA-256 Verified)</h2>
+        <ul>
+          <li><a href="/runtime/robotics_telemetry_inspector.py"><code>https://botappstore.com/runtime/robotics_telemetry_inspector.py</code></a> &mdash; 3,245 lines &mdash; SHA-256: <code>aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17</code></li>
+          <li><a href="/runtime/bot_common.py"><code>https://botappstore.com/runtime/bot_common.py</code></a> &mdash; 274 lines &mdash; SHA-256: <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code></li>
+        </ul>
+        <pre class="code-pre">echo "aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17  robotics_telemetry_inspector.py" | sha256sum -c -
+echo "d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526  bot_common.py" | sha256sum -c -</pre>
+        <p>The setup and audit skills verify both digests with <code>sha256sum -c</code> before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 724 unit tests.</p>
+      </section>
+
+      <section class="product-section" id="faq">
+        <h2>Technical FAQ</h2>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>Which robot and fleet files does it read?</summary><div class="faq-answer">Actuator and joint logs (CSV or JSON), 16S LiFePO4 / LiPo BMS exports (CSV or JSON), ROS 2 bags (rosbag2 SQLite .db3, .mcap, and metadata.yaml or JSON summaries), PX4 .ulg and ArduPilot .bin / CSV / JSON flight logs, URDF and SDF models, and candump-style CAN / RS485 text logs or CSV / JSON bus exports. Files can be passed as positional paths, with --dir, or as .zip archives; the role of each file is auto-detected or set with --actuators, --bms, --rosbag, --flight-log, --urdf and --can-log.</div></details>
+          <details class="faq-item"><summary>Does it connect to my robot, CAN bus or BMS?</summary><div class="faq-answer">No. It is 100% offline and read-only: it opens no CAN socket, serial port, ROS graph, MAVLink link or network connection, and it never issues motor or actuator commands, CAN frames, MAVLink parameter writes or BMS register writes. It never modifies an input file; --state, --out and --maintenance-out only write new files and refuse any input path.</div></details>
+          <details class="faq-item"><summary>What do I get besides findings?</summary><div class="faq-answer">A preventive-maintenance and flight-readiness checklist: priority-ordered NO-GO, ACTION_REQUIRED, SCHEDULE, OVERDUE and DUE_SOON rows with a due-by horizon. The report prints a summary and --maintenance-out PATH writes the full checklist as a new CSV. It is a heuristic gate over the logs you supplied, not an airworthiness or safety certification.</div></details>
+          <details class="faq-item"><summary>How does the ROS 2 bag audit know about subscriber QoS?</summary><div class="faq-answer">A bag records only publisher QoS, so QOS_INCOMPATIBLE_MISMATCH needs an expectations file: a second --rosbag JSON or YAML with topics[].expected_hz, required and qos.subscriber and no message counts. It is applied to bags that share a topic, or to the only bag supplied. A required topic that is absent from the bag counts as zero messages and is CRITICAL. Compressed MCAP chunks (zstd / lz4) are not decoded: you get summary statistics and a degraded-source note.</div></details>
+          <details class="faq-item"><summary>What does delta mode watch?</summary><div class="faq-answer">With --state PATH --delta the inspector stores a snapshot and reports four event types on later runs: BMS_CELL_DELTA_SPIKE (cell spread up 25 mV, HIGH at +50 mV or 80 mV total), ACTUATOR_THERMAL_DRIFT (stator up 10 C, HIGH at +20 C), SOH_DEGRADATION_STEP (state of health down 2 points, HIGH at 5) and TOPIC_RATE_REGRESSION (rate down 20%, HIGH at 50%), plus new, changed and resolved findings. Degraded runs never overwrite the snapshot, which is written 0600.</div></details>
+          <details class="faq-item"><summary>What does it refuse to do?</summary><div class="faq-answer">It refuses credentials in arguments, CSV / JSON table cells and candump logs: fleet API tokens, passwords, seed phrases, MAVLink signing keys, ROS 2 DDS security private keys, Wi-Fi passwords and SSH keys exit 10 and are never echoed. A credential embedded in a bag, MCAP, ULog, URDF or YAML metadata record raises EMBEDDED_TELEMETRY_CREDENTIAL (HIGH) with the value redacted, so the leaking file can still be audited. Symlinks given as input exit 10; symlinks found by --dir are skipped and reported as degraded sources (exit 11). It will not command hardware, override an interlock, or certify airworthiness or functional safety.</div></details>
+        </div>
+      </section>
+
+      <section class="product-section" id="licensing-flow">
+        <h2>Licensing &amp; Setup</h2>
+        <p>$49.00 USD one-time, settled on-chain in SOL, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>robotics-telemetry-inspector-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates <code>/workspace/.wattcoin_env</code> (<code>0600</code>, 100 WATT starter activation), binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs the built-in <code>--self-check</code>. Every later run starts with the license gate.</p>
+        <div class="product-cta-row">
+          <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('robotics-telemetry-inspector', this)">Buy License ($49 in SOL) &rarr;</button>
+          <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('robotics-telemetry-inspector', this)">SKILL.md Preview</button>
+        </div>
+      </section>
+    </div>
+  </main>
+<!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="disclaimer-box">
+          <strong>Operational &amp; Regulatory Disclaimer:</strong> BotAppStore templates execute locally inside your isolated Grok Bot Linux environment (<code>/workspace</code>) and compile primary-source public records and read-only hardware telemetry only. Nothing on BotAppStore.com constitutes financial, investment, legal, or engineering certification advice. OSINT templates never issue equity buy/sell recommendations, and robotics/shop templates never transmit unconfirmed physical actuation commands.
+        </div>
+
+        <div class="footer-grid">
+          <div>
+            <div class="brand-logo" style="margin-bottom: 8px;">
+              <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="32,8 52,19 52,45 32,56 12,45 12,19" stroke="#38BDF8" stroke-width="3.5" stroke-linejoin="round" fill="#0C121E"/>
+                  <rect x="24" y="24" width="16" height="16" rx="3" fill="#070A10" stroke="#F59E0B" stroke-width="3"/>
+                  <circle cx="32" cy="32" r="3.5" fill="#38BDF8"/>
+                </svg>
+              </span>
+              <span>BotAppStore<span class="brand-domain">.com</span></span>
+            </div>
+            <p style="max-width: 460px; color: var(--text-muted); font-size: 13px;">
+              Deterministic AI Agents, OSINT Trackers &amp; Physical Robotics Workflows for Grok Bot. One-time USD licensing, local <code>/workspace</code> execution, and strict refusal boundaries.
+            </p>
+          </div>
+
+          <div class="footer-links-list">
+            <a href="/bots/web-text-extractor.html">Web &amp; API Text Extractor (Free Utility) →</a>
+            <a href="/bots/company-deep-dive.html">Company &amp; Competitor Deep-Dive ($19 SOL) →</a>
+            <a href="/bots/domain-infra-hygiene.html">Domain, TLS &amp; Email Auth Hygiene Auditor ($19 SOL) →</a>
+            <a href="/bots/mcp-config-auditor.html">MCP Server &amp; Tool-Permission Auditor ($19 SOL) →</a>
+            <a href="/bots/dependency-vuln-triage.html">Dependency Vulnerability Triage ($29 SOL) →</a>
+            <a href="/bots/social-hub-publisher.html">Social Hub Publisher ($29 SOL) →</a>
+            <a href="/bots/bot-skill-auditor.html">Bot &amp; Skill Security Auditor ($29 SOL) →</a>
+            <a href="/bots/sec-patent-watchdog.html">SEC &amp; Patent Watchdog Digest ($29 SOL) →</a>
+            <a href="/bots/agent-council.html">Agent Council — Multi-Model Swarm Debate ($39 SOL) →</a>
+            <a href="/bots/print-farm-ops.html">3D Print Farm &amp; Slicer Queue Ops ($29 SOL) →</a>
+            <a href="/bots/robotics-telemetry-inspector.html">Humanoid &amp; Fleet Telemetry Inspector ($49 SOL) →</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/llms.txt">llms.txt ↗</a>
+            <a href="/llms-full.txt">llms-full.txt ↗</a>
+            <a href="/sitemap.xml">sitemap.xml ↗</a>
+            <a href="https://coinloader.com" target="_blank" rel="noopener noreferrer">CoinLoader.com (Solana Bots) ↗</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 BotAppStore.com · Built for Grok Bot</span>
+          <span>Zero-Dependency Static Storefront · Isolated <code>/workspace</code> Linux Execution</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Accessible Spec Inspection Modal (with 3 Real ARIA Tabs) -->
+  <div class="modal-backdrop" id="spec-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel" id="modalPanel">
+      <div class="modal-header">
+        <div>
+          <span class="phase-badge live" id="modal-badge">SPEC</span>
+          <h3 id="modalTitle" style="margin-top: 6px; font-size: 19px;">Agent Specification</h3>
+          <div class="skill-slug" id="modal-slug" style="margin-top: 2px;"></div>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close" aria-label="Close specification modal">ESC / Close ✕</button>
+      </div>
+
+      <!-- 3 Real ARIA Tabs Inside Modal -->
+      <div class="modal-tablist" role="tablist" aria-label="Agent specification sections">
+        <button
+          type="button"
+          class="modal-tab active"
+          id="modal-tab-spec"
+          role="tab"
+          aria-selected="true"
+          aria-controls="modal-pane-spec"
+          tabindex="0"
+          data-modal-tab="modal-pane-spec"
+        >
+          SKILL.md Specification
+        </button>
+        <button
+          type="button"
+          class="modal-tab"
+          id="modal-tab-exec"
+          role="tab"
+          aria-selected="false"
+          aria-controls="modal-pane-exec"
+          tabindex="-1"
+          data-modal-tab="modal-pane-exec"
+        >
+          Execution &amp; Data Sources
+        </button>
+        <button
+          type="button"
+          class="modal-tab"
+          id="modal-tab-refusal"
+          role="tab"
+          aria-selected="false"
+          aria-controls="modal-pane-refusal"
+          tabindex="-1"
+          data-modal-tab="modal-pane-refusal"
+        >
+          Refusal Boundaries
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-pane active" id="modal-pane-spec" role="tabpanel" aria-labelledby="modal-tab-spec"></div>
+        <div class="modal-pane" id="modal-pane-exec" role="tabpanel" aria-labelledby="modal-tab-exec" hidden></div>
+        <div class="modal-pane" id="modal-pane-refusal" role="tabpanel" aria-labelledby="modal-tab-refusal" hidden></div>
+      </div>
+
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- On-Chain SOL Checkout Modal (#checkout-modal) -->
+  <div class="modal-backdrop" id="checkout-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <div class="modal-panel checkout-modal-panel">
+      <div class="modal-header">
+        <div>
+          <span class="phase-badge live" id="checkout-modal-badge">● ON-CHAIN SOL CHECKOUT · NON-CUSTODIAL</span>
+          <h3 id="checkout-modal-title" style="margin-top: 6px; font-size: 19px;">Humanoid &amp; Fleet Telemetry Inspector — $49 in SOL</h3>
+          <div class="skill-slug" id="checkout-modal-slug" style="margin-top: 2px;">sku: robotics-telemetry-inspector · One-Time License · 3 Workspace-Reset Rebinds</div>
+        </div>
+        <button type="button" class="modal-close-btn" id="checkout-modal-close">ESC / Close ✕</button>
+      </div>
+
+      <div class="modal-body checkout-modal-body">
+        <!-- Saved License Banner (shown if localStorage has a purchased license for this SKU) -->
+        <div class="saved-license-banner" id="checkout-saved-banner" hidden>
+          <div class="saved-license-info">
+            <strong>✓ Saved License Found in This Browser</strong>
+            <span id="checkout-saved-summary">Order ord_...</span>
+          </div>
+          <div class="saved-license-actions">
+            <button type="button" class="btn btn-primary btn-sm" id="checkout-view-saved-btn">View Saved License →</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="checkout-back-to-quote-btn" hidden>New Purchase Quote</button>
+            <button type="button" class="mini-copy-btn danger-btn" id="checkout-clear-saved-btn" title="Remove saved license from this browser">Clear Saved</button>
+          </div>
+        </div>
+
+        <!-- VIEW 1: LIVE SOL QUOTE & PAYMENT VERIFICATION -->
+        <div id="checkout-step-pay">
+          <!-- Quote Status / Loading / Error Bar -->
+          <div class="checkout-status-bar" id="checkout-quote-status" role="status" aria-live="polite">
+            <span id="checkout-quote-status-text">Fetching live SOL/USD quote from WattCoin Registry…</span>
+            <button type="button" class="mini-copy-btn" id="checkout-refresh-btn">Refresh Quote ↻</button>
+          </div>
+
+          <!-- Step 1 Box: Send SOL -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP 1 · SEND EXACT SOL AMOUNT TO TREASURY</span>
+              <span id="checkout-timer-pill" class="timer-pill">TTL: <strong id="checkout-timer-display">--:--</strong></span>
+            </div>
+
+            <div class="checkout-quote-grid">
+              <div class="quote-metric">
+                <span class="quote-label">License Price (One-Time)</span>
+                <div class="quote-val-primary" id="checkout-price-usd">$49.00 <small>USD</small></div>
+                <div class="quote-sub" id="checkout-rate-display">SOL/USD rate loading…</div>
+              </div>
+              <div class="quote-metric">
+                <span class="quote-label">Order ID &amp; Slippage Tolerance</span>
+                <div class="quote-val-mono" id="checkout-order-id-display">—</div>
+                <div class="quote-sub">3% slippage with memo · Exact match without memo</div>
+              </div>
+            </div>
+
+            <!-- Exact SOL Amount Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Exact Amount to Send (SOL)</span>
+                <span class="lamport-tag-hint">Unique 4-digit order tag: <code id="checkout-lamport-tag">----</code> lamports</span>
+              </div>
+              <div class="checkout-copy-box highlight">
+                <div>
+                  <code class="sol-amount-code" id="checkout-amount-sol">—</code>
+                  <span class="sol-unit">SOL</span>
+                  <span class="lamports-sub" id="checkout-amount-lamports"></span>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" id="checkout-copy-amount-btn" disabled>
+                  Copy Exact SOL Amount
+                </button>
+              </div>
+              <p class="checkout-field-help">
+                <strong>Why the exact 9 decimals matter:</strong> The last 4 digits (<code id="checkout-lamport-tag-inline">----</code> lamports, &lt;$0.001) uniquely identify your order on-chain so payment verification succeeds even if your wallet does not attach an SPL Memo.
+              </p>
+            </div>
+
+            <!-- Recipient Treasury Wallet Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Recipient Treasury Wallet (Solana Mainnet)</span>
+                <span>Official WattCoin Treasury</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-recipient-wallet">Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-wallet-btn">Copy Wallet</button>
+              </div>
+            </div>
+
+            <!-- Optional SPL Memo Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>SPL Memo (Optional if sending exact SOL amount above)</span>
+                <span>Enables 3% slippage tolerance</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-memo">—</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-memo-btn" disabled>Copy Memo</button>
+              </div>
+            </div>
+
+            <!-- Solana Pay URI + Optional Sender Wallet Binding -->
+            <div class="checkout-wallet-actions">
+              <a id="checkout-solana-pay-btn" class="btn btn-secondary btn-sm" hidden>
+                Open in Solana Wallet (solana: URI) ↗
+              </a>
+              <details class="checkout-optional-details">
+                <summary>Optional: Bind quote to your sender wallet address</summary>
+                <div class="optional-wallet-row">
+                  <input
+                    type="text"
+                    id="checkout-buyer-wallet-input"
+                    class="checkout-input"
+                    placeholder="Your sender Solana address (Base58, optional)"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <button type="button" class="btn btn-secondary btn-sm" id="checkout-bind-wallet-btn">
+                    Bind &amp; Refresh Quote
+                  </button>
+                </div>
+              </details>
+            </div>
+
+            <details class="checkout-optional-details checkout-card-onramp-details">
+              <summary>💳 Need SOL? How to buy with a Credit Card or Apple Pay (~60 sec)</summary>
+              <ol class="checkout-onramp-steps">
+                <li><strong>Install or open Phantom or Solflare</strong> (browser extension or mobile app).</li>
+                <li>Tap <strong>Buy → SOL</strong> inside your wallet and pay with <strong>Credit/Debit Card, Apple Pay, or Google Pay</strong> (via MoonPay, Stripe, Coinbase Pay, or Robinhood Connect).</li>
+                <li><strong>Send the exact quoted SOL amount</strong> (including the 4-digit lamport tag) to the recipient treasury address above&mdash;or click <strong>Open in Solana Wallet</strong>&mdash;then click <strong>Verify Payment &amp; Issue License &rarr;</strong>.</li>
+              </ol>
+              <p class="checkout-onramp-note">Non-custodial: the card purchase happens inside your own wallet. We never hold your funds or keys.</p>
+            </details>
+          </div>
+
+          <!-- Step 2 Box: Verify Transaction Signature -->
+          <div class="checkout-card-box" style="margin-top: 16px;">
+            <div class="checkout-step-header">
+              <span>STEP 2 · VERIFY ON-CHAIN TRANSACTION &amp; ISSUE LICENSE</span>
+              <span>CONFIRMED COMMITMENT</span>
+            </div>
+
+            <p class="checkout-field-help" style="margin-bottom: 10px;">
+              After sending SOL from Phantom, Solflare, Backpack, Ledger, or CLI, paste your Solana <strong>Transaction Signature</strong> (or full Solscan / Explorer TX link) below:
+            </p>
+
+            <div class="tx-verify-row">
+              <input
+                type="text"
+                id="checkout-tx-input"
+                class="checkout-input mono"
+                placeholder="Paste 88-char Solana TX signature or https://solscan.io/tx/..."
+                aria-label="Solana Transaction Signature or Solscan URL"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="button" class="btn btn-primary" id="checkout-verify-btn" disabled>
+                Verify Payment &amp; Issue License →
+              </button>
+            </div>
+
+            <div class="checkout-feedback" id="checkout-verify-feedback" role="alert" aria-live="polite" hidden></div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: FULFILLED LICENSE & TURN-1 ACTIVATION -->
+        <div id="checkout-step-fulfilled" hidden>
+          <div class="fulfilled-banner">
+            <div class="fulfilled-banner-title">✓ On-Chain SOL Payment Verified — License Issued</div>
+            <p>
+              <strong>Save your <code>wcl_...</code> license code now.</strong> It is a private bearer credential returned once at purchase and supports up to <strong>3 workspace-reset rebinds</strong>. We also saved a copy in this browser's local storage so you don't lose it if you close this tab.
+            </p>
+          </div>
+
+          <!-- Step A: Open Unlisted Grok Bot Template -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP A · IMPORT UNLISTED GROK BOT TEMPLATE</span>
+              <span>ONE CLICK</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-a-desc" style="margin-bottom: 10px;">
+              Click below to open the private <strong>Bot &amp; Skill Security Auditor</strong> template in Grok Bot and add it to your sidebar:
+            </p>
+            <div class="fulfilled-cta-row">
+              <a target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="fulfilled-open-template-btn">
+                Open Security Auditor in Grok Bot ↗
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-copy-template-btn">
+                Copy Unlisted Template URL
+              </button>
+            </div>
+            <div class="checkout-copy-box" style="margin-top: 10px;">
+              <code id="fulfilled-template-url">—</code>
+            </div>
+          </div>
+
+          <!-- Step B: Copy Private wcl_ License Code -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP B · YOUR PRIVATE LICENSE CODE (wcl_64-hex)</span>
+              <span>UP TO 3 REBINDS</span>
+            </div>
+            <div class="checkout-copy-box highlight" style="margin-top: 6px;">
+              <code id="fulfilled-license-code" class="license-code-text">—</code>
+              <button type="button" class="btn btn-primary btn-sm" id="fulfilled-copy-code-btn">
+                Copy License Code
+              </button>
+            </div>
+          </div>
+
+          <!-- Step C: Paste Turn-1 Activation Prompt -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP C · SEND THIS FIRST PROMPT IN GROK BOT</span>
+              <span>TURN-1 AUTO-SETUP</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-hint" style="margin-bottom: 8px;">
+              Paste this prompt on Turn 1 (or together with any <code>SKILL.md</code> or GitHub repo URL you want inspected):
+            </p>
+            <div class="checkout-copy-box">
+              <code id="fulfilled-activation-prompt">—</code>
+              <button type="button" class="mini-copy-btn" id="fulfilled-copy-prompt-btn">
+                Copy Prompt
+              </button>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+            </p>
+          </div>
+
+          <!-- Receipt Summary & Storage Controls -->
+          <div class="fulfilled-receipt-footer">
+            <div class="receipt-meta">
+              <span>Order: <code id="fulfilled-order-id">—</code></span>
+              <span>TX: <a target="_blank" rel="noopener noreferrer" id="fulfilled-solscan-link" style="color: var(--accent-cyan); text-decoration: underline;"><code id="fulfilled-tx-sig">—</code> ↗</a></span>
+            </div>
+            <div class="receipt-actions">
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-download-btn">
+                Download Receipt (.txt)
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-new-order-btn">
+                Buy Another License
+              </button>
+              <button type="button" class="mini-copy-btn danger-btn" id="fulfilled-clear-storage-btn">
+                Clear from Browser Storage
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="copy-toast" id="copy-toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+
