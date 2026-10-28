@@ -187,6 +187,32 @@
       defaultPrompt: function (code) {
         return 'Activate my MCP Server & Tool-Permission Security Auditor with license code ' + code;
       }
+    },
+    'print-farm-ops': {
+      sku: 'print-farm-ops',
+      name: '3D Print Farm & Slicer Queue Ops',
+      title: '3D Print Farm & Slicer Queue Ops',
+      badge: 'AVAILABLE NOW · $29 IN SOL',
+      detailUrl: '/bots/print-farm-ops.html',
+      slugMeta: 'sku: print-farm-ops · Skills: print-farm-ops-setup + print-farm-ops · One-Time License · 3 Rebinds',
+      priceUsd: 29,
+      priceLabel: '$29 USD in SOL (one-time)',
+      priceUsdHtml: '$29.00 <small>USD</small>',
+      promptHint: 'Audit my OrcaSlicer .3mf files, spool ledger and SKU table, and schedule this week\'s print queue...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open 3D Print Farm & Slicer Queue Ops in Grok Bot',
+      statusFooterText: 'Status: AVAILABLE NOW · $29 One-Time in SOL (Non-Custodial)',
+      ctaButtonText: 'Buy License ($29 in SOL) →',
+      stepADescHtml:
+        'Click below to open the private <strong>3D Print Farm &amp; Slicer Queue Ops</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Print Farm Ops in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or add the <code>.3mf</code> / <code>.gcode</code> files and spool, SKU and printer tables you want audited):',
+      stepCFootHtml:
+        'On Turn 1, <code>print-farm-ops-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>print_farm_ops.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs an offline self-check audit.',
+      defaultPrompt: function (code) {
+        return 'Activate my 3D Print Farm & Slicer Queue Ops with license code ' + code;
+      }
     }
   };
 
@@ -694,34 +720,63 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     },
     'print-farm-ops': {
       title: '3D Print Farm & Slicer Queue Ops',
-      slug: 'print-farm-ops',
-      badge: 'IN DEVELOPMENT · PHASE 2 SPEC',
-      badgeClass: 'phase2',
-      price: 'Planned: $29 USD (One-Time License · Spec Preview)',
+      slug: 'print-farm-ops-setup + print-farm-ops',
+      badge: 'AVAILABLE NOW · $29 IN SOL',
+      badgeClass: 'live',
+      price: '$29 USD (Paid in SOL · One-Time License · Up to 3 Rebinds)',
       shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'print-farm-ops',
+      specPageUrl: '/bots/print-farm-ops.html',
       specHtml: `
-        <p>Local production queue auditor, OrcaSlicer <code>.3mf</code> profile verifier, and filament unit-economics calculator for multi-printer additive manufacturing shops.</p>
-        <h4>What It Does (Phase 2 Specification)</h4>
+        <p><strong>Deliverable:</strong> <em>Deterministic, offline, read-only audit of your OrcaSlicer, Bambu Studio and PrusaSlicer <code>.3mf</code> / <code>.gcode.3mf</code> / <code>.gcode</code> files plus your spool ledger, storefront SKU table and printer list across 4 buckets: slicer thermal/mechanical safety, spool inventory and moisture hygiene, per-part unit economics, and SKU run-rate with a multi-printer queue schedule.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 2 LIVE</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <h4>Included Skills (<code>print-farm-ops-setup</code> + <code>print-farm-ops</code>)</h4>
+        <pre class="code-pre">---
+name: print-farm-ops
+description: "Use this when the user asks to audit OrcaSlicer, Bambu
+  Studio, or PrusaSlicer .3mf / .gcode files, check nozzle/temperature/
+  infill safety for PLA-CF/PAHT-CF/PETG/TPU, track filament spool BOM &amp;
+  drying hygiene, calculate per-part unit economics &amp; margins, or
+  schedule multi-printer production queues from storefront SKU velocity."
+---
+Step 0  License gate: .wattcoin_license_check.py --sku print-farm-ops
+        must return "state": "OK" before every run.
+Step 1  Verify sha256 of print_farm_ops.py (29edc5e8...bb669)
+        and bot_common.py (d1941b61...50e526); refuse on mismatch.
+Step 2  /usr/bin/python3 -I /workspace/scripts/print_farm_ops.py
+        [--3mf PATH] [--dir DIR] [--spools PATH] [--orders PATH]
+        [--printers PATH] [--queue-csv PATH] [--kwh-rate N]
+        [--margin-target-pct N] [--state PATH --delta]
+        [--format markdown] [--fail-on high]
+Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degraded</pre>
+        <h4>Capabilities</h4>
         <ul>
-          <li><strong>OrcaSlicer <code>.3mf</code> Inspection:</strong> Unpacks <code>.3mf</code> ZIP/XML containers in read-only mode to verify nozzle diameter, layer height, wall loops, infill density, and support settings across plates.</li>
-          <li><strong>Filament BOM &amp; Spool Ledger:</strong> Tracks PLA-CF, PETG, TPU, and PA-CF spool weights, desiccant replacement intervals, and per-part gram consumption.</li>
-          <li><strong>Unit Cost &amp; SKU Run-Rate Tables:</strong> Computes material cost, machine hours, electricity kWh cost, and storefront reorder priorities in <code>/workspace/farm_queue_report.csv</code>.</li>
+          <li><strong>Slicer Profile &amp; Thermal/Mechanical Safety:</strong> nozzle and bed temperatures against each material's envelope (<code>THERMAL_RUNAWAY_OR_OUT_OF_RANGE</code>, <code>TEMP_MATERIAL_MISMATCH</code>), abrasive CF/GF filament on brass or sub-0.4 mm nozzles, enclosure needs, TPU volumetric speed, layer height, and weak infill or thin walls on structural parts. Archives are opened with hardened ZIP limits.</li>
+          <li><strong>Spool Inventory &amp; Moisture Hygiene:</strong> remaining grams against queued demand with a scrap buffer (<code>SPOOL_INSUFFICIENT_FOR_QUEUE</code>, <code>SPOOL_LOW_STOCK</code>), drying cadence for PAHT-CF, PA, TPU and PETG, and desiccant age.</li>
+          <li><strong>Unit Economics &amp; Per-Part BOM Margin:</strong> filament, electricity, machine time and labour per unit, net of marketplace fee and shipping, against <code>--margin-target-pct</code> (<code>SKU_NEGATIVE_MARGIN</code>, <code>SKU_CRITICAL_MARGIN_COMPRESSION</code>, <code>PLATE_BOM_MISMATCH</code>).</li>
+          <li><strong>SKU Run-Rate &amp; Queue Scheduler:</strong> days of supply from sales velocity, lead time and safety stock (<code>SKU_BACKORDER_DEFICIT</code>, <code>SKU_STOCKOUT_IMMINENT</code>), and a greedy earliest-finish schedule across your printers written with <code>--queue-csv</code>.</li>
+          <li><strong>Recurring Delta:</strong> <code>--state --delta</code> reports <code>SPOOL_DEPLETED</code>, <code>SKU_DAYS_OF_SUPPLY_DROP</code> and <code>PROFILE_DRIFT_DETECTED</code> between runs, suited to a scheduled <code>UpdateRoutine</code>.</li>
         </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Audit the .3mf files in /workspace/farm/projects with my spools.csv, orders.csv and printers.csv, flag anything unsafe or losing money, and write this week's print queue to queue.csv.</code></p>
+        <p><a href="/bots/print-farm-ops.html">Full spec, pinned runtime hashes &amp; real sample audit →</a></p>
       `,
       execHtml: `
-        <p>Executes 100% locally inside <code>/workspace</code> using Python's <code>zipfile</code>, <code>xml.etree.ElementTree</code>, and <code>csv</code> modules.</p>
-        <h4>Supported Inputs &amp; Outputs</h4>
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>) and makes <strong>no network requests</strong>: it reads only the slicer files and tables you point it at. It never contacts a printer, sends G-code, or modifies a <code>.3mf</code> / <code>.gcode</code> file.</p>
         <ul>
-          <li><strong>Inputs:</strong> OrcaSlicer / Bambu Studio <code>.3mf</code> project files and SKU inventory CSVs placed in <code>/workspace</code>.</li>
-          <li><strong>Outputs:</strong> Audited plate configuration tables and <code>/workspace/farm_queue_report.csv</code>.</li>
+          <li><strong>Pinned Runtime (SHA-256):</strong> <code>print_farm_ops.py</code> <code>29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669</code> (2,165 lines) and <code>bot_common.py</code> <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code> (274 lines), verified with <code>sha256sum -c</code> before every run and locked at <code>0500</code>.</li>
+          <li><strong>License Binding (<code>print-farm-ops-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>.</li>
+          <li><strong>Fail-Closed Exit Codes:</strong> <code>0</code> clean, <code>1</code>/<code>2</code>/<code>3</code> MEDIUM/HIGH/CRITICAL at <code>--fail-on</code>, <code>10</code> bad input or refusal, <code>11</code> degraded (unreadable, malformed or unsafe input), so a failed read never looks clean.</li>
+          <li><strong>Inputs &amp; Outputs:</strong> <code>--3mf</code>, <code>--dir</code>, <code>--spools</code>, <code>--orders</code> (alias <code>--inventory</code>), <code>--printers</code>; <code>--format text|markdown|json</code>, <code>--queue-csv PATH</code>, <code>--out PATH</code>. The <code>--state</code> file is written <code>0600</code> and is never overwritten by a degraded run.</li>
         </ul>
       `,
       refusalHtml: `
-        <p>Physical shop and file-integrity safety boundaries:</p>
-        <h4>Mandatory Refusal Boundaries</h4>
         <ul>
-          <li><strong>Zero Unconfirmed Printer Actuation:</strong> Never transmits raw G-code or triggers remote print starts over LAN/MQTT/cloud APIs without explicit per-job user confirmation.</li>
-          <li><strong>Non-Destructive Auditing:</strong> Never overwrites or mutates master <code>.3mf</code> project archives in place.</li>
+          <li><strong>Offline and Read-Only:</strong> Never connects to Bambu Cloud, MQTT, Moonraker, Klipper, OctoPrint or PrusaLink, never sends G-code, and never starts, stops or heats a printer.</li>
+          <li><strong>Non-Destructive Auditing:</strong> Never overwrites or mutates a master <code>.3mf</code> / <code>.gcode</code> file; <code>--queue-csv</code> only writes a new CSV and refuses input paths.</li>
+          <li><strong>No Credentials:</strong> Refuses API keys, seed phrases and printer LAN access codes in arguments or tables (exit <code>10</code>, value never echoed); an embedded printer key in a slicer file is flagged without being shown.</li>
+          <li><strong>Heuristic, Not Certification:</strong> Thermal and structural findings are checks of slicer metadata, not engineering certification and not a substitute for hardware fire-safety protection. Cost, margin and reorder figures are arithmetic on your inputs, not financial advice.</li>
         </ul>
       `
     },

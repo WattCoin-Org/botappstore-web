@@ -15,13 +15,14 @@
 - **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL, `sku: domain-infra-hygiene`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
 - **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL, `sku: agent-council`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
 - **MCP Server & Tool-Permission Security Auditor ($19 in SOL, `sku: mcp-config-auditor`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/mcp-config-auditor.html (Checkout: https://botappstore.com/#card-mcp-config-auditor)
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **3D Print Farm & Slicer Queue Ops ($29 in SOL, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE - instant on-chain SOL checkout):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 9 Live Automations)
+## Live Agent Templates (Available Now — 10 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -245,16 +246,40 @@
   - Own or authorised configs only; never harvests or validates secrets from other people's configs or public repos
   - Declines to write poisoned tools, prompt-injection payloads or typosquat packages; heuristic detection, so "no findings" is not proof of safety
 
+### 10. 3D Print Farm & Slicer Queue Ops ($29 in SOL — AVAILABLE NOW · PHASE 2 LIVE, sku: print-farm-ops)
+- **Status:** AVAILABLE NOW · PHASE 2 LIVE
+- **SKU:** `print-farm-ops`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Categories:** Robotics & Manufacturing / 3D Print Farm & Slicer Queue Ops
+- **Product Page URL:** https://botappstore.com/bots/print-farm-ops.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-print-farm-ops
+- **Included Skills:** `print-farm-ops-setup` + `print-farm-ops`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/print_farm_ops.py` — SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669` (2,165 lines, stdlib Python, 393 unit tests)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Deliverable:** *Catch the wrong-temperature plate, the empty spool and the money-losing SKU before the printers run: an offline, read-only audit of OrcaSlicer, Bambu Studio and PrusaSlicer `.3mf` / `.gcode` files, a spool ledger, a storefront SKU table and a printer list, plus a scheduled multi-printer production queue.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`print-farm-ops-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku print-farm-ops`, `POST /api/v1/agents/license/claim`), runs a deterministic self-check audit, and offers a first audit plus an optional `UpdateRoutine` for the recurring farm queue and spool delta.
+  2. **Mandatory Pre-Flight License Gate (`print-farm-ops`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py --sku print-farm-ops` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=print-farm-ops`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Does:**
+  - **Inputs:** `.3mf` / `.gcode.3mf` / `.gcode` files via `--3mf`, `--dir` or positional paths; `--spools`, `--orders` (alias `--inventory`) and `--printers` CSV/JSON tables; cost inputs `--kwh-rate`, `--printer-watts`, `--machine-rate-hr`, `--labor-rate-hr`, `--failure-rate-pct`, `--margin-target-pct`.
+  - **Slicer Profile & Thermal/Mechanical Safety:** `THERMAL_RUNAWAY_OR_OUT_OF_RANGE`, `TEMP_MATERIAL_MISMATCH`, `ABRASIVE_FILAMENT_BRASS_NOZZLE`, `ABRASIVE_CLOG_RISK_SMALL_NOZZLE`, `ENCLOSURE_REQUIRED_OPEN_FRAME`, `TPU_HIGH_VOLUMETRIC_SPEED`, `LAYER_HEIGHT_EXCEEDS_NOZZLE_LIMIT`, `WEAK_INFILL_PATTERN_STRUCTURAL`, `STRUCTURAL_UNDER_WALLED`, `EMBEDDED_PRINTER_CREDENTIAL`, `ARCHIVE_SAFETY_VIOLATION`.
+  - **Spool Inventory & Moisture Hygiene:** `SPOOL_INSUFFICIENT_FOR_QUEUE`, `SPOOL_LOW_STOCK`, `HYGROSCOPIC_DRYING_OVERDUE`, `DESICCANT_CHANGE_OVERDUE`, `FILAMENT_COST_ASSUMED`.
+  - **Unit Economics & Per-Part BOM Margin:** `SKU_NEGATIVE_MARGIN`, `SKU_CRITICAL_MARGIN_COMPRESSION`, `SKU_BELOW_TARGET_MARGIN`, `PLATE_BOM_MISMATCH`, `PLATE_FILE_UNRESOLVED`, `SKU_COST_INPUTS_MISSING`.
+  - **SKU Run-Rate & Queue Scheduler:** `SKU_BACKORDER_DEFICIT`, `SKU_STOCKOUT_IMMINENT`, `SKU_REORDER_TRIGGER`, `NO_COMPATIBLE_PRINTER_FOR_JOB`, `FARM_CAPACITY_OVERLOAD`; greedy earliest-finish queue written with `--queue-csv`.
+  - **Delta:** `--state PATH --delta` events `SPOOL_DEPLETED`, `SKU_DAYS_OF_SUPPLY_DROP`, `PROFILE_DRIFT_DETECTED`.
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (at/above `--fail-on`), `10` bad input or refusal, `11` degraded (unreadable/malformed/unsafe input or nothing to audit; never clean)
+- **Sample Prompt:** `Audit the .3mf files in /workspace/farm/projects with my spools.csv, orders.csv and printers.csv, flag anything unsafe or losing money, and write this week's print queue to queue.csv.`
+- **Mandatory Refusal Boundaries:**
+  - Offline and read-only: no network request, no Bambu Cloud / MQTT / Moonraker / Klipper / OctoPrint / PrusaLink call; never sends G-code, starts, stops or heats a printer, or modifies a `.3mf` / `.gcode` file
+  - Refuses credentials, API keys, seed phrases and printer LAN access codes (exit `10`, value never echoed)
+  - Heuristic checks of slicer metadata, not engineering certification or fire-safety protection; cost and margin figures are arithmetic on supplied inputs, not financial advice
+
 ---
 
-## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
+## Planned Phase 3 Specification (In Development — Not Yet Available for Purchase)
 
-> The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
-
-### 10. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
-- **Slug:** `print-farm-ops`
-- **Scope:** Read-only OrcaSlicer / Bambu Studio `.3mf` container inspector, filament spool & desiccant ledger, and unit-economics calculator (`/workspace/farm_queue_report.csv`).
-- **Refusal Boundaries:** Never transmits G-code or triggers remote printer actuation without explicit per-job confirmation; never mutates master `.3mf` files in place.
+> The following agent template is published as an engineering specification (`SKILL.md` previews). Its purchase button is disabled until its verification suite goes live.
 
 ### 11. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
 - **Slug:** `robotics-telemetry-inspector`

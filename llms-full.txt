@@ -15,13 +15,14 @@
 - **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 in SOL, `sku: domain-infra-hygiene`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
 - **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 in SOL, `sku: agent-council`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
 - **MCP Server & Tool-Permission Security Auditor ($19 in SOL, `sku: mcp-config-auditor`, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/mcp-config-auditor.html (Checkout: https://botappstore.com/#card-mcp-config-auditor)
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **3D Print Farm & Slicer Queue Ops ($29 in SOL, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE - instant on-chain SOL checkout):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
 ---
 
-## Live Agent Templates (Available Now — 9 Live Automations)
+## Live Agent Templates (Available Now — 10 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -245,16 +246,40 @@
   - Own or authorised configs only; never harvests or validates secrets from other people's configs or public repos
   - Declines to write poisoned tools, prompt-injection payloads or typosquat packages; heuristic detection, so "no findings" is not proof of safety
 
+### 10. 3D Print Farm & Slicer Queue Ops ($29 in SOL — AVAILABLE NOW · PHASE 2 LIVE, sku: print-farm-ops)
+- **Status:** AVAILABLE NOW · PHASE 2 LIVE
+- **SKU:** `print-farm-ops`
+- **Price:** $29.00 USD One-Time License settled on-chain in SOL (includes up to **3 workspace-reset rebinds**)
+- **Categories:** Robotics & Manufacturing / 3D Print Farm & Slicer Queue Ops
+- **Product Page URL:** https://botappstore.com/bots/print-farm-ops.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-print-farm-ops
+- **Included Skills:** `print-farm-ops-setup` + `print-farm-ops`
+- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/print_farm_ops.py` — SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669` (2,165 lines, stdlib Python, 393 unit tests)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Deliverable:** *Catch the wrong-temperature plate, the empty spool and the money-losing SKU before the printers run: an offline, read-only audit of OrcaSlicer, Bambu Studio and PrusaSlicer `.3mf` / `.gcode` files, a spool ledger, a storefront SKU table and a printer list, plus a scheduled multi-printer production queue.*
+- **License Architecture:**
+  1. **Turn-1 Setup (`print-farm-ops-setup`):** installs `/workspace/.wattcoin_license_check.py` at `0500`, verifies and installs the pinned runtime, registers/activates `/workspace/.wattcoin_env` (`0600`, `onboarding_v1` + `starter_v1` = 100 WATT), binds the `wcl_<64-hex>` code via stdin (`--claim-stdin --sku print-farm-ops`, `POST /api/v1/agents/license/claim`), runs a deterministic self-check audit, and offers a first audit plus an optional `UpdateRoutine` for the recurring farm queue and spool delta.
+  2. **Mandatory Pre-Flight License Gate (`print-farm-ops`):** every run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py --sku print-farm-ops` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=print-farm-ops`, requires `"sku_licensed": true`; the helper prints `"state": "OK"`).
+- **What It Does:**
+  - **Inputs:** `.3mf` / `.gcode.3mf` / `.gcode` files via `--3mf`, `--dir` or positional paths; `--spools`, `--orders` (alias `--inventory`) and `--printers` CSV/JSON tables; cost inputs `--kwh-rate`, `--printer-watts`, `--machine-rate-hr`, `--labor-rate-hr`, `--failure-rate-pct`, `--margin-target-pct`.
+  - **Slicer Profile & Thermal/Mechanical Safety:** `THERMAL_RUNAWAY_OR_OUT_OF_RANGE`, `TEMP_MATERIAL_MISMATCH`, `ABRASIVE_FILAMENT_BRASS_NOZZLE`, `ABRASIVE_CLOG_RISK_SMALL_NOZZLE`, `ENCLOSURE_REQUIRED_OPEN_FRAME`, `TPU_HIGH_VOLUMETRIC_SPEED`, `LAYER_HEIGHT_EXCEEDS_NOZZLE_LIMIT`, `WEAK_INFILL_PATTERN_STRUCTURAL`, `STRUCTURAL_UNDER_WALLED`, `EMBEDDED_PRINTER_CREDENTIAL`, `ARCHIVE_SAFETY_VIOLATION`.
+  - **Spool Inventory & Moisture Hygiene:** `SPOOL_INSUFFICIENT_FOR_QUEUE`, `SPOOL_LOW_STOCK`, `HYGROSCOPIC_DRYING_OVERDUE`, `DESICCANT_CHANGE_OVERDUE`, `FILAMENT_COST_ASSUMED`.
+  - **Unit Economics & Per-Part BOM Margin:** `SKU_NEGATIVE_MARGIN`, `SKU_CRITICAL_MARGIN_COMPRESSION`, `SKU_BELOW_TARGET_MARGIN`, `PLATE_BOM_MISMATCH`, `PLATE_FILE_UNRESOLVED`, `SKU_COST_INPUTS_MISSING`.
+  - **SKU Run-Rate & Queue Scheduler:** `SKU_BACKORDER_DEFICIT`, `SKU_STOCKOUT_IMMINENT`, `SKU_REORDER_TRIGGER`, `NO_COMPATIBLE_PRINTER_FOR_JOB`, `FARM_CAPACITY_OVERLOAD`; greedy earliest-finish queue written with `--queue-csv`.
+  - **Delta:** `--state PATH --delta` events `SPOOL_DEPLETED`, `SKU_DAYS_OF_SUPPLY_DROP`, `PROFILE_DRIFT_DETECTED`.
+- **Exit Codes:** `0` clean, `1` MEDIUM, `2` HIGH, `3` CRITICAL (at/above `--fail-on`), `10` bad input or refusal, `11` degraded (unreadable/malformed/unsafe input or nothing to audit; never clean)
+- **Sample Prompt:** `Audit the .3mf files in /workspace/farm/projects with my spools.csv, orders.csv and printers.csv, flag anything unsafe or losing money, and write this week's print queue to queue.csv.`
+- **Mandatory Refusal Boundaries:**
+  - Offline and read-only: no network request, no Bambu Cloud / MQTT / Moonraker / Klipper / OctoPrint / PrusaLink call; never sends G-code, starts, stops or heats a printer, or modifies a `.3mf` / `.gcode` file
+  - Refuses credentials, API keys, seed phrases and printer LAN access codes (exit `10`, value never echoed)
+  - Heuristic checks of slicer metadata, not engineering certification or fire-safety protection; cost and margin figures are arithmetic on supplied inputs, not financial advice
+
 ---
 
-## Planned Phase 2 / Phase 3 Specifications (In Development — Not Yet Available for Purchase)
+## Planned Phase 3 Specification (In Development — Not Yet Available for Purchase)
 
-> The following 2 agent templates are published as engineering specifications (`SKILL.md` previews). Their purchase buttons are disabled until their verification suites go live.
-
-### 10. 3D Print Farm & Slicer Queue Ops (Phase 2 Spec — Planned: $29 USD One-Time)
-- **Slug:** `print-farm-ops`
-- **Scope:** Read-only OrcaSlicer / Bambu Studio `.3mf` container inspector, filament spool & desiccant ledger, and unit-economics calculator (`/workspace/farm_queue_report.csv`).
-- **Refusal Boundaries:** Never transmits G-code or triggers remote printer actuation without explicit per-job confirmation; never mutates master `.3mf` files in place.
+> The following agent template is published as an engineering specification (`SKILL.md` previews). Its purchase button is disabled until its verification suite goes live.
 
 ### 11. Humanoid & Fleet Telemetry Inspector (Phase 3 Spec — Planned: $49 USD One-Time)
 - **Slug:** `robotics-telemetry-inspector`
@@ -279,6 +304,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
      - `dependency-vuln-triage` ($29.00 USD in SOL — Dependency Vulnerability Triage)
      - `domain-infra-hygiene` ($19.00 USD in SOL — Domain, TLS & Email Auth Infrastructure Hygiene Auditor)
      - `agent-council` ($39.00 USD in SOL — Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator)
+     - `print-farm-ops` ($29.00 USD in SOL — 3D Print Farm & Slicer Queue Ops)
    - Response: 15-minute locked SOL quote with `order_id` (`ord_<24-hex>`), `checkout_token` (`ct_<48-hex>`), `amount_sol`, `amount_lamports` (including a unique 4-digit lamport tag `0001`–`9999`), `memo` (`wcl:<order_id>`), `recipient_wallet` (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`), and `solana_pay_url`.
 
 2. **`POST https://www.wattcoin.org/api/v1/agents/license/purchase`**
@@ -1588,4 +1614,162 @@ Secrets become `${VAR}` references, packages are pinned (`@VERSION` / `#COMMIT_S
 ---
 
 SCOPE_NOTE: Static, read-only audit of local MCP client configuration files (Claude Desktop, Cursor, VS Code, Windsurf, Cline, Zed, Claude Code .mcp.json) and of tools/list schema snapshots the user supplies. No MCP server is launched, no package is downloaded or installed, no network request is made, and no config file is modified; hardened snippets are templates to review before use, and VERSION / COMMIT_SHA placeholders must be replaced with versions you have reviewed. Secrets are detected by known token prefixes, key names and entropy and are always redacted; detection is heuristic, so the absence of a finding is not proof that a config is safe. Typosquat matching covers a curated catalog of popular MCP packages only. Tool-poisoning checks only see the descriptions in the snapshot provided; servers can change them after install, so use --state PATH --delta to catch rug-pulls. Not a penetration test, malware analysis, or compliance attestation. Audit only configurations you own or are authorised to review.
+````
+
+---
+
+## Wave 3 - print-farm-ops ($29 in SOL, one-time; AVAILABLE NOW · PHASE 2 LIVE, instant on-chain SOL checkout)
+- **SKU:** `print-farm-ops`
+- **Name:** 3D Print Farm & Slicer Queue Ops
+- **Page:** https://botappstore.com/bots/print-farm-ops.html
+- **Checkout:** https://botappstore.com/#card-print-farm-ops
+- **Skills:** `print-farm-ops-setup`, `print-farm-ops`
+- **Price:** $29.00 USD one-time, settled on-chain in SOL (up to 3 workspace-reset rebinds)
+- **Runtime:** `/workspace/scripts/print_farm_ops.py` v1.0.0 (2,165 lines, Python stdlib + `/workspace/lib/bot_common.py`, 393 unit tests), always run as `/usr/bin/python3 -I`
+- **Pinned SHA-256:**
+  - `https://botappstore.com/runtime/print_farm_ops.py` — `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`
+  - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
+- **Summary:** Offline, read-only audit of slicer `.3mf` / `.gcode` files, spool ledger, SKU table and printer list across 4 buckets (slicer thermal/mechanical safety, spool inventory & moisture hygiene, unit economics & per-part BOM margin, SKU run-rate & multi-printer queue), with a `--queue-csv` schedule and `--state --delta` tracking of spool draw-down, supply drops and slicer profile drift.
+
+Verbatim `--format markdown` output on a synthetic 4-printer farm (Bambu X1C, P1S, A1 and a Voron 2.4; 8 plates, 6 spools, 6 SKUs; all data fabricated, no printer contacted; exit `3` at the default `--fail-on medium`, clock fixed with `--now 2026-10-27T00:00:00Z`):
+
+````markdown
+# 3D Print Farm & Slicer Queue Ops Report
+
+```
+snapshot   2026-10-27 00:00:00 UTC | tool=print-farm-ops
+endpoints  local-files
+```
+
+**Inputs:** 8 slicer file(s) / 8 plate(s), 6 spool(s), 6 SKU(s), 4 printer(s)
+
+## Summary
+
+| critical | high | medium | low | info | worst |
+|---|---|---|---|---|---|
+| 9 | 11 | 6 | 1 | 0 | CRITICAL |
+
+## Bucket 1 - Slicer profile & thermal / mechanical safety
+
+| file | plate | slicer | printer | nozzle | material | layer | walls | infill | N/B C | hrs | g |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| bracket_placf.gcode.3mf | 1 | BambuStudio | Bambu Lab X1 Carbon | 0.40 hardened_steel | PLA-CF | 0.20 | 2 | 10% grid | 230/55 | 3.00 | 62.0 |
+| calibration_pla_hot.gcode.3mf | 1 | BambuStudio | Voron 2.4 350 | 0.40 tungsten_carbide | PLA | 0.20 | 3 | 20% gyroid | 265/55 | 0.60 | 6.0 |
+| clip_petg.gcode.3mf | 1 | BambuStudio | Bambu Lab A1 | 0.40 brass | PETG | 0.20 | 3 | 20% gyroid | 245/75 | 1.50 | 30.0 |
+| fanduct_placf_a1.gcode.3mf | 1 | BambuStudio | Bambu Lab A1 | 0.40 brass | PLA-CF | 0.20 | 3 | 20% gyroid | 230/55 | 1.80 | 21.0 |
+| gasket_tpu.gcode.3mf | 1 | BambuStudio | Voron 2.4 350 | 0.40 tungsten_carbide | TPU | 0.20 | 3 | 20% gyroid | 230/45 | 2.20 | 24.0 |
+| gear_pahtcf.gcode.3mf | 1 | BambuStudio | Bambu Lab P1S | 0.60 hardened_steel | PAHT-CF | 0.28 | 4 | 30% gyroid | 210/55 | 5.50 | 88.0 |
+| minifig_pla_0p2.gcode.3mf | 1 | BambuStudio | Bambu Lab X1 Carbon | 0.20 hardened_steel | PLA | 0.08 | 3 | 20% gyroid | 215/55 | 4.00 | 18.0 |
+| pulley_pa6cf.gcode.3mf | 1 | BambuStudio | Bambu Lab X1 Carbon | 0.40 hardened_steel | PA6-CF | 0.20 | 4 | 35% cubic | 285/90 | 2.40 | 26.0 |
+
+- **CRITICAL** `ABRASIVE_FILAMENT_BRASS_NOZZLE` fanduct_placf_a1.gcode.3mf: abrasive filament PLA-CF sliced for a brass nozzle (slicer file); it will wear through it, use a hardened / tungsten nozzle
+- **CRITICAL** `THERMAL_RUNAWAY_OR_OUT_OF_RANGE` calibration_pla_hot.gcode.3mf: PLA sliced at 265 C exceeds its 250 C degradation limit (charring, heat-creep jams, fumes)
+- **HIGH** `STRUCTURAL_UNDER_WALLED` bracket_placf.gcode.3mf: structural part is under-built: infill 10% (<15%), 2 wall loops (<3)
+- **HIGH** `TEMP_MATERIAL_MISMATCH` gear_pahtcf.gcode.3mf: PAHT-CF sliced with nozzle 210 C (envelope 270-315 C) and bed 55 C (envelope 80-115 C); the filament preset was probably not switched
+- **HIGH** `WEAK_INFILL_PATTERN_STRUCTURAL` bracket_placf.gcode.3mf: grid infill on a structural part: the nozzle re-crosses infill lines and shear strength is poor; use gyroid, cross_hatch or cubic
+- **MEDIUM** `ABRASIVE_CLOG_RISK_SMALL_NOZZLE` pulley_pa6cf.gcode.3mf: heavily filled PA6-CF on a 0.4 mm nozzle clogs often; a 0.6 mm hardened nozzle is recommended
+- **MEDIUM** `TPU_HIGH_VOLUMETRIC_SPEED` gasket_tpu.gcode.3mf: TPU max volumetric speed 9 mm3/s exceeds 6.0 (extruder gear buckling / jams)
+
+## Bucket 2 - Spool inventory, moisture hygiene & BOM depletion
+
+| spool | material | brand | remaining g | reorder g | $/kg | dried (days ago) | status |
+|---|---|---|---|---|---|---|---|
+| S-PLACF-1 | PLA-CF | Bambu | 520 | 200 | 45.00 | n/a | ok |
+| S-PAHT-1 | PAHT-CF | Bambu | 310 | 250 | 95.00 | 26 | DRY-OVERDUE |
+| S-PETG-1 | PETG | Polymaker | 640 | 200 | 24.00 | 9 | ok |
+| S-PETG-2 | PETG | Polymaker | 130 | 200 | 24.00 | 9 | LOW(<=150g) |
+| S-TPU-1 | TPU | Sunlu | 520 | 200 | 36.00 | - | DRY-OVERDUE |
+| S-PLA-1 | PLA | Bambu | 880 | 200 | 19.00 | n/a | ok |
+
+| material | queue needs g | available g | after g | status |
+|---|---|---|---|---|
+| PA6-CF | 27 | 0 | -27 | SHORT |
+| PAHT-CF | 458 | 310 | -148 | SHORT |
+| PETG | 31 | 770 | 739 | ok |
+| PLA | 100 | 880 | 780 | ok |
+| PLA-CF | 1634 | 520 | -1114 | SHORT |
+| TPU | 25 | 520 | 495 | ok |
+
+- **CRITICAL** `SPOOL_INSUFFICIENT_FOR_QUEUE` PA6-CF: queue needs 27 g (incl. scrap buffer) but 0 g on hand across 0 spool(s); short by 27 g
+- **CRITICAL** `SPOOL_INSUFFICIENT_FOR_QUEUE` PAHT-CF: queue needs 458 g (incl. scrap buffer) but only 310 g on hand across 1 spool(s); short by 148 g
+- **CRITICAL** `SPOOL_INSUFFICIENT_FOR_QUEUE` PLA-CF: queue needs 1634 g (incl. scrap buffer) but only 520 g on hand across 1 spool(s); short by 1114 g
+- **HIGH** `HYGROSCOPIC_DRYING_OVERDUE` spool S-PAHT-1 (PAHT-CF) drying overdue: last dried 26 days ago (limit 7 days); wet filament strings, bubbles and loses strength
+- **HIGH** `HYGROSCOPIC_DRYING_OVERDUE` spool S-TPU-1 (TPU) drying overdue: no dried_at recorded (limit 7 days); wet filament strings, bubbles and loses strength
+- **HIGH** `SPOOL_LOW_STOCK` spool S-PETG-2 (Polymaker PETG) has 130 g left (<= 150 g floor); swap before a long print
+- **LOW** `DESICCANT_CHANGE_OVERDUE` spool S-PAHT-1 desiccant last changed 87 days ago (limit 60)
+
+## Bucket 3 - Unit economics & per-part BOM
+
+| sku | material | filament | power | machine | labor | COGS | price | net rev | profit | margin |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BRK-CF-01 | PLA-CF | $0.73 | $0.03 | $0.78 | $2.20 | $3.73 | $18.00 | $10.26 | $6.53 | 36.3% |
+| GEAR-PAHT-02 | PAHT-CF | $4.35 | $0.07 | $2.29 | $3.67 | $10.38 | $24.00 | $16.08 | $5.70 | 23.8% |
+| CLIP-PETG-03 | PETG | $0.06 | $0.00 | $0.11 | $1.10 | $1.28 | $7.50 | $6.53 | $5.25 | 69.9% |
+| GASKET-TPU-04 | TPU | $0.15 | $0.02 | $0.45 | $1.47 | $2.08 | $4.50 | $3.92 | $1.83 | 40.7% |
+| VASE-PLA-05 | PLA | $1.88 | $0.20 | $5.75 | $1.83 | $9.65 | $16.00 | $8.72 | -$0.93 | -5.8% |
+| MINI-PLA-06 | PLA | $0.36 | $0.10 | $3.54 | $1.83 | $5.83 | $12.00 | $6.44 | $0.61 | 5.1% |
+
+Unlinked plates (cost only, no sale price):
+
+| plate | material | grams | hours | filament | power | machine | COGS |
+|---|---|---|---|---|---|---|---|
+| calibration_pla_hot.gcode.3mf#1 | PLA | 6.0 | 0.60 | $0.12 | $0.02 | $0.54 | $0.68 |
+| fanduct_placf_a1.gcode.3mf#1 | PLA-CF | 21.0 | 1.80 | $0.98 | $0.07 | $1.87 | $2.92 |
+| pulley_pa6cf.gcode.3mf#1 | PA6-CF | 26.0 | 2.40 | $2.30 | $0.09 | $2.50 | $4.88 |
+
+- **CRITICAL** `SKU_NEGATIVE_MARGIN` VASE-PLA-05 loses $0.93 per unit (COGS $9.65 vs net revenue $8.72)
+- **HIGH** `SKU_CRITICAL_MARGIN_COMPRESSION` GEAR-PAHT-02 gross margin 23.8% is under 25% (profit $5.70 on $24.00)
+- **HIGH** `SKU_CRITICAL_MARGIN_COMPRESSION` MINI-PLA-06 gross margin 5.1% is under 25% (profit $0.61 on $12.00)
+- **MEDIUM** `PLATE_BOM_MISMATCH` GASKET-TPU-04 vs gasket_tpu.gcode.3mf#1: hours/unit table 0.50 vs sliced 0.37 (-27%); costs and queue hours use the table values
+- **MEDIUM** `SKU_BELOW_TARGET_MARGIN` BRK-CF-01 gross margin 36.3% is below the 45.0% target
+- **MEDIUM** `SKU_BELOW_TARGET_MARGIN` GASKET-TPU-04 gross margin 40.7% is below the 45.0% target
+
+## Bucket 4 - SKU run-rate & multi-printer queue
+
+| sku | on hand | open | net avail | vel/day | days supply | lead+safety | target | deficit | plates | print hrs | tier |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| BRK-CF-01 | 3 | 90 | -87 | 2.00 | 0.0 | 2+4 | 102 | 99 | 25 | 75.0 | 1_BACKORDER |
+| GEAR-PAHT-02 | 12 | 8 | 4 | 1.50 | 2.7 | 6+3 | 22 | 10 | 5 | 27.5 | 2_STOCKOUT_RISK |
+| CLIP-PETG-03 | 34 | 10 | 24 | 6.00 | 4.0 | 3+2 | 40 | 6 | 1 | 1.5 | 3_SAFETY_REPLENISH |
+| GASKET-TPU-04 | 2 | 1 | 1 | 0.80 | 1.2 | 2+2 | 5 | 3 | 1 | 3.0 | 2_STOCKOUT_RISK |
+| VASE-PLA-05 | 18 | 2 | 16 | 0.50 | 32.0 | 3+4 | 6 | 0 | 0 | 0.0 | - |
+| MINI-PLA-06 | 0 | 2 | -2 | 0.50 | 0.0 | 3+2 | 5 | 5 | 5 | 20.0 | 1_BACKORDER |
+
+| printer | model | nozzle | type | encl | max N/B C | status | cap h/day | queued h |
+|---|---|---|---|---|---|---|---|---|
+| x1c-01 | Bambu Lab X1 Carbon | 0.40 | hardened_steel | yes | 300/120 | printing | 20.0 | 42.0 |
+| p1s-01 | Bambu Lab P1S | 0.60 | hardened_steel | yes | 300/100 | idle | 20.0 | 27.5 |
+| a1-01 | Bambu Lab A1 | 0.40 | brass | no | 300/100 | idle | 18.0 | 4.5 |
+| voron-01 | Voron 2.4 350 | 0.40 | tungsten_carbide | yes | 350/120 | idle | 16.0 | 33.0 |
+
+Scheduled queue (greedy earliest-finish):
+
+| # | tier | sku | material | plates | units | printer | hrs | grams | COGS | margin | days supply |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1_BACKORDER | BRK-CF-01 | PLA-CF | 11 | 44 | voron-01 | 33.0 | 709 | $3.73 | 36.3% | 0.0 |
+| 1 | 1_BACKORDER | BRK-CF-01 | PLA-CF | 14 | 55 | x1c-01 | 42.0 | 903 | $3.73 | 36.3% | 0.0 |
+| 2 | 1_BACKORDER | MINI-PLA-06 | PLA | 5 | 5 | UNASSIGNED | 20.0 | 94 | $5.83 | 5.1% | 0.0 |
+| 3 | 2_STOCKOUT_RISK | GASKET-TPU-04 | TPU | 1 | 3 | a1-01 | 3.0 | 25 | $2.08 | 40.7% | 1.2 |
+| 4 | 2_STOCKOUT_RISK | GEAR-PAHT-02 | PAHT-CF | 5 | 10 | p1s-01 | 27.5 | 458 | $10.38 | 23.8% | 2.7 |
+| 5 | 3_SAFETY_REPLENISH | CLIP-PETG-03 | PETG | 1 | 6 | a1-01 | 1.5 | 31 | $1.28 | 69.9% | 4.0 |
+
+- **CRITICAL** `NO_COMPATIBLE_PRINTER_FOR_JOB` MINI-PLA-06 (PLA) needs [0.2 mm nozzle, 215 C hotend, 55 C bed] but no online printer provides: 0.2 mm nozzle
+- **CRITICAL** `SKU_BACKORDER_DEFICIT` BRK-CF-01: 3 on hand vs 90 open orders; 87 customer unit(s) are waiting on the print queue
+- **CRITICAL** `SKU_BACKORDER_DEFICIT` MINI-PLA-06: 0 on hand vs 2 open orders; 2 customer unit(s) are waiting on the print queue
+- **HIGH** `FARM_CAPACITY_OVERLOAD` farm capacity overload: 1 urgent job(s) would finish after their lead time (BRK-CF-01)
+- **HIGH** `SKU_STOCKOUT_IMMINENT` GASKET-TPU-04: 1.2 days of supply is below the 2 day lead time; it will stock out before a reprint lands
+- **HIGH** `SKU_STOCKOUT_IMMINENT` GEAR-PAHT-02: 2.7 days of supply is below the 6 day lead time; it will stock out before a reprint lands
+- **MEDIUM** `SKU_REORDER_TRIGGER` CLIP-PETG-03: 4.0 days of supply is below lead time + safety stock (5 days); queue 1 plate(s)
+
+## Delta since baseline
+
+baseline run: 27 finding(s) recorded as NEW; no prior state
+
+exit_code 3 (fail-on=medium)
+
+---
+
+SCOPE_NOTE: 100% offline, local, read-only inspection of the .3mf / .gcode.3mf / .gcode files and the spool, order and printer tables you supply. No network request is made (no Bambu Cloud, MQTT, Moonraker, Klipper, OctoPrint or PrusaLink call), no G-code is sent, no print is started, stopped or heated, and it never modifies or overwrites any .3mf or .gcode file in place; --queue-csv only writes a new CSV and refuses .3mf / .gcode targets and any input path. Thermal and structural findings are heuristic checks of slicer metadata, not mechanical-engineering certification and not a substitute for hardware fire-safety protection (thermal-runaway cut-offs, smoke / heat detection, an unattended-print policy). Cost, margin and reorder figures are arithmetic on the numbers you supply, not financial, tax or accounting advice. Credentials, API keys and printer LAN access codes are refused and never read or echoed.
+
+---
 ````

@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Print Farm &amp; Slicer Queue Ops — Grok Bot Agent Template | BotAppStore.com</title>
+  <meta name="description" content="Read-only, offline 3D print farm auditor for Grok Bot ($29 in SOL): audits OrcaSlicer, Bambu Studio and PrusaSlicer .3mf / .gcode files for nozzle, temperature, infill and enclosure safety (PLA-CF, PAHT-CF, PETG, TPU), tracks filament spool BOM and drying hygiene, computes per-part unit economics and margins, and schedules multi-printer production queues from storefront SKU velocity." />
+  <link rel="canonical" href="https://botappstore.com/bots/print-farm-ops.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#070a10" />
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="BotAppStore.com" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="3D Print Farm &amp; Slicer Queue Ops — Grok Bot Agent Template | BotAppStore.com" />
+  <meta property="og:description" content="Read-only, offline 3D print farm auditor for Grok Bot ($29 in SOL): audits OrcaSlicer, Bambu Studio and PrusaSlicer .3mf / .gcode files for nozzle, temperature, infill and enclosure safety (PLA-CF, PAHT-CF, PETG, TPU), tracks filament spool BOM and drying hygiene, computes per-part unit economics and margins, and schedules multi-printer production queues from storefront SKU velocity." />
+  <meta property="og:url" content="https://botappstore.com/bots/print-farm-ops.html" />
+  <meta property="og:image" content="https://botappstore.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="3D Print Farm &amp; Slicer Queue Ops on BotAppStore.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@WattCoin2026" />
+  <meta name="twitter:title" content="3D Print Farm &amp; Slicer Queue Ops — Grok Bot Agent Template | BotAppStore.com" />
+  <meta name="twitter:description" content="Read-only, offline 3D print farm auditor for Grok Bot ($29 in SOL): audits OrcaSlicer, Bambu Studio and PrusaSlicer .3mf / .gcode files for nozzle, temperature, infill and enclosure safety (PLA-CF, PAHT-CF, PETG, TPU), tracks filament spool BOM and drying hygiene, computes per-part unit economics and margins, and schedules multi-printer production queues from storefront SKU velocity." />
+  <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
+  <meta name="twitter:image:alt" content="3D Print Farm &amp; Slicer Queue Ops on BotAppStore.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Catalog Specification" />
+  <link rel="alternate" type="text/plain" href="/llms-full.txt" title="LLM Full Catalog &amp; Sample Reports" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .spec-table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .spec-table th, .spec-table td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
+    .spec-table th { color: var(--text-primary); background: var(--bg-surface); font-weight: 600; }
+    .spec-table td:first-child { white-space: nowrap; }
+    .spec-table tr:last-child td { border-bottom: 0; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "BotAppStore.com",
+          "item": "https://botappstore.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agent Catalog",
+          "item": "https://botappstore.com/#catalog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "3D Print Farm & Slicer Queue Ops",
+          "item": "https://botappstore.com/bots/print-farm-ops.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://botappstore.com/bots/print-farm-ops.html#software",
+      "name": "3D Print Farm & Slicer Queue Ops",
+      "alternateName": "Print Farm Ops: Slicer Safety, Spool BOM, Unit Economics & Multi-Printer Queue Scheduling",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Robotics & Manufacturing",
+      "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
+      "url": "https://botappstore.com/bots/print-farm-ops.html",
+      "description": "Read-only, offline 3D print farm auditor for Grok Bot ($29 in SOL): audits OrcaSlicer, Bambu Studio and PrusaSlicer .3mf / .gcode files for nozzle, temperature, infill and enclosure safety (PLA-CF, PAHT-CF, PETG, TPU), tracks filament spool BOM and drying hygiene, computes per-part unit economics and margins, and schedules multi-printer production queues from storefront SKU velocity.",
+      "sku": "print-farm-ops",
+      "softwareVersion": "1.0.0",
+      "downloadUrl": "https://botappstore.com/runtime/print_farm_ops.py",
+      "featureList": [
+        "OrcaSlicer, Bambu Studio and PrusaSlicer .3mf / .gcode.3mf / .gcode profile audit with hardened ZIP handling",
+        "Thermal and mechanical safety: nozzle and bed envelopes, abrasive filament on brass nozzles, enclosure needs, TPU volumetric speed, layer height, infill pattern, walls",
+        "Spool inventory, drying and desiccant hygiene, and filament depletion against the queued work",
+        "Per-part unit economics: filament, electricity, machine time and labour, with margin targets",
+        "Storefront SKU run-rate, days of supply and greedy multi-printer queue scheduling to CSV",
+        "--state --delta tracking of spool draw-down, SKU supply drops and slicer profile drift",
+        "No network requests; never contacts a printer or modifies a project file",
+        "Text, Markdown and JSON output with exit codes 0, 1, 2, 3, 10 and 11"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "29.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://botappstore.com/bots/print-farm-ops.html",
+        "sku": "print-farm-ops",
+        "description": "One-time $29.00 USD license settled in SOL, with 3 workspace-reset rebinds."
+      },
+      "publisher": {
+        "@id": "https://botappstore.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://botappstore.com/bots/print-farm-ops.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which slicers and file types does it read?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OrcaSlicer, Bambu Studio and PrusaSlicer / SuperSlicer projects (.3mf and .gcode.3mf) and plain .gcode files with slicer comment blocks. It reads nozzle diameter and type, layer height, wall loops, infill density and pattern, filament type, nozzle and bed temperatures, print time and filament grams per plate. 3MF archives are opened with hardened ZIP limits (entry count, per-entry and total size, compression ratio and path traversal), and an unsafe archive is rejected before parsing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it connect to my printers or start prints?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is 100% offline and read-only: no Bambu Cloud, MQTT, Moonraker, Klipper, OctoPrint or PrusaLink call, no G-code is sent, nothing is started, stopped or heated, and it never modifies a .3mf or .gcode file. The only file it creates besides the report and state file is the --queue-csv output, which refuses any input path or .3mf / .gcode target."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tables does it need for the spool, margin and queue buckets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Optional CSV or JSON files: --spools (spool_id, material, remaining_g, reorder_threshold_g, dried_at, cost per kg and more), --orders or --inventory (sku, plate_file, grams_per_unit, print_hours_per_unit, units_per_plate, on_hand, open_orders, daily_sales_velocity, lead_time_days, sale_price_usd, marketplace fee and shipping) and --printers (nozzle, enclosure, temperature limits, capacity hours). Header names are case-insensitive. Cost inputs that are missing are reported as findings instead of guessed silently."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the production queue scheduled?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SKUs are tiered by days of supply: BACKORDER, then STOCKOUT_RISK (days of supply below lead time), then SAFETY_REPLENISH. Plates are assigned greedily to the printer that finishes earliest, honouring sliced nozzle diameter, temperature limits and enclosure needs, and the result is written with --queue-csv. It does not enforce printer model, because plate G-code is slicer and printer specific. Jobs no online printer can run raise NO_COMPATIBLE_PRINTER_FOR_JOB."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does delta mode watch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "With --state PATH --delta the auditor stores spool levels, SKU days of supply and tier, and per-plate slicer settings hashes. Later runs report SPOOL_DEPLETED, SKU_DAYS_OF_SUPPLY_DROP and PROFILE_DRIFT_DETECTED (HIGH when filament type, nozzle temperature, nozzle diameter or nozzle type changed). The first run is a baseline, and a degraded run never overwrites the state."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does it refuse to do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It refuses printer credentials, API keys, seed phrases and LAN access codes in arguments and tables (exit 10, value never echoed); a slicer file that embeds a printhost API key raises EMBEDDED_PRINTER_CREDENTIAL without showing it. It will not connect to hardware, send G-code, bypass thermal-runaway protection or silently edit a project file. Findings are heuristic checks of slicer metadata, not engineering certification or a substitute for hardware fire-safety protection, and cost and margin figures are arithmetic on your inputs, not financial advice."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <div id="appRoot">
+    <!-- Top Static Architectural Specification Bar -->
+    <div class="top-ticker">
+      <div class="container top-ticker-inner">
+        <div class="status-cluster">
+          <span class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>EXECUTION RUNTIME: <strong>GROK BOT LINUX SANDBOX (<code>/workspace</code>)</strong></span>
+          </span>
+          <span>LIVE TEMPLATES: <strong>10 AVAILABLE (FREE + $19, $29 &amp; $39 SOL) · ZERO SUBSCRIPTIONS</strong></span>
+          <span>PRIVACY: <strong>LOCAL CREDENTIAL VAULT · ZERO DATA EXFILTRATION</strong></span>
+        </div>
+        <div class="ticker-links">
+          <a href="/llms.txt">llms.txt ↗</a>
+          <a href="/#catalog">Agent Catalog</a>
+          <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer">Install Free Utility ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky Header -->
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a href="/" class="brand-logo">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="32,8 52,19 52,45 32,56 12,45 12,19" stroke="#38BDF8" stroke-width="3.5" stroke-linejoin="round" fill="#0C121E"/>
+              <path d="M20 24H44M20 40H44M32 16V48" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="24" y="24" width="16" height="16" rx="3" fill="#070A10" stroke="#F59E0B" stroke-width="3"/>
+              <circle cx="32" cy="32" r="3.5" fill="#38BDF8"/>
+            </svg>
+          </span>
+          <span>BotAppStore<span class="brand-domain">.com</span></span>
+          <span class="brand-tag">OSINT &amp; ROBOTICS</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Products (10 Live) ▾</button>
+            <div class="nav-dropdown-menu" role="menu">
+              <div class="nav-dropdown-label">LIVE OSINT, DEVSECOPS &amp; SHOP OPS AGENTS (10)</div>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/web-text-extractor.html"><span class="nav-dropdown-name">Web &amp; API Text Extractor</span><span class="nav-dropdown-badge nav-dropdown-badge-free">FREE</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/company-deep-dive.html"><span class="nav-dropdown-name">Company &amp; Competitor Deep-Dive Analyst</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/domain-infra-hygiene.html"><span class="nav-dropdown-name">Domain, TLS &amp; Email Auth Hygiene Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/mcp-config-auditor.html"><span class="nav-dropdown-name">MCP Server &amp; Tool-Permission Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/bot-skill-auditor.html"><span class="nav-dropdown-name">Bot &amp; Skill Security Auditor</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/sec-patent-watchdog.html"><span class="nav-dropdown-name">SEC &amp; Patent Watchdog Digest</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/social-hub-publisher.html"><span class="nav-dropdown-name">Social Hub Publisher</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/dependency-vuln-triage.html"><span class="nav-dropdown-name">Dependency Vulnerability Triage Bot</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/agent-council.html"><span class="nav-dropdown-name">Agent Council</span><span class="nav-dropdown-badge">$39 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/print-farm-ops.html"><span class="nav-dropdown-name">3D Print Farm &amp; Slicer Queue Ops</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-footer" role="menuitem" href="/#catalog">View All 10 Agents in Grid Catalog ↓</a>
+            </div>
+          </div>
+          <a href="/#catalog">Agent Catalog (10 Live)</a>
+          <a href="/#architecture">How It Works</a>
+          <a href="/#hardware-stack">Security &amp; Stack</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/llms.txt">llms.txt</a>
+        </nav>
+        <div class="nav-cta-group">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openCheckoutModal('print-farm-ops', this)">
+            Buy Print Farm Ops ($29 SOL)
+          </button>
+          <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            Install Free Utility →
+          </a>
+        </div>
+      </div>
+    </header>
+
+    
+
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="/">BotAppStore.com</a> &rarr; <a href="/#catalog">Agent Catalog</a> &rarr; <span>3D Print Farm &amp; Slicer Queue Ops</span>
+      </nav>
+      <section class="product-hero">
+        <div class="price-badge">&#9679; AVAILABLE NOW &middot; PHASE 2 LIVE &middot; $29 in SOL (ONE-TIME &middot; 3 REBINDS)</div>
+        <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">
+          <code>print-farm-ops</code> &middot; Category: Robotics &amp; Manufacturing / 3D Print Farm &amp; Slicer Queue Ops
+        </p>
+        <h1>3D Print Farm &amp; Slicer Queue Ops &mdash; Catch the wrong-temperature plate, the empty spool and the money-losing SKU before the printers run.</h1>
+        <p class="product-lede">Your OrcaSlicer, Bambu Studio and PrusaSlicer projects, your spool ledger and your storefront SKU table already hold the answers. This auditor reads them offline, checks nozzle, temperature, infill and enclosure safety for PLA-CF, PAHT-CF, PETG, TPU and more, tracks filament BOM and drying hygiene, prices every part (filament, power, machine, labour), and schedules the next production run across your printers from SKU sales velocity, across 4 deterministic buckets. It never contacts a printer and never edits a project file.</p>
+        <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
+          SKU: <code>print-farm-ops</code> &middot; Skills: <code>print-farm-ops-setup + print-farm-ops</code> &middot; Runtime: 2,165 lines stdlib Python &middot; Price: $29.00 USD one-time, settled in SOL
+        </p>
+        <div class="product-cta-row">
+          <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('print-farm-ops', this)">Buy License ($29 in SOL) &rarr;</button>
+          <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('print-farm-ops', this)">SKILL.md Preview</button>
+          <a href="#licensing-flow" class="btn btn-secondary btn--ghost" data-bot-share-link="print-farm-ops">Install in Grok Bot &rarr;</a>
+          <a href="#sample-output" class="btn btn-secondary btn--ghost">See Real Sample Audit</a>
+          <a href="/#card-print-farm-ops" class="btn btn-secondary btn--ghost">View in Homepage Catalog</a>
+        </div>
+      </section>
+
+      <section class="product-section" id="capabilities">
+        <h2>What It Does: The 4-Bucket Technical Breakdown</h2>
+        <ul>
+          <li><strong>Local-only inputs:</strong> OrcaSlicer, Bambu Studio and PrusaSlicer / SuperSlicer <code>.3mf</code> and <code>.gcode.3mf</code> projects, plain <code>.gcode</code>, and optional CSV / JSON spool, SKU and printer tables. 3MF archives are opened with hardened ZIP limits.</li>
+          <li><strong>4 deterministic audit buckets:</strong>
+            <ol>
+              <li><strong><code>.3mf</code> / <code>.gcode</code> Slicer Profile &amp; Thermal/Mechanical Safety Audit:</strong> nozzle and bed temperatures against each material's envelope and degradation limit (<code>THERMAL_RUNAWAY_OR_OUT_OF_RANGE</code>, <code>TEMP_MATERIAL_MISMATCH</code>), abrasive CF/GF filament on a brass nozzle or a nozzle under 0.4 mm (<code>ABRASIVE_FILAMENT_BRASS_NOZZLE</code>, <code>ABRASIVE_CLOG_RISK_SMALL_NOZZLE</code>), PAHT / PA / ABS on an open-frame printer (<code>ENCLOSURE_REQUIRED_OPEN_FRAME</code>), TPU volumetric speed, layer height against nozzle diameter, and weak infill pattern, thin walls or low infill on structural parts (<code>WEAK_INFILL_PATTERN_STRUCTURAL</code>, <code>STRUCTURAL_UNDER_WALLED</code>). Unsafe archives (<code>ARCHIVE_SAFETY_VIOLATION</code>) and embedded printer API keys (<code>EMBEDDED_PRINTER_CREDENTIAL</code>, value never shown) are flagged.</li>
+              <li><strong>Spool Inventory &amp; Moisture Hygiene:</strong> remaining grams against each material's queued demand with a scrap buffer (<code>SPOOL_INSUFFICIENT_FOR_QUEUE</code>, <code>SPOOL_LOW_STOCK</code>), drying cadence for hygroscopic spools such as PAHT-CF, PA, TPU and PETG (<code>HYGROSCOPIC_DRYING_OVERDUE</code>) and desiccant age (<code>DESICCANT_CHANGE_OVERDUE</code>).</li>
+              <li><strong>Unit Economics &amp; Per-Part BOM Margin Audit:</strong> filament, electricity, machine time and labour per unit, net of marketplace fee and shipping, with a gross-margin check (<code>SKU_NEGATIVE_MARGIN</code>, <code>SKU_CRITICAL_MARGIN_COMPRESSION</code>, <code>SKU_BELOW_TARGET_MARGIN</code>) and a table-versus-slice BOM comparison (<code>PLATE_BOM_MISMATCH</code>).</li>
+              <li><strong>Storefront SKU Run-Rate &amp; Multi-Printer Queue Scheduler:</strong> days of supply from sales velocity, lead time and safety stock (<code>SKU_BACKORDER_DEFICIT</code>, <code>SKU_STOCKOUT_IMMINENT</code>, <code>SKU_REORDER_TRIGGER</code>), a greedy earliest-finish schedule across your printers honouring nozzle, temperature and enclosure limits (<code>NO_COMPATIBLE_PRINTER_FOR_JOB</code>, <code>FARM_CAPACITY_OVERLOAD</code>), written to a priority CSV with <code>--queue-csv</code>.</li>
+            </ol>
+          </li>
+          <li><strong>Recurring delta mode (<code>--state PATH --delta</code>):</strong> tracks spool draw-down (<code>SPOOL_DEPLETED</code>), SKU supply drops (<code>SKU_DAYS_OF_SUPPLY_DROP</code>) and slicer profile drift (<code>PROFILE_DRIFT_DETECTED</code>) between runs, suited to a scheduled <code>UpdateRoutine</code>.</li>
+        </ul>
+      </section>
+
+      <section class="product-section" id="architecture">
+        <h2>How It Runs (5 Steps)</h2>
+        <div class="step-flow">
+          <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body"><code>.wattcoin_license_check.py --sku print-farm-ops</code> must return <code>"state": "OK"</code> before every run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body"><code>sha256sum -c</code> on <code>print_farm_ops.py</code> and <code>bot_common.py</code>; any mismatch stops the run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>3 · Parse projects &amp; tables</span></div><div class="step-box-body"><code>--3mf</code> / <code>--dir</code> slicer files, then <code>--spools</code>, <code>--orders</code> and <code>--printers</code>; credentials in tables are refused.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>4 · 4-bucket audit &amp; schedule</span></div><div class="step-box-body">Slicer safety, spool hygiene, unit economics and SKU run-rate checks, then a greedy multi-printer queue.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>5 · Report, queue, diff</span></div><div class="step-box-body">Text/Markdown/JSON report, <code>--queue-csv</code>, optional <code>--state --delta</code> events, and a fail-closed exit code.</div></div>
+        </div>
+      </section>
+
+      <section class="product-section" id="sample-output">
+        <h2>Real Sample Audit: 4-printer composite &amp; functional-part farm</h2>
+        <p>Excerpt from <code>--format markdown</code> on a synthetic farm (Bambu X1C, P1S, A1 and a Voron 2.4; 8 plates, 6 spools, 6 SKUs). All spools, prices and plates are fabricated for illustration and no printer was contacted. Output is unedited; omitted parts are marked. Exit <code>3</code>: the worst finding is CRITICAL at the default <code>--fail-on medium</code>.</p>
+        <pre class="code-pre"># 3D Print Farm &amp; Slicer Queue Ops Report
+
+```
+snapshot   2026-10-27 00:00:00 UTC | tool=print-farm-ops
+endpoints  local-files
+```
+
+**Inputs:** 8 slicer file(s) / 8 plate(s), 6 spool(s), 6 SKU(s), 4 printer(s)
+
+## Summary
+
+| critical | high | medium | low | info | worst |
+|---|---|---|---|---|---|
+| 9 | 11 | 6 | 1 | 0 | CRITICAL |
+
+## Bucket 1 - Slicer profile &amp; thermal / mechanical safety
+
+| file | plate | slicer | printer | nozzle | material | layer | walls | infill | N/B C | hrs | g |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| bracket_placf.gcode.3mf | 1 | BambuStudio | Bambu Lab X1 Carbon | 0.40 hardened_steel | PLA-CF | 0.20 | 2 | 10% grid | 230/55 | 3.00 | 62.0 |
+| calibration_pla_hot.gcode.3mf | 1 | BambuStudio | Voron 2.4 350 | 0.40 tungsten_carbide | PLA | 0.20 | 3 | 20% gyroid | 265/55 | 0.60 | 6.0 |
+| fanduct_placf_a1.gcode.3mf | 1 | BambuStudio | Bambu Lab A1 | 0.40 brass | PLA-CF | 0.20 | 3 | 20% gyroid | 230/55 | 1.80 | 21.0 |
+| gear_pahtcf.gcode.3mf | 1 | BambuStudio | Bambu Lab P1S | 0.60 hardened_steel | PAHT-CF | 0.28 | 4 | 30% gyroid | 210/55 | 5.50 | 88.0 |
+
+[... 4 more plate rows omitted ...]
+
+- **CRITICAL** `ABRASIVE_FILAMENT_BRASS_NOZZLE` fanduct_placf_a1.gcode.3mf: abrasive filament PLA-CF sliced for a brass nozzle (slicer file); it will wear through it, use a hardened / tungsten nozzle
+- **CRITICAL** `THERMAL_RUNAWAY_OR_OUT_OF_RANGE` calibration_pla_hot.gcode.3mf: PLA sliced at 265 C exceeds its 250 C degradation limit (charring, heat-creep jams, fumes)
+- **HIGH** `STRUCTURAL_UNDER_WALLED` bracket_placf.gcode.3mf: structural part is under-built: infill 10% (&lt;15%), 2 wall loops (&lt;3)
+- **HIGH** `TEMP_MATERIAL_MISMATCH` gear_pahtcf.gcode.3mf: PAHT-CF sliced with nozzle 210 C (envelope 270-315 C) and bed 55 C (envelope 80-115 C); the filament preset was probably not switched
+- **HIGH** `WEAK_INFILL_PATTERN_STRUCTURAL` bracket_placf.gcode.3mf: grid infill on a structural part: the nozzle re-crosses infill lines and shear strength is poor; use gyroid, cross_hatch or cubic
+- **MEDIUM** `ABRASIVE_CLOG_RISK_SMALL_NOZZLE` pulley_pa6cf.gcode.3mf: heavily filled PA6-CF on a 0.4 mm nozzle clogs often; a 0.6 mm hardened nozzle is recommended
+- **MEDIUM** `TPU_HIGH_VOLUMETRIC_SPEED` gasket_tpu.gcode.3mf: TPU max volumetric speed 9 mm3/s exceeds 6.0 (extruder gear buckling / jams)
+
+## Bucket 2 - Spool inventory, moisture hygiene &amp; BOM depletion
+
+[... spool ledger and per-material demand tables omitted ...]
+
+- **CRITICAL** `SPOOL_INSUFFICIENT_FOR_QUEUE` PA6-CF: queue needs 27 g (incl. scrap buffer) but 0 g on hand across 0 spool(s); short by 27 g
+- **CRITICAL** `SPOOL_INSUFFICIENT_FOR_QUEUE` PAHT-CF: queue needs 458 g (incl. scrap buffer) but only 310 g on hand across 1 spool(s); short by 148 g
+- **CRITICAL** `SPOOL_INSUFFICIENT_FOR_QUEUE` PLA-CF: queue needs 1634 g (incl. scrap buffer) but only 520 g on hand across 1 spool(s); short by 1114 g
+- **HIGH** `HYGROSCOPIC_DRYING_OVERDUE` spool S-PAHT-1 (PAHT-CF) drying overdue: last dried 26 days ago (limit 7 days); wet filament strings, bubbles and loses strength
+- **HIGH** `HYGROSCOPIC_DRYING_OVERDUE` spool S-TPU-1 (TPU) drying overdue: no dried_at recorded (limit 7 days); wet filament strings, bubbles and loses strength
+- **HIGH** `SPOOL_LOW_STOCK` spool S-PETG-2 (Polymaker PETG) has 130 g left (&lt;= 150 g floor); swap before a long print
+- **LOW** `DESICCANT_CHANGE_OVERDUE` spool S-PAHT-1 desiccant last changed 87 days ago (limit 60)
+
+## Bucket 3 - Unit economics &amp; per-part BOM
+
+| sku | material | filament | power | machine | labor | COGS | price | net rev | profit | margin |
+|---|---|---|---|---|---|---|---|---|---|---|
+| BRK-CF-01 | PLA-CF | $0.73 | $0.03 | $0.78 | $2.20 | $3.73 | $18.00 | $10.26 | $6.53 | 36.3% |
+| GEAR-PAHT-02 | PAHT-CF | $4.35 | $0.07 | $2.29 | $3.67 | $10.38 | $24.00 | $16.08 | $5.70 | 23.8% |
+| CLIP-PETG-03 | PETG | $0.06 | $0.00 | $0.11 | $1.10 | $1.28 | $7.50 | $6.53 | $5.25 | 69.9% |
+| GASKET-TPU-04 | TPU | $0.15 | $0.02 | $0.45 | $1.47 | $2.08 | $4.50 | $3.92 | $1.83 | 40.7% |
+| VASE-PLA-05 | PLA | $1.88 | $0.20 | $5.75 | $1.83 | $9.65 | $16.00 | $8.72 | -$0.93 | -5.8% |
+| MINI-PLA-06 | PLA | $0.36 | $0.10 | $3.54 | $1.83 | $5.83 | $12.00 | $6.44 | $0.61 | 5.1% |
+
+[... unlinked-plate cost table omitted ...]
+
+- **CRITICAL** `SKU_NEGATIVE_MARGIN` VASE-PLA-05 loses $0.93 per unit (COGS $9.65 vs net revenue $8.72)
+- **HIGH** `SKU_CRITICAL_MARGIN_COMPRESSION` GEAR-PAHT-02 gross margin 23.8% is under 25% (profit $5.70 on $24.00)
+- **HIGH** `SKU_CRITICAL_MARGIN_COMPRESSION` MINI-PLA-06 gross margin 5.1% is under 25% (profit $0.61 on $12.00)
+- **MEDIUM** `PLATE_BOM_MISMATCH` GASKET-TPU-04 vs gasket_tpu.gcode.3mf#1: hours/unit table 0.50 vs sliced 0.37 (-27%); costs and queue hours use the table values
+- **MEDIUM** `SKU_BELOW_TARGET_MARGIN` BRK-CF-01 gross margin 36.3% is below the 45.0% target
+- **MEDIUM** `SKU_BELOW_TARGET_MARGIN` GASKET-TPU-04 gross margin 40.7% is below the 45.0% target
+
+## Bucket 4 - SKU run-rate &amp; multi-printer queue
+
+[... run-rate table and printer load table omitted ...]
+
+Scheduled queue (greedy earliest-finish):
+
+| # | tier | sku | material | plates | units | printer | hrs | grams | COGS | margin | days supply |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 1_BACKORDER | BRK-CF-01 | PLA-CF | 11 | 44 | voron-01 | 33.0 | 709 | $3.73 | 36.3% | 0.0 |
+| 1 | 1_BACKORDER | BRK-CF-01 | PLA-CF | 14 | 55 | x1c-01 | 42.0 | 903 | $3.73 | 36.3% | 0.0 |
+| 2 | 1_BACKORDER | MINI-PLA-06 | PLA | 5 | 5 | UNASSIGNED | 20.0 | 94 | $5.83 | 5.1% | 0.0 |
+| 3 | 2_STOCKOUT_RISK | GASKET-TPU-04 | TPU | 1 | 3 | a1-01 | 3.0 | 25 | $2.08 | 40.7% | 1.2 |
+| 4 | 2_STOCKOUT_RISK | GEAR-PAHT-02 | PAHT-CF | 5 | 10 | p1s-01 | 27.5 | 458 | $10.38 | 23.8% | 2.7 |
+| 5 | 3_SAFETY_REPLENISH | CLIP-PETG-03 | PETG | 1 | 6 | a1-01 | 1.5 | 31 | $1.28 | 69.9% | 4.0 |
+
+- **CRITICAL** `NO_COMPATIBLE_PRINTER_FOR_JOB` MINI-PLA-06 (PLA) needs [0.2 mm nozzle, 215 C hotend, 55 C bed] but no online printer provides: 0.2 mm nozzle
+- **CRITICAL** `SKU_BACKORDER_DEFICIT` BRK-CF-01: 3 on hand vs 90 open orders; 87 customer unit(s) are waiting on the print queue
+- **CRITICAL** `SKU_BACKORDER_DEFICIT` MINI-PLA-06: 0 on hand vs 2 open orders; 2 customer unit(s) are waiting on the print queue
+- **HIGH** `FARM_CAPACITY_OVERLOAD` farm capacity overload: 1 urgent job(s) would finish after their lead time (BRK-CF-01)
+- **HIGH** `SKU_STOCKOUT_IMMINENT` GASKET-TPU-04: 1.2 days of supply is below the 2 day lead time; it will stock out before a reprint lands
+- **HIGH** `SKU_STOCKOUT_IMMINENT` GEAR-PAHT-02: 2.7 days of supply is below the 6 day lead time; it will stock out before a reprint lands
+- **MEDIUM** `SKU_REORDER_TRIGGER` CLIP-PETG-03: 4.0 days of supply is below lead time + safety stock (5 days); queue 1 plate(s)
+
+## Delta since baseline
+
+baseline run: 27 finding(s) recorded as NEW; no prior state
+
+exit_code 3 (fail-on=medium)
+
+---
+
+[... SCOPE_NOTE omitted (printed in full with every report) ...]</pre>
+      </section>
+
+      <section class="product-section" id="cli-reference">
+        <h2>CLI Reference: Flags &amp; Exit Codes</h2>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>Flag</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>PATH ...</code> / <code>--3mf PATH</code></td><td>Slicer files (<code>.3mf</code>, <code>.gcode.3mf</code>, <code>.gcode</code>) or directories; <code>--3mf</code> audits one file.</td></tr>
+              <tr><td><code>--dir DIR</code></td><td>Recursively discover slicer files (max 500; skips <code>node_modules</code>, <code>.git</code>, virtualenvs, <code>dist</code>, <code>build</code>).</td></tr>
+              <tr><td><code>--spools PATH</code></td><td>Spool ledger (CSV or JSON): material, remaining grams, reorder threshold, drying and desiccant dates, cost per kg.</td></tr>
+              <tr><td><code>--orders PATH</code> / <code>--inventory PATH</code></td><td>Storefront SKU table: plate file, grams and hours per unit, on-hand, open orders, daily velocity, lead time, price, fees, shipping.</td></tr>
+              <tr><td><code>--printers PATH</code></td><td>Printer table: nozzle diameter and type, enclosure, temperature limits, capacity hours, loaded materials.</td></tr>
+              <tr><td><code>--kwh-rate</code> / <code>--printer-watts</code></td><td>Electricity price per kWh and average printer draw for the power cost line.</td></tr>
+              <tr><td><code>--machine-rate-hr</code> / <code>--labor-rate-hr</code></td><td>Machine overhead and labour USD per hour for the cost stack.</td></tr>
+              <tr><td><code>--failure-rate-pct</code></td><td>Scrap / failed-print allowance added to filament demand and cost.</td></tr>
+              <tr><td><code>--margin-target-pct</code></td><td>Gross-margin target (0&ndash;100) for <code>SKU_BELOW_TARGET_MARGIN</code>.</td></tr>
+              <tr><td><code>--queue-csv PATH</code></td><td>Write the scheduled multi-printer queue as a new CSV (refuses inputs and <code>.3mf</code> / <code>.gcode</code> targets).</td></tr>
+              <tr><td><code>--state PATH --delta</code></td><td>Store a snapshot (<code>0600</code>) and report events, new, changed and resolved findings against it. Degraded runs never overwrite it.</td></tr>
+              <tr><td><code>--format {text,markdown,json}</code> / <code>--json</code> / <code>--out PATH</code></td><td>Report format and destination.</td></tr>
+              <tr><td><code>--fail-on {none,info,low,medium,high,critical}</code></td><td>Exit threshold (default <code>medium</code>).</td></tr>
+              <tr><td><code>--now ISO</code></td><td>Override the report clock for reproducible runs and drying-age maths.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="spec-table-wrap" style="margin-top: 18px;">
+          <table class="spec-table">
+            <thead><tr><th>Exit code</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>0</code></td><td>Completed with nothing at or above <code>--fail-on</code>.</td></tr>
+              <tr><td><code>1</code></td><td>Worst finding is MEDIUM (or LOW/INFO with a lower threshold).</td></tr>
+              <tr><td><code>2</code></td><td>Worst finding is HIGH.</td></tr>
+              <tr><td><code>3</code></td><td>Worst finding is CRITICAL.</td></tr>
+              <tr><td><code>10</code></td><td>Bad input or refusal: missing file, bad flag, <code>--delta</code> without <code>--state</code>, a credential or access code in arguments or tables.</td></tr>
+              <tr><td><code>11</code></td><td>Degraded: unreadable, malformed or unsafe input, or nothing to audit. Never a clean result.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="product-section" id="refusal-boundaries">
+        <h2>Mandatory Refusal Boundaries</h2>
+        <ul>
+          <li><strong>Offline and read-only.</strong> No network request: no Bambu Cloud, MQTT, Moonraker, Klipper, OctoPrint or PrusaLink call. It never sends G-code, starts, stops or heats a printer, and never modifies or overwrites a <code>.3mf</code> or <code>.gcode</code> file. <code>--queue-csv</code> only writes a new CSV.</li>
+          <li><strong>No credentials.</strong> API keys, seed phrases and printer LAN access codes in arguments or tables are refused (exit <code>10</code>) and never echoed. A slicer file with an embedded printer key raises <code>EMBEDDED_PRINTER_CREDENTIAL</code> without showing the value.</li>
+          <li><strong>Your files only.</strong> It audits projects and tables you own or are authorised to review, and will not bypass thermal-runaway protection or recommend running unattended against a CRITICAL finding.</li>
+          <li><strong>Heuristic, not certification.</strong> Thermal and structural findings are checks of slicer metadata, not mechanical-engineering certification and not a substitute for hardware fire-safety protection. Cost, margin and reorder figures are arithmetic on the numbers you supply, not financial, tax or accounting advice.</li>
+        </ul>
+        <p style="font-size: 13px; color: var(--text-muted);"><strong>Scope note (printed with every report):</strong> 100% offline, local, read-only inspection of slicer files and the spool, order and printer tables you supply; no network request, no G-code sent, no print started, stopped or heated, no project file modified; credentials and printer access codes refused; heuristic checks; not engineering certification or financial advice.</p>
+      </section>
+
+      <section class="product-section" id="runtime-integrity">
+        <h2>Pinned Runtime Hashes (SHA-256 Verified)</h2>
+        <ul>
+          <li><a href="/runtime/print_farm_ops.py"><code>https://botappstore.com/runtime/print_farm_ops.py</code></a> &mdash; 2,165 lines &mdash; SHA-256: <code>29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669</code></li>
+          <li><a href="/runtime/bot_common.py"><code>https://botappstore.com/runtime/bot_common.py</code></a> &mdash; 274 lines &mdash; SHA-256: <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code></li>
+        </ul>
+        <pre class="code-pre">echo "29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669  print_farm_ops.py" | sha256sum -c -
+echo "d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526  bot_common.py" | sha256sum -c -</pre>
+        <p>The setup and audit skills verify both digests with <code>sha256sum -c</code> before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 393 unit tests.</p>
+      </section>
+
+      <section class="product-section" id="faq">
+        <h2>Technical FAQ</h2>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>Which slicers and file types does it read?</summary><div class="faq-answer">OrcaSlicer, Bambu Studio and PrusaSlicer / SuperSlicer projects (.3mf and .gcode.3mf) and plain .gcode files with slicer comment blocks. It reads nozzle diameter and type, layer height, wall loops, infill density and pattern, filament type, nozzle and bed temperatures, print time and filament grams per plate. 3MF archives are opened with hardened ZIP limits (entry count, per-entry and total size, compression ratio and path traversal), and an unsafe archive is rejected before parsing.</div></details>
+          <details class="faq-item"><summary>Does it connect to my printers or start prints?</summary><div class="faq-answer">No. It is 100% offline and read-only: no Bambu Cloud, MQTT, Moonraker, Klipper, OctoPrint or PrusaLink call, no G-code is sent, nothing is started, stopped or heated, and it never modifies a .3mf or .gcode file. The only file it creates besides the report and state file is the --queue-csv output, which refuses any input path or .3mf / .gcode target.</div></details>
+          <details class="faq-item"><summary>What tables does it need for the spool, margin and queue buckets?</summary><div class="faq-answer">Optional CSV or JSON files: --spools (spool_id, material, remaining_g, reorder_threshold_g, dried_at, cost per kg and more), --orders or --inventory (sku, plate_file, grams_per_unit, print_hours_per_unit, units_per_plate, on_hand, open_orders, daily_sales_velocity, lead_time_days, sale_price_usd, marketplace fee and shipping) and --printers (nozzle, enclosure, temperature limits, capacity hours). Header names are case-insensitive. Cost inputs that are missing are reported as findings instead of guessed silently.</div></details>
+          <details class="faq-item"><summary>How is the production queue scheduled?</summary><div class="faq-answer">SKUs are tiered by days of supply: BACKORDER, then STOCKOUT_RISK (days of supply below lead time), then SAFETY_REPLENISH. Plates are assigned greedily to the printer that finishes earliest, honouring sliced nozzle diameter, temperature limits and enclosure needs, and the result is written with --queue-csv. It does not enforce printer model, because plate G-code is slicer and printer specific. Jobs no online printer can run raise NO_COMPATIBLE_PRINTER_FOR_JOB.</div></details>
+          <details class="faq-item"><summary>What does delta mode watch?</summary><div class="faq-answer">With --state PATH --delta the auditor stores spool levels, SKU days of supply and tier, and per-plate slicer settings hashes. Later runs report SPOOL_DEPLETED, SKU_DAYS_OF_SUPPLY_DROP and PROFILE_DRIFT_DETECTED (HIGH when filament type, nozzle temperature, nozzle diameter or nozzle type changed). The first run is a baseline, and a degraded run never overwrites the state.</div></details>
+          <details class="faq-item"><summary>What does it refuse to do?</summary><div class="faq-answer">It refuses printer credentials, API keys, seed phrases and LAN access codes in arguments and tables (exit 10, value never echoed); a slicer file that embeds a printhost API key raises EMBEDDED_PRINTER_CREDENTIAL without showing it. It will not connect to hardware, send G-code, bypass thermal-runaway protection or silently edit a project file. Findings are heuristic checks of slicer metadata, not engineering certification or a substitute for hardware fire-safety protection, and cost and margin figures are arithmetic on your inputs, not financial advice.</div></details>
+        </div>
+      </section>
+
+      <section class="product-section" id="licensing-flow">
+        <h2>Licensing &amp; Setup</h2>
+        <p>$29.00 USD one-time, settled on-chain in SOL, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>print-farm-ops-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates your agent key (100 WATT starter grant), binds your <code>wcl_...</code> code through stdin, runs a self-check audit on a built-in unsafe spool and SKU table, and offers a first audit of your own farm plus an optional scheduled queue and spool delta routine. The license code is never printed in chat.</p>
+        <div class="product-cta-row">
+          <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('print-farm-ops', this)">Buy License ($29 in SOL) &rarr;</button>
+          <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('print-farm-ops', this)">SKILL.md Preview</button>
+        </div>
+      </section>
+    </div>
+  </main>
+<!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="disclaimer-box">
+          <strong>Operational &amp; Regulatory Disclaimer:</strong> BotAppStore templates execute locally inside your isolated Grok Bot Linux environment (<code>/workspace</code>) and compile primary-source public records and read-only hardware telemetry only. Nothing on BotAppStore.com constitutes financial, investment, legal, or engineering certification advice. OSINT templates never issue equity buy/sell recommendations, and robotics/shop templates never transmit unconfirmed physical actuation commands.
+        </div>
+
+        <div class="footer-grid">
+          <div>
+            <div class="brand-logo" style="margin-bottom: 8px;">
+              <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="32,8 52,19 52,45 32,56 12,45 12,19" stroke="#38BDF8" stroke-width="3.5" stroke-linejoin="round" fill="#0C121E"/>
+                  <rect x="24" y="24" width="16" height="16" rx="3" fill="#070A10" stroke="#F59E0B" stroke-width="3"/>
+                  <circle cx="32" cy="32" r="3.5" fill="#38BDF8"/>
+                </svg>
+              </span>
+              <span>BotAppStore<span class="brand-domain">.com</span></span>
+            </div>
+            <p style="max-width: 460px; color: var(--text-muted); font-size: 13px;">
+              Deterministic AI Agents, OSINT Trackers &amp; Physical Robotics Workflows for Grok Bot. One-time USD licensing, local <code>/workspace</code> execution, and strict refusal boundaries.
+            </p>
+          </div>
+
+          <div class="footer-links-list">
+            <a href="/bots/web-text-extractor.html">Web &amp; API Text Extractor (Free Utility) →</a>
+            <a href="/bots/company-deep-dive.html">Company &amp; Competitor Deep-Dive ($19 SOL) →</a>
+            <a href="/bots/domain-infra-hygiene.html">Domain, TLS &amp; Email Auth Hygiene Auditor ($19 SOL) →</a>
+            <a href="/bots/mcp-config-auditor.html">MCP Server &amp; Tool-Permission Auditor ($19 SOL) →</a>
+            <a href="/bots/dependency-vuln-triage.html">Dependency Vulnerability Triage ($29 SOL) →</a>
+            <a href="/bots/social-hub-publisher.html">Social Hub Publisher ($29 SOL) →</a>
+            <a href="/bots/bot-skill-auditor.html">Bot &amp; Skill Security Auditor ($29 SOL) →</a>
+            <a href="/bots/sec-patent-watchdog.html">SEC &amp; Patent Watchdog Digest ($29 SOL) →</a>
+            <a href="/bots/agent-council.html">Agent Council — Multi-Model Swarm Debate ($39 SOL) →</a>
+            <a href="/bots/print-farm-ops.html">3D Print Farm &amp; Slicer Queue Ops ($29 SOL) →</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/llms.txt">llms.txt ↗</a>
+            <a href="/llms-full.txt">llms-full.txt ↗</a>
+            <a href="/sitemap.xml">sitemap.xml ↗</a>
+            <a href="https://coinloader.com" target="_blank" rel="noopener noreferrer">CoinLoader.com (Solana Bots) ↗</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 BotAppStore.com · Built for Grok Bot</span>
+          <span>Zero-Dependency Static Storefront · Isolated <code>/workspace</code> Linux Execution</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Accessible Spec Inspection Modal (with 3 Real ARIA Tabs) -->
+  <div class="modal-backdrop" id="spec-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel" id="modalPanel">
+      <div class="modal-header">
+        <div>
+          <span class="phase-badge live" id="modal-badge">SPEC</span>
+          <h3 id="modalTitle" style="margin-top: 6px; font-size: 19px;">Agent Specification</h3>
+          <div class="skill-slug" id="modal-slug" style="margin-top: 2px;"></div>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close" aria-label="Close specification modal">ESC / Close ✕</button>
+      </div>
+
+      <!-- 3 Real ARIA Tabs Inside Modal -->
+      <div class="modal-tablist" role="tablist" aria-label="Agent specification sections">
+        <button
+          type="button"
+          class="modal-tab active"
+          id="modal-tab-spec"
+          role="tab"
+          aria-selected="true"
+          aria-controls="modal-pane-spec"
+          tabindex="0"
+          data-modal-tab="modal-pane-spec"
+        >
+          SKILL.md Specification
+        </button>
+        <button
+          type="button"
+          class="modal-tab"
+          id="modal-tab-exec"
+          role="tab"
+          aria-selected="false"
+          aria-controls="modal-pane-exec"
+          tabindex="-1"
+          data-modal-tab="modal-pane-exec"
+        >
+          Execution &amp; Data Sources
+        </button>
+        <button
+          type="button"
+          class="modal-tab"
+          id="modal-tab-refusal"
+          role="tab"
+          aria-selected="false"
+          aria-controls="modal-pane-refusal"
+          tabindex="-1"
+          data-modal-tab="modal-pane-refusal"
+        >
+          Refusal Boundaries
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-pane active" id="modal-pane-spec" role="tabpanel" aria-labelledby="modal-tab-spec"></div>
+        <div class="modal-pane" id="modal-pane-exec" role="tabpanel" aria-labelledby="modal-tab-exec" hidden></div>
+        <div class="modal-pane" id="modal-pane-refusal" role="tabpanel" aria-labelledby="modal-tab-refusal" hidden></div>
+      </div>
+
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- On-Chain SOL Checkout Modal (#checkout-modal) -->
+  <div class="modal-backdrop" id="checkout-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <div class="modal-panel checkout-modal-panel">
+      <div class="modal-header">
+        <div>
+          <span class="phase-badge live" id="checkout-modal-badge">● ON-CHAIN SOL CHECKOUT · NON-CUSTODIAL</span>
+          <h3 id="checkout-modal-title" style="margin-top: 6px; font-size: 19px;">3D Print Farm &amp; Slicer Queue Ops — $29 in SOL</h3>
+          <div class="skill-slug" id="checkout-modal-slug" style="margin-top: 2px;">sku: print-farm-ops · One-Time License · 3 Workspace-Reset Rebinds</div>
+        </div>
+        <button type="button" class="modal-close-btn" id="checkout-modal-close">ESC / Close ✕</button>
+      </div>
+
+      <div class="modal-body checkout-modal-body">
+        <!-- Saved License Banner (shown if localStorage has a purchased license for this SKU) -->
+        <div class="saved-license-banner" id="checkout-saved-banner" hidden>
+          <div class="saved-license-info">
+            <strong>✓ Saved License Found in This Browser</strong>
+            <span id="checkout-saved-summary">Order ord_...</span>
+          </div>
+          <div class="saved-license-actions">
+            <button type="button" class="btn btn-primary btn-sm" id="checkout-view-saved-btn">View Saved License →</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="checkout-back-to-quote-btn" hidden>New Purchase Quote</button>
+            <button type="button" class="mini-copy-btn danger-btn" id="checkout-clear-saved-btn" title="Remove saved license from this browser">Clear Saved</button>
+          </div>
+        </div>
+
+        <!-- VIEW 1: LIVE SOL QUOTE & PAYMENT VERIFICATION -->
+        <div id="checkout-step-pay">
+          <!-- Quote Status / Loading / Error Bar -->
+          <div class="checkout-status-bar" id="checkout-quote-status" role="status" aria-live="polite">
+            <span id="checkout-quote-status-text">Fetching live SOL/USD quote from WattCoin Registry…</span>
+            <button type="button" class="mini-copy-btn" id="checkout-refresh-btn">Refresh Quote ↻</button>
+          </div>
+
+          <!-- Step 1 Box: Send SOL -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP 1 · SEND EXACT SOL AMOUNT TO TREASURY</span>
+              <span id="checkout-timer-pill" class="timer-pill">TTL: <strong id="checkout-timer-display">--:--</strong></span>
+            </div>
+
+            <div class="checkout-quote-grid">
+              <div class="quote-metric">
+                <span class="quote-label">License Price (One-Time)</span>
+                <div class="quote-val-primary" id="checkout-price-usd">$29.00 <small>USD</small></div>
+                <div class="quote-sub" id="checkout-rate-display">SOL/USD rate loading…</div>
+              </div>
+              <div class="quote-metric">
+                <span class="quote-label">Order ID &amp; Slippage Tolerance</span>
+                <div class="quote-val-mono" id="checkout-order-id-display">—</div>
+                <div class="quote-sub">3% slippage with memo · Exact match without memo</div>
+              </div>
+            </div>
+
+            <!-- Exact SOL Amount Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Exact Amount to Send (SOL)</span>
+                <span class="lamport-tag-hint">Unique 4-digit order tag: <code id="checkout-lamport-tag">----</code> lamports</span>
+              </div>
+              <div class="checkout-copy-box highlight">
+                <div>
+                  <code class="sol-amount-code" id="checkout-amount-sol">—</code>
+                  <span class="sol-unit">SOL</span>
+                  <span class="lamports-sub" id="checkout-amount-lamports"></span>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" id="checkout-copy-amount-btn" disabled>
+                  Copy Exact SOL Amount
+                </button>
+              </div>
+              <p class="checkout-field-help">
+                <strong>Why the exact 9 decimals matter:</strong> The last 4 digits (<code id="checkout-lamport-tag-inline">----</code> lamports, &lt;$0.001) uniquely identify your order on-chain so payment verification succeeds even if your wallet does not attach an SPL Memo.
+              </p>
+            </div>
+
+            <!-- Recipient Treasury Wallet Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Recipient Treasury Wallet (Solana Mainnet)</span>
+                <span>Official WattCoin Treasury</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-recipient-wallet">Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-wallet-btn">Copy Wallet</button>
+              </div>
+            </div>
+
+            <!-- Optional SPL Memo Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>SPL Memo (Optional if sending exact SOL amount above)</span>
+                <span>Enables 3% slippage tolerance</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-memo">—</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-memo-btn" disabled>Copy Memo</button>
+              </div>
+            </div>
+
+            <!-- Solana Pay URI + Optional Sender Wallet Binding -->
+            <div class="checkout-wallet-actions">
+              <a id="checkout-solana-pay-btn" class="btn btn-secondary btn-sm" hidden>
+                Open in Solana Wallet (solana: URI) ↗
+              </a>
+              <details class="checkout-optional-details">
+                <summary>Optional: Bind quote to your sender wallet address</summary>
+                <div class="optional-wallet-row">
+                  <input
+                    type="text"
+                    id="checkout-buyer-wallet-input"
+                    class="checkout-input"
+                    placeholder="Your sender Solana address (Base58, optional)"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <button type="button" class="btn btn-secondary btn-sm" id="checkout-bind-wallet-btn">
+                    Bind &amp; Refresh Quote
+                  </button>
+                </div>
+              </details>
+            </div>
+
+            <details class="checkout-optional-details checkout-card-onramp-details">
+              <summary>💳 Need SOL? How to buy with a Credit Card or Apple Pay (~60 sec)</summary>
+              <ol class="checkout-onramp-steps">
+                <li><strong>Install or open Phantom or Solflare</strong> (browser extension or mobile app).</li>
+                <li>Tap <strong>Buy → SOL</strong> inside your wallet and pay with <strong>Credit/Debit Card, Apple Pay, or Google Pay</strong> (via MoonPay, Stripe, Coinbase Pay, or Robinhood Connect).</li>
+                <li><strong>Send the exact quoted SOL amount</strong> (including the 4-digit lamport tag) to the recipient treasury address above&mdash;or click <strong>Open in Solana Wallet</strong>&mdash;then click <strong>Verify Payment &amp; Issue License &rarr;</strong>.</li>
+              </ol>
+              <p class="checkout-onramp-note">Non-custodial: the card purchase happens inside your own wallet. We never hold your funds or keys.</p>
+            </details>
+          </div>
+
+          <!-- Step 2 Box: Verify Transaction Signature -->
+          <div class="checkout-card-box" style="margin-top: 16px;">
+            <div class="checkout-step-header">
+              <span>STEP 2 · VERIFY ON-CHAIN TRANSACTION &amp; ISSUE LICENSE</span>
+              <span>CONFIRMED COMMITMENT</span>
+            </div>
+
+            <p class="checkout-field-help" style="margin-bottom: 10px;">
+              After sending SOL from Phantom, Solflare, Backpack, Ledger, or CLI, paste your Solana <strong>Transaction Signature</strong> (or full Solscan / Explorer TX link) below:
+            </p>
+
+            <div class="tx-verify-row">
+              <input
+                type="text"
+                id="checkout-tx-input"
+                class="checkout-input mono"
+                placeholder="Paste 88-char Solana TX signature or https://solscan.io/tx/..."
+                aria-label="Solana Transaction Signature or Solscan URL"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="button" class="btn btn-primary" id="checkout-verify-btn" disabled>
+                Verify Payment &amp; Issue License →
+              </button>
+            </div>
+
+            <div class="checkout-feedback" id="checkout-verify-feedback" role="alert" aria-live="polite" hidden></div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: FULFILLED LICENSE & TURN-1 ACTIVATION -->
+        <div id="checkout-step-fulfilled" hidden>
+          <div class="fulfilled-banner">
+            <div class="fulfilled-banner-title">✓ On-Chain SOL Payment Verified — License Issued</div>
+            <p>
+              <strong>Save your <code>wcl_...</code> license code now.</strong> It is a private bearer credential returned once at purchase and supports up to <strong>3 workspace-reset rebinds</strong>. We also saved a copy in this browser's local storage so you don't lose it if you close this tab.
+            </p>
+          </div>
+
+          <!-- Step A: Open Unlisted Grok Bot Template -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP A · IMPORT UNLISTED GROK BOT TEMPLATE</span>
+              <span>ONE CLICK</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-a-desc" style="margin-bottom: 10px;">
+              Click below to open the private <strong>Bot &amp; Skill Security Auditor</strong> template in Grok Bot and add it to your sidebar:
+            </p>
+            <div class="fulfilled-cta-row">
+              <a target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="fulfilled-open-template-btn">
+                Open Security Auditor in Grok Bot ↗
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-copy-template-btn">
+                Copy Unlisted Template URL
+              </button>
+            </div>
+            <div class="checkout-copy-box" style="margin-top: 10px;">
+              <code id="fulfilled-template-url">—</code>
+            </div>
+          </div>
+
+          <!-- Step B: Copy Private wcl_ License Code -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP B · YOUR PRIVATE LICENSE CODE (wcl_64-hex)</span>
+              <span>UP TO 3 REBINDS</span>
+            </div>
+            <div class="checkout-copy-box highlight" style="margin-top: 6px;">
+              <code id="fulfilled-license-code" class="license-code-text">—</code>
+              <button type="button" class="btn btn-primary btn-sm" id="fulfilled-copy-code-btn">
+                Copy License Code
+              </button>
+            </div>
+          </div>
+
+          <!-- Step C: Paste Turn-1 Activation Prompt -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP C · SEND THIS FIRST PROMPT IN GROK BOT</span>
+              <span>TURN-1 AUTO-SETUP</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-hint" style="margin-bottom: 8px;">
+              Paste this prompt on Turn 1 (or together with any <code>SKILL.md</code> or GitHub repo URL you want inspected):
+            </p>
+            <div class="checkout-copy-box">
+              <code id="fulfilled-activation-prompt">—</code>
+              <button type="button" class="mini-copy-btn" id="fulfilled-copy-prompt-btn">
+                Copy Prompt
+              </button>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+            </p>
+          </div>
+
+          <!-- Receipt Summary & Storage Controls -->
+          <div class="fulfilled-receipt-footer">
+            <div class="receipt-meta">
+              <span>Order: <code id="fulfilled-order-id">—</code></span>
+              <span>TX: <a target="_blank" rel="noopener noreferrer" id="fulfilled-solscan-link" style="color: var(--accent-cyan); text-decoration: underline;"><code id="fulfilled-tx-sig">—</code> ↗</a></span>
+            </div>
+            <div class="receipt-actions">
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-download-btn">
+                Download Receipt (.txt)
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-new-order-btn">
+                Buy Another License
+              </button>
+              <button type="button" class="mini-copy-btn danger-btn" id="fulfilled-clear-storage-btn">
+                Clear from Browser Storage
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="copy-toast" id="copy-toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
+
