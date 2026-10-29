@@ -6,6 +6,9 @@ any twitter:* meta (content attribute).
 Forbidden: the word SOL (\\bSOL\\b, case-insensitive; "Solana" is allowed)
 and the substring "WattCoin" (case-insensitive; covers handles and URLs).
 
+Also: "wattcoin2026" (case-insensitive) must not appear in llms.txt, llms-full.txt
+or any application/ld+json block of a scanned HTML page.
+
 Usage: check_meta_tags.py [root_dir]   (default: repo root)
 Exit 1 on any violation, 0 otherwise.
 """
@@ -19,6 +22,12 @@ FORBIDDEN = [
     ("WattCoin", re.compile(r"wattcoin", re.IGNORECASE)),
 ]
 SKIP_DIRS = {".git", "node_modules"}
+HANDLE = re.compile(r"wattcoin2026", re.IGNORECASE)
+HANDLE_TEXT_FILES = ("llms.txt", "llms-full.txt")
+LDJSON = re.compile(
+    r"<script\b[^>]*\btype\s*=\s*[\"']?application/ld\+json[\"']?[^>]*>(.*?)</script\s*>",
+    re.IGNORECASE | re.DOTALL,
+)
 
 
 class _Collector(HTMLParser):
@@ -68,6 +77,20 @@ def check_html(html):
     return out
 
 
+def check_handle_text(text):
+    """Return a list of line numbers where the banned handle appears in plain text."""
+    return [i for i, ln in enumerate(text.splitlines(), 1) if HANDLE.search(ln)]
+
+
+def check_ldjson_handle(html):
+    """Return line numbers of banned-handle hits inside application/ld+json blocks."""
+    out = []
+    for m in LDJSON.finditer(html):
+        start = html.count("\n", 0, m.start(1)) + 1
+        out += [start + n - 1 for n in check_handle_text(m.group(1))]
+    return out
+
+
 def main(argv):
     root = Path(argv[1]) if len(argv) > 1 else Path(__file__).resolve().parent.parent
     count = 0
@@ -77,6 +100,16 @@ def main(argv):
         for line, label, term, text in check_html(path.read_text(encoding="utf-8", errors="replace")):
             print(f"{path.relative_to(root)}:{line}: {label} contains {term}: {text!r}")
             count += 1
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for line in check_ldjson_handle(text):
+            print(f"{path.relative_to(root)}:{line}: ld+json contains wattcoin2026")
+            count += 1
+    for name in HANDLE_TEXT_FILES:
+        f = root / name
+        if f.is_file():
+            for line in check_handle_text(f.read_text(encoding="utf-8", errors="replace")):
+                print(f"{name}:{line}: contains wattcoin2026")
+                count += 1
     if count:
         print(f"FAIL: {count} violation(s)")
         return 1

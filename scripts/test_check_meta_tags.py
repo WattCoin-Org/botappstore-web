@@ -3,7 +3,7 @@ import unittest
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from check_meta_tags import check_html  # noqa: E402
+from check_meta_tags import check_handle_text, check_html, check_ldjson_handle  # noqa: E402
 
 
 def page(head):
@@ -44,6 +44,30 @@ class CheckMetaTags(unittest.TestCase):
     def test_body_and_other_meta_ignored(self):
         html = page('<meta name="keywords" content="SOL WattCoin">') + "<p>SOL WattCoin</p>"
         self.assertEqual(check_html(html), [])
+
+
+class CheckHandle(unittest.TestCase):
+    def ld(self, body, attrs='type="application/ld+json"'):
+        return page(f"<script {attrs}>{body}</script>")
+
+    def test_ldjson_handle_fails(self):
+        html = self.ld('{"sameAs": [\n"https://x.com/WattCoin2026"]}')
+        self.assertEqual(check_ldjson_handle(html), [2])
+
+    def test_ldjson_handle_case_insensitive(self):
+        self.assertTrue(check_ldjson_handle(self.ld('{"a": "wattcoin2026"}')))
+
+    def test_ldjson_clean_passes(self):
+        self.assertEqual(check_ldjson_handle(self.ld('{"sameAs": ["https://coinloader.com"]}')), [])
+
+    def test_non_ldjson_script_ignored(self):
+        self.assertEqual(check_ldjson_handle(self.ld("var a='WattCoin2026'", 'type="text/javascript"')), [])
+
+    def test_text_file_handle_fails(self):
+        self.assertEqual(check_handle_text("a\n- Maintainer: @WattCoin2026\n"), [2])
+
+    def test_text_file_clean_passes(self):
+        self.assertEqual(check_handle_text("# BotAppStore\nNo handles here\n"), [])
 
 
 if __name__ == "__main__":
