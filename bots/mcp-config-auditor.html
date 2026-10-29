@@ -283,7 +283,7 @@
         <h2>How It Runs (5 Steps)</h2>
         <div class="step-flow">
           <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body"><code>.wattcoin_license_check.py check --sku mcp-config-auditor</code> must return <code>"state": "OK"</code> before every run.</div></div>
-          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body"><code>sha256sum -c</code> on <code>mcp_config_auditor.py</code> and <code>bot_common.py</code>; any mismatch stops the run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body">Setup verifies the canonical SHA-256 of <code>mcp_config_auditor.py</code> and <code>bot_common.py</code> against the pinned values; any mismatch stops the run.</div></div>
           <div class="step-box"><div class="step-box-header"><span>3 · Parse configs &amp; snapshots</span></div><div class="step-box-body"><code>--config</code>, <code>--dir</code> discovery and <code>--tools-json</code>; JSONC stripped; each server normalised to its launch argv, env, headers and URL.</div></div>
           <div class="step-box"><div class="step-box-header"><span>4 · 5-bucket audit</span></div><div class="step-box-body"><code>SEC</code>, <code>CMD/FS/DOCKER/DB</code>, <code>SUP</code>, <code>NET</code> and <code>TOOL</code> checks with line numbers; secrets redacted before anything is printed or stored.</div></div>
           <div class="step-box"><div class="step-box-header"><span>5 · Report, harden, diff</span></div><div class="step-box-body">Text/Markdown/JSON report, hardened config per file, optional <code>--state --delta</code> rug-pull events, and a fail-closed exit code.</div></div>
@@ -441,9 +441,9 @@ Secrets become `${VAR}` references, packages are pinned (`@VERSION` / `#COMMIT_S
           <li><a href="/runtime/mcp_config_auditor.py"><code>https://botappstore.com/runtime/mcp_config_auditor.py</code></a> &mdash; 1,956 lines &mdash; SHA-256: <code>42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025</code></li>
           <li><a href="/runtime/bot_common.py"><code>https://botappstore.com/runtime/bot_common.py</code></a> &mdash; 274 lines &mdash; SHA-256: <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code></li>
         </ul>
-        <pre class="code-pre">echo "42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025  mcp_config_auditor.py" | sha256sum -c -
-echo "d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526  bot_common.py" | sha256sum -c -</pre>
-        <p>The setup and audit skills verify both digests with <code>sha256sum -c</code> before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 275 unit tests.</p>
+        <p>Runtime URLs are license-gated: send <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code> (unauthenticated requests get 401). The served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header (or the SHA-256 after stripping the block) against the pins above. The recommended path is the setup skill installer:</p>
+        <pre class="code-pre">python3 /workspace/.wattcoin_license_check.py --sku mcp-config-auditor --install-runtime ... --expected-sha256 42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025</pre>
+        <p>The setup and audit skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 275 unit tests.</p>
       </section>
 
       <section class="product-section" id="faq">

@@ -297,7 +297,7 @@
         <h2>How It Runs (6 Steps)</h2>
         <div class="step-flow">
           <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body"><code>.wattcoin_license_check.py check --sku agent-council</code> must return <code>"state": "OK"</code> before every run.</div></div>
-          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body"><code>sha256sum -c</code> on <code>agent_council.py</code> and <code>bot_common.py</code>; any mismatch stops the run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body">Setup verifies the canonical SHA-256 of <code>agent_council.py</code> and <code>bot_common.py</code> against the pinned values; any mismatch stops the run.</div></div>
           <div class="step-box"><div class="step-box-header"><span>3 · Seats &amp; pinned brief</span></div><div class="step-box-body"><code>--discover</code> picks available seats; the prompt plus line-numbered, redacted <code>--files</code> / <code>--git-diff</code> context becomes one cache-friendly brief.</div></div>
           <div class="step-box"><div class="step-box-header"><span>4 · Blind round 1</span></div><div class="step-box-body">All seats answer in parallel without seeing each other, each with its role preset and a per-seat timeout.</div></div>
           <div class="step-box"><div class="step-box-header"><span>5 · Anonymized rounds 2+</span></div><div class="step-box-body">Seats see only peers' structured positions and deltas as <code>Seat A</code>/<code>Seat B</code>, plus any injected moderator notes; early stop on convergence, budget or deadline.</div></div>
@@ -491,9 +491,9 @@ Outcome: keep exit_code as the CI contract, but make it fail closed and derive d
           <li><a href="/runtime/agent_council.py"><code>https://botappstore.com/runtime/agent_council.py</code></a> &mdash; 2,801 lines &mdash; SHA-256: <code>703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7</code></li>
           <li><a href="/runtime/bot_common.py"><code>https://botappstore.com/runtime/bot_common.py</code></a> &mdash; 274 lines &mdash; SHA-256: <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code></li>
         </ul>
-        <pre class="code-pre">echo "703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7  agent_council.py" | sha256sum -c -
-echo "d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526  bot_common.py" | sha256sum -c -</pre>
-        <p>The setup and council skills verify both digests with <code>sha256sum -c</code> before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 170 unit tests.</p>
+        <p>Runtime URLs are license-gated: send <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code> (unauthenticated requests get 401). The served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header (or the SHA-256 after stripping the block) against the pins above. The recommended path is the setup skill installer:</p>
+        <pre class="code-pre">python3 /workspace/.wattcoin_license_check.py --sku agent-council --install-runtime ... --expected-sha256 703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7</pre>
+        <p>The setup and council skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 170 unit tests.</p>
       </section>
 
       <section class="product-section" id="faq">

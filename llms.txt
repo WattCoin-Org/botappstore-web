@@ -22,6 +22,7 @@
 - **Humanoid & Fleet Telemetry Inspector ($49 in SOL, `sku: robotics-telemetry-inspector`, AVAILABLE NOW · PHASE 1 RELEASE - instant on-chain SOL checkout):** https://botappstore.com/bots/robotics-telemetry-inspector.html (Checkout: https://botappstore.com/#card-robotics-telemetry-inspector)
 - **SEC EDGAR Supply Chain & Counterparty Mapper ($29 in SOL, `sku: sec-supply-chain-mapper`, v1.1, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/sec-supply-chain-mapper.html (Checkout: https://botappstore.com/#card-sec-supply-chain-mapper; runtime: https://botappstore.com/runtime/sec_supply_chain_mapper.py)
 - **Pinned Runtime Downloads:** https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **Runtime download note:** `/runtime/` URLs are license-gated: send `X-License-Key: wcl_...` or `X-Agent-Key: wck_...` (unauthenticated requests get `401`). The served file carries a per-license watermark block (5 lines), so compare the `X-Canonical-SHA256` response header (or the SHA-256 after stripping the block) against the pins. Recommended: the setup skill installer (`/workspace/.wattcoin_license_check.py --sku <sku> --install-runtime ... --expected-sha256 <pin>`). `bot_common.py` has two pinned variants chosen by SKU: `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (legacy; served for `agent-council`, `dependency-vuln-triage`, `domain-infra-hygiene`, `mcp-config-auditor`, `print-farm-ops`, `robotics-telemetry-inspector`) and `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current; every other BotAppStore SKU, including `sec-supply-chain-mapper`).
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 - **Maintainer:** @WattCoin2026 (https://x.com/WattCoin2026)
 
@@ -172,7 +173,7 @@
 - **Product Page URL:** https://botappstore.com/bots/domain-infra-hygiene.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-domain-infra-hygiene
 - **Included Skills:** `domain-infra-hygiene-setup` + `domain-infra-hygiene`
-- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+- **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
   - `https://botappstore.com/runtime/domain_infra_hygiene.py` — SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14` (1,877 lines, stdlib Python)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Find the expiring certificate, the spoofable domain and the dangling CNAME before someone else does: one read-only pass over DNS, DNSSEC, TLS, email authentication, HTTPS headers and Certificate Transparency for domains you own, with copy-paste fixes.*
@@ -202,7 +203,7 @@
 - **Product Page URL:** https://botappstore.com/bots/agent-council.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-agent-council
 - **Included Skills:** `agent-council-setup` + `agent-council`
-- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+- **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
   - `https://botappstore.com/runtime/agent_council.py` — SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7` (2,801 lines, stdlib Python, 170 unit tests)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Put 2-6 AI seats on one design question, patch or diff and get the consensus, the minority report, a verdict and an action plan, within the time limit and budget you set, plus a self-contained HTML transcript.*
@@ -229,7 +230,7 @@
 - **Product Page URL:** https://botappstore.com/bots/mcp-config-auditor.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-mcp-config-auditor
 - **Included Skills:** `mcp-config-auditor-setup` + `mcp-config-auditor`
-- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+- **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
   - `https://botappstore.com/runtime/mcp_config_auditor.py` — SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025` (1,956 lines, stdlib Python, 275 unit tests)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Find the leaked key, the unpinned package and the poisoned tool before your agent runs them: a read-only static audit of your MCP client configs and `tools/list` snapshots, with every detected secret redacted and a copy-paste hardened config per file.*
@@ -259,7 +260,7 @@
 - **Product Page URL:** https://botappstore.com/bots/print-farm-ops.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-print-farm-ops
 - **Included Skills:** `print-farm-ops-setup` + `print-farm-ops`
-- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+- **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
   - `https://botappstore.com/runtime/print_farm_ops.py` — SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669` (2,165 lines, stdlib Python, 393 unit tests)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Catch the wrong-temperature plate, the empty spool and the money-losing SKU before the printers run: an offline, read-only audit of OrcaSlicer, Bambu Studio and PrusaSlicer `.3mf` / `.gcode` files, a spool ledger, a storefront SKU table and a printer list, plus a scheduled multi-printer production queue.*
@@ -288,7 +289,7 @@
 - **Product Page URL:** https://botappstore.com/bots/robotics-telemetry-inspector.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-robotics-telemetry-inspector
 - **Included Skills:** `robotics-telemetry-inspector-setup` + `robotics-telemetry-inspector`
-- **Pinned Runtime (verified with `sha256sum -c`, locked `chmod 500`):**
+- **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
   - `https://botappstore.com/runtime/robotics_telemetry_inspector.py` — SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17` (3,245 lines, stdlib Python, 724 unit tests)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (274 lines)
 - **Deliverable:** *Find the overheating knee, the weak cell and the dropped topic before the robot runs again: an offline, read-only audit of actuator and joint logs, 16S LiFePO4 / LiPo BMS exports, ROS 2 bags, PX4 / ArduPilot flight logs, URDF / SDF models and CAN / RS485 captures, ending in a prioritised preventive-maintenance and flight-readiness checklist.*
@@ -319,7 +320,7 @@
 - **Product Page URL:** https://botappstore.com/bots/sec-supply-chain-mapper.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-sec-supply-chain-mapper
 - **Included Skills:** `sec-supply-chain-mapper-setup` + `sec-supply-chain-mapper`
-- **Runtime:** https://botappstore.com/runtime/sec_supply_chain_mapper.py (standalone zero-dependency Python 3.10+ CLI, `--json` / `--markdown` output) + https://botappstore.com/runtime/bot_common.py
+- **Runtime:** https://botappstore.com/runtime/sec_supply_chain_mapper.py (SHA-256 `d3e13923dc752f1f0429433381ff48961eba0d142255524761ba2385c0e116d1`; standalone zero-dependency Python 3.10+ CLI, `--json` / `--markdown` output) + https://botappstore.com/runtime/bot_common.py (SHA-256 `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1`)
 - **Deliverable:** Cited supplier, customer, foundry, subsidiary and equity-stake map built only from primary SEC EDGAR filings (10-K, 10-Q, 8-K, Exhibit 21, Schedule 13D/13G), with a reproducible `audit_sha256`.
 - **Capabilities:**
   - Relationship edges typed `supplier`, `customer`, `foundry_compute`, `strategic_partner`, `subsidiary`, `equity_stake`; each carries a verbatim quote of `<=300` characters, the accession number and a direct sec.gov Archive URL. No quote, no edge.

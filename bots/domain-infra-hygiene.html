@@ -282,7 +282,7 @@
         <h2>How It Runs (6 Steps)</h2>
         <div class="step-flow">
           <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body"><code>.wattcoin_license_check.py check --sku domain-infra-hygiene</code> must return <code>"state": "OK"</code> before every run.</div></div>
-          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body"><code>sha256sum -c</code> on <code>domain_infra_hygiene.py</code> and <code>bot_common.py</code>; any mismatch stops the run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body">Setup verifies the canonical SHA-256 of <code>domain_infra_hygiene.py</code> and <code>bot_common.py</code> against the pinned values; any mismatch stops the run.</div></div>
           <div class="step-box"><div class="step-box-header"><span>3 · DNS &amp; DNSSEC</span></div><div class="step-box-body">DoH queries for A/AAAA/CNAME/NS/MX/CAA/TXT/DNSKEY, <code>AD</code>-bit validation, NS drift, CAA, dangling CNAMEs.</div></div>
           <div class="step-box"><div class="step-box-header"><span>4 · Email authentication</span></div><div class="step-box-body">Recursive SPF with 10-lookup counting, DMARC, DKIM key size, MTA-STS, TLS-RPT, no-mail null-MX checks.</div></div>
           <div class="step-box"><div class="step-box-header"><span>5 · TLS, HTTPS &amp; CT</span></div><div class="step-box-body">One :443 handshake (chain, SAN, protocol, cipher, expiry vs CAA), one HTTPS GET for headers, one :80 GET for the redirect, CT issuers vs CAA.</div></div>
@@ -668,9 +668,9 @@ SCOPE_NOTE: Passive, read-only public posture inspection for domains the user ow
           <li><a href="/runtime/domain_infra_hygiene.py"><code>/runtime/domain_infra_hygiene.py</code></a> &mdash; SHA-256: <code>73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14</code></li>
           <li><a href="/runtime/bot_common.py"><code>/runtime/bot_common.py</code></a> &mdash; SHA-256: <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code></li>
         </ul>
-        <pre class="code-pre">echo "73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14  domain_infra_hygiene.py" | sha256sum -c -
-echo "d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526  bot_common.py" | sha256sum -c -</pre>
-        <p>The setup and audit skills verify both digests with <code>sha256sum -c</code> before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>.</p>
+        <p>Runtime URLs are license-gated: send <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code> (unauthenticated requests get 401). The served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header (or the SHA-256 after stripping the block) against the pins above. The recommended path is the setup skill installer:</p>
+        <pre class="code-pre">python3 /workspace/.wattcoin_license_check.py --sku domain-infra-hygiene --install-runtime ... --expected-sha256 73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14</pre>
+        <p>The setup and audit skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>.</p>
       </section>
 
       <section class="product-section" id="faq">
