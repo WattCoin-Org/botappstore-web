@@ -1385,6 +1385,280 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     return 'wcl_active_quote_' + (sku || currentCheckoutSku || 'bot-skill-auditor');
   }
 
+  // ---------------------------------------------------------------------------
+  // Stripe Checkout (Card / Apple Pay / Google Pay) + post-redirect license reveal
+  // ---------------------------------------------------------------------------
+  const STRIPE_STOREFRONT = 'botappstore';
+  const STRIPE_ALLOWED_ORIGINS = ['https://botappstore.com', 'https://www.botappstore.com'];
+  const STRIPE_SESSION_ID_RE = /^cs_(?:test_|live_)?[A-Za-z0-9_]{10,128}$/;
+  const STRIPE_READY_SUBTEXT =
+    'Instant wcl_... license key issued on redirect · Corporate cards, Apple Pay & Google Pay accepted.';
+  const STRIPE_ACTIVATING_NOTE = 'Card gateway activating — use SOL checkout below or click to retry';
+  const STRIPE_NOT_READY_MESSAGE =
+    'Card checkout is being activated and is not live yet. SOL checkout below is live right now — scroll down to pay with SOL.';
+
+  let stripeBoxEl = null;
+  let stripeBtnEl = null;
+  let stripeSubtextEl = null;
+  let stripeFeedbackEl = null;
+  let isStartingStripeCheckout = false;
+
+  function ensureStripeBox() {
+    const pay = document.getElementById('checkout-step-pay');
+    if (!pay) return;
+    let box = document.getElementById('checkout-stripe-box');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'checkout-stripe-box';
+      box.className = 'checkout-card-box checkout-stripe-box';
+
+      const header = document.createElement('div');
+      header.className = 'checkout-step-header';
+      const title = document.createElement('span');
+      title.textContent = 'FASTEST · INSTANT CARD / APPLE PAY / GOOGLE PAY CHECKOUT';
+      const badge = document.createElement('span');
+      badge.className = 'checkout-stripe-badge';
+      badge.textContent = 'STRIPE SECURE CHECKOUT';
+      header.appendChild(title);
+      header.appendChild(badge);
+
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.id = 'checkout-stripe-pay-btn';
+      btn.className = 'btn btn-primary checkout-stripe-btn';
+
+      const sub = document.createElement('p');
+      sub.id = 'checkout-stripe-subtext';
+      sub.className = 'checkout-field-help checkout-stripe-subtext';
+      sub.textContent = STRIPE_READY_SUBTEXT;
+
+      const fb = document.createElement('div');
+      fb.id = 'checkout-stripe-feedback';
+      fb.className = 'checkout-feedback';
+      fb.setAttribute('role', 'alert');
+      fb.setAttribute('aria-live', 'polite');
+      fb.setAttribute('hidden', '');
+
+      box.appendChild(header);
+      box.appendChild(btn);
+      box.appendChild(sub);
+      box.appendChild(fb);
+
+      const statusBar = document.getElementById('checkout-quote-status');
+      if (statusBar && statusBar.parentNode === pay) {
+        statusBar.insertAdjacentElement('afterend', box);
+      } else {
+        pay.insertBefore(box, pay.firstChild);
+      }
+    }
+    stripeBoxEl = box;
+    stripeBtnEl = document.getElementById('checkout-stripe-pay-btn');
+    stripeSubtextEl = document.getElementById('checkout-stripe-subtext');
+    stripeFeedbackEl = document.getElementById('checkout-stripe-feedback');
+    if (stripeBtnEl && !stripeBtnEl.dataset.stripeWired) {
+      stripeBtnEl.dataset.stripeWired = '1';
+      stripeBtnEl.addEventListener('click', startStripeCheckout);
+    }
+    updateStripeButtonLabel(currentCheckoutSku);
+  }
+
+  function stripePriceLabel(sku) {
+    const cfg = getCheckoutSkuConfig(sku);
+    const m = /\$(\d+(?:\.\d+)?)/.exec(cfg.priceUsdHtml || '');
+    if (!m) return '';
+    const n = Number(m[1]);
+    return Number.isFinite(n) ? `$${Number.isInteger(n) ? n : n.toFixed(2)} USD` : '';
+  }
+
+  function updateStripeButtonLabel(sku) {
+    if (!stripeBtnEl) return;
+    const price = stripePriceLabel(sku);
+    stripeBtnEl.textContent = `\u{1F4B3} Pay with Card / Apple Pay${price ? ` (${price})` : ''} →`;
+  }
+
+  function updateStripeUi(quote) {
+    if (!stripeBtnEl || !stripeSubtextEl) return;
+    updateStripeButtonLabel(currentCheckoutSku);
+    stripeBtnEl.disabled = false;
+    if (quote && quote.stripe_enabled === false) {
+      stripeBtnEl.classList.add('checkout-stripe-btn-pending');
+      stripeSubtextEl.textContent = STRIPE_ACTIVATING_NOTE;
+    } else {
+      stripeBtnEl.classList.remove('checkout-stripe-btn-pending');
+      stripeSubtextEl.textContent = STRIPE_READY_SUBTEXT;
+    }
+  }
+
+  function showStripeFeedback(type, message) {
+    if (!stripeFeedbackEl) return;
+    stripeFeedbackEl.className = `checkout-feedback ${type}`;
+    stripeFeedbackEl.textContent = message;
+    stripeFeedbackEl.removeAttribute('hidden');
+  }
+
+  function hideStripeFeedback() {
+    if (!stripeFeedbackEl) return;
+    stripeFeedbackEl.setAttribute('hidden', '');
+    stripeFeedbackEl.textContent = '';
+  }
+
+  async function startStripeCheckout() {
+    if (isStartingStripeCheckout) return;
+    const sku = currentCheckoutSku || 'bot-skill-auditor';
+    isStartingStripeCheckout = true;
+    if (stripeBtnEl) stripeBtnEl.disabled = true;
+    hideStripeFeedback();
+    if (activeQuote && activeQuote.stripe_enabled === false) {
+      showStripeFeedback('pending', STRIPE_NOT_READY_MESSAGE + ' Checking card gateway status…');
+    } else {
+      showStripeFeedback('pending', 'Opening secure Stripe Checkout…');
+    }
+
+    const payload = { sku, storefront: STRIPE_STOREFRONT };
+    if (STRIPE_ALLOWED_ORIGINS.includes(window.location.origin)) {
+      const base = `${window.location.origin}${window.location.pathname}`;
+      payload.success_url = `${base}?stripe_session_id={CHECKOUT_SESSION_ID}&sku=${encodeURIComponent(sku)}`;
+      payload.cancel_url = `${base}?sku=${encodeURIComponent(sku)}`;
+    }
+
+    let redirecting = false;
+    try {
+      const resp = await fetch(`${WATTCOIN_API_BASE}/api/v1/agents/license/stripe-checkout`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      const data = await resp.json().catch(() => ({}));
+      if (
+        resp.ok &&
+        data &&
+        data.success &&
+        typeof data.checkout_url === 'string' &&
+        /^https:\/\/checkout\.stripe\.com\//.test(data.checkout_url)
+      ) {
+        redirecting = true;
+        showStripeFeedback('pending', 'Redirecting to Stripe secure checkout…');
+        window.location.assign(data.checkout_url);
+        return;
+      }
+      if (resp.status === 503 || (data && data.error === 'STRIPE_NOT_CONFIGURED')) {
+        showStripeFeedback('error', STRIPE_NOT_READY_MESSAGE);
+      } else if (resp.status === 429) {
+        showStripeFeedback('error', 'Too many checkout attempts. Please wait a few minutes and try again.');
+      } else {
+        showStripeFeedback('error', (data && data.error) || 'Could not start card checkout. Please try again or pay with SOL below.');
+      }
+    } catch (_) {
+      showStripeFeedback('error', 'Network error reaching card checkout. Please try again or pay with SOL below.');
+    } finally {
+      isStartingStripeCheckout = false;
+      if (stripeBtnEl && !redirecting) stripeBtnEl.disabled = false;
+    }
+  }
+
+  function cliRuntimeCommands(receipt) {
+    const code = receipt.license_code;
+    const skus = receipt.included_skus && receipt.included_skus.length >= 2 ? receipt.included_skus : [receipt.sku];
+    return skus.map((s) => `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py --sku ${s} --claim-stdin <<< "${code}" && /usr/bin/python3 -I /workspace/.wattcoin_license_check.py --sku ${s} --install-runtime /workspace/scripts/${s.replace(/-/g, '_')}.py --script ${s.replace(/-/g, '_')}.py`);
+  }
+
+  function ensureFulfilledCliStep() {
+    let box = document.getElementById('fulfilled-step-d');
+    if (box) return box;
+    const anchor = fulfilledStepCFoot ? fulfilledStepCFoot.closest('.checkout-card-box') : null;
+    if (!anchor) return null;
+    box = document.createElement('div');
+    box.id = 'fulfilled-step-d';
+    box.className = 'checkout-card-box';
+    box.style.marginTop = '14px';
+    box.innerHTML =
+      '<div class="checkout-step-header"><span>STEP 4B · VERIFIED RUNTIME INSTALL (--install-runtime)</span><span>AUTO OR CLI</span></div>' +
+      '<p class="checkout-field-help" style="margin-bottom: 8px;">Grok Bot runs Step 4b automatically after you paste your <code>wcl_...</code> key in chat. For manual or standalone workspace verification, run:</p>' +
+      '<div class="checkout-copy-box"><code id="fulfilled-cli-command" style="white-space: pre-wrap; word-break: break-all;">—</code>' +
+      '<button type="button" class="mini-copy-btn" id="fulfilled-copy-cli-btn">Copy Command</button></div>';
+    anchor.insertAdjacentElement('afterend', box);
+    const copyBtn = box.querySelector('#fulfilled-copy-cli-btn');
+    copyBtn.addEventListener('click', () => {
+      const text = (document.getElementById('fulfilled-cli-command') || {}).textContent || '';
+      if (!text || text === '—') return;
+      const done = () => showToast('✓ Copied CLI command!');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, () => {});
+      }
+    });
+    return box;
+  }
+
+  async function revealStripeSession(sessionId, urlSku) {
+    const sku = urlSku && CHECKOUT_SKUS[urlSku] ? urlSku : 'bot-skill-auditor';
+    openCheckoutModal(sku, document.activeElement);
+    showStripeFeedback('pending', 'Verifying Stripe card payment & minting your wcl_... license…');
+    try {
+      let resp = null;
+      let data = {};
+      for (let attempt = 0; attempt < 5; attempt += 1) {
+        resp = await fetch(
+          `${WATTCOIN_API_BASE}/api/v1/agents/license/stripe-session/${encodeURIComponent(sessionId)}`
+        );
+        data = await resp.json().catch(() => ({}));
+        if (resp.status !== 402) break;
+        await new Promise((r) => setTimeout(r, 3000));
+      }
+      if (resp.ok && data && data.success && data.license_code) {
+        const cleanReceipt = savePurchasedLicense({
+          sku: data.sku || sku,
+          name: data.name || getCheckoutSkuConfig(sku).name,
+          order_id: data.order_id || '',
+          tx_signature: '',
+          payment_method: 'stripe',
+          stripe_session_id: data.session_id || sessionId,
+          payment_intent: data.payment_intent || '',
+          license_code: data.license_code,
+          template_url: data.template_url || '',
+          included_skus: data.included_skus,
+          bundle_templates: data.bundle_templates,
+          activation_prompt: data.activation_prompt || '',
+          purchased_at: new Date().toISOString()
+        });
+        if (!cleanReceipt) {
+          showStripeFeedback('error', 'Server returned an unexpected license format. Please contact support with your Stripe receipt.');
+          return;
+        }
+        hideStripeFeedback();
+        renderFulfilledReceipt(cleanReceipt, true);
+        showToast('✓ Payment verified & license issued!');
+        return;
+      }
+      const reason = (data && data.reason) || '';
+      if (reason === 'payment_pending') {
+        showStripeFeedback('pending', 'Stripe has not confirmed this payment yet. Reload this page in a minute to retry.');
+      } else if (reason === 'session_reveal_expired') {
+        showStripeFeedback('error', 'The 15-minute window to reveal this license has expired. If you saved it in this browser, click "View Saved License →" above; otherwise contact support with your Stripe receipt.');
+      } else if (reason === 'order_already_claimed') {
+        showStripeFeedback('error', 'This license was already claimed by an agent. If you saved it in this browser, click "View Saved License →" above.');
+      } else if (reason === 'session_not_found' || reason === 'invalid_session_id') {
+        showStripeFeedback('error', 'Stripe checkout session not found. Please contact support with your Stripe receipt.');
+      } else {
+        showStripeFeedback('error', (data && data.error) || 'Could not verify your Stripe payment. Please reload to retry.');
+      }
+    } catch (_) {
+      showStripeFeedback('error', 'Network error while verifying your Stripe payment. Reload this page to retry.');
+    }
+  }
+
+  function handleStripeReturn() {
+    const params = new URLSearchParams(window.location.search);
+    const stripeSessionId = params.get('stripe_session_id');
+    const urlSku = params.get('sku');
+    if (!stripeSessionId) return;
+    // Remove the session id (and sku) from the address bar / history right away.
+    window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+    if (!STRIPE_SESSION_ID_RE.test(stripeSessionId)) return;
+    revealStripeSession(stripeSessionId, urlSku);
+  }
+
+  ensureStripeBox();
+
   function applyCheckoutSkuLabels(sku) {
     const cfg = getCheckoutSkuConfig(sku);
     if (checkoutModalTitle) checkoutModalTitle.textContent = cfg.title;
@@ -1394,6 +1668,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     if (fulfilledOpenTemplateBtn) fulfilledOpenTemplateBtn.textContent = cfg.stepABtnText;
     if (fulfilledStepCHint) fulfilledStepCHint.innerHTML = cfg.stepCHintHtml;
     if (fulfilledStepCFoot) fulfilledStepCFoot.innerHTML = cfg.stepCFootHtml;
+    updateStripeButtonLabel(sku);
   }
 
   function isValidQuote(q, expectedSku) {
@@ -1468,10 +1743,23 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
         ? raw.tx_signature
         : '';
 
+    const paymentMethod = raw.payment_method === 'stripe' ? 'stripe' : 'sol';
+    const stripeSessionId =
+      paymentMethod === 'stripe' && typeof raw.stripe_session_id === 'string' && STRIPE_SESSION_ID_RE.test(raw.stripe_session_id)
+        ? raw.stripe_session_id
+        : '';
+    const paymentIntent =
+      paymentMethod === 'stripe' && typeof raw.payment_intent === 'string' && /^pi_[A-Za-z0-9_]{1,128}$/.test(raw.payment_intent)
+        ? raw.payment_intent
+        : '';
+
     return {
       sku: resolvedSku,
       name: skuCfg.name,
       order_id: orderId,
+      payment_method: paymentMethod,
+      stripe_session_id: stripeSessionId,
+      payment_intent: paymentIntent,
       tx_signature: txSignature,
       payer_wallet: typeof raw.payer_wallet === 'string' ? raw.payer_wallet : '',
       amount_lamports: typeof raw.amount_lamports === 'number' ? raw.amount_lamports : 0,
@@ -1657,6 +1945,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     }
 
     activeQuote = quote;
+    updateStripeUi(quote);
     quoteStatusBar.classList.remove('error');
     const hasBuyerWallet = typeof quote.buyer_wallet === 'string' && quote.buyer_wallet.length >= 10;
     const walletInfo = hasBuyerWallet
@@ -1877,12 +2166,41 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     fulfilledOrderIdEl.textContent = receipt.order_id || '—';
 
     const txSig = receipt.tx_signature;
-    fulfilledTxSigEl.textContent = txSig ? `${txSig.slice(0, 12)}…${txSig.slice(-8)}` : '—';
-    if (txSig) {
-      fulfilledSolscanLink.href = `https://solscan.io/tx/${encodeURIComponent(txSig)}`;
-    } else {
-      fulfilledSolscanLink.removeAttribute('href');
+    const isStripeReceipt = receipt.payment_method === 'stripe' || !!receipt.stripe_session_id;
+    const bannerTitle = document.querySelector('#checkout-step-fulfilled .fulfilled-banner-title');
+    if (bannerTitle) {
+      bannerTitle.textContent =
+        isStripeReceipt || !txSig
+          ? '✓ Payment Verified — License Issued'
+          : '✓ On-Chain SOL Payment Verified — License Issued';
     }
+    let txArrow = fulfilledSolscanLink.querySelector('.fulfilled-tx-arrow');
+    if (!txArrow) {
+      Array.from(fulfilledSolscanLink.childNodes).forEach((n) => {
+        if (n.nodeType === 3) n.remove();
+      });
+      txArrow = document.createElement('span');
+      txArrow.className = 'fulfilled-tx-arrow';
+      txArrow.textContent = ' ↗';
+      fulfilledSolscanLink.appendChild(txArrow);
+    }
+    if (txSig) {
+      fulfilledTxSigEl.textContent = `${txSig.slice(0, 12)}…${txSig.slice(-8)}`;
+      fulfilledSolscanLink.href = `https://solscan.io/tx/${encodeURIComponent(txSig)}`;
+      txArrow.removeAttribute('hidden');
+    } else if (isStripeReceipt) {
+      fulfilledTxSigEl.textContent = `Stripe (${(receipt.payment_intent || receipt.stripe_session_id || '—').slice(0, 18)}…)`;
+      fulfilledSolscanLink.removeAttribute('href');
+      txArrow.setAttribute('hidden', '');
+    } else {
+      fulfilledTxSigEl.textContent = '—';
+      fulfilledSolscanLink.removeAttribute('href');
+      txArrow.setAttribute('hidden', '');
+    }
+
+    const cliBox = ensureFulfilledCliStep();
+    const cliCmdEl = document.getElementById('fulfilled-cli-command');
+    if (cliBox && cliCmdEl) cliCmdEl.textContent = cliRuntimeCommands(receipt).join('\n');
 
     if (moveFocus && fulfilledCopyCodeBtn) {
       fulfilledCopyCodeBtn.focus();
@@ -2172,7 +2490,9 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
         `Product:           ${activeFulfilledReceipt.name}`,
         `SKU:               ${activeFulfilledReceipt.sku}`,
         `Order ID:          ${activeFulfilledReceipt.order_id || '—'}`,
-        `Solana TX:         ${activeFulfilledReceipt.tx_signature || '—'}`,
+        activeFulfilledReceipt.payment_method === 'stripe' || activeFulfilledReceipt.stripe_session_id
+          ? `Stripe Payment:    ${activeFulfilledReceipt.payment_intent || activeFulfilledReceipt.stripe_session_id || '—'}`
+          : `Solana TX:         ${activeFulfilledReceipt.tx_signature || '—'}`,
         `Purchased At:      ${activeFulfilledReceipt.purchased_at}`,
         '',
         ...(activeFulfilledReceipt.bundle_templates.length >= 2
@@ -2192,6 +2512,9 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
         '',
         '3. Turn-1 Activation Prompt (Paste in Grok Bot chat):',
         `   ${activeFulfilledReceipt.activation_prompt}`,
+        '',
+        '4. Standalone Python CLI (--install-runtime):',
+        ...cliRuntimeCommands(activeFulfilledReceipt).map((c) => `   ${c}`),
         '============================================================'
       ].join('\n');
 
@@ -2248,6 +2571,8 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       }
     }
   });
+
+  handleStripeReturn();
 })();
 
 // ---------------------------------------------------------------------------

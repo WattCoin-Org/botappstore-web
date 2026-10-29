@@ -2443,3 +2443,19 @@ code, pre, .mono {
 }
 .dual-runtime-callout ol { margin: 6px 0 0 20px; padding: 0; }
 .dual-runtime-callout code { font-family: var(--font-mono); font-size: 12.5px; }
+
+/* Stripe card / Apple Pay / Google Pay checkout box */
+.checkout-stripe-box { margin-bottom: 14px; }
+.checkout-stripe-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+.checkout-stripe-btn { display: block; width: 100%; margin-top: 8px; text-align: center; }
+.checkout-stripe-btn:disabled { opacity: 0.6; cursor: wait; }
+.checkout-stripe-btn.checkout-stripe-btn-pending { opacity: 0.85; }
+.checkout-stripe-subtext { margin-top: 8px; margin-bottom: 0; }
+#checkout-stripe-feedback { margin-top: 10px; }
