@@ -21,13 +21,14 @@
 - **3D Print Farm & Slicer Queue Ops ($29 in SOL, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE - instant on-chain SOL checkout):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
 - **Humanoid & Fleet Telemetry Inspector ($49 in SOL, `sku: robotics-telemetry-inspector`, AVAILABLE NOW · PHASE 1 RELEASE - instant on-chain SOL checkout):** https://botappstore.com/bots/robotics-telemetry-inspector.html (Checkout: https://botappstore.com/#card-robotics-telemetry-inspector)
 - **SEC EDGAR Supply Chain & Counterparty Mapper ($29 in SOL, `sku: sec-supply-chain-mapper`, v1.1, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/sec-supply-chain-mapper.html (Checkout: https://botappstore.com/#card-sec-supply-chain-mapper; runtime: https://botappstore.com/runtime/sec_supply_chain_mapper.py)
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
-- **Runtime download note:** `/runtime/` URLs are license-gated: send `X-License-Key: wcl_...` or `X-Agent-Key: wck_...` (unauthenticated requests get `401`). The served file carries a per-license watermark block (5 lines), so compare the `X-Canonical-SHA256` response header (or the SHA-256 after stripping the block) against the pins. Recommended: the setup skill installer (`/workspace/.wattcoin_license_check.py --sku <sku> --install-runtime ... --expected-sha256 <pin>`). `bot_common.py` has two pinned variants chosen by SKU: `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (legacy; served for `agent-council`, `dependency-vuln-triage`, `domain-infra-hygiene`, `mcp-config-auditor`, `print-farm-ops`, `robotics-telemetry-inspector`) and `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current; every other BotAppStore SKU, including `sec-supply-chain-mapper`).
+- **Mill Cert Matcher ($39 one-time, `sku: mill-cert-matcher`, LIVE NOW - card / Apple Pay / Google Pay checkout, SOL also accepted):** https://botappstore.com/bots/mill-cert-matcher.html (Checkout: https://botappstore.com/#card-mill-cert-matcher; runtime: https://botappstore.com/runtime/mill_cert_matcher.py). Screening aid that flags issues for human review; not a legal, compliance, or material-certification determination.
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/mill_cert_matcher.py (SHA-256 `19b875763d371177e96bdac76e6ace6224e236fc6263f51a3204390b83c205ef`), https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **Runtime download note:** `/runtime/` URLs are license-gated: send `X-License-Key: wcl_...` or `X-Agent-Key: wck_...` (unauthenticated requests get `401`). The served file carries a per-license watermark block (5 lines), so compare the `X-Canonical-SHA256` response header (or the SHA-256 after stripping the block) against the pins. Recommended: the setup skill installer (`/workspace/.wattcoin_license_check.py --sku <sku> --install-runtime ... --expected-sha256 <pin>`). `bot_common.py` has two pinned variants chosen by SKU: `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (legacy; served for `agent-council`, `dependency-vuln-triage`, `domain-infra-hygiene`, `mcp-config-auditor`, `print-farm-ops`, `robotics-telemetry-inspector`) and `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current; every other BotAppStore SKU, including `sec-supply-chain-mapper` and `mill-cert-matcher`).
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 
 ---
 
-## Live Agent Templates (Available Now — 12 Live Automations)
+## Live Agent Templates (Available Now — 13 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -332,6 +333,27 @@
 - **Guardrails:** HTTPS-only allow-listed sec.gov hosts, DNS pinning, no redirects (SSRF protection), compliant SEC User-Agent, <=5 requests per second with request and byte caps; never infers a relationship without a filing quote; never gives buy/sell/hold advice; always prepends a SCOPE_NOTE.
 - **Full Verbatim Sample:** https://botappstore.com/bots/sec-supply-chain-mapper.html#sample-output
 
+### 13. Mill Cert Matcher ($39 one-time — LIVE NOW, sku: mill-cert-matcher)
+- **Status:** LIVE NOW
+- **SKU:** `mill-cert-matcher`
+- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default, SOL also accepted
+- **Categories:** Manufacturing / Receiving Inspection
+- **Product Page URL:** https://botappstore.com/bots/mill-cert-matcher.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-mill-cert-matcher
+- **Included Skills:** `mill-cert-matcher-setup` + `mill-cert-matcher`
+- **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/mill_cert_matcher.py` — SHA-256 `19b875763d371177e96bdac76e6ace6224e236fc6263f51a3204390b83c205ef` (standalone zero-dependency Python 3 CLI; optional pinned PDF library for text-layer PDFs)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current variant)
+- **Deliverable:** A receiving-inspection card that cross-checks a mill test certificate against the purchase order and the drawing material callout, with source file, page and line for every extracted value. Verdict: any REJECT gives REJECT, otherwise any HOLD gives HOLD, otherwise PASS.
+- **Capabilities:**
+  - `MCM-MAT-01` alloy, temper (your equivalences) and spec match across cert, PO and drawing; `MCM-QTY-01` thickness and quantity.
+  - `MCM-CHEM-01` chemistry and `MCM-MECH-01` tensile/yield/elongation against your own spec-limits library (built-in limits are illustrative examples only); a spec, alloy or temper missing from your library is a HOLD.
+  - `MCM-HEAT-01` heat number already in your local history, `MCM-SIG-01` signature or certification statement, `MCM-DATE-01` cert date, `MCM-CONF-01` low-confidence fields or a PDF with no text layer (no OCR).
+  - `MCM-DFARS-01` optional melt-country comparison against a qualifying list you configure (off by default, no built-in list).
+- **Exit Codes:** `0` PASS, `3` HOLD, `4` REJECT.
+- **Guardrails:** Runs on your machine and works offline (`--offline` makes no network call); certificate text, heat numbers, supplier names and file names are never sent. Screening aid that flags issues for human review. Not a legal, compliance, or material-certification determination; makes no DFARS or ITAR determination.
+- **Sample Prompt:** `Run mill_cert_matcher.py on cert.txt with po.txt and drawing.txt and show me every line that needs a human decision.`
+
 ## Value Bundles — Multi-Bot Packs (4 Live Bundle SKUs; One License Key Unlocks All Included Bots)
 
 Bundle SKUs are priced in USD and paid in SOL via the same non-custodial checkout (`POST https://www.wattcoin.org/api/v1/agents/license/quote` with `sku: <bundle-sku>`, `source: "botappstore"`). A single bundle purchase returns **one** `wcl_<64-hex>` bearer license code that unlocks **every** member bot in the pack (up to 3 workspace-reset rebinds). The `/api/v1/agents/license/purchase` response also includes `included_skus` (member SKU list) and `bundle_templates` (an array of `{sku, name, template_url}` with one unlisted `https://x.ai/bot/<id>` Grok Bot template per member) so you can import every bot in the pack. Activate each imported bot on its Turn 1 with the same `wcl_...` code. Storefront section: https://botappstore.com/#bundles
@@ -385,6 +407,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
      - `physical-ai-manufacturing-pack` ($59.00 USD in SOL — Physical AI & Manufacturing Ops Pack, 2-bot bundle; members: print-farm-ops, robotics-telemetry-inspector; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `edgar-intelligence-pack` ($89.00 USD in SOL — Institutional EDGAR Intelligence Pack, 3-bot bundle; members: company-deep-dive, sec-patent-watchdog, sec-supply-chain-mapper; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `sec-supply-chain-mapper` ($29.00 USD in SOL — SEC EDGAR Supply Chain & Counterparty Mapper, v1.1)
+     - `mill-cert-matcher` ($39.00 USD — Mill Cert Matcher)
      - `founder-research-gtm-pack` ($59.00 USD in SOL — Founder OSINT, SEC & GTM Pack, 3-bot bundle; members: company-deep-dive, sec-patent-watchdog, social-hub-publisher; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `bot-skill-auditor` ($29.00 USD in SOL — Bot & Skill Security Auditor)
      - `company-deep-dive` ($19.00 USD in SOL — Company & Competitor Deep-Dive Analyst)
@@ -419,7 +442,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
 
 ---
 
-## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 12 Live Templates; Wave 2 and Wave 3 samples follow at the end)
+## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 13 Live Templates; Wave 2 and Wave 3 samples follow at the end)
 
 ### Sample 1 — Web & API Text Extractor (`getting-started` + `web-extractor`, $0 Free Forever)
 
@@ -2143,4 +2166,26 @@ requests   14/40  bytes 1,204,331/4,194,304  rate<=5/s  sec.gov only
 audit_sha256 ff66fc2c430f6ab3f49ba3de44dc85c2f2fcbcb96300a3a524171fe32a8c18d9
 exit_code 1
 SCOPE_NOTE: Primary SEC EDGAR filings only. Relationships are reported only where a filing quote supports them; private contracts, undisclosed counterparties and non-filing sources are out of scope. Concentration scores summarise disclosed percentages and are not a credit, investment or valuation opinion. No buy, sell or hold ratings.
+```
+
+## Wave 3 - mill-cert-matcher ($39 one-time; LIVE NOW)
+- **SKU:** `mill-cert-matcher`
+- **Page:** https://botappstore.com/bots/mill-cert-matcher.html
+- **Runtime:** https://botappstore.com/runtime/mill_cert_matcher.py
+
+### Verbatim sample output
+EXAMPLE DATA: synthetic certificate generated for the product page, not a real supplier or heat.
+```
+MILL CERT MATCHER  ·  EXAMPLE DATA (synthetic, not a real certificate)
+VERDICT: HOLD: human decision needed  |  1 line needs a human decision
+
+FLAGGED
+  HOLD  MCM-SIG-01  Signature / certification statement
+        expected: present   actual: not found   [no signature or certification statement found]
+
+CHECKED (example rows)
+  PASS  MCM-MAT-01  Alloy / grade        6061    cert p1 L4, po p1 L4, drawing p1 L1
+  PASS  MCM-CHEM-01 Chemistry Cu (%)     0.27    cert p1 L13   (limit 0.15-0.4, built-in example limit)
+
+Screening aid that flags issues for human review. Not a legal, compliance, or material-certification determination.
 ```

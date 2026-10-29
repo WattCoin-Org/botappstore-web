@@ -265,6 +265,31 @@
         return 'Activate my SEC EDGAR Supply Chain & Counterparty Mapper with license code ' + code;
       }
     },
+    'mill-cert-matcher': {
+      sku: 'mill-cert-matcher',
+      name: 'Mill Cert Matcher — Receiving Inspection Cert & PO Cross-Check',
+      title: 'Mill Cert Matcher — Receiving Inspection Cert & PO Cross-Check — $39',
+      slugMeta: 'sku: mill-cert-matcher · Skills: mill-cert-matcher-setup + mill-cert-matcher · One-Time License · 3 Rebinds',
+      priceUsd: 39,
+      priceLabel: '$39 USD (one-time)',
+      priceUsdHtml: '$39.00 <small>USD</small>',
+      promptHint: 'Cross-check this mill test certificate against the PO and the drawing callout and flag anything a person should look at...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open Mill Cert Matcher in Grok Bot',
+      detailUrl: '/bots/mill-cert-matcher.html',
+      statusFooterText: 'Status: LIVE · $39 One-Time License',
+      ctaButtonText: 'Buy License ($39) →',
+      stepADescHtml:
+        'Click below to open the private <strong>Mill Cert Matcher — Receiving Inspection Cert &amp; PO Cross-Check</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open Mill Cert Matcher in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or together with the mill test certificate, purchase order and drawing callout you want cross-checked):',
+      stepCFootHtml:
+        'On Turn 1, <code>mill-cert-matcher-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+      defaultPrompt: function (code) {
+        return 'Activate my Mill Cert Matcher with license code ' + code;
+      }
+    },
     'devsecops-ai-security-pack': {
       sku: 'devsecops-ai-security-pack',
       name: 'DevSecOps & AI Agent Security Pack (4-Bot Bundle)',
@@ -1018,6 +1043,48 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
           <li><strong>No Investment Advice:</strong> Never outputs buy, sell or hold ratings, price targets or forecasts; concentration scores are not credit or valuation opinions.</li>
           <li><strong>SEC-Only &amp; Rate-Limited:</strong> Refuses non-SEC hosts, redirects, private IPs and non-HTTPS targets; never exceeds SEC EDGAR rate limits.</li>
           <li><strong>Scope Note:</strong> Always states that private contracts and undisclosed counterparties are outside primary filings.</li>
+        </ul>
+      `
+    },
+    'mill-cert-matcher': {
+      title: 'Mill Cert Matcher — Receiving Inspection Cert & PO Cross-Check',
+      slug: 'mill-cert-matcher-setup + mill-cert-matcher',
+      badge: 'LIVE · $39 ONE-TIME',
+      badgeClass: 'live',
+      price: '$39 One-Time License (Includes 3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'mill-cert-matcher',
+      specPageUrl: '/bots/mill-cert-matcher.html',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>A receiving-inspection card that cross-checks a mill test certificate against the purchase order and the drawing material callout, with the source file, page and line for every extracted value.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$39 USD</strong> license. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
+        <p><strong>Screening aid that flags issues for human review. Not a legal, compliance, or material-certification determination.</strong></p>
+        <h4>Included Skills (<code>mill-cert-matcher-setup</code> + <code>mill-cert-matcher</code>)</h4>
+        <ul>
+          <li><strong>Cert / PO / Drawing Match:</strong> <code>MCM-MAT-01</code> and <code>MCM-QTY-01</code> compare alloy, temper (your equivalences), spec, thickness and quantity.</li>
+          <li><strong>Chemistry &amp; Mechanicals:</strong> <code>MCM-CHEM-01</code> and <code>MCM-MECH-01</code> check values against <em>your own</em> spec-limits library; a spec missing from your library is a HOLD, never a PASS.</li>
+          <li><strong>Traceability Checks:</strong> heat-number history, signature statement, cert date and confidence floor (<code>MCM-HEAT-01</code>, <code>MCM-SIG-01</code>, <code>MCM-DATE-01</code>, <code>MCM-CONF-01</code>).</li>
+          <li><strong>Optional Melt-Country Screen:</strong> <code>MCM-DFARS-01</code> only compares against a qualifying-country list you configure and makes no compliance determination.</li>
+        </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Run mill_cert_matcher.py on cert.txt with po.txt and drawing.txt and show me every line that needs a human decision.</code></p>
+        <p><a href="/bots/mill-cert-matcher.html">Full spec &amp; example card →</a></p>
+      `,
+      execHtml: `
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>). Certificates, POs and drawings are read on your computer and never uploaded; with <code>--offline</code> the tool makes no network call at all.</p>
+        <h4>Outputs</h4>
+        <ul>
+          <li>A verdict card (PASS, HOLD or REJECT) with a flagged section, checked rows and source page/line for each value.</li>
+          <li>Exit codes for scripts: <code>0</code> PASS, <code>3</code> HOLD, <code>4</code> REJECT.</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>Screening Aid Only:</strong> Never approves or certifies material; any REJECT or HOLD is flagged for a person to decide.</li>
+          <li><strong>No Compliance Determinations:</strong> Makes no DFARS or ITAR determination and ships no built-in qualifying-country list.</li>
+          <li><strong>No Silent PASS:</strong> Uncertain fields, scanned PDFs without a text layer (no OCR) and limits missing from your library are HOLD lines, never guesses.</li>
+          <li><strong>Local Only:</strong> Certificate text, heat numbers, supplier names and file names are never sent anywhere.</li>
         </ul>
       `
     }
@@ -2579,7 +2646,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 // Checkout card on-ramp helper + header Products dropdown (idempotent injectors)
 // ---------------------------------------------------------------------------
 (() => {
-  const NAV_MENU = {"trigger": "Products (12 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (12)", "footer": "View All 12 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29 SOL"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49 SOL"]]};
+  const NAV_MENU = {"trigger": "Products (13 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (13)", "footer": "View All 13 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29 SOL"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49 SOL"], ["mill-cert-matcher", "Mill Cert Matcher", null, "$39"]]};
 
   const ensureCardOnramp = () => {
     document.querySelectorAll('#checkout-step-pay').forEach((pay) => {
