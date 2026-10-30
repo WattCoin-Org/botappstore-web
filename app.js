@@ -9,11 +9,11 @@
     'bot-skill-auditor': {
       sku: 'bot-skill-auditor',
       name: 'Bot & Skill Security Auditor',
-      title: 'Bot & Skill Security Auditor — $29 in SOL',
+      title: 'Bot & Skill Security Auditor — $29 · card',
       slugMeta: 'sku: bot-skill-auditor · Skills: auditor-setup + bot-skill-auditor · 3 Rebinds',
       priceUsdHtml: '$29.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($29 SOL) →',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>Bot &amp; Skill Security Auditor</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Security Auditor in Grok Bot ↗',
@@ -28,11 +28,11 @@
     'company-deep-dive': {
       sku: 'company-deep-dive',
       name: 'Company & Competitor Deep-Dive Analyst',
-      title: 'Company & Competitor Deep-Dive Analyst — $19 in SOL',
+      title: 'Company & Competitor Deep-Dive Analyst — $19 · card',
       slugMeta: 'sku: company-deep-dive · Skills: company-deep-dive-setup + company-deep-dive · 3 Rebinds',
       priceUsdHtml: '$19.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $19 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($19 SOL) →',
+      statusFooterText: 'Status: LIVE · $19 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($19) →',
       stepADescHtml:
         'Click below to open the private <strong>Company &amp; Competitor Deep-Dive Analyst</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Deep-Dive Analyst in Grok Bot ↗',
@@ -47,16 +47,16 @@
     'sec-patent-watchdog': {
       sku: 'sec-patent-watchdog',
       name: 'SEC & Patent Watchdog Digest',
-      title: 'SEC & Patent Watchdog Digest — $29 in SOL',
+      title: 'SEC & Patent Watchdog Digest — $29 · card',
       slugMeta: 'sku: sec-patent-watchdog · Skills: sec-patent-watchdog-setup + sec-patent-watchdog · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD in SOL (one-time)',
+      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Check my SEC & patent watchlist for NVDA, AMD, and AAPL...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Install SEC & Patent Watchdog Included in License',
-      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($29 SOL) →',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>SEC &amp; Patent Watchdog Digest</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Install SEC & Patent Watchdog Included in License ↗',
@@ -71,16 +71,16 @@
     'social-hub-publisher': {
       sku: 'social-hub-publisher',
       name: 'Social Hub Publisher',
-      title: 'Social Hub Publisher — $29 in SOL',
+      title: 'Social Hub Publisher — $29 · card',
       slugMeta: 'sku: social-hub-publisher · Skills: social-hub-publisher-setup + social-hub-publisher · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD in SOL (one-time)',
+      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Initialize my Social Hub queue for X, Discord, Bluesky, and Telegram...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Social Hub Publisher in Grok Bot',
-      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($29 SOL) →',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>Social Hub Publisher</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Social Hub Publisher in Grok Bot ↗',
@@ -95,16 +95,16 @@
     'dependency-vuln-triage': {
       sku: 'dependency-vuln-triage',
       name: 'Dependency Vulnerability Triage Bot',
-      title: 'Dependency Vulnerability Triage Bot — $29 in SOL',
+      title: 'Dependency Vulnerability Triage Bot — $29 · card',
       slugMeta: 'sku: dependency-vuln-triage · Skills: dependency-vuln-triage-setup + dependency-vuln-triage · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD in SOL (one-time)',
+      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Scan my package-lock.json against OSV.dev, EPSS, and CISA KEV...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Dependency Vulnerability Triage Bot in Grok Bot',
-      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($29 SOL) →',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>Dependency Vulnerability Triage Bot</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Vulnerability Triage Bot in Grok Bot ↗',
@@ -119,16 +119,16 @@
     'domain-infra-hygiene': {
       sku: 'domain-infra-hygiene',
       name: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor',
-      title: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor — $19 in SOL',
+      title: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor — $19 · card',
       slugMeta: 'sku: domain-infra-hygiene · Skills: domain-infra-hygiene-setup + domain-infra-hygiene · 1-Year License · 3 Rebinds',
       priceUsd: 19,
-      priceLabel: '$19 USD in SOL (one-time)',
+      priceLabel: '$19 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$19.00 <small>USD</small>',
       promptHint: 'Audit DNS, DNSSEC, TLS, SPF/DMARC/DKIM and security headers for my domain example.com...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Domain, TLS & Email Auth Hygiene Auditor in Grok Bot',
-      statusFooterText: 'Status: LIVE · $19 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($19 in SOL) →',
+      statusFooterText: 'Status: LIVE · $19 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($19) →',
       stepADescHtml:
         'Click below to open the private <strong>Domain, TLS &amp; Email Auth Infrastructure Hygiene Auditor</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Domain Hygiene Auditor in Grok Bot ↗',
@@ -143,16 +143,16 @@
     'agent-council': {
       sku: 'agent-council',
       name: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator',
-      title: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator — $39 in SOL',
+      title: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator — $39 · card',
       slugMeta: 'sku: agent-council · Skills: agent-council-setup + agent-council · One-Time License · 3 Rebinds',
       priceUsd: 39,
-      priceLabel: '$39 USD in SOL (one-time)',
+      priceLabel: '$39 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$39.00 <small>USD</small>',
       promptHint: 'Convene a 3-seat council (architect, security, skeptic) on this design question and give me the consensus and minority report...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Agent Council in Grok Bot',
-      statusFooterText: 'Status: LIVE · $39 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($39 in SOL) →',
+      statusFooterText: 'Status: LIVE · $39 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($39) →',
       stepADescHtml:
         'Click below to open the private <strong>Agent Council — Multi-Model Swarm Debate &amp; Pair-Architect Collaborator</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Agent Council in Grok Bot ↗',
@@ -167,16 +167,16 @@
     'mcp-config-auditor': {
       sku: 'mcp-config-auditor',
       name: 'MCP Server & Tool-Permission Security Auditor',
-      title: 'MCP Server & Tool-Permission Security Auditor — $19 in SOL',
+      title: 'MCP Server & Tool-Permission Security Auditor — $19 · card',
       slugMeta: 'sku: mcp-config-auditor · Skills: mcp-config-auditor-setup + mcp-config-auditor · One-Time License · 3 Rebinds',
       priceUsd: 19,
-      priceLabel: '$19 USD in SOL (one-time)',
+      priceLabel: '$19 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$19.00 <small>USD</small>',
       promptHint: 'Audit my Claude Desktop, Cursor and VS Code MCP configs for leaked secrets, unpinned packages and poisoned tools...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open MCP Server & Tool-Permission Security Auditor in Grok Bot',
-      statusFooterText: 'Status: LIVE · $19 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($19 in SOL) →',
+      statusFooterText: 'Status: LIVE · $19 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($19) →',
       stepADescHtml:
         'Click below to open the private <strong>MCP Server &amp; Tool-Permission Security Auditor</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open MCP Config Auditor in Grok Bot ↗',
@@ -192,17 +192,17 @@
       sku: 'print-farm-ops',
       name: '3D Print Farm & Slicer Queue Ops',
       title: '3D Print Farm & Slicer Queue Ops',
-      badge: 'AVAILABLE NOW · $29 IN SOL',
+      badge: 'AVAILABLE NOW · $29 · CARD',
       detailUrl: '/bots/print-farm-ops.html',
       slugMeta: 'sku: print-farm-ops · Skills: print-farm-ops-setup + print-farm-ops · One-Time License · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD in SOL (one-time)',
+      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Audit my OrcaSlicer .3mf files, spool ledger and SKU table, and schedule this week\'s print queue...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open 3D Print Farm & Slicer Queue Ops in Grok Bot',
-      statusFooterText: 'Status: AVAILABLE NOW · $29 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($29 in SOL) →',
+      statusFooterText: 'Status: AVAILABLE NOW · $29 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>3D Print Farm &amp; Slicer Queue Ops</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Print Farm Ops in Grok Bot ↗',
@@ -218,17 +218,17 @@
       sku: 'robotics-telemetry-inspector',
       name: 'Humanoid & Fleet Telemetry Inspector',
       title: 'Humanoid & Fleet Telemetry Inspector',
-      badge: 'AVAILABLE NOW · $49 IN SOL',
+      badge: 'AVAILABLE NOW · $49 · CARD',
       detailUrl: '/bots/robotics-telemetry-inspector.html',
       slugMeta: 'sku: robotics-telemetry-inspector · Skills: robotics-telemetry-inspector-setup + robotics-telemetry-inspector · One-Time License · 3 Rebinds',
       priceUsd: 49,
-      priceLabel: '$49 USD in SOL',
+      priceLabel: '$49 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$49.00 <small>USD</small>',
       promptHint: 'Audit my actuator log, BMS export, ROS 2 bag and flight log, and write the maintenance checklist...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Humanoid & Fleet Telemetry Inspector in Grok Bot',
-      statusFooterText: 'Status: AVAILABLE NOW · $49 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($49 in SOL) →',
+      statusFooterText: 'Status: AVAILABLE NOW · $49 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($49) →',
       stepADescHtml:
         'Click below to open the private <strong>Humanoid &amp; Fleet Telemetry Inspector</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Telemetry Inspector in Grok Bot ↗',
@@ -243,17 +243,17 @@
     'sec-supply-chain-mapper': {
       sku: 'sec-supply-chain-mapper',
       name: 'SEC EDGAR Supply Chain & Counterparty Mapper',
-      title: 'SEC EDGAR Supply Chain & Counterparty Mapper — $29 in SOL',
+      title: 'SEC EDGAR Supply Chain & Counterparty Mapper — $29 · card',
       slugMeta: 'sku: sec-supply-chain-mapper · Skills: sec-supply-chain-mapper-setup + sec-supply-chain-mapper · One-Time License · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD in SOL (one-time)',
+      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Map the suppliers, major customers and equity stakes of NVDA from its latest 10-K...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open SEC EDGAR Supply Chain Mapper in Grok Bot',
       detailUrl: '/bots/sec-supply-chain-mapper.html',
-      statusFooterText: 'Status: LIVE · $29 One-Time in SOL (Non-Custodial)',
-      ctaButtonText: 'Buy License ($29 in SOL) →',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>SEC EDGAR Supply Chain &amp; Counterparty Mapper</strong> template in Grok Bot and add it to your sidebar:',
       stepABtnText: 'Open Supply Chain Mapper in Grok Bot ↗',
@@ -343,12 +343,12 @@
     'devsecops-ai-security-pack': {
       sku: 'devsecops-ai-security-pack',
       name: 'DevSecOps & AI Agent Security Pack (4-Bot Bundle)',
-      title: 'DevSecOps & AI Agent Security Pack (4-Bot Bundle) — $69 in SOL',
+      title: 'DevSecOps & AI Agent Security Pack (4-Bot Bundle) — $69 · card',
       slugMeta: 'sku: devsecops-ai-security-pack · 4 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 69,
       priceUsdHtml: '$69.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $69 One-Time 4-Bot Bundle in SOL (Non-Custodial)',
-      ctaButtonText: 'Unlock Bundle ($69 in SOL) →',
+      statusFooterText: 'Status: LIVE · $69 One-Time 4-Bot Bundle · card, SOL also accepted',
+      ctaButtonText: 'Unlock Bundle ($69) →',
       shortName: 'DevSecOps & AI Security Pack',
       includedSkus: ['bot-skill-auditor', 'mcp-config-auditor', 'dependency-vuln-triage', 'domain-infra-hygiene'],
       stepADescHtml:
@@ -365,12 +365,12 @@
     'physical-ai-manufacturing-pack': {
       sku: 'physical-ai-manufacturing-pack',
       name: 'Physical AI & Manufacturing Ops Pack (2-Bot Bundle)',
-      title: 'Physical AI & Manufacturing Ops Pack (2-Bot Bundle) — $59 in SOL',
+      title: 'Physical AI & Manufacturing Ops Pack (2-Bot Bundle) — $59 · card',
       slugMeta: 'sku: physical-ai-manufacturing-pack · 2 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 59,
       priceUsdHtml: '$59.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $59 One-Time 2-Bot Bundle in SOL (Non-Custodial)',
-      ctaButtonText: 'Unlock Bundle ($59 in SOL) →',
+      statusFooterText: 'Status: LIVE · $59 One-Time 2-Bot Bundle · card, SOL also accepted',
+      ctaButtonText: 'Unlock Bundle ($59) →',
       shortName: 'Physical AI & Manufacturing Pack',
       includedSkus: ['print-farm-ops', 'robotics-telemetry-inspector'],
       stepADescHtml:
@@ -387,12 +387,12 @@
     'founder-research-gtm-pack': {
       sku: 'founder-research-gtm-pack',
       name: 'Founder OSINT, SEC & GTM Pack (3-Bot Bundle)',
-      title: 'Founder OSINT, SEC & GTM Pack (3-Bot Bundle) — $59 in SOL',
+      title: 'Founder OSINT, SEC & GTM Pack (3-Bot Bundle) — $59 · card',
       slugMeta: 'sku: founder-research-gtm-pack · 3 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 59,
       priceUsdHtml: '$59.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $59 One-Time 3-Bot Bundle in SOL (Non-Custodial)',
-      ctaButtonText: 'Unlock Bundle ($59 in SOL) →',
+      statusFooterText: 'Status: LIVE · $59 One-Time 3-Bot Bundle · card, SOL also accepted',
+      ctaButtonText: 'Unlock Bundle ($59) →',
       shortName: 'Founder Research & GTM Pack',
       includedSkus: ['company-deep-dive', 'sec-patent-watchdog', 'social-hub-publisher'],
       stepADescHtml:
@@ -409,12 +409,12 @@
     'edgar-intelligence-pack': {
       sku: 'edgar-intelligence-pack',
       name: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle)',
-      title: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle) — $89 in SOL',
+      title: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle) — $89 · card',
       slugMeta: 'sku: edgar-intelligence-pack · 3 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 89,
       priceUsdHtml: '$89.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $89 One-Time 3-Bot Bundle in SOL (Non-Custodial)',
-      ctaButtonText: 'Unlock Bundle ($89 in SOL) →',
+      statusFooterText: 'Status: LIVE · $89 One-Time 3-Bot Bundle · card, SOL also accepted',
+      ctaButtonText: 'Unlock Bundle ($89) →',
       shortName: 'Institutional EDGAR Pack',
       includedSkus: ['company-deep-dive', 'sec-patent-watchdog', 'sec-supply-chain-mapper'],
       stepADescHtml:
@@ -470,15 +470,15 @@
     'bot-skill-auditor': {
       title: 'Bot & Skill Security Auditor',
       slug: 'auditor-setup + bot-skill-auditor',
-      badge: 'LIVE · $29 IN SOL',
+      badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'bot-skill-auditor',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
         <h4>Sample Audit Report Preview (<code>crypto-airdrop-helper/SKILL.md</code>)</h4>
         <pre class="modal-sample-audit"># Static Capability Audit: crypto-airdrop-helper
 - Files Audited (1/1): crypto-airdrop-helper/SKILL.md (read 1,420 of 1,420 bytes; hidden_unicode_lines: []; long_lines: [])
@@ -543,15 +543,15 @@
     'company-deep-dive': {
       title: 'Company & Competitor Deep-Dive Analyst',
       slug: 'company-deep-dive-setup + company-deep-dive',
-      badge: 'LIVE · $19 IN SOL',
+      badge: 'LIVE · $19 · CARD',
       badgeClass: 'live',
-      price: '$19 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      price: '$19 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'company-deep-dive',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor comparison matrix—with exact accession numbers and UTC retrieval timestamps.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
         <h4>Sample Dossier Output Preview (<code>/workspace/dossiers/aapl-20261025T183000Z-7f700f/REPORT.md</code>)</h4>
         <pre class="modal-sample-audit">&gt; This dossier is an automated compilation of publicly available primary-source records (SEC EDGAR, USPTO PatentsView, and RDAP) retrieved at the UTC timestamps cited below. It does not cover private/unfiled commercial agreements, non-public financial projections, unindexed foreign or state filings, or real-time market data. Filing summaries reflect registrant assertions and are not independently audited. Nothing in this dossier constitutes investment advice, financial advice, trading recommendations, credit ratings, or a legal opinion on patent validity or freedom-to-operate.
 
@@ -626,15 +626,15 @@
     'sec-patent-watchdog': {
       title: 'SEC & Patent Watchdog Digest',
       slug: 'sec-patent-watchdog-setup + sec-patent-watchdog',
-      badge: 'LIVE · $29 IN SOL',
+      badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'sec-patent-watchdog',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>A zero-noise delta digest of new SEC EDGAR filings and USPTO patent/IP publications for up to 10 tickers/CIKs—written only when something actually changed.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>sec-patent-watchdog-setup</code> + <code>sec-patent-watchdog</code>)</h4>
         <ul>
           <li><strong>Watchlist Coverage:</strong> Up to 10 tickers/CIKs across <code>10-K</code>, <code>10-Q</code>, <code>8-K</code>, <code>Form 4</code>, <code>13F-HR</code>, and <code>S-1</code> filings plus USPTO patent/IP publications.</li>
@@ -689,15 +689,15 @@
     'social-hub-publisher': {
       title: 'Social Hub Publisher',
       slug: 'social-hub-publisher-setup + social-hub-publisher',
-      badge: 'LIVE · $29 IN SOL',
+      badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'social-hub-publisher',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Zero-SaaS-fee multi-channel announcement queue, Gate-1 policy linter, and Gate-2 HMAC-verified publisher across X, Discord webhooks, Bluesky AT Protocol, and Telegram Bot API.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>social-hub-publisher-setup</code> + <code>social-hub-publisher</code>)</h4>
         <ul>
           <li><strong>Gate-1 Policy Linter:</strong> Enforces per-channel length limits (weighting URLs as 23 chars on X), allowed link domains, banned terms, hashtag/mention caps, and duplicate post detection.</li>
@@ -722,15 +722,15 @@
     'dependency-vuln-triage': {
       title: 'Dependency Vulnerability Triage Bot',
       slug: 'dependency-vuln-triage-setup + dependency-vuln-triage',
-      badge: 'LIVE · $29 IN SOL',
+      badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'dependency-vuln-triage',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic lockfile vulnerability triage report enriching OSV.dev advisories with FIRST EPSS v1 exploit probability and the CISA KEV catalog, sorted into four action buckets with exact fix versions.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>dependency-vuln-triage-setup</code> + <code>dependency-vuln-triage</code>)</h4>
         <ul>
           <li><strong>7 Lockfile Formats:</strong> Parses <code>package-lock.json</code> (v1–v3), <code>yarn.lock</code>, <code>Pipfile.lock</code>, <code>poetry.lock</code>, pinned <code>requirements.txt</code>, <code>Cargo.lock</code>, and <code>go.sum</code>.</li>
@@ -755,16 +755,16 @@
     'domain-infra-hygiene': {
       title: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor',
       slug: 'domain-infra-hygiene-setup + domain-infra-hygiene',
-      badge: 'LIVE · $19 IN SOL',
+      badge: 'LIVE · $19 · CARD',
       badgeClass: 'live',
-      price: '$19 One-Time in SOL (1-Year License · 3 Workspace-Reset Rebinds)',
+      price: '$19 One-Time · card, SOL also accepted (1-Year License · 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'domain-infra-hygiene',
       specPageUrl: '/bots/domain-infra-hygiene.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, read-only posture report for domains you own: DNS and DNSSEC, TLS certificate chain and expiry, SPF (RFC 7208 10-lookup counting), DMARC, DKIM, MTA-STS, TLS-RPT, CAA, HTTPS security headers, dangling CNAMEs and Certificate Transparency, with copy-paste DNS / Nginx / Vercel / Netlify remediation.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>domain-infra-hygiene-setup</code> + <code>domain-infra-hygiene</code>)</h4>
         <pre class="code-pre">---
 name: domain-infra-hygiene
@@ -813,16 +813,16 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     'agent-council': {
       title: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator',
       slug: 'agent-council-setup + agent-council',
-      badge: 'LIVE · $39 IN SOL',
+      badge: 'LIVE · $39 · CARD',
       badgeClass: 'live',
-      price: '$39 One-Time in SOL (3 Workspace-Reset Rebinds)',
+      price: '$39 One-Time · card, SOL also accepted (3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'agent-council',
       specPageUrl: '/bots/agent-council.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>A council of 2–6 AI seats (local <code>claude</code> personas, <code>codex</code>, <code>gemini</code>, <code>aider</code>, or BYOK OpenAI / Anthropic / xAI / Gemini / OpenRouter / DeepSeek / Ollama models) that debates, pair-programs, competes on or reviews one problem, and a Chair synthesis with a consensus matrix, minority report, verdict and action plan.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$39 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$39 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>agent-council-setup</code> + <code>agent-council</code>)</h4>
         <pre class="code-pre">---
 name: agent-council
@@ -876,16 +876,16 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 usage/refusal · 11 de
     'mcp-config-auditor': {
       title: 'MCP Server & Tool-Permission Security Auditor',
       slug: 'mcp-config-auditor-setup + mcp-config-auditor',
-      badge: 'LIVE · $19 IN SOL',
+      badge: 'LIVE · $19 · CARD',
       badgeClass: 'live',
-      price: '$19 One-Time in SOL (3 Workspace-Reset Rebinds)',
+      price: '$19 One-Time · card, SOL also accepted (3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'mcp-config-auditor',
       specPageUrl: '/bots/mcp-config-auditor.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, read-only static audit of your MCP client configs (Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Cline, Zed, generic <code>mcp.json</code>) and <code>tools/list</code> snapshots across 5 buckets: secrets, execution &amp; host exposure, supply chain, network and tool poisoning. Every detected secret is redacted, and each file gets a copy-paste hardened config.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>mcp-config-auditor-setup</code> + <code>mcp-config-auditor</code>)</h4>
         <pre class="code-pre">---
 name: mcp-config-auditor
@@ -935,16 +935,16 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     'print-farm-ops': {
       title: '3D Print Farm & Slicer Queue Ops',
       slug: 'print-farm-ops-setup + print-farm-ops',
-      badge: 'AVAILABLE NOW · $29 IN SOL',
+      badge: 'AVAILABLE NOW · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 USD (Paid in SOL · One-Time License · Up to 3 Rebinds)',
+      price: '$29 USD (One-Time License · card; SOL also accepted · Up to 3 Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'print-farm-ops',
       specPageUrl: '/bots/print-farm-ops.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, offline, read-only audit of your OrcaSlicer, Bambu Studio and PrusaSlicer <code>.3mf</code> / <code>.gcode.3mf</code> / <code>.gcode</code> files plus your spool ledger, storefront SKU table and printer list across 4 buckets: slicer thermal/mechanical safety, spool inventory and moisture hygiene, per-part unit economics, and SKU run-rate with a multi-printer queue schedule.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 2 LIVE</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 2 LIVE</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>print-farm-ops-setup</code> + <code>print-farm-ops</code>)</h4>
         <pre class="code-pre">---
 name: print-farm-ops
@@ -999,14 +999,14 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       slug: 'robotics-telemetry-inspector-setup + robotics-telemetry-inspector',
       badge: 'AVAILABLE NOW · PHASE 1 RELEASE',
       badgeClass: 'live',
-      price: '$49 USD in SOL (One-Time License · 3 Rebinds)',
+      price: '$49 USD (One-Time License · 3 Rebinds · card; SOL also accepted)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'robotics-telemetry-inspector',
       specPageUrl: '/bots/robotics-telemetry-inspector.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, offline, read-only audit of exported robot and fleet telemetry across 4 buckets: actuator, joint and harmonic-drive duty cycles (cross-checked against URDF / SDF limits and CAN logs), 16S LiFePO4 / LiPo battery management system packs, ROS 2 bag topic rate, QoS, clock and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC flight readiness, ending in a preventive-maintenance and flight-readiness checklist.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 1 RELEASE</span> — One-time <strong>$49 USD</strong> settled on-chain in SOL. Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 1 RELEASE</span> — One-time <strong>$49 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>robotics-telemetry-inspector-setup</code> + <code>robotics-telemetry-inspector</code>)</h4>
         <pre class="code-pre">---
 name: robotics-telemetry-inspector
@@ -1058,16 +1058,16 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     'sec-supply-chain-mapper': {
       title: 'SEC EDGAR Supply Chain & Counterparty Mapper',
       slug: 'sec-supply-chain-mapper-setup + sec-supply-chain-mapper',
-      badge: 'LIVE · $29 IN SOL',
+      badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time in SOL (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'sec-supply-chain-mapper',
       specPageUrl: '/bots/sec-supply-chain-mapper.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Cited supplier, customer, foundry, subsidiary and equity-stake map for one or more public companies, built only from primary SEC EDGAR filings, with a reproducible <code>audit_sha256</code>.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> settled on-chain in SOL (v1.1). Also included in the <strong>Institutional EDGAR Intelligence Pack</strong> ($89). Instant on-chain payment verification issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license (v1.1); pay by card, Apple Pay or Google Pay (SOL also accepted). Also included in the <strong>Institutional EDGAR Intelligence Pack</strong> ($89). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
         <h4>Included Skills (<code>sec-supply-chain-mapper-setup</code> + <code>sec-supply-chain-mapper</code>)</h4>
         <ul>
           <li><strong>Cited Relationship Edges:</strong> <code>supplier</code>, <code>customer</code>, <code>foundry_compute</code>, <code>strategic_partner</code>, <code>subsidiary</code> and <code>equity_stake</code>, each with a verbatim quote of <code>&lt;=300</code> characters, the accession number and a direct SEC Archive URL.</li>
@@ -2780,7 +2780,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 // Checkout card on-ramp helper + header Products dropdown (idempotent injectors)
 // ---------------------------------------------------------------------------
 (() => {
-  const NAV_MENU = {"trigger": "Products (15 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (15)", "footer": "View All 15 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29 SOL"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49 SOL"], ["mill-cert-matcher", "Mill Cert Matcher", null, "$39"], ["rfq-flowdown-triage", "RFQ Flowdown Triage", null, "$39"], ["fai-results-reconciler", "FAI Results Reconciler", null, "$39"]]};
+  const NAV_MENU = {"trigger": "Products (15 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (15)", "footer": "View All 15 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29"], ["social-hub-publisher", "Social Hub Publisher", null, "$29"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29"], ["agent-council", "Agent Council", null, "$39"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49"], ["mill-cert-matcher", "Mill Cert Matcher", null, "$39"], ["rfq-flowdown-triage", "RFQ Flowdown Triage", null, "$39"], ["fai-results-reconciler", "FAI Results Reconciler", null, "$39"]]};
 
   const ensureCardOnramp = () => {
     document.querySelectorAll('#checkout-step-pay').forEach((pay) => {
