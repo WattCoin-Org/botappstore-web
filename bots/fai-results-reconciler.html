@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAI Results Reconciler — Balloon List Screen</title>
+  <meta name="description" content="Screen an FAI balloon list against CMM inspection results: out-of-tolerance, missing, unit and revision flags with file and row. Runs locally." />
+  <link rel="canonical" href="https://botappstore.com/bots/fai-results-reconciler.html" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#070a10" />
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="BotAppStore.com" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="FAI Results Reconciler — Balloon List Screen" />
+  <meta property="og:description" content="Screen an FAI balloon list against CMM inspection results: out-of-tolerance, missing, unit and revision flags with file and row. Runs locally." />
+  <meta property="og:url" content="https://botappstore.com/bots/fai-results-reconciler.html" />
+  <meta property="og:image" content="https://botappstore.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="FAI Results Reconciler on BotAppStore.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="FAI Results Reconciler — Balloon List Screen" />
+  <meta name="twitter:description" content="Screen an FAI balloon list against CMM inspection results: out-of-tolerance, missing, unit and revision flags with file and row. Runs locally." />
+  <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
+  <meta name="twitter:image:alt" content="FAI Results Reconciler on BotAppStore.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .spec-table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .spec-table th, .spec-table td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
+    .spec-table th { color: var(--text-primary); background: var(--bg-surface); font-weight: 600; }
+    .spec-table td:first-child { white-space: nowrap; }
+    .spec-table tr:last-child td { border-bottom: 0; }
+    .fai-disclaimer { border-left: 3px solid #F59E0B; padding: 8px 14px; color: var(--text-secondary); font-size: 14px; margin: 14px 0; }
+    .fai-pay-option { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
+    .fai-pay-option:last-child { border-bottom: 0; }
+    button[disabled] { opacity: 0.55; cursor: not-allowed; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "BotAppStore.com",
+          "item": "https://botappstore.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agent Catalog",
+          "item": "https://botappstore.com/#catalog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "FAI Results Reconciler — Balloon List vs Inspection Results Screen",
+          "item": "https://botappstore.com/bots/fai-results-reconciler.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://botappstore.com/bots/fai-results-reconciler.html#software",
+      "name": "FAI Results Reconciler — Balloon List vs Inspection Results Screen",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Linux, macOS, Windows (Python 3)",
+      "url": "https://botappstore.com/bots/fai-results-reconciler.html",
+      "sku": "fai-results-reconciler",
+      "description": "Screening aid that matches an FAI balloon list to inspection results and flags issues for human review. Coming soon."
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div id="appRoot">
+    <div class="top-ticker">
+      <div class="container top-ticker-inner">
+        <div class="status-cluster">
+          <span class="status-pill"><span class="status-dot" aria-hidden="true"></span><span>STATUS: <strong>COMING SOON · NOT YET ON SALE</strong></span></span>
+          <span>PRIVACY: <strong>FILES STAY ON YOUR COMPUTER · WORKS FULLY OFFLINE</strong></span>
+        </div>
+        <div class="ticker-links"><a href="/#catalog">Agent Catalog</a></div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a href="/" class="brand-logo">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="32,8 52,19 52,45 32,56 12,45 12,19" stroke="#38BDF8" stroke-width="3.5" stroke-linejoin="round" fill="#0C121E"/>
+              <path d="M20 24H44M20 40H44M32 16V48" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="24" y="24" width="16" height="16" rx="3" fill="#070A10" stroke="#F59E0B" stroke-width="3"/>
+              <circle cx="32" cy="32" r="3.5" fill="#38BDF8"/>
+            </svg>
+          </span>
+          <span>BotAppStore<span class="brand-domain">.com</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a href="/#catalog">Agent Catalog</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/llms.txt">llms.txt</a>
+        </nav>
+        <div class="nav-cta-group">
+          <button type="button" class="btn btn-secondary btn-sm" disabled aria-disabled="true">Coming soon</button>
+        </div>
+      </div>
+    </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="/">BotAppStore.com</a> &rarr; <a href="/#catalog">Agent Catalog</a> &rarr; <span>FAI Results Reconciler &mdash; Balloon List vs Inspection Results Screen</span>
+      </nav>
+      <section class="product-hero">
+        <div class="price-badge">&#9679; COMING SOON &middot; $39 ONE-TIME &middot; NOT YET ON SALE &middot; FIRST-ARTICLE REVIEW</div>
+        <h1>FAI Results Reconciler &mdash; Balloon List vs Inspection Results Screen. Catch the mismatches before the package goes out.</h1>
+        <p class="product-lede">Reads your first-article balloon list and the inspection results (CSV, XLSX, Calypso-style CSV or a PC-DMIS text report), matches every characteristic to its result and flags what a person should look at: out of tolerance, missing, unmatched, duplicate, inch/mm unit conflicts, part number or revision mismatches and missing Form 1/2 fields. Every finding carries its source file and row or line. Anything uncertain is REVIEW, never a silent pass.</p>
+        <p class="fai-disclaimer"><strong>Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.</strong></p>
+        <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
+          SKU: <code>fai-results-reconciler</code> &middot; Zero-dependency Python 3 CLI (XLSX read with the standard library) &middot; Runs on your machine, works offline
+        </p>
+        <div class="product-cta-row">
+          <button type="button" class="btn btn-primary btn--primary" disabled aria-disabled="true">Coming soon</button>
+          <a href="#example-card" class="btn btn-secondary btn--ghost">See an example card</a>
+          <a href="#privacy" class="btn btn-secondary btn--ghost">Privacy</a>
+        </div>
+      </section>
+
+      <section class="product-section" id="rules">
+        <h2>What it checks</h2>
+        <p>The tool compares each measured value with the limits in your balloon list and reports what it could and could not evaluate. It does not decide that a first article is acceptable.</p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>Rule</th><th>Detects</th><th>Outcome</th></tr></thead>
+            <tbody>
+            <tr><td><code>FAI-TOL-01</code></td><td>Measured value against limits (Decimal maths; a value exactly on a limit passes)</td><td>FAIL when outside</td></tr>
+            <tr><td><code>FAI-UNIT-01</code></td><td>Balloon list and results in different units (inch vs mm)</td><td>Auto-scaled by 25.4 only when the ratio is consistent: REVIEW. Otherwise not evaluated: FAIL</td></tr>
+            <tr><td><code>FAI-MISS-01</code></td><td>A characteristic with no result</td><td>REVIEW</td></tr>
+            <tr><td><code>FAI-UNM-01</code></td><td>A result with no characteristic in the balloon list</td><td>REVIEW</td></tr>
+            <tr><td><code>FAI-DUP-01</code></td><td>Duplicate balloon number, or repeated results with no piece/serial column</td><td>REVIEW</td></tr>
+            <tr><td><code>FAI-ATTR-01</code></td><td>Non-numeric or attribute results</td><td>Text fail: FAIL. Pass text on a toleranced dimension: REVIEW</td></tr>
+            <tr><td><code>FAI-REF-01</code></td><td>REF and BASIC dimensions</td><td>Listed, never evaluated</td></tr>
+            <tr><td><code>FAI-GDT-01</code></td><td>Material-condition modifiers and tolerances that cannot be reduced to limits</td><td>REVIEW (no bonus-tolerance maths)</td></tr>
+            <tr><td><code>FAI-REV-01</code></td><td>Part number or revision that differs between files and header</td><td>REVIEW</td></tr>
+            <tr><td><code>FAI-FORM-01</code></td><td>Missing Form 1/2 fields (part number, revision, serial or lot, organization, date)</td><td>REVIEW</td></tr>
+            <tr><td><code>FAI-CONF-01</code></td><td>Low confidence, ambiguous header, sheet or decimal separator, unreadable tolerance, empty input</td><td>REVIEW</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Verdict: PASS only when every non-REF characteristic is matched and within limits with no flag of any kind; any REVIEW line gives REVIEW; any FAIL line gives FAIL. An empty or ambiguous input is never a PASS. Exit codes for scripts: 0 PASS, 3 REVIEW, 4 FAIL.</p>
+      </section>
+
+      <section class="product-section" id="formats">
+        <h2>Inputs it reads</h2>
+        <ul>
+          <li>Balloon list or characteristics list: CSV, TSV or XLSX. Nominal with bilateral, asymmetric or unilateral tolerance, explicit upper and lower limits, or a single-limit feature tolerance such as position &le; 0.05.</li>
+          <li>Results: generic CSV or XLSX, Calypso-style CSV (including semicolon delimiters and decimal commas) and PC-DMIS text reports.</li>
+          <li>Column names are matched by common synonyms; a column map file covers unusual exports. Unrecognised lines are listed, never silently dropped.</li>
+          <li>PC-DMIS and Calypso are trademarks of their respective owners. This tool only reads exported files and is not affiliated with or endorsed by them.</li>
+        </ul>
+      </section>
+
+      <section class="product-section" id="example-card">
+        <h2>Example card (EXAMPLE DATA)</h2>
+        <p><strong>EXAMPLE DATA.</strong> Synthetic balloon list and results generated for this page, not a real part, customer or program.</p>
+        <pre class="code-pre">FAI RESULTS RECONCILER  ·  EXAMPLE DATA (synthetic, not a real part)
+VERDICT: FAIL: flagged for human review  |  1 out of tolerance, 1 missing of 24 characteristics
+subject: FAI-4155af30d6fa (hash of the part number; the number itself is never sent)
+
+FLAGGED
+  FAIL    FAI-TOL-01   char 7   measured 40.1193 outside [39.95, 40.05]   [balloons.csv row 10, cmm.csv row 8]
+  REVIEW  FAI-MISS-01  char 9   no inspection result for this characteristic   [balloons.csv row 12]
+  REVIEW  FAI-UNM-01   char 99  result has no matching characteristic   [cmm.csv row 30]
+  REVIEW  FAI-UNIT-01  *        results in in, characteristics in mm: 22 results scaled by 25.4 (ratio check 22 of 22)
+  REVIEW  FAI-REV-01   -        revision differs: 'B' in balloons.csv, 'C' in cmm.csv   [balloons.csv row 3, cmm.csv row 3]
+
+NOT EVALUATED
+  REF     FAI-REF-01   char 24  (88.900) reference dimension
+
+CHECKED (example rows)
+  PASS  char 1  Overall length   120.034  in [119.9, 120.1]
+  PASS  char 2  Overall width     59.968  in [59.9, 60.1]
+  PASS  char 3  Thickness         25.412  in [25.35, 25.45]
+
+Receipt: UNVERIFIED-LOCAL (offline run, not server-signed)
+Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.</pre>
+        <h3>Failure cases (EXAMPLE DATA)</h3>
+        <pre class="code-pre">EXAMPLE DATA: FAIL (units cannot be resolved)
+  FAIL    FAI-UNIT-01  char 4  units differ (characteristic mm, result in) and cannot be resolved; not evaluated
+                               (not the same as out of tolerance)
+
+EXAMPLE DATA: REVIEW (bonus tolerance not evaluated)
+  REVIEW  FAI-GDT-01   char 12  outside the base tolerance, but a material-condition modifier is present
+
+EXAMPLE DATA: REVIEW (formula without a saved value)
+  REVIEW  FAI-ATTR-01  char 5   formula cell has no cached value in the workbook</pre>
+        <p class="fai-disclaimer">Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.</p>
+      </section>
+
+      <section class="product-section" id="privacy">
+        <h2>Privacy</h2>
+        <ul>
+          <li>Balloon lists, drawings and inspection data are read on your computer and are never uploaded. They may be export-controlled; keep them local.</li>
+          <li>With <code>--offline</code> the tool makes no network call at all and still produces the full card.</li>
+          <li>When you choose a signed receipt, only an audit hash, a hash of the part number and a one-line metric are sent to the signing endpoint. Measurements, characteristic descriptions, part numbers and file names are not.</li>
+          <li>Use <code>--no-excerpts</code> to keep source row text out of the local card as well.</li>
+        </ul>
+      </section>
+
+      <section class="product-section" id="limits">
+        <h2>Limits</h2>
+        <ul>
+          <li>Single-limit feature tolerances are supported; there is no bonus-tolerance maths. A material-condition modifier that puts a reading outside the base tolerance is a REVIEW, not a FAIL.</li>
+          <li>XLSX values are read as saved; a formula with no saved value is flagged. Legacy <code>.xls</code>, <code>.xlsm</code> and encrypted files are not read: save as <code>.xlsx</code> or <code>.csv</code>.</li>
+          <li>Report layouts vary and are often customised. Only the formats above are recognised, and only synthetic samples have been used to test them; lines it cannot read are listed.</li>
+          <li>An inch/mm conflict is auto-scaled only when at least three characteristics agree on a 25.4 ratio; the card always shows the factor and the result is REVIEW.</li>
+          <li>It does not approve a first article and makes no statement about AS9102 or any other standard.</li>
+        </ul>
+      </section>
+
+      <section class="product-section" id="checkout">
+        <h2>Checkout (not open yet)</h2>
+        <div class="checkout-card-box">
+          <p>$39.00 USD one-time license. Checkout opens when the template is released; nothing on this page can take a payment yet.</p>
+          <div class="fai-pay-option">
+            <div><strong>Card / Apple Pay / Google Pay</strong> <span style="color: var(--text-muted);">(default)</span></div>
+            <button type="button" class="btn btn-primary btn-sm" disabled aria-disabled="true">Coming soon</button>
+          </div>
+          <div class="fai-pay-option">
+            <div><strong>SOL</strong> <span style="color: var(--text-muted);">(secondary option)</span></div>
+            <button type="button" class="btn btn-secondary btn-sm" disabled aria-disabled="true">Coming soon</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section" id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>Does it approve my first article?</summary><div class="faq-answer">No. It flags lines for a person. PASS means no flags were found by the checks above, not that the article is accepted. Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.</div></details>
+          <details class="faq-item"><summary>What happens when units differ?</summary><div class="faq-answer">If the files declare different units and at least three characteristics agree on a 25.4 ratio, results are scaled, the factor is shown and the verdict is REVIEW. Otherwise the affected characteristics are not evaluated and the line is a FAIL that means "cannot be evaluated", not "out of tolerance".</div></details>
+          <details class="faq-item"><summary>How does it match characteristics to results?</summary><div class="faq-answer">By balloon number after normalising case, spaces and leading zeros; 12 never matches 12a. A match by feature name plus nominal is used only when it is unique and is always a REVIEW. Ambiguous matches are reported as duplicates or unmatched, never guessed.</div></details>
+          <details class="faq-item"><summary>Which report formats work?</summary><div class="faq-answer">Generic CSV or XLSX, Calypso-style CSV and PC-DMIS text reports, plus a column map for unusual exports. Anything it cannot read is listed on the card.</div></details>
+          <details class="faq-item"><summary>What leaves my machine?</summary><div class="faq-answer">Nothing, with <code>--offline</code>. Otherwise only an audit hash, a hash of the part number and a one-line metric (for example <code>FAIL · 2 out of tolerance, 1 missing of 48 characteristics</code>) go to the receipt-signing endpoint. Measurements, descriptions, part numbers and file names are never sent.</div></details>
+          <details class="faq-item"><summary>When can I buy it?</summary><div class="faq-answer">It is not on sale yet. The checkout above is disabled until the template is released.</div></details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="disclaimer-box">
+          <strong>Disclaimer:</strong> Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 BotAppStore.com</span>
+          <span><a href="/">Home</a> · <a href="/#catalog">Agent Catalog</a></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
