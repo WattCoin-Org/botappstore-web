@@ -83,6 +83,59 @@
         "availability": "https://schema.org/InStock",
         "url": "https://botappstore.com/bots/mill-cert-matcher.html"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does it approve or certify material?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It flags issues for a human. HOLD means a person decides; REJECT means flagged for human review as mismatched or out of limits. Screening aid that flags issues for human review. Not a legal, compliance, or material-certification determination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it check DFARS or ITAR compliance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. If you turn on melt-country screening you supply the qualifying-country list; the tool only reports whether the cert's melt country is on that list. It makes no compliance determination."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the spec limits built in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only a few illustrative example entries, labelled as such on every card. Supply your own spec-limits library from the controlling spec revision. A spec, alloy or temper missing from your library is a HOLD, never a PASS."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about scanned certificates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no OCR. A PDF without a text layer is a HOLD. Text-layer PDFs are read with a pinned, hash-verified open-source PDF library; plain-text certs need no dependency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What leaves my machine?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nothing, with --offline. Otherwise only an audit hash, a hash of the PO number and a one-line metric (for example HOLD · 2 of 9 lines flagged) go to the receipt-signing endpoint. Certificate text, heat numbers, supplier names and file names are never sent."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is it licensed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One-time $39 USD license with up to 3 workspace-reset rebinds and no subscription. Pay by card, Apple Pay or Google Pay (default), or with SOL. The license unlocks both the 1-click Grok Bot template and the standalone Python 3 CLI."
+          }
+        }
+      ]
     }
   ]
 }
@@ -281,7 +334,7 @@ EXAMPLE DATA: HOLD (low confidence)
         </div>
         <div class="footer-bottom">
           <span>© 2026 BotAppStore.com</span>
-          <span><a href="/">Home</a> · <a href="/#catalog">Agent Catalog</a> · <a href="https://coinloader.com">CoinLoader.com</a></span>
+          <span><a href="/">Home</a> · <a href="/#catalog">Agent Catalog</a> · <a href="/about.html">About</a> · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy &amp; Refunds</a> · <a href="https://coinloader.com">CoinLoader.com</a></span>
         </div>
       </div>
     </footer>
