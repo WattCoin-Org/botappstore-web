@@ -7,6 +7,7 @@
 - **Canonical Storefront:** https://botappstore.com/
 - **Machine-Readable Catalog:** https://botappstore.com/llms.txt
 - **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt
+- **Structured Product Catalog (JSON):** https://botappstore.com/catalog.json — every live bot and bundle with SKU, USD price, payment methods, when-to-use and checkout endpoints.
 - **About, Contact, Privacy & Refunds:** https://botappstore.com/about.html , https://botappstore.com/contact.html , https://botappstore.com/privacy.html (refunds within 15 days of purchase; the license is revoked on refund)
 - **Sister Solana & Crypto Storefront:** https://coinloader.com/
 - **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted); `physical-ai-manufacturing-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted); `founder-research-gtm-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted); `edgar-intelligence-pack` ($89 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted)

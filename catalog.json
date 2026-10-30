@@ -1,0 +1,603 @@
+{
+  "schema_version": "1.0",
+  "storefront": "botappstore",
+  "generated_at": "2026-10-30T17:21:23Z",
+  "operator": "AIguy / WattCoin team",
+  "currency": "USD",
+  "checkout": {
+    "card": {
+      "method": "POST",
+      "url": "https://www.wattcoin.org/api/v1/agents/license/stripe-checkout",
+      "body": {
+        "sku": "<sku>",
+        "storefront": "botappstore"
+      },
+      "returns": "checkout_url (hosted page; a human completes payment)",
+      "license_lookup": "GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/{session_id}"
+    },
+    "sol": {
+      "quote": "POST https://www.wattcoin.org/api/v1/agents/license/quote",
+      "confirm": "POST https://www.wattcoin.org/api/v1/agents/license/purchase",
+      "note": "Each quote creates a 15-minute order. Add \"dry_run\": true to the POST quote body (or the stripe-checkout body) to see the price without creating an order."
+    },
+    "default": "card"
+  },
+  "products": [
+    {
+      "sku": "web-extractor",
+      "name": "Web & API Text Extractor",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 0.0,
+      "payment_methods": [],
+      "url": "https://botappstore.com/bots/web-text-extractor.html",
+      "summary": "Free self-onboarding web and JSON endpoint text extractor with 10 free cloud text extractions per UTC day.",
+      "when_to_use": "Use when an agent needs readable text from a public web page or API response.",
+      "inputs": [
+        "a public URL"
+      ],
+      "outputs": [
+        "clean text (html/json modes are paid per call in WATT)"
+      ],
+      "runtime": null,
+      "license": {
+        "type": "free",
+        "rebinds": null
+      }
+    },
+    {
+      "sku": "bot-skill-auditor",
+      "name": "Bot & Skill Security Auditor",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 29.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/bot-skill-auditor.html",
+      "summary": "Line-cited static security review of third-party bot skills and SKILL.md files.",
+      "when_to_use": "Use when an agent needs a static security review of a third-party skill or bot before running it.",
+      "inputs": [
+        "skill or bot files, or a repo"
+      ],
+      "outputs": [
+        "line-cited findings in 5 buckets with a Files Audited / Skipped scope note"
+      ],
+      "runtime": {
+        "file": "bot_skill_auditor.py",
+        "sha256": "ed755eb5f93d2713f47bc01a63de5810d5fd0d1eb486a33d452e108a3459c8f5",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "company-deep-dive",
+      "name": "Company & Competitor Deep-Dive Analyst",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 19.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/company-deep-dive.html",
+      "summary": "Seven-section corporate dossier compiled from SEC EDGAR filings, USPTO patents and RDAP, with a competitor matrix.",
+      "when_to_use": "Use when an agent needs an OSINT dossier on a company and its competitors.",
+      "inputs": [
+        "a company name, ticker or CIK"
+      ],
+      "outputs": [
+        "7-section dossier (Markdown/JSON) with sources"
+      ],
+      "runtime": {
+        "file": "company_deep_dive.py",
+        "sha256": "631a60f8feee5727d4c58d1bf6d3f4d2f6ccd395a42d39bebc70d4b51887bca7",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "sec-patent-watchdog",
+      "name": "SEC & Patent Watchdog Digest",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 29.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/sec-patent-watchdog.html",
+      "summary": "Tracks up to 10 tickers or CIKs across SEC EDGAR forms and USPTO patents with stateful diffing.",
+      "when_to_use": "Use when an agent needs a digest of new SEC filings and patent activity for a watchlist.",
+      "inputs": [
+        "up to 10 tickers or CIKs"
+      ],
+      "outputs": [
+        "digest of new filings and patents since the last run"
+      ],
+      "runtime": {
+        "file": "sec_patent_watchdog.py",
+        "sha256": "820e4f43c661082820408202b70c95f11405129375d0d09664e79014def5f51a",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "dependency-vuln-triage",
+      "name": "Dependency Vulnerability Triage Bot",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 29.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/dependency-vuln-triage.html",
+      "summary": "Lockfile vulnerability triage using OSV.dev advisories enriched with EPSS and CISA KEV.",
+      "when_to_use": "Use when an agent needs to prioritise known vulnerabilities in a project's dependencies.",
+      "inputs": [
+        "a lockfile or manifest"
+      ],
+      "outputs": [
+        "findings sorted into four action buckets with fix versions"
+      ],
+      "runtime": {
+        "file": "dependency_vuln_triage.py",
+        "sha256": "f42dd334ca3ea115d1e68ffb17fb8fa39df7459c8a972413ad3ca463fe6a7d7b",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "social-hub-publisher",
+      "name": "Social Hub Publisher",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 29.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/social-hub-publisher.html",
+      "summary": "Publishing queue for X, Discord, Bluesky and Telegram with lint, HMAC approval and dry-run by default.",
+      "when_to_use": "Use when an agent needs to queue, lint and approval-gate social posts before publishing.",
+      "inputs": [
+        "draft posts and channel config"
+      ],
+      "outputs": [
+        "linted, approval-checked queue; dry-run dispatch"
+      ],
+      "runtime": {
+        "file": "social_hub.py",
+        "sha256": "b7ece1c00895812f30cd1c3d44cb0e1b54d831370b8e84282a3cd1f3c859bb7b",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "domain-infra-hygiene",
+      "name": "Domain, TLS & Email Auth Infrastructure Hygiene Auditor",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 19.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/domain-infra-hygiene.html",
+      "summary": "Read-only domain audit: DNSSEC, TLS expiry, SPF, DMARC, DKIM, MTA-STS, security headers, dangling CNAMEs and CT logs.",
+      "when_to_use": "Use when an agent needs a read-only hygiene check of a domain's DNS, TLS and email authentication.",
+      "inputs": [
+        "a domain name"
+      ],
+      "outputs": [
+        "findings by severity with remediation notes"
+      ],
+      "runtime": {
+        "file": "domain_infra_hygiene.py",
+        "sha256": "73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "agent-council",
+      "name": "Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 39.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/agent-council.html",
+      "summary": "Multi-model council: 2-6 seats debate, pair-program or review code with a chaired verdict.",
+      "when_to_use": "Use when an agent needs several models to debate a decision or review code before committing.",
+      "inputs": [
+        "a question, plan or code to review"
+      ],
+      "outputs": [
+        "anonymized critiques and a chaired verdict"
+      ],
+      "runtime": {
+        "file": "agent_council.py",
+        "sha256": "703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "mcp-config-auditor",
+      "name": "MCP Server & Tool-Permission Security Auditor",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 19.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/mcp-config-auditor.html",
+      "summary": "Read-only audit of MCP client configs for hardcoded secrets, unpinned packages, typosquats and tool poisoning.",
+      "when_to_use": "Use when an agent needs a security check of MCP server and tool-permission configuration.",
+      "inputs": [
+        "MCP config files (Claude, Cursor, VS Code)"
+      ],
+      "outputs": [
+        "findings by severity with the config lines concerned"
+      ],
+      "runtime": {
+        "file": "mcp_config_auditor.py",
+        "sha256": "42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "print-farm-ops",
+      "name": "3D Print Farm & Slicer Queue Ops",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 29.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/print-farm-ops.html",
+      "summary": "Offline 3D print farm auditor for slicer projects, G-code safety, filament BOM, drying hygiene and queue plans.",
+      "when_to_use": "Use when an agent needs to check slicer files and plan a print queue offline.",
+      "inputs": [
+        ".3mf / .gcode files from OrcaSlicer, Bambu Studio or PrusaSlicer"
+      ],
+      "outputs": [
+        "safety findings, filament spool BOM, queue plan"
+      ],
+      "runtime": {
+        "file": "print_farm_ops.py",
+        "sha256": "29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "robotics-telemetry-inspector",
+      "name": "Humanoid & Fleet Telemetry Inspector",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 49.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/robotics-telemetry-inspector.html",
+      "summary": "Offline robot telemetry audit: actuator duty cycles against URDF/SDF limits, CAN logs, BMS cell delta, ROS 2 bag topic rates.",
+      "when_to_use": "Use when an agent needs to inspect humanoid or fleet telemetry against model limits.",
+      "inputs": [
+        "URDF/SDF, CAN logs, BMS data or ROS 2 bags"
+      ],
+      "outputs": [
+        "findings against limits with supporting readings"
+      ],
+      "runtime": {
+        "file": "robotics_telemetry_inspector.py",
+        "sha256": "aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "sec-supply-chain-mapper",
+      "name": "SEC EDGAR Supply Chain & Counterparty Mapper",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 29.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/sec-supply-chain-mapper.html",
+      "summary": "Maps disclosed suppliers, major customers, concentration risk, year-over-year 10-K changes and 13D/13G stakes from SEC EDGAR.",
+      "when_to_use": "Use when an agent needs counterparty and supply-chain exposure for a public company.",
+      "inputs": [
+        "a ticker or CIK"
+      ],
+      "outputs": [
+        "supplier/customer map, concentration findings and filing diffs"
+      ],
+      "runtime": {
+        "file": "sec_supply_chain_mapper.py",
+        "sha256": "d3e13923dc752f1f0429433381ff48961eba0d142255524761ba2385c0e116d1",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "mill-cert-matcher",
+      "name": "Mill Cert Matcher — Receiving Inspection Cert & PO Cross-Check",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 39.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/mill-cert-matcher.html",
+      "summary": "Cross-checks a mill test report against the PO and drawing callout (alloy, temper, spec, size, chemistry, mechanicals), with page and line per flag.",
+      "when_to_use": "Use for receiving inspection of metal stock against a PO.",
+      "inputs": [
+        "PO text or PDF",
+        "mill test report (text layer)",
+        "drawing callout"
+      ],
+      "outputs": [
+        "PASS / HOLD / REJECT report (JSON or Markdown) with page and line per flag"
+      ],
+      "runtime": {
+        "file": "mill_cert_matcher.py",
+        "sha256": "19b875763d371177e96bdac76e6ace6224e236fc6263f51a3204390b83c205ef",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      },
+      "disclaimer": "Screening aid that flags issues for human review. Not a legal, compliance, or material-certification determination."
+    },
+    {
+      "sku": "rfq-flowdown-triage",
+      "name": "RFQ Flowdown Triage — Quality Clause & Export-Control Screen",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 39.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/rfq-flowdown-triage.html",
+      "summary": "Screens an RFQ for quality, DFARS, CUI and export-control flowdowns against your capability profile, with page and line per clause.",
+      "when_to_use": "Use when an agent needs to triage the flowdown clauses of an incoming RFQ.",
+      "inputs": [
+        "RFQ document",
+        "your capability profile"
+      ],
+      "outputs": [
+        "clause-by-clause MET / UNKNOWN / GAP findings and a CLEAR / CLARIFY / NO-BID-RISK verdict"
+      ],
+      "runtime": {
+        "file": "rfq_flowdown_triage.py",
+        "sha256": "8614fb0bc623cdec971c8662a1f9bd4833acf6c4aec2503718983e46343761d9",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      },
+      "disclaimer": "Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination."
+    },
+    {
+      "sku": "fai-results-reconciler",
+      "name": "FAI Results Reconciler — Balloon List vs Inspection Results Screen",
+      "type": "bot",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 39.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "url": "https://botappstore.com/bots/fai-results-reconciler.html",
+      "summary": "Screens a first-article balloon list against CMM inspection results: out-of-tolerance, missing, unit and revision flags with file and row.",
+      "when_to_use": "Use when an agent needs to reconcile a first-article balloon list with inspection results.",
+      "inputs": [
+        "balloon list (CSV, TSV, XLSX)",
+        "inspection results (CSV, XLSX, Calypso CSV, PC-DMIS text)"
+      ],
+      "outputs": [
+        "PASS / REVIEW / FAIL report with source file and row per finding"
+      ],
+      "runtime": {
+        "file": "fai_results_reconciler.py",
+        "sha256": "108223df4e151a1d4d4d4df55c9d1ade95e8726ad8b7b361f06164fd77514b87",
+        "license_gated": true
+      },
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      },
+      "disclaimer": "Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval."
+    }
+  ],
+  "bundles": [
+    {
+      "sku": "devsecops-ai-security-pack",
+      "name": "DevSecOps & AI Agent Security Pack",
+      "type": "bundle",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 69.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "includes": [
+        "bot-skill-auditor",
+        "mcp-config-auditor",
+        "dependency-vuln-triage",
+        "domain-infra-hygiene"
+      ],
+      "url": "https://botappstore.com/#bundle-devsecops-ai-security-pack",
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "physical-ai-manufacturing-pack",
+      "name": "Physical AI & Manufacturing Ops Pack",
+      "type": "bundle",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 59.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "includes": [
+        "print-farm-ops",
+        "robotics-telemetry-inspector"
+      ],
+      "url": "https://botappstore.com/#bundle-physical-ai-manufacturing-pack",
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "founder-research-gtm-pack",
+      "name": "Founder OSINT, SEC & GTM Pack",
+      "type": "bundle",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 59.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "includes": [
+        "company-deep-dive",
+        "sec-patent-watchdog",
+        "social-hub-publisher"
+      ],
+      "url": "https://botappstore.com/#bundle-founder-research-gtm-pack",
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    },
+    {
+      "sku": "edgar-intelligence-pack",
+      "name": "Institutional EDGAR Intelligence Pack",
+      "type": "bundle",
+      "status": "live",
+      "storefront": "botappstore",
+      "price_usd": 89.0,
+      "payment_methods": [
+        "card",
+        "apple_pay",
+        "google_pay",
+        "sol"
+      ],
+      "includes": [
+        "company-deep-dive",
+        "sec-patent-watchdog",
+        "sec-supply-chain-mapper"
+      ],
+      "url": "https://botappstore.com/#bundle-edgar-intelligence-pack",
+      "license": {
+        "type": "one-time",
+        "rebinds": 3
+      }
+    }
+  ]
+}
