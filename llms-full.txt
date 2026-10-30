@@ -23,13 +23,14 @@
 - **SEC EDGAR Supply Chain & Counterparty Mapper ($29 in SOL, `sku: sec-supply-chain-mapper`, v1.1, LIVE NOW - instant on-chain SOL checkout):** https://botappstore.com/bots/sec-supply-chain-mapper.html (Checkout: https://botappstore.com/#card-sec-supply-chain-mapper; runtime: https://botappstore.com/runtime/sec_supply_chain_mapper.py)
 - **Mill Cert Matcher ($39 one-time, `sku: mill-cert-matcher`, LIVE NOW - card / Apple Pay / Google Pay checkout, SOL also accepted):** https://botappstore.com/bots/mill-cert-matcher.html (Checkout: https://botappstore.com/#card-mill-cert-matcher; runtime: https://botappstore.com/runtime/mill_cert_matcher.py). Screening aid that flags issues for human review; not a legal, compliance, or material-certification determination.
 - **RFQ Flowdown Triage ($39 one-time, `sku: rfq-flowdown-triage`, LIVE NOW - card / Apple Pay / Google Pay checkout, SOL also accepted):** https://botappstore.com/bots/rfq-flowdown-triage.html (Checkout: https://botappstore.com/#card-rfq-flowdown-triage; runtime: https://botappstore.com/runtime/rfq_flowdown_triage.py). Screening aid that flags issues for human review; not a legal, export-control, or compliance determination.
-- **Pinned Runtime Downloads:** https://botappstore.com/runtime/rfq_flowdown_triage.py (SHA-256 `8614fb0bc623cdec971c8662a1f9bd4833acf6c4aec2503718983e46343761d9`), https://botappstore.com/runtime/mill_cert_matcher.py (SHA-256 `19b875763d371177e96bdac76e6ace6224e236fc6263f51a3204390b83c205ef`), https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
-- **Runtime download note:** `/runtime/` URLs are license-gated: send `X-License-Key: wcl_...` or `X-Agent-Key: wck_...` (unauthenticated requests get `401`). The served file carries a per-license watermark block (5 lines), so compare the `X-Canonical-SHA256` response header (or the SHA-256 after stripping the block) against the pins. Recommended: the setup skill installer (`/workspace/.wattcoin_license_check.py --sku <sku> --install-runtime ... --expected-sha256 <pin>`). `bot_common.py` has two pinned variants chosen by SKU: `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (legacy; served for `agent-council`, `dependency-vuln-triage`, `domain-infra-hygiene`, `mcp-config-auditor`, `print-farm-ops`, `robotics-telemetry-inspector`) and `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current; every other BotAppStore SKU, including `sec-supply-chain-mapper`, `mill-cert-matcher` and `rfq-flowdown-triage`).
+- **FAI Results Reconciler ($39 one-time, `sku: fai-results-reconciler`, LIVE NOW - card / Apple Pay / Google Pay checkout, SOL also accepted):** https://botappstore.com/bots/fai-results-reconciler.html (Checkout: https://botappstore.com/#card-fai-results-reconciler; runtime: https://botappstore.com/runtime/fai_results_reconciler.py). Screening aid that flags issues for human review; not a quality sign-off or AS9102 approval.
+- **Pinned Runtime Downloads:** https://botappstore.com/runtime/fai_results_reconciler.py (SHA-256 `108223df4e151a1d4d4d4df55c9d1ade95e8726ad8b7b361f06164fd77514b87`), https://botappstore.com/runtime/rfq_flowdown_triage.py (SHA-256 `8614fb0bc623cdec971c8662a1f9bd4833acf6c4aec2503718983e46343761d9`), https://botappstore.com/runtime/mill_cert_matcher.py (SHA-256 `19b875763d371177e96bdac76e6ace6224e236fc6263f51a3204390b83c205ef`), https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
+- **Runtime download note:** `/runtime/` URLs are license-gated: send `X-License-Key: wcl_...` or `X-Agent-Key: wck_...` (unauthenticated requests get `401`). The served file carries a per-license watermark block (5 lines), so compare the `X-Canonical-SHA256` response header (or the SHA-256 after stripping the block) against the pins. Recommended: the setup skill installer (`/workspace/.wattcoin_license_check.py --sku <sku> --install-runtime ... --expected-sha256 <pin>`). `bot_common.py` has two pinned variants chosen by SKU: `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (legacy; served for `agent-council`, `dependency-vuln-triage`, `domain-infra-hygiene`, `mcp-config-auditor`, `print-farm-ops`, `robotics-telemetry-inspector`) and `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current; every other BotAppStore SKU, including `sec-supply-chain-mapper`, `mill-cert-matcher`, `rfq-flowdown-triage` and `fai-results-reconciler`).
 - **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
 
 ---
 
-## Live Agent Templates (Available Now — 14 Live Automations)
+## Live Agent Templates (Available Now — 15 Live Automations)
 
 ### 1. Web & API Text Extractor (Free Forever Utility)
 - **Status:** LIVE NOW
@@ -375,6 +376,26 @@
 - **Guardrails:** Runs on your machine and works offline (`--offline` makes no network call); RFQ text, clause text, customer names and file names are never sent. Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination; makes no DFARS, ITAR or EAR compliance claim.
 - **Sample Prompt:** `Run rfq_flowdown_triage.py on rfq.txt with profile.json and show me every clause that needs a human decision.`
 
+### 15. FAI Results Reconciler ($39 one-time — LIVE NOW, sku: fai-results-reconciler)
+- **Status:** LIVE NOW
+- **SKU:** `fai-results-reconciler`
+- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default, SOL also accepted
+- **Categories:** Manufacturing / First-Article Inspection Review
+- **Product Page URL:** https://botappstore.com/bots/fai-results-reconciler.html
+- **Storefront Checkout URL:** https://botappstore.com/#card-fai-results-reconciler
+- **Included Skills:** `fai-results-reconciler-setup` + `fai-results-reconciler`
+- **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
+  - `https://botappstore.com/runtime/fai_results_reconciler.py` — SHA-256 `108223df4e151a1d4d4d4df55c9d1ade95e8726ad8b7b361f06164fd77514b87` (standalone zero-dependency Python 3 CLI; XLSX read with the standard library)
+  - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current variant)
+- **Deliverable:** A reconciliation card that matches every characteristic in a first-article balloon list to its inspection result (CSV, TSV, XLSX, Calypso-style CSV or PC-DMIS text report) and flags what a person should look at, with the source file and row or line for every finding. Verdict: any FAIL line gives FAIL, otherwise any REVIEW line gives REVIEW, otherwise PASS; an empty or ambiguous input is never a PASS.
+- **Capabilities:**
+  - `FAI-TOL-01` measured value against limits (Decimal maths; a value exactly on a limit passes); `FAI-MISS-01`, `FAI-UNM-01` and `FAI-DUP-01` flag missing, unmatched and duplicate characteristics.
+  - `FAI-UNIT-01` inch/mm conflicts (auto-scaled by 25.4 only when the ratio is consistent, always REVIEW), `FAI-REV-01` part number or revision mismatches and `FAI-FORM-01` missing Form 1/2 fields.
+  - `FAI-ATTR-01` attribute results, `FAI-REF-01` REF and BASIC dimensions (listed, never evaluated), `FAI-GDT-01` material-condition modifiers (no bonus-tolerance maths) and `FAI-CONF-01` low confidence or ambiguous input: REVIEW, never a silent pass.
+- **Exit Codes:** `0` PASS, `3` REVIEW, `4` FAIL.
+- **Guardrails:** Runs on your machine and works offline (`--offline` makes no network call); balloon lists, measurements, part numbers and file names are never sent. Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.
+- **Sample Prompt:** `Run fai_results_reconciler.py on balloons.csv and cmm.csv and show me every characteristic that needs a human decision.`
+
 ## Value Bundles — Multi-Bot Packs (4 Live Bundle SKUs; One License Key Unlocks All Included Bots)
 
 Bundle SKUs are priced in USD and paid in SOL via the same non-custodial checkout (`POST https://www.wattcoin.org/api/v1/agents/license/quote` with `sku: <bundle-sku>`, `source: "botappstore"`). A single bundle purchase returns **one** `wcl_<64-hex>` bearer license code that unlocks **every** member bot in the pack (up to 3 workspace-reset rebinds). The `/api/v1/agents/license/purchase` response also includes `included_skus` (member SKU list) and `bundle_templates` (an array of `{sku, name, template_url}` with one unlisted `https://x.ai/bot/<id>` Grok Bot template per member) so you can import every bot in the pack. Activate each imported bot on its Turn 1 with the same `wcl_...` code. Storefront section: https://botappstore.com/#bundles
@@ -430,6 +451,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
      - `sec-supply-chain-mapper` ($29.00 USD in SOL — SEC EDGAR Supply Chain & Counterparty Mapper, v1.1)
      - `mill-cert-matcher` ($39.00 USD — Mill Cert Matcher)
      - `rfq-flowdown-triage` ($39.00 USD — RFQ Flowdown Triage)
+     - `fai-results-reconciler` ($39.00 USD — FAI Results Reconciler)
      - `founder-research-gtm-pack` ($59.00 USD in SOL — Founder OSINT, SEC & GTM Pack, 3-bot bundle; members: company-deep-dive, sec-patent-watchdog, social-hub-publisher; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `bot-skill-auditor` ($29.00 USD in SOL — Bot & Skill Security Auditor)
      - `company-deep-dive` ($19.00 USD in SOL — Company & Competitor Deep-Dive Analyst)
@@ -464,7 +486,7 @@ All paid Grok Bot templates on BotAppStore.com and CoinLoader.com use the same n
 
 ---
 
-## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 14 Live Templates; Wave 2 and Wave 3 samples follow at the end)
+## Verbatim Proof-of-Work Sample Outputs (BotAppStore.com — 15 Live Templates; Wave 2 and Wave 3 samples follow at the end)
 
 ### Sample 1 — Web & API Text Extractor (`getting-started` + `web-extractor`, $0 Free Forever)
 
@@ -2233,4 +2255,35 @@ CHECKED (example rows)
   MET  RFT-FAI-01    AS9102 first-article inspection         rfq p1 L7
 
 Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination.
+```
+
+## Wave 3 - fai-results-reconciler ($39 one-time; LIVE NOW)
+- **SKU:** `fai-results-reconciler`
+- **Page:** https://botappstore.com/bots/fai-results-reconciler.html
+- **Runtime:** https://botappstore.com/runtime/fai_results_reconciler.py
+
+### Verbatim sample output
+EXAMPLE DATA: synthetic balloon list and inspection results generated for the product page, not a real part, customer or program.
+```
+FAI RESULTS RECONCILER  ·  EXAMPLE DATA (synthetic, not a real part)
+VERDICT: FAIL: flagged for human review  |  1 out of tolerance, 1 missing of 24 characteristics
+subject: FAI-4155af30d6fa (hash of the part number; the number itself is never sent)
+
+FLAGGED
+  FAIL    FAI-TOL-01   char 7   measured 40.1193 outside [39.95, 40.05]   [balloons.csv row 10, cmm.csv row 8]
+  REVIEW  FAI-MISS-01  char 9   no inspection result for this characteristic   [balloons.csv row 12]
+  REVIEW  FAI-UNM-01   char 99  result has no matching characteristic   [cmm.csv row 30]
+  REVIEW  FAI-UNIT-01  *        results in in, characteristics in mm: 22 results scaled by 25.4 (ratio check 22 of 22)
+  REVIEW  FAI-REV-01   -        revision differs: 'B' in balloons.csv, 'C' in cmm.csv   [balloons.csv row 3, cmm.csv row 3]
+
+NOT EVALUATED
+  REF     FAI-REF-01   char 24  (88.900) reference dimension
+
+CHECKED (example rows)
+  PASS  char 1  Overall length   120.034  in [119.9, 120.1]
+  PASS  char 2  Overall width     59.968  in [59.9, 60.1]
+  PASS  char 3  Thickness         25.412  in [25.35, 25.45]
+
+Receipt: UNVERIFIED-LOCAL (offline run, not server-signed)
+Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.
 ```

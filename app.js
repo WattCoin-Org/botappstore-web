@@ -315,6 +315,31 @@
         return 'Activate my RFQ Flowdown Triage with license code ' + code;
       }
     },
+    'fai-results-reconciler': {
+      sku: 'fai-results-reconciler',
+      name: 'FAI Results Reconciler — Balloon List vs Inspection Results Screen',
+      title: 'FAI Results Reconciler — Balloon List vs Inspection Results Screen — $39',
+      slugMeta: 'sku: fai-results-reconciler · Skills: fai-results-reconciler-setup + fai-results-reconciler · One-Time License · 3 Rebinds',
+      priceUsd: 39,
+      priceLabel: '$39 USD (one-time)',
+      priceUsdHtml: '$39.00 <small>USD</small>',
+      promptHint: 'Reconcile this FAI balloon list against the inspection results and flag anything a person should look at...',
+      templateUrl: 'https://grok.com/',
+      templateLabel: 'Open FAI Results Reconciler in Grok Bot',
+      detailUrl: '/bots/fai-results-reconciler.html',
+      statusFooterText: 'Status: LIVE · $39 One-Time License',
+      ctaButtonText: 'Buy License ($39) →',
+      stepADescHtml:
+        'Click below to open the private <strong>FAI Results Reconciler — Balloon List vs Inspection Results Screen</strong> template in Grok Bot and add it to your sidebar:',
+      stepABtnText: 'Open FAI Results Reconciler in Grok Bot ↗',
+      stepCHintHtml:
+        'Paste this prompt on Turn 1 (or together with the balloon list and inspection results you want reconciled):',
+      stepCFootHtml:
+        'On Turn 1, <code>fai-results-reconciler-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+      defaultPrompt: function (code) {
+        return 'Activate my FAI Results Reconciler with license code ' + code;
+      }
+    },
     'devsecops-ai-security-pack': {
       sku: 'devsecops-ai-security-pack',
       name: 'DevSecOps & AI Agent Security Pack (4-Bot Bundle)',
@@ -1152,6 +1177,48 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
           <li><strong>No Compliance Determinations:</strong> Makes no legal, export-control, DFARS or CMMC determination; it detects clause text and compares it with your profile.</li>
           <li><strong>No Silent Pass:</strong> Blank profile entries, unknown clause numbers and scanned PDFs without a text layer (no OCR) are UNKNOWN lines, never guesses.</li>
           <li><strong>Local Only:</strong> RFQ text, clause text, customer names and file names are never sent anywhere.</li>
+        </ul>
+      `
+    },
+    'fai-results-reconciler': {
+      title: 'FAI Results Reconciler — Balloon List vs Inspection Results Screen',
+      slug: 'fai-results-reconciler-setup + fai-results-reconciler',
+      badge: 'LIVE · $39 ONE-TIME',
+      badgeClass: 'live',
+      price: '$39 One-Time License (Includes 3 Workspace-Reset Rebinds)',
+      shareUrl: null,
+      ctaType: 'checkout',
+      sku: 'fai-results-reconciler',
+      specPageUrl: '/bots/fai-results-reconciler.html',
+      specHtml: `
+        <p><strong>Deliverable:</strong> <em>A reconciliation card that matches every characteristic in a first-article balloon list to its inspection result and flags what a person should look at, with the source file and row or line for every finding.</em></p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$39 USD</strong> license. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
+        <p><strong>Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.</strong></p>
+        <h4>Included Skills (<code>fai-results-reconciler-setup</code> + <code>fai-results-reconciler</code>)</h4>
+        <ul>
+          <li><strong>Tolerance &amp; Matching:</strong> <code>FAI-TOL-01</code> compares each measured value with its limits; <code>FAI-MISS-01</code>, <code>FAI-UNM-01</code> and <code>FAI-DUP-01</code> flag missing, unmatched and duplicate characteristics.</li>
+          <li><strong>Units &amp; Revisions:</strong> <code>FAI-UNIT-01</code> catches inch/mm conflicts; <code>FAI-REV-01</code> and <code>FAI-FORM-01</code> flag part number or revision mismatches and missing Form 1/2 fields.</li>
+          <li><strong>Uncertain Stays Uncertain:</strong> Attribute results, REF and BASIC dimensions, material-condition modifiers and low-confidence reads are listed as REVIEW or not evaluated, never a silent pass.</li>
+          <li><strong>Inputs:</strong> CSV, TSV, XLSX, Calypso-style CSV and PC-DMIS text reports.</li>
+        </ul>
+        <h4>Sample Prompt</h4>
+        <p><code>Run fai_results_reconciler.py on balloons.csv and cmm.csv and show me every characteristic that needs a human decision.</code></p>
+        <p><a href="/bots/fai-results-reconciler.html">Full spec &amp; example card →</a></p>
+      `,
+      execHtml: `
+        <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>). Balloon lists and inspection data are read on your computer and never uploaded; with <code>--offline</code> the tool makes no network call at all.</p>
+        <h4>Outputs</h4>
+        <ul>
+          <li>A verdict card (PASS, REVIEW or FAIL) with flagged lines, not-evaluated lines and checked rows, each with its source file and row or line.</li>
+          <li>Exit codes for scripts: <code>0</code> PASS, <code>3</code> REVIEW, <code>4</code> FAIL.</li>
+        </ul>
+      `,
+      refusalHtml: `
+        <ul>
+          <li><strong>Screening Aid Only:</strong> Never approves a first article; any REVIEW or FAIL is flagged for a person to decide.</li>
+          <li><strong>No Standards Claims:</strong> Makes no quality sign-off and no statement about AS9102 or any other standard.</li>
+          <li><strong>No Silent Pass:</strong> Missing results, unit conflicts, ambiguous headers and empty input are REVIEW or FAIL lines, never guesses.</li>
+          <li><strong>Local Only:</strong> Balloon lists, measurements, part numbers and file names are never sent anywhere.</li>
         </ul>
       `
     }
@@ -2713,7 +2780,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 // Checkout card on-ramp helper + header Products dropdown (idempotent injectors)
 // ---------------------------------------------------------------------------
 (() => {
-  const NAV_MENU = {"trigger": "Products (14 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (14)", "footer": "View All 14 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29 SOL"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49 SOL"], ["mill-cert-matcher", "Mill Cert Matcher", null, "$39"], ["rfq-flowdown-triage", "RFQ Flowdown Triage", null, "$39"]]};
+  const NAV_MENU = {"trigger": "Products (15 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (15)", "footer": "View All 15 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19 SOL"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19 SOL"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19 SOL"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29 SOL"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29 SOL"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29 SOL"], ["social-hub-publisher", "Social Hub Publisher", null, "$29 SOL"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29 SOL"], ["agent-council", "Agent Council", null, "$39 SOL"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29 SOL"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49 SOL"], ["mill-cert-matcher", "Mill Cert Matcher", null, "$39"], ["rfq-flowdown-triage", "RFQ Flowdown Triage", null, "$39"], ["fai-results-reconciler", "FAI Results Reconciler", null, "$39"]]};
 
   const ensureCardOnramp = () => {
     document.querySelectorAll('#checkout-step-pay').forEach((pay) => {

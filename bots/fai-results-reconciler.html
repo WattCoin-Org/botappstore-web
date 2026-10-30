@@ -6,7 +6,6 @@
   <title>FAI Results Reconciler — Balloon List Screen</title>
   <meta name="description" content="Screen an FAI balloon list against CMM inspection results: out-of-tolerance, missing, unit and revision flags with file and row. Runs locally." />
   <link rel="canonical" href="https://botappstore.com/bots/fai-results-reconciler.html" />
-  <meta name="robots" content="noindex, nofollow" />
   <meta name="theme-color" content="#070a10" />
   <meta property="og:type" content="product" />
   <meta property="og:site_name" content="BotAppStore.com" />
@@ -38,9 +37,6 @@
     .spec-table td:first-child { white-space: nowrap; }
     .spec-table tr:last-child td { border-bottom: 0; }
     .fai-disclaimer { border-left: 3px solid #F59E0B; padding: 8px 14px; color: var(--text-secondary); font-size: 14px; margin: 14px 0; }
-    .fai-pay-option { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
-    .fai-pay-option:last-child { border-bottom: 0; }
-    button[disabled] { opacity: 0.55; cursor: not-allowed; }
   </style>
   <script type="application/ld+json">
 {
@@ -77,7 +73,15 @@
       "operatingSystem": "Linux, macOS, Windows (Python 3)",
       "url": "https://botappstore.com/bots/fai-results-reconciler.html",
       "sku": "fai-results-reconciler",
-      "description": "Screening aid that matches an FAI balloon list to inspection results and flags issues for human review. Coming soon."
+      "description": "Screening aid that matches an FAI balloon list to inspection results and flags issues for human review. Not a quality sign-off or AS9102 approval.",
+      "offers": {
+        "@type": "Offer",
+        "sku": "fai-results-reconciler",
+        "price": "39.00",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://botappstore.com/bots/fai-results-reconciler.html"
+      }
     }
   ]
 }
@@ -88,13 +92,22 @@
     <div class="top-ticker">
       <div class="container top-ticker-inner">
         <div class="status-cluster">
-          <span class="status-pill"><span class="status-dot" aria-hidden="true"></span><span>STATUS: <strong>COMING SOON · NOT YET ON SALE</strong></span></span>
-          <span>PRIVACY: <strong>FILES STAY ON YOUR COMPUTER · WORKS FULLY OFFLINE</strong></span>
+          <span class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>EXECUTION RUNTIME: <strong>GROK BOT LINUX SANDBOX (<code>/workspace</code>)</strong></span>
+          </span>
+          <span>LIVE TEMPLATES: <strong>15 AVAILABLE (FREE + $19, $29, $39 &amp; $49 SOL) · ZERO SUBSCRIPTIONS</strong></span>
+          <span>PRIVACY: <strong>LOCAL CREDENTIAL VAULT · ZERO DATA EXFILTRATION</strong></span>
         </div>
-        <div class="ticker-links"><a href="/#catalog">Agent Catalog</a></div>
+        <div class="ticker-links">
+          <a href="/llms.txt">llms.txt ↗</a>
+          <a href="/#catalog">Agent Catalog</a>
+          <a href="https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol" target="_blank" rel="noopener noreferrer">Install Free Utility ↗</a>
+        </div>
       </div>
     </div>
 
+    <!-- Sticky Header -->
     <header class="site-header">
       <div class="container nav-bar">
         <a href="/" class="brand-logo">
@@ -107,14 +120,40 @@
             </svg>
           </span>
           <span>BotAppStore<span class="brand-domain">.com</span></span>
+          <span class="brand-tag">OSINT &amp; ROBOTICS</span>
         </a>
         <nav class="nav-links" aria-label="Primary Navigation">
-          <a href="/#catalog">Agent Catalog</a>
+          <div class="nav-dropdown">
+            <button type="button" class="nav-dropdown-trigger" aria-expanded="false" aria-haspopup="true">Products (15 Live) ▾</button>
+            <div class="nav-dropdown-menu" role="menu">
+              <div class="nav-dropdown-label">LIVE OSINT, DEVSECOPS, SHOP OPS &amp; ROBOTICS AGENTS (15)</div>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/web-text-extractor.html"><span class="nav-dropdown-name">Web &amp; API Text Extractor</span><span class="nav-dropdown-badge nav-dropdown-badge-free">FREE</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/company-deep-dive.html"><span class="nav-dropdown-name">Company &amp; Competitor Deep-Dive Analyst</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/domain-infra-hygiene.html"><span class="nav-dropdown-name">Domain, TLS &amp; Email Auth Hygiene Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/mcp-config-auditor.html"><span class="nav-dropdown-name">MCP Server &amp; Tool-Permission Auditor</span><span class="nav-dropdown-badge">$19 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/bot-skill-auditor.html"><span class="nav-dropdown-name">Bot &amp; Skill Security Auditor</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/sec-patent-watchdog.html"><span class="nav-dropdown-name">SEC &amp; Patent Watchdog Digest</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/social-hub-publisher.html"><span class="nav-dropdown-name">Social Hub Publisher</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/dependency-vuln-triage.html"><span class="nav-dropdown-name">Dependency Vulnerability Triage Bot</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/agent-council.html"><span class="nav-dropdown-name">Agent Council</span><span class="nav-dropdown-badge">$39 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/print-farm-ops.html"><span class="nav-dropdown-name">3D Print Farm &amp; Slicer Queue Ops</span><span class="nav-dropdown-badge">$29 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/robotics-telemetry-inspector.html"><span class="nav-dropdown-name">Humanoid &amp; Fleet Telemetry Inspector</span><span class="nav-dropdown-badge">$49 SOL</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/mill-cert-matcher.html"><span class="nav-dropdown-name">Mill Cert Matcher</span><span class="nav-dropdown-badge">$39</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/rfq-flowdown-triage.html"><span class="nav-dropdown-name">RFQ Flowdown Triage</span><span class="nav-dropdown-badge">$39</span></a>
+              <a class="nav-dropdown-item" role="menuitem" href="/bots/fai-results-reconciler.html"><span class="nav-dropdown-name">FAI Results Reconciler</span><span class="nav-dropdown-badge">$39</span></a>
+              <a class="nav-dropdown-footer" role="menuitem" href="/#catalog">View All 15 Agents in Grid Catalog ↓</a>
+            </div>
+          </div>
+          <a href="/#catalog">Agent Catalog (15 Live)</a>
+          <a href="/#architecture">How It Works</a>
+          <a href="/#hardware-stack">Security &amp; Stack</a>
           <a href="/#faq">FAQ</a>
           <a href="/llms.txt">llms.txt</a>
         </nav>
         <div class="nav-cta-group">
-          <button type="button" class="btn btn-secondary btn-sm" disabled aria-disabled="true">Coming soon</button>
+          <button type="button" class="btn btn-secondary btn-sm" data-open-checkout="fai-results-reconciler">
+            Buy FAI Results Reconciler ($39)
+          </button>
         </div>
       </div>
     </header>
@@ -122,10 +161,10 @@
   <main>
     <div class="container">
       <nav class="breadcrumb-nav" aria-label="Breadcrumb">
-        <a href="/">BotAppStore.com</a> &rarr; <a href="/#catalog">Agent Catalog</a> &rarr; <span>FAI Results Reconciler &mdash; Balloon List vs Inspection Results Screen</span>
+        <a href="/">BotAppStore.com</a> &rarr; <a href="/#catalog">Agent Catalog</a> &rarr; <span>FAI Results Reconciler — Balloon List vs Inspection Results Screen</span>
       </nav>
       <section class="product-hero">
-        <div class="price-badge">&#9679; COMING SOON &middot; $39 ONE-TIME &middot; NOT YET ON SALE &middot; FIRST-ARTICLE REVIEW</div>
+        <div class="price-badge">&#9679; LIVE NOW &middot; $39 ONE-TIME &middot; 3 REBINDS &middot; FIRST-ARTICLE REVIEW</div>
         <h1>FAI Results Reconciler &mdash; Balloon List vs Inspection Results Screen. Catch the mismatches before the package goes out.</h1>
         <p class="product-lede">Reads your first-article balloon list and the inspection results (CSV, XLSX, Calypso-style CSV or a PC-DMIS text report), matches every characteristic to its result and flags what a person should look at: out of tolerance, missing, unmatched, duplicate, inch/mm unit conflicts, part number or revision mismatches and missing Form 1/2 fields. Every finding carries its source file and row or line. Anything uncertain is REVIEW, never a silent pass.</p>
         <p class="fai-disclaimer"><strong>Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.</strong></p>
@@ -133,7 +172,8 @@
           SKU: <code>fai-results-reconciler</code> &middot; Zero-dependency Python 3 CLI (XLSX read with the standard library) &middot; Runs on your machine, works offline
         </p>
         <div class="product-cta-row">
-          <button type="button" class="btn btn-primary btn--primary" disabled aria-disabled="true">Coming soon</button>
+          <button type="button" class="btn btn-primary btn--primary" data-open-checkout="fai-results-reconciler">Buy License ($39) &rarr;</button>
+          <button type="button" class="btn btn-secondary btn--ghost" data-open-spec="fai-results-reconciler">Inspect SKILL.md Spec</button>
           <a href="#example-card" class="btn btn-secondary btn--ghost">See an example card</a>
           <a href="#privacy" class="btn btn-secondary btn--ghost">Privacy</a>
         </div>
@@ -232,17 +272,10 @@ EXAMPLE DATA: REVIEW (formula without a saved value)
       </section>
 
       <section class="product-section" id="checkout">
-        <h2>Checkout (not open yet)</h2>
+        <h2>Checkout</h2>
         <div class="checkout-card-box">
-          <p>$39.00 USD one-time license. Checkout opens when the template is released; nothing on this page can take a payment yet.</p>
-          <div class="fai-pay-option">
-            <div><strong>Card / Apple Pay / Google Pay</strong> <span style="color: var(--text-muted);">(default)</span></div>
-            <button type="button" class="btn btn-primary btn-sm" disabled aria-disabled="true">Coming soon</button>
-          </div>
-          <div class="fai-pay-option">
-            <div><strong>SOL</strong> <span style="color: var(--text-muted);">(secondary option)</span></div>
-            <button type="button" class="btn btn-secondary btn-sm" disabled aria-disabled="true">Coming soon</button>
-          </div>
+          <p>$39.00 USD one-time license, includes 3 workspace-reset rebinds. Card / Apple Pay / Google Pay is the default; SOL is available as a secondary option in the same checkout.</p>
+          <p><button type="button" class="btn btn-primary btn--primary" data-open-checkout="fai-results-reconciler">Buy License ($39) &rarr;</button></p>
         </div>
       </section>
 
@@ -254,7 +287,7 @@ EXAMPLE DATA: REVIEW (formula without a saved value)
           <details class="faq-item"><summary>How does it match characteristics to results?</summary><div class="faq-answer">By balloon number after normalising case, spaces and leading zeros; 12 never matches 12a. A match by feature name plus nominal is used only when it is unique and is always a REVIEW. Ambiguous matches are reported as duplicates or unmatched, never guessed.</div></details>
           <details class="faq-item"><summary>Which report formats work?</summary><div class="faq-answer">Generic CSV or XLSX, Calypso-style CSV and PC-DMIS text reports, plus a column map for unusual exports. Anything it cannot read is listed on the card.</div></details>
           <details class="faq-item"><summary>What leaves my machine?</summary><div class="faq-answer">Nothing, with <code>--offline</code>. Otherwise only an audit hash, a hash of the part number and a one-line metric (for example <code>FAIL · 2 out of tolerance, 1 missing of 48 characteristics</code>) go to the receipt-signing endpoint. Measurements, descriptions, part numbers and file names are never sent.</div></details>
-          <details class="faq-item"><summary>When can I buy it?</summary><div class="faq-answer">It is not on sale yet. The checkout above is disabled until the template is released.</div></details>
+          <details class="faq-item"><summary>How is it licensed?</summary><div class="faq-answer">One-time $39 USD license with up to 3 workspace-reset rebinds and no subscription. Pay by card, Apple Pay or Google Pay (default), or with SOL. The license unlocks both the 1-click Grok Bot template and the standalone Python 3 CLI.</div></details>
         </div>
       </section>
     </div>
@@ -267,10 +300,333 @@ EXAMPLE DATA: REVIEW (formula without a saved value)
         </div>
         <div class="footer-bottom">
           <span>© 2026 BotAppStore.com</span>
-          <span><a href="/">Home</a> · <a href="/#catalog">Agent Catalog</a></span>
+          <span><a href="/">Home</a> · <a href="/#catalog">Agent Catalog</a> · <a href="https://coinloader.com">CoinLoader.com</a></span>
         </div>
       </div>
     </footer>
   </div>
+
+  <!-- Accessible Spec Inspection Modal (with 3 Real ARIA Tabs) -->
+  <div class="modal-backdrop" id="spec-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-panel" id="modalPanel">
+      <div class="modal-header">
+        <div>
+          <span class="phase-badge live" id="modal-badge">SPEC</span>
+          <h3 id="modalTitle" style="margin-top: 6px; font-size: 19px;">Agent Specification</h3>
+          <div class="skill-slug" id="modal-slug" style="margin-top: 2px;"></div>
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close" aria-label="Close specification modal">ESC / Close ✕</button>
+      </div>
+
+      <!-- 3 Real ARIA Tabs Inside Modal -->
+      <div class="modal-tablist" role="tablist" aria-label="Agent specification sections">
+        <button
+          type="button"
+          class="modal-tab active"
+          id="modal-tab-spec"
+          role="tab"
+          aria-selected="true"
+          aria-controls="modal-pane-spec"
+          tabindex="0"
+          data-modal-tab="modal-pane-spec"
+        >
+          SKILL.md Specification
+        </button>
+        <button
+          type="button"
+          class="modal-tab"
+          id="modal-tab-exec"
+          role="tab"
+          aria-selected="false"
+          aria-controls="modal-pane-exec"
+          tabindex="-1"
+          data-modal-tab="modal-pane-exec"
+        >
+          Execution &amp; Data Sources
+        </button>
+        <button
+          type="button"
+          class="modal-tab"
+          id="modal-tab-refusal"
+          role="tab"
+          aria-selected="false"
+          aria-controls="modal-pane-refusal"
+          tabindex="-1"
+          data-modal-tab="modal-pane-refusal"
+        >
+          Refusal Boundaries
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-pane active" id="modal-pane-spec" role="tabpanel" aria-labelledby="modal-tab-spec"></div>
+        <div class="modal-pane" id="modal-pane-exec" role="tabpanel" aria-labelledby="modal-tab-exec" hidden></div>
+        <div class="modal-pane" id="modal-pane-refusal" role="tabpanel" aria-labelledby="modal-tab-refusal" hidden></div>
+      </div>
+
+      <div class="modal-footer" id="modal-footer"></div>
+    </div>
+  </div>
+
+  <!-- On-Chain SOL Checkout Modal (#checkout-modal) -->
+  <div class="modal-backdrop" id="checkout-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title">
+    <div class="modal-panel checkout-modal-panel">
+      <div class="modal-header">
+        <div>
+          <span class="phase-badge live" id="checkout-modal-badge">● ON-CHAIN SOL CHECKOUT · NON-CUSTODIAL</span>
+          <h3 id="checkout-modal-title" style="margin-top: 6px; font-size: 19px;">FAI Results Reconciler — Balloon List vs Inspection Results Screen — $39</h3>
+          <div class="skill-slug" id="checkout-modal-slug" style="margin-top: 2px;">sku: fai-results-reconciler · One-Time License · 3 Workspace-Reset Rebinds</div>
+        </div>
+        <button type="button" class="modal-close-btn" id="checkout-modal-close">ESC / Close ✕</button>
+      </div>
+
+      <div class="modal-body checkout-modal-body">
+        <div class="dual-runtime-callout" id="checkout-deliverables-note">
+          <strong>You receive both:</strong> the 1-Click Grok Bot activation <em>plus</em> the Standalone Zero-Dep Python 3 CLI (<code>--json</code> / <code>--markdown</code>) for Cursor, Claude Code, Windsurf, CI/CD and any terminal. One <code>wcl_...</code> key unlocks both.
+        </div>
+
+        <!-- Saved License Banner (shown if localStorage has a purchased license for this SKU) -->
+        <div class="saved-license-banner" id="checkout-saved-banner" hidden>
+          <div class="saved-license-info">
+            <strong>✓ Saved License Found in This Browser</strong>
+            <span id="checkout-saved-summary">Order ord_...</span>
+          </div>
+          <div class="saved-license-actions">
+            <button type="button" class="btn btn-primary btn-sm" id="checkout-view-saved-btn">View Saved License →</button>
+            <button type="button" class="btn btn-secondary btn-sm" id="checkout-back-to-quote-btn" hidden>New Purchase Quote</button>
+            <button type="button" class="mini-copy-btn danger-btn" id="checkout-clear-saved-btn" title="Remove saved license from this browser">Clear Saved</button>
+          </div>
+        </div>
+
+        <!-- VIEW 1: LIVE SOL QUOTE & PAYMENT VERIFICATION -->
+        <div id="checkout-step-pay">
+          <!-- Quote Status / Loading / Error Bar -->
+          <div class="checkout-status-bar" id="checkout-quote-status" role="status" aria-live="polite">
+            <span id="checkout-quote-status-text">Fetching live SOL/USD quote from WattCoin Registry…</span>
+            <button type="button" class="mini-copy-btn" id="checkout-refresh-btn">Refresh Quote ↻</button>
+          </div>
+
+          <!-- Step 1 Box: Send SOL -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP 1 · SEND EXACT SOL AMOUNT TO TREASURY</span>
+              <span id="checkout-timer-pill" class="timer-pill">TTL: <strong id="checkout-timer-display">--:--</strong></span>
+            </div>
+
+            <div class="checkout-quote-grid">
+              <div class="quote-metric">
+                <span class="quote-label">License Price (One-Time)</span>
+                <div class="quote-val-primary" id="checkout-price-usd">$39.00 <small>USD</small></div>
+                <div class="quote-sub" id="checkout-rate-display">SOL/USD rate loading…</div>
+              </div>
+              <div class="quote-metric">
+                <span class="quote-label">Order ID &amp; Slippage Tolerance</span>
+                <div class="quote-val-mono" id="checkout-order-id-display">—</div>
+                <div class="quote-sub">3% slippage with memo · Exact match without memo</div>
+              </div>
+            </div>
+
+            <!-- Exact SOL Amount Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Exact Amount to Send (SOL)</span>
+                <span class="lamport-tag-hint">Unique 4-digit order tag: <code id="checkout-lamport-tag">----</code> lamports</span>
+              </div>
+              <div class="checkout-copy-box highlight">
+                <div>
+                  <code class="sol-amount-code" id="checkout-amount-sol">—</code>
+                  <span class="sol-unit">SOL</span>
+                  <span class="lamports-sub" id="checkout-amount-lamports"></span>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" id="checkout-copy-amount-btn" disabled>
+                  Copy Exact SOL Amount
+                </button>
+              </div>
+              <p class="checkout-field-help">
+                <strong>Why the exact 9 decimals matter:</strong> The last 4 digits (<code id="checkout-lamport-tag-inline">----</code> lamports, &lt;$0.001) uniquely identify your order on-chain so payment verification succeeds even if your wallet does not attach an SPL Memo.
+              </p>
+            </div>
+
+            <!-- Recipient Treasury Wallet Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>Recipient Treasury Wallet (Solana Mainnet)</span>
+                <span>Official WattCoin Treasury</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-recipient-wallet">Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-wallet-btn">Copy Wallet</button>
+              </div>
+            </div>
+
+            <!-- Optional SPL Memo Copy Field -->
+            <div class="checkout-field-group">
+              <div class="checkout-field-label">
+                <span>SPL Memo (Optional if sending exact SOL amount above)</span>
+                <span>Enables 3% slippage tolerance</span>
+              </div>
+              <div class="checkout-copy-box">
+                <code id="checkout-memo">—</code>
+                <button type="button" class="mini-copy-btn" id="checkout-copy-memo-btn" disabled>Copy Memo</button>
+              </div>
+            </div>
+
+            <!-- Solana Pay URI + Optional Sender Wallet Binding -->
+            <div class="checkout-wallet-actions">
+              <a id="checkout-solana-pay-btn" class="btn btn-secondary btn-sm" hidden>
+                Open in Solana Wallet (solana: URI) ↗
+              </a>
+              <details class="checkout-optional-details">
+                <summary>Optional: Bind quote to your sender wallet address</summary>
+                <div class="optional-wallet-row">
+                  <input
+                    type="text"
+                    id="checkout-buyer-wallet-input"
+                    class="checkout-input"
+                    placeholder="Your sender Solana address (Base58, optional)"
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                  <button type="button" class="btn btn-secondary btn-sm" id="checkout-bind-wallet-btn">
+                    Bind &amp; Refresh Quote
+                  </button>
+                </div>
+              </details>
+            </div>
+
+            <details class="checkout-optional-details checkout-card-onramp-details">
+              <summary>💳 Need SOL? How to buy with a Credit Card or Apple Pay (~60 sec)</summary>
+              <ol class="checkout-onramp-steps">
+                <li><strong>Install or open Phantom or Solflare</strong> (browser extension or mobile app).</li>
+                <li>Tap <strong>Buy → SOL</strong> inside your wallet and pay with <strong>Credit/Debit Card, Apple Pay, or Google Pay</strong> (via MoonPay, Stripe, Coinbase Pay, or Robinhood Connect).</li>
+                <li><strong>Send the exact quoted SOL amount</strong> (including the 4-digit lamport tag) to the recipient treasury address above&mdash;or click <strong>Open in Solana Wallet</strong>&mdash;then click <strong>Verify Payment &amp; Issue License &rarr;</strong>.</li>
+              </ol>
+              <p class="checkout-onramp-note">Non-custodial: the card purchase happens inside your own wallet. We never hold your funds or keys.</p>
+            </details>
+          </div>
+
+          <!-- Step 2 Box: Verify Transaction Signature -->
+          <div class="checkout-card-box" style="margin-top: 16px;">
+            <div class="checkout-step-header">
+              <span>STEP 2 · VERIFY ON-CHAIN TRANSACTION &amp; ISSUE LICENSE</span>
+              <span>CONFIRMED COMMITMENT</span>
+            </div>
+
+            <p class="checkout-field-help" style="margin-bottom: 10px;">
+              After sending SOL from Phantom, Solflare, Backpack, Ledger, or CLI, paste your Solana <strong>Transaction Signature</strong> (or full Solscan / Explorer TX link) below:
+            </p>
+
+            <div class="tx-verify-row">
+              <input
+                type="text"
+                id="checkout-tx-input"
+                class="checkout-input mono"
+                placeholder="Paste 88-char Solana TX signature or https://solscan.io/tx/..."
+                aria-label="Solana Transaction Signature or Solscan URL"
+                autocomplete="off"
+                spellcheck="false"
+              />
+              <button type="button" class="btn btn-primary" id="checkout-verify-btn" disabled>
+                Verify Payment &amp; Issue License →
+              </button>
+            </div>
+
+            <div class="checkout-feedback" id="checkout-verify-feedback" role="alert" aria-live="polite" hidden></div>
+          </div>
+        </div>
+
+        <!-- VIEW 2: FULFILLED LICENSE & TURN-1 ACTIVATION -->
+        <div id="checkout-step-fulfilled" hidden>
+          <div class="fulfilled-banner">
+            <div class="fulfilled-banner-title">✓ On-Chain SOL Payment Verified — License Issued</div>
+            <p>
+              <strong>Save your <code>wcl_...</code> license code now.</strong> It is a private bearer credential returned once at purchase and supports up to <strong>3 workspace-reset rebinds</strong>. We also saved a copy in this browser's local storage so you don't lose it if you close this tab.
+            </p>
+          </div>
+
+          <!-- Step A: Open Unlisted Grok Bot Template -->
+          <div class="checkout-card-box">
+            <div class="checkout-step-header">
+              <span>STEP A · IMPORT UNLISTED GROK BOT TEMPLATE</span>
+              <span>ONE CLICK</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-a-desc" style="margin-bottom: 10px;">
+              Click below to open the private <strong>FAI Results Reconciler — Balloon List vs Inspection Results Screen</strong> template in Grok Bot and add it to your sidebar:
+            </p>
+            <div class="fulfilled-cta-row">
+              <a target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="fulfilled-open-template-btn">
+                Open FAI Results Reconciler in Grok Bot ↗
+              </a>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-copy-template-btn">
+                Copy Unlisted Template URL
+              </button>
+            </div>
+            <div class="checkout-copy-box" style="margin-top: 10px;">
+              <code id="fulfilled-template-url">—</code>
+            </div>
+          </div>
+
+          <!-- Step B: Copy Private wcl_ License Code -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP B · YOUR PRIVATE LICENSE CODE (wcl_64-hex)</span>
+              <span>UP TO 3 REBINDS</span>
+            </div>
+            <div class="checkout-copy-box highlight" style="margin-top: 6px;">
+              <code id="fulfilled-license-code" class="license-code-text">—</code>
+              <button type="button" class="btn btn-primary btn-sm" id="fulfilled-copy-code-btn">
+                Copy License Code
+              </button>
+            </div>
+          </div>
+
+          <!-- Step C: Paste Turn-1 Activation Prompt -->
+          <div class="checkout-card-box" style="margin-top: 14px;">
+            <div class="checkout-step-header">
+              <span>STEP C · SEND THIS FIRST PROMPT IN GROK BOT</span>
+              <span>TURN-1 AUTO-SETUP</span>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-hint" style="margin-bottom: 8px;">
+              Paste this prompt on Turn 1 (or together with any <code>SKILL.md</code> or GitHub repo URL you want inspected):
+            </p>
+            <div class="checkout-copy-box">
+              <code id="fulfilled-activation-prompt">—</code>
+              <button type="button" class="mini-copy-btn" id="fulfilled-copy-prompt-btn">
+                Copy Prompt
+              </button>
+            </div>
+            <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+            </p>
+          </div>
+
+          <!-- Receipt Summary & Storage Controls -->
+          <div class="fulfilled-receipt-footer">
+            <div class="receipt-meta">
+              <span>Order: <code id="fulfilled-order-id">—</code></span>
+              <span>TX: <a target="_blank" rel="noopener noreferrer" id="fulfilled-solscan-link" style="color: var(--accent-cyan); text-decoration: underline;"><code id="fulfilled-tx-sig">—</code> ↗</a></span>
+            </div>
+            <div class="receipt-actions">
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-download-btn">
+                Download Receipt (.txt)
+              </button>
+              <button type="button" class="btn btn-secondary btn-sm" id="fulfilled-new-order-btn">
+                Buy Another License
+              </button>
+              <button type="button" class="mini-copy-btn danger-btn" id="fulfilled-clear-storage-btn">
+                Clear from Browser Storage
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="copy-toast" id="copy-toast" role="status" aria-live="polite"></div>
+
+  <script src="/app.js"></script>
 </body>
 </html>
+
