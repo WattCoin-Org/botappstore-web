@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RFQ Flowdown Triage — Quality Clause Screen</title>
+  <meta name="description" content="Screen an RFQ for quality, DFARS, CUI and export-control flowdowns against your capability profile, with page and line per clause. Runs locally." />
+  <link rel="canonical" href="https://botappstore.com/bots/rfq-flowdown-triage.html" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#070a10" />
+  <meta property="og:type" content="product" />
+  <meta property="og:site_name" content="BotAppStore.com" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="RFQ Flowdown Triage — Quality Clause Screen" />
+  <meta property="og:description" content="Screen an RFQ for quality, DFARS, CUI and export-control flowdowns against your capability profile, with page and line per clause. Runs locally." />
+  <meta property="og:url" content="https://botappstore.com/bots/rfq-flowdown-triage.html" />
+  <meta property="og:image" content="https://botappstore.com/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="RFQ Flowdown Triage on BotAppStore.com" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RFQ Flowdown Triage — Quality Clause Screen" />
+  <meta name="twitter:description" content="Screen an RFQ for quality, DFARS, CUI and export-control flowdowns against your capability profile, with page and line per clause. Runs locally." />
+  <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
+  <meta name="twitter:image:alt" content="RFQ Flowdown Triage on BotAppStore.com" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .spec-table-wrap { overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); }
+    .spec-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+    .spec-table th, .spec-table td { text-align: left; vertical-align: top; padding: 10px 14px; border-bottom: 1px solid var(--border-subtle); color: var(--text-secondary); }
+    .spec-table th { color: var(--text-primary); background: var(--bg-surface); font-weight: 600; }
+    .spec-table td:first-child { white-space: nowrap; }
+    .spec-table tr:last-child td { border-bottom: 0; }
+    .rft-disclaimer { border-left: 3px solid #F59E0B; padding: 8px 14px; color: var(--text-secondary); font-size: 14px; margin: 14px 0; }
+    .rft-pay-option { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border-subtle); }
+    .rft-pay-option:last-child { border-bottom: 0; }
+    button[disabled] { opacity: 0.55; cursor: not-allowed; }
+  </style>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "BotAppStore.com",
+          "item": "https://botappstore.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Agent Catalog",
+          "item": "https://botappstore.com/#catalog"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "RFQ Flowdown Triage — Quality Clause & Export-Control Screen",
+          "item": "https://botappstore.com/bots/rfq-flowdown-triage.html"
+        }
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://botappstore.com/bots/rfq-flowdown-triage.html#software",
+      "name": "RFQ Flowdown Triage — Quality Clause & Export-Control Screen",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Linux, macOS, Windows (Python 3)",
+      "url": "https://botappstore.com/bots/rfq-flowdown-triage.html",
+      "sku": "rfq-flowdown-triage",
+      "description": "Screening aid that triages RFQ quality and export-control flowdown clauses against a supplier capability profile and flags issues for human review. Coming soon."
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <div id="appRoot">
+    <div class="top-ticker">
+      <div class="container top-ticker-inner">
+        <div class="status-cluster">
+          <span class="status-pill"><span class="status-dot" aria-hidden="true"></span><span>STATUS: <strong>COMING SOON · NOT YET ON SALE</strong></span></span>
+          <span>PRIVACY: <strong>FILES STAY ON YOUR COMPUTER · WORKS FULLY OFFLINE</strong></span>
+        </div>
+        <div class="ticker-links"><a href="/#catalog">Agent Catalog</a></div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container nav-bar">
+        <a href="/" class="brand-logo">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="32,8 52,19 52,45 32,56 12,45 12,19" stroke="#38BDF8" stroke-width="3.5" stroke-linejoin="round" fill="#0C121E"/>
+              <path d="M20 24H44M20 40H44M32 16V48" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="2.5" stroke-linecap="round"/>
+              <rect x="24" y="24" width="16" height="16" rx="3" fill="#070A10" stroke="#F59E0B" stroke-width="3"/>
+              <circle cx="32" cy="32" r="3.5" fill="#38BDF8"/>
+            </svg>
+          </span>
+          <span>BotAppStore<span class="brand-domain">.com</span></span>
+        </a>
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <a href="/#catalog">Agent Catalog</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/llms.txt">llms.txt</a>
+        </nav>
+        <div class="nav-cta-group">
+          <button type="button" class="btn btn-secondary btn-sm" disabled aria-disabled="true">Coming soon</button>
+        </div>
+      </div>
+    </header>
+
+  <main>
+    <div class="container">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb">
+        <a href="/">BotAppStore.com</a> &rarr; <a href="/#catalog">Agent Catalog</a> &rarr; <span>RFQ Flowdown Triage — Quality Clause &amp; Export-Control Screen</span>
+      </nav>
+      <section class="product-hero">
+        <div class="price-badge">&#9679; COMING SOON &middot; $39 ONE-TIME &middot; NOT YET ON SALE &middot; RFQ REVIEW</div>
+        <h1>RFQ Flowdown Triage &mdash; Quality Clause &amp; Export-Control Screen. Know what the RFQ is asking before you quote.</h1>
+        <p class="product-lede">Reads an RFQ, PO or drawing notes (plain text, or a PDF with a text layer), finds the quality, DFARS/FAR, CUI, export-control, special-process, certification, inspection, counterfeit-parts and record-retention clauses, and triages each against <em>your own</em> supplier capability profile. Every clause carries its source document, page and line. Anything unknown is a question for the buyer, never a silent pass.</p>
+        <p class="rft-disclaimer"><strong>Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination.</strong></p>
+        <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
+          SKU: <code>rfq-flowdown-triage</code> &middot; Zero-dependency Python 3 CLI (optional pinned PDF library) &middot; Runs on your machine, works offline
+        </p>
+        <div class="product-cta-row">
+          <button type="button" class="btn btn-primary btn--primary" disabled aria-disabled="true">Coming soon</button>
+          <a href="#example-card" class="btn btn-secondary btn--ghost">See an example card</a>
+          <a href="#privacy" class="btn btn-secondary btn--ghost">Privacy</a>
+        </div>
+      </section>
+
+      <section class="product-section" id="rules">
+        <h2>What it checks</h2>
+        <p>The tool detects that clause text is present and compares it with what you told it about your shop. It does not say a clause applies, and it does not judge whether you meet it in law.</p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead><tr><th>Rule</th><th>Detects</th><th>Compared with your profile</th></tr></thead>
+            <tbody>
+            <tr><td><code>RFT-DFARS-01</code></td><td>DFARS 252.225-7009, specialty metals, domestic melt</td><td>Specialty-metals sourcing</td></tr>
+            <tr><td><code>RFT-CUI-01</code></td><td>252.204-7012, 7019/7020/7021, NIST 800-171, CUI, CMMC</td><td>CMMC level, 800-171 assessment</td></tr>
+            <tr><td><code>RFT-EXP-01</code></td><td>ITAR, EAR/ECCN, US-persons, export-controlled wording</td><td>ITAR registration, US-persons-only</td></tr>
+            <tr><td><code>RFT-DIST-01</code></td><td>Distribution Statements A to F</td><td>Statements you can receive</td></tr>
+            <tr><td><code>RFT-QMS-01</code></td><td>AS9100, ISO 9001, approved-supplier wording</td><td>Certification status and expiry</td></tr>
+            <tr><td><code>RFT-FAI-01</code></td><td>AS9102 first article</td><td>FAI capability</td></tr>
+            <tr><td><code>RFT-NADCAP-01</code></td><td>Heat treat, NDT, plating/anodize, welding, chemical process, coating</td><td>Processes held, approved subs</td></tr>
+            <tr><td><code>RFT-CERT-01</code></td><td>CoC, mill cert, process cert, test report</td><td>Certs you provide</td></tr>
+            <tr><td><code>RFT-SRC-01</code></td><td>Customer or government source inspection</td><td>Source inspection supported</td></tr>
+            <tr><td><code>RFT-CFT-01</code></td><td>Counterfeit parts (AS5553, AS6174, 252.246-7007/7008)</td><td>Prevention program</td></tr>
+            <tr><td><code>RFT-REC-01</code></td><td>Record retention (N years)</td><td>Longest retention you offer</td></tr>
+            <tr><td><code>RFT-REV-01</code></td><td>RFQ/PO vs drawing revision mismatch</td><td>Always UNKNOWN (ask the buyer)</td></tr>
+            <tr><td><code>RFT-FLOW-01</code></td><td>A DFARS/FAR clause number outside the catalog</td><td>Always UNKNOWN</td></tr>
+            <tr><td><code>RFT-CONF-01</code></td><td>Low confidence, a PDF with no text layer, or no clauses found</td><td>UNKNOWN</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Each clause is MET, GAP or UNKNOWN. Any GAP gives NO-BID-RISK; otherwise any UNKNOWN gives CLARIFY; otherwise CLEAR. A blank profile entry is UNKNOWN, never a GAP and never MET. Exit codes for scripts: 0 CLEAR, 3 CLARIFY, 4 NO-BID-RISK.</p>
+      </section>
+
+      <section class="product-section" id="example-card">
+        <h2>Example card (EXAMPLE DATA)</h2>
+        <p><strong>EXAMPLE DATA.</strong> Synthetic RFQ and supplier profile generated for this page, not a real customer, part or program.</p>
+        <pre class="code-pre">RFQ FLOWDOWN TRIAGE  ·  EXAMPLE DATA (synthetic, not a real RFQ)
+VERDICT: CLARIFY: buyer or human input needed  |  3 of 11 clauses need input
+subject: RFQ-8c125736f816 (hash of the RFQ number; the number itself is never sent)
+
+NEEDS INPUT
+  UNKNOWN  RFT-SRC-01   Source inspection        profile has no value   [rfq p1 L10]
+  UNKNOWN  RFT-FLOW-01  DFARS 252.211-7003       clause number not in the catalog   [rfq p1 L12]
+  UNKNOWN  RFT-REV-01   Drawing revision         drawing rev C vs RFQ rev B   [rfq p1 L13, drawing p1 L2]
+
+QUESTIONS FOR BUYER
+  Which drawing revision governs: C or B?
+  Please confirm the intent and flowdown of DFARS 252.211-7003.
+
+CHECKED (example rows)
+  MET  RFT-DFARS-01  DFARS 252.225-7009 / specialty metals   rfq p1 L3
+  MET  RFT-CUI-01    DFARS 252.204-7012                      rfq p1 L4
+  MET  RFT-QMS-01    AS9100                                  rfq p1 L6
+  MET  RFT-FAI-01    AS9102 first-article inspection         rfq p1 L7
+  MET  RFT-CFT-01    Counterfeit-parts prevention            rfq p1 L11
+
+Receipt: UNVERIFIED-LOCAL (offline run, not server-signed)
+Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination.</pre>
+        <h3>Failure cases (EXAMPLE DATA)</h3>
+        <pre class="code-pre">EXAMPLE DATA: NO-BID-RISK (flagged for human review)
+  GAP      RFT-CUI-01   CMMC  required level 3, profile level 2   [rfq p1 L8]
+
+EXAMPLE DATA: CLARIFY (scanned PDF)
+  UNKNOWN  RFT-CONF-01  Text extraction (rfq)  PDF has no text layer; OCR is not performed
+
+EXAMPLE DATA: CLARIFY (negated wording)
+  UNKNOWN  RFT-EXP-01   ITAR / USML  clause text appears negated or not applicable</pre>
+        <p class="rft-disclaimer">Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination.</p>
+      </section>
+
+      <section class="product-section" id="privacy">
+        <h2>Privacy</h2>
+        <ul>
+          <li>RFQs, POs and drawings are read on your computer and are never uploaded. They may be export-controlled; keep them local.</li>
+          <li>With <code>--offline</code> the tool makes no network call at all and still produces the full card.</li>
+          <li>When you choose a signed receipt, only an audit hash, a hash of the RFQ number and a one-line metric are sent to the signing endpoint. RFQ text, clause text, customer names and file names are not.</li>
+          <li>Use <code>--no-excerpts</code> to keep RFQ text snippets out of the local card as well.</li>
+        </ul>
+      </section>
+
+      <section class="product-section" id="limits">
+        <h2>Limits</h2>
+        <ul>
+          <li>No OCR: a scanned PDF is a CLARIFY. Unusual layouts may not extract; low-confidence clauses become UNKNOWN lines rather than guesses.</li>
+          <li>The clause catalog is a pattern list, not legal analysis. A clause number it does not know is reported UNKNOWN.</li>
+          <li>It is only as good as your profile. Leave anything you cannot confirm blank; blank means a question for the buyer.</li>
+          <li>It does not decide whether to bid, and it makes no determination about export control, DFARS, CMMC or any other regime.</li>
+        </ul>
+      </section>
+
+      <section class="product-section" id="checkout">
+        <h2>Checkout (not open yet)</h2>
+        <div class="checkout-card-box">
+          <p>$39.00 USD one-time license. Checkout opens when the template is released; nothing on this page can take a payment yet.</p>
+          <div class="rft-pay-option">
+            <div><strong>Card / Apple Pay / Google Pay</strong> <span style="color: var(--text-muted);">(default)</span></div>
+            <button type="button" class="btn btn-primary btn-sm" disabled aria-disabled="true">Coming soon</button>
+          </div>
+          <div class="rft-pay-option">
+            <div><strong>SOL</strong> <span style="color: var(--text-muted);">(secondary option)</span></div>
+            <button type="button" class="btn btn-secondary btn-sm" disabled aria-disabled="true">Coming soon</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-section" id="faq">
+        <h2>FAQ</h2>
+        <div class="faq-grid">
+          <details class="faq-item"><summary>Does it tell me whether to bid?</summary><div class="faq-answer">No. It flags clauses for a human. CLARIFY means a person (or the buyer) decides; NO-BID-RISK means flagged for human review because your profile shows a gap. Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination.</div></details>
+          <details class="faq-item"><summary>Does it check ITAR, DFARS or CMMC compliance?</summary><div class="faq-answer">No. It detects that clause text is present and compares it with the profile you wrote. It does not say a clause applies and makes no compliance or export-control determination.</div></details>
+          <details class="faq-item"><summary>What is the supplier profile?</summary><div class="faq-answer">A JSON file describing your shop: certifications, processes, registrations and the certs you provide. Every key is optional; a blank key is UNKNOWN, never a pass. An expired certification date is also UNKNOWN.</div></details>
+          <details class="faq-item"><summary>What about scanned RFQs?</summary><div class="faq-answer">There is no OCR. A PDF without a text layer is a CLARIFY. Text-layer PDFs are read with a pinned, hash-verified open-source PDF library; plain-text input needs no dependency.</div></details>
+          <details class="faq-item"><summary>What leaves my machine?</summary><div class="faq-answer">Nothing, with <code>--offline</code>. Otherwise only an audit hash, a hash of the RFQ number and a one-line metric (for example <code>CLARIFY · 3 of 11 clauses need buyer input</code>) go to the receipt-signing endpoint. RFQ text, clause text, customer names and file names are never sent.</div></details>
+          <details class="faq-item"><summary>When can I buy it?</summary><div class="faq-answer">It is not on sale yet. The checkout above is disabled until the template is released.</div></details>
+        </div>
+      </section>
+    </div>
+  </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="disclaimer-box">
+          <strong>Disclaimer:</strong> Screening aid that flags issues for human review. Not a legal, export-control, or compliance determination.
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 BotAppStore.com</span>
+          <span><a href="/">Home</a> · <a href="/#catalog">Agent Catalog</a></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
