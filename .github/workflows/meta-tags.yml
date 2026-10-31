@@ -14,3 +14,5 @@ jobs:
           python-version: "3.x"
       - run: python3 scripts/test_check_meta_tags.py
       - run: python3 scripts/check_meta_tags.py
+      - run: python3 scripts/test_check_no_sol.py
+      - run: python3 scripts/check_no_sol.py

@@ -53,14 +53,13 @@ def price_line(price):
 
 def checkout_md(cat, sku):
     card = cat["checkout"]["card"]
-    sol = cat["checkout"]["sol"]
     return "\n".join([
         "## How an agent buys",
         "",
         f"- Card, Apple Pay or Google Pay (default): `{card['method']} {card['url']}` with body "
         f"`{json.dumps({'sku': sku, 'storefront': 'botappstore'})}`. It returns `checkout_url`, a hosted page where a human completes payment.",
         f"- License lookup after payment: `{card['license_lookup']}`.",
-        f"- Price check without creating an order: add `\"dry_run\": true` to the quote body (`{sol['quote']}`).",
+        f"- Price check without creating an order: add `\"dry_run\": true` to the body of the same request.",
         f"- Full machine-readable catalog: {SITE}/catalog.json",
         f"- Support, refunds and privacy: {SITE}/contact.html , {SITE}/privacy.html",
         "",

@@ -1,8 +1,7 @@
 (function () {
   'use strict';
 
-  const WATTCOIN_API_BASE = 'https://www.wattcoin.org';
-  const EXPECTED_TREASURY_WALLET = 'Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q';
+  const REGISTRY_API_BASE = 'https://www.wattcoin.org/api';
   const PURCHASED_LICENSES_STORAGE_KEY = 'wcl_purchased_licenses';
 
   const CHECKOUT_SKUS = {
@@ -12,7 +11,7 @@
       title: 'Bot & Skill Security Auditor — $29 · card',
       slugMeta: 'sku: bot-skill-auditor · Skills: auditor-setup + bot-skill-auditor · 3 Rebinds',
       priceUsdHtml: '$29.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card',
       ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>Bot &amp; Skill Security Auditor</strong> template in Grok Bot and add it to your sidebar:',
@@ -31,7 +30,7 @@
       title: 'Company & Competitor Deep-Dive Analyst — $19 · card',
       slugMeta: 'sku: company-deep-dive · Skills: company-deep-dive-setup + company-deep-dive · 3 Rebinds',
       priceUsdHtml: '$19.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $19 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $19 One-Time · card',
       ctaButtonText: 'Buy License ($19) →',
       stepADescHtml:
         'Click below to open the private <strong>Company &amp; Competitor Deep-Dive Analyst</strong> template in Grok Bot and add it to your sidebar:',
@@ -50,12 +49,12 @@
       title: 'SEC & Patent Watchdog Digest — $29 · card',
       slugMeta: 'sku: sec-patent-watchdog · Skills: sec-patent-watchdog-setup + sec-patent-watchdog · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$29 USD (one-time · card)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Check my SEC & patent watchlist for NVDA, AMD, and AAPL...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Install SEC & Patent Watchdog Included in License',
-      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card',
       ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>SEC &amp; Patent Watchdog Digest</strong> template in Grok Bot and add it to your sidebar:',
@@ -74,12 +73,12 @@
       title: 'Social Hub Publisher — $29 · card',
       slugMeta: 'sku: social-hub-publisher · Skills: social-hub-publisher-setup + social-hub-publisher · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$29 USD (one-time · card)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Initialize my Social Hub queue for X, Discord, Bluesky, and Telegram...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Social Hub Publisher in Grok Bot',
-      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card',
       ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>Social Hub Publisher</strong> template in Grok Bot and add it to your sidebar:',
@@ -98,12 +97,12 @@
       title: 'Dependency Vulnerability Triage Bot — $29 · card',
       slugMeta: 'sku: dependency-vuln-triage · Skills: dependency-vuln-triage-setup + dependency-vuln-triage · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$29 USD (one-time · card)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Scan my package-lock.json against OSV.dev, EPSS, and CISA KEV...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Dependency Vulnerability Triage Bot in Grok Bot',
-      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card',
       ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>Dependency Vulnerability Triage Bot</strong> template in Grok Bot and add it to your sidebar:',
@@ -122,12 +121,12 @@
       title: 'Domain, TLS & Email Auth Infrastructure Hygiene Auditor — $19 · card',
       slugMeta: 'sku: domain-infra-hygiene · Skills: domain-infra-hygiene-setup + domain-infra-hygiene · 1-Year License · 3 Rebinds',
       priceUsd: 19,
-      priceLabel: '$19 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$19 USD (one-time · card)',
       priceUsdHtml: '$19.00 <small>USD</small>',
       promptHint: 'Audit DNS, DNSSEC, TLS, SPF/DMARC/DKIM and security headers for my domain example.com...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Domain, TLS & Email Auth Hygiene Auditor in Grok Bot',
-      statusFooterText: 'Status: LIVE · $19 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $19 One-Time · card',
       ctaButtonText: 'Buy License ($19) →',
       stepADescHtml:
         'Click below to open the private <strong>Domain, TLS &amp; Email Auth Infrastructure Hygiene Auditor</strong> template in Grok Bot and add it to your sidebar:',
@@ -146,12 +145,12 @@
       title: 'Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator — $39 · card',
       slugMeta: 'sku: agent-council · Skills: agent-council-setup + agent-council · One-Time License · 3 Rebinds',
       priceUsd: 39,
-      priceLabel: '$39 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$39 USD (one-time · card)',
       priceUsdHtml: '$39.00 <small>USD</small>',
       promptHint: 'Convene a 3-seat council (architect, security, skeptic) on this design question and give me the consensus and minority report...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Agent Council in Grok Bot',
-      statusFooterText: 'Status: LIVE · $39 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $39 One-Time · card',
       ctaButtonText: 'Buy License ($39) →',
       stepADescHtml:
         'Click below to open the private <strong>Agent Council — Multi-Model Swarm Debate &amp; Pair-Architect Collaborator</strong> template in Grok Bot and add it to your sidebar:',
@@ -170,12 +169,12 @@
       title: 'MCP Server & Tool-Permission Security Auditor — $19 · card',
       slugMeta: 'sku: mcp-config-auditor · Skills: mcp-config-auditor-setup + mcp-config-auditor · One-Time License · 3 Rebinds',
       priceUsd: 19,
-      priceLabel: '$19 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$19 USD (one-time · card)',
       priceUsdHtml: '$19.00 <small>USD</small>',
       promptHint: 'Audit my Claude Desktop, Cursor and VS Code MCP configs for leaked secrets, unpinned packages and poisoned tools...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open MCP Server & Tool-Permission Security Auditor in Grok Bot',
-      statusFooterText: 'Status: LIVE · $19 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $19 One-Time · card',
       ctaButtonText: 'Buy License ($19) →',
       stepADescHtml:
         'Click below to open the private <strong>MCP Server &amp; Tool-Permission Security Auditor</strong> template in Grok Bot and add it to your sidebar:',
@@ -196,12 +195,12 @@
       detailUrl: '/bots/print-farm-ops.html',
       slugMeta: 'sku: print-farm-ops · Skills: print-farm-ops-setup + print-farm-ops · One-Time License · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$29 USD (one-time · card)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Audit my OrcaSlicer .3mf files, spool ledger and SKU table, and schedule this week\'s print queue...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open 3D Print Farm & Slicer Queue Ops in Grok Bot',
-      statusFooterText: 'Status: AVAILABLE NOW · $29 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: AVAILABLE NOW · $29 One-Time · card',
       ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>3D Print Farm &amp; Slicer Queue Ops</strong> template in Grok Bot and add it to your sidebar:',
@@ -222,12 +221,12 @@
       detailUrl: '/bots/robotics-telemetry-inspector.html',
       slugMeta: 'sku: robotics-telemetry-inspector · Skills: robotics-telemetry-inspector-setup + robotics-telemetry-inspector · One-Time License · 3 Rebinds',
       priceUsd: 49,
-      priceLabel: '$49 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$49 USD (one-time · card)',
       priceUsdHtml: '$49.00 <small>USD</small>',
       promptHint: 'Audit my actuator log, BMS export, ROS 2 bag and flight log, and write the maintenance checklist...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open Humanoid & Fleet Telemetry Inspector in Grok Bot',
-      statusFooterText: 'Status: AVAILABLE NOW · $49 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: AVAILABLE NOW · $49 One-Time · card',
       ctaButtonText: 'Buy License ($49) →',
       stepADescHtml:
         'Click below to open the private <strong>Humanoid &amp; Fleet Telemetry Inspector</strong> template in Grok Bot and add it to your sidebar:',
@@ -246,13 +245,13 @@
       title: 'SEC EDGAR Supply Chain & Counterparty Mapper — $29 · card',
       slugMeta: 'sku: sec-supply-chain-mapper · Skills: sec-supply-chain-mapper-setup + sec-supply-chain-mapper · One-Time License · 3 Rebinds',
       priceUsd: 29,
-      priceLabel: '$29 USD (one-time · card; SOL also accepted)',
+      priceLabel: '$29 USD (one-time · card)',
       priceUsdHtml: '$29.00 <small>USD</small>',
       promptHint: 'Map the suppliers, major customers and equity stakes of NVDA from its latest 10-K...',
       templateUrl: 'https://grok.com/',
       templateLabel: 'Open SEC EDGAR Supply Chain Mapper in Grok Bot',
       detailUrl: '/bots/sec-supply-chain-mapper.html',
-      statusFooterText: 'Status: LIVE · $29 One-Time · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $29 One-Time · card',
       ctaButtonText: 'Buy License ($29) →',
       stepADescHtml:
         'Click below to open the private <strong>SEC EDGAR Supply Chain &amp; Counterparty Mapper</strong> template in Grok Bot and add it to your sidebar:',
@@ -347,7 +346,7 @@
       slugMeta: 'sku: devsecops-ai-security-pack · 4 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 69,
       priceUsdHtml: '$69.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $69 One-Time 4-Bot Bundle · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $69 One-Time 4-Bot Bundle · card',
       ctaButtonText: 'Unlock Bundle ($69) →',
       shortName: 'DevSecOps & AI Security Pack',
       includedSkus: ['bot-skill-auditor', 'mcp-config-auditor', 'dependency-vuln-triage', 'domain-infra-hygiene'],
@@ -369,7 +368,7 @@
       slugMeta: 'sku: physical-ai-manufacturing-pack · 2 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 59,
       priceUsdHtml: '$59.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $59 One-Time 2-Bot Bundle · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $59 One-Time 2-Bot Bundle · card',
       ctaButtonText: 'Unlock Bundle ($59) →',
       shortName: 'Physical AI & Manufacturing Pack',
       includedSkus: ['print-farm-ops', 'robotics-telemetry-inspector'],
@@ -391,7 +390,7 @@
       slugMeta: 'sku: founder-research-gtm-pack · 3 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 59,
       priceUsdHtml: '$59.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $59 One-Time 3-Bot Bundle · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $59 One-Time 3-Bot Bundle · card',
       ctaButtonText: 'Unlock Bundle ($59) →',
       shortName: 'Founder Research & GTM Pack',
       includedSkus: ['company-deep-dive', 'sec-patent-watchdog', 'social-hub-publisher'],
@@ -413,7 +412,7 @@
       slugMeta: 'sku: edgar-intelligence-pack · 3 bots · one wcl_... license unlocks all · 3 Rebinds',
       priceUsd: 89,
       priceUsdHtml: '$89.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $89 One-Time 3-Bot Bundle · card, SOL also accepted',
+      statusFooterText: 'Status: LIVE · $89 One-Time 3-Bot Bundle · card',
       ctaButtonText: 'Unlock Bundle ($89) →',
       shortName: 'Institutional EDGAR Pack',
       includedSkus: ['company-deep-dive', 'sec-patent-watchdog', 'sec-supply-chain-mapper'],
@@ -472,13 +471,13 @@
       slug: 'auditor-setup + bot-skill-auditor',
       badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'bot-skill-auditor',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
         <h4>Sample Audit Report Preview (<code>crypto-airdrop-helper/SKILL.md</code>)</h4>
         <pre class="modal-sample-audit"># Static Capability Audit: crypto-airdrop-helper
 - Files Audited (1/1): crypto-airdrop-helper/SKILL.md (read 1,420 of 1,420 bytes; hidden_unicode_lines: []; long_lines: [])
@@ -510,7 +509,7 @@
       `,
       execHtml: `
         <p>Executes inside your isolated Grok Bot Linux container using two read-only Python helpers (<code>0500</code> permissions) and random 128-bit delimiter tags.</p>
-        <h4>1. Turn-1 Setup &amp; On-Chain License Binding (<code>auditor-setup</code>)</h4>
+        <h4>1. Turn-1 Setup &amp; License Binding (<code>auditor-setup</code>)</h4>
         <ul>
           <li>Installs read-only helpers in <code>/workspace</code> at <code>chmod 500</code> (<code>-r-x------</code>): <code>.wattcoin_license_check.py</code> and <code>.wattcoin_audit_prep.py</code>.</li>
           <li>Registers and activates your workspace agent in <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>, +100 WATT via <code>onboarding_v1</code> + <code>starter_v1</code>).</li>
@@ -545,13 +544,13 @@
       slug: 'company-deep-dive-setup + company-deep-dive',
       badge: 'LIVE · $19 · CARD',
       badgeClass: 'live',
-      price: '$19 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
+      price: '$19 One-Time · card (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'company-deep-dive',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor comparison matrix—with exact accession numbers and UTC retrieval timestamps.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the unlisted Grok Bot template link.</p>
         <h4>Sample Dossier Output Preview (<code>/workspace/dossiers/aapl-20261025T183000Z-7f700f/REPORT.md</code>)</h4>
         <pre class="modal-sample-audit">&gt; This dossier is an automated compilation of publicly available primary-source records (SEC EDGAR, USPTO PatentsView, and RDAP) retrieved at the UTC timestamps cited below. It does not cover private/unfiled commercial agreements, non-public financial projections, unindexed foreign or state filings, or real-time market data. Filing summaries reflect registrant assertions and are not independently audited. Nothing in this dossier constitutes investment advice, financial advice, trading recommendations, credit ratings, or a legal opinion on patent validity or freedom-to-operate.
 
@@ -593,7 +592,7 @@
       `,
       execHtml: `
         <p>Executes inside your isolated Grok Bot Linux container using two read-only Python helpers (<code>0500</code> permissions) and random 128-bit delimiter tags.</p>
-        <h4>1. Turn-1 Setup &amp; On-Chain License Binding (<code>company-deep-dive-setup</code>)</h4>
+        <h4>1. Turn-1 Setup &amp; License Binding (<code>company-deep-dive-setup</code>)</h4>
         <ul>
           <li>Installs read-only helpers in <code>/workspace</code> at <code>chmod 500</code> (<code>-r-x------</code>): <code>.wattcoin_license_check.py</code> and <code>.wattcoin_dd_fetch.py</code>.</li>
           <li>Registers and activates your workspace agent in <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>, +100 WATT via <code>onboarding_v1</code> + <code>starter_v1</code>).</li>
@@ -628,13 +627,13 @@
       slug: 'sec-patent-watchdog-setup + sec-patent-watchdog',
       badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'sec-patent-watchdog',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>A zero-noise delta digest of new SEC EDGAR filings and USPTO patent/IP publications for up to 10 tickers/CIKs—written only when something actually changed.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>sec-patent-watchdog-setup</code> + <code>sec-patent-watchdog</code>)</h4>
         <ul>
           <li><strong>Watchlist Coverage:</strong> Up to 10 tickers/CIKs across <code>10-K</code>, <code>10-Q</code>, <code>8-K</code>, <code>Form 4</code>, <code>13F-HR</code>, and <code>S-1</code> filings plus USPTO patent/IP publications.</li>
@@ -691,13 +690,13 @@
       slug: 'social-hub-publisher-setup + social-hub-publisher',
       badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'social-hub-publisher',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Zero-SaaS-fee multi-channel announcement queue, Gate-1 policy linter, and Gate-2 HMAC-verified publisher across X, Discord webhooks, Bluesky AT Protocol, and Telegram Bot API.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>social-hub-publisher-setup</code> + <code>social-hub-publisher</code>)</h4>
         <ul>
           <li><strong>Gate-1 Policy Linter:</strong> Enforces per-channel length limits (weighting URLs as 23 chars on X), allowed link domains, banned terms, hashtag/mention caps, and duplicate post detection.</li>
@@ -724,13 +723,13 @@
       slug: 'dependency-vuln-triage-setup + dependency-vuln-triage',
       badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'dependency-vuln-triage',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic lockfile vulnerability triage report enriching OSV.dev advisories with FIRST EPSS v1 exploit probability and the CISA KEV catalog, sorted into four action buckets with exact fix versions.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>dependency-vuln-triage-setup</code> + <code>dependency-vuln-triage</code>)</h4>
         <ul>
           <li><strong>7 Lockfile Formats:</strong> Parses <code>package-lock.json</code> (v1–v3), <code>yarn.lock</code>, <code>Pipfile.lock</code>, <code>poetry.lock</code>, pinned <code>requirements.txt</code>, <code>Cargo.lock</code>, and <code>go.sum</code>.</li>
@@ -757,14 +756,14 @@
       slug: 'domain-infra-hygiene-setup + domain-infra-hygiene',
       badge: 'LIVE · $19 · CARD',
       badgeClass: 'live',
-      price: '$19 One-Time · card, SOL also accepted (1-Year License · 3 Workspace-Reset Rebinds)',
+      price: '$19 One-Time · card (1-Year License · 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'domain-infra-hygiene',
       specPageUrl: '/bots/domain-infra-hygiene.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, read-only posture report for domains you own: DNS and DNSSEC, TLS certificate chain and expiry, SPF (RFC 7208 10-lookup counting), DMARC, DKIM, MTA-STS, TLS-RPT, CAA, HTTPS security headers, dangling CNAMEs and Certificate Transparency, with copy-paste DNS / Nginx / Vercel / Netlify remediation.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>domain-infra-hygiene-setup</code> + <code>domain-infra-hygiene</code>)</h4>
         <pre class="code-pre">---
 name: domain-infra-hygiene
@@ -815,14 +814,14 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       slug: 'agent-council-setup + agent-council',
       badge: 'LIVE · $39 · CARD',
       badgeClass: 'live',
-      price: '$39 One-Time · card, SOL also accepted (3 Workspace-Reset Rebinds)',
+      price: '$39 One-Time · card (3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'agent-council',
       specPageUrl: '/bots/agent-council.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>A council of 2–6 AI seats (local <code>claude</code> personas, <code>codex</code>, <code>gemini</code>, <code>aider</code>, or BYOK OpenAI / Anthropic / xAI / Gemini / OpenRouter / DeepSeek / Ollama models) that debates, pair-programs, competes on or reviews one problem, and a Chair synthesis with a consensus matrix, minority report, verdict and action plan.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$39 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$39 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>agent-council-setup</code> + <code>agent-council</code>)</h4>
         <pre class="code-pre">---
 name: agent-council
@@ -878,14 +877,14 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 usage/refusal · 11 de
       slug: 'mcp-config-auditor-setup + mcp-config-auditor',
       badge: 'LIVE · $19 · CARD',
       badgeClass: 'live',
-      price: '$19 One-Time · card, SOL also accepted (3 Workspace-Reset Rebinds)',
+      price: '$19 One-Time · card (3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'mcp-config-auditor',
       specPageUrl: '/bots/mcp-config-auditor.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, read-only static audit of your MCP client configs (Claude Desktop, Claude Code, Cursor, VS Code, Windsurf, Cline, Zed, generic <code>mcp.json</code>) and <code>tools/list</code> snapshots across 5 buckets: secrets, execution &amp; host exposure, supply chain, network and tool poisoning. Every detected secret is redacted, and each file gets a copy-paste hardened config.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$19 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>mcp-config-auditor-setup</code> + <code>mcp-config-auditor</code>)</h4>
         <pre class="code-pre">---
 name: mcp-config-auditor
@@ -937,14 +936,14 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       slug: 'print-farm-ops-setup + print-farm-ops',
       badge: 'AVAILABLE NOW · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 USD (One-Time License · card; SOL also accepted · Up to 3 Rebinds)',
+      price: '$29 USD (One-Time License · card · Up to 3 Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'print-farm-ops',
       specPageUrl: '/bots/print-farm-ops.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, offline, read-only audit of your OrcaSlicer, Bambu Studio and PrusaSlicer <code>.3mf</code> / <code>.gcode.3mf</code> / <code>.gcode</code> files plus your spool ledger, storefront SKU table and printer list across 4 buckets: slicer thermal/mechanical safety, spool inventory and moisture hygiene, per-part unit economics, and SKU run-rate with a multi-printer queue schedule.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 2 LIVE</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 2 LIVE</span> — One-time <strong>$29 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>print-farm-ops-setup</code> + <code>print-farm-ops</code>)</h4>
         <pre class="code-pre">---
 name: print-farm-ops
@@ -999,14 +998,14 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       slug: 'robotics-telemetry-inspector-setup + robotics-telemetry-inspector',
       badge: 'AVAILABLE NOW · PHASE 1 RELEASE',
       badgeClass: 'live',
-      price: '$49 USD (One-Time License · 3 Rebinds · card; SOL also accepted)',
+      price: '$49 USD (One-Time License · 3 Rebinds · card)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'robotics-telemetry-inspector',
       specPageUrl: '/bots/robotics-telemetry-inspector.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Deterministic, offline, read-only audit of exported robot and fleet telemetry across 4 buckets: actuator, joint and harmonic-drive duty cycles (cross-checked against URDF / SDF limits and CAN logs), 16S LiFePO4 / LiPo battery management system packs, ROS 2 bag topic rate, QoS, clock and TF-tree integrity, and PX4 / ArduPilot EKF, vibration, GNSS and ESC flight readiness, ending in a preventive-maintenance and flight-readiness checklist.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 1 RELEASE</span> — One-time <strong>$49 USD</strong> license; pay by card, Apple Pay or Google Pay (SOL also accepted). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">AVAILABLE NOW · PHASE 1 RELEASE</span> — One-time <strong>$49 USD</strong> license; pay by card, Apple Pay or Google Pay. Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code and unlocks the Grok Bot template.</p>
         <h4>Included Skills (<code>robotics-telemetry-inspector-setup</code> + <code>robotics-telemetry-inspector</code>)</h4>
         <pre class="code-pre">---
 name: robotics-telemetry-inspector
@@ -1060,14 +1059,14 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       slug: 'sec-supply-chain-mapper-setup + sec-supply-chain-mapper',
       badge: 'LIVE · $29 · CARD',
       badgeClass: 'live',
-      price: '$29 One-Time · card, SOL also accepted (Includes 3 Workspace-Reset Rebinds)',
+      price: '$29 One-Time · card (Includes 3 Workspace-Reset Rebinds)',
       shareUrl: null,
       ctaType: 'checkout',
       sku: 'sec-supply-chain-mapper',
       specPageUrl: '/bots/sec-supply-chain-mapper.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Cited supplier, customer, foundry, subsidiary and equity-stake map for one or more public companies, built only from primary SEC EDGAR filings, with a reproducible <code>audit_sha256</code>.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license (v1.1); pay by card, Apple Pay or Google Pay (SOL also accepted). Also included in the <strong>Institutional EDGAR Intelligence Pack</strong> ($89). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license (v1.1); pay by card, Apple Pay or Google Pay. Also included in the <strong>Institutional EDGAR Intelligence Pack</strong> ($89). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
         <h4>Included Skills (<code>sec-supply-chain-mapper-setup</code> + <code>sec-supply-chain-mapper</code>)</h4>
         <ul>
           <li><strong>Cited Relationship Edges:</strong> <code>supplier</code>, <code>customer</code>, <code>foundry_compute</code>, <code>strategic_partner</code>, <code>subsidiary</code> and <code>equity_stake</code>, each with a verbatim quote of <code>&lt;=300</code> characters, the accession number and a direct SEC Archive URL.</li>
@@ -1511,7 +1510,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     }
   }
 
-  // 5. On-Chain SOL Checkout Modal Controller (#checkout-modal — Multi-SKU)
+  // 5. Card Checkout Modal Controller (#checkout-modal — Multi-SKU)
   const checkoutModal = document.getElementById('checkout-modal');
   const checkoutCloseBtn = document.getElementById('checkout-modal-close');
   const checkoutModalTitle = document.getElementById('checkout-modal-title');
@@ -1524,34 +1523,8 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
   const savedBanner = document.getElementById('checkout-saved-banner');
   const savedSummary = document.getElementById('checkout-saved-summary');
   const viewSavedBtn = document.getElementById('checkout-view-saved-btn');
-  const backToQuoteBtn = document.getElementById('checkout-back-to-quote-btn');
+  const backToPayBtn = document.getElementById('checkout-back-to-pay-btn');
   const clearSavedBtn = document.getElementById('checkout-clear-saved-btn');
-
-  // Step 1 Quote elements
-  const quoteStatusBar = document.getElementById('checkout-quote-status');
-  const quoteStatusText = document.getElementById('checkout-quote-status-text');
-  const refreshQuoteBtn = document.getElementById('checkout-refresh-btn');
-  const timerPill = document.getElementById('checkout-timer-pill');
-  const timerDisplay = document.getElementById('checkout-timer-display');
-  const rateDisplay = document.getElementById('checkout-rate-display');
-  const orderIdDisplay = document.getElementById('checkout-order-id-display');
-  const lamportTagEl = document.getElementById('checkout-lamport-tag');
-  const lamportTagInlineEl = document.getElementById('checkout-lamport-tag-inline');
-  const amountSolEl = document.getElementById('checkout-amount-sol');
-  const amountLamportsEl = document.getElementById('checkout-amount-lamports');
-  const copyAmountBtn = document.getElementById('checkout-copy-amount-btn');
-  const recipientWalletEl = document.getElementById('checkout-recipient-wallet');
-  const copyWalletBtn = document.getElementById('checkout-copy-wallet-btn');
-  const memoEl = document.getElementById('checkout-memo');
-  const copyMemoBtn = document.getElementById('checkout-copy-memo-btn');
-  const solanaPayBtn = document.getElementById('checkout-solana-pay-btn');
-  const buyerWalletInput = document.getElementById('checkout-buyer-wallet-input');
-  const bindWalletBtn = document.getElementById('checkout-bind-wallet-btn');
-
-  // Step 2 Verify elements
-  const txInput = document.getElementById('checkout-tx-input');
-  const verifyBtn = document.getElementById('checkout-verify-btn');
-  const verifyFeedback = document.getElementById('checkout-verify-feedback');
 
   // Step 3 Fulfilled elements
   const fulfilledStepADesc = document.getElementById('fulfilled-step-a-desc');
@@ -1567,23 +1540,15 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
   const fulfilledStepCFoot = document.getElementById('fulfilled-step-c-foot');
   const fulfilledOrderIdEl = document.getElementById('fulfilled-order-id');
   const fulfilledTxSigEl = document.getElementById('fulfilled-tx-sig');
-  const fulfilledSolscanLink = document.getElementById('fulfilled-solscan-link');
   const fulfilledDownloadBtn = document.getElementById('fulfilled-download-btn');
   const fulfilledNewOrderBtn = document.getElementById('fulfilled-new-order-btn');
   const fulfilledClearStorageBtn = document.getElementById('fulfilled-clear-storage-btn');
 
   let currentCheckoutSku = 'bot-skill-auditor';
-  let activeQuote = null;
   let activeFulfilledReceipt = null;
-  let quoteCountdownInterval = null;
-  let isVerifyingPayment = false;
 
   function getCheckoutSkuConfig(sku) {
     return CHECKOUT_SKUS[sku] || CHECKOUT_SKUS['bot-skill-auditor'];
-  }
-
-  function getActiveQuoteStorageKey(sku) {
-    return 'wcl_active_quote_' + (sku || currentCheckoutSku || 'bot-skill-auditor');
   }
 
   // ---------------------------------------------------------------------------
@@ -1594,9 +1559,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
   const STRIPE_SESSION_ID_RE = /^cs_(?:test_|live_)?[A-Za-z0-9_]{10,128}$/;
   const STRIPE_READY_SUBTEXT =
     'Instant wcl_... license key issued on redirect · Corporate cards, Apple Pay & Google Pay accepted.';
-  const STRIPE_ACTIVATING_NOTE = 'Card gateway activating — use SOL checkout below or click to retry';
-  const STRIPE_NOT_READY_MESSAGE =
-    'Card checkout is being activated and is not live yet. SOL checkout below is live right now — scroll down to pay with SOL.';
+  const STRIPE_NOT_READY_MESSAGE = 'Card checkout is being activated and is not live yet. Please try again shortly.';
 
   let stripeBoxEl = null;
   let stripeBtnEl = null;
@@ -1645,12 +1608,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       box.appendChild(sub);
       box.appendChild(fb);
 
-      const statusBar = document.getElementById('checkout-quote-status');
-      if (statusBar && statusBar.parentNode === pay) {
-        statusBar.insertAdjacentElement('afterend', box);
-      } else {
-        pay.insertBefore(box, pay.firstChild);
-      }
+      pay.appendChild(box);
     }
     stripeBoxEl = box;
     stripeBtnEl = document.getElementById('checkout-stripe-pay-btn');
@@ -1677,17 +1635,13 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     stripeBtnEl.textContent = `\u{1F4B3} Pay with Card / Apple Pay${price ? ` (${price})` : ''} →`;
   }
 
-  function updateStripeUi(quote) {
+  function updateStripeUi() {
     if (!stripeBtnEl || !stripeSubtextEl) return;
     updateStripeButtonLabel(currentCheckoutSku);
     stripeBtnEl.disabled = false;
-    if (quote && quote.stripe_enabled === false) {
-      stripeBtnEl.classList.add('checkout-stripe-btn-pending');
-      stripeSubtextEl.textContent = STRIPE_ACTIVATING_NOTE;
-    } else {
-      stripeBtnEl.classList.remove('checkout-stripe-btn-pending');
-      stripeSubtextEl.textContent = STRIPE_READY_SUBTEXT;
-    }
+    stripeBtnEl.classList.remove('checkout-stripe-btn-pending');
+    stripeSubtextEl.textContent = STRIPE_READY_SUBTEXT;
+    hideStripeFeedback();
   }
 
   function showStripeFeedback(type, message) {
@@ -1709,11 +1663,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     isStartingStripeCheckout = true;
     if (stripeBtnEl) stripeBtnEl.disabled = true;
     hideStripeFeedback();
-    if (activeQuote && activeQuote.stripe_enabled === false) {
-      showStripeFeedback('pending', STRIPE_NOT_READY_MESSAGE + ' Checking card gateway status…');
-    } else {
-      showStripeFeedback('pending', 'Opening secure Stripe Checkout…');
-    }
+    showStripeFeedback('pending', 'Opening secure Stripe Checkout…');
 
     const payload = { sku, storefront: STRIPE_STOREFRONT };
     if (STRIPE_ALLOWED_ORIGINS.includes(window.location.origin)) {
@@ -1724,7 +1674,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 
     let redirecting = false;
     try {
-      const resp = await fetch(`${WATTCOIN_API_BASE}/api/v1/agents/license/stripe-checkout`, {
+      const resp = await fetch(`${REGISTRY_API_BASE}/v1/agents/license/stripe-checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
@@ -1747,10 +1697,10 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       } else if (resp.status === 429) {
         showStripeFeedback('error', 'Too many checkout attempts. Please wait a few minutes and try again.');
       } else {
-        showStripeFeedback('error', (data && data.error) || 'Could not start card checkout. Please try again or pay with SOL below.');
+        showStripeFeedback('error', (data && data.error) || 'Could not start card checkout. Please try again.');
       }
     } catch (_) {
-      showStripeFeedback('error', 'Network error reaching card checkout. Please try again or pay with SOL below.');
+      showStripeFeedback('error', 'Network error reaching card checkout. Please try again.');
     } finally {
       isStartingStripeCheckout = false;
       if (stripeBtnEl && !redirecting) stripeBtnEl.disabled = false;
@@ -1799,7 +1749,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       let data = {};
       for (let attempt = 0; attempt < 5; attempt += 1) {
         resp = await fetch(
-          `${WATTCOIN_API_BASE}/api/v1/agents/license/stripe-session/${encodeURIComponent(sessionId)}`
+          `${REGISTRY_API_BASE}/v1/agents/license/stripe-session/${encodeURIComponent(sessionId)}`
         );
         data = await resp.json().catch(() => ({}));
         if (resp.status !== 402) break;
@@ -1810,7 +1760,6 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
           sku: data.sku || sku,
           name: data.name || getCheckoutSkuConfig(sku).name,
           order_id: data.order_id || '',
-          tx_signature: '',
           payment_method: 'stripe',
           stripe_session_id: data.session_id || sessionId,
           payment_intent: data.payment_intent || '',
@@ -1872,20 +1821,6 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     updateStripeButtonLabel(sku);
   }
 
-  function isValidQuote(q, expectedSku) {
-    if (!q || typeof q !== 'object') return false;
-    if (expectedSku && q.sku && q.sku !== expectedSku) return false;
-    if (typeof q.order_id !== 'string' || !/^ord_[a-f0-9]{24}$/.test(q.order_id)) return false;
-    if (typeof q.checkout_token !== 'string' || !/^ct_[a-f0-9]{48}$/.test(q.checkout_token)) return false;
-    if (typeof q.amount_sol !== 'string' || !/^\d+\.\d{1,9}$/.test(q.amount_sol) || !(Number(q.amount_sol) > 0)) return false;
-    if (typeof q.amount_lamports !== 'number' || !Number.isInteger(q.amount_lamports) || q.amount_lamports <= 0) return false;
-    if (typeof q.min_amount_lamports !== 'number' || !Number.isInteger(q.min_amount_lamports) || q.min_amount_lamports <= 0) return false;
-    if (typeof q.recipient_wallet !== 'string' || q.recipient_wallet !== EXPECTED_TREASURY_WALLET) return false;
-    if (typeof q.memo !== 'string' || q.memo !== `wcl:${q.order_id}`) return false;
-    if (typeof q.expires_at !== 'string' || !Number.isFinite(Date.parse(q.expires_at))) return false;
-    return true;
-  }
-
   function sanitizeBundleTemplates(rawList) {
     if (!Array.isArray(rawList)) return [];
     const seen = new Set();
@@ -1939,12 +1874,8 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     const orderId =
       typeof raw.order_id === 'string' && /^ord_[a-f0-9]{24}$/.test(raw.order_id) ? raw.order_id : '';
 
-    const txSignature =
-      typeof raw.tx_signature === 'string' && /^[1-9A-HJ-NP-Za-km-z]{43,128}$/.test(raw.tx_signature)
-        ? raw.tx_signature
-        : '';
-
-    const paymentMethod = raw.payment_method === 'stripe' ? 'stripe' : 'sol';
+    // Receipts saved before card-only checkout have no stripe_session_id; they stay readable.
+    const paymentMethod = raw.payment_method === 'stripe' ? 'stripe' : 'other';
     const stripeSessionId =
       paymentMethod === 'stripe' && typeof raw.stripe_session_id === 'string' && STRIPE_SESSION_ID_RE.test(raw.stripe_session_id)
         ? raw.stripe_session_id
@@ -1961,9 +1892,6 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       payment_method: paymentMethod,
       stripe_session_id: stripeSessionId,
       payment_intent: paymentIntent,
-      tx_signature: txSignature,
-      payer_wallet: typeof raw.payer_wallet === 'string' ? raw.payer_wallet : '',
-      amount_lamports: typeof raw.amount_lamports === 'number' ? raw.amount_lamports : 0,
       license_code: licenseCode,
       template_url: templateUrl,
       included_skus: includedSkus,
@@ -2021,47 +1949,6 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     updateSavedLicenseBanner();
   }
 
-  function loadCachedQuoteFromSession(sku) {
-    const targetSku = sku || currentCheckoutSku;
-    const key = getActiveQuoteStorageKey(targetSku);
-    try {
-      const raw = sessionStorage.getItem(key);
-      if (!raw) return null;
-      const quote = JSON.parse(raw);
-      if (!isValidQuote(quote, targetSku)) {
-        sessionStorage.removeItem(key);
-        return null;
-      }
-      const expiresMs = Date.parse(quote.expires_at);
-      if (expiresMs - Date.now() < 60000) {
-        sessionStorage.removeItem(key);
-        return null;
-      }
-      return quote;
-    } catch (_) {
-      return null;
-    }
-  }
-
-  function saveQuoteToSession(quote, sku) {
-    const targetSku = (quote && quote.sku) || sku || currentCheckoutSku;
-    if (!isValidQuote(quote, targetSku)) return;
-    try {
-      sessionStorage.setItem(getActiveQuoteStorageKey(targetSku), JSON.stringify(quote));
-    } catch (_) {
-      // Ignore
-    }
-  }
-
-  function clearQuoteFromSession(sku) {
-    const targetSku = sku || currentCheckoutSku;
-    try {
-      sessionStorage.removeItem(getActiveQuoteStorageKey(targetSku));
-    } catch (_) {
-      // Ignore
-    }
-  }
-
   function updateSavedLicenseBanner() {
     if (!savedBanner) return;
     const saved = loadSavedLicenses(currentCheckoutSku);
@@ -2075,213 +1962,15 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     savedSummary.textContent = `${latest.name} · Order ${latest.order_id || '—'} · Code ${shortCode}`;
   }
 
-  function formatCountdown(msRemaining) {
-    const totalSec = Math.max(0, Math.floor(msRemaining / 1000));
-    const mins = Math.floor(totalSec / 60);
-    const secs = totalSec % 60;
-    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-  }
-
-  function stopQuoteTimer() {
-    if (quoteCountdownInterval) {
-      clearInterval(quoteCountdownInterval);
-      quoteCountdownInterval = null;
-    }
-  }
-
-  function startQuoteTimer(expiresAtIso) {
-    stopQuoteTimer();
-    const expiresMs = Date.parse(expiresAtIso);
-    if (!Number.isFinite(expiresMs)) return;
-
-    function tick() {
-      const remaining = expiresMs - Date.now();
-      if (remaining <= 0) {
-        timerDisplay.textContent = 'EXPIRED';
-        if (timerPill) timerPill.classList.add('expired');
-        quoteStatusBar.classList.add('error');
-        quoteStatusText.textContent = 'Order quote expired. Click "Refresh Quote ↻" before sending SOL.';
-        verifyBtn.disabled = true;
-        stopQuoteTimer();
-        return;
-      }
-      if (timerPill) timerPill.classList.remove('expired');
-      timerDisplay.textContent = formatCountdown(remaining);
-    }
-
-    tick();
-    quoteCountdownInterval = setInterval(tick, 1000);
-  }
-
-  let quoteRequestSeq = 0;
-
-  function resetQuoteUiView() {
-    activeQuote = null;
-    stopQuoteTimer();
-    if (timerPill) timerPill.classList.remove('expired');
-    if (timerDisplay) timerDisplay.textContent = '15:00';
-    if (rateDisplay) rateDisplay.textContent = 'Fetching live SOL/USD rate…';
-    if (orderIdDisplay) orderIdDisplay.textContent = '—';
-    if (amountSolEl) amountSolEl.textContent = '—.————';
-    if (amountLamportsEl) amountLamportsEl.textContent = '(calculating lamports…)';
-    if (lamportTagEl) lamportTagEl.textContent = '————';
-    if (lamportTagInlineEl) lamportTagInlineEl.textContent = '————';
-    if (recipientWalletEl) recipientWalletEl.textContent = EXPECTED_TREASURY_WALLET;
-    if (memoEl) memoEl.textContent = 'WCL-————';
-    if (refreshQuoteBtn) refreshQuoteBtn.disabled = false;
-    if (copyAmountBtn) copyAmountBtn.disabled = true;
-    if (copyMemoBtn) copyMemoBtn.disabled = true;
-    if (verifyBtn) verifyBtn.disabled = true;
-    if (solanaPayBtn) {
-      solanaPayBtn.removeAttribute('href');
-      solanaPayBtn.setAttribute('hidden', '');
-    }
-  }
-
-  function renderQuoteIntoView(quote) {
-    if (!isValidQuote(quote, currentCheckoutSku)) {
-      quoteStatusBar.classList.add('error');
-      quoteStatusText.textContent = 'Received invalid or mismatched quote structure from server. Please refresh quote.';
-      return;
-    }
-
-    activeQuote = quote;
-    updateStripeUi(quote);
-    quoteStatusBar.classList.remove('error');
-    const hasBuyerWallet = typeof quote.buyer_wallet === 'string' && quote.buyer_wallet.length >= 10;
-    const walletInfo = hasBuyerWallet
-      ? ` · Bound to sender ${quote.buyer_wallet.slice(0, 6)}…${quote.buyer_wallet.slice(-4)}`
-      : '';
-    quoteStatusText.textContent = `Active 15-minute SOL quote locked (${quote.order_id})${walletInfo}`;
-
-    const solUsdNum = Number(quote.sol_usd);
-    rateDisplay.textContent = Number.isFinite(solUsdNum)
-      ? `Rate: $${solUsdNum.toFixed(2)} USD / SOL`
-      : 'Live SOL/USD rate locked';
-
-    orderIdDisplay.textContent = quote.order_id;
-    amountSolEl.textContent = quote.amount_sol;
-
-    const lamportsStr = String(quote.amount_lamports);
-    amountLamportsEl.textContent = `(${Number(quote.amount_lamports).toLocaleString()} lamports)`;
-    const last4 = lamportsStr.length >= 4 ? lamportsStr.slice(-4) : lamportsStr.padStart(4, '0');
-    lamportTagEl.textContent = last4;
-    if (lamportTagInlineEl) lamportTagInlineEl.textContent = last4;
-
-    recipientWalletEl.textContent = quote.recipient_wallet;
-    memoEl.textContent = quote.memo;
-
-    if (refreshQuoteBtn) refreshQuoteBtn.disabled = false;
-    copyAmountBtn.disabled = false;
-    copyMemoBtn.disabled = false;
-    verifyBtn.disabled = false;
-
-    // Construct solana: URI locally from strictly validated fields pinned to EXPECTED_TREASURY_WALLET
-    const safeSolanaUri = `solana:${EXPECTED_TREASURY_WALLET}?amount=${encodeURIComponent(quote.amount_sol)}&memo=${encodeURIComponent(quote.memo)}&label=BotAppStore`;
-    solanaPayBtn.href = safeSolanaUri;
-    solanaPayBtn.removeAttribute('hidden');
-
-    startQuoteTimer(quote.expires_at);
-  }
-
-  async function requestQuoteOnce(payload) {
-    const resp = await fetch(`${WATTCOIN_API_BASE}/api/v1/agents/license/quote`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    });
-    const data = await resp.json().catch(() => ({}));
-    return { resp, data };
-  }
-
-  async function fetchLiveQuote(forceRefresh = false, customBuyerWallet = '', skuOverride = '') {
-    const targetSku = CHECKOUT_SKUS[skuOverride] ? skuOverride : currentCheckoutSku;
-    const reqSeq = ++quoteRequestSeq;
-    const trimmedWallet = (customBuyerWallet || '').trim();
-    if (!forceRefresh && !trimmedWallet) {
-      const cached = loadCachedQuoteFromSession(targetSku);
-      if (cached) {
-        renderQuoteIntoView(cached);
-        return;
-      }
-    }
-
-    resetQuoteUiView();
-    quoteStatusBar.classList.remove('error');
-    quoteStatusText.textContent = 'Requesting live SOL quote from https://www.wattcoin.org/api/v1/agents/license/quote…';
-    refreshQuoteBtn.disabled = true;
-
-    try {
-      const payload = { sku: targetSku, source: 'botappstore' };
-      if (trimmedWallet) payload.buyer_wallet = trimmedWallet;
-
-      let { resp, data } = await requestQuoteOnce(payload);
-
-      // If the server's 60s price cache is cold, warm /api/v1/price once and retry immediately
-      if (resp.status === 503 && data && data.reason === 'price_feed_unavailable') {
-        await fetch(`${WATTCOIN_API_BASE}/api/v1/price`, { method: 'GET', mode: 'no-cors', cache: 'no-store' }).catch(() => {});
-        ({ resp, data } = await requestQuoteOnce(payload));
-      }
-
-      if (reqSeq !== quoteRequestSeq || targetSku !== currentCheckoutSku) {
-        return;
-      }
-
-      if (!resp.ok || !data || !data.success || !isValidQuote(data, targetSku)) {
-        const errMsg = (data && data.error) || `Failed to create quote (HTTP ${resp.status})`;
-        quoteStatusBar.classList.add('error');
-        quoteStatusText.textContent = `Quote Error: ${errMsg}`;
-        return;
-      }
-
-      data.sku = data.sku || targetSku;
-      saveQuoteToSession(data, targetSku);
-      renderQuoteIntoView(data);
-      hideVerifyFeedback();
-    } catch (_) {
-      if (reqSeq !== quoteRequestSeq || targetSku !== currentCheckoutSku) {
-        return;
-      }
-      quoteStatusBar.classList.add('error');
-      quoteStatusText.textContent = 'Network error reaching www.wattcoin.org. Check your connection and click Refresh Quote.';
-    } finally {
-      if (reqSeq === quoteRequestSeq) {
-        refreshQuoteBtn.disabled = false;
-      }
-    }
-  }
-
-  function showVerifyFeedback(type, message) {
-    if (!verifyFeedback) return;
-    verifyFeedback.className = `checkout-feedback ${type}`;
-    verifyFeedback.textContent = message;
-    verifyFeedback.removeAttribute('hidden');
-  }
-
-  function hideVerifyFeedback() {
-    if (!verifyFeedback) return;
-    verifyFeedback.setAttribute('hidden', '');
-    verifyFeedback.textContent = '';
-  }
-
-  function extractTxSignature(rawInput) {
-    const trimmed = (rawInput || '').trim();
-    if (!trimmed) return '';
-    const urlMatch = trimmed.match(/\/tx\/([1-9A-HJ-NP-Za-km-z]{43,128})/);
-    if (urlMatch && urlMatch[1]) {
-      return urlMatch[1];
-    }
-    return trimmed;
-  }
-
   function showCheckoutPayView(moveFocus = false) {
     checkoutStepFulfilled.setAttribute('hidden', '');
     checkoutStepPay.removeAttribute('hidden');
     if (viewSavedBtn) viewSavedBtn.removeAttribute('hidden');
-    if (backToQuoteBtn) backToQuoteBtn.setAttribute('hidden', '');
+    if (backToPayBtn) backToPayBtn.setAttribute('hidden', '');
     updateSavedLicenseBanner();
-    if (moveFocus && refreshQuoteBtn) {
-      refreshQuoteBtn.focus();
+    updateStripeUi();
+    if (moveFocus && stripeBtnEl) {
+      stripeBtnEl.focus();
     }
   }
 
@@ -2341,11 +2030,10 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 
     applyCheckoutSkuLabels(receipt.sku);
     activeFulfilledReceipt = receipt;
-    stopQuoteTimer();
     checkoutStepPay.setAttribute('hidden', '');
     checkoutStepFulfilled.removeAttribute('hidden');
     if (viewSavedBtn) viewSavedBtn.setAttribute('hidden', '');
-    if (backToQuoteBtn) backToQuoteBtn.removeAttribute('hidden');
+    if (backToPayBtn) backToPayBtn.removeAttribute('hidden');
     updateSavedLicenseBanner();
 
     if (receipt.template_url) {
@@ -2366,38 +2054,12 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     fulfilledActivationPromptEl.textContent = receipt.activation_prompt;
     fulfilledOrderIdEl.textContent = receipt.order_id || '—';
 
-    const txSig = receipt.tx_signature;
     const isStripeReceipt = receipt.payment_method === 'stripe' || !!receipt.stripe_session_id;
     const bannerTitle = document.querySelector('#checkout-step-fulfilled .fulfilled-banner-title');
-    if (bannerTitle) {
-      bannerTitle.textContent =
-        isStripeReceipt || !txSig
-          ? '✓ Payment Verified — License Issued'
-          : '✓ On-Chain SOL Payment Verified — License Issued';
-    }
-    let txArrow = fulfilledSolscanLink.querySelector('.fulfilled-tx-arrow');
-    if (!txArrow) {
-      Array.from(fulfilledSolscanLink.childNodes).forEach((n) => {
-        if (n.nodeType === 3) n.remove();
-      });
-      txArrow = document.createElement('span');
-      txArrow.className = 'fulfilled-tx-arrow';
-      txArrow.textContent = ' ↗';
-      fulfilledSolscanLink.appendChild(txArrow);
-    }
-    if (txSig) {
-      fulfilledTxSigEl.textContent = `${txSig.slice(0, 12)}…${txSig.slice(-8)}`;
-      fulfilledSolscanLink.href = `https://solscan.io/tx/${encodeURIComponent(txSig)}`;
-      txArrow.removeAttribute('hidden');
-    } else if (isStripeReceipt) {
-      fulfilledTxSigEl.textContent = `Stripe (${(receipt.payment_intent || receipt.stripe_session_id || '—').slice(0, 18)}…)`;
-      fulfilledSolscanLink.removeAttribute('href');
-      txArrow.setAttribute('hidden', '');
-    } else {
-      fulfilledTxSigEl.textContent = '—';
-      fulfilledSolscanLink.removeAttribute('href');
-      txArrow.setAttribute('hidden', '');
-    }
+    if (bannerTitle) bannerTitle.textContent = '✓ Payment Verified — License Issued';
+    fulfilledTxSigEl.textContent = isStripeReceipt
+      ? `Stripe (${(receipt.payment_intent || receipt.stripe_session_id || '—').slice(0, 18)}…)`
+      : 'Verified';
 
     const cliBox = ensureFulfilledCliStep();
     const cliCmdEl = document.getElementById('fulfilled-cli-command');
@@ -2408,147 +2070,25 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     }
   }
 
-  async function verifyPaymentAndPurchase() {
-    if (isVerifyingPayment) return;
-    if (!activeQuote || !isValidQuote(activeQuote, currentCheckoutSku)) {
-      showVerifyFeedback('error', 'No active order quote. Click "Refresh Quote ↻" to generate an order.');
-      return;
-    }
-
-    const extractedSig = extractTxSignature(txInput.value);
-    if (!/^[1-9A-HJ-NP-Za-km-z]{43,128}$/.test(extractedSig)) {
-      showVerifyFeedback(
-        'error',
-        'Please paste a valid Base58 Solana transaction signature (87–88 characters) or Solscan transaction URL.'
-      );
-      return;
-    }
-
-    isVerifyingPayment = true;
-    const origBtnText = verifyBtn.textContent;
-    verifyBtn.disabled = true;
-    verifyBtn.textContent = 'Verifying On-Chain TX…';
-    showVerifyFeedback('pending', 'Checking Solana RPC for confirmed transfer to WattCoin Treasury…');
-
-    const purchaseSku = activeQuote.sku || currentCheckoutSku || 'bot-skill-auditor';
-    const skuCfg = getCheckoutSkuConfig(purchaseSku);
-
-    try {
-      const resp = await fetch(`${WATTCOIN_API_BASE}/api/v1/agents/license/purchase`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sku: purchaseSku,
-          order_id: activeQuote.order_id,
-          checkout_token: activeQuote.checkout_token,
-          tx_signature: extractedSig
-        })
-      });
-
-      const data = await resp.json().catch(() => ({}));
-      if (resp.ok && data && data.success && data.license_code) {
-        const cleanReceipt = savePurchasedLicense({
-          sku: data.sku || purchaseSku,
-          name: data.name || skuCfg.name,
-          order_id: data.order_id || activeQuote.order_id,
-          tx_signature: data.tx_signature || extractedSig,
-          payer_wallet: data.payer_wallet || '',
-          amount_lamports: data.amount_lamports || activeQuote.amount_lamports,
-          license_code: data.license_code,
-          template_url: data.template_url || '',
-          included_skus: data.included_skus,
-          bundle_templates: data.bundle_templates,
-          activation_prompt: data.activation_prompt || '',
-          purchased_at: new Date().toISOString()
-        });
-        if (!cleanReceipt) {
-          showVerifyFeedback('error', 'Server returned an unexpected license format. Please contact support with your Order ID.');
-          return;
-        }
-        clearQuoteFromSession();
-        hideVerifyFeedback();
-        renderFulfilledReceipt(cleanReceipt, true);
-        showToast('✓ Payment verified & license issued!');
-        return;
-      }
-
-      const reason = data.reason || 'verification_failed';
-      if (reason === 'tx_not_found') {
-        showVerifyFeedback(
-          'pending',
-          'Transaction not confirmed on Solana RPC yet (confirmed commitment). Wait 5–10 seconds for block confirmation and click "Verify Payment & Issue License →" again — your order quote stays active.'
-        );
-      } else if (reason === 'rpc_error') {
-        showVerifyFeedback(
-          'pending',
-          'Temporary Solana RPC timeout while verifying your transaction. Wait a few seconds and click Verify again.'
-        );
-      } else if (reason === 'insufficient_amount') {
-        const expectedMin =
-          typeof data.expected_min_lamports === 'number'
-            ? data.expected_min_lamports
-            : activeQuote.min_amount_lamports;
-        const receivedLamports = typeof data.received_lamports === 'number' ? data.received_lamports : 0;
-        showVerifyFeedback(
-          'error',
-          `Insufficient SOL transferred: received ${receivedLamports} lamports, expected at least ${expectedMin} lamports.`
-        );
-      } else if (reason === 'order_binding_failed' || reason === 'memo_mismatch') {
-        showVerifyFeedback(
-          'error',
-          `Order binding mismatch: transaction must either include memo "${activeQuote.memo}" or send the exact quoted amount (${activeQuote.amount_sol} SOL) created for this order.`
-        );
-      } else if (reason === 'tx_already_used' || reason === 'order_already_fulfilled' || reason === 'order_already_claimed') {
-        showVerifyFeedback(
-          'error',
-          'This transaction signature or order has already been redeemed. If you redeemed it in this browser, click "View Saved License →" at the top of this window.'
-        );
-      } else if (reason === 'order_expired' || reason === 'order_not_found') {
-        showVerifyFeedback(
-          'error',
-          'This checkout quote has expired. Click "Refresh Quote ↻" above to request a fresh quote.'
-        );
-      } else {
-        showVerifyFeedback('error', data.error || `Verification failed (${reason}).`);
-      }
-    } catch (_) {
-      showVerifyFeedback(
-        'pending',
-        'Network error reaching verification endpoint. Your order quote is saved — wait a moment and click Verify again.'
-      );
-    } finally {
-      isVerifyingPayment = false;
-      verifyBtn.disabled = false;
-      verifyBtn.textContent = origBtnText;
-    }
-  }
-
   function openCheckoutModal(sku, triggerEl) {
     if (!checkoutModal) return;
     const nextSku = CHECKOUT_SKUS[sku] ? sku : 'bot-skill-auditor';
-    if (currentCheckoutSku !== nextSku) {
-      resetQuoteUiView();
-    }
     currentCheckoutSku = nextSku;
     applyCheckoutSkuLabels(currentCheckoutSku);
 
     lastFocusedTrigger = triggerEl || document.activeElement;
     updateSavedLicenseBanner();
     showCheckoutPayView(false);
-    hideVerifyFeedback();
 
     setBackgroundInert(true);
     checkoutModal.classList.add('open');
     checkoutModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
     if (checkoutCloseBtn) checkoutCloseBtn.focus();
-
-    fetchLiveQuote(false, buyerWalletInput ? buyerWalletInput.value : '', currentCheckoutSku);
   }
 
   function closeCheckoutModal() {
     if (!checkoutModal) return;
-    stopQuoteTimer();
     checkoutModal.classList.remove('open');
     checkoutModal.setAttribute('aria-hidden', 'true');
     setBackgroundInert(false);
@@ -2575,56 +2115,6 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     });
   }
 
-  if (refreshQuoteBtn) {
-    refreshQuoteBtn.addEventListener('click', () => {
-      clearQuoteFromSession();
-      fetchLiveQuote(true, buyerWalletInput ? buyerWalletInput.value : '');
-    });
-  }
-
-  if (bindWalletBtn) {
-    bindWalletBtn.addEventListener('click', () => {
-      clearQuoteFromSession();
-      fetchLiveQuote(true, buyerWalletInput ? buyerWalletInput.value : '');
-    });
-  }
-
-  if (copyAmountBtn) {
-    copyAmountBtn.addEventListener('click', () => {
-      if (activeQuote && activeQuote.amount_sol) {
-        copyToClipboard(activeQuote.amount_sol, copyAmountBtn, '✓ Copied Exact SOL Amount!');
-      }
-    });
-  }
-
-  if (copyWalletBtn) {
-    copyWalletBtn.addEventListener('click', () => {
-      const addr = (activeQuote && activeQuote.recipient_wallet) || EXPECTED_TREASURY_WALLET;
-      copyToClipboard(addr, copyWalletBtn, '✓ Copied Treasury Wallet!');
-    });
-  }
-
-  if (copyMemoBtn) {
-    copyMemoBtn.addEventListener('click', () => {
-      if (activeQuote && activeQuote.memo) {
-        copyToClipboard(activeQuote.memo, copyMemoBtn, '✓ Copied Order Memo!');
-      }
-    });
-  }
-
-  if (verifyBtn) {
-    verifyBtn.addEventListener('click', verifyPaymentAndPurchase);
-  }
-
-  if (txInput) {
-    txInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        verifyPaymentAndPurchase();
-      }
-    });
-  }
-
   if (viewSavedBtn) {
     viewSavedBtn.addEventListener('click', () => {
       const saved = loadSavedLicenses(currentCheckoutSku);
@@ -2634,10 +2124,9 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     });
   }
 
-  if (backToQuoteBtn) {
-    backToQuoteBtn.addEventListener('click', () => {
+  if (backToPayBtn) {
+    backToPayBtn.addEventListener('click', () => {
       showCheckoutPayView(true);
-      fetchLiveQuote(false, buyerWalletInput ? buyerWalletInput.value : '');
     });
   }
 
@@ -2691,9 +2180,9 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
         `Product:           ${activeFulfilledReceipt.name}`,
         `SKU:               ${activeFulfilledReceipt.sku}`,
         `Order ID:          ${activeFulfilledReceipt.order_id || '—'}`,
-        activeFulfilledReceipt.payment_method === 'stripe' || activeFulfilledReceipt.stripe_session_id
-          ? `Stripe Payment:    ${activeFulfilledReceipt.payment_intent || activeFulfilledReceipt.stripe_session_id || '—'}`
-          : `Solana TX:         ${activeFulfilledReceipt.tx_signature || '—'}`,
+        ...(activeFulfilledReceipt.payment_method === 'stripe' || activeFulfilledReceipt.stripe_session_id
+          ? [`Stripe Payment:    ${activeFulfilledReceipt.payment_intent || activeFulfilledReceipt.stripe_session_id || '—'}`]
+          : []),
         `Purchased At:      ${activeFulfilledReceipt.purchased_at}`,
         '',
         ...(activeFulfilledReceipt.bundle_templates.length >= 2
@@ -2733,9 +2222,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 
   if (fulfilledNewOrderBtn) {
     fulfilledNewOrderBtn.addEventListener('click', () => {
-      clearQuoteFromSession();
       showCheckoutPayView(true);
-      fetchLiveQuote(true, buyerWalletInput ? buyerWalletInput.value : '');
     });
   }
 
@@ -2743,7 +2230,6 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
     fulfilledClearStorageBtn.addEventListener('click', () => {
       clearSavedLicenses();
       showCheckoutPayView(true);
-      fetchLiveQuote(false, buyerWalletInput ? buyerWalletInput.value : '');
       showToast('Cleared saved license from browser storage');
     });
   }
@@ -2777,29 +2263,10 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
 })();
 
 // ---------------------------------------------------------------------------
-// Checkout card on-ramp helper + header Products dropdown (idempotent injectors)
+// Header Products dropdown (idempotent injector)
 // ---------------------------------------------------------------------------
 (() => {
   const NAV_MENU = {"trigger": "Products (15 Live) ▾", "label": "LIVE OSINT, DEVSECOPS, SHOP OPS & ROBOTICS AGENTS (15)", "footer": "View All 15 Agents in Grid Catalog ↓", "items": [["web-text-extractor", "Web & API Text Extractor", null, "FREE"], ["company-deep-dive", "Company & Competitor Deep-Dive Analyst", null, "$19"], ["domain-infra-hygiene", "Domain, TLS & Email Auth Hygiene Auditor", null, "$19"], ["mcp-config-auditor", "MCP Server & Tool-Permission Auditor", null, "$19"], ["bot-skill-auditor", "Bot & Skill Security Auditor", null, "$29"], ["sec-patent-watchdog", "SEC & Patent Watchdog Digest", null, "$29"], ["sec-supply-chain-mapper", "SEC EDGAR Supply Chain & Counterparty Mapper", null, "$29"], ["social-hub-publisher", "Social Hub Publisher", null, "$29"], ["dependency-vuln-triage", "Dependency Vulnerability Triage Bot", null, "$29"], ["agent-council", "Agent Council", null, "$39"], ["print-farm-ops", "3D Print Farm & Slicer Queue Ops", null, "$29"], ["robotics-telemetry-inspector", "Humanoid & Fleet Telemetry Inspector", null, "$49"], ["mill-cert-matcher", "Mill Cert Matcher", null, "$39"], ["rfq-flowdown-triage", "RFQ Flowdown Triage", null, "$39"], ["fai-results-reconciler", "FAI Results Reconciler", null, "$39"]]};
-
-  const ensureCardOnramp = () => {
-    document.querySelectorAll('#checkout-step-pay').forEach((pay) => {
-      if (pay.querySelector('.checkout-card-onramp-details')) return;
-      const actions = pay.querySelector('.checkout-wallet-actions');
-      if (!actions) return;
-      const details = document.createElement('details');
-      details.className = 'checkout-optional-details checkout-card-onramp-details';
-      details.innerHTML =
-        '<summary>\u{1F4B3} Need SOL? How to buy with a Credit Card or Apple Pay (~60 sec)</summary>' +
-        '<ol class="checkout-onramp-steps">' +
-        '<li><strong>Install or open Phantom or Solflare</strong> (browser extension or mobile app).</li>' +
-        '<li>Tap <strong>Buy \u2192 SOL</strong> inside your wallet and pay with <strong>Credit/Debit Card, Apple Pay, or Google Pay</strong> (via MoonPay, Stripe, Coinbase Pay, or Robinhood Connect).</li>' +
-        '<li><strong>Send the exact quoted SOL amount</strong> (including the 4-digit lamport tag) to the recipient treasury address above\u2014or click <strong>Open in Solana Wallet</strong>\u2014then click <strong>Verify Payment &amp; Issue License \u2192</strong>.</li>' +
-        '</ol>' +
-        '<p class="checkout-onramp-note">Non-custodial: the card purchase happens inside your own wallet. We never hold your funds or keys.</p>';
-      actions.insertAdjacentElement('afterend', details);
-    });
-  };
 
   const buildNavDropdown = (navLinks) => {
     const onIndex = !/^\/bots\//.test(window.location.pathname);
@@ -2892,7 +2359,6 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
   };
 
   const init = () => {
-    ensureCardOnramp();
     const navLinks = document.querySelector('.site-header .nav-links');
     if (!navLinks) return;
     if (!navLinks.querySelector('.nav-dropdown')) buildNavDropdown(navLinks);

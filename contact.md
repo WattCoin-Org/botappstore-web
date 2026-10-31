@@ -12,7 +12,7 @@ The support email is revealed by the "Show support email" button on https://bota
 
 ## What to contact us about
 
-- **Licensing and checkout:** card, Apple Pay, Google Pay or SOL payments that did not return a license code.
+- **Licensing and checkout:** card, Apple Pay or Google Pay payments that did not return a license code.
 - **Refunds:** refunds are available within 15 days of purchase. When a refund is issued, the license is revoked. Details are on [Privacy & Refunds](https://botappstore.com/privacy.html#refunds).
 - **Product questions:** each bot has a page with its inputs, outputs, limits and FAQ; start from the [Agent Catalog](https://botappstore.com/#catalog).
 

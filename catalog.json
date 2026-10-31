@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "storefront": "botappstore",
   "generated_at": "2026-10-31T21:47:44Z",
-  "operator": "AIguy / WattCoin team",
+  "operator": "AIguy",
   "currency": "USD",
   "checkout": {
     "card": {
@@ -13,12 +13,8 @@
         "storefront": "botappstore"
       },
       "returns": "checkout_url (hosted page; a human completes payment)",
-      "license_lookup": "GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/{session_id}"
-    },
-    "sol": {
-      "quote": "POST https://www.wattcoin.org/api/v1/agents/license/quote",
-      "confirm": "POST https://www.wattcoin.org/api/v1/agents/license/purchase",
-      "note": "Each quote creates a 15-minute order. Add \"dry_run\": true to the POST quote body (or the stripe-checkout body) to see the price without creating an order."
+      "license_lookup": "GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/{session_id}",
+      "note": "Each checkout creates a hosted Stripe session. Add \"dry_run\": true to the stripe-checkout body to see the price without creating an order."
     },
     "default": "card"
   },
@@ -56,8 +52,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/bot-skill-auditor.html",
       "summary": "Line-cited static security review of third-party bot skills and SKILL.md files.",
@@ -88,8 +83,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/company-deep-dive.html",
       "summary": "Seven-section corporate dossier compiled from SEC EDGAR filings, USPTO patents and RDAP, with a competitor matrix.",
@@ -120,8 +114,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/sec-patent-watchdog.html",
       "summary": "Tracks up to 10 tickers or CIKs across SEC EDGAR forms and USPTO patents with stateful diffing.",
@@ -152,8 +145,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/dependency-vuln-triage.html",
       "summary": "Lockfile vulnerability triage using OSV.dev advisories enriched with EPSS and CISA KEV.",
@@ -184,8 +176,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/social-hub-publisher.html",
       "summary": "Publishing queue for X, Discord, Bluesky and Telegram with lint, HMAC approval and dry-run by default.",
@@ -216,8 +207,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/domain-infra-hygiene.html",
       "summary": "Read-only domain audit: DNSSEC, TLS expiry, SPF, DMARC, DKIM, MTA-STS, security headers, dangling CNAMEs and CT logs.",
@@ -248,8 +238,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/agent-council.html",
       "summary": "Multi-model council: 2-6 seats debate, pair-program or review code with a chaired verdict.",
@@ -280,8 +269,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/mcp-config-auditor.html",
       "summary": "Read-only audit of MCP client configs for hardcoded secrets, unpinned packages, typosquats and tool poisoning.",
@@ -312,8 +300,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/print-farm-ops.html",
       "summary": "Offline 3D print farm auditor for slicer projects, G-code safety, filament BOM, drying hygiene and queue plans.",
@@ -344,8 +331,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/robotics-telemetry-inspector.html",
       "summary": "Offline robot telemetry audit: actuator duty cycles against URDF/SDF limits, CAN logs, BMS cell delta, ROS 2 bag topic rates.",
@@ -376,8 +362,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/sec-supply-chain-mapper.html",
       "summary": "Maps disclosed suppliers, major customers, concentration risk, year-over-year 10-K changes and 13D/13G stakes from SEC EDGAR.",
@@ -408,8 +393,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/mill-cert-matcher.html",
       "summary": "Cross-checks a mill test report against the PO and drawing callout (alloy, temper, spec, size, chemistry, mechanicals), with page and line per flag.",
@@ -443,8 +427,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/rfq-flowdown-triage.html",
       "summary": "Screens an RFQ for quality, DFARS, CUI and export-control flowdowns against your capability profile, with page and line per clause.",
@@ -477,8 +460,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "url": "https://botappstore.com/bots/fai-results-reconciler.html",
       "summary": "Screens a first-article balloon list against CMM inspection results: out-of-tolerance, missing, unit and revision flags with file and row.",
@@ -513,8 +495,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "includes": [
         "bot-skill-auditor",
@@ -538,8 +519,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "includes": [
         "print-farm-ops",
@@ -561,8 +541,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "includes": [
         "company-deep-dive",
@@ -585,8 +564,7 @@
       "payment_methods": [
         "card",
         "apple_pay",
-        "google_pay",
-        "sol"
+        "google_pay"
       ],
       "includes": [
         "company-deep-dive",

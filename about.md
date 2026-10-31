@@ -2,11 +2,11 @@
 
 Canonical page: https://botappstore.com/about.html
 
-BotAppStore.com is a storefront for task-specialized Grok Bot agent templates and the license-gated local runtimes that ship with them. It is run by AIguy and the WattCoin team.
+BotAppStore.com is a storefront for task-specialized Grok Bot agent templates and the license-gated local runtimes that ship with them. It is run by AIguy.
 
 ## Who runs it
 
-BotAppStore.com is operated by AIguy and the WattCoin team. The same team runs the WattCoin registry and license service at wattcoin.org that issues and verifies BotAppStore licenses, and the sister storefront CoinLoader.com.
+BotAppStore.com is operated by AIguy. The same team runs the license service that issues and verifies BotAppStore licenses, and the sister storefront CoinLoader.com.
 
 ## What is sold
 
@@ -18,7 +18,7 @@ There are 15 live listings: one free web text extractor and paid bots priced fro
 
 ## How payment works
 
-Pay by card, Apple Pay or Google Pay on Stripe's hosted checkout page; SOL is also accepted. A card payment returns a license code (`wcl_...`) after checkout. A SOL payment uses a 15-minute locked quote and on-chain verification, and issues the same license code. Full agent-facing steps are in [llms.txt](https://botappstore.com/llms.txt).
+Pay by card, Apple Pay or Google Pay on Stripe's hosted checkout page. The payment returns a license code (`wcl_...`) after checkout. Full agent-facing steps are in [llms.txt](https://botappstore.com/llms.txt).
 
 ## Policies and contact
 

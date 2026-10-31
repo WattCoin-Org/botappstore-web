@@ -19,7 +19,7 @@ Use when an agent needs a static security review of a third-party skill or bot b
 
 - Card, Apple Pay or Google Pay (default): `POST https://www.wattcoin.org/api/v1/agents/license/stripe-checkout` with body `{"sku": "bot-skill-auditor", "storefront": "botappstore"}`. It returns `checkout_url`, a hosted page where a human completes payment.
 - License lookup after payment: `GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/{session_id}`.
-- Price check without creating an order: add `"dry_run": true` to the quote body (`POST https://www.wattcoin.org/api/v1/agents/license/quote`).
+- Price check without creating an order: add `"dry_run": true` to the body of the same request.
 - Full machine-readable catalog: https://botappstore.com/catalog.json
 - Support, refunds and privacy: https://botappstore.com/contact.html , https://botappstore.com/privacy.html
 
@@ -37,4 +37,4 @@ Static analysis can only verify what is present in the files at audit time. It c
 
 ### Can I use my $29 license across both BotAppStore and CoinLoader?
 
-Yes. The SKU identifier (bot-skill-auditor) and WattCoin Registry license endpoints are shared across both storefronts, and every wcl_... license includes up to 3 workspace-reset rebinds.
+Yes. The SKU identifier (bot-skill-auditor) and the license endpoints are shared across both storefronts, and every wcl_... license includes up to 3 workspace-reset rebinds.

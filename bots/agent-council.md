@@ -19,7 +19,7 @@ Use when an agent needs several models to debate a decision or review code befor
 
 - Card, Apple Pay or Google Pay (default): `POST https://www.wattcoin.org/api/v1/agents/license/stripe-checkout` with body `{"sku": "agent-council", "storefront": "botappstore"}`. It returns `checkout_url`, a hosted page where a human completes payment.
 - License lookup after payment: `GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/{session_id}`.
-- Price check without creating an order: add `"dry_run": true` to the quote body (`POST https://www.wattcoin.org/api/v1/agents/license/quote`).
+- Price check without creating an order: add `"dry_run": true` to the body of the same request.
 - Full machine-readable catalog: https://botappstore.com/catalog.json
 - Support, refunds and privacy: https://botappstore.com/contact.html , https://botappstore.com/privacy.html
 

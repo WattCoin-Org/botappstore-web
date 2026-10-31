@@ -9,26 +9,26 @@
 - **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt
 - **Structured Product Catalog (JSON):** https://botappstore.com/catalog.json — every live bot and bundle with SKU, USD price, payment methods, when-to-use and checkout endpoints.
 - **About, Contact, Privacy & Refunds:** https://botappstore.com/about.html , https://botappstore.com/contact.html , https://botappstore.com/privacy.html (refunds within 15 days of purchase; the license is revoked on refund)
-- **Sister Solana & Crypto Storefront:** https://coinloader.com/
-- **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted); `physical-ai-manufacturing-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted); `founder-research-gtm-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted); `edgar-intelligence-pack` ($89 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted)
+- **Sister Storefront:** https://coinloader.com/
+- **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 one-time · card / Apple Pay / Google Pay via Stripe); `physical-ai-manufacturing-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe); `founder-research-gtm-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe); `edgar-intelligence-pack` ($89 one-time · card / Apple Pay / Google Pay via Stripe)
 - **Free Flagship Utility (1-Click Install):** https://botappstore.com/bots/web-text-extractor.html (Direct Grok Bot import: https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol)
-- **Paid Bot & Skill Security Auditor ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
-- **Paid Company & Competitor Deep-Dive Analyst ($19 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
-- **Paid SEC & Patent Watchdog Digest ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: sec-patent-watchdog`, Registry Name: *SEC EDGAR & Patent Filing Watchdog*):** https://botappstore.com/bots/sec-patent-watchdog.html (Checkout: https://botappstore.com/#card-sec-patent-watchdog)
-- **Dependency Vulnerability Triage ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: dependency-vuln-triage`, LIVE NOW):** https://botappstore.com/bots/dependency-vuln-triage.html
-- **Social Hub Publisher ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: social-hub-publisher`, LIVE NOW):** https://botappstore.com/bots/social-hub-publisher.html
-- **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: domain-infra-hygiene`, LIVE NOW):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
-- **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: agent-council`, LIVE NOW):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
-- **MCP Server & Tool-Permission Security Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: mcp-config-auditor`, LIVE NOW):** https://botappstore.com/bots/mcp-config-auditor.html (Checkout: https://botappstore.com/#card-mcp-config-auditor)
-- **3D Print Farm & Slicer Queue Ops ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
-- **Humanoid & Fleet Telemetry Inspector ($49 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: robotics-telemetry-inspector`, AVAILABLE NOW · PHASE 1 RELEASE):** https://botappstore.com/bots/robotics-telemetry-inspector.html (Checkout: https://botappstore.com/#card-robotics-telemetry-inspector)
-- **SEC EDGAR Supply Chain & Counterparty Mapper ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: sec-supply-chain-mapper`, v1.1, LIVE NOW):** https://botappstore.com/bots/sec-supply-chain-mapper.html (Checkout: https://botappstore.com/#card-sec-supply-chain-mapper; runtime: https://botappstore.com/runtime/sec_supply_chain_mapper.py)
-- **Mill Cert Matcher ($39 one-time, `sku: mill-cert-matcher`, LIVE NOW - card / Apple Pay / Google Pay checkout, SOL also accepted):** https://botappstore.com/bots/mill-cert-matcher.html (Checkout: https://botappstore.com/#card-mill-cert-matcher; runtime: https://botappstore.com/runtime/mill_cert_matcher.py). Screening aid that flags issues for human review; not a legal, compliance, or material-certification determination.
-- **RFQ Flowdown Triage ($39 one-time, `sku: rfq-flowdown-triage`, LIVE NOW - card / Apple Pay / Google Pay checkout, SOL also accepted):** https://botappstore.com/bots/rfq-flowdown-triage.html (Checkout: https://botappstore.com/#card-rfq-flowdown-triage; runtime: https://botappstore.com/runtime/rfq_flowdown_triage.py). Screening aid that flags issues for human review; not a legal, export-control, or compliance determination.
-- **FAI Results Reconciler ($39 one-time, `sku: fai-results-reconciler`, LIVE NOW - card / Apple Pay / Google Pay checkout, SOL also accepted):** https://botappstore.com/bots/fai-results-reconciler.html (Checkout: https://botappstore.com/#card-fai-results-reconciler; runtime: https://botappstore.com/runtime/fai_results_reconciler.py). Screening aid that flags issues for human review; not a quality sign-off or AS9102 approval.
+- **Paid Bot & Skill Security Auditor ($29 one-time · card / Apple Pay / Google Pay via Stripe, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
+- **Paid Company & Competitor Deep-Dive Analyst ($19 one-time · card / Apple Pay / Google Pay via Stripe, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
+- **Paid SEC & Patent Watchdog Digest ($29 one-time · card / Apple Pay / Google Pay via Stripe, `sku: sec-patent-watchdog`, Registry Name: *SEC EDGAR & Patent Filing Watchdog*):** https://botappstore.com/bots/sec-patent-watchdog.html (Checkout: https://botappstore.com/#card-sec-patent-watchdog)
+- **Dependency Vulnerability Triage ($29 one-time · card / Apple Pay / Google Pay via Stripe, `sku: dependency-vuln-triage`, LIVE NOW):** https://botappstore.com/bots/dependency-vuln-triage.html
+- **Social Hub Publisher ($29 one-time · card / Apple Pay / Google Pay via Stripe, `sku: social-hub-publisher`, LIVE NOW):** https://botappstore.com/bots/social-hub-publisher.html
+- **Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe, `sku: domain-infra-hygiene`, LIVE NOW):** https://botappstore.com/bots/domain-infra-hygiene.html (Checkout: https://botappstore.com/#card-domain-infra-hygiene)
+- **Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 one-time · card / Apple Pay / Google Pay via Stripe, `sku: agent-council`, LIVE NOW):** https://botappstore.com/bots/agent-council.html (Checkout: https://botappstore.com/#card-agent-council)
+- **MCP Server & Tool-Permission Security Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe, `sku: mcp-config-auditor`, LIVE NOW):** https://botappstore.com/bots/mcp-config-auditor.html (Checkout: https://botappstore.com/#card-mcp-config-auditor)
+- **3D Print Farm & Slicer Queue Ops ($29 one-time · card / Apple Pay / Google Pay via Stripe, `sku: print-farm-ops`, AVAILABLE NOW · PHASE 2 LIVE):** https://botappstore.com/bots/print-farm-ops.html (Checkout: https://botappstore.com/#card-print-farm-ops)
+- **Humanoid & Fleet Telemetry Inspector ($49 one-time · card / Apple Pay / Google Pay via Stripe, `sku: robotics-telemetry-inspector`, AVAILABLE NOW · PHASE 1 RELEASE):** https://botappstore.com/bots/robotics-telemetry-inspector.html (Checkout: https://botappstore.com/#card-robotics-telemetry-inspector)
+- **SEC EDGAR Supply Chain & Counterparty Mapper ($29 one-time · card / Apple Pay / Google Pay via Stripe, `sku: sec-supply-chain-mapper`, v1.1, LIVE NOW):** https://botappstore.com/bots/sec-supply-chain-mapper.html (Checkout: https://botappstore.com/#card-sec-supply-chain-mapper; runtime: https://botappstore.com/runtime/sec_supply_chain_mapper.py)
+- **Mill Cert Matcher ($39 one-time, `sku: mill-cert-matcher`, LIVE NOW - card / Apple Pay / Google Pay checkout):** https://botappstore.com/bots/mill-cert-matcher.html (Checkout: https://botappstore.com/#card-mill-cert-matcher; runtime: https://botappstore.com/runtime/mill_cert_matcher.py). Screening aid that flags issues for human review; not a legal, compliance, or material-certification determination.
+- **RFQ Flowdown Triage ($39 one-time, `sku: rfq-flowdown-triage`, LIVE NOW - card / Apple Pay / Google Pay checkout):** https://botappstore.com/bots/rfq-flowdown-triage.html (Checkout: https://botappstore.com/#card-rfq-flowdown-triage; runtime: https://botappstore.com/runtime/rfq_flowdown_triage.py). Screening aid that flags issues for human review; not a legal, export-control, or compliance determination.
+- **FAI Results Reconciler ($39 one-time, `sku: fai-results-reconciler`, LIVE NOW - card / Apple Pay / Google Pay checkout):** https://botappstore.com/bots/fai-results-reconciler.html (Checkout: https://botappstore.com/#card-fai-results-reconciler; runtime: https://botappstore.com/runtime/fai_results_reconciler.py). Screening aid that flags issues for human review; not a quality sign-off or AS9102 approval.
 - **Pinned Runtime Downloads:** https://botappstore.com/runtime/fai_results_reconciler.py (SHA-256 `0dbbd34d759005d0ded1ab8c65f49be5753f6931ca7873cdbccc3b159347b4d1`), https://botappstore.com/runtime/rfq_flowdown_triage.py (SHA-256 `7816812f6f329881e80da89d85c3299851037e44eb7e04dd80b1262f8d1e0c07`), https://botappstore.com/runtime/mill_cert_matcher.py (SHA-256 `19b875763d371177e96bdac76e6ace6224e236fc6263f51a3204390b83c205ef`), https://botappstore.com/runtime/robotics_telemetry_inspector.py (SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`), https://botappstore.com/runtime/print_farm_ops.py (SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`), https://botappstore.com/runtime/mcp_config_auditor.py (SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`), https://botappstore.com/runtime/agent_council.py (SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`), https://botappstore.com/runtime/domain_infra_hygiene.py (SHA-256 `73f7a04a48f55b6a9f0a733bdf4bba7cab2b9b6d245c0505567487585f0d1c14`), https://botappstore.com/runtime/bot_common.py (SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`)
 - **Runtime download note:** `/runtime/` URLs are license-gated: send `X-License-Key: wcl_...` or `X-Agent-Key: wck_...` (unauthenticated requests get `401`). The served file carries a per-license watermark block (5 lines), so compare the `X-Canonical-SHA256` response header (or the SHA-256 after stripping the block) against the pins. Recommended: the setup skill installer (`/workspace/.wattcoin_license_check.py --sku <sku> --install-runtime ... --expected-sha256 <pin>`). `bot_common.py` has two pinned variants chosen by SKU: `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (legacy; served for `agent-council`, `dependency-vuln-triage`, `domain-infra-hygiene`, `mcp-config-auditor`, `print-farm-ops`, `robotics-telemetry-inspector`) and `dbbd8521357fedc348cf7dc102435d4412ea26487e08bf067038ba8c66c9bcd1` (current; every other BotAppStore SKU, including `sec-supply-chain-mapper`, `mill-cert-matcher`, `rfq-flowdown-triage` and `fai-results-reconciler`).
-- **Cloud Registry & License Endpoints:** https://www.wattcoin.org (`POST /api/v1/agents/register`, `POST /api/v1/agents/tasks/complete`, `GET /api/v1/agents/me`, `POST /api/v1/scrape`, `POST /api/v1/agents/license/quote`, `POST /api/v1/agents/license/purchase`, `POST /api/v1/agents/license/claim`, `GET /api/v1/agents/license`)
+- **Cloud Registry & License Endpoints:** https://www.wattcoin.org/api (`POST /v1/agents/register`, `POST /v1/agents/tasks/complete`, `GET /v1/agents/me`, `POST /v1/scrape`, `POST /v1/agents/license/stripe-checkout`, `GET /v1/agents/license/stripe-session/{session_id}`, `POST /v1/agents/license/claim`, `GET /v1/agents/license`)
 
 ## When to use
 
@@ -52,10 +52,9 @@
 
 ## How an agent buys
 
-Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the default; SOL is also accepted. Both routes issue the same private `wcl_<64-hex>` license code.
+Prices are one-time USD. Payment is by card / Apple Pay / Google Pay (via Stripe), which issues a private `wcl_<64-hex>` license code.
 
-1. **Card (default):** `POST https://www.wattcoin.org/api/v1/agents/license/stripe-checkout` with `{"sku": "<sku>", "storefront": "botappstore"}` returns a `checkout_url`, a hosted Stripe page that a human pays. After payment, `GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/<session_id>` returns the `license_code`.
-2. **SOL:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "<sku>"}`) locks a 15-minute quote, pay the exact amount on-chain, then `POST https://www.wattcoin.org/api/v1/agents/license/purchase` with the transaction signature. To read the price without creating an order, send `{"sku": "<sku>", "dry_run": true}` to the quote endpoint.
+1. **Card:** `POST https://www.wattcoin.org/api/v1/agents/license/stripe-checkout` with `{"sku": "<sku>", "storefront": "botappstore"}` returns a `checkout_url`, a hosted Stripe page that a human pays (to read the price without creating an order, add `"dry_run": true` to the body). After payment, `GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/<session_id>` returns the `license_code`.
 
 ---
 
@@ -76,19 +75,17 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Never prints or echoes `wck_...` API keys in chat output.
   - Rejects loopback (`127.0.0.0/8`, `::1`), RFC1918 private IPs (`10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`), link-local, and cloud metadata (`169.254.169.254`) with `HTTP 400`.
 
-### 2. Bot & Skill Security Auditor ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW)
+### 2. Bot & Skill Security Auditor ($29 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW)
 - **Status:** LIVE NOW
 - **SKU:** `bot-skill-auditor`
-- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
 - **Product Page URL:** https://botappstore.com/bots/bot-skill-auditor.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-bot-skill-auditor
 - **Included Skills:** `auditor-setup` + `bot-skill-auditor`
 - **Deliverable:** *See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.*
-- **On-Chain SOL Checkout & License Architecture:**
-  1. **15-Minute Locked SOL Quote:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "bot-skill-auditor"}`) locks the live SOL/USD rate for 15 minutes and generates a unique order memo (`wcl:ord_<24-hex>`), exact lamport tag, and `checkout_token` (`ct_<48-hex>`).
-  2. **Non-Custodial On-Chain Verification:** Buyer sends SOL directly to the WattCoin Treasury Wallet (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`) and submits the Solana transaction signature to `POST https://www.wattcoin.org/api/v1/agents/license/purchase`. Server-side Solana RPC verification (`getTransaction` with `confirmed` commitment) validates the exact recipient balance delta and issues a private `wcl_<64-hex>` bearer license code and unlocks the unlisted Grok Bot template URL.
-  3. **Turn-1 Onboarding & License Binding (`auditor-setup`):** Installs two read-only Python helpers at `chmod 500` (`-r-x------`) in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_audit_prep.py`), registers/activates `/workspace/.wattcoin_env` (`chmod 600`), and binds the `wcl_<64-hex>` code via `POST https://www.wattcoin.org/api/v1/agents/license/claim`.
-  4. **Mandatory Pre-Flight License Gate (`bot-skill-auditor`):** Every audit run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=bot-skill-auditor`) and requires `"sku_licensed": true`.
+- **License Architecture:**
+  1. **Turn-1 Onboarding & License Binding (`auditor-setup`):** Installs two read-only Python helpers at `chmod 500` (`-r-x------`) in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_audit_prep.py`), registers/activates `/workspace/.wattcoin_env` (`chmod 600`), and binds the `wcl_<64-hex>` code via `POST https://www.wattcoin.org/api/v1/agents/license/claim`.
+  2. **Mandatory Pre-Flight License Gate (`bot-skill-auditor`):** Every audit run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=bot-skill-auditor`) and requires `"sku_licensed": true`.
 - **5-Bucket Line-Cited Static Inspection:**
   - **Bucket 1:** Prompt, Confirmation & Auditor Bypass
   - **Bucket 2:** Secret, Filesystem, Self-Modification & Persistence Access
@@ -105,20 +102,18 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Never reads `/workspace/.wattcoin_env` into model context or echoes `wck_...` / `wcl_...` in chat
   - Never outputs a "Safe", "Pass", checkmark badge, or numeric security score — always prepends `SCOPE_NOTE.txt` verbatim
 
-### 3. Company & Competitor Deep-Dive Analyst ($19 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW)
+### 3. Company & Competitor Deep-Dive Analyst ($19 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW)
 - **Status:** LIVE NOW
 - **SKU:** `company-deep-dive`
-- **Price:** $19.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Price:** $19.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
 - **Alternate / Registry Name:** Corporate & Competitor OSINT Deep-Dive
 - **Product Page URL:** https://botappstore.com/bots/company-deep-dive.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-company-deep-dive
 - **Included Skills:** `company-deep-dive-setup` + `company-deep-dive`
 - **Deliverable:** *Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor comparison matrix—with exact accession numbers and UTC retrieval timestamps.*
-- **On-Chain SOL Checkout & License Architecture:**
-  1. **15-Minute Locked SOL Quote:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "company-deep-dive"}`) locks the live SOL/USD rate for `$19.00 USD` and generates a unique order memo (`wcl:ord_<24-hex>`), exact lamport tag, and `checkout_token` (`ct_<48-hex>`).
-  2. **Non-Custodial On-Chain Verification:** Buyer sends SOL directly to the WattCoin Treasury Wallet (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`) and submits the Solana transaction signature to `POST https://www.wattcoin.org/api/v1/agents/license/purchase` (`{"sku": "company-deep-dive", ...}`). Issues a private `wcl_<64-hex>` bearer license code and unlocks the unlisted Grok Bot template URL.
-  3. **Turn-1 Onboarding & License Binding (`company-deep-dive-setup`):** Installs two read-only Python stdlib helpers at `chmod 500` (`-r-x------`) in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_dd_fetch.py`), registers/activates `/workspace/.wattcoin_env` (`chmod 600`), and binds the `wcl_<64-hex>` code via stdin (`POST https://www.wattcoin.org/api/v1/agents/license/claim` with `sku: "company-deep-dive"`).
-  4. **Mandatory Pre-Flight License Gate (`company-deep-dive`):** Every dossier run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=company-deep-dive`) and requires `"sku_licensed": true`.
+- **License Architecture:**
+  1. **Turn-1 Onboarding & License Binding (`company-deep-dive-setup`):** Installs two read-only Python stdlib helpers at `chmod 500` (`-r-x------`) in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_dd_fetch.py`), registers/activates `/workspace/.wattcoin_env` (`chmod 600`), and binds the `wcl_<64-hex>` code via stdin (`POST https://www.wattcoin.org/api/v1/agents/license/claim` with `sku: "company-deep-dive"`).
+  2. **Mandatory Pre-Flight License Gate (`company-deep-dive`):** Every dossier run first executes `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py` (`GET https://www.wattcoin.org/api/v1/agents/license?sku=company-deep-dive`) and requires `"sku_licensed": true`.
 - **7-Section Cited Primary-Source Dossier (`/workspace/dossiers/<slug>-<timestamp>/REPORT.md`):**
   - Verbatim `SCOPE_NOTE.txt` prepended at the top of every dossier
   - **Section 1:** Entity Snapshot & Verified Identifiers (Legal Name, 10-digit CIK, Tickers, SIC Code, State of Incorporation, Fiscal Year End, Principal Address)
@@ -141,20 +136,18 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Never outputs legal conclusions on patent validity, freedom-to-operate, or infringement liability
   - Pauses for confirmation on ambiguous company names (`AMBIGUOUS_ENTITY`) and automatically excludes individual non-corporate SEC filers (`INDIVIDUAL_EXCLUDED`)
 
-### 4. SEC & Patent Watchdog Digest ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW)
+### 4. SEC & Patent Watchdog Digest ($29 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW)
 - **Status:** LIVE NOW
 - **SKU:** `sec-patent-watchdog`
-- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
+- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds** across `/workspace` container resets)
 - **Alternate / Registry Name:** SEC EDGAR & Patent Filing Watchdog
 - **Product Page URL:** https://botappstore.com/bots/sec-patent-watchdog.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-sec-patent-watchdog
 - **Included Skills:** `sec-patent-watchdog-setup` + `sec-patent-watchdog`
 - **Deliverable:** *A zero-noise delta digest of new SEC EDGAR filings and USPTO patent/IP publications for up to 10 tickers/CIKs — written only when something actually changed.*
-- **On-Chain SOL Checkout & License Architecture:**
-  1. **15-Minute Locked SOL Quote:** `POST https://www.wattcoin.org/api/v1/agents/license/quote` (`{"sku": "sec-patent-watchdog"}`) locks the live SOL/USD rate for `$29.00 USD` and generates a unique order memo (`wcl:ord_<24-hex>`), exact lamport tag, and `checkout_token` (`ct_<48-hex>`).
-  2. **Non-Custodial On-Chain Verification:** Buyer sends SOL directly to the WattCoin Treasury Wallet (`Atu5phbGGGFogbKhi259czz887dSdTfXwJxwbuE5aF5q`) and submits the Solana transaction signature to `POST https://www.wattcoin.org/api/v1/agents/license/purchase` (`{"sku": "sec-patent-watchdog", ...}`). Issues a private `wcl_<64-hex>` bearer license code.
-  3. **Turn-1 Onboarding & License Binding (`sec-patent-watchdog-setup`):** Registers/activates `/workspace/.wattcoin_env` (`chmod 600`) and binds the `wcl_<64-hex>` code via `POST https://www.wattcoin.org/api/v1/agents/license/claim` with `sku: "sec-patent-watchdog"`.
-  4. **Mandatory Pre-Flight License Gate (`sec-patent-watchdog`):** Every run first checks `GET https://www.wattcoin.org/api/v1/agents/license?sku=sec-patent-watchdog` and requires `"sku_licensed": true`.
+- **License Architecture:**
+  1. **Turn-1 Onboarding & License Binding (`sec-patent-watchdog-setup`):** Registers/activates `/workspace/.wattcoin_env` (`chmod 600`) and binds the `wcl_<64-hex>` code via `POST https://www.wattcoin.org/api/v1/agents/license/claim` with `sku: "sec-patent-watchdog"`.
+  2. **Mandatory Pre-Flight License Gate (`sec-patent-watchdog`):** Every run first checks `GET https://www.wattcoin.org/api/v1/agents/license?sku=sec-patent-watchdog` and requires `"sku_licensed": true`.
 - **What It Does:**
   - Tracks SEC EDGAR `10-K`, `10-Q`, `8-K`, `Form 4`, `13F-HR`, and `S-1` filings plus USPTO patent/IP publications for up to 10 tickers/CIKs
   - Stateful `state.json` baseline & diff engine; writes `DELTA_SUMMARY.json` + `DIGEST_<timestamp>.md`
@@ -165,10 +158,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Never bypasses SEC EDGAR rate limits (`<= 10 req/sec`) or `User-Agent` identification
   - Never connects to brokerage APIs, executes trades, or issues buy/sell/hold advice; never opines on patent validity or infringement
 
-### 5. Social Hub Publisher ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW)
+### 5. Social Hub Publisher ($29 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW)
 - **Status:** LIVE NOW
 - **SKU:** `social-hub-publisher`
-- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds**)
+- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**)
 - **Product Page URL:** https://botappstore.com/bots/social-hub-publisher.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-social-hub-publisher
 - **Included Skills:** `social-hub-publisher-setup` + `social-hub-publisher`
@@ -181,10 +174,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Dry run unless `--live`; never sends an item without a valid Gate-2 approval
   - Ambiguous sends are marked `unknown_outcome` and never auto-retried (no duplicate posts)
 
-### 6. Dependency Vulnerability Triage ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW)
+### 6. Dependency Vulnerability Triage ($29 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW)
 - **Status:** LIVE NOW
 - **SKU:** `dependency-vuln-triage`
-- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds**)
+- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**)
 - **Product Page URL:** https://botappstore.com/bots/dependency-vuln-triage.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-dependency-vuln-triage
 - **Included Skills:** `dependency-vuln-triage-setup` + `dependency-vuln-triage`
@@ -197,10 +190,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Only package names and versions leave the machine; never installs, upgrades or edits the project
   - Never claims a project is secure; EPSS is a probability estimate, not a verdict
 
-### 7. Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW, sku: domain-infra-hygiene)
+### 7. Domain, TLS & Email Auth Infrastructure Hygiene Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW, sku: domain-infra-hygiene)
 - **Status:** LIVE NOW
 - **SKU:** `domain-infra-hygiene`
-- **Price:** $19.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (1-year license, includes up to **3 workspace-reset rebinds**)
+- **Price:** $19.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (1-year license, includes up to **3 workspace-reset rebinds**)
 - **Product Page URL:** https://botappstore.com/bots/domain-infra-hygiene.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-domain-infra-hygiene
 - **Included Skills:** `domain-infra-hygiene-setup` + `domain-infra-hygiene`
@@ -226,10 +219,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Passive only: no port scanning, brute-force subdomain enumeration, fuzzing, zone transfers, SMTP/credential probing or exploitation
   - Never registers dangling CNAME targets or edits DNS/certificates/server config; never claims a domain is "secure"
 
-### 8. Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW, sku: agent-council)
+### 8. Agent Council — Multi-Model Swarm Debate & Pair-Architect Collaborator ($39 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW, sku: agent-council)
 - **Status:** LIVE NOW
 - **SKU:** `agent-council`
-- **Price:** $39.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds**)
+- **Price:** $39.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**)
 - **Categories:** Orchestration & DevOps / Coding & Security
 - **Product Page URL:** https://botappstore.com/bots/agent-council.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-agent-council
@@ -253,10 +246,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Refuses `.env*`, `.wattcoin_env*`, lockfiles, key files, `.git/`, `node_modules/`; redacts keys, tokens and private keys before any seat sees them
   - Declines exploit, credential-harvesting and other offensive tasks; a consensus is evidence, not proof; BYOK costs are estimates
 
-### 9. MCP Server & Tool-Permission Security Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW, sku: mcp-config-auditor)
+### 9. MCP Server & Tool-Permission Security Auditor ($19 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW, sku: mcp-config-auditor)
 - **Status:** LIVE NOW
 - **SKU:** `mcp-config-auditor`
-- **Price:** $19.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds**)
+- **Price:** $19.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**)
 - **Categories:** Coding & Security / MCP & Agent Hygiene
 - **Product Page URL:** https://botappstore.com/bots/mcp-config-auditor.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-mcp-config-auditor
@@ -283,10 +276,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Own or authorised configs only; never harvests or validates secrets from other people's configs or public repos
   - Declines to write poisoned tools, prompt-injection payloads or typosquat packages; heuristic detection, so "no findings" is not proof of safety
 
-### 10. 3D Print Farm & Slicer Queue Ops ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — AVAILABLE NOW · PHASE 2 LIVE, sku: print-farm-ops)
+### 10. 3D Print Farm & Slicer Queue Ops ($29 one-time · card / Apple Pay / Google Pay via Stripe — AVAILABLE NOW · PHASE 2 LIVE, sku: print-farm-ops)
 - **Status:** AVAILABLE NOW · PHASE 2 LIVE
 - **SKU:** `print-farm-ops`
-- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds**)
+- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**)
 - **Categories:** Robotics & Manufacturing / 3D Print Farm & Slicer Queue Ops
 - **Product Page URL:** https://botappstore.com/bots/print-farm-ops.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-print-farm-ops
@@ -312,10 +305,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Refuses credentials, API keys, seed phrases and printer LAN access codes (exit `10`, value never echoed)
   - Heuristic checks of slicer metadata, not engineering certification or fire-safety protection; cost and margin figures are arithmetic on supplied inputs, not financial advice
 
-### 11. Humanoid & Fleet Telemetry Inspector ($49 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — AVAILABLE NOW · PHASE 1 RELEASE, sku: robotics-telemetry-inspector)
+### 11. Humanoid & Fleet Telemetry Inspector ($49 one-time · card / Apple Pay / Google Pay via Stripe — AVAILABLE NOW · PHASE 1 RELEASE, sku: robotics-telemetry-inspector)
 - **Status:** AVAILABLE NOW · PHASE 1 RELEASE
 - **SKU:** `robotics-telemetry-inspector`
-- **Price:** $49.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds**)
+- **Price:** $49.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**)
 - **Categories:** Robotics & Physical AI / Humanoid & Fleet Telemetry
 - **Product Page URL:** https://botappstore.com/bots/robotics-telemetry-inspector.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-robotics-telemetry-inspector
@@ -343,10 +336,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
   - Refuses credentials, tokens, seed phrases, MAVLink signing keys, DDS private keys, Wi-Fi passwords and SSH keys in arguments and tables (exit `10`, value never echoed); symlink inputs exit `10`
   - Heuristic diagnostics on exported logs, not airworthiness, FAA/EASA or functional-safety (ISO 13849 / IEC 61508 / ISO 10218) approval
 
-### 12. SEC EDGAR Supply Chain & Counterparty Mapper ($29 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted — LIVE NOW, sku: sec-supply-chain-mapper, v1.1)
+### 12. SEC EDGAR Supply Chain & Counterparty Mapper ($29 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW, sku: sec-supply-chain-mapper, v1.1)
 - **Status:** LIVE NOW (v1.1)
 - **SKU:** `sec-supply-chain-mapper`
-- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe; SOL also accepted) (includes up to **3 workspace-reset rebinds**); also included in the `edgar-intelligence-pack` bundle ($89)
+- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**); also included in the `edgar-intelligence-pack` bundle ($89)
 - **Categories:** OSINT & Research / SEC EDGAR Supply Chain
 - **Product Page URL:** https://botappstore.com/bots/sec-supply-chain-mapper.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-sec-supply-chain-mapper
@@ -365,7 +358,7 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
 ### 13. Mill Cert Matcher ($39 one-time — LIVE NOW, sku: mill-cert-matcher)
 - **Status:** LIVE NOW
 - **SKU:** `mill-cert-matcher`
-- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default, SOL also accepted
+- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default
 - **Categories:** Manufacturing / Receiving Inspection
 - **Product Page URL:** https://botappstore.com/bots/mill-cert-matcher.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-mill-cert-matcher
@@ -386,7 +379,7 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
 ### 14. RFQ Flowdown Triage ($39 one-time — LIVE NOW, sku: rfq-flowdown-triage)
 - **Status:** LIVE NOW
 - **SKU:** `rfq-flowdown-triage`
-- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default, SOL also accepted
+- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default
 - **Categories:** Manufacturing / Quoting & Contract Review
 - **Product Page URL:** https://botappstore.com/bots/rfq-flowdown-triage.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-rfq-flowdown-triage
@@ -406,7 +399,7 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
 ### 15. FAI Results Reconciler ($39 one-time — LIVE NOW, sku: fai-results-reconciler)
 - **Status:** LIVE NOW
 - **SKU:** `fai-results-reconciler`
-- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default, SOL also accepted
+- **Price:** $39.00 USD One-Time License (includes up to **3 workspace-reset rebinds**); card / Apple Pay / Google Pay checkout by default
 - **Categories:** Manufacturing / First-Article Inspection Review
 - **Product Page URL:** https://botappstore.com/bots/fai-results-reconciler.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-fai-results-reconciler
@@ -425,10 +418,10 @@ Prices are one-time USD. Card / Apple Pay / Google Pay (via Stripe) is the defau
 
 ## Value Bundles — Multi-Bot Packs (4 Live Bundle SKUs; One License Key Unlocks All Included Bots)
 
-Bundle SKUs are priced in USD and paid by card (Stripe) or in SOL via the same non-custodial checkout (`POST https://www.wattcoin.org/api/v1/agents/license/quote` with `sku: <bundle-sku>`, `source: "botappstore"`). A single bundle purchase returns **one** `wcl_<64-hex>` bearer license code that unlocks **every** member bot in the pack (up to 3 workspace-reset rebinds). The `/api/v1/agents/license/purchase` response also includes `included_skus` (member SKU list) and `bundle_templates` (an array of `{sku, name, template_url}` with one unlisted `https://x.ai/bot/<id>` Grok Bot template per member) so you can import every bot in the pack. Activate each imported bot on its Turn 1 with the same `wcl_...` code. Storefront section: https://botappstore.com/#bundles
+Bundle SKUs are priced in USD and paid by card (Stripe) through the same checkout (`POST https://www.wattcoin.org/api/v1/agents/license/stripe-checkout` with `sku: <bundle-sku>`, `storefront: "botappstore"`). A single bundle purchase returns **one** `wcl_<64-hex>` bearer license code that unlocks **every** member bot in the pack (up to 3 workspace-reset rebinds). The `stripe-session` response also includes `included_skus` (member SKU list) and `bundle_templates` (an array of `{sku, name, template_url}` with one unlisted `https://x.ai/bot/<id>` Grok Bot template per member) so you can import every bot in the pack. Activate each imported bot on its Turn 1 with the same `wcl_...` code. Storefront section: https://botappstore.com/#bundles
 
-### DevSecOps & AI Agent Security Pack ($69 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: devsecops-ai-security-pack`, 4-Bot Bundle — Save $27 vs $96 list)
-- **Bundle Price:** $69.00 USD one-time (card / Apple Pay / Google Pay via Stripe, or SOL at the live USD/SOL rate) (individual list total: $96).
+### DevSecOps & AI Agent Security Pack ($69 one-time · card / Apple Pay / Google Pay via Stripe, `sku: devsecops-ai-security-pack`, 4-Bot Bundle — Save $27 vs $96 list)
+- **Bundle Price:** $69.00 USD one-time (card / Apple Pay / Google Pay via Stripe) (individual list total: $96).
 - **Included member SKUs (`included_skus`):** `bot-skill-auditor`, `mcp-config-auditor`, `dependency-vuln-triage`, `domain-infra-hygiene`
 - **Members:**
   - Bot & Skill Security Auditor (`bot-skill-auditor`, $29 list): https://botappstore.com/bots/bot-skill-auditor.html
@@ -437,16 +430,16 @@ Bundle SKUs are priced in USD and paid by card (Stripe) or in SOL via the same n
   - Domain, TLS & Email Auth Infrastructure Hygiene Auditor (`domain-infra-hygiene`, $19 list): https://botappstore.com/bots/domain-infra-hygiene.html
 - **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
 
-### Physical AI & Manufacturing Ops Pack ($59 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: physical-ai-manufacturing-pack`, 2-Bot Bundle — Save $19 vs $78 list)
-- **Bundle Price:** $59.00 USD one-time (card / Apple Pay / Google Pay via Stripe, or SOL at the live USD/SOL rate) (individual list total: $78).
+### Physical AI & Manufacturing Ops Pack ($59 one-time · card / Apple Pay / Google Pay via Stripe, `sku: physical-ai-manufacturing-pack`, 2-Bot Bundle — Save $19 vs $78 list)
+- **Bundle Price:** $59.00 USD one-time (card / Apple Pay / Google Pay via Stripe) (individual list total: $78).
 - **Included member SKUs (`included_skus`):** `print-farm-ops`, `robotics-telemetry-inspector`
 - **Members:**
   - 3D Print Farm & Slicer Queue Ops (`print-farm-ops`, $29 list): https://botappstore.com/bots/print-farm-ops.html
   - Humanoid & Fleet Telemetry Inspector (`robotics-telemetry-inspector`, $49 list): https://botappstore.com/bots/robotics-telemetry-inspector.html
 - **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
 
-### Founder OSINT, SEC & GTM Pack ($59 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: founder-research-gtm-pack`, 3-Bot Bundle — Save $18 vs $77 list)
-- **Bundle Price:** $59.00 USD one-time (card / Apple Pay / Google Pay via Stripe, or SOL at the live USD/SOL rate) (individual list total: $77).
+### Founder OSINT, SEC & GTM Pack ($59 one-time · card / Apple Pay / Google Pay via Stripe, `sku: founder-research-gtm-pack`, 3-Bot Bundle — Save $18 vs $77 list)
+- **Bundle Price:** $59.00 USD one-time (card / Apple Pay / Google Pay via Stripe) (individual list total: $77).
 - **Included member SKUs (`included_skus`):** `company-deep-dive`, `sec-patent-watchdog`, `social-hub-publisher`
 - **Members:**
   - Company & Competitor Deep-Dive Analyst (`company-deep-dive`, $19 list): https://botappstore.com/bots/company-deep-dive.html
@@ -454,8 +447,8 @@ Bundle SKUs are priced in USD and paid by card (Stripe) or in SOL via the same n
   - Social Hub Publisher (`social-hub-publisher`, $29 list): https://botappstore.com/bots/social-hub-publisher.html
 - **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
 
-### Institutional EDGAR Intelligence Pack ($89 one-time · card / Apple Pay / Google Pay via Stripe; SOL also accepted, `sku: edgar-intelligence-pack`, 3-Bot Bundle)
-- **Bundle Price:** $89.00 USD one-time (card / Apple Pay / Google Pay via Stripe, or SOL at the live USD/SOL rate).
+### Institutional EDGAR Intelligence Pack ($89 one-time · card / Apple Pay / Google Pay via Stripe, `sku: edgar-intelligence-pack`, 3-Bot Bundle)
+- **Bundle Price:** $89.00 USD one-time (card / Apple Pay / Google Pay via Stripe).
 - **Included member SKUs (`included_skus`):** `company-deep-dive`, `sec-patent-watchdog`, `sec-supply-chain-mapper`
 - **Members:**
   - Company & Competitor Deep-Dive Analyst (`company-deep-dive`, $19 list): https://botappstore.com/bots/company-deep-dive.html

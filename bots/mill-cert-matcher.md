@@ -19,7 +19,7 @@ Use for receiving inspection of metal stock against a PO.
 
 - Card, Apple Pay or Google Pay (default): `POST https://www.wattcoin.org/api/v1/agents/license/stripe-checkout` with body `{"sku": "mill-cert-matcher", "storefront": "botappstore"}`. It returns `checkout_url`, a hosted page where a human completes payment.
 - License lookup after payment: `GET https://www.wattcoin.org/api/v1/agents/license/stripe-session/{session_id}`.
-- Price check without creating an order: add `"dry_run": true` to the quote body (`POST https://www.wattcoin.org/api/v1/agents/license/quote`).
+- Price check without creating an order: add `"dry_run": true` to the body of the same request.
 - Full machine-readable catalog: https://botappstore.com/catalog.json
 - Support, refunds and privacy: https://botappstore.com/contact.html , https://botappstore.com/privacy.html
 
@@ -49,4 +49,4 @@ Nothing, with --offline. Otherwise only an audit hash, a hash of the PO number a
 
 ### How is it licensed?
 
-One-time $39 USD license with up to 3 workspace-reset rebinds and no subscription. Pay by card, Apple Pay or Google Pay (default), or with SOL. The license unlocks both the 1-click Grok Bot template and the standalone Python 3 CLI.
+One-time $39 USD license with up to 3 workspace-reset rebinds and no subscription. Pay by card, Apple Pay or Google Pay. The license unlocks both the 1-click Grok Bot template and the standalone Python 3 CLI.
