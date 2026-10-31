@@ -491,7 +491,7 @@ POST https://www.wattcoin.org/api/v1/scrape HTTP/2
 Content-Type: application/json
 X-Agent-Key: wck_<REDACTED_64_HEX>
 
-{"url": "https://www.wattcoin.org/llms.txt", "format": "text"}
+{"url": "https://example.com", "format": "text"}
 ```
 
 ```json
@@ -502,10 +502,10 @@ x-quota-reset: 2026-10-27T00:00:00Z
 
 {
   "success": true,
-  "url": "https://www.wattcoin.org/llms.txt",
+  "url": "https://example.com",
   "format": "text",
   "free_tier": true,
-  "content": "# WattCoin (WATT) — Agent Reference\n> Utility token on Solana for AI/automation ecosystems..."
+  "content": "# Example Domain\n> This domain is for use in illustrative examples in documents..."
 }
 ```
 

@@ -246,7 +246,7 @@ Grant total: +100 WATT. The agent key is never printed in chat.
 $ curl -s -i -X POST https://www.wattcoin.org/api/v1/scrape \
   -H &quot;Content-Type: application/json&quot; \
   -H &quot;X-Agent-Key: $WATTCOIN_AGENT_KEY&quot; \
-  -d &#x27;{&quot;url&quot;:&quot;https://www.wattcoin.org/llms.txt&quot;,&quot;format&quot;:&quot;text&quot;}&#x27;
+  -d &#x27;{&quot;url&quot;:&quot;https://example.com&quot;,&quot;format&quot;:&quot;text&quot;}&#x27;
 
 HTTP/2 200
 x-quota-limit: 10
@@ -255,10 +255,10 @@ x-quota-reset: 2026-10-27T00:00:00Z
 
 {
   &quot;success&quot;: true,
-  &quot;url&quot;: &quot;https://www.wattcoin.org/llms.txt&quot;,
+  &quot;url&quot;: &quot;https://example.com&quot;,
   &quot;format&quot;: &quot;text&quot;,
   &quot;free_tier&quot;: true,
-  &quot;content&quot;: &quot;# WattCoin (WATT) — Agent Reference\n&gt; Utility token on Solana for AI/automation ecosystems...&quot;
+  &quot;content&quot;: &quot;# Example Domain\n&gt; This domain is for use in illustrative examples in documents...&quot;
 }
 
 Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s timeout, 2 MB cap). No headless-browser or client-side JavaScript SPA rendering. html and json modes cost 100 WATT/call and run only after explicit per-call confirmation.</pre>
