@@ -101,7 +101,7 @@
           "name": "What happens when units differ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "If the files declare different units and at least three characteristics agree on a 25.4 ratio, results are scaled, the factor is shown and the verdict is REVIEW. Otherwise the affected characteristics are not evaluated and the line is a FAIL that means \"cannot be evaluated\", not \"out of tolerance\"."
+            "text": "Declared units (a units column, a header or sheet preamble, a value suffix such as 0.250 in, or the --chars-units / --results-units flags) are always converted between inch and mm exactly, row by row, and the limits stay in the characteristic's units. Units that are not declared are never turned into a verdict: a row that only fits a 25.4 scale is REVIEW, never PASS. Declared units that cannot be converted give a FAIL that means \"cannot be evaluated\", not \"out of tolerance\"."
           }
         },
         {
@@ -242,7 +242,7 @@
             <thead><tr><th>Rule</th><th>Detects</th><th>Outcome</th></tr></thead>
             <tbody>
             <tr><td><code>FAI-TOL-01</code></td><td>Measured value against limits (Decimal maths; a value exactly on a limit passes)</td><td>FAIL when outside</td></tr>
-            <tr><td><code>FAI-UNIT-01</code></td><td>Balloon list and results in different units (inch vs mm)</td><td>Auto-scaled by 25.4 only when the ratio is consistent: REVIEW. Otherwise not evaluated: FAIL</td></tr>
+            <tr><td><code>FAI-UNIT-01</code></td><td>Balloon list and results in different units (inch vs mm)</td><td>Declared units convert exactly per row; undeclared or inferred unit fits are REVIEW, never PASS; unconvertible declared units are not evaluated: FAIL</td></tr>
             <tr><td><code>FAI-MISS-01</code></td><td>A characteristic with no result</td><td>REVIEW</td></tr>
             <tr><td><code>FAI-UNM-01</code></td><td>A result with no characteristic in the balloon list</td><td>REVIEW</td></tr>
             <tr><td><code>FAI-DUP-01</code></td><td>Duplicate balloon number, or repeated results with no piece/serial column</td><td>REVIEW</td></tr>
@@ -279,7 +279,7 @@ FLAGGED
   FAIL    FAI-TOL-01   char 7   measured 40.1193 outside [39.95, 40.05]   [balloons.csv row 10, cmm.csv row 8]
   REVIEW  FAI-MISS-01  char 9   no inspection result for this characteristic   [balloons.csv row 12]
   REVIEW  FAI-UNM-01   char 99  result has no matching characteristic   [cmm.csv row 30]
-  REVIEW  FAI-UNIT-01  *        results in in, characteristics in mm: 22 results scaled by 25.4 (ratio check 22 of 22)
+  INFO    FAI-UNIT-01  *        declared units: 22 result(s) in in converted to mm per row with the exact factor 25.4; limits stay in mm
   REVIEW  FAI-REV-01   -        revision differs: 'B' in balloons.csv, 'C' in cmm.csv   [balloons.csv row 3, cmm.csv row 3]
 
 NOT EVALUATED
@@ -321,7 +321,7 @@ EXAMPLE DATA: REVIEW (formula without a saved value)
           <li>Single-limit feature tolerances are supported; there is no bonus-tolerance maths. A material-condition modifier that puts a reading outside the base tolerance is a REVIEW, not a FAIL.</li>
           <li>XLSX values are read as saved; a formula with no saved value is flagged. Legacy <code>.xls</code>, <code>.xlsm</code> and encrypted files are not read: save as <code>.xlsx</code> or <code>.csv</code>.</li>
           <li>Report layouts vary and are often customised. Only the formats above are recognised, and only synthetic samples have been used to test them; lines it cannot read are listed.</li>
-          <li>An inch/mm conflict is auto-scaled only when at least three characteristics agree on a 25.4 ratio; the card always shows the factor and the result is REVIEW.</li>
+          <li>Declared inch/mm units always convert exactly per row. Undeclared units are never converted into a PASS: a row that only fits a 25.4 scale is REVIEW, so declare the units.</li>
           <li>It does not approve a first article and makes no statement about AS9102 or any other standard.</li>
         </ul>
       </section>
@@ -338,7 +338,7 @@ EXAMPLE DATA: REVIEW (formula without a saved value)
         <h2>FAQ</h2>
         <div class="faq-grid">
           <details class="faq-item"><summary>Does it approve my first article?</summary><div class="faq-answer">No. It flags lines for a person. PASS means no flags were found by the checks above, not that the article is accepted. Screening aid that flags issues for human review. Not a quality sign-off or AS9102 approval.</div></details>
-          <details class="faq-item"><summary>What happens when units differ?</summary><div class="faq-answer">If the files declare different units and at least three characteristics agree on a 25.4 ratio, results are scaled, the factor is shown and the verdict is REVIEW. Otherwise the affected characteristics are not evaluated and the line is a FAIL that means "cannot be evaluated", not "out of tolerance".</div></details>
+          <details class="faq-item"><summary>What happens when units differ?</summary><div class="faq-answer">Declared units (a units column, a header or sheet preamble, a value suffix such as 0.250 in, or the --chars-units / --results-units flags) are always converted between inch and mm exactly, row by row, and the limits stay in the characteristic's units. Units that are not declared are never turned into a verdict: a row that only fits a 25.4 scale is REVIEW, never PASS. Declared units that cannot be converted give a FAIL that means "cannot be evaluated", not "out of tolerance".</div></details>
           <details class="faq-item"><summary>How does it match characteristics to results?</summary><div class="faq-answer">By balloon number after normalising case, spaces and leading zeros; 12 never matches 12a. A match by feature name plus nominal is used only when it is unique and is always a REVIEW. Ambiguous matches are reported as duplicates or unmatched, never guessed.</div></details>
           <details class="faq-item"><summary>Which report formats work?</summary><div class="faq-answer">Generic CSV or XLSX, Calypso-style CSV and PC-DMIS text reports, plus a column map for unusual exports. Anything it cannot read is listed on the card.</div></details>
           <details class="faq-item"><summary>What leaves my machine?</summary><div class="faq-answer">Nothing, with <code>--offline</code>. Otherwise only an audit hash, a hash of the part number and a one-line metric (for example <code>FAIL · 2 out of tolerance, 1 missing of 48 characteristics</code>) go to the receipt-signing endpoint. Measurements, descriptions, part numbers and file names are never sent.</div></details>

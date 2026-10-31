@@ -33,7 +33,7 @@ No. It flags lines for a person. PASS means no flags were found by the checks ab
 
 ### What happens when units differ?
 
-If the files declare different units and at least three characteristics agree on a 25.4 ratio, results are scaled, the factor is shown and the verdict is REVIEW. Otherwise the affected characteristics are not evaluated and the line is a FAIL that means "cannot be evaluated", not "out of tolerance".
+Declared units (a units column, a header or sheet preamble, a value suffix such as 0.250 in, or the --chars-units / --results-units flags) are always converted between inch and mm exactly, row by row, and the limits stay in the characteristic's units. Units that are not declared are never turned into a verdict: a row that only fits a 25.4 scale is REVIEW, never PASS. Declared units that cannot be converted give a FAIL that means "cannot be evaluated", not "out of tolerance".
 
 ### How does it match characteristics to results?
 
