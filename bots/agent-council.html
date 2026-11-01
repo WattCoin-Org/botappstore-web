@@ -177,7 +177,7 @@
           "name": "What does it refuse to do?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It is advisory and read-only: it never edits, commits, runs or deploys anything. It refuses to ingest node_modules, .git, lockfiles, .env* and .wattcoin_env* files and key or credential files, and it redacts private keys, wck_/wcl_ codes, sk-, ghp_, AKIA, xai-, AIza, Slack, Stripe, JWT and Bearer tokens, password assignments and other high-entropy strings before any seat sees the prompt, context or moderator notes. Seats are instructed to decline exploit, credential-harvesting and other offensive tasks, and cost figures for BYOK seats are estimates, not invoices."
+            "text": "It is advisory and read-only: it never edits, commits, runs or deploys anything. It refuses to ingest node_modules, .git, lockfiles, .env* and agent private env files and key or credential files, and it redacts private keys, wck_/wcl_ codes, sk-, ghp_, AKIA, xai-, AIza, Slack, Stripe, JWT and Bearer tokens, password assignments and other high-entropy strings before any seat sees the prompt, context or moderator notes. Seats are instructed to decline exploit, credential-harvesting and other offensive tasks, and cost figures for BYOK seats are estimates, not invoices."
           }
         }
       ]
@@ -301,7 +301,7 @@
       <section class="product-section" id="architecture">
         <h2>How It Runs (6 Steps)</h2>
         <div class="step-flow">
-          <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body"><code>.wattcoin_license_check.py check --sku agent-council</code> must return <code>"state": "OK"</code> before every run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body">The read-only license helper (<code>check --sku agent-council</code>) must return <code>"state": "OK"</code> before every run.</div></div>
           <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body">Setup verifies the canonical SHA-256 of <code>agent_council.py</code> and <code>bot_common.py</code> against the pinned values; any mismatch stops the run.</div></div>
           <div class="step-box"><div class="step-box-header"><span>3 · Seats &amp; pinned brief</span></div><div class="step-box-body"><code>--discover</code> picks available seats; the prompt plus line-numbered, redacted <code>--files</code> / <code>--git-diff</code> context becomes one cache-friendly brief.</div></div>
           <div class="step-box"><div class="step-box-header"><span>4 · Blind round 1</span></div><div class="step-box-body">All seats answer in parallel without seeing each other, each with its role preset and a per-seat timeout.</div></div>
@@ -483,7 +483,7 @@ Outcome: keep exit_code as the CI contract, but make it fail closed and derive d
         <h2>What It Does Not Do</h2>
         <ul>
           <li><strong>Advisory and read-only.</strong> It reads only the slices and diff you pass and returns text. It never edits, commits, runs or deploys anything. <code>claude</code> seats run with tools disabled, <code>codex</code> in its read-only sandbox, and <code>aider</code> in dry-run mode, all from an empty temp directory.</li>
-          <li><strong>No secrets to seats.</strong> It refuses <code>.env*</code>, <code>.wattcoin_env*</code>, lockfiles, key and credential files, <code>.git/</code> and <code>node_modules/</code>, and redacts API keys, tokens, private keys and high-entropy strings from the prompt, context and moderator notes. Provider keys are read by variable name and never printed or stored.</li>
+          <li><strong>No secrets to seats.</strong> It refuses <code>.env*</code>, the agent's private env files, lockfiles, key and credential files, <code>.git/</code> and <code>node_modules/</code>, and redacts API keys, tokens, private keys and high-entropy strings from the prompt, context and moderator notes. Provider keys are read by variable name and never printed or stored.</li>
           <li><strong>No offensive tasks.</strong> Seats are instructed to decline exploit writing, credential harvesting and similar requests. Defensive design, threat modelling and code review are in scope.</li>
           <li><strong>Consensus is evidence, not proof.</strong> Models are non-deterministic and can be confidently wrong together. Verify patches and findings before acting. BYOK costs are estimates from a static price table; your provider invoice is authoritative.</li>
         </ul>
@@ -497,7 +497,7 @@ Outcome: keep exit_code as the CI contract, but make it fail closed and derive d
           <li><a href="/runtime/bot_common.py"><code>https://botappstore.com/runtime/bot_common.py</code></a> &mdash; 274 lines &mdash; SHA-256: <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code></li>
         </ul>
         <p>Runtime URLs are license-gated: send <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code> (unauthenticated requests get 401). The served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header (or the SHA-256 after stripping the block) against the pins above. The recommended path is the setup skill installer:</p>
-        <pre class="code-pre">python3 /workspace/.wattcoin_license_check.py --sku agent-council --install-runtime ... --expected-sha256 703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7</pre>
+        <pre class="code-pre">python3 &lt;license helper&gt; --sku agent-council --install-runtime ... --expected-sha256 703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7</pre>
         <p>The setup and council skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 170 unit tests.</p>
       </section>
 
@@ -511,7 +511,7 @@ Outcome: keep exit_code as the CI contract, but make it fail closed and derive d
           <details class="faq-item"><summary>What happens when a seat hangs or the budget runs out?</summary><div class="faq-answer">Each call is bounded by --seat-timeout (default 120 s). A seat that times out is marked DEGRADED_TIMEOUT (errors are DEGRADED_ERROR) and sits out while the rest continue, as long as --quorum active seats remain. --total-deadline (default 600 s) stops new rounds early enough for the Chair to synthesise. --max-cost-usd refuses the run up front (exit 10) if even the minimum estimate is over budget, and starts no new round once spend reaches 85% of the cap. Any degradation makes the run exit 11, so a half-finished council is never reported as a clean consensus.</div></details>
           <details class="faq-item"><summary>Can I steer a council while it is running?</summary><div class="faq-answer">Yes. Start it with --session ID, and from a second command use --status to see rounds, seat status and spend, --inject &quot;note&quot; to queue a moderator instruction that every seat receives as high-priority steering in the next round, or --pause to stop before the next round. --resume continues a paused session with the same seats, context and options, or adds more rounds to a finished one. Sessions are stored under /workspace/agent-council/sessions/ with 0700 permissions, and injected notes are redacted like everything else.</div></details>
           <details class="faq-item"><summary>What is the HTML council viewer?</summary><div class="faq-answer">--html-out PATH writes one self-contained dark-slate HTML file with no external scripts, fonts or images: the problem statement, context bundle hashes, seat table, every round per seat with latency, tokens and cost, the Chair synthesis, consensus matrix, minority report, confidence shifts, action plan or patch, findings and the cost ledger. You can open it offline or attach it to a pull request.</div></details>
-          <details class="faq-item"><summary>What does it refuse to do?</summary><div class="faq-answer">It is advisory and read-only: it never edits, commits, runs or deploys anything. It refuses to ingest node_modules, .git, lockfiles, .env* and .wattcoin_env* files and key or credential files, and it redacts private keys, wck_/wcl_ codes, sk-, ghp_, AKIA, xai-, AIza, Slack, Stripe, JWT and Bearer tokens, password assignments and other high-entropy strings before any seat sees the prompt, context or moderator notes. Seats are instructed to decline exploit, credential-harvesting and other offensive tasks, and cost figures for BYOK seats are estimates, not invoices.</div></details>
+          <details class="faq-item"><summary>What does it refuse to do?</summary><div class="faq-answer">It is advisory and read-only: it never edits, commits, runs or deploys anything. It refuses to ingest node_modules, .git, lockfiles, .env* and agent private env files and key or credential files, and it redacts private keys, wck_/wcl_ codes, sk-, ghp_, AKIA, xai-, AIza, Slack, Stripe, JWT and Bearer tokens, password assignments and other high-entropy strings before any seat sees the prompt, context or moderator notes. Seats are instructed to decline exploit, credential-harvesting and other offensive tasks, and cost figures for BYOK seats are estimates, not invoices.</div></details>
         </div>
       </section>
 
@@ -769,7 +769,7 @@ Outcome: keep exit_code as the CI contract, but make it fail closed and derive d
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (the license helper &amp; the prep helper at <code>0500</code>), provisions a private env file in <code>/workspace</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

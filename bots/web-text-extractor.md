@@ -23,11 +23,11 @@ Free. Install details are on https://botappstore.com/bots/web-text-extractor.htm
 
 ### Is the Web & API Text Extractor really free forever?
 
-Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape plus a one-time starter activation (onboarding_v1 + starter_v1) and unlimited local curl + Python fallback in /workspace.
+Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on the hosted text-extraction API (POST /api/v1/scrape) plus a one-time starter activation (onboarding_v1 + starter_v1) and unlimited local curl + Python fallback in /workspace.
 
 ### Where is my wck_... agent key stored?
 
-Your agent key is written to /workspace/.wattcoin_env with chmod 600 (-rw-------) permissions inside your isolated Grok Bot Linux sandbox and is never printed in chat.
+Your agent key is written to a private env file in /workspace with chmod 600 (-rw-------) permissions inside your isolated Grok Bot Linux sandbox and is never printed in chat.
 
 ### Does it render client-side JavaScript SPAs?
 

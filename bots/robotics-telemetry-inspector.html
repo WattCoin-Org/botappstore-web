@@ -291,7 +291,7 @@
       <section class="product-section" id="architecture">
         <h2>How It Runs (5 Steps)</h2>
         <div class="step-flow">
-          <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body"><code>.wattcoin_license_check.py --sku robotics-telemetry-inspector</code> must return <code>"state": "OK"</code> before every run.</div></div>
+          <div class="step-box"><div class="step-box-header"><span>1 · License pre-flight</span></div><div class="step-box-body">The read-only license helper (<code>--sku robotics-telemetry-inspector</code>) must return <code>"state": "OK"</code> before every run.</div></div>
           <div class="step-box"><div class="step-box-header"><span>2 · Pinned runtime check</span></div><div class="step-box-body">Setup verifies the canonical SHA-256 of <code>robotics_telemetry_inspector.py</code> and <code>bot_common.py</code> against the pinned values; any mismatch stops the run.</div></div>
           <div class="step-box"><div class="step-box-header"><span>3 · Parse logs &amp; models</span></div><div class="step-box-body"><code>--actuators</code>, <code>--bms</code>, <code>--rosbag</code>, <code>--flight-log</code>, <code>--urdf</code>, <code>--can-log</code>; credentials in tables or arguments are refused (exit <code>10</code>).</div></div>
           <div class="step-box"><div class="step-box-header"><span>4 · 4-bucket audit</span></div><div class="step-box-body">Actuator and bus, BMS, ROS 2 bag and flight-readiness checks, with URDF and CAN cross-references.</div></div>
@@ -474,7 +474,7 @@ exit_code 3 (fail-on=medium)
           <li><a href="/runtime/bot_common.py"><code>https://botappstore.com/runtime/bot_common.py</code></a> &mdash; 274 lines &mdash; SHA-256: <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code></li>
         </ul>
         <p>Runtime URLs are license-gated: send <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code> (unauthenticated requests get 401). The served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header (or the SHA-256 after stripping the block) against the pins above. The recommended path is the setup skill installer:</p>
-        <pre class="code-pre">python3 /workspace/.wattcoin_license_check.py --sku robotics-telemetry-inspector --install-runtime ... --expected-sha256 aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17</pre>
+        <pre class="code-pre">python3 &lt;license helper&gt; --sku robotics-telemetry-inspector --install-runtime ... --expected-sha256 aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17</pre>
         <p>The setup and audit skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 724 unit tests.</p>
       </section>
 
@@ -510,7 +510,7 @@ exit_code 3 (fail-on=medium)
       <!-- after-you-buy:end -->
       <section class="product-section" id="licensing-flow">
         <h2>Licensing &amp; Setup</h2>
-        <p>$49.00 USD one-time, paid by card, Apple Pay or Google Pay, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>robotics-telemetry-inspector-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates <code>/workspace/.wattcoin_env</code> (<code>0600</code>, starter activation), binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs the built-in <code>--self-check</code>. Every later run starts with the license gate.</p>
+        <p>$49.00 USD one-time, paid by card, Apple Pay or Google Pay, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>robotics-telemetry-inspector-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates the agent, writing its key to a private env file in <code>/workspace</code> (<code>0600</code>, starter activation), binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs the built-in <code>--self-check</code>. Every later run starts with the license gate.</p>
         <div class="product-cta-row">
           <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('robotics-telemetry-inspector', this)">Buy License ($49 · card) &rarr;</button>
           <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('robotics-telemetry-inspector', this)">SKILL.md Preview</button>
@@ -744,7 +744,7 @@ exit_code 3 (fail-on=medium)
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (the license helper &amp; the prep helper at <code>0500</code>), provisions a private env file in <code>/workspace</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

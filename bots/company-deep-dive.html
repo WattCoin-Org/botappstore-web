@@ -89,7 +89,7 @@
           "name": "Which primary-source registries does the Company & Competitor Deep-Dive Analyst query?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It queries official SEC EDGAR submissions (data.sec.gov/submissions/CIK<10-digit>.json), SEC EDGAR full-text search (efts.sec.gov/LATEST/search-index), USPTO PatentsView (search.patentsview.org), and authoritative RDAP domain registries (rdap.org) via the read-only /workspace/.wattcoin_dd_fetch.py helper."
+            "text": "It queries official SEC EDGAR submissions (data.sec.gov/submissions/CIK<10-digit>.json), SEC EDGAR full-text search (efts.sec.gov/LATEST/search-index), USPTO PatentsView (search.patentsview.org), and authoritative RDAP domain registries (rdap.org) via the read-only the primary-source fetch helper helper."
           }
         },
         {
@@ -229,7 +229,7 @@
           <li>Section 3 &amp; Section 4 — Patent/IP Disclosures &amp; RDAP Infrastructure: Queries efts.sec.gov full-text patent/IP disclosures and search.patentsview.org USPTO assignee records, plus rdap.org domain registration, registrar, expiration, and nameserver records.</li>
           <li>Section 5 — 5-Entity Competitor Comparison Matrix: Builds a side-by-side matrix comparing 1 primary company + up to 4 competitors across CIK, SIC, incorporation state, FYE, latest 10-K/10-Q dates, and 180-day Form 8-K filing velocity.</li>
           <li>Section 6 &amp; Section 7 — Skipped Sources Log &amp; Primary Source Index: Logs any unavailable endpoints or API key states and lists every fetched URL, HTTP status, byte size, and UTC timestamp from RAW_SOURCES.json.</li>
-          <li>Hardened Stdlib Fetch Helper (.wattcoin_dd_fetch.py): Runs at chmod 500 with /usr/bin/python3 -I, enforces HTTPS-only DNS-pinned SSRF protection (_PinnedHTTPSConnection), SEC-compliant User-Agent at &lt;= 5 req/s, 40-request / 200 KB caps, and wraps all external strings in random 128-bit &lt;untrusted_data_&lt;32-hex&gt;&gt; tags.</li>
+          <li>Hardened Stdlib Fetch Helper: Runs at chmod 500 with /usr/bin/python3 -I, enforces HTTPS-only DNS-pinned SSRF protection (_PinnedHTTPSConnection), SEC-compliant User-Agent at &lt;= 5 req/s, 40-request / 200 KB caps, and wraps all external strings in random 128-bit &lt;untrusted_data_&lt;32-hex&gt;&gt; tags.</li>
         </ul>
       </section>
 
@@ -320,7 +320,7 @@
 - `10-K` filed `2011-03-16` (Period Ending `2011-01-30`, Accession `0001045810-11-000015`): https://www.sec.gov/Archives/edgar/data/1045810/000104581011000015/fy2011form10k.htm
 
 ### 3.2 USPTO PatentsView Docket Status (`search.patentsview.org`)
-- **Status:** `api_key_optional_not_configured` (checked at `2026-10-26T01:46:33Z`–`2026-10-26T01:46:35Z`). No optional `/workspace/.wattcoin_patentsview_key` was present; SEC EDGAR EFTS full-text IP disclosures were retrieved directly as the primary regulatory IP source.
+- **Status:** `api_key_optional_not_configured` (checked at `2026-10-26T01:46:33Z`–`2026-10-26T01:46:35Z`). No optional `/workspace/&lt;PatentsView key file&gt;` was present; SEC EDGAR EFTS full-text IP disclosures were retrieved directly as the primary regulatory IP source.
 
 ---
 
@@ -362,7 +362,7 @@
 ## Section 6 — Skipped, Unverified, or Unavailable Sources Log
 
 - **HTTP / Network Skipped Sources (`skipped` array):** `0` (all `9` outbound HTTPS requests completed with HTTP `200 OK` within the `15s` deadline and byte caps).
-- **Optional USPTO PatentsView API Key:** `patentsview_status: &quot;api_key_optional_not_configured&quot;` for `NVDA`, `AMD`, and `INTC` (`/workspace/.wattcoin_patentsview_key` not configured; SEC EDGAR EFTS IP/patent search index queried instead).
+- **Optional USPTO PatentsView API Key:** `patentsview_status: &quot;api_key_optional_not_configured&quot;` for `NVDA`, `AMD`, and `INTC` (`/workspace/&lt;PatentsView key file&gt;` not configured; SEC EDGAR EFTS IP/patent search index queried instead).
 
 ---
 
@@ -412,7 +412,7 @@
       <section class="product-section" id="licensing-flow">
         <h2>Turn-1 <code>/workspace</code> Onboarding &amp; Non-Custodial Licensing</h2>
         <p>
-          Every template on BotAppStore.com executes locally inside your isolated Grok Bot Linux sandbox (<code>/workspace</code>). Credentials are stored in <code>/workspace/.wattcoin_env</code> with <code>0600</code> permissions (<code>-rw-------</code>) and never echoed in chat. Paid licenses are one-time USD purchases: pay by card, Apple Pay or Google Pay; issue a private <code>wcl_...</code> bearer code, and support up to <strong>3 automatic workspace-reset rebinds</strong> via <code>POST https://www.wattcoin.org/api/v1/agents/license/claim</code>.
+          Every template on BotAppStore.com executes locally inside your isolated Grok Bot Linux sandbox (<code>/workspace</code>). Credentials are stored in a private env file in <code>/workspace</code> with <code>0600</code> permissions (<code>-rw-------</code>) and never echoed in chat. Paid licenses are one-time USD purchases: pay by card, Apple Pay or Google Pay; issue a private <code>wcl_...</code> bearer code, and support up to <strong>3 automatic workspace-reset rebinds</strong> via <code>POST /api/v1/agents/license/claim</code>.
         </p>
         <p class="dual-runtime-callout"><strong>One <code>wcl_...</code> key, two runtimes.</strong> Your license key works inside Grok Bot <em>and</em> from any local terminal or IDE agent (Cursor, Claude Code, Windsurf, CI/CD) via the standalone single-file Python 3 CLI (standalone <code>/runtime/&lt;script&gt;.py</code> CLI) &mdash; Python 3.10+ standard library only, zero <code>pip install</code> dependencies, with <code>--json</code> / <code>--markdown</code> output.</p>
       </section>
@@ -422,7 +422,7 @@
         <div class="faq-grid">
           <details class="faq-item" open>
             <summary>Which primary-source registries does the Company &amp; Competitor Deep-Dive Analyst query?</summary>
-            <div class="faq-answer">It queries official SEC EDGAR submissions (data.sec.gov/submissions/CIK&lt;10-digit&gt;.json), SEC EDGAR full-text search (efts.sec.gov/LATEST/search-index), USPTO PatentsView (search.patentsview.org), and authoritative RDAP domain registries (rdap.org) via the read-only /workspace/.wattcoin_dd_fetch.py helper.</div>
+            <div class="faq-answer">It queries official SEC EDGAR submissions (data.sec.gov/submissions/CIK&lt;10-digit&gt;.json), SEC EDGAR full-text search (efts.sec.gov/LATEST/search-index), USPTO PatentsView (search.patentsview.org), and authoritative RDAP domain registries (rdap.org) via the read-only the primary-source fetch helper helper.</div>
           </details>
           <details class="faq-item">
             <summary>How many competitors can it compare in a single run?</summary>
@@ -672,7 +672,7 @@
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (the license helper &amp; the prep helper at <code>0500</code>), provisions a private env file in <code>/workspace</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

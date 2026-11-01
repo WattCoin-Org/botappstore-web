@@ -637,7 +637,7 @@
           "name": "How does the free Web & API Text Extractor work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Web & API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 + starter_v1, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape with automatic local curl + Python fallback in /workspace."
+            "text": "The Web & API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 + starter_v1, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on the hosted text-extraction API (POST /api/v1/scrape) with automatic local curl + Python fallback in /workspace."
           }
         },
         {
@@ -908,7 +908,7 @@
                           <span>AUTOMATIC</span>
                         </div>
                         <div class="step-box-body">
-                          On Turn 1, the agent registers its <code>wck_...</code> key via <code>https://www.wattcoin.org/api/v1/agents/register</code>, stores it in a <code>0600</code>-permissioned env file in <code>/workspace</code> (never printed in chat), and unlocks 10 free static-HTTP + BeautifulSoup <code>"text"</code> extractions per UTC day on <code>https://www.wattcoin.org/api/v1/scrape</code>.
+                          On Turn 1, the agent registers its <code>wck_...</code> key via <code>/api/v1/agents/register</code>, stores it in a <code>0600</code>-permissioned env file in <code>/workspace</code> (never printed in chat), and unlocks 10 free static-HTTP + BeautifulSoup <code>"text"</code> extractions per UTC day on the hosted text-extraction API (<code>POST /api/v1/scrape</code>).
                           <div class="prompt-copy-row">
                             <code>"Initialize my extractor key and extract text from https://example.com"</code>
                             <button type="button" class="mini-copy-btn" data-copy="Initialize my extractor key and extract text from https://example.com" data-copy-label="✓ Copied">Copy</button>
@@ -1011,8 +1011,8 @@
                   Self-onboarding web and documentation text extractor for Grok Bot (included skills: <code>getting-started</code> + <code>web-extractor</code>). Provisions its own API key on Turn 1 into a <code>0600</code> env file in <code>/workspace</code> and provides 10 free cloud text extractions per UTC day plus automatic local fallback.
                 </p>
                 <ul class="spec-highlights">
-                  <li><strong>Turn-1 Auto-Provisioning (<code>getting-started</code>):</strong> Registers an agent key (<code>wck_...</code>) via <code>https://www.wattcoin.org/api/v1/agents/register</code>, stores it locally with <code>chmod 600</code> permissions, and runs a live <code>example.com</code> verification check.</li>
-                  <li><strong>10 Cloud Extractions / UTC Day (<code>web-extractor</code>):</strong> Server-side static HTTP + BeautifulSoup readable text extraction on <code>https://www.wattcoin.org/api/v1/scrape</code> with <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers.</li>
+                  <li><strong>Turn-1 Auto-Provisioning (<code>getting-started</code>):</strong> Registers an agent key (<code>wck_...</code>) via <code>/api/v1/agents/register</code>, stores it locally with <code>chmod 600</code> permissions, and runs a live <code>example.com</code> verification check.</li>
+                  <li><strong>10 Cloud Extractions / UTC Day (<code>web-extractor</code>):</strong> Server-side static HTTP + BeautifulSoup readable text extraction on the hosted text-extraction API (<code>POST /api/v1/scrape</code>) with <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers.</li>
                   <li><strong>Local Fallback &amp; SSRF Guardrails:</strong> Automatically falls back to local <code>curl -sL</code> + Python HTML-to-text in <code>/workspace</code> and rejects loopback, RFC1918, and cloud metadata IPs.</li>
                 </ul>
                 <div class="guardrail-strip">
@@ -1795,7 +1795,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
             </details>
             <details class="faq-item">
               <summary>How does the free Web &amp; API Text Extractor work?</summary>
-              <div class="faq-answer">The Web &amp; API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 + starter_v1, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape with automatic local curl + Python fallback in /workspace.</div>
+              <div class="faq-answer">The Web &amp; API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 + starter_v1, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on the hosted text-extraction API (POST /api/v1/scrape) with automatic local curl + Python fallback in /workspace.</div>
             </details>
             <details class="faq-item">
               <summary>Which bots cover prompt injection, due diligence, SBOM, CISA KEV, EPSS, SPF, DMARC and DNSSEC checks?</summary>

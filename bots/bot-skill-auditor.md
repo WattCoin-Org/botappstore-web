@@ -29,7 +29,7 @@ Refunds are available within 15 days of purchase. When a refund is issued, the l
 
 ### Does the Bot & Skill Security Auditor execute the code it inspects?
 
-Never. It is a strictly static, read-only inspector. Target files are normalized and wrapped in random > tags by /workspace/.wattcoin_audit_prep.py (chmod 500) and never executed.
+Never. It is a strictly static, read-only inspector. Target files are normalized and wrapped in random > tags by the deterministic prep helper (chmod 500) and never executed.
 
 ### Why doesn't the report give a 'Safe' or '100/100 Pass' badge?
 

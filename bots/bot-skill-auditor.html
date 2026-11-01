@@ -89,7 +89,7 @@
           "name": "Does the Bot & Skill Security Auditor execute the code it inspects?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Never. It is a strictly static, read-only inspector. Target files are normalized and wrapped in random <untrusted_artifact_<16-hex>> tags by /workspace/.wattcoin_audit_prep.py (chmod 500) and never executed."
+            "text": "Never. It is a strictly static, read-only inspector. Target files are normalized and wrapped in random <untrusted_artifact_<16-hex>> tags by the deterministic prep helper (chmod 500) and never executed."
           }
         },
         {
@@ -203,7 +203,7 @@
       <section class="product-hero">
         <div class="price-badge">● LIVE NOW · $29 · CARD (ONE-TIME · 3 REBINDS)</div>
         <h1>Bot &amp; Skill Security Auditor — Line-Cited 5-Bucket Static Inspector for AI Skills &amp; Repos</h1>
-        <p class="product-lede">See every network call, credential read, prompt-bypass instruction, and shell command in a third-party SKILL.md or GitHub repository—with exact file paths and line numbers—before you run it. Executes read-only inside /workspace via .wattcoin_audit_prep.py.</p>
+        <p class="product-lede">See every network call, credential read, prompt-bypass instruction, and shell command in a third-party SKILL.md or GitHub repository—with exact file paths and line numbers—before you run it. Executes read-only inside /workspace via the deterministic prep helper.</p>
         <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
           SKU: <code>bot-skill-auditor</code> · Skills: <code>auditor-setup + bot-skill-auditor</code> · Registry Name: <em>AI Skill &amp; SKILL.md Static Security Auditor</em>
         </p>
@@ -226,10 +226,10 @@
         <h2>Architecture, Data Sources &amp; Execution Capabilities</h2>
         <ul>
           <li>Bucket 1 — Prompt, Confirmation &amp; Auditor Bypass: Flags hidden HTML comments, invisible/bidirectional Unicode characters, and instructions that attempt to override user confirmation rules or suppress scanner findings.</li>
-          <li>Bucket 2 — Secret, Filesystem, Self-Modification &amp; Persistence Access: Cites every read of ~/.ssh, ~/.aws, .env, .wattcoin_env, credential stores, crontab/systemd persistence, or modifications to SKILL.md and shell profiles.</li>
+          <li>Bucket 2 — Secret, Filesystem, Self-Modification &amp; Persistence Access: Cites every read of ~/.ssh, ~/.aws, .env, the agent env file, credential stores, crontab/systemd persistence, or modifications to SKILL.md and shell profiles.</li>
           <li>Bucket 3 — Outbound Network, Exfiltration &amp; MCP Connectors: Catalogs every curl/wget/fetch URL, webhook endpoint, and MCP tool call—and explicitly traces combined data-path flows where secret reads (Bucket 2) feed outbound network calls (Bucket 3).</li>
           <li>Bucket 4 &amp; Bucket 5 — Unverifiable Runtime Execution, Obfuscation &amp; Local Machine Escalation: Flags curl | sh pipes, unpinned npx/pip packages, base64/hex blobs, and any use of ListMachines, machineId, CopyToBox, CopyFromBox, or request_smart_mode_approval.</li>
-          <li>Hardened Prep Helper (.wattcoin_audit_prep.py): Runs at chmod 500 with /usr/bin/python3 -I, pins GitHub branches to 40-char commit SHAs, enforces 50-file / 100 KB per-file / 250 KB aggregate caps, and wraps untrusted file contents in random &lt;untrusted_artifact_&lt;16-hex&gt;&gt; tags.</li>
+          <li>Hardened Prep Helper: Runs at chmod 500 with /usr/bin/python3 -I, pins GitHub branches to 40-char commit SHAs, enforces 50-file / 100 KB per-file / 250 KB aggregate caps, and wraps untrusted file contents in random &lt;untrusted_artifact_&lt;16-hex&gt;&gt; tags.</li>
         </ul>
       </section>
 
@@ -261,55 +261,55 @@ No matching patterns (`hidden_unicode_lines`, HTML comments, instructions to ski
 ## Bucket 2 — Secret, Filesystem, Self-Modification &amp; Persistence Access
 
 ### `web-extractor-SKILL.md`
-1. **Combination — Local Credential Read (`WATTCOIN_AGENT_KEY` from `/workspace/.wattcoin_env`) Paired with Outbound Network Header (`X-Agent-Key` to `https://www.wattcoin.org/api/v1/scrape`):**
+1. **Combination — Local Credential Read (`&lt;agent key env var&gt;` from `/workspace/&lt;agent env file&gt;`) Paired with Outbound Network Header (`X-Agent-Key` to `https://&lt;license-api-host&gt;/api/v1/scrape`):**
    - `web-extractor-SKILL.md:L11`:
-     &gt; `**Auth.** Read `WATTCOIN_AGENT_KEY` from `/workspace/.wattcoin_env` every run; send as `X-Agent-Key`. Missing file -&gt; run `getting-started` instead of failing.`
-   - **Mechanical Consequence:** Reads the workspace agent API key stored in `/workspace/.wattcoin_env` and transmits it as the `X-Agent-Key` HTTP header to `https://www.wattcoin.org/api/v1/scrape` (see Bucket 3). Together with `web-extractor-SKILL.md:L13`, this forms a direct data path from `/workspace/.wattcoin_env` (`WATTCOIN_AGENT_KEY`) to `https://www.wattcoin.org/api/v1/scrape`.
+     &gt; `**Auth.** Read `&lt;agent key env var&gt;` from `/workspace/&lt;agent env file&gt;` every run; send as `X-Agent-Key`. Missing file -&gt; run `getting-started` instead of failing.`
+   - **Mechanical Consequence:** Reads the workspace agent API key stored in `/workspace/&lt;agent env file&gt;` and transmits it as the `X-Agent-Key` HTTP header to `https://&lt;license-api-host&gt;/api/v1/scrape` (see Bucket 3). Together with `web-extractor-SKILL.md:L13`, this forms a direct data path from `/workspace/&lt;agent env file&gt;` (`&lt;agent key env var&gt;`) to `https://&lt;license-api-host&gt;/api/v1/scrape`.
 2. **Workspace File Writes for Extracted Output:**
    - `web-extractor-SKILL.md:L20`:
      &gt; `**Results.** Write anything substantial to a file in `/workspace`; summarize and name the file rather than dumping into chat. Multi-page jobs: scrape sequentially, save each, report once at the end.`
    - **Mechanical Consequence:** Writes scraped response content to files inside `/workspace`.
 
 ### `company-deep-dive-SKILL.md`
-1. **Helper Execution Touching Workspace License &amp; Dossier Files (`/workspace/.wattcoin_license_check.py`, `/workspace/.wattcoin_dd_fetch.py`, `/workspace/dossiers/...`):**
+1. **Helper Execution Touching Workspace License &amp; Dossier Files (`/workspace/&lt;license helper&gt;`, `/workspace/&lt;fetch helper&gt;`, `/workspace/dossiers/...`):**
    - `company-deep-dive-SKILL.md:L11-L14`:
-     &gt; `Never read `/workspace/.wattcoin_env`, `/workspace/.wattcoin_env.bak*`, or `/workspace/.wattcoin_patentsview_key` into chat or model context, never print `WATTCOIN_AGENT_KEY` or `wcl_...` in chat, never modify `/workspace/.wattcoin_license_check.py` or `/workspace/.wattcoin_dd_fetch.py`, and never send any local credential or file content to any external host.`
-     &gt; `1. Before each dossier run, execute `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py`.`
+     &gt; `Never read `/workspace/&lt;agent env file&gt;`, `/workspace/&lt;agent env file&gt;.bak*`, or `/workspace/&lt;PatentsView key file&gt;` into chat or model context, never print `&lt;agent key env var&gt;` or `wcl_...` in chat, never modify `/workspace/&lt;license helper&gt;` or `/workspace/&lt;fetch helper&gt;`, and never send any local credential or file content to any external host.`
+     &gt; `1. Before each dossier run, execute `/usr/bin/python3 -I /workspace/&lt;license helper&gt;`.`
    - `company-deep-dive-SKILL.md:L19`:
-     &gt; `/usr/bin/python3 -I /workspace/.wattcoin_dd_fetch.py --stdin-json &lt;&lt; &#x27;WATTCOIN_DD_REQ_EOF&#x27;`
+     &gt; `/usr/bin/python3 -I /workspace/&lt;fetch helper&gt; --stdin-json &lt;&lt; &#x27;REQ_EOF&#x27;`
    - `company-deep-dive-SKILL.md:L27`:
      &gt; `3. Read the fetched data **only** from `wrapped_sources_path` (`/workspace/dossiers/&lt;slug&gt;-&lt;timestamp&gt;-&lt;6hex&gt;/WRAPPED_SOURCES.txt`), where the entire payload is framed inside a random 128-bit `&lt;untrusted_data_&lt;32-hex&gt;&gt; ... &lt;/untrusted_data_&lt;32-hex&gt;&gt;` tag generated with `secrets.token_hex(16)`. Do **not** read `raw_sources_path` (`RAW_SOURCES.json` is saved on disk at `0600` for user export only).`
    - `company-deep-dive-SKILL.md:L32`:
-     &gt; `- **SEC EDGAR Compliance:** Sends `User-Agent: WattCoinDeepDive/1.0 (https://botappstore.com; contact@wattcoin.org)` (or a user-specific contact string if placed in `/workspace/.wattcoin_sec_ua` at `0600`) and enforces `&lt;= 5 requests/second` (`&gt;= 0.22s` interval across all requests and redirect hops).`
-   - **Mechanical Consequence:** Invokes two local Python helper scripts in `/workspace` (`.wattcoin_license_check.py` and `.wattcoin_dd_fetch.py`) and reads/writes dossier artifacts under `/workspace/dossiers/&lt;slug&gt;-&lt;timestamp&gt;-&lt;6hex&gt;/` (`SCOPE_NOTE.txt`, `RAW_SOURCES.json`, `WRAPPED_SOURCES.txt`, `REPORT.md`), while referencing optional workspace configuration files `/workspace/.wattcoin_patentsview_key` and `/workspace/.wattcoin_sec_ua`.
+     &gt; `- **SEC EDGAR Compliance:** Sends `User-Agent: &lt;DeepDive UA&gt;/1.0 (https://botappstore.com; &lt;your contact email&gt;)` (or a user-specific contact string if placed in `/workspace/&lt;SEC UA file&gt;` at `0600`) and enforces `&lt;= 5 requests/second` (`&gt;= 0.22s` interval across all requests and redirect hops).`
+   - **Mechanical Consequence:** Invokes two local Python helper scripts in `/workspace` (`&lt;license helper&gt;` and `&lt;fetch helper&gt;`) and reads/writes dossier artifacts under `/workspace/dossiers/&lt;slug&gt;-&lt;timestamp&gt;-&lt;6hex&gt;/` (`SCOPE_NOTE.txt`, `RAW_SOURCES.json`, `WRAPPED_SOURCES.txt`, `REPORT.md`), while referencing optional workspace configuration files `/workspace/&lt;PatentsView key file&gt;` and `/workspace/&lt;SEC UA file&gt;`.
 
 ---
 
 ## Bucket 3 — Outbound Network, Exfiltration &amp; MCP Connectors
 
 ### `web-extractor-SKILL.md`
-1. **Combination — Outbound POST to `https://www.wattcoin.org/api/v1/scrape` Carrying `X-Agent-Key` from `/workspace/.wattcoin_env` and Target URL:**
+1. **Combination — Outbound POST to `https://&lt;license-api-host&gt;/api/v1/scrape` Carrying `X-Agent-Key` from `/workspace/&lt;agent env file&gt;` and Target URL:**
    - `web-extractor-SKILL.md:L9`:
-     &gt; `You fetch and extract web page content and JSON endpoints through the `https://www.wattcoin.org/api/v1/scrape` API.`
+     &gt; `You fetch and extract web page content and JSON endpoints through the `https://&lt;license-api-host&gt;/api/v1/scrape` API.`
    - `web-extractor-SKILL.md:L11`:
-     &gt; `**Auth.** Read `WATTCOIN_AGENT_KEY` from `/workspace/.wattcoin_env` every run; send as `X-Agent-Key`. Missing file -&gt; run `getting-started` instead of failing.`
+     &gt; `**Auth.** Read `&lt;agent key env var&gt;` from `/workspace/&lt;agent env file&gt;` every run; send as `X-Agent-Key`. Missing file -&gt; run `getting-started` instead of failing.`
    - `web-extractor-SKILL.md:L13`:
-     &gt; `**Calling.** POST `https://www.wattcoin.org/api/v1/scrape` with the URL and `&quot;format&quot;`:`
-   - **Mechanical Consequence:** Sends an outbound HTTPS `POST` request to `https://www.wattcoin.org/api/v1/scrape` containing the user-requested target URL and the `X-Agent-Key` header read from `/workspace/.wattcoin_env` (Bucket 2).
+     &gt; `**Calling.** POST `https://&lt;license-api-host&gt;/api/v1/scrape` with the URL and `&quot;format&quot;`:`
+   - **Mechanical Consequence:** Sends an outbound HTTPS `POST` request to `https://&lt;license-api-host&gt;/api/v1/scrape` containing the user-requested target URL and the `X-Agent-Key` header read from `/workspace/&lt;agent env file&gt;` (Bucket 2).
 2. **Direct Outbound `curl` Fallback to User-Specified `&lt;url&gt;`:**
    - `web-extractor-SKILL.md:L30`:
      &gt; `**Fallback when out of quota:** run `curl -sL &lt;url&gt;` piped to `python3 -c &#x27;import sys, bs4; print(bs4.BeautifulSoup(sys.stdin.read(), &quot;html.parser&quot;).get_text(&quot; &quot;, strip=True))&#x27;` in `/workspace` (`bs4` is preinstalled in the container; if `ImportError` ever occurs, run `pip install --quiet beautifulsoup4 2&gt;/dev/null` first).`
    - **Mechanical Consequence:** Fetches `&lt;url&gt;` directly from the sandbox container using `curl -sL` when the cloud API returns HTTP `429` (`quota_exhausted`).
 
 ### `company-deep-dive-SKILL.md`
-1. **Outbound Regulatory &amp; Registry Queries via `/workspace/.wattcoin_dd_fetch.py` (`www.sec.gov`, `data.sec.gov`, `efts.sec.gov`, `search.patentsview.org`, `rdap.org`, `image-ppubs.uspto.gov`):**
+1. **Outbound Regulatory &amp; Registry Queries via `/workspace/&lt;fetch helper&gt;` (`www.sec.gov`, `data.sec.gov`, `efts.sec.gov`, `search.patentsview.org`, `rdap.org`, `image-ppubs.uspto.gov`):**
    - `company-deep-dive-SKILL.md:L31`:
      &gt; `- **HTTPS-Only, DNS-Pinned IP Validation &amp; SSRF Protection (`validate_and_resolve_host`):** Only queries `www.sec.gov`, `data.sec.gov`, `efts.sec.gov`, `search.patentsview.org`, and `rdap.org` (plus verified public RDAP registry redirects matching `ALLOWED_RDAP_DOMAINS` on exact domain or dot-boundary subdomains).`
    - `company-deep-dive-SKILL.md:L32`:
-     &gt; `- **SEC EDGAR Compliance:** Sends `User-Agent: WattCoinDeepDive/1.0 (https://botappstore.com; contact@wattcoin.org)` (or a user-specific contact string if placed in `/workspace/.wattcoin_sec_ua` at `0600`) and enforces `&lt;= 5 requests/second` (`&gt;= 0.22s` interval across all requests and redirect hops).`
+     &gt; `- **SEC EDGAR Compliance:** Sends `User-Agent: &lt;DeepDive UA&gt;/1.0 (https://botappstore.com; &lt;your contact email&gt;)` (or a user-specific contact string if placed in `/workspace/&lt;SEC UA file&gt;` at `0600`) and enforces `&lt;= 5 requests/second` (`&gt;= 0.22s` interval across all requests and redirect hops).`
    - `company-deep-dive-SKILL.md:L61`:
      &gt; `- Deduplicated list of every primary URL (`data.sec.gov`, `www.sec.gov/Archives/...`, `efts.sec.gov`, `search.patentsview.org`, `image-ppubs.uspto.gov`, `rdap.org`) and its exact UTC `retrieved_at` timestamp used in the dossier.`
-   - **Mechanical Consequence:** Sends company, ticker, CIK, and domain query strings to SEC EDGAR (`www.sec.gov`, `data.sec.gov`, `efts.sec.gov`), USPTO PatentsView (`search.patentsview.org`), and RDAP (`rdap.org`), and sends the contents of `/workspace/.wattcoin_sec_ua` (if present) as the HTTP `User-Agent` header and `/workspace/.wattcoin_patentsview_key` (if present) to `search.patentsview.org`.
+   - **Mechanical Consequence:** Sends company, ticker, CIK, and domain query strings to SEC EDGAR (`www.sec.gov`, `data.sec.gov`, `efts.sec.gov`), USPTO PatentsView (`search.patentsview.org`), and RDAP (`rdap.org`), and sends the contents of `/workspace/&lt;SEC UA file&gt;` (if present) as the HTTP `User-Agent` header and `/workspace/&lt;PatentsView key file&gt;` (if present) to `search.patentsview.org`.
 
 ---
 
@@ -322,11 +322,11 @@ No matching patterns (`hidden_unicode_lines`, HTML comments, instructions to ski
    - **Mechanical Consequence:** Contains an unpinned `pip install --quiet beautifulsoup4` fallback command if `bs4` raises `ImportError`. What an unpinned package install fetches from PyPI today may differ from what it fetches tomorrow.
 
 ### `company-deep-dive-SKILL.md`
-1. **Delegated Execution of Workspace Helper Scripts (`/workspace/.wattcoin_license_check.py` and `/workspace/.wattcoin_dd_fetch.py`):**
+1. **Delegated Execution of Workspace Helper Scripts (`/workspace/&lt;license helper&gt;` and `/workspace/&lt;fetch helper&gt;`):**
    - `company-deep-dive-SKILL.md:L12`:
-     &gt; `1. Before each dossier run, execute `/usr/bin/python3 -I /workspace/.wattcoin_license_check.py`.`
+     &gt; `1. Before each dossier run, execute `/usr/bin/python3 -I /workspace/&lt;license helper&gt;`.`
    - `company-deep-dive-SKILL.md:L19`:
-     &gt; `/usr/bin/python3 -I /workspace/.wattcoin_dd_fetch.py --stdin-json &lt;&lt; &#x27;WATTCOIN_DD_REQ_EOF&#x27;`
+     &gt; `/usr/bin/python3 -I /workspace/&lt;fetch helper&gt; --stdin-json &lt;&lt; &#x27;REQ_EOF&#x27;`
    - **Mechanical Consequence:** Executes two Python scripts located in `/workspace` (installed by `company-deep-dive-setup`), whose contents reside outside `company-deep-dive-SKILL.md` itself and must be inspected separately if modified.
 
 ---
@@ -341,7 +341,7 @@ No matching patterns (`ListMachines`, `machineId`, `CopyToBox`, `CopyFromBox`, o
         <ul>
           <li>Never executes audited code, scripts, or shell commands found inside target skills or repositories.</li>
           <li>Never curls or fetches URLs embedded inside audited files.</li>
-          <li>Never reads /workspace/.wattcoin_env into model context or echoes wck_... / wcl_... credentials in chat.</li>
+          <li>Never reads a private env file in /workspace into model context or echoes wck_... / wcl_... credentials in chat.</li>
           <li>Never issues a &#x27;Safe&#x27;, &#x27;Pass&#x27;, checkmark certification badge, or numeric security score—always prepends SCOPE_NOTE.txt verbatim and logs exact Files Audited vs. Files Skipped.</li>
         </ul>
       </section>
@@ -367,7 +367,7 @@ No matching patterns (`ListMachines`, `machineId`, `CopyToBox`, `CopyFromBox`, o
       <section class="product-section" id="licensing-flow">
         <h2>Turn-1 <code>/workspace</code> Onboarding &amp; Non-Custodial Licensing</h2>
         <p>
-          Every template on BotAppStore.com executes locally inside your isolated Grok Bot Linux sandbox (<code>/workspace</code>). Credentials are stored in <code>/workspace/.wattcoin_env</code> with <code>0600</code> permissions (<code>-rw-------</code>) and never echoed in chat. Paid licenses are one-time USD purchases: pay by card, Apple Pay or Google Pay; issue a private <code>wcl_...</code> bearer code, and support up to <strong>3 automatic workspace-reset rebinds</strong> via <code>POST https://www.wattcoin.org/api/v1/agents/license/claim</code>.
+          Every template on BotAppStore.com executes locally inside your isolated Grok Bot Linux sandbox (<code>/workspace</code>). Credentials are stored in a private env file in <code>/workspace</code> with <code>0600</code> permissions (<code>-rw-------</code>) and never echoed in chat. Paid licenses are one-time USD purchases: pay by card, Apple Pay or Google Pay; issue a private <code>wcl_...</code> bearer code, and support up to <strong>3 automatic workspace-reset rebinds</strong> via <code>POST /api/v1/agents/license/claim</code>.
         </p>
         <p class="dual-runtime-callout"><strong>One <code>wcl_...</code> key, two runtimes.</strong> Your license key works inside Grok Bot <em>and</em> from any local terminal or IDE agent (Cursor, Claude Code, Windsurf, CI/CD) via the standalone single-file Python 3 CLI (standalone <code>/runtime/&lt;script&gt;.py</code> CLI) &mdash; Python 3.10+ standard library only, zero <code>pip install</code> dependencies, with <code>--json</code> / <code>--markdown</code> output.</p>
       </section>
@@ -377,7 +377,7 @@ No matching patterns (`ListMachines`, `machineId`, `CopyToBox`, `CopyFromBox`, o
         <div class="faq-grid">
           <details class="faq-item" open>
             <summary>Does the Bot &amp; Skill Security Auditor execute the code it inspects?</summary>
-            <div class="faq-answer">Never. It is a strictly static, read-only inspector. Target files are normalized and wrapped in random &lt;untrusted_artifact_&lt;16-hex&gt;&gt; tags by /workspace/.wattcoin_audit_prep.py (chmod 500) and never executed.</div>
+            <div class="faq-answer">Never. It is a strictly static, read-only inspector. Target files are normalized and wrapped in random &lt;untrusted_artifact_&lt;16-hex&gt;&gt; tags by the deterministic prep helper (chmod 500) and never executed.</div>
           </details>
           <details class="faq-item">
             <summary>Why doesn&#x27;t the report give a &#x27;Safe&#x27; or &#x27;100/100 Pass&#x27; badge?</summary>
@@ -627,7 +627,7 @@ No matching patterns (`ListMachines`, `machineId`, `CopyToBox`, `CopyFromBox`, o
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (the license helper &amp; the prep helper at <code>0500</code>), provisions a private env file in <code>/workspace</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

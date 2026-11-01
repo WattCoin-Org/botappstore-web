@@ -311,7 +311,7 @@ SCOPE_NOTE: Primary SEC EDGAR filings only. Relationships are reported only wher
       <section class="product-section" id="licensing-flow">
         <h2>Turn-1 <code>/workspace</code> Onboarding &amp; Non-Custodial Licensing</h2>
         <p>
-          One-time $29 license with up to 3 workspace-reset rebinds, also included in the <a href="/#bundle-edgar-intelligence-pack">Institutional EDGAR Intelligence Pack</a> ($89) with the Company &amp; Competitor Deep-Dive Analyst and the SEC &amp; Patent Watchdog Digest. On Turn 1 the <code>sec-supply-chain-mapper-setup</code> skill installs the read-only license helper, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>) and binds your <code>wcl_...</code> license. The license code is never printed in chat.
+          One-time $29 license with up to 3 workspace-reset rebinds, also included in the <a href="/#bundle-edgar-intelligence-pack">Institutional EDGAR Intelligence Pack</a> ($89) with the Company &amp; Competitor Deep-Dive Analyst and the SEC &amp; Patent Watchdog Digest. On Turn 1 the <code>sec-supply-chain-mapper-setup</code> skill installs the read-only license helper, provisions a private env file in <code>/workspace</code> (<code>0600</code>) and binds your <code>wcl_...</code> license. The license code is never printed in chat.
         </p>
         <p class="dual-runtime-callout"><strong>One <code>wcl_...</code> key, two runtimes.</strong> Your license key works inside Grok Bot <em>and</em> from any local terminal or IDE agent (Cursor, Claude Code, Windsurf, CI/CD) via the standalone single-file Python 3 CLI (standalone <code>/runtime/&lt;script&gt;.py</code> CLI) &mdash; Python 3.10+ standard library only, zero <code>pip install</code> dependencies, with <code>--json</code> / <code>--markdown</code> output.</p>
       </section>
@@ -576,7 +576,7 @@ SCOPE_NOTE: Primary SEC EDGAR filings only. Relationships are reported only wher
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (the license helper &amp; the prep helper at <code>0500</code>), provisions a private env file in <code>/workspace</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

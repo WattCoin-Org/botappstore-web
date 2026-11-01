@@ -29,7 +29,7 @@ Refunds are available within 15 days of purchase. When a refund is issued, the l
 
 ### Which primary-source registries does the Company & Competitor Deep-Dive Analyst query?
 
-It queries official SEC EDGAR submissions (data.sec.gov/submissions/CIK.json), SEC EDGAR full-text search (efts.sec.gov/LATEST/search-index), USPTO PatentsView (search.patentsview.org), and authoritative RDAP domain registries (rdap.org) via the read-only /workspace/.wattcoin_dd_fetch.py helper.
+It queries official SEC EDGAR submissions (data.sec.gov/submissions/CIK.json), SEC EDGAR full-text search (efts.sec.gov/LATEST/search-index), USPTO PatentsView (search.patentsview.org), and authoritative RDAP domain registries (rdap.org) via the read-only the primary-source fetch helper helper.
 
 ### How many competitors can it compare in a single run?
 
