@@ -2617,3 +2617,24 @@ img, svg, video { max-width: 100%; height: auto; }
     font-size: 12px !important;
   }
 }
+
+/* Mobile CTA safeguard: header/bot-page buttons never clip their own text */
+@media (max-width: 680px) {
+  .nav-bar .btn,
+  .nav-bar a.btn,
+  .nav-bar button,
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 480px) {
+  .nav-cta-group { flex-direction: column; align-items: stretch; }
+  .nav-cta-group > .btn,
+  .nav-cta-group > button,
+  .nav-cta-group > a { flex: 0 0 auto; width: 100%; }
+}

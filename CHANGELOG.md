@@ -12,6 +12,7 @@ Approved by owner AIguy. Status: on branch `feat/mobile-optimization`, preview o
 - Type floor of 12px for small labels and badges on phones.
 - Buy and install buttons share one row, full width below 480px.
 - No HTML, JS, checkout logic, prices, SKUs, analytics, nav labels or links, sitemap, meta tags, catalog, llms files or `.md` twins were touched.
+- Follow-up: header and bot-page buttons can no longer clip their text at 360/390/414 px. Buy and install buttons now stack one per row (full width, at least 44px tall) at 480px and below, and button text wraps and centers instead of staying on one line at 680px and below. Verified on every page, including the checkout modal (0 clipped or out-of-viewport buttons, no horizontal overflow).
 
 ### Checks (local static server of the branch, 360/390/414 px)
 - scrollWidth equals the viewport width on every audited page (before: 619 px).
