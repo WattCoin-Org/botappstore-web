@@ -2,7 +2,7 @@
 
 ## 2026-11-01 — After You Buy strip on all 15 listing pages
 
-Approved by owner AIguy. Status: committed to main locally, not yet pushed or deployed. Page commit `39fa86d`.
+Approved by owner AIguy. Status: merged to main and live in production. Page commit `39fa86d`, changelog commit `2026dac`. Production deploy `dpl_FyRwhVf3m6os3foS8oH7g6z5W6yX` READY. Live check on botappstore.com (`company-deep-dive`, `mill-cert-matcher`, `agent-council`, `web-text-extractor`, `bot-skill-auditor`): the strip appears exactly once on each, with no crypto wording in it.
 
 ### Changes (`bots/*.html` only, 15 pages)
 - New "After You Buy" section directly above "Licensing & Setup" on 12 pages, and above "Checkout" on `fai-results-reconciler`, `mill-cert-matcher` and `rfq-flowdown-triage`, which have no Licensing section. Steps: check out, add the bot to the Grok Bot sidebar, run setup with the activation prompt, first report. Payment step reads "Pay by card, Apple Pay or Google Pay".
