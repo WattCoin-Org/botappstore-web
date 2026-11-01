@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-11-01 — After You Buy strip on all 15 listing pages
+
+Approved by owner AIguy. Status: committed to main locally, not yet pushed or deployed. Page commit `39fa86d`.
+
+### Changes (`bots/*.html` only, 15 pages)
+- New "After You Buy" section directly above "Licensing & Setup" on 12 pages, and above "Checkout" on `fai-results-reconciler`, `mill-cert-matcher` and `rfq-flowdown-triage`, which have no Licensing section. Steps: check out, add the bot to the Grok Bot sidebar, run setup with the activation prompt, first report. Payment step reads "Pay by card, Apple Pay or Google Pay".
+- Steps 3 and 4 are written per bot from its setup skill (runtime download vs read-only helpers). The agent-council first step lists the seats it can field and asks before convening a live council.
+- `web-text-extractor` is free, so it gets "After You Install": no checkout, no license code, 10 free text scrapes per UTC day.
+- Scoped `<style>` block using existing page variables. No JS, checkout logic, prices, SKUs, catalog, llms files or `.md` twins were touched (`build_markdown.py` does not read this section).
+
+### Checks
+- Playwright at 1280 and 390 px on all 15 pages (local server, external requests blocked): strip present once, directly before `#licensing-flow` or `#checkout`, strip does not overflow, text at least body size. The 1280 px header button overflow that already exists on the pages is unchanged.
+- Greps on the strip blocks: none of safe, guarantee, profit, human review, Stripe, MoonPay, or time units, and none of the terms `check_no_sol.py` rejects.
+- Checkout modal and mocked receipt on `company-deep-dive` and `print-farm-ops`: names, price and steps follow the clicked bot after `app.js` runs; no Auditor text.
+- Guards: check_analytics OK (19), check_catalog OK (15), check_nav OK (15), check_meta_tags OK, check_no_sol OK (50 files), build_markdown --check OK (20), pytest 34 passed, test_middleware passed.
+
+### Commit
+- 39fa86d (15 listing pages)
+
 ## 2026-10-31 — Brand sweep: leftover crypto wording removed
 
 Approved by owner AIguy. Status: merged to main and live. Commits: `2bf7409` (content + CSS cleanup), `5619f04` (check_no_sol strengthening + tests), merge `7db79e2`. Production deploy `dpl_JD2yCGyvMJE7X8c7ULgevY2SexmJ` READY. Rollback deploy (previous production, `75d64ff`): `dpl_DhsTX1zbVjZevgB3g3pcbAcumTJ6`.
