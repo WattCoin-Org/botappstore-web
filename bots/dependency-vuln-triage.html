@@ -281,6 +281,24 @@
         </div>
       </section>
 
+      <!-- after-you-buy:start -->
+      <section class="product-section after-buy" id="after-you-buy">
+        <style>
+          .after-buy-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+          .after-buy-steps li { margin: 0; padding: 14px 16px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-top: 3px solid var(--accent-emerald); border-radius: 8px; overflow-wrap: anywhere; font-size: 16px; }
+          .after-buy-num { display: block; font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--accent-cyan); }
+          .after-buy p.after-buy-note { margin: 12px 0 0; font-size: 16px; }
+        </style>
+        <h2>After You Buy</h2>
+        <ol class="after-buy-steps">
+          <li><span class="after-buy-num">1</span><strong>Check out.</strong> Pay by card, Apple Pay or Google Pay. The confirmation shows your template link and your license code.</li>
+          <li><span class="after-buy-num">2</span><strong>Add the bot.</strong> Open the template link to add it to your Grok Bot sidebar.</li>
+          <li><span class="after-buy-num">3</span><strong>Run setup.</strong> Paste the activation prompt from the confirmation as your first message. The bot sets up its agent key, binds your license code and installs its runtime.</li>
+          <li><span class="after-buy-num">4</span><strong>Get your first report.</strong> Give it a lockfile (package-lock.json, yarn.lock, poetry.lock, Cargo.lock, go.sum or a pinned requirements.txt). Advisories are sorted into four action buckets with fix versions.</li>
+        </ol>
+        <p class="after-buy-note">Your license code is private. The bot never prints it in chat.</p>
+      </section>
+      <!-- after-you-buy:end -->
       <section class="product-section" id="licensing-flow">
         <h2>Licensing &amp; Setup</h2>
         <p>One-time license, up to 3 workspace-reset rebinds. On Turn 1 the <code>dependency-vuln-triage-setup</code> skill verifies your agent key, binds your <code>wcl_...</code> code through the read-only license helper, and confirms the bot files are installed. The license code is never printed in chat.</p>

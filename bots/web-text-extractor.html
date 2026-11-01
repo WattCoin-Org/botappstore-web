@@ -274,6 +274,24 @@ Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s tim
         </ul>
       </section>
 
+      <!-- after-you-buy:start -->
+      <section class="product-section after-buy" id="after-you-buy">
+        <style>
+          .after-buy-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+          .after-buy-steps li { margin: 0; padding: 14px 16px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-top: 3px solid var(--accent-emerald); border-radius: 8px; overflow-wrap: anywhere; font-size: 16px; }
+          .after-buy-num { display: block; font-family: var(--font-mono); font-size: 15px; font-weight: 700; color: var(--accent-cyan); }
+          .after-buy p.after-buy-note { margin: 12px 0 0; font-size: 16px; }
+        </style>
+        <h2>After You Install</h2>
+        <ol class="after-buy-steps">
+          <li><span class="after-buy-num">1</span><strong>Install free.</strong> Use the install button above to open the free template in Grok Bot. There is no checkout and no license code.</li>
+          <li><span class="after-buy-num">2</span><strong>Add the bot.</strong> Open the template link to add it to your Grok Bot sidebar.</li>
+          <li><span class="after-buy-num">3</span><strong>First message.</strong> Send your first message. The bot asks what to call it (default scraper-bot), sets up its agent key, activates the free daily quota and runs one test scrape of example.com.</li>
+          <li><span class="after-buy-num">4</span><strong>Extract text.</strong> Give it a URL. The free quota is 10 text scrapes per UTC day.</li>
+        </ol>
+        <p class="after-buy-note">The agent key is saved in your workspace and is lost if the workspace resets. The bot never prints it in chat.</p>
+      </section>
+      <!-- after-you-buy:end -->
       <section class="product-section" id="licensing-flow">
         <h2>Turn-1 <code>/workspace</code> Onboarding &amp; Non-Custodial Licensing</h2>
         <p>
