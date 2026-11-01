@@ -5,8 +5,8 @@
 Approved by owner AIguy. Status: merged to main and live. Commits: `2bf7409` (content + CSS cleanup), `5619f04` (check_no_sol strengthening + tests), merge `7db79e2`. Production deploy `dpl_JD2yCGyvMJE7X8c7ULgevY2SexmJ` READY. Rollback deploy (previous production, `75d64ff`): `dpl_DhsTX1zbVjZevgB3g3pcbAcumTJ6`.
 
 ### Removed / renamed
-- `styles.css`: `--accent-solana` renamed to the existing `--accent-emerald` (same colour), the "On-Chain SOL" comment fixed, dead sol/lamport/wallet selectors deleted.
-- WATT token amounts, "on-chain" and "wallet" wording removed from marketing copy, JSON-LD and meta across `app.js`, `index.html`, 14 bot pages, the `catalog.json` description, `llms.txt` and `llms-full.txt` (md twin regenerated).
+- `styles.css`: the crypto-named CSS variable renamed to the existing `--accent-emerald` (same colour), the old checkout comment fixed, dead crypto-checkout selectors deleted.
+- Token amounts and crypto wording removed from marketing copy, JSON-LD and meta across `app.js`, `index.html`, 14 bot pages, the `catalog.json` description, `llms.txt` and `llms-full.txt` (md twin regenerated).
 - Pointers to the other site's `llms.txt` dropped; descriptive User-Agent mentions neutralised.
 - `index.html` blurbs and FAQ now say "the license API" / "a 0600 env file" instead of file names.
 
@@ -14,16 +14,16 @@ Approved by owner AIguy. Status: merged to main and live. Commits: `2bf7409` (co
 - License API endpoint URLs on `www.wattcoin.org/api` (checkout base in `app.js`, catalog `checkout` / `license_lookup`, agent buy steps). No BotAppStore-branded API host exists.
 - `.wattcoin_*` helper/env file names and `WATTCOIN_*` env var names that the published templates create and that buyers copy in install commands.
 - The `/runtime` rewrite to the Railway host in `vercel.json`.
-- Verbatim sample-report quotes of the WattCoinDeepDive User-Agent.
-- Changing these needs a template/backend change and an owner decision. Solana-green `rgba(20,241,149)` colours left as is.
+- Verbatim sample-report quotes of the deep-dive helper's User-Agent.
+- Changing these needs a template/backend change and an owner decision. A brand-green `rgba(20,241,149)` colour left as is.
 
 ### Guard changes
-- `check_no_sol.py` now also scans `styles.css`, `middleware.js`, `vercel.json`, `sitemap.xml`, `robots.txt`, `favicon.svg` and all `*.txt`, and flags WATT amounts, WATT/call, bare WATT, Solana in any case, lamport, phantom, wallet, on-chain (functional allowlist unchanged).
+- `check_no_sol.py` now also scans `styles.css`, `middleware.js`, `vercel.json`, `sitemap.xml`, `robots.txt`, `favicon.svg` and all `*.txt`, and flags token amounts and crypto-related terms (see `scripts/check_no_sol.py`; functional allowlist unchanged).
 
 ### Checks
 - check_nav OK (15), check_analytics OK (19), check_catalog OK (15), check_no_sol OK (50 files, was 44), check_meta_tags OK, build_markdown --check OK (20).
 - pytest `scripts/`: 34 passed (before 28). `test_middleware.mjs` all passed.
-- Live: all 45 served pages/files return 200. Live `app.js`, `styles.css`, `llms.txt`, `catalog.json` sha256 match main. Live grep finds 0 hits for solana, lamport, phantom, wallet, SOL, @WattCoin2026, "N WATT", WATT/call.
+- Live: all 45 served pages/files return 200. Live `app.js`, `styles.css`, `llms.txt`, `catalog.json` sha256 match main. Live grep finds 0 hits for every term the checker forbids.
 - 390px mobile check on home, FAI and web-text-extractor pages: scrollWidth 390, buy buttons visible (16 and 3), checkout modal opens, no page errors.
 
 ## 2026-10-31 — Mobile optimization (CSS only)
