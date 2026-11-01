@@ -1,5 +1,34 @@
 # Changelog
 
+## 2026-11-01 — Remove registry-brand file / env names from visible pages; tighten check_no_sol
+
+Approved by owner AIguy. Status: merged to main; production deploy verification pending.
+
+### Changes
+- Visible pages no longer show the helper / env file names, env var names, heredoc tag, descriptive User-Agent or descriptive license-API URLs: `app.js` (rendered strings), `index.html`, `bots/*.html`, `llms.txt`, `llms-full.txt`. `.md` twins regenerated with `build_markdown.py`.
+- Prose now says "the read-only license helper", "the prep helper", "the primary-source fetch helper", "a private env file in /workspace (chmod 600)", "your agent key", "the hosted text-extraction API (`POST /api/v1/scrape`)", or shows endpoint paths only. Chmod modes, SKUs, `wck_...` / `wcl_...` placeholders and endpoint paths are unchanged.
+- Sample reports and sample output (`bot-skill-auditor` sample audit, `company-deep-dive` sample dossier, `web-text-extractor` sample log and `curl`, the matching `llms-full.txt` samples, the "Step 0 License gate" sample lines and install-command blocks) use angle-bracket placeholders: `/workspace/<agent env file>`, `<license helper>`, `<fetch helper>`, `<prep helper>`, `<agent key env var>`, `<PatentsView key file>`, `<SEC UA file>`, heredoc tag `REQ_EOF`, `https://<license-api-host>/api/v1/scrape`, `<DeepDive UA>/1.0 (https://botappstore.com; <your contact email>)`. Findings and logic of the samples are unchanged.
+- `llms.txt` / `llms-full.txt` endpoint overview lines now point to the host named in the numbered buy steps instead of repeating the URL.
+- `scripts/check_no_sol.py`: the broad allowlist is gone. The brand substring (any case, so `.<brand>_*` file names and `<BRAND>_*` env vars too) now fails everywhere, including `<code>`, `<pre>`, fenced blocks and backticks. Exceptions are exact tokens on exact lines only (see docstring): `vercel.json` rewrite host; `catalog.json` `"url"` / `"license_lookup"` lines; `app.js` `REGISTRY_API_BASE =` line and `--claim-stdin` activation line; unindented numbered buy / claim steps in `llms*.txt`; the two generated checkout bullets in `bots/*.md`.
+- `scripts/test_check_no_sol.py`: new cases (visible file name in html fails, env var in a `pre` block fails, functional lines pass, same token on other lines / files fails). Four old allowlist tests were rewritten because that behaviour was removed on purpose.
+- Older entries below that named the retired identifiers were reworded so the stricter guard passes.
+
+### Kept on purpose (functional; changing them needs a backend change)
+- `vercel.json:5` `/runtime` rewrite destination (not visible).
+- `catalog.json:10` `checkout.card.url` and `:16` `license_lookup` (agents call them); `bots/*.md` lines 20-21 are generated from these.
+- `app.js:4` `REGISTRY_API_BASE` fetch base; `app.js:1713` activation command buyers paste after purchase (names the real helper file).
+- `llms.txt:57` and `llms-full.txt:439, 461, 464, 469`: numbered agent buy / claim steps.
+- `--printer-watts` (electrical watts CLI flag) untouched.
+
+### Checks
+- check_analytics OK (19), check_catalog OK (15), check_nav OK (15), check_meta_tags OK, check_no_sol OK (50 files), build_markdown --check OK (20), pytest 38 passed (was 34), test_middleware passed. JSON-LD parses on all pages; `node --check app.js` OK.
+
+- Rollout QA re-run: Playwright 54 renders at 1280/390, 0 failing; strip greps 0 new hits; whole-page crypto-ticker / registry-brand hits on `bots/*.html` 14 -> 0; 28 "human review" hits untouched (out of scope).
+
+### Commit
+- `e695541` content (pages, llms files, md twins, `check_no_sol.py` + tests)
+- changelog itself lands in a follow-up commit
+
 ## 2026-11-01 — After You Buy strip on all 15 listing pages
 
 Approved by owner AIguy. Status: merged to main and live in production. Page commit `39fa86d`, changelog commit `2026dac`. Production deploy `dpl_FyRwhVf3m6os3foS8oH7g6z5W6yX` READY. Live check on botappstore.com (`company-deep-dive`, `mill-cert-matcher`, `agent-council`, `web-text-extractor`, `bot-skill-auditor`): the strip appears exactly once on each, with no crypto wording in it.
@@ -30,8 +59,8 @@ Approved by owner AIguy. Status: merged to main and live. Commits: `2bf7409` (co
 - `index.html` blurbs and FAQ now say "the license API" / "a 0600 env file" instead of file names.
 
 ### Kept on purpose (functional)
-- License API endpoint URLs on `www.wattcoin.org/api` (checkout base in `app.js`, catalog `checkout` / `license_lookup`, agent buy steps). No BotAppStore-branded API host exists.
-- `.wattcoin_*` helper/env file names and `WATTCOIN_*` env var names that the published templates create and that buyers copy in install commands.
+- License API endpoint URLs on the hosted license API host (checkout base in `app.js`, catalog `checkout` / `license_lookup`, agent buy steps). No BotAppStore-branded API host exists.
+- Helper / env file names and env var names that the published templates create and that buyers copy in install commands (superseded 2026-11-01: now kept only in the activation command).
 - The `/runtime` rewrite to the Railway host in `vercel.json`.
 - Verbatim sample-report quotes of the deep-dive helper's User-Agent.
 - Changing these needs a template/backend change and an owner decision. A brand-green `rgba(20,241,149)` colour left as is.
