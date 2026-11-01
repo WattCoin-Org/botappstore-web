@@ -2459,3 +2459,161 @@ code, pre, .mono {
 .checkout-stripe-btn.checkout-stripe-btn-pending { opacity: 0.85; }
 .checkout-stripe-subtext { margin-top: 8px; margin-bottom: 0; }
 #checkout-stripe-feedback { margin-top: 10px; }
+
+/* ==========================================================================
+   Mobile optimization (360-414px phones). Layout only.
+   ========================================================================== */
+img, svg, video { max-width: 100%; height: auto; }
+
+@media (max-width: 680px) {
+  /* Overflow root causes */
+  .status-cluster,
+  .ticker-links { min-width: 0; max-width: 100%; flex-wrap: wrap; gap: 6px 14px; }
+  .status-cluster > span,
+  .ticker-links a { white-space: normal; flex-shrink: 1; min-width: 0; overflow-wrap: anywhere; }
+  .featured-launch-card,
+  .featured-grid,
+  .featured-info,
+  .featured-header-row,
+  .arch-grid,
+  .arch-card,
+  .nav-cta-group { min-width: 0; max-width: 100%; }
+  .featured-header-row,
+  .nav-cta-group,
+  .featured-cta-row { flex-wrap: wrap; }
+  .featured-grid,
+  .arch-grid { grid-template-columns: minmax(0, 1fr); }
+  .nav-bar > * { min-width: 0; max-width: 100%; }
+  .nav-cta-group { width: 100%; }
+  .nav-cta-group > .btn,
+  .nav-cta-group > button,
+  .nav-cta-group > a { flex: 1 1 0; justify-content: center; text-align: center; }
+  code { overflow-wrap: anywhere; }
+  pre,
+  .arch-code-snippet,
+  .terminal-body { max-width: 100%; overflow-x: auto; }
+  table { display: block; max-width: 100%; overflow-x: auto; }
+  p, li, h1, h2, h3, h4 { overflow-wrap: break-word; }
+
+  /* Tap targets */
+  .btn,
+  .filter-pill,
+  .mini-copy-btn,
+  .modal-close-btn,
+  .nav-dropdown-trigger,
+  .nav-dropdown .nav-dropdown-item,
+  .nav-dropdown .nav-dropdown-footer {
+    min-height: 44px;
+  }
+  .btn,
+  .filter-pill,
+  .mini-copy-btn,
+  .modal-close-btn { min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+  .nav-links a,
+  .ticker-links a,
+  .nav-dropdown-trigger,
+  .nav-dropdown .nav-dropdown-item,
+  .nav-dropdown .nav-dropdown-footer,
+  .footer-links a,
+  .site-footer a,
+  .brand,
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .nav-links { gap: 0 8px; }
+
+  .faq-grid { grid-template-columns: minmax(0, 1fr); }
+  .faq-item, .faq-item summary, .faq-answer { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+  .term-tab, .terminal-tab, button.term-tab { min-height: 44px; }
+  .nav-links a, .footer-links a { min-width: 44px; justify-content: center; }
+  .card-title a, .spec-highlights a { display: inline-flex; align-items: center; min-height: 44px; }
+  #checkout-modal input, #checkout-modal select { min-height: 44px; }
+  footer a { display: inline-flex; align-items: center; min-height: 44px; }
+  footer a[href="#faq"] { min-width: 44px; justify-content: center; }
+  .brand-logo { display: inline-flex; align-items: center; min-height: 44px; }
+
+  /* Inputs: avoid iOS focus-zoom */
+  input, select, textarea { font-size: 16px; }
+
+  /* Checkout modal */
+  .modal-backdrop { padding: 8px; overflow-y: auto; align-items: flex-start; }
+  .modal-panel,
+  .checkout-modal-panel {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100dvh - 16px);
+    overscroll-behavior: contain;
+  }
+  .modal-header { padding: 14px 16px; }
+  .modal-body,
+  .checkout-modal-body { padding: 14px 16px 16px; }
+  .modal-footer { padding: 12px 16px; }
+  .modal-footer .btn,
+  .modal-footer button,
+  .checkout-copy-box .btn,
+  .checkout-copy-box button,
+  .checkout-wallet-actions .btn,
+  .checkout-wallet-actions button,
+  #checkout-modal .btn-primary { flex: 1 1 100%; width: 100%; }
+  #checkout-modal { overflow-wrap: anywhere; }
+  #checkout-modal *, #checkout-modal *::before { min-width: 0; max-width: 100%; }
+  #checkout-modal code,
+  #checkout-modal .checkout-copy-box,
+  #checkout-modal .checkout-quote-grid { overflow-wrap: anywhere; word-break: break-word; }
+  .checkout-quote-grid { grid-template-columns: minmax(0, 1fr); }
+
+  /* Type floor */
+  .status-cluster,
+  .ticker-links,
+  .badge,
+  small,
+  .brand-tag,
+  .checkout-field-help,
+  .checkout-field-label { font-size: max(12px, 1em); }
+}
+
+@media (max-width: 480px) {
+  .nav-cta-group > * { flex: 1 1 100%; }
+  .container, .wrap, main, .nav-bar { padding-left: max(14px, env(safe-area-inset-left)); padding-right: max(14px, env(safe-area-inset-right)); }
+}
+
+/* Phone type floor: nothing below 12px */
+@media (max-width: 680px) {
+  .top-ticker,
+  .brand-tag,
+  .badge-phase2,
+  .badge-live,
+  .price-badge-usd span,
+  .term-tab,
+  .step-box-header,
+  .mini-copy-btn,
+  .code-block,
+  .terminal-footer-bar,
+  .filter-count,
+  .phase-badge,
+  .skill-slug,
+  .card-price small,
+  .spec-highlights code,
+  .guardrail-strip,
+  .arch-step-num,
+  .arch-code-snippet,
+  .hw-tag,
+  .saved-license-info span,
+  .checkout-step-header,
+  .quote-label,
+  .quote-sub,
+  .checkout-field-label,
+  .lamports-sub,
+  .receipt-meta,
+  .nav-dropdown-label,
+  .nav-dropdown-tag,
+  .nav-dropdown-badge,
+  .bundle-savings-badge,
+  .checkout-stripe-badge {
+    font-size: 12px !important;
+  }
+}
