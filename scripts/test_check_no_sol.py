@@ -66,6 +66,70 @@ class CheckNoSol(unittest.TestCase):
             (root / "llms.txt").write_text("WattCoin")
             self.assertEqual(main(["x", d]), 1)
 
+    def test_strict_violations(self):
+        cases = [
+            ("<p>completes the 100 WATT starter</p>", "WATT amount"),
+            ("<p>+25 WATT</p>", "WATT amount"),
+            ("<p>costs 1,000 WATT</p>", "WATT amount"),
+            ("<p>100 WATT/call</p>", "WATT amount"),
+            ("<p>paid per WATT/call</p>", "WATT/call"),
+            ("<p>never spends WATT</p>", "WATT token"),
+            ("<p>Phantom wallet</p>", "phantom"),
+            ("<p>seed wallet</p>", "wallet"),
+            ("<p>checkout-wallet-actions</p>", "wallet"),
+            ("<p>On-Chain Modes</p>", "on-chain"),
+            ("<p>on chain</p>", "on-chain"),
+            ("<p>.lamports-sub</p>", "lamport"),
+            ("color: var(--accent-solana);", "Solana"),
+        ]
+        for text, label in cases:
+            self.assertEqual([l for _, l, _ in check_text(text)], [label], text)
+
+    def test_sol_identifier_only_in_code_kinds(self):
+        css = ".sol-unit { color: red; }"
+        self.assertEqual([l for _, l, _ in check_text(css, code=True)], ["sol identifier"])
+        self.assertEqual(check_text(css), [])
+        self.assertEqual(check_text(".solid-box, .console, .isolated {}", code=True), [])
+
+    def test_strict_rules_see_inside_code_and_pre(self):
+        self.assertEqual([l for _, l, _ in check_text("<pre>+25 WATT</pre>")], ["WATT amount"])
+        self.assertEqual([l for _, l, _ in check_text("`+25 WATT`", markdown=True)], ["WATT amount"])
+        self.assertEqual([l for _, l, _ in check_text("<code>wallet</code>")], ["wallet"])
+
+    def test_strict_no_false_positives(self):
+        ok = (
+            "solid solution console absolute isolated resolve consolidated wattage "
+            "kilowatt Watt watchdog sec-patent-watchdog phantom dependency onchain-free $WATT "
+            "Console and solid SOLID Solid"
+        )
+        self.assertEqual(check_text(ok), [])
+        self.assertEqual(check_text(ok, code=True), [])
+
+    def test_allowlist_still_passes_under_strict(self):
+        ok = (
+            ".wattcoin_license_check.py WATTCOIN_AGENT_KEY wattcoin.org/api/v1/scrape "
+            "wattcoin-production-81a7.up.railway.app "
+            "`User-Agent: WattCoinDeepDive/1.0 (https://botappstore.com; contact@wattcoin.org)`"
+        )
+        self.assertEqual(check_text(ok, markdown=True), [])
+
+    def test_main_covers_css_vercel_and_middleware(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "vercel.json").write_text(
+                '{"rewrites":[{"destination":"https://wattcoin-production-81a7.up.railway.app/x"}]}'
+            )
+            (root / "styles.css").write_text("a { color: var(--accent-emerald); }")
+            self.assertEqual(main(["x", d]), 0)
+            (root / "styles.css").write_text("a { color: var(--accent-solana); }")
+            self.assertEqual(main(["x", d]), 1)
+            (root / "styles.css").write_text("a {}")
+            (root / "middleware.js").write_text("// wallet\n")
+            self.assertEqual(main(["x", d]), 1)
+            (root / "middleware.js").write_text("// ok\n")
+            (root / "robots.txt").write_text("Allow: / 100 WATT")
+            self.assertEqual(main(["x", d]), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

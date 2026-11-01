@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
-"""Fail if visible or crawler-visible text mentions SOL, Solana or WattCoin.
+"""Fail if served text carries the retired token / crypto-payment wording.
 
-Scanned: *.html, *.md (root and bots/), llms*.txt, catalog.json, app.js.
-Before matching, <code>...</code> and <pre>...</pre> contents (and, in .md / .txt,
+Scanned: *.html, *.md (root and bots/), *.txt, catalog.json, app.js, styles.css,
+middleware.js, vercel.json, sitemap.xml, favicon.svg (scripts/ is not scanned: the
+tests quote the forbidden words on purpose).
+
+Brand rules. Before matching, <code>...</code> and <pre>...</pre> contents (and, in .md / .txt,
 fenced blocks and `inline spans`) are blanked and a
 short allowlist of functional identifiers is removed: `.wattcoin_*` runtime file
 names, `WATTCOIN_*` environment variable names, `wattcoin.org/api` URLs, the
 `wattcoin-production-*` Railway host and `wattcoin.workers.dev`.
 Forbidden: the case-sensitive word SOL, the word Solana, the substring WattCoin
 (case-insensitive brand) and the handle @WattCoin2026.
+
+Strict rules run on the text with only the allowlist removed (code / pre / backtick
+spans are NOT blanked, so sample output is checked too): WATT amounts ("100 WATT",
+"+25 WATT"), "WATT/call", the bare token WATT (case-sensitive), Solana in any case
+(also CSS names such as --accent-solana), lamport, wallet, on-chain, phantom (but
+"phantom dependency" is fine) and, in code files only (.css .js .json .xml .svg), a
+standalone lowercase/uppercase `sol` identifier such as `.sol-unit`.
 
 Usage: check_no_sol.py [root_dir]   (default: repo root)
 Exit 1 on any violation (file:line listed), 0 otherwise.
@@ -30,6 +40,18 @@ ALLOW = re.compile(
     r"|(?-i:\bWATTCOIN_[A-Z0-9_]+\b)",
     re.IGNORECASE,
 )
+CODE_KINDS = {".css", ".js", ".json", ".xml", ".svg"}
+STRICT = [
+    ("WATT amount", re.compile(r"(?<![\w$])\+?\d[\d,]*\s*WATT\b")),
+    ("WATT/call", re.compile(r"\bWATT\s*/")),
+    ("WATT token", re.compile(r"(?<![\w$])WATT\b")),
+    ("Solana", re.compile(r"solana", re.IGNORECASE)),
+    ("lamport", re.compile(r"lamport", re.IGNORECASE)),
+    ("phantom", re.compile(r"\bphantom\b(?!\s+dependenc)", re.IGNORECASE)),
+    ("wallet", re.compile(r"wallet", re.IGNORECASE)),
+    ("on-chain", re.compile(r"\bon[- ]chain\b", re.IGNORECASE)),
+]
+SOL_IDENT = ("sol identifier", re.compile(r"(?<![A-Za-z0-9])sol(?![A-Za-z0-9])", re.IGNORECASE))
 FORBIDDEN = [
     ("SOL", re.compile(r"\bSOL\b")),
     ("Solana", re.compile(r"\bSolana\b")),
@@ -43,30 +65,46 @@ def _blank(m):
     return re.sub(r"[^\n]", " ", m.group(0))
 
 
-def check_text(text, markdown=False):
+def check_text(text, markdown=False, code=False):
     """Return [(line, label, excerpt)] for each forbidden term outside the allowlist.
 
-    markdown=True (for .md / .txt) also treats fenced blocks and `inline spans` as code.
+    markdown=True (for .md / .txt) also treats fenced blocks and `inline spans` as code
+    for the brand rules. code=True (.css .js .json .xml .svg) adds the `sol` identifier rule.
     """
+    strict_text = ALLOW.sub(_blank, text)
     text = BLOCK.sub(_blank, text)
     if markdown:
         text = SPAN.sub(_blank, FENCE.sub(_blank, text))
     text = ALLOW.sub(_blank, text)
+    strict_rules = STRICT + [SOL_IDENT] if code else STRICT
+    brand = text.splitlines()
+    strict = strict_text.splitlines()
     found = []
-    for n, line in enumerate(text.splitlines(), 1):
+    for n in range(1, len(strict) + 1):
+        hit = None
         for label, rx in FORBIDDEN:
-            m = rx.search(line)
+            m = rx.search(brand[n - 1]) if n <= len(brand) else None
             if m:
-                found.append((n, label, line[max(0, m.start() - 30):m.end() + 30].strip()))
+                hit = (label, brand[n - 1], m)
                 break
+        if hit is None:
+            for label, rx in strict_rules:
+                m = rx.search(strict[n - 1])
+                if m:
+                    hit = (label, strict[n - 1], m)
+                    break
+        if hit:
+            label, line, m = hit
+            found.append((n, label, line[max(0, m.start() - 30):m.end() + 30].strip()))
     return found
 
 
 def targets(root):
     files = set()
-    for pat in ("*.html", "*.md", "llms*.txt", "catalog.json", "app.js"):
+    for pat in ("*.html", "*.md", "*.txt", "catalog.json", "app.js", "styles.css",
+                "middleware.js", "vercel.json", "sitemap.xml", "favicon.svg"):
         files.update(root.rglob(pat))
-    return sorted(p for p in files if not SKIP_DIRS & set(p.relative_to(root).parts))
+    return sorted(p for p in files if not (SKIP_DIRS | {"scripts"}) & set(p.relative_to(root).parts))
 
 
 def main(argv):
@@ -74,13 +112,15 @@ def main(argv):
     files = targets(root)
     bad = 0
     for p in files:
-        for n, label, excerpt in check_text(p.read_text(encoding="utf-8"), p.suffix in (".md", ".txt")):
+        for n, label, excerpt in check_text(
+            p.read_text(encoding="utf-8"), p.suffix in (".md", ".txt"), p.suffix in CODE_KINDS
+        ):
             bad += 1
             print(f"FAIL: {p.relative_to(root)}:{n}: {label}: ...{excerpt}...")
     if bad:
         print(f"{bad} violation(s) in {len(files)} files")
         return 1
-    print(f"OK: no SOL / Solana / WattCoin wording in {len(files)} files")
+    print(f"OK: no SOL / Solana / WattCoin / WATT / wallet wording in {len(files)} files")
     return 0
 
 
