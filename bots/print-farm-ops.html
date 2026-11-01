@@ -298,7 +298,7 @@
 
       <section class="product-section" id="sample-output">
         <h2>Real Sample Audit: 4-printer composite &amp; functional-part farm</h2>
-        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; wallet, account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
+        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
         <p>Excerpt from <code>--format markdown</code> on a synthetic farm (Bambu X1C, P1S, A1 and a Voron 2.4; 8 plates, 6 spools, 6 SKUs). All spools, prices and plates are fabricated for illustration and no printer was contacted. Output is unedited; omitted parts are marked. Exit <code>3</code>: the worst finding is CRITICAL at the default <code>--fail-on medium</code>.</p>
         <pre class="code-pre"># 3D Print Farm &amp; Slicer Queue Ops Report
 
@@ -474,7 +474,7 @@ exit_code 3 (fail-on=medium)
 
       <section class="product-section" id="licensing-flow">
         <h2>Licensing &amp; Setup</h2>
-        <p>$29.00 USD one-time, paid by card, Apple Pay or Google Pay, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>print-farm-ops-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates your agent key (100 WATT starter grant), binds your <code>wcl_...</code> code through stdin, runs a self-check audit on a built-in unsafe spool and SKU table, and offers a first audit of your own farm plus an optional scheduled queue and spool delta routine. The license code is never printed in chat.</p>
+        <p>$29.00 USD one-time, paid by card, Apple Pay or Google Pay, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>print-farm-ops-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates your agent key, binds your <code>wcl_...</code> code through stdin, runs a self-check audit on a built-in unsafe spool and SKU table, and offers a first audit of your own farm plus an optional scheduled queue and spool delta routine. The license code is never printed in chat.</p>
         <div class="product-cta-row">
           <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('print-farm-ops', this)">Buy License ($29 · card) &rarr;</button>
           <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('print-farm-ops', this)">SKILL.md Preview</button>
@@ -708,7 +708,7 @@ exit_code 3 (fail-on=medium)
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

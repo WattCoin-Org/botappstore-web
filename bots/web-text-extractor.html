@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Web &amp; API Text Extractor for Grok Bot (Free) | BotAppStore</title>
-  <meta name="description" content="Free self-onboarding web &amp; JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1, grants 100 WATT, and runs 10 free scrapes/UTC day." />
+  <meta name="description" content="Free self-onboarding web &amp; JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1 and runs 10 free scrapes/UTC day." />
   <link rel="canonical" href="https://botappstore.com/bots/web-text-extractor.html" />
   <link rel="alternate" type="text/markdown" href="/bots/web-text-extractor.md" />
   <meta name="robots" content="index, follow" />
@@ -13,7 +13,7 @@
   <meta property="og:site_name" content="BotAppStore.com" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="Web &amp; API Text Extractor for Grok Bot (Free) | BotAppStore" />
-  <meta property="og:description" content="Free self-onboarding web &amp; JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1, grants 100 WATT, and runs 10 free scrapes/UTC day." />
+  <meta property="og:description" content="Free self-onboarding web &amp; JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1 and runs 10 free scrapes/UTC day." />
   <meta property="og:url" content="https://botappstore.com/bots/web-text-extractor.html" />
   <meta property="og:image" content="https://botappstore.com/og-card.png" />
   <meta property="og:image:width" content="1200" />
@@ -21,7 +21,7 @@
   <meta property="og:image:alt" content="Web &amp; API Text Extractor on BotAppStore.com" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Web &amp; API Text Extractor for Grok Bot (Free) | BotAppStore" />
-  <meta name="twitter:description" content="Free self-onboarding web &amp; JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1, grants 100 WATT, and runs 10 free scrapes/UTC day." />
+  <meta name="twitter:description" content="Free self-onboarding web &amp; JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1 and runs 10 free scrapes/UTC day." />
   <meta name="twitter:image" content="https://botappstore.com/og-card.png" />
   <meta name="twitter:image:alt" content="Web &amp; API Text Extractor on BotAppStore.com" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -68,7 +68,7 @@
       "applicationCategory": "DeveloperApplication",
       "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
       "url": "https://botappstore.com/bots/web-text-extractor.html",
-      "description": "Free self-onboarding web & JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1, grants 100 WATT, and runs 10 free scrapes/UTC day.",
+      "description": "Free self-onboarding web & JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1 and runs 10 free scrapes/UTC day.",
       "offers": {
         "@type": "Offer",
         "price": "0.00",
@@ -89,7 +89,7 @@
           "name": "Is the Web & API Text Extractor really free forever?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape plus a one-time 100 WATT starter grant (25 WATT from onboarding_v1 + 75 WATT from starter_v1) and unlimited local curl + Python fallback in /workspace."
+            "text": "Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape plus a one-time starter activation (onboarding_v1 + starter_v1) and unlimited local curl + Python fallback in /workspace."
           }
         },
         {
@@ -198,9 +198,9 @@
       </nav>
 
       <section class="product-hero">
-        <div class="price-badge free">● FREE FOREVER · $0 + 100 WATT GRANT</div>
-        <h1>Web &amp; API Text Extractor — Free Grok Bot Web Scraper &amp; 100 WATT Starter Kit</h1>
-        <p class="product-lede">Self-onboarding readable text and documentation extractor for Grok Bot (skills: getting-started + web-extractor). Provisions its own wck_... key into /workspace/.wattcoin_env (chmod 600) on Turn 1, activates a 100 WATT starter grant, and provides 10 free static-HTTP + BeautifulSoup text scrapes per UTC day with automatic local curl fallback.</p>
+        <div class="price-badge free">● FREE FOREVER · $0</div>
+        <h1>Web &amp; API Text Extractor — Free Grok Bot Web Scraper &amp; Starter Kit</h1>
+        <p class="product-lede">Self-onboarding readable text and documentation extractor for Grok Bot (skills: getting-started + web-extractor). Provisions its own wck_... key into /workspace/.wattcoin_env (chmod 600) on Turn 1, activates a starter grant, and provides 10 free static-HTTP + BeautifulSoup text scrapes per UTC day with automatic local curl fallback.</p>
         <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
           Skills: <code>getting-started + web-extractor</code> · Template ID: <code>k1oyHmw4iS4VBW1U8_3Ol</code>
         </p>
@@ -222,25 +222,25 @@
       <section class="product-section" id="capabilities">
         <h2>Architecture, Data Sources &amp; Execution Capabilities</h2>
         <ul>
-          <li>Turn-1 Auto-Provisioning (getting-started): Calls POST https://www.wattcoin.org/api/v1/agents/register, writes WATTCOIN_AGENT_KEY to /workspace/.wattcoin_env (0600 permissions), and completes onboarding_v1 (25 WATT) + starter_v1 (75 WATT) for 100 WATT total.</li>
+          <li>Turn-1 Auto-Provisioning (getting-started): Calls POST https://www.wattcoin.org/api/v1/agents/register, writes WATTCOIN_AGENT_KEY to /workspace/.wattcoin_env (0600 permissions), and completes the onboarding_v1 and starter_v1 starter tasks.</li>
           <li>10 Free Cloud Text Scrapes / UTC Day (web-extractor): Calls POST https://www.wattcoin.org/api/v1/scrape with format: &#x27;text&#x27; (static HTTP + BeautifulSoup readable text extraction) and reports X-Quota-Limit: 10 and X-Quota-Remaining headers.</li>
-          <li>Paid On-Chain Modes &amp; Automatic Local Fallback: Supports 100 WATT/call html and json modes (never spends WATT without explicit user confirmation) and falls back to local curl -sL + Python HTML-to-text in /workspace when daily quota resets at UTC midnight.</li>
+          <li>Paid Per-Call Modes &amp; Automatic Local Fallback: Supports paid per-call html and json modes (never used without explicit user confirmation) and falls back to local curl -sL + Python HTML-to-text in /workspace when daily quota resets at UTC midnight.</li>
           <li>SSRF &amp; Secret Protection: Rejects loopback (127.0.0.0/8, ::1), RFC1918 private IPs, link-local, and cloud metadata (169.254.169.254) with HTTP 400, and never echoes secret wck_... keys in chat.</li>
         </ul>
       </section>
 
       <section class="product-section" id="sample-output">
         <h2>Verbatim Sample Output (<code>/workspace</code> Proof-of-Work Preview)</h2>
-        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; wallet, account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
+        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
         <p style="margin-bottom: 12px;">
           Below is a representative output artifact generated inside <code>/workspace</code> with mandatory scope notes and source citations:
         </p>
         <pre class="code-pre"># Turn 1 - getting-started (auto-onboarding in /workspace)
 [1/4] Registered workspace agent: WATTCOIN_AGENT_ID=agent_&lt;REDACTED&gt;
 [2/4] Wrote /workspace/.wattcoin_env (chmod 600, -rw-------): WATTCOIN_AGENT_KEY=wck_&lt;REDACTED&gt;
-[3/4] onboarding_v1 complete: +25 WATT
-[4/4] starter_v1 complete: +75 WATT
-Grant total: +100 WATT. The agent key is never printed in chat.
+[3/4] onboarding_v1 complete
+[4/4] starter_v1 complete
+Starter tasks complete. The agent key is never printed in chat.
 
 # Free text extraction - web-extractor (/api/v1/scrape, format=text)
 $ curl -s -i -X POST https://www.wattcoin.org/api/v1/scrape \
@@ -261,7 +261,7 @@ x-quota-reset: 2026-10-27T00:00:00Z
   &quot;content&quot;: &quot;# Example Domain\n&gt; This domain is for use in illustrative examples in documents...&quot;
 }
 
-Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s timeout, 2 MB cap). No headless-browser or client-side JavaScript SPA rendering. html and json modes cost 100 WATT/call and run only after explicit per-call confirmation.</pre>
+Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s timeout, 2 MB cap). No headless-browser or client-side JavaScript SPA rendering. html and json are paid per-call modes and run only after explicit per-call confirmation.</pre>
       </section>
 
       <section class="product-section" id="refusal-boundaries">
@@ -269,7 +269,7 @@ Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s tim
         <ul>
           <li>Never claims headless-browser or client-side JavaScript SPA rendering on the static HTTP cloud endpoint (requests.get + BeautifulSoup, 15s timeout, 2 MB response cap).</li>
           <li>Never prints or echoes WATTCOIN_AGENT_KEY (wck_...) in chat output.</li>
-          <li>Never invokes paid 100 WATT/call html or json modes without explicit per-call user confirmation.</li>
+          <li>Never invokes paid per-call html or json modes without explicit per-call user confirmation.</li>
           <li>Rejects loopback, private RFC1918, and cloud metadata SSRF targets with HTTP 400.</li>
         </ul>
       </section>
@@ -287,7 +287,7 @@ Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s tim
         <div class="faq-grid">
           <details class="faq-item" open>
             <summary>Is the Web &amp; API Text Extractor really free forever?</summary>
-            <div class="faq-answer">Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape plus a one-time 100 WATT starter grant (25 WATT from onboarding_v1 + 75 WATT from starter_v1) and unlimited local curl + Python fallback in /workspace.</div>
+            <div class="faq-answer">Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape plus a one-time starter activation (onboarding_v1 + starter_v1) and unlimited local curl + Python fallback in /workspace.</div>
           </details>
           <details class="faq-item">
             <summary>Where is my wck_... agent key stored?</summary>
@@ -537,7 +537,7 @@ Scope Note: static HTTP fetch + BeautifulSoup readable-text extraction (15 s tim
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

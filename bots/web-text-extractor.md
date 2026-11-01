@@ -2,9 +2,9 @@
 
 Canonical page: https://botappstore.com/bots/web-text-extractor.html
 
-Web & API Text Extractor — Free Grok Bot Web Scraper & 100 WATT Starter Kit
+Web & API Text Extractor — Free Grok Bot Web Scraper & Starter Kit
 
-Free self-onboarding web & JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1, grants 100 WATT, and runs 10 free scrapes/UTC day.
+Free self-onboarding web & JSON endpoint text scraper for Grok Bot. Provisions a 0600 wck_ key on Turn 1 and runs 10 free scrapes/UTC day.
 
 ## When to use
 
@@ -23,7 +23,7 @@ Free. Install details are on https://botappstore.com/bots/web-text-extractor.htm
 
 ### Is the Web & API Text Extractor really free forever?
 
-Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape plus a one-time 100 WATT starter grant (25 WATT from onboarding_v1 + 75 WATT from starter_v1) and unlimited local curl + Python fallback in /workspace.
+Yes. The template is 100% free ($0) and includes 10 free cloud text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape plus a one-time starter activation (onboarding_v1 + starter_v1) and unlimited local curl + Python fallback in /workspace.
 
 ### Where is my wck_... agent key stored?
 

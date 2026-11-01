@@ -82,7 +82,7 @@
             "operatingSystem": "Grok Bot Linux Sandbox (/workspace)",
             "url": "https://botappstore.com/bots/web-text-extractor.html",
             "installUrl": "https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol",
-            "description": "Free self-onboarding web & documentation text extractor for Grok Bot with 10 cloud extractions/UTC day, 100 WATT starter grant, and local curl fallback.",
+            "description": "Free self-onboarding web & documentation text extractor for Grok Bot with 10 cloud extractions/UTC day, and local curl fallback.",
             "offers": {
               "@type": "Offer",
               "price": "0",
@@ -613,7 +613,7 @@
           "name": "Where do BotAppStore skills execute, and do they ever touch my private keys?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "All templates execute locally inside your isolated Grok Bot Linux container (/workspace). API keys and license credentials are saved in /workspace/.wattcoin_env with chmod 600 permissions (-rw-------) and are never echoed in chat or sent to third-party servers. BotAppStore never asks for wallet seed phrases or private keys."
+            "text": "All templates execute locally inside your isolated Grok Bot Linux container (/workspace). API keys and license credentials are saved in a 0600 env file in /workspace with chmod 600 permissions (-rw-------) and are never echoed in chat or sent to third-party servers. BotAppStore never asks for seed phrases or private keys."
           }
         },
         {
@@ -621,7 +621,7 @@
           "name": "How do wcl_... license claiming and the 3 workspace-reset rebinds work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "On Turn 1, the setup skill registers or loads your /workspace/.wattcoin_env agent key (wck_...) and calls POST https://www.wattcoin.org/api/v1/agents/license/claim to bind your wcl_... license code. Each license includes up to 3 automatic workspace-reset rebinds so you can re-claim your license if your Grok Bot /workspace container is ever reset."
+            "text": "On Turn 1, the setup skill registers or loads your agent key (wck_...) from a 0600 env file in /workspace and calls the license API to bind your wcl_... license code. Each license includes up to 3 automatic workspace-reset rebinds so you can re-claim your license if your Grok Bot /workspace container is ever reset."
           }
         },
         {
@@ -637,7 +637,7 @@
           "name": "How does the free Web & API Text Extractor work?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The Web & API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 (25 WATT) + starter_v1 (75 WATT) for a 100 WATT starter grant, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape with automatic local curl + Python fallback in /workspace."
+            "text": "The Web & API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 + starter_v1, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape with automatic local curl + Python fallback in /workspace."
           }
         },
         {
@@ -813,7 +813,7 @@
                     </li>
                     <li>
                       <span class="cap-bullet">03</span>
-                      <span><strong>5-Entity Competitor Matrix &amp; Hardened Fetch Helper:</strong> Compares 1 primary company + up to 4 competitors via <code>.wattcoin_dd_fetch.py</code> (<code>0500</code>, DNS-pinned SSRF guardrails, <code>&lt;= 5 req/s</code>, 40-doc / 200 KB caps, and random 128-bit <code>&lt;untrusted_data_&lt;32-hex&gt;&gt;</code> tags).</span>
+                      <span><strong>5-Entity Competitor Matrix &amp; Hardened Fetch Helper:</strong> Compares 1 primary company + up to 4 competitors via the read-only primary-source fetch helper (<code>0500</code>, DNS-pinned SSRF guardrails, <code>&lt;= 5 req/s</code>, 40-doc / 200 KB caps, and random 128-bit <code>&lt;untrusted_data_&lt;32-hex&gt;&gt;</code> tags).</span>
                     </li>
                   </ul>
                 </div>
@@ -922,7 +922,7 @@
                           <span>FAIL-SAFE</span>
                         </div>
                         <div class="step-box-body">
-                          Reads <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers on every call, rejects loopback/RFC1918/metadata SSRF targets with <code>HTTP 400</code>, and automatically falls back to local <code>curl -sL</code> + Python HTML-to-text in <code>/workspace</code>. Note: <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry (see <code>https://www.wattcoin.org/llms.txt</code> for paid-tier specs); this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.
+                          Reads <code>X-Quota-Limit: 10</code> and <code>X-Quota-Remaining</code> headers on every call, rejects loopback/RFC1918/metadata SSRF targets with <code>HTTP 400</code>, and automatically falls back to local <code>curl -sL</code> + Python HTML-to-text in <code>/workspace</code>. Note: <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry; this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.
                         </div>
                       </div>
                     </div>
@@ -1016,7 +1016,7 @@
                   <li><strong>Local Fallback &amp; SSRF Guardrails:</strong> Automatically falls back to local <code>curl -sL</code> + Python HTML-to-text in <code>/workspace</code> and rejects loopback, RFC1918, and cloud metadata IPs.</li>
                 </ul>
                 <div class="guardrail-strip">
-                  <strong>Refusal Boundary:</strong> No false headless-JS rendering claims; never prints secret API keys in chat; rejects private/loopback/metadata SSRF targets with <code>HTTP 400</code>; <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry (see <code>https://www.wattcoin.org/llms.txt</code> for paid-tier specs); this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.
+                  <strong>Refusal Boundary:</strong> No false headless-JS rendering claims; never prints secret API keys in chat; rejects private/loopback/metadata SSRF targets with <code>HTTP 400</code>; <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry; this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.
                 </div>
               </div>
               <div class="card-actions">
@@ -1047,7 +1047,7 @@
                   </div>
                 </div>
                 <p class="card-summary">
-                  <strong>See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.</strong> Static, read-only inspector for Grok Bot templates, <code>SKILL.md</code> files &amp; GitHub repos via <code>.wattcoin_audit_prep.py</code>.
+                  <strong>See every network call, credential read, and shell command in a third-party skill, with line numbers, before you run it.</strong> Static, read-only inspector for Grok Bot templates, <code>SKILL.md</code> files &amp; GitHub repos via the read-only audit-prep helper.
                 </p>
                 <ul class="spec-highlights">
                   <li><strong>Line-Cited 5-Bucket Audit:</strong> Quotes verbatim prompt-bypass strings (<code>L14</code>), SSH/<code>.env</code> secret reads &amp; cron persistence (<code>L29</code>), outbound webhooks/MCPs (<code>L31</code>), obfuscation, and local machine escalation.</li>
@@ -1055,7 +1055,7 @@
                   <li><strong>Transparent Scope Limits:</strong> Flags only what exists in the files at audit time—never claims a skill is "safe" and explicitly states what static analysis cannot catch (runtime-fetched payloads, delayed API responses, time-bombs).</li>
                 </ul>
                 <div class="guardrail-strip">
-                  <strong>Refusal Boundary:</strong> Never executes audited code, never curls embedded URLs, never reads <code>/workspace/.wattcoin_env</code> into context, and never issues a "safe/pass" badge or numeric grade.
+                  <strong>Refusal Boundary:</strong> Never executes audited code, never curls embedded URLs, never reads the <code>0600</code> env file in <code>/workspace</code> into context, and never issues a "safe/pass" badge or numeric grade.
                 </div>
               </div>
               <div class="card-actions">
@@ -1086,11 +1086,11 @@
                   </div>
                 </div>
                 <p class="card-summary">
-                  <strong>Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor matrix—with exact accession numbers and UTC timestamps.</strong> Deterministic read-only OSINT analyst via <code>.wattcoin_dd_fetch.py</code>.
+                  <strong>Pull a 7-section primary-source corporate and competitor dossier—SEC EDGAR filings, patent disclosures, RDAP domain records, and a side-by-side competitor matrix—with exact accession numbers and UTC timestamps.</strong> Deterministic read-only OSINT analyst via the read-only primary-source fetch helper.
                 </p>
                 <ul class="spec-highlights">
                   <li><strong>7-Section Cited Dossier (<code>REPORT.md</code>):</strong> Compiles Entity Snapshot (CIK, SIC, state, FYE), SEC EDGAR <code>10-K</code>/<code>10-Q</code>/<code>8-K</code>/<code>Form D</code> table, SEC EFTS + USPTO PatentsView IP footprint, RDAP domain records, and an up-to-5-entity Competitor Matrix.</li>
-                  <li><strong>Hardened Stdlib Fetch Helper (<code>.wattcoin_dd_fetch.py</code>):</strong> Enforces HTTPS-only DNS-pinned SSRF protection, SEC-compliant <code>User-Agent</code> (<code>&lt;= 5 req/s</code>), 40-request / 200 KB doc caps, and wraps all external data in random 128-bit <code>&lt;untrusted_data_&lt;32-hex&gt;&gt;</code> tags.</li>
+                  <li><strong>Hardened Stdlib Fetch Helper:</strong> Enforces HTTPS-only DNS-pinned SSRF protection, SEC-compliant <code>User-Agent</code> (<code>&lt;= 5 req/s</code>), 40-request / 200 KB doc caps, and wraps all external data in random 128-bit <code>&lt;untrusted_data_&lt;32-hex&gt;&gt;</code> tags.</li>
                   <li><strong>Transparent Public-Filing Scope:</strong> Prepends verbatim <code>SCOPE_NOTE.txt</code> and explicitly discloses what public registries do not cover (private subsidiaries, unfiled contracts, trade secrets, or real-time financials).</li>
                 </ul>
                 <div class="guardrail-strip">
@@ -1783,11 +1783,11 @@ If zero new filings land, no digest is written and no message is sent.</pre>
             </details>
             <details class="faq-item">
               <summary>Where do BotAppStore skills execute, and do they ever touch my private keys?</summary>
-              <div class="faq-answer">All templates execute locally inside your isolated Grok Bot Linux container (/workspace). API keys and license credentials are saved in /workspace/.wattcoin_env with chmod 600 permissions (-rw-------) and are never echoed in chat or sent to third-party servers. BotAppStore never asks for wallet seed phrases or private keys.</div>
+              <div class="faq-answer">All templates execute locally inside your isolated Grok Bot Linux container (/workspace). API keys and license credentials are saved in a 0600 env file in /workspace with chmod 600 permissions (-rw-------) and are never echoed in chat or sent to third-party servers. BotAppStore never asks for seed phrases or private keys.</div>
             </details>
             <details class="faq-item">
               <summary>How do wcl_... license claiming and the 3 workspace-reset rebinds work?</summary>
-              <div class="faq-answer">On Turn 1, the setup skill registers or loads your /workspace/.wattcoin_env agent key (wck_...) and calls POST https://www.wattcoin.org/api/v1/agents/license/claim to bind your wcl_... license code. Each license includes up to 3 automatic workspace-reset rebinds so you can re-claim your license if your Grok Bot /workspace container is ever reset.</div>
+              <div class="faq-answer">On Turn 1, the setup skill registers or loads your agent key (wck_...) from a 0600 env file in /workspace and calls the license API to bind your wcl_... license code. Each license includes up to 3 automatic workspace-reset rebinds so you can re-claim your license if your Grok Bot /workspace container is ever reset.</div>
             </details>
             <details class="faq-item">
               <summary>What are the primary-source citation rules and refusal boundaries?</summary>
@@ -1795,7 +1795,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
             </details>
             <details class="faq-item">
               <summary>How does the free Web &amp; API Text Extractor work?</summary>
-              <div class="faq-answer">The Web &amp; API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 (25 WATT) + starter_v1 (75 WATT) for a 100 WATT starter grant, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape with automatic local curl + Python fallback in /workspace.</div>
+              <div class="faq-answer">The Web &amp; API Text Extractor (https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol) is 100% free forever. On Turn 1, it auto-provisions a wck_... key, completes onboarding_v1 + starter_v1, and unlocks 10 free static-HTTP + BeautifulSoup text extractions per UTC day on POST https://www.wattcoin.org/api/v1/scrape with automatic local curl + Python fallback in /workspace.</div>
             </details>
             <details class="faq-item">
               <summary>Which bots cover prompt injection, due diligence, SBOM, CISA KEV, EPSS, SPF, DMARC and DNSSEC checks?</summary>
@@ -2036,7 +2036,7 @@ If zero new filings land, no digest is written and no message is sent.</pre>
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only license and audit-prep helpers (<code>0500</code>), provisions a <code>0600</code> env file in <code>/workspace</code>, completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

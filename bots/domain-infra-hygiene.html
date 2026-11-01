@@ -297,7 +297,7 @@
 
       <section class="product-section" id="sample-output">
         <h2>Live audit: botappstore.com and coinloader.com</h2>
-        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; wallet, account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
+        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
         <p>Unedited <code>--format markdown</code> output of <code>/usr/bin/python3 -I /workspace/scripts/domain_infra_hygiene.py botappstore.com coinloader.com --format markdown</code> on 2026-10-27 (exit <code>1</code>: MEDIUM findings at the default <code>--fail-on medium</code>). Port 80 shows <code>UNVERIFIED</code> because the sandbox blocks outbound :80, which the report states rather than guessing.</p>
         <pre class="code-pre"># Domain, TLS &amp; Email Auth Hygiene Report
 
@@ -692,7 +692,7 @@ SCOPE_NOTE: Passive, read-only public posture inspection for domains the user ow
 
       <section class="product-section" id="licensing-flow">
         <h2>Licensing &amp; Setup</h2>
-        <p>$19.00 USD one-time, paid by card, Apple Pay or Google Pay: a 1-year license with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>domain-infra-hygiene-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates your agent key (100 WATT starter grant), binds your <code>wcl_...</code> code through stdin, and offers a live smoke test. The license code is never printed in chat.</p>
+        <p>$19.00 USD one-time, paid by card, Apple Pay or Google Pay: a 1-year license with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>domain-infra-hygiene-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates your agent key, binds your <code>wcl_...</code> code through stdin, and offers a live smoke test. The license code is never printed in chat.</p>
         <div class="product-cta-row">
           <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('domain-infra-hygiene', this)">Buy License ($19 · card) &rarr;</button>
           <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('domain-infra-hygiene', this)">SKILL.md Preview</button>
@@ -923,7 +923,7 @@ SCOPE_NOTE: Passive, read-only public posture inspection for domains the user ow
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 

@@ -19,7 +19,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with any <code>SKILL.md</code> or GitHub repo URL you want inspected):',
       stepCFootHtml:
-        'On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my Bot & Skill Security Auditor with license code ' + code;
       }
@@ -38,7 +38,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with any company, ticker, CIK, or competitor set you want analyzed):',
       stepCFootHtml:
-        'On Turn 1, <code>company-deep-dive-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_dd_fetch.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>company-deep-dive-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_dd_fetch.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my Company & Competitor Deep-Dive Analyst with license code ' + code;
       }
@@ -62,7 +62,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with the tickers/CIKs you want on your watchlist, up to 10):',
       stepCFootHtml:
-        'On Turn 1, <code>sec-patent-watchdog-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>sec-patent-watchdog-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my SEC & Patent Watchdog Digest with license code ' + code;
       }
@@ -86,7 +86,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with the brand/channels you want to configure):',
       stepCFootHtml:
-        'On Turn 1, <code>social-hub-publisher-setup</code> installs the self-extracting SQLite queue &amp; publisher runtime (<code>social_hub.py</code>, <code>dispatcher.py</code>, and <code>.wattcoin_license_check.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>social-hub-publisher-setup</code> installs the self-extracting SQLite queue &amp; publisher runtime (<code>social_hub.py</code>, <code>dispatcher.py</code>, and <code>.wattcoin_license_check.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my Social Hub Publisher with license code ' + code;
       }
@@ -110,7 +110,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or attach any lockfile you want triaged):',
       stepCFootHtml:
-        'On Turn 1, <code>dependency-vuln-triage-setup</code> installs the self-extracting triage engine (<code>dependency_vuln_triage.py</code>, <code>bot_common.py</code>, and <code>.wattcoin_license_check.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>dependency-vuln-triage-setup</code> installs the self-extracting triage engine (<code>dependency_vuln_triage.py</code>, <code>bot_common.py</code>, and <code>.wattcoin_license_check.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my Dependency Vulnerability Triage Bot with license code ' + code;
       }
@@ -134,7 +134,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or add the domains you own that you want audited):',
       stepCFootHtml:
-        'On Turn 1, <code>domain-infra-hygiene-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>domain_infra_hygiene.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>domain-infra-hygiene-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>domain_infra_hygiene.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my Domain, TLS & Email Auth Infrastructure Hygiene Auditor with license code ' + code;
       }
@@ -158,7 +158,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or add the design question, file ranges or diff you want the council to work on):',
       stepCFootHtml:
-        'On Turn 1, <code>agent-council-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>agent_council.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs <code>--discover</code> to list the council seats available on your computer.',
+        'On Turn 1, <code>agent-council-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>agent_council.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs <code>--discover</code> to list the council seats available on your computer.',
       defaultPrompt: function (code) {
         return 'Activate my Agent Council with license code ' + code;
       }
@@ -182,7 +182,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or add the MCP config files and <code>tools/list</code> snapshots you want audited):',
       stepCFootHtml:
-        'On Turn 1, <code>mcp-config-auditor-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>mcp_config_auditor.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs a read-only self-check audit.',
+        'On Turn 1, <code>mcp-config-auditor-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>mcp_config_auditor.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs a read-only self-check audit.',
       defaultPrompt: function (code) {
         return 'Activate my MCP Server & Tool-Permission Security Auditor with license code ' + code;
       }
@@ -208,7 +208,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or add the <code>.3mf</code> / <code>.gcode</code> files and spool, SKU and printer tables you want audited):',
       stepCFootHtml:
-        'On Turn 1, <code>print-farm-ops-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>print_farm_ops.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs an offline self-check audit.',
+        'On Turn 1, <code>print-farm-ops-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>print_farm_ops.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs an offline self-check audit.',
       defaultPrompt: function (code) {
         return 'Activate my 3D Print Farm & Slicer Queue Ops with license code ' + code;
       }
@@ -234,7 +234,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or add the actuator, BMS, ROS 2 bag, flight-log, URDF and CAN files you want audited):',
       stepCFootHtml:
-        'On Turn 1, <code>robotics-telemetry-inspector-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>robotics_telemetry_inspector.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs an offline self-check audit.',
+        'On Turn 1, <code>robotics-telemetry-inspector-setup</code> installs <code>.wattcoin_license_check.py</code> at <code>0500</code>, fetches the SHA-256-pinned <code>robotics_telemetry_inspector.py</code> and <code>bot_common.py</code> runtime (locked at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs an offline self-check audit.',
       defaultPrompt: function (code) {
         return 'Activate my Humanoid & Fleet Telemetry Inspector with license code ' + code;
       }
@@ -259,7 +259,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with the tickers/CIKs or a preset such as <code>nvidia-physical-ai</code> you want mapped):',
       stepCFootHtml:
-        'On Turn 1, <code>sec-supply-chain-mapper-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>sec-supply-chain-mapper-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my SEC EDGAR Supply Chain & Counterparty Mapper with license code ' + code;
       }
@@ -284,7 +284,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with the mill test certificate, purchase order and drawing callout you want cross-checked):',
       stepCFootHtml:
-        'On Turn 1, <code>mill-cert-matcher-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>mill-cert-matcher-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my Mill Cert Matcher with license code ' + code;
       }
@@ -309,7 +309,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with the RFQ, PO or drawing notes and supplier capability profile you want screened):',
       stepCFootHtml:
-        'On Turn 1, <code>rfq-flowdown-triage-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>rfq-flowdown-triage-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my RFQ Flowdown Triage with license code ' + code;
       }
@@ -334,7 +334,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 (or together with the balloon list and inspection results you want reconciled):',
       stepCFootHtml:
-        'On Turn 1, <code>fai-results-reconciler-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
+        'On Turn 1, <code>fai-results-reconciler-setup</code> installs the read-only helpers at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.',
       defaultPrompt: function (code) {
         return 'Activate my FAI Results Reconciler with license code ' + code;
       }
@@ -356,7 +356,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 in <strong>each</strong> included bot (same license code; add any SKILL.md, MCP config, manifest, repo URL, or domain you want inspected):',
       stepCFootHtml:
-        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
+        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
       defaultPrompt: function (code) {
         return 'Activate my DevSecOps & AI Agent Security Pack (4-Bot Bundle) with license code ' + code;
       }
@@ -378,7 +378,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 in <strong>each</strong> included bot (same license code; add your print-farm queue export or robot/fleet telemetry log):',
       stepCFootHtml:
-        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
+        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
       defaultPrompt: function (code) {
         return 'Activate my Physical AI & Manufacturing Ops Pack (2-Bot Bundle) with license code ' + code;
       }
@@ -400,7 +400,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 in <strong>each</strong> included bot (same license code; add the company name or domain you want researched):',
       stepCFootHtml:
-        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
+        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
       defaultPrompt: function (code) {
         return 'Activate my Founder OSINT, SEC & GTM Pack (3-Bot Bundle) with license code ' + code;
       }
@@ -422,7 +422,7 @@
       stepCHintHtml:
         'Paste this prompt on Turn 1 in <strong>each</strong> included bot (same license code; add the tickers, CIKs or company names you want researched):',
       stepCFootHtml:
-        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
+        'On Turn 1, each bot\'s <code>-setup</code> skill installs its read-only runtime, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your single bundle <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>. The same code unlocks every bot in the pack.',
       defaultPrompt: function (code) {
         return 'Activate my Institutional EDGAR Intelligence Pack (3-Bot Bundle) with license code ' + code;
       }
@@ -443,7 +443,7 @@
         <ul>
           <li><strong>Turn-1 Key Provisioning (<code>getting-started</code>):</strong> Checks for <code>/workspace/.wattcoin_env</code> (<code>0600</code> permissions); if absent, registers an agent key (<code>wck_...</code>) against <code>https://www.wattcoin.org/api/v1/agents/register</code>, completes initial readiness tasks, and runs a live verification extraction against <code>https://example.com</code>.</li>
           <li><strong>10 Free Cloud Extractions / UTC Day (<code>web-extractor</code>):</strong> Calls <code>POST https://www.wattcoin.org/api/v1/scrape</code> with <code>format: "text"</code> and reports <code>X-Quota-Limit: 10</code>, <code>X-Quota-Remaining</code>, and <code>X-Quota-Reset</code> headers.</li>
-          <li><strong>Paid Modes Disclosure:</strong> <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry (see <code>https://www.wattcoin.org/llms.txt</code> for paid-tier specs); this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.</li>
+          <li><strong>Paid Modes Disclosure:</strong> <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry; this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.</li>
         </ul>
       `,
       execHtml: `
@@ -462,7 +462,7 @@
           <li><strong>No False Headless-JS Claims:</strong> Never claims headless browser or client-side JavaScript SPA rendering on the static HTTP cloud endpoint (<code>https://www.wattcoin.org/api/v1/scrape</code>).</li>
           <li><strong>Zero Secret Leakage:</strong> Never prints or echoes your <code>wck_...</code> API key in chat output; keeps credentials in <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>).</li>
           <li><strong>SSRF &amp; Private Network Rejection:</strong> Rejects loopback (<code>127.0.0.0/8</code>, <code>::1</code>), RFC1918 private IPs (<code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code>), link-local, and cloud metadata (<code>169.254.169.254</code>) with <code>HTTP 400</code>.</li>
-          <li><strong>No Unconfirmed Paid Calls:</strong> <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry (see <code>https://www.wattcoin.org/llms.txt</code> for paid-tier specs); this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.</li>
+          <li><strong>No Unconfirmed Paid Calls:</strong> <code>format: "html"</code> and <code>format: "json"</code> are paid per-call modes on the registry; this free utility uses <code>format: "text"</code> (10/day free) and never invokes paid modes without explicit user confirmation.</li>
         </ul>
       `
     },
@@ -512,7 +512,7 @@
         <h4>1. Turn-1 Setup &amp; License Binding (<code>auditor-setup</code>)</h4>
         <ul>
           <li>Installs read-only helpers in <code>/workspace</code> at <code>chmod 500</code> (<code>-r-x------</code>): <code>.wattcoin_license_check.py</code> and <code>.wattcoin_audit_prep.py</code>.</li>
-          <li>Registers and activates your workspace agent in <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>, +100 WATT via <code>onboarding_v1</code> + <code>starter_v1</code>).</li>
+          <li>Registers and activates your workspace agent in <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>; completes the <code>onboarding_v1</code> + <code>starter_v1</code> starter tasks).</li>
           <li>Binds your <code>wcl_&lt;64-hex&gt;</code> license code via <code>POST https://www.wattcoin.org/api/v1/agents/license/claim</code> (supports up to <strong>3 workspace-reset rebinds</strong>) and verifies <code>GET /api/v1/agents/license?sku=bot-skill-auditor</code> returns <code>"sku_licensed": true</code>.</li>
         </ul>
         <h4>2. Deterministic Prep Helper (<code>.wattcoin_audit_prep.py</code>)</h4>
@@ -595,12 +595,12 @@
         <h4>1. Turn-1 Setup &amp; License Binding (<code>company-deep-dive-setup</code>)</h4>
         <ul>
           <li>Installs read-only helpers in <code>/workspace</code> at <code>chmod 500</code> (<code>-r-x------</code>): <code>.wattcoin_license_check.py</code> and <code>.wattcoin_dd_fetch.py</code>.</li>
-          <li>Registers and activates your workspace agent in <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>, +100 WATT via <code>onboarding_v1</code> + <code>starter_v1</code>).</li>
+          <li>Registers and activates your workspace agent in <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>; completes the <code>onboarding_v1</code> + <code>starter_v1</code> starter tasks).</li>
           <li>Binds your <code>wcl_&lt;64-hex&gt;</code> license code via stdin (<code>POST https://www.wattcoin.org/api/v1/agents/license/claim</code> with <code>sku: "company-deep-dive"</code>, supporting up to <strong>3 workspace-reset rebinds</strong>) and verifies <code>GET /api/v1/agents/license?sku=company-deep-dive</code> returns <code>"sku_licensed": true</code>.</li>
         </ul>
         <h4>2. Hardened Primary-Source Fetch Helper (<code>.wattcoin_dd_fetch.py</code>)</h4>
         <ul>
-          <li>Runs with <code>/usr/bin/python3 -I</code> using Python stdlib only. Enforces HTTPS-only DNS-pinned SSRF protection (<code>_PinnedHTTPSConnection</code>), rejects IP literals and private/loopback/link-local ranges, and sends SEC-compliant <code>User-Agent: WattCoinDeepDive/1.0 (https://botappstore.com; contact@wattcoin.org)</code> at <code>&lt;= 5 req/s</code>.</li>
+          <li>Runs with <code>/usr/bin/python3 -I</code> using Python stdlib only. Enforces HTTPS-only DNS-pinned SSRF protection (<code>_PinnedHTTPSConnection</code>), rejects IP literals and private/loopback/link-local ranges, and sends a SEC-compliant <code>User-Agent</code> with a contact string at <code>&lt;= 5 req/s</code>.</li>
           <li>Enforces strict bounds: max <strong>5 entities</strong> (1 primary + 4 competitors), <strong>40 HTTP requests</strong>, <strong>200 KB per doc</strong>, <strong>15s per-request deadline</strong>, and wraps all external strings in random 128-bit <code>&lt;untrusted_data_&lt;32-hex&gt;&gt;</code> tags.</li>
         </ul>
       `,
@@ -668,7 +668,7 @@
         <p>Executes inside your isolated Grok Bot Linux container with persistent local state in <code>/workspace</code>.</p>
         <h4>Technical Requirements</h4>
         <ul>
-          <li><strong>License Binding (<code>sec-patent-watchdog-setup</code>):</strong> Registers and activates <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>, +100 WATT via <code>onboarding_v1</code> + <code>starter_v1</code>) and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST https://www.wattcoin.org/api/v1/agents/license/claim</code> (up to <strong>3 workspace-reset rebinds</strong>); verifies <code>GET /api/v1/agents/license?sku=sec-patent-watchdog</code> returns <code>"sku_licensed": true</code>.</li>
+          <li><strong>License Binding (<code>sec-patent-watchdog-setup</code>):</strong> Registers and activates <code>/workspace/.wattcoin_env</code> (<code>chmod 600</code>; completes the <code>onboarding_v1</code> + <code>starter_v1</code> starter tasks) and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST https://www.wattcoin.org/api/v1/agents/license/claim</code> (up to <strong>3 workspace-reset rebinds</strong>); verifies <code>GET /api/v1/agents/license?sku=sec-patent-watchdog</code> returns <code>"sku_licensed": true</code>.</li>
           <li><strong>State &amp; Output Files:</strong> <code>state.json</code> baseline, <code>DELTA_SUMMARY.json</code>, and <code>DIGEST_&lt;timestamp&gt;.md</code> in <code>/workspace</code>.</li>
           <li><strong>Scheduling:</strong> Grok Bot <code>UpdateRoutine</code> for recurring runs; a run with zero new filings writes no digest and sends no message.</li>
           <li><strong>Rate-Limit Discipline:</strong> Enforces SEC EDGAR fair-access throttling (<code>&lt;= 10 req/sec</code>) and mandatory <code>User-Agent</code> identification.</li>
@@ -979,7 +979,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
         <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>) and makes <strong>no network requests</strong>: it reads only the slicer files and tables you point it at. It never contacts a printer, sends G-code, or modifies a <code>.3mf</code> / <code>.gcode</code> file.</p>
         <ul>
           <li><strong>Pinned Runtime (SHA-256):</strong> <code>print_farm_ops.py</code> <code>29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669</code> (2,165 lines) and <code>bot_common.py</code> <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code> (274 lines), verified against the canonical SHA-256 pins before every run (runtime URLs are license-gated: <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code>, unauthenticated = 401; the served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header against the pin, or use the setup skill installer) and locked at <code>0500</code>.</li>
-          <li><strong>License Binding (<code>print-farm-ops-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>.</li>
+          <li><strong>License Binding (<code>print-farm-ops-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>.</li>
           <li><strong>Fail-Closed Exit Codes:</strong> <code>0</code> clean, <code>1</code>/<code>2</code>/<code>3</code> MEDIUM/HIGH/CRITICAL at <code>--fail-on</code>, <code>10</code> bad input or refusal, <code>11</code> degraded (unreadable, malformed or unsafe input), so a failed read never looks clean.</li>
           <li><strong>Inputs &amp; Outputs:</strong> <code>--3mf</code>, <code>--dir</code>, <code>--spools</code>, <code>--orders</code> (alias <code>--inventory</code>), <code>--printers</code>; <code>--format text|markdown|json</code>, <code>--queue-csv PATH</code>, <code>--out PATH</code>. The <code>--state</code> file is written <code>0600</code> and is never overwritten by a degraded run.</li>
         </ul>
@@ -1040,7 +1040,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
         <p>Executes locally in <code>/workspace</code> as stdlib Python (<code>/usr/bin/python3 -I</code>) and makes <strong>no network requests</strong>: it reads only the log and model files you point it at. It never commands a robot, CAN bus, flight controller or BMS, and never modifies an input file.</p>
         <ul>
           <li><strong>Pinned Runtime (SHA-256):</strong> <code>robotics_telemetry_inspector.py</code> <code>aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17</code> (3,245 lines) and <code>bot_common.py</code> <code>d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526</code> (274 lines), verified against the canonical SHA-256 pins before every run (runtime URLs are license-gated: <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code>, unauthenticated = 401; the served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header against the pin, or use the setup skill installer) and locked at <code>0500</code>.</li>
-          <li><strong>License Binding (<code>robotics-telemetry-inspector-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>.</li>
+          <li><strong>License Binding (<code>robotics-telemetry-inspector-setup</code>):</strong> Installs the read-only license helper at <code>0500</code>, provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>.</li>
           <li><strong>Fail-Closed Exit Codes:</strong> <code>0</code> clean, <code>1</code>/<code>2</code>/<code>3</code> MEDIUM/HIGH/CRITICAL at <code>--fail-on</code>, <code>10</code> bad input or refusal, <code>11</code> degraded (unreadable, malformed or unsafe input, a skipped symlink), so a failed read never looks clean.</li>
           <li><strong>Inputs &amp; Outputs:</strong> <code>--actuators</code>, <code>--bms</code>, <code>--rosbag</code> (<code>.db3</code>, <code>.mcap</code>, metadata, expectations file), <code>--flight-log</code> (<code>.ulg</code>, ArduPilot), <code>--urdf</code>, <code>--can-log</code>, <code>--dir</code>; <code>--format text|markdown|json|html</code>, <code>--maintenance-out PATH</code>, <code>--out PATH</code>. The <code>--state</code> file is written <code>0600</code> and is never overwritten by a degraded run.</li>
         </ul>

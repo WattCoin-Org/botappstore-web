@@ -34,7 +34,7 @@
         "a public URL"
       ],
       "outputs": [
-        "clean text (html/json modes are paid per call in WATT)"
+        "clean text (html/json modes are paid per call)"
       ],
       "runtime": null,
       "license": {

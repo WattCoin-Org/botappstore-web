@@ -301,7 +301,7 @@
 
       <section class="product-section" id="sample-output">
         <h2>Real Sample Audit: 12-DOF humanoid, dual battery pack, ROS 2 and PX4 fleet</h2>
-        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; wallet, account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
+        <p class="sample-disclosure" style="margin-bottom: 12px;"><strong>Sample disclosure:</strong> this is a representative sample, not a customer report. It was produced against public or fictional test targets; account and credential values are placeholders or redacted (for example <code>wck_&lt;REDACTED&gt;</code>), and no private keys, seed phrases or secrets are ever shown. Your own report will differ in content and length.</p>
         <p>Excerpt from <code>--self-check --format markdown --now 2026-10-27T00:00:00Z</code> on the built-in synthetic fleet (12-joint harmonic-drive humanoid on CAN, a 16S LiFePO4 main pack and 6S LiPo auxiliary pack, a ROS 2 navigation bag with an expectations file, an MCAP fleet bag and a PX4 quadrotor log). All joints, packs, bags and frames are fabricated for illustration and no robot, vehicle or network was contacted. Output is unedited; omitted parts are marked. Exit <code>3</code>: the worst finding is CRITICAL. The Wi-Fi password in the MCAP metadata is redacted in the report.</p>
         <pre class="code-pre"># Humanoid &amp; Fleet Telemetry Inspector Report
 
@@ -492,7 +492,7 @@ exit_code 3 (fail-on=medium)
 
       <section class="product-section" id="licensing-flow">
         <h2>Licensing &amp; Setup</h2>
-        <p>$49.00 USD one-time, paid by card, Apple Pay or Google Pay, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>robotics-telemetry-inspector-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates <code>/workspace/.wattcoin_env</code> (<code>0600</code>, 100 WATT starter activation), binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs the built-in <code>--self-check</code>. Every later run starts with the license gate.</p>
+        <p>$49.00 USD one-time, paid by card, Apple Pay or Google Pay, with up to 3 workspace-reset rebinds and no subscription. On Turn 1 the <code>robotics-telemetry-inspector-setup</code> skill installs the read-only license helper (<code>0500</code>), verifies and installs the SHA-256-pinned runtime, registers and activates <code>/workspace/.wattcoin_env</code> (<code>0600</code>, starter activation), binds your <code>wcl_&lt;64-hex&gt;</code> license via <code>POST /api/v1/agents/license/claim</code>, and runs the built-in <code>--self-check</code>. Every later run starts with the license gate.</p>
         <div class="product-cta-row">
           <button type="button" class="btn btn-primary btn--primary" onclick="openCheckoutModal('robotics-telemetry-inspector', this)">Buy License ($49 · card) &rarr;</button>
           <button type="button" class="btn btn-secondary btn--ghost" onclick="openSpecModal('robotics-telemetry-inspector', this)">SKILL.md Preview</button>
@@ -726,7 +726,7 @@ exit_code 3 (fail-on=medium)
               </button>
             </div>
             <p class="checkout-field-help" id="fulfilled-step-c-foot" style="margin-top: 8px;">
-              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the 100 WATT starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
+              On Turn 1, <code>auditor-setup</code> installs the read-only helpers (<code>.wattcoin_license_check.py</code> &amp; <code>.wattcoin_audit_prep.py</code> at <code>0500</code>), provisions <code>/workspace/.wattcoin_env</code> (<code>0600</code>), completes the starter activation, and binds your <code>wcl_...</code> license via <code>POST /api/v1/agents/license/claim</code>.
             </p>
           </div>
 
