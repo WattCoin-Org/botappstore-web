@@ -1,5 +1,29 @@
 # Changelog
 
+## 2026-11-04 — Bot-page checkout/fulfilled panel copy-paste leftovers corrected
+
+Scope: checkout modal only (`#checkout-price-usd` placeholder, modal title/sku line, fulfilled Step A template name, CTA text). Prices checked against the backend price table and `catalog.json`; no backend, template URL, nav or cross-sell changes.
+
+### Changes
+- `bots/agent-council.html`: placeholder `$29.00` -> `$39.00`; Step A named "Bot & Skill Security Auditor" -> "Agent Council"; CTA "Open Security Auditor in Grok Bot" -> "Open Agent Council in Grok Bot".
+- `bots/company-deep-dive.html`: placeholder `$29.00` -> `$19.00`; modal title (Auditor, $29) and sku line (`bot-skill-auditor`) -> Company & Competitor Deep-Dive Analyst / $19 / `company-deep-dive`; Step A name and CTA were Auditor.
+- `bots/dependency-vuln-triage.html`: modal title and sku line were Auditor / `bot-skill-auditor`; Step A name and CTA were Auditor (price $29 was correct).
+- `bots/domain-infra-hygiene.html`: placeholder `$29.00` -> `$19.00`; Step A name and CTA were Auditor.
+- `bots/fai-results-reconciler.html`: placeholder `$29.00` -> `$39.00` (name and CTA were correct).
+- `bots/mcp-config-auditor.html`: placeholder `$29.00` -> `$19.00`; Step A name and CTA were Bot & Skill Security Auditor.
+- `bots/mill-cert-matcher.html`: placeholder `$29.00` -> `$39.00` (name and CTA were correct).
+- `bots/print-farm-ops.html`: Step A name and CTA were Auditor (price $29 was correct).
+- `bots/rfq-flowdown-triage.html`: placeholder `$29.00` -> `$39.00` (name and CTA were correct).
+- `bots/robotics-telemetry-inspector.html`: placeholder `$29.00` -> `$49.00`; Step A name and CTA were Auditor.
+- `bots/sec-patent-watchdog.html`: modal title and sku line were Auditor / `bot-skill-auditor`; Step A name and CTA were Auditor (price $29 was correct).
+- `bots/sec-supply-chain-mapper.html`: same as sec-patent-watchdog (price $29 was correct).
+- `bots/social-hub-publisher.html`: same as sec-patent-watchdog (price $29 was correct).
+- `bots/web-text-extractor.html`: free bot (catalog price 0, sku `web-extractor`) with a leftover paid Auditor panel; placeholder `$29.00` -> `$0.00`, modal title -> "Web & API Text Extractor — Free", sku line, Step A name and CTA corrected.
+
+### Checks
+- `bots/bot-skill-auditor.html` already correct.
+- `scripts/check_no_sol.py` passes.
+
 ## 2026-11-01 — Remove registry-brand file / env names from visible pages; tighten check_no_sol
 
 Approved by owner AIguy. Status: merged to main; production deploy verification pending.
