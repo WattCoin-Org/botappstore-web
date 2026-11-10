@@ -498,7 +498,7 @@ Outcome: keep exit_code as the CI contract, but make it fail closed and derive d
         </ul>
         <p>Runtime URLs are license-gated: send <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code> (unauthenticated requests get 401). The served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header (or the SHA-256 after stripping the block) against the pins above. The recommended path is the setup skill installer:</p>
         <pre class="code-pre">python3 &lt;license helper&gt; --sku agent-council --install-runtime ... --expected-sha256 703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7</pre>
-        <p>The setup and council skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 170 unit tests.</p>
+        <p>The setup and council skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python.</p>
       </section>
 
       <section class="product-section" id="faq">

@@ -475,7 +475,7 @@ exit_code 3 (fail-on=medium)
         </ul>
         <p>Runtime URLs are license-gated: send <code>X-License-Key: wcl_...</code> or <code>X-Agent-Key: wck_...</code> (unauthenticated requests get 401). The served file carries a per-license watermark block (5 lines), so compare the <code>X-Canonical-SHA256</code> response header (or the SHA-256 after stripping the block) against the pins above. The recommended path is the setup skill installer:</p>
         <pre class="code-pre">python3 &lt;license helper&gt; --sku robotics-telemetry-inspector --install-runtime ... --expected-sha256 aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17</pre>
-        <p>The setup and audit skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python and is covered by 724 unit tests.</p>
+        <p>The setup and audit skills verify both canonical digests before every run and refuse to execute either file on a mismatch. Both are locked at <code>chmod 500</code>. The runtime is stdlib-only Python.</p>
       </section>
 
       <section class="product-section" id="faq">

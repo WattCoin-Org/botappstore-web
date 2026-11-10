@@ -200,7 +200,7 @@
 - **Storefront Checkout URL:** https://botappstore.com/#card-agent-council
 - **Included Skills:** `agent-council-setup` + `agent-council`
 - **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
-  - `https://botappstore.com/runtime/agent_council.py` — SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7` (2,801 lines, stdlib Python, 170 unit tests)
+  - `https://botappstore.com/runtime/agent_council.py` — SHA-256 `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7` (2,801 lines, stdlib Python)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Put 2-6 AI seats on one design question, patch or diff and get the consensus, the minority report, a verdict and an action plan, within the time limit and budget you set, plus a self-contained HTML transcript.*
 - **License Architecture:**
@@ -227,7 +227,7 @@
 - **Storefront Checkout URL:** https://botappstore.com/#card-mcp-config-auditor
 - **Included Skills:** `mcp-config-auditor-setup` + `mcp-config-auditor`
 - **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
-  - `https://botappstore.com/runtime/mcp_config_auditor.py` — SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025` (1,956 lines, stdlib Python, 275 unit tests)
+  - `https://botappstore.com/runtime/mcp_config_auditor.py` — SHA-256 `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025` (1,956 lines, stdlib Python)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Find the leaked key, the unpinned package and the poisoned tool before your agent runs them: a read-only static audit of your MCP client configs and `tools/list` snapshots, with every detected secret redacted and a copy-paste hardened config per file.*
 - **License Architecture:**
@@ -286,7 +286,7 @@
 - **Storefront Checkout URL:** https://botappstore.com/#card-robotics-telemetry-inspector
 - **Included Skills:** `robotics-telemetry-inspector-setup` + `robotics-telemetry-inspector`
 - **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
-  - `https://botappstore.com/runtime/robotics_telemetry_inspector.py` — SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17` (3,245 lines, stdlib Python, 724 unit tests)
+  - `https://botappstore.com/runtime/robotics_telemetry_inspector.py` — SHA-256 `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17` (3,245 lines, stdlib Python)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526` (274 lines)
 - **Deliverable:** *Find the overheating knee, the weak cell and the dropped topic before the robot runs again: an offline, read-only audit of actuator and joint logs, 16S LiFePO4 / LiPo BMS exports, ROS 2 bags, PX4 / ArduPilot flight logs, URDF / SDF models and CAN / RS485 captures, ending in a prioritised preventive-maintenance and flight-readiness checklist.*
 - **License Architecture:**
@@ -1343,7 +1343,7 @@ SCOPE_NOTE: Passive, read-only public posture inspection for domains the user ow
 - **Checkout:** https://botappstore.com/#card-agent-council
 - **Skills:** `agent-council-setup`, `agent-council`
 - **Price:** $39.00 USD one-time (card / Apple Pay / Google Pay via Stripe; up to 3 workspace-reset rebinds)
-- **Runtime:** `/workspace/scripts/agent_council.py` v1.0.0 (2,801 lines, Python stdlib + `/workspace/lib/bot_common.py`, 170 unit tests), always run as `/usr/bin/python3 -I`
+- **Runtime:** `/workspace/scripts/agent_council.py` v1.0.0 (2,801 lines, Python stdlib + `/workspace/lib/bot_common.py`), always run as `/usr/bin/python3 -I`
 - **Pinned SHA-256:**
   - `https://botappstore.com/runtime/agent_council.py` — `703d307e52c4e13df94e28554d16143a5286bf0af3ffe6d95431a5fa490284d7`
   - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
@@ -1568,7 +1568,7 @@ SCOPE_NOTE: Agent Council is an advisory, read-only deliberation tool. It reads 
 - **Checkout:** https://botappstore.com/#card-mcp-config-auditor
 - **Skills:** `mcp-config-auditor-setup`, `mcp-config-auditor`
 - **Price:** $19.00 USD one-time (card / Apple Pay / Google Pay via Stripe; up to 3 workspace-reset rebinds)
-- **Runtime:** `/workspace/scripts/mcp_config_auditor.py` v1.0.0 (1,956 lines, Python stdlib + `/workspace/lib/bot_common.py`, 275 unit tests), always run as `/usr/bin/python3 -I`
+- **Runtime:** `/workspace/scripts/mcp_config_auditor.py` v1.0.0 (1,956 lines, Python stdlib + `/workspace/lib/bot_common.py`), always run as `/usr/bin/python3 -I`
 - **Pinned SHA-256:**
   - `https://botappstore.com/runtime/mcp_config_auditor.py` — `42cb3f145458844604c795a97ec8009365a218f20b4a441f6988edd93184c025`
   - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
@@ -1941,7 +1941,7 @@ SCOPE_NOTE: 100% offline, local, read-only inspection of the .3mf / .gcode.3mf /
 - **Checkout:** https://botappstore.com/#card-robotics-telemetry-inspector
 - **Skills:** `robotics-telemetry-inspector-setup`, `robotics-telemetry-inspector`
 - **Price:** $49.00 USD one-time (card / Apple Pay / Google Pay via Stripe; up to 3 workspace-reset rebinds)
-- **Runtime:** `/workspace/scripts/robotics_telemetry_inspector.py` v1.0.0 (3,245 lines, Python stdlib + `/workspace/lib/bot_common.py`, 724 unit tests), always run as `/usr/bin/python3 -I`
+- **Runtime:** `/workspace/scripts/robotics_telemetry_inspector.py` v1.0.0 (3,245 lines, Python stdlib + `/workspace/lib/bot_common.py`), always run as `/usr/bin/python3 -I`
 - **Pinned SHA-256:**
   - `https://botappstore.com/runtime/robotics_telemetry_inspector.py` — `aa45c09553b0c989a988c4f2375a7d9e596f338afa5f98969db09896eb6c6b17`
   - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
