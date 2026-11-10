@@ -285,7 +285,7 @@ Prices are one-time USD. Payment is by card / Apple Pay / Google Pay (via Stripe
 - **Storefront Checkout URL:** https://botappstore.com/#card-print-farm-ops
 - **Included Skills:** `print-farm-ops-setup` + `print-farm-ops`
 - **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
-  - `https://botappstore.com/runtime/print_farm_ops.py` — SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669` (2,165 lines, stdlib Python, 393 unit tests)
+  - `https://botappstore.com/runtime/print_farm_ops.py` — SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669` (2,165 lines, stdlib Python)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Catch the wrong-temperature plate, the empty spool and the money-losing SKU before the printers run: an offline, read-only audit of OrcaSlicer, Bambu Studio and PrusaSlicer `.3mf` / `.gcode` files, a spool ledger, a storefront SKU table and a printer list, plus a scheduled multi-printer production queue.*
 - **License Architecture:**

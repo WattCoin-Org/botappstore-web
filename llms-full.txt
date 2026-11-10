@@ -257,7 +257,7 @@
 - **Storefront Checkout URL:** https://botappstore.com/#card-print-farm-ops
 - **Included Skills:** `print-farm-ops-setup` + `print-farm-ops`
 - **Pinned Runtime (canonical SHA-256 pins, locked `chmod 500`):**
-  - `https://botappstore.com/runtime/print_farm_ops.py` — SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669` (2,165 lines, stdlib Python, 393 unit tests)
+  - `https://botappstore.com/runtime/print_farm_ops.py` — SHA-256 `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669` (2,165 lines, stdlib Python)
   - `https://botappstore.com/runtime/bot_common.py` — SHA-256 `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
 - **Deliverable:** *Catch the wrong-temperature plate, the empty spool and the money-losing SKU before the printers run: an offline, read-only audit of OrcaSlicer, Bambu Studio and PrusaSlicer `.3mf` / `.gcode` files, a spool ledger, a storefront SKU table and a printer list, plus a scheduled multi-printer production queue.*
 - **License Architecture:**
@@ -1783,7 +1783,7 @@ SCOPE_NOTE: Static, read-only audit of local MCP client configuration files (Cla
 - **Checkout:** https://botappstore.com/#card-print-farm-ops
 - **Skills:** `print-farm-ops-setup`, `print-farm-ops`
 - **Price:** $29.00 USD one-time (card / Apple Pay / Google Pay via Stripe; up to 3 workspace-reset rebinds)
-- **Runtime:** `/workspace/scripts/print_farm_ops.py` v1.0.0 (2,165 lines, Python stdlib + `/workspace/lib/bot_common.py`, 393 unit tests), always run as `/usr/bin/python3 -I`
+- **Runtime:** `/workspace/scripts/print_farm_ops.py` v1.0.0 (2,165 lines, Python stdlib + `/workspace/lib/bot_common.py`), always run as `/usr/bin/python3 -I`
 - **Pinned SHA-256:**
   - `https://botappstore.com/runtime/print_farm_ops.py` — `29edc5e8664be0b6823edc6ea985467fba83430f03d5781cd6fe341684abb669`
   - `https://botappstore.com/runtime/bot_common.py` — `d1941b61b95ca664e4c1286c3bf1918c00e976c2c1601199b19200257650e526`
