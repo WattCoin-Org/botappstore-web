@@ -44,7 +44,7 @@ Public storefront for BotAppStore: a static site of Grok Bot templates for non-c
 
 ## Live context
 
-For current IDs, deploys, SKUs, and infrastructure state, read `/workspace/HANDOFF.md` on this box. Do not invent facts that are not in this file, the repo, or HANDOFF.
+For current IDs, deploys, SKUs, and infrastructure state, read `/workspace/GROKBOTHANDOFF.md` on this box. Do not invent facts that are not in this file, the repo, or GROKBOTHANDOFF.
 
 ## Decisions log
 
