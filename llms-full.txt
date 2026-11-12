@@ -8,7 +8,7 @@
 - **Machine-Readable Catalog:** https://botappstore.com/llms.txt
 - **Full Catalog + Verbatim Sample Reports:** https://botappstore.com/llms-full.txt
 - **Sister Storefront:** https://coinloader.com/
-- **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 one-time · card / Apple Pay / Google Pay via Stripe); `physical-ai-manufacturing-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe); `founder-research-gtm-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe); `edgar-intelligence-pack` ($89 one-time · card / Apple Pay / Google Pay via Stripe)
+- **Value Bundles (Multi-Bot Packs, one `wcl_...` key unlocks all included bots):** https://botappstore.com/#bundles — `devsecops-ai-security-pack` ($69 one-time · card / Apple Pay / Google Pay via Stripe); `physical-ai-manufacturing-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe); `founder-research-gtm-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe); `edgar-intelligence-pack` ($59 one-time · card / Apple Pay / Google Pay via Stripe)
 - **Free Flagship Utility (1-Click Install):** https://botappstore.com/bots/web-text-extractor.html (Direct Grok Bot import: https://x.ai/bot/k1oyHmw4iS4VBW1U8_3Ol)
 - **Paid Bot & Skill Security Auditor ($29 one-time · card / Apple Pay / Google Pay via Stripe, `sku: bot-skill-auditor`):** https://botappstore.com/bots/bot-skill-auditor.html (Checkout: https://botappstore.com/#card-bot-skill-auditor)
 - **Paid Company & Competitor Deep-Dive Analyst ($19 one-time · card / Apple Pay / Google Pay via Stripe, `sku: company-deep-dive`, Registry Name: *Corporate & Competitor OSINT Deep-Dive*):** https://botappstore.com/bots/company-deep-dive.html (Checkout: https://botappstore.com/#card-company-deep-dive)
@@ -313,7 +313,7 @@
 ### 12. SEC EDGAR Supply Chain & Counterparty Mapper ($29 one-time · card / Apple Pay / Google Pay via Stripe — LIVE NOW, sku: sec-supply-chain-mapper, v1.1)
 - **Status:** LIVE NOW (v1.1)
 - **SKU:** `sec-supply-chain-mapper`
-- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**); also included in the `edgar-intelligence-pack` bundle ($89)
+- **Price:** $29.00 USD One-Time License (card / Apple Pay / Google Pay via Stripe) (includes up to **3 workspace-reset rebinds**); also included in the `edgar-intelligence-pack` bundle ($59)
 - **Categories:** OSINT & Research / SEC EDGAR Supply Chain
 - **Product Page URL:** https://botappstore.com/bots/sec-supply-chain-mapper.html
 - **Storefront Checkout URL:** https://botappstore.com/#card-sec-supply-chain-mapper
@@ -421,8 +421,8 @@ Bundle SKUs are priced in USD and paid by card (Stripe) through the same checkou
   - Social Hub Publisher (`social-hub-publisher`, $29 list): https://botappstore.com/bots/social-hub-publisher.html
 - **License:** one `wcl_...` code unlocks all member bots in this bundle; the purchase response returns `bundle_templates` with a per-bot unlisted template URL.
 
-### Institutional EDGAR Intelligence Pack ($89 one-time · card / Apple Pay / Google Pay via Stripe, `sku: edgar-intelligence-pack`, 3-Bot Bundle)
-- **Bundle Price:** $89.00 USD one-time (card / Apple Pay / Google Pay via Stripe).
+### Institutional EDGAR Intelligence Pack ($59 one-time · card / Apple Pay / Google Pay via Stripe, `sku: edgar-intelligence-pack`, 3-Bot Bundle — Save $18 vs $77 list)
+- **Bundle Price:** $59.00 USD one-time (card / Apple Pay / Google Pay via Stripe) (individual list total: $77).
 - **Included member SKUs (`included_skus`):** `company-deep-dive`, `sec-patent-watchdog`, `sec-supply-chain-mapper`
 - **Members:**
   - Company & Competitor Deep-Dive Analyst (`company-deep-dive`, $19 list): https://botappstore.com/bots/company-deep-dive.html
@@ -441,7 +441,7 @@ All paid Grok Bot templates on BotAppStore.com use the same card checkout and li
    - Supported SKUs:
      - `devsecops-ai-security-pack` ($69.00 USD one-time · card / Apple Pay / Google Pay via Stripe — DevSecOps & AI Agent Security Pack, 4-bot bundle; members: bot-skill-auditor, mcp-config-auditor, dependency-vuln-triage, domain-infra-hygiene; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `physical-ai-manufacturing-pack` ($59.00 USD one-time · card / Apple Pay / Google Pay via Stripe — Physical AI & Manufacturing Ops Pack, 2-bot bundle; members: print-farm-ops, robotics-telemetry-inspector; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
-     - `edgar-intelligence-pack` ($89.00 USD one-time · card / Apple Pay / Google Pay via Stripe — Institutional EDGAR Intelligence Pack, 3-bot bundle; members: company-deep-dive, sec-patent-watchdog, sec-supply-chain-mapper; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
+     - `edgar-intelligence-pack` ($59.00 USD one-time · card / Apple Pay / Google Pay via Stripe — Institutional EDGAR Intelligence Pack, 3-bot bundle; members: company-deep-dive, sec-patent-watchdog, sec-supply-chain-mapper; one `wcl_...` code unlocks all members; response adds `included_skus` + `bundle_templates`)
      - `sec-supply-chain-mapper` ($29.00 USD one-time · card / Apple Pay / Google Pay via Stripe — SEC EDGAR Supply Chain & Counterparty Mapper, v1.1)
      - `mill-cert-matcher` ($39.00 USD — Mill Cert Matcher)
      - `rfq-flowdown-triage` ($39.00 USD — RFQ Flowdown Triage)
@@ -2157,7 +2157,7 @@ SCOPE_NOTE: 100% offline, local, read-only inspection of the actuator, BMS, CAN 
 - **SKU:** `sec-supply-chain-mapper`
 - **Page:** https://botappstore.com/bots/sec-supply-chain-mapper.html
 - **Runtime:** https://botappstore.com/runtime/sec_supply_chain_mapper.py
-- **Bundle:** also in `edgar-intelligence-pack` ($89)
+- **Bundle:** also in `edgar-intelligence-pack` ($59)
 
 ### Verbatim sample output
 Illustrative sample: percentages, quotes and accession numbers (`000###`) are placeholders, not retrieved from EDGAR; counterparties marked fictional do not exist.

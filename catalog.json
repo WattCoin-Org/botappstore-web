@@ -560,7 +560,7 @@
       "type": "bundle",
       "status": "live",
       "storefront": "botappstore",
-      "price_usd": 89.0,
+      "price_usd": 59.0,
       "payment_methods": [
         "card",
         "apple_pay",

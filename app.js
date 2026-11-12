@@ -408,12 +408,12 @@
     'edgar-intelligence-pack': {
       sku: 'edgar-intelligence-pack',
       name: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle)',
-      title: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle) — $89 · card',
+      title: 'Institutional EDGAR Intelligence Pack (3-Bot Bundle) — $59 · card',
       slugMeta: 'sku: edgar-intelligence-pack · 3 bots · one wcl_... license unlocks all · 3 Rebinds',
-      priceUsd: 89,
-      priceUsdHtml: '$89.00 <small>USD</small>',
-      statusFooterText: 'Status: LIVE · $89 One-Time 3-Bot Bundle · card',
-      ctaButtonText: 'Unlock Bundle ($89) →',
+      priceUsd: 59,
+      priceUsdHtml: '$59.00 <small>USD</small>',
+      statusFooterText: 'Status: LIVE · $59 One-Time 3-Bot Bundle · card',
+      ctaButtonText: 'Unlock Bundle ($59) →',
       shortName: 'Institutional EDGAR Pack',
       includedSkus: ['company-deep-dive', 'sec-patent-watchdog', 'sec-supply-chain-mapper'],
       stepADescHtml:
@@ -1066,7 +1066,7 @@ Exit    0 clean · 1 MEDIUM · 2 HIGH · 3 CRITICAL · 10 bad input · 11 degrad
       specPageUrl: '/bots/sec-supply-chain-mapper.html',
       specHtml: `
         <p><strong>Deliverable:</strong> <em>Cited supplier, customer, foundry, subsidiary and equity-stake map for one or more public companies, built only from primary SEC EDGAR filings, with a reproducible <code>audit_sha256</code>.</em></p>
-        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license (v1.1); pay by card, Apple Pay or Google Pay. Also included in the <strong>Institutional EDGAR Intelligence Pack</strong> ($89). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
+        <p><strong>Status:</strong> <span style="color: var(--accent-emerald); font-weight: 700;">LIVE NOW</span> — One-time <strong>$29 USD</strong> license (v1.1); pay by card, Apple Pay or Google Pay. Also included in the <strong>Institutional EDGAR Intelligence Pack</strong> ($59). Payment issues your private <code>wcl_&lt;64-hex&gt;</code> bearer license code.</p>
         <h4>Included Skills (<code>sec-supply-chain-mapper-setup</code> + <code>sec-supply-chain-mapper</code>)</h4>
         <ul>
           <li><strong>Cited Relationship Edges:</strong> <code>supplier</code>, <code>customer</code>, <code>foundry_compute</code>, <code>strategic_partner</code>, <code>subsidiary</code> and <code>equity_stake</code>, each with a verbatim quote of <code>&lt;=300</code> characters, the accession number and a direct SEC Archive URL.</li>

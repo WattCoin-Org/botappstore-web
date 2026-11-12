@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-11-12 — Institutional EDGAR Intelligence Pack $89 → $59
+
+The pack is $59 one-time (card), $18 less than buying its three bots separately ($19 + $29 + $29 = $77). Updated `catalog.json`, homepage card and JSON-LD, checkout copy in `app.js`, `index.md`, `bots/sec-supply-chain-mapper.html`, `llms.txt` and `llms-full.txt`. The license-server price table and card checkout amount follow this list-price change.
+
 ## 2026-11-04 — Bot-page checkout/fulfilled panel copy-paste leftovers corrected
 
 Scope: checkout modal only (`#checkout-price-usd` placeholder, modal title/sku line, fulfilled Step A template name, CTA text). Prices checked against the backend price table and `catalog.json`; no backend, template URL, nav or cross-sell changes.

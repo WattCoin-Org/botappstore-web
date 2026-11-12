@@ -27,7 +27,7 @@ Canonical page: https://botappstore.com/
 - [DevSecOps & AI Agent Security Pack](https://botappstore.com/#bundle-devsecops-ai-security-pack) — $69 one-time (USD), `devsecops-ai-security-pack`; includes bot-skill-auditor, mcp-config-auditor, dependency-vuln-triage, domain-infra-hygiene.
 - [Physical AI & Manufacturing Ops Pack](https://botappstore.com/#bundle-physical-ai-manufacturing-pack) — $59 one-time (USD), `physical-ai-manufacturing-pack`; includes print-farm-ops, robotics-telemetry-inspector.
 - [Founder OSINT, SEC & GTM Pack](https://botappstore.com/#bundle-founder-research-gtm-pack) — $59 one-time (USD), `founder-research-gtm-pack`; includes company-deep-dive, sec-patent-watchdog, social-hub-publisher.
-- [Institutional EDGAR Intelligence Pack](https://botappstore.com/#bundle-edgar-intelligence-pack) — $89 one-time (USD), `edgar-intelligence-pack`; includes company-deep-dive, sec-patent-watchdog, sec-supply-chain-mapper.
+- [Institutional EDGAR Intelligence Pack](https://botappstore.com/#bundle-edgar-intelligence-pack) — $59 one-time (USD), `edgar-intelligence-pack`; includes company-deep-dive, sec-patent-watchdog, sec-supply-chain-mapper.
 
 ## For agents
 
