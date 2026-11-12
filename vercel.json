@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/CLAUDE.md",
+      "destination": "/__not_found_claude_md"
+    },
+    {
       "source": "/runtime/:script",
       "destination": "https://wattcoin-production-81a7.up.railway.app/api/v1/agents/license/runtime/:script?format=raw"
     },
